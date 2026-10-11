@@ -1,0 +1,6 @@
+# Deployment template. Replace example.invalid with the real host, or delete this file.
+# The previous version asserted https://immigranthallofhonor.org/ for a package that is not
+# published there.
+User-agent: *
+Allow: /
+Sitemap: https://example.invalid/sitemap.xml

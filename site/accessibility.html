@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accessibility | Immigrant Hall of Honor</title>
+<meta name="description" content="How this site meets WCAG 2.2 AA, and what is not finished.">
+<meta property="og:title" content="Accessibility | Immigrant Hall of Honor">
+<meta property="og:description" content="How this site meets WCAG 2.2 AA, and what is not finished.">
+<meta property="og:type" content="website">
+<script>document.documentElement.className+=" js"</script>
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15.5' fill='%238c2b1b'/><circle cx='16' cy='16' r='12.6' fill='none' stroke='%23f3ebdd' stroke-width='1'/><text x='16' y='20.6' font-size='11' font-family='Georgia,serif' fill='%23f3ebdd' text-anchor='middle'>IHH</text></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="bar">
+    <a class="brand" href="index.html"><span class="mark">IHH</span>
+      <span class="wordmark">Immigrant Hall of Honor</span></a>
+    <p class="motto">A Register of Arrivals &amp; Their Records</p>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li>
+<li><a href="inductees.html">Inductees</a></li>
+<li><a href="verify.html">Verify</a></li>
+<li><a href="share.html">Share a story</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="rights.html">Rights &amp; reuse</a></li>
+<li><a href="accessibility.html" aria-current="page">Accessibility</a></li></ul></nav>
+  </div>
+</header>
+<main id="main" class="">
+
+<h1>Accessibility</h1>
+<p class="lede">This site is built to meet WCAG 2.2 Level AA. Here is what that means in
+practice, and what we have not finished.</p>
+
+<h2>What we have done</h2>
+<ul>
+  <li>Every page has one <code>h1</code> and a heading outline that runs in order.</li>
+  <li>Alt text is written for every catalogued image, from the catalogue record. Extended
+  descriptions are not written yet, because no image file ships with this package to describe;
+  the Albright page says so where the images would go.</li>
+  <li>Body text contrast is at least 4.5:1, large text at least 3:1. No meaning is carried by
+  colour alone.</li>
+  <li>Everything works by keyboard. Focus is always visible and never hidden behind a sticky
+  header. Interactive targets are at least 24&times;24 pixels.</li>
+  <li>The page reflows to 200% zoom and to a phone without horizontal scrolling.</li>
+  <li>Motion is switched off for anyone whose system asks for reduced motion.</li>
+  <li>The site works with JavaScript disabled. Filtering and search are enhancements; the
+  content is all present without them.</li>
+  <li>No third-party scripts, no advertising networks, no web fonts loaded from another
+  server.</li>
+</ul>
+
+<h2>Submitting a story another way</h2>
+<p>If the web form does not work for you, we will take your story by voice, on paper, or in a
+language other than English, and we will do the typing. Nobody should be excluded from an
+immigration archive by a form.</p>
+
+<h2>What is not finished</h2>
+<p>The site has been through several rounds of independent review of its content and code (see
+<code>TESTS-RUN.md</code>), but not an independent <em>accessibility</em> audit by specialists,
+and not testing with screen-reader users. Both of those are still planned. We would rather say
+that than claim a conformance level
+nobody has verified.</p>
+
+<p class="contact-box"><strong>Tell us about a barrier:</strong>
+<span class="todo">[publish a monitored address here]</span> &mdash; we aim to reply within five
+working days.</p>
+
+</main>
+<footer class="site-foot">
+  <div class="cols">
+    <div>
+      <p class="fw">Immigrant Hall of Honor</p>
+      <p>A 501(c)(3) non-profit building a national museum in Central Texas.</p>
+      <p class="muted">EIN: <span class="todo">[publish your EIN here]</span></p>
+    </div>
+    <div>
+      <p class="fw">Pages</p>
+      <ul class="plain"><li><a href="index.html">Home</a></li>
+<li><a href="inductees.html">Inductees</a></li>
+<li><a href="verify.html">Verify</a></li>
+<li><a href="share.html">Share a story</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="rights.html">Rights &amp; reuse</a></li>
+<li><a href="accessibility.html" aria-current="page">Accessibility</a></li></ul>
+    </div>
+    <div>
+      <p class="fw">Policies</p>
+      <ul class="plain">
+        <li><a href="rights.html">Rights and reuse</a></li>
+        <li><a href="accessibility.html">Accessibility statement</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="method.html">Method &amp; sources</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="colophon">Built as a demonstration for Challenge+X, Fall 2026. Historical records
+  reproduced on this site contain language and categories reflecting the attitudes of their
+  time. Every image carries its source and its rights statement.</p>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

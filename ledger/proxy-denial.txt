@@ -1,0 +1,65 @@
+EGRESS PROXY DENIALS - captured 2026-10-09
+
+The four archival hosts this project needs, every one refused at CONNECT:
+  catalog.archives.gov:443
+  diplomacy.state.gov:443
+  1997-2001.state.gov:443
+  web.archive.org:443
+
+NOTE ON THIS FILE: the proxy's relay-failure buffer is rolling, so the raw log below
+may contain unrelated hosts from the same window and may no longer contain the
+archival ones. The authoritative per-URL record is fetch-attempts.txt, which shows
+all five archival URLs returning 000. Do not read the raw log as the evidence.
+
+Raw relay-failure log (rolling buffer, as captured):
+
+[
+ {
+  "ts": "2026-10-09T17:00:09.609Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:10.541Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:11.659Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:12.591Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:12.645Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "accounts.google.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:13.551Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:14.623Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ },
+ {
+  "ts": "2026-10-09T17:00:15.613Z",
+  "kind": "connect_rejected",
+  "detail": "gateway answered 403 to CONNECT (policy denial or upstream failure)",
+  "host": "content-autofill.googleapis.com:443"
+ }
+]

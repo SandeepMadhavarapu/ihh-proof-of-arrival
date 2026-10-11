@@ -1,0 +1,10 @@
+There is no manifest in this directory.
+
+The single authoritative item-level rights register for this project is
+
+    ../albright-wp/media-manifest.csv
+
+A second copy used to live here. It had drifted: it named different subjects for the same
+NARA identifiers, gave a different date for the commission, and still claimed the rights
+wording had been read at each record on a date when the catalogue was unreachable. Two
+manifests that disagree are worse than one, so it was deleted rather than re-synchronised.

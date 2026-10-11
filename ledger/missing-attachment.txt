@@ -1,0 +1,20 @@
+SEARCH FOR IHH-V3-DEEP-AUDIT.md  —  3 October 2026
+
+$ ls /root/.claude/uploads/f4b29966-dd97-5f9c-9222-eae8889edb12/
+129d3ced-IHH-V3-AUDIT-EVIDENCE.zip          <- the only file supplied
+
+$ find / -iname "*DEEP-AUDIT*" -o -iname "*deep_audit*"
+(no results)
+
+$ unzip -l 129d3ced-IHH-V3-AUDIT-EVIDENCE.zip
+AUDIT-EVIDENCE-README.md, browser-check.cjs, browser-states.cjs,
+package.json, package-lock.json, results/{browser-results.json,
+state-results.json, source-sha256.txt, 5 png files}
+-> contains 9 findings, not 72.
+
+CONCLUSION: the document containing the 72 findings was not transmitted to this
+session. This repair pass covers 116 findings: the 9 from the evidence ZIP, the 6
+residual defects named in the task brief, those found by independent verification
+commissioned during this pass, and 57 recorded across four acceptance-review
+rounds and a final verification sweep of the packaged deliverable (18 + 15 + 12 + 9 + 3 = 57). It is not a closure of the 72-finding audit and must
+not be read as one.

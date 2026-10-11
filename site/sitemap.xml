@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DEPLOYMENT TEMPLATE. The host below is a deliberate placeholder.
+     This is a demonstration package; it is not deployed anywhere, and the
+     previous version of this file asserted https://immigranthallofhonor.org/
+     for pages that do not exist at that domain. Replace example.invalid with
+     the real host before serving, or delete this file and robots.txt. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.invalid/index.html</loc></url>
+  <url><loc>https://example.invalid/verify.html</loc></url>
+  <url><loc>https://example.invalid/albright.html</loc></url>
+  <url><loc>https://example.invalid/inductees.html</loc></url>
+  <url><loc>https://example.invalid/method.html</loc></url>
+  <url><loc>https://example.invalid/share.html</loc></url>
+  <url><loc>https://example.invalid/about.html</loc></url>
+  <url><loc>https://example.invalid/rights.html</loc></url>
+  <url><loc>https://example.invalid/accessibility.html</loc></url>
+  <url><loc>https://example.invalid/privacy.html</loc></url>
+</urlset>
