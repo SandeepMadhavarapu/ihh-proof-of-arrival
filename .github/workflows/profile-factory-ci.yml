@@ -1,0 +1,63 @@
+name: Profile Factory CI
+
+on:
+  push:
+    branches: [feat/profile-factory]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install local QA dependencies
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+          echo "CHROMIUM=$(node -e \"const {chromium}=require('playwright'); process.stdout.write(chromium.executablePath())\")" >> "$GITHUB_ENV"
+
+      - name: Offline Python tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Prove frozen Albright no-argument build
+        run: |
+          cp albright-wp/copy.html /tmp/copy.before
+          cp albright-wp/copy-full.md /tmp/full.before
+          cp albright-wp/preview.html /tmp/preview.before
+          python albright-wp/build.py
+          cmp /tmp/copy.before albright-wp/copy.html
+          cmp /tmp/full.before albright-wp/copy-full.md
+          cmp /tmp/preview.before albright-wp/preview.html
+          echo "Albright generated outputs are byte-identical"
+
+      - name: Rebuild deterministic demo profile
+        run: python albright-wp/build.py --profile-dir profiles/madeleine-albright/
+
+      - name: Static integrity
+        run: node qa/integrity.mjs .
+
+      - name: Start local test servers
+        run: |
+          python -m http.server 8731 --directory site >/tmp/site.log 2>&1 &
+          python -m http.server 8741 --directory . >/tmp/root.log 2>&1 &
+          sleep 1
+
+      - name: Existing browser QA
+        run: |
+          for t in dark nojs interact pixels states targets reflow leak incomplete wp repro; do
+            echo "== $t =="
+            node qa/$t.mjs
+          done
+
+      - name: Generated profile QA
+        env:
+          PROFILE_URL: http://127.0.0.1:8741/profiles/madeleine-albright/preview.html
+        run: node qa/profile-factory.mjs
