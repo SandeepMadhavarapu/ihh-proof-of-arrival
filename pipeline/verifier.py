@@ -7,19 +7,28 @@ from typing import Any, Dict, List
 
 from .llm import JSONClient
 from .schema import Claim, FetchStatus, ProfileDraft, Provenance, SentenceAudit, Verdict, VerificationReport
+from .researcher import validate_copy_shape
 
 
 def _now() -> str:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat()
 
 
-def _clearly_nonclaim(sentence: str) -> bool:
+def _clearly_nonclaim(sentence: str, subject_name: str = "") -> bool:
     s = sentence.strip()
     if not s:
         return True
-    if s.endswith("?"):
-        return True
     low = s.lower()
+    # Questions may skip evidence only when they look like genuinely open editorial prompts.
+    # A date, quotation, named subject, or interior proper noun is a cheap signal that the
+    # question embeds a factual premise and therefore still needs source support.
+    if s.endswith("?"):
+        subject_tokens = [t.lower() for t in re.findall(r"[A-Za-z][A-Za-z'-]+", subject_name) if len(t) > 2]
+        has_subject = any(t in low for t in subject_tokens)
+        has_date_or_quote = bool(re.search(r"\b(?:1[0-9]{3}|20[0-9]{2})\b|[\"“”]", s))
+        words = re.findall(r"[A-Za-z][A-Za-z'-]+", s)
+        has_inner_proper = any(w[:1].isupper() for w in words[1:])
+        return not (has_subject or has_date_or_quote or has_inner_proper)
     if low.startswith(("status: requires human sign-off", "no verified anchor photograph", "requires human sign-off")):
         return True
     first = re.sub(r"^[\"“‘(]+", "", s).split(" ", 1)[0].lower().rstrip(":,.!")
@@ -65,19 +74,19 @@ def extract_sentences(markdown: str) -> list[str]:
 
 
 class VerifierAgent:
-    def __init__(self, llm: JSONClient) -> None:
+    def __init__(self, llm: JSONClient, max_remediation_rounds: int = 1) -> None:
         self.llm = llm
+        self.max_remediation_rounds = max_remediation_rounds
 
-    async def run(self, draft: ProfileDraft) -> ProfileDraft:
-        sentences = extract_sentences(draft.copy_markdown)
-        source_blocks: list[str] = []
+    def _source_blocks(self, draft: ProfileDraft) -> list[str]:
+        blocks: list[str] = []
         for sid, src in draft.sources.items():
             if src.status == FetchStatus.RETRIEVED and src.text:
-                source_blocks.append(f"SOURCE {sid}\nURL: {src.url}\nTEXT:\n{src.text}")
-        if not source_blocks:
-            draft.failure_reason = "VerifierAgent has no retrieved source text"
-            return draft
+                blocks.append(f"SOURCE {sid}\nURL: {src.url}\nTEXT:\n{src.text}")
+        return blocks
 
+    async def _audit(self, draft: ProfileDraft, markdown: str, source_blocks: list[str]) -> VerificationReport | None:
+        sentences = extract_sentences(markdown)
         indexed = "\n".join(f"[{i+1}] {s}" for i, s in enumerate(sentences))
         system = """You are an adversarial museum fact verifier. You are independent from the researcher.
 Judge each supplied sentence ONLY against the retrieved source TEXT below, never against any
@@ -114,7 +123,7 @@ Temperature for this verifier is fixed by the caller at 0."""
         rows = result.get("sentences")
         if not isinstance(rows, list):
             draft.failure_reason = "VerifierAgent returned no sentences array"
-            return draft
+            return None
 
         by_index = {int(r.get("index", 0)): r for r in rows if str(r.get("index", "")).isdigit()}
         claims: list[Claim] = []
@@ -133,7 +142,7 @@ Temperature for this verifier is fixed by the caller at 0."""
             # Do not let the model bypass verification by labelling an ordinary declarative
             # sentence "editorial". Only an obviously non-assertive question/instruction or
             # build-status notice may skip evidence.
-            if not requires and not _clearly_nonclaim(sentence):
+            if not requires and not _clearly_nonclaim(sentence, draft.name):
                 requires = True
             if not requires:
                 audits.append(SentenceAudit(f"T{i:03d}", sentence, False, "", str(r.get("reason", "editorial/nonclaim"))))
@@ -172,7 +181,7 @@ Temperature for this verifier is fixed by the caller at 0."""
             audits.append(SentenceAudit(f"T{i:03d}", sentence, True, claim.claim_id, ""))
 
         gate = bool(claims) and not malformed and all(c.verdict == Verdict.CONFIRMED for c in claims)
-        report = VerificationReport(
+        return VerificationReport(
             profile_name=draft.name,
             generated_at=_now(),
             gate_passed=gate,
@@ -180,9 +189,91 @@ Temperature for this verifier is fixed by the caller at 0."""
             sentence_audit=audits,
             notes=["Every CONFIRMED claim has an exact span mechanically checked against retrieved source text."] + malformed,
         )
-        draft.claims = claims
-        draft.sentence_audit = audits
+
+    async def _remediate(self, draft: ProfileDraft, markdown: str, report: VerificationReport, source_blocks: list[str]) -> str:
+        rejected = [c for c in report.claims if c.verdict != Verdict.CONFIRMED]
+        if not rejected:
+            return markdown
+        rejected_block = "\n".join(
+            f"- {c.claim_id} [{c.verdict.value}] {c.sentence}\n  reason: {c.verifier_reason}\n  evidence source: {c.evidence_source_id or '(none)'}\n  evidence span: {c.evidence_span or '(none)'}\n  suggested rewrite: {c.suggested_rewrite or '(none)'}"
+            for c in rejected
+        )
+        system = """You are the corrective editor inside an evidence-gated museum verifier.
+Return JSON only with one key: copy_markdown.
+
+The draft below failed verification. Fix ONLY the rejected factual claims. For each rejected claim:
+- remove it entirely when the profile can remain structurally valid without it; OR
+- replace it with a narrower statement supported directly by the retrieved source text.
+Never add a new factual claim, date, quotation, source, image, or historical detail.
+Never turn a failed fetch into an absence claim.
+Preserve the existing profile format exactly: H1, Status, Opening line, Credit, Standfirst, five
+narrative ## sections, one exact first-person quotation, five discussion questions, two activities.
+If a required slot cannot be truthfully filled from retrieved source text, return the original draft
+unchanged; the hard gate must fail rather than fabricate completeness.
+Do not change a sentence that was already CONFIRMED. Do not 'soften' an unsupported fact into vague
+language unless the new sentence is itself directly supported by source text.
+Temperature is fixed by the caller at 0."""
+        user = (
+            "FAILED CLAIMS:\n" + rejected_block +
+            "\n\nORIGINAL COPY.MD:\n" + markdown +
+            "\n\nRETRIEVED SOURCES:\n\n" + "\n\n=====\n\n".join(source_blocks)
+        )
+        result = await asyncio.to_thread(self.llm.complete_json, system, user, temperature=0.0)
+        revised = str(result.get("copy_markdown", "")).strip()
+        if not revised:
+            return markdown
+        revised += "\n"
+        if validate_copy_shape(revised):
+            return markdown
+        # A rejected sentence must actually disappear. Otherwise a second verifier call could
+        # merely disagree with its own first verdict and create a false 'repair'.
+        if any(c.sentence in extract_sentences(revised) for c in rejected):
+            return markdown
+        return revised
+
+    async def run(self, draft: ProfileDraft) -> ProfileDraft:
+        source_blocks = self._source_blocks(draft)
+        if not source_blocks:
+            draft.failure_reason = "VerifierAgent has no retrieved source text"
+            return draft
+
+        original = draft.copy_markdown
+        report = await self._audit(draft, original, source_blocks)
+        if report is None:
+            return draft
+        history: list[dict[str, str]] = []
+        current = original
+
+        for round_no in range(1, self.max_remediation_rounds + 1):
+            if report.gate_passed:
+                break
+            if any(note.startswith("sentence ") and "missing from verifier response" in note for note in report.notes):
+                break
+            rejected = [c for c in report.claims if c.verdict != Verdict.CONFIRMED]
+            revised = await self._remediate(draft, current, report, source_blocks)
+            if revised == current:
+                break
+            for c in rejected:
+                history.append({
+                    "claim_id": c.claim_id,
+                    "original_sentence": c.sentence,
+                    "action": "removed or rewritten by verifier remediation; revised draft independently re-audited",
+                    "round": str(round_no),
+                })
+            current = revised
+            report = await self._audit(draft, current, source_blocks)
+            if report is None:
+                return draft
+
+        report.removed_or_rewritten = history
+        if history:
+            report.notes.append(f"Verifier remediation changed {len(history)} rejected claim(s); the revised draft was independently re-audited.")
+        draft.copy_markdown = current
+        draft.claims = report.claims
+        draft.sentence_audit = report.sentence_audit
         draft.verification_report = report
-        if not gate:
+        if report.gate_passed:
+            draft.failure_reason = ""
+        else:
             draft.failure_reason = "VerifierAgent gate failed: one or more factual sentences are not CONFIRMED"
         return draft
