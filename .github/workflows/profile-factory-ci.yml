@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install --no-save playwright axe-core
           npx playwright install --with-deps chromium
-          echo "CHROMIUM=$(node -e \"const {chromium}=require('playwright'); process.stdout.write(chromium.executablePath())\")" >> "$GITHUB_ENV"
+          node -e 'const {chromium}=require("playwright"); console.log("CHROMIUM="+chromium.executablePath())' >> "$GITHUB_ENV"
 
       - name: Offline Python tests
         run: python -m unittest discover -s tests -v
