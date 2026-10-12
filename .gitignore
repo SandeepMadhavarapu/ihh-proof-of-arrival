@@ -1,0 +1,17 @@
+# Profile Factory secrets and build-time caches
+.env
+.env.*
+!.env.example
+OPENAI_API_KEY
+*.key
+*.pem
+.profile-factory-cache/
+pipeline-cache/
+**/.profile-factory-cache/
+
+# Local test/browser output
+node_modules/
+qa-out/
+.DS_Store
+__pycache__/
+*.pyc

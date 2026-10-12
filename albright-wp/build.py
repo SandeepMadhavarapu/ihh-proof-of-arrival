@@ -6,8 +6,20 @@ Single source of truth: the editorial text lives in copy.md, the source set live
 in media-manifest.csv. Run `python3 build.py` after editing either.
 Paths resolve relative to this file.
 """
-import os, re, csv, html
+import os, re, csv, html, sys
 HERE=os.path.dirname(os.path.abspath(__file__))
+
+# Add-only generic path for Profile Factory outputs. The no-argument Albright path below is
+# intentionally left unchanged so qa/rebuild.sh can prove byte-identical regeneration.
+def _run_generic_profile(argv):
+    root=os.path.dirname(HERE)
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    from pipeline.generic_build import main as generic_main
+    return generic_main(argv)
+
+if "--profile-dir" in sys.argv[1:]:
+    raise SystemExit(_run_generic_profile(sys.argv[1:]))
 
 md=open(os.path.join(HERE,"copy.md"),encoding="utf-8").read()
 rows=list(csv.DictReader(open(os.path.join(HERE,"media-manifest.csv"),encoding="utf-8")))

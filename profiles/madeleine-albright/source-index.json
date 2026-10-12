@@ -1,0 +1,57 @@
+{
+  "S001": {
+    "source_id": "S001",
+    "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+    "status": "RETRIEVED",
+    "title": "Deterministic demo source snapshot",
+    "retrieved_at": "2026-10-13T00:00:00+00:00",
+    "content_type": "text/plain",
+    "sha256": "fixture-S001",
+    "error": "",
+    "from_cache": false
+  },
+  "S002": {
+    "source_id": "S002",
+    "url": "https://www.cbsnews.com/news/albright-renews-her-oath/",
+    "status": "RETRIEVED",
+    "title": "Deterministic demo source snapshot",
+    "retrieved_at": "2026-10-13T00:00:00+00:00",
+    "content_type": "text/plain",
+    "sha256": "fixture-S002",
+    "error": "",
+    "from_cache": false
+  },
+  "S003": {
+    "source_id": "S003",
+    "url": "https://tile.loc.gov/storage-services/service/gdc/gdcfindingaidpdfs/ms018034/ms018034.pdf",
+    "status": "RETRIEVED",
+    "title": "Deterministic demo source snapshot",
+    "retrieved_at": "2026-10-13T00:00:00+00:00",
+    "content_type": "text/plain",
+    "sha256": "fixture-S003",
+    "error": "",
+    "from_cache": false
+  },
+  "S004": {
+    "source_id": "S004",
+    "url": "https://www.washingtonpost.com/history/2022/03/23/madeleine-albright-jewish/",
+    "status": "RETRIEVED",
+    "title": "Deterministic demo source snapshot",
+    "retrieved_at": "2026-10-13T00:00:00+00:00",
+    "content_type": "text/plain",
+    "sha256": "fixture-S004",
+    "error": "",
+    "from_cache": false
+  },
+  "S005": {
+    "source_id": "S005",
+    "url": "https://jweekly.com/2012/08/31/prague-winter-a-searing-account-of-hidden-jewish-family-history/",
+    "status": "RETRIEVED",
+    "title": "Deterministic demo source snapshot",
+    "retrieved_at": "2026-10-13T00:00:00+00:00",
+    "content_type": "text/plain",
+    "sha256": "fixture-S005",
+    "error": "",
+    "from_cache": false
+  }
+}

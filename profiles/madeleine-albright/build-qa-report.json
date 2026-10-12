@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "static_errors": [
+    "browser QA dependencies unavailable; profile cannot be marked done"
+  ],
+  "commands": [
+    {
+      "command": "/opt/pyvenv/bin/python albright-wp/build.py --profile-dir profiles/madeleine-albright",
+      "returncode": 0,
+      "stdout": "generic profile written: $REPO/profiles/madeleine-albright/copy.html, $REPO/profiles/madeleine-albright/copy-full.md, $REPO/profiles/madeleine-albright/preview.html\n",
+      "stderr": ""
+    },
+    {
+      "command": "node qa/integrity.mjs .",
+      "returncode": 0,
+      "stdout": "  OK   no form can submit personal data by GET \n  OK   the story page collects nothing\n  OK   no href=\"#\" placeholder links (0)\n  OK   no sitemap <loc> asserts the live museum domain\n  OK   every sitemap <loc> is an absolute URL as the spec requires\n  OK   sitemap lists every page except 404 (10 vs 10)\n  OK   RIS no longer emits an undefined type tag\n  OK   RIS emits a defined type tag\n  OK   no un-retracted copyright claim in 404.html\n  OK   no un-retracted copyright claim in about.html\n  OK   no un-retracted copyright claim in accessibility.html\n  OK   no un-retracted copyright claim in albright.html\n  OK   no un-retracted copyright claim in index.html\n  OK   no un-retracted copyright claim in inductees.html\n  OK   no un-retracted copyright claim in method.html\n  OK   no un-retracted copyright claim in privacy.html\n  OK   no un-retracted copyright claim in rights.html\n  OK   no un-retracted copyright claim in share.html\n  OK   no un-retracted copyright claim in verify.html\n  OK   no un-retracted copyright claim in FINDINGS.md\n  OK   WordPress fragment contains zero script tags\n  OK   fragment loads no external resource\n  OK   fragment has 10+ source items\n  OK   INSTALL.md present\n  OK   media-manifest.csv present\n  OK   media fetch script present\n  OK   manifest states which files are absent\n  OK   manifest marks unverified long descriptions\n  OK   manifest preserves the commission's duplicate identification\n  OK   manifest marks the document nobody opened\n  OK   manifest alt_text column parsed (6 values)\n  OK   every alt text <=15 words and <=125 chars\n  OK   site weight is stated in the documentation (271 KB found)\n  OK   every stated site weight matches the shipped bytes (271 KB)\n  OK   no live <img> points at a missing file\n  OK   no absolute build-machine path in gen.py\n  OK   no absolute build-machine path in build.py\n\nALL 37 INTEGRITY CHECKS PASSED\n",
+      "stderr": ""
+    },
+    {
+      "command": "node -e require.resolve('playwright'); require.resolve('axe-core'); console.log('browser QA dependencies present')",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module 'axe-core'\nRequire stack:\n- $REPO/[eval]\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at Function.resolve (node:internal/modules/helpers:145:19)\n    at [eval]:1:40\n    at runScriptInThisContext (node:internal/vm:209:10)\n    at node:internal/process/execution:449:12\n    at [eval]-wrapper:6:24\n    at runScriptInContext (node:internal/process/execution:447:60)\n    at evalFunction (node:internal/process/execution:87:30)\n    at evalScript (node:internal/process/execution:99:3)\n    at node:internal/main/eval_string:74:3 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: [ '$REPO/[eval]' ]\n}\n\nNode.js v22.16.0\n"
+    }
+  ]
+}
