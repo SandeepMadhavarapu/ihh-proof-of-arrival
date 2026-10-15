@@ -4,7 +4,7 @@ import datetime as _dt
 import hashlib
 import html
 import json
-import mimetypes
+import os
 import re
 import shutil
 import subprocess
@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Callable, Optional, Tuple
 
 from .schema import FetchStatus, SourceDocument
+from .security import SecurityValidationError, validate_public_http_url
 
 
 class _TextExtractor(HTMLParser):
@@ -68,6 +69,20 @@ def _now() -> str:
     return _dt.datetime.now(_dt.timezone.utc).replace(microsecond=0).isoformat()
 
 
+def _atomic_write(path: Path, data: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp_name = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=str(path.parent))
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(data)
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp_name, path)
+    finally:
+        if os.path.exists(tmp_name):
+            os.unlink(tmp_name)
+
+
 def _parse_pdf(data: bytes) -> Tuple[str, str]:
     """Return (text, error). Never guesses when extraction is unavailable."""
     exe = shutil.which("pdftotext")
@@ -106,6 +121,12 @@ def extract_text(data: bytes, content_type: str, url: str) -> Tuple[str, str, st
         return "", "", "Retrieved content is binary/unsupported and was not converted to text"
 
 
+class _SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        validate_public_http_url(newurl, resolve_dns=True)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 class SourceFetcher:
     def __init__(
         self,
@@ -125,38 +146,54 @@ class SourceFetcher:
         k = self._key(url)
         return self.cache_dir / f"{k}.json", self.cache_dir / f"{k}.body"
 
-    def fetch(self, source_id: str, url: str) -> SourceDocument:
-        meta_path, body_path = self._paths(url)
-        if meta_path.exists():
+    def _cached(self, source_id: str, url: str, meta_path: Path, body_path: Path) -> SourceDocument | None:
+        if not meta_path.exists():
+            return None
+        try:
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
-            text = ""
+            if meta.get("url") != url:
+                raise ValueError("cached URL does not match cache key")
             status = FetchStatus(meta["status"])
-            # A previously retrieved PDF/binary may have been cached while its parser was
-            # unavailable. Re-parse cached bytes on every read so installing pdftotext later
-            # can turn UNPARSED into RETRIEVED without a network refetch.
-            if body_path.exists() and status in {FetchStatus.RETRIEVED, FetchStatus.UNPARSED}:
-                data = body_path.read_bytes()
-                title, text, parse_err = extract_text(data, meta.get("content_type", ""), url)
-                if text:
-                    status = FetchStatus.RETRIEVED
-                    if title and not meta.get("title"):
-                        meta["title"] = title
-                    meta["error"] = ""
-                elif parse_err:
-                    status = FetchStatus.UNPARSED
-                    meta["error"] = parse_err
-            return SourceDocument(
-                source_id=source_id,
-                url=url,
-                status=status,
-                title=meta.get("title", ""),
-                retrieved_at=meta.get("retrieved_at", ""),
-                content_type=meta.get("content_type", ""),
-                text=text,
-                sha256=meta.get("sha256", ""),
-                error=meta.get("error", ""),
-                from_cache=True,
-            )
+        except (OSError, json.JSONDecodeError, KeyError, ValueError) as exc:
+            return SourceDocument(source_id, url, FetchStatus.UNPARSED, retrieved_at=_now(), error=f"cache metadata invalid: {type(exc).__name__}", from_cache=True)
+
+        text = ""
+        if status in {FetchStatus.RETRIEVED, FetchStatus.UNPARSED}:
+            if not body_path.exists():
+                return SourceDocument(source_id, url, FetchStatus.UNPARSED, retrieved_at=meta.get("retrieved_at", ""), content_type=meta.get("content_type", ""), sha256=meta.get("sha256", ""), error="cache body missing; cached evidence not used", from_cache=True)
+            data = body_path.read_bytes()
+            expected = meta.get("sha256", "")
+            actual = _sha(data)
+            if not expected or actual != expected:
+                return SourceDocument(source_id, url, FetchStatus.UNPARSED, retrieved_at=meta.get("retrieved_at", ""), content_type=meta.get("content_type", ""), sha256=expected, error="cache SHA-256 mismatch; cached evidence not used", from_cache=True)
+            title, text, parse_err = extract_text(data, meta.get("content_type", ""), url)
+            if text:
+                status = FetchStatus.RETRIEVED
+                if title and not meta.get("title"):
+                    meta["title"] = title
+                meta["error"] = ""
+            elif parse_err:
+                status = FetchStatus.UNPARSED
+                meta["error"] = parse_err
+        return SourceDocument(
+            source_id=source_id,
+            url=url,
+            status=status,
+            title=meta.get("title", ""),
+            retrieved_at=meta.get("retrieved_at", ""),
+            content_type=meta.get("content_type", ""),
+            text=text,
+            sha256=meta.get("sha256", ""),
+            error=meta.get("error", ""),
+            from_cache=True,
+        )
+
+    def fetch(self, source_id: str, url: str) -> SourceDocument:
+        validate_public_http_url(url, resolve_dns=False)
+        meta_path, body_path = self._paths(url)
+        cached = self._cached(source_id, url, meta_path, body_path)
+        if cached is not None:
+            return cached
 
         req = urllib.request.Request(
             url,
@@ -167,17 +204,19 @@ class SourceFetcher:
         )
         try:
             if self._opener:
+                # Injected openers are for deterministic/offline tests; URL shape is still checked.
                 resp = self._opener(req, self.timeout)
             else:
-                resp = urllib.request.urlopen(req, timeout=self.timeout)
+                validate_public_http_url(url, resolve_dns=True)
+                opener = urllib.request.build_opener(_SafeRedirectHandler())
+                resp = opener.open(req, timeout=self.timeout)
             with resp:
                 data = resp.read()
                 content_type = resp.headers.get("Content-Type", "")
                 final_url = getattr(resp, "geturl", lambda: url)()
+            validate_public_http_url(final_url, resolve_dns=False)
             title, text, parse_err = extract_text(data, content_type, final_url)
             status = FetchStatus.RETRIEVED if text else FetchStatus.UNPARSED
-            err = parse_err
-            body_path.write_bytes(data)
             doc = SourceDocument(
                 source_id=source_id,
                 url=url,
@@ -187,10 +226,11 @@ class SourceFetcher:
                 content_type=content_type,
                 text=text,
                 sha256=_sha(data),
-                error=err,
+                error=parse_err,
                 from_cache=False,
             )
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as e:
+            _atomic_write(body_path, data)
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError, SecurityValidationError) as e:
             doc = SourceDocument(
                 source_id=source_id,
                 url=url,
@@ -209,5 +249,5 @@ class SourceFetcher:
             "sha256": doc.sha256,
             "error": doc.error,
         }
-        meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+        _atomic_write(meta_path, (json.dumps(meta, indent=2, ensure_ascii=False) + "\n").encode("utf-8"))
         return doc
