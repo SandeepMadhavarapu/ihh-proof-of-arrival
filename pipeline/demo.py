@@ -16,6 +16,7 @@ from .verifier import VerifierAgent
 REPO = Path(__file__).resolve().parents[1]
 DEMO_NAME = "Madeleine Albright"
 DEMO_SLUG = "madeleine-albright"
+DEMO_TITLE = "Deterministic offline demo source snapshot"
 DEMO_URLS = [
     "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
     "https://www.cbsnews.com/news/albright-renews-her-oath/",
@@ -43,7 +44,7 @@ class FixtureFetcher:
             source_id=source_id,
             url=url,
             status=FetchStatus.RETRIEVED,
-            title="Deterministic offline demo source snapshot",
+            title=DEMO_TITLE,
             retrieved_at="DETERMINISTIC-FIXTURE",
             content_type="text/plain",
             text=text,
@@ -69,7 +70,6 @@ class DemoJSONClient:
 
     @staticmethod
     def _evidence(unit: str) -> tuple[bool, str, str, str]:
-        # Return requires_evidence, source_id, exact span, provenance.
         editorial = {
             "Status: REQUIRES HUMAN SIGN-OFF",
             "Which source directly supports each factual sentence?",
@@ -103,7 +103,6 @@ class DemoJSONClient:
             "Today marks a new beginning in your lives and an ongoing chapter in the story of America which is, above all else, the story of immigrants.": ("S002", "Today marks a new beginning in your lives and an ongoing chapter in the story of America which is, above all else, the story of immigrants.", "QUOTATION"),
         }
         if unit not in mapping:
-            # Unknown units are rejected rather than conveniently confirmed.
             return True, "", "", "UNRESOLVED"
         sid, span, provenance = mapping[unit]
         return True, sid, span, provenance
@@ -123,10 +122,10 @@ class DemoJSONClient:
                     "source_id": f"S{i:03d}",
                     "kind": "text source",
                     "filename": "(text source - no file)",
-                    "title": "Deterministic demo source snapshot",
+                    "title": DEMO_TITLE,
                     "creator": "",
                     "date_created": "",
-                    "institution": "Source institution named by URL",
+                    "institution": "",
                     "stable_item_url": url,
                     "download_url": "",
                     "rights_statement_verbatim": "NOT LOCATED IN RETRIEVED SOURCE TEXT",
@@ -137,7 +136,7 @@ class DemoJSONClient:
                     "alt_text": "",
                     "long_description": "",
                     "long_description_status": "n/a - not an image",
-                    "gloss": "Source used by the deterministic pipeline demo.",
+                    "gloss": "",
                     "duplicate_or_original": "n/a",
                     "date_checked": "DETERMINISTIC FIXTURE",
                     "status": "FIXTURE SNAPSHOT — REQUIRES HUMAN RE-READ",
@@ -150,7 +149,7 @@ class DemoJSONClient:
             rows = []
             for index, unit in self._numbered_units(user):
                 requires, sid, span, provenance = self._evidence(unit)
-                verdict = "CONFIRMED" if requires and sid and span else ("UNSUPPORTED" if requires else "UNSUPPORTED")
+                verdict = "CONFIRMED" if requires and sid and span else "UNSUPPORTED"
                 rows.append({
                     "index": index,
                     "requires_evidence": requires,
