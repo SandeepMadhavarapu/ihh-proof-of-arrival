@@ -25,7 +25,16 @@ def rows_for(markdown, *, unsupported=None, fake_span_for=None, editorial_for=No
         elif s == editorial_for:
             rows.append({"index":i,"requires_evidence":False,"provenance":"UNRESOLVED","verdict":"UNSUPPORTED","evidence_source_id":"","evidence_span":"","reason":"editorial","suggested_rewrite":""})
         else:
-            span = "Ada arrived in 1899." if s == fake_span_for else ("Ada Example" if s == "Ada Example" else "Ada arrived in 1900.")
+            if s == fake_span_for:
+                span = "Ada arrived in 1899."
+            elif s == "Ada Example":
+                span = "Ada Example"
+            elif s == "I arrived in 1900.":
+                span = "I arrived in 1900."
+            elif s == "Quotation attribution: Fixture Archive":
+                span = "Fixture Archive"
+            else:
+                span = "Ada arrived in 1900."
             prov = "QUOTATION" if s == "I arrived in 1900." else "RECORD"
             rows.append({"index":i,"requires_evidence":True,"provenance":prov,"verdict":"CONFIRMED","evidence_source_id":"S001","evidence_span":span,"reason":"fixture support","suggested_rewrite":""})
     return rows
