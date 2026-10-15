@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,11 +38,49 @@ jobs:
           cmp /tmp/preview.before albright-wp/preview.html
           echo "Albright generated outputs are byte-identical"
 
-      - name: Rebuild deterministic demo profile
-        run: python albright-wp/build.py --profile-dir profiles/madeleine-albright/
+      - name: Run exact clean-rebuild harness from a fresh archive
+        run: |
+          git archive --format=zip --prefix=IHH-FINAL/ HEAD -o /tmp/IHH-FINAL.zip
+          bash qa/rebuild.sh /tmp/IHH-FINAL.zip
+
+      - name: Run deterministic end-to-end Profile Factory demo
+        run: |
+          python -m pipeline.demo
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('profiles/madeleine-albright')
+          state=json.loads((root/'profile-state.json').read_text())
+          qa=json.loads((root/'build-qa-report.json').read_text())
+          assert state['completed'] is True, state
+          assert state['verification_gate'] is True, state
+          assert qa['passed'] is True, qa
+          print('demo state: completed=true; verification=true; buildQA=true')
+          PY
 
       - name: Static integrity
         run: node qa/integrity.mjs .
+
+      - name: Static visitor-runtime and secret scan
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          files=[Path('profiles/madeleine-albright/copy.html'),Path('profiles/madeleine-albright/preview.html')]
+          for path in files:
+              text=path.read_text(encoding='utf-8')
+              assert not re.search(r'<script\b',text,re.I), path
+              assert not re.search(r'\bsrc=["\'](?:https?:)?//',text,re.I), path
+              assert 'api.openai.com' not in text.lower(), path
+              assert 'OPENAI_API_KEY' not in text, path
+          print('visitor artifacts: zero scripts, remote src, API endpoints, or key names')
+          PY
+          if git grep -nE 'sk-[A-Za-z0-9_-]{20,}' -- ':!*.md' ':!*.txt'; then
+            echo 'Potential committed API key found' >&2
+            exit 1
+          else
+            echo 'No committed sk-* style secret detected'
+          fi
 
       - name: Start local test servers
         run: |
@@ -61,3 +99,21 @@ jobs:
         env:
           PROFILE_URL: http://127.0.0.1:8741/profiles/madeleine-albright/preview.html
         run: node qa/profile-factory.mjs
+
+      - name: Upload deterministic demo evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile-factory-demo-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            profiles/madeleine-albright/copy.md
+            profiles/madeleine-albright/media-manifest.csv
+            profiles/madeleine-albright/copy.html
+            profiles/madeleine-albright/copy-full.md
+            profiles/madeleine-albright/preview.html
+            profiles/madeleine-albright/verification-report.json
+            profiles/madeleine-albright/source-index.json
+            profiles/madeleine-albright/profile-state.json
+            profiles/madeleine-albright/build-qa-report.json
+            profiles/madeleine-albright/handoff-log.jsonl
