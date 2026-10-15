@@ -33,11 +33,17 @@ def _safe_manifest_url(value: str, source_text: str, source_url: str, label: str
     except SecurityValidationError as exc:
         errors.append(f"row {row_no}: unsafe {label}: {exc}")
         return value
-    # Source rows may point at the source URL itself; other URLs must be literally present in the
-    # retrieved text so an LLM cannot invent a plausible-looking archival/download link.
     if value != source_url and value not in source_text:
         errors.append(f"row {row_no}: {label} is not the source URL and was not found in retrieved source text")
     return value
+
+
+def _require_source_span(value: str, source_text: str, label: str, errors: list[str], row_no: int, *, allowed: tuple[str, ...] = ()) -> None:
+    value = value.strip()
+    if not value or value in allowed:
+        return
+    if value not in source_text:
+        errors.append(f"row {row_no}: visitor-visible {label} is not an exact span of retrieved source text")
 
 
 class MediaRightsAgent:
@@ -69,6 +75,10 @@ retrieved seed source as a source row, plus only image/media candidates actually
 retrieved source text.
 
 HONESTY RULES:
+- Visitor-visible historical metadata is evidence, too. title may equal the retrieved TITLE metadata
+  or be an exact source-text span. Nonempty creator, date_created, institution, and gloss must be
+  copied as exact contiguous spans from retrieved source text; otherwise leave them empty.
+- gloss may be empty. Do not write a clever paraphrase that introduces unverified detail.
 - rights_statement_verbatim must be copied EXACTLY from retrieved source text. If no rights wording
   was located, use exactly `NOT LOCATED IN RETRIEVED SOURCE TEXT` and do not infer a license.
 - Never turn 'US government', 'publicly viewable', or a collection-level statement into a rights
@@ -114,6 +124,12 @@ for internal validation; it will not be written to CSV. Temperature is fixed at 
             src = draft.sources.get(sid)
             source_text = src.text if src and src.status == FetchStatus.RETRIEVED else ""
             source_url = src.url if src else ""
+
+            title = row["title"].strip()
+            if title and (not src or (title != src.title and title not in source_text)):
+                errors.append(f"row {i}: visitor-visible title is neither retrieved title metadata nor an exact source span")
+            for field in ("creator", "date_created", "institution", "gloss"):
+                _require_source_span(row[field], source_text, field, errors, i)
 
             rights = row["rights_statement_verbatim"].strip()
             if rights.startswith("TRANSCRIBED FROM RESEARCH NOTES"):
