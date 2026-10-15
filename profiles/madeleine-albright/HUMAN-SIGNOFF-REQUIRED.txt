@@ -1,2 +1,2 @@
-REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.
-The pipeline drafts and evidence-verifies claims, but a named human must still read the sources and finished page.
+PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.
+The pipeline evidence-gates claims and QA, but it can never mark a profile museum-ready.
