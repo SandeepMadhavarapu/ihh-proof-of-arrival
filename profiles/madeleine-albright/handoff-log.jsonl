@@ -1,8 +1,0 @@
-{"at": "2026-10-12T21:08:41+00:00", "sender": "Orchestrator", "receiver": "ResearcherAgent", "summary": "name=Madeleine Albright; seed_sources=5", "artifact_hashes": {}, "result": "START"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "ResearcherAgent", "receiver": "Orchestrator", "summary": "retrieved=5; total_sources=5", "artifact_hashes": {"draft_copy_sha256": "67cc808eeee6fad4fcdd11f69c6b76d02622a36af3d34c6010c8b82f66053467"}, "result": "PASS"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "Orchestrator", "receiver": "VerifierAgent", "summary": "independent sentence-level verification; researcher evidence hints excluded", "artifact_hashes": {}, "result": "START"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "VerifierAgent", "receiver": "Orchestrator", "summary": "claims=8; gate=True", "artifact_hashes": {}, "result": "PASS"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "Orchestrator", "receiver": "MediaRightsAgent", "summary": "build manifest from retrieved source text; rights wording exact-span checked", "artifact_hashes": {}, "result": "START"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "MediaRightsAgent", "receiver": "Orchestrator", "summary": "manifest_rows=5", "artifact_hashes": {}, "result": "PASS"}
-{"at": "2026-10-12T21:08:41+00:00", "sender": "Orchestrator", "receiver": "BuildQAAgent", "summary": "run generic build plus existing QA hard gates", "artifact_hashes": {}, "result": "START"}
-{"at": "2026-10-12T21:08:42+00:00", "sender": "BuildQAAgent", "receiver": "Orchestrator", "summary": "commands=3; qa_passed=False", "artifact_hashes": {}, "result": "FAIL"}
