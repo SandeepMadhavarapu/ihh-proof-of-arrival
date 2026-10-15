@@ -21,7 +21,10 @@ and a log of how every item was found. Start at `handover/INSTALL.md`.
 | `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `package_handover.sh`, `open_items.py`. |
 | `site/` | The optional demonstration site, including the Verification Desk exhibit and the four profiles in the site's design. |
 | `ledger/`, `site/FINDINGS.md` | The earlier audit of the live IHH site (factual errors found on its inductee pages). **Share privately and kindly.** |
-| `qa/` | Browser and static test harnesses. |
+| `qa/` | Browser and static test harnesses, including `profile-factory.mjs`. |
+| `pipeline/` | **Profile Factory** (Sandeep): a build-time tool that turns an inductee name and seed source URLs into an evidence-gated draft profile under `profiles/<slug>/`. See `pipeline/README.md`. |
+| `profiles/` | Profile Factory outputs only. Each stays **REQUIRES HUMAN SIGN-OFF**; its Albright demo is not a substitute for `inductees/albright/`. |
+| `tests/` | Offline Python tests for the Profile Factory's gates; no API key or network needed. |
 
 ## The four profiles, and the document at the heart of each
 
@@ -57,7 +60,23 @@ python3 -m http.server 8731 --directory site &  python3 -m http.server 8741 &
 node qa/integrity.mjs .
 for t in wp states dark nojs interact repro targets reflow leak; do node qa/$t.mjs || echo "FAILED: $t"; done
 bash qa/rebuild.sh                               # generated files match their sources
+
+# Profile Factory
+python3 -m unittest discover -s tests -v         # offline unit tests
+python3 -m pipeline.demo                         # deterministic demo, no API key or network
+node qa/profile-factory.mjs                      # QA of the generated demo profile
 ```
+
+## Profile Factory publication boundary
+
+The Profile Factory is intentionally stricter than a content generator. Its verifier audits
+visitor-facing factual copy against retrieved source text, requires exact evidence spans, and
+hard-fails unsupported material. The rights stage separately prevents unverified rights grants
+and image subjects. Build-time source/API activity never ships into the visitor page.
+
+Even after every machine gate passes, the maximum automated state is
+**PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF.** A person still needs to re-open live sources,
+review rights, fact-check the profile, inspect any images, and approve museum publication.
 
 ## Decisions worth knowing
 

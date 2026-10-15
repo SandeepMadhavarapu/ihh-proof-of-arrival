@@ -1,0 +1,108 @@
+name: Profile Factory CI
+
+on:
+  push:
+    branches: [feat/profile-factory, content/four-inductees, main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install local QA dependencies
+        run: |
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+          node -e 'const {chromium}=require("playwright"); console.log("CHROMIUM="+chromium.executablePath())' >> "$GITHUB_ENV"
+
+      - name: Offline Python tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Prove every generated profile and site page matches its sources
+        run: bash qa/rebuild.sh
+
+      - name: Run deterministic end-to-end Profile Factory demo
+        run: |
+          python -m pipeline.demo
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('profiles/madeleine-albright')
+          state=json.loads((root/'profile-state.json').read_text())
+          qa=json.loads((root/'build-qa-report.json').read_text())
+          assert state['completed'] is True, state
+          assert state['verification_gate'] is True, state
+          assert qa['passed'] is True, qa
+          print('demo state: completed=true; verification=true; buildQA=true')
+          PY
+          git diff --exit-code -- profiles/madeleine-albright/copy.md profiles/madeleine-albright/media-manifest.csv profiles/madeleine-albright/copy.html profiles/madeleine-albright/copy-full.md profiles/madeleine-albright/preview.html profiles/madeleine-albright/HUMAN-SIGNOFF-REQUIRED.txt
+
+      - name: Static integrity
+        run: node qa/integrity.mjs .
+
+      - name: Static visitor-runtime and secret scan
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          files=[Path('profiles/madeleine-albright/copy.html'),Path('profiles/madeleine-albright/preview.html')]
+          for path in files:
+              text=path.read_text(encoding='utf-8')
+              assert not re.search(r'<script\b',text,re.I), path
+              assert not re.search(r'\bsrc=["\'](?:https?:)?//',text,re.I), path
+              assert 'api.openai.com' not in text.lower(), path
+              assert 'OPENAI_API_KEY' not in text, path
+          print('visitor artifacts: zero scripts, remote src, API endpoints, or key names')
+          PY
+          if git grep -nE 'sk-[A-Za-z0-9_-]{20,}' -- ':!*.md' ':!*.txt'; then
+            echo 'Potential committed API key found' >&2
+            exit 1
+          else
+            echo 'No committed sk-* style secret detected'
+          fi
+
+      - name: Start local test servers
+        run: |
+          python -m http.server 8731 --directory site >/tmp/site.log 2>&1 &
+          python -m http.server 8741 --directory . >/tmp/root.log 2>&1 &
+          sleep 1
+
+      - name: Existing browser QA
+        run: |
+          for t in dark nojs interact pixels states targets reflow leak incomplete wp repro; do
+            echo "== $t =="
+            node qa/$t.mjs
+          done
+
+      - name: Generated profile QA and visual evidence
+        env:
+          PROFILE_URL: http://127.0.0.1:8741/profiles/madeleine-albright/preview.html
+        run: node qa/profile-factory.mjs
+
+      - name: Upload deterministic demo evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: profile-factory-demo-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            profiles/madeleine-albright/copy.md
+            profiles/madeleine-albright/media-manifest.csv
+            profiles/madeleine-albright/copy.html
+            profiles/madeleine-albright/copy-full.md
+            profiles/madeleine-albright/preview.html
+            profiles/madeleine-albright/verification-report.json
+            profiles/madeleine-albright/source-index.json
+            profiles/madeleine-albright/profile-state.json
+            profiles/madeleine-albright/build-qa-report.json
+            profiles/madeleine-albright/handoff-log.jsonl
+            qa-out/profile-factory/*.png
