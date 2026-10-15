@@ -259,3 +259,24 @@
 
   render();
 })();
+
+
+/* One-time gallery entrances. No hidden content, scroll interception, or requests. */
+(function(){
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || !('IntersectionObserver' in window)) return;
+  var items = document.querySelectorAll('.museum-home .hero-copy, .portrait-assembly, .museum-home > section:not(.arrival-hero), .museum-home .portrait-card');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('exhibit-enter');
+      observer.unobserve(entry.target);
+    });
+  }, {threshold:0.08});
+  items.forEach(function(item){observer.observe(item);});
+  motion.addEventListener('change', function(event){
+    if (!event.matches) return;
+    observer.disconnect();
+    items.forEach(function(item){item.classList.remove('exhibit-enter');});
+  });
+})();

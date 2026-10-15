@@ -28,6 +28,9 @@ for (const scheme of ['light','dark']){
     // expose every collapsed region and press every toggle, so no text escapes sampling
     await p.evaluate(()=>{document.querySelectorAll('details').forEach(d=>d.open=true);
       document.querySelectorAll('[aria-pressed]').forEach(btn=>{try{btn.click();}catch(e){}});});
+    // Toggle notifications temporarily cover underlying text. Sample after they clear,
+    // so the background belongs to the text being measured, not an overlay.
+    await p.waitForFunction(()=>!document.querySelector("[data-toast].show"));
     await p.waitForTimeout(250);
     const spots=await p.evaluate(()=>{
       const out=[];
