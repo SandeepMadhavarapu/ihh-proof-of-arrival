@@ -12,16 +12,16 @@ class FakeRightsLLM:
 
 
 BASE = {
-    "kind":"photograph","filename":"x.jpg","title":"Archive item","creator":"Archive","date_created":"2000",
-    "institution":"Archive","stable_item_url":"https://example.test/item","download_url":"","rights_statement_source":"item page",
+    "kind":"photograph","filename":"x.jpg","title":"","creator":"","date_created":"",
+    "institution":"","stable_item_url":"https://example.test/item","download_url":"","rights_statement_source":"item page",
     "our_rights_determination":"","our_reasoning":"","required_credit":"","long_description":"","gloss":"","duplicate_or_original":"original",
     "date_checked":"2026-10-12","status":"NOT DOWNLOADED","recommendation":"REVIEW"
 }
 
 
-def draft(text="Rights: Use permitted with credit.", url="https://example.test/item"):
+def draft(text="Rights: Use permitted with credit.", url="https://example.test/item", title=""):
     d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
-    d.sources={"S001":SourceDocument("S001",url,FetchStatus.RETRIEVED,text=text)}
+    d.sources={"S001":SourceDocument("S001",url,FetchStatus.RETRIEVED,title=title,text=text)}
     return d
 
 
@@ -37,6 +37,19 @@ class MediaRightsTests(unittest.TestCase):
         row=dict(BASE, source_id="S001", rights_statement_verbatim="Public domain.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
         asyncio.run(MediaRightsAgent(FakeRightsLLM([row])).run(d))
         self.assertIn("rights wording", d.failure_reason)
+
+    def test_visitor_visible_metadata_must_be_retrieved_not_invented(self):
+        d=draft(text="Archive item. Rights: Use permitted with credit.", title="Archive item")
+        ok=dict(BASE, source_id="S001", title="Archive item", rights_statement_verbatim="Rights: Use permitted with credit.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
+        asyncio.run(MediaRightsAgent(FakeRightsLLM([ok])).run(d))
+        self.assertEqual(d.failure_reason, "")
+
+        d2=draft(text="Archive item. Rights: Use permitted with credit.", title="Archive item")
+        invented=dict(ok, title="Invented exhibition title", creator="Invented Curator", gloss="A dramatic historical turning point.")
+        asyncio.run(MediaRightsAgent(FakeRightsLLM([invented])).run(d2))
+        self.assertIn("visitor-visible title", d2.failure_reason)
+        self.assertIn("visitor-visible creator", d2.failure_reason)
+        self.assertIn("visitor-visible gloss", d2.failure_reason)
 
     def test_retrieved_source_cannot_be_silently_omitted(self):
         d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
