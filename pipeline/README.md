@@ -8,6 +8,7 @@
 - **Verifier independence.** Researcher provenance hints are not proof. The verifier receives retrieved source text directly and runs at `temperature=0`.
 - **Exact evidence is mandatory.** `CONFIRMED` is mechanically downgraded unless the verifier names a retrieved source and provides a nonempty exact contiguous source span that is literally present in that source. Semantic support is still an LLM judgment, so human review remains mandatory.
 - **Every visitor-facing factual surface is in scope.** The verification stream includes the H1 identity, narrative headings, body sentences, quotation text, quotation attribution, factual premises in questions/activities, and other factual copy. Pure structure/build-status language may be classified non-factual.
+- **Visitor-visible manifest metadata is evidence too.** A generated source-card title must come from retrieved title metadata or an exact source span. Nonempty creator, date, institution, and gloss fields must be exact retrieved spans; otherwise they remain empty. This prevents the post-verifier media/rights stage from introducing fabricated historical metadata.
 - **Source text is untrusted data.** Researcher, verifier, and rights prompts explicitly forbid obeying instructions embedded inside source material. Offline tests plant a prompt-injection string and require the unsupported claim to remain rejected.
 - **One evidence-only remediation pass.** Rejected material may be removed or narrowly rewritten from retrieved evidence once; the revised draft must then survive a fresh audit. Remaining unsupported/contradicted/omitted material blocks the build.
 - **No silent partial verification.** Verification and rights review have explicit source-size ceilings. If the evidence set exceeds them, the pipeline fails rather than truncating source text and pretending the audit was complete.
@@ -39,7 +40,7 @@ VerifierAgent
   ↓
 MediaRightsAgent
   - emits the existing manifest schema
-  - exact-span rights checks
+  - exact-span rights and visitor-visible metadata checks
   - URL, filename, subject and alt-text guardrails
   ↓
 copy.md + media-manifest.csv + verification-report.json
@@ -100,13 +101,14 @@ https://example.org/primary-record
 https://example.org/credible-secondary-source
 ```
 
-Then set the API key in your shell only:
+Then set the API key and an explicit currently supported model id in your shell only:
 
 ```sh
 export OPENAI_API_KEY='...'
-# Optional. Current default:
-export OPENAI_MODEL='gpt-5.6-sol'
+export OPENAI_MODEL='your-current-supported-model-id'
 ```
+
+There is intentionally **no hard-coded production model default**. Model availability changes over time; requiring `OPENAI_MODEL` or `--model` prevents a once-valid default from silently aging into a broken production path. The selected model must support the parameters used by this pipeline, including verifier calls at `temperature=0`.
 
 Run:
 
@@ -115,6 +117,16 @@ python -m pipeline.run \
   --name "Inductee Name" \
   --sources urls.txt \
   --out profiles/inductee-name/
+```
+
+or pass the model explicitly:
+
+```sh
+python -m pipeline.run \
+  --name "Inductee Name" \
+  --sources urls.txt \
+  --out profiles/inductee-name/ \
+  --model 'your-current-supported-model-id'
 ```
 
 `--out` must resolve to exactly one direct child of `profiles/`, and its directory name must equal the slug generated from `--name`. Nested directories, traversal, `albright-wp/`, and arbitrary absolute destinations are rejected in both the CLI/orchestrator and generic builder.
@@ -139,7 +151,7 @@ python albright-wp/build.py --profile-dir profiles/inductee-name/
 
 The generic path derives the name, opening, credit/source note, standfirst, five narrative sections, first-person quotation/attribution, discussion material, source register, and optional source note from that profile's own `copy.md` and `media-manifest.csv`. It does not copy the Albright-only NARA `445648831` anchor, `Prague Winter` lookup, or 1998 State Department deviation onto another inductee.
 
-The generic visual treatment deliberately keeps the repo's existing archival DNA: paper tones, editorial serif type, burgundy/rust accent, restrained rules, native `<details>`, explicit evidence flags, and source cards. It adds no runtime script or external visual dependency.
+The generic visual treatment deliberately keeps the repo's existing archival DNA: warm paper tones, editorial serif type, burgundy/rust accent, restrained rules, native `<details>`, explicit evidence flags, deliberate missing-image states, and source cards. The redesign adds hierarchy and provenance clarity without adding JavaScript, an external font, a framework, or any remote visual dependency.
 
 ## Offline tests
 
@@ -155,12 +167,14 @@ The suite includes falsifiable attacks on:
 - fake/nonexistent evidence spans;
 - factual headings and quotation attribution;
 - factual premises hidden in questions;
+- status-prefix attempts to disguise historical claims as build notices;
 - source-text prompt injection;
 - remediation followed by mandatory fresh re-audit;
 - exact output containment;
 - private/local URL fetches;
-- corrupted cache bodies / SHA mismatch;
+- corrupted or missing cache bodies / SHA mismatch;
 - invented or unsafe manifest URLs;
+- invented visitor-visible source metadata;
 - media path traversal;
 - unconfirmed image subjects;
 - non-exact rights wording; and
@@ -176,7 +190,7 @@ In an environment with the browser QA dependencies installed:
 python -m pipeline.demo
 ```
 
-The run succeeds only when verification and every relevant build/browser QA hard gate pass. The demo proves orchestration and failure gates; it does **not** prove source freshness or substitute for a live production API/source run. Human re-reading of live sources remains required.
+The run succeeds only when verification and every relevant build/browser QA hard gate pass. Run-specific JSON/log evidence is generated during the run and uploaded by CI rather than committed as a stale snapshot. The demo proves orchestration and failure gates; it does **not** prove source freshness or substitute for a live production API/source run. Human re-reading of live sources remains required.
 
 ## QA
 
@@ -194,7 +208,7 @@ done
 PROFILE_URL=http://127.0.0.1:8741/profiles/madeleine-albright/preview.html node qa/profile-factory.mjs
 ```
 
-CI additionally archives the current checkout and runs the repo's exact `qa/rebuild.sh` clean-rebuild harness, then runs the deterministic demo and asserts `completed=true`, `verification_gate=true`, and BuildQA `passed=true` on that CI run.
+CI additionally archives the current checkout and runs the repo's exact `qa/rebuild.sh` clean-rebuild harness, then runs the deterministic demo and asserts `completed=true`, `verification_gate=true`, and BuildQA `passed=true` on that CI run. The generated-profile browser harness covers light/dark axe checks, no-JS/static-runtime assertions, print, reduced motion, non-inline target sizing, and reflow at 320/360/375/390/412/430/640/768/1024/1280/1440px, and it captures desktop/mobile screenshots for visual inspection.
 
 ## Honest limitations
 
@@ -205,7 +219,8 @@ Passing automated gates is not museum publication approval. The following remain
 - a nontechnical IHH volunteer handoff test;
 - human item-level rights re-verification;
 - independent human fact checking;
-- real-host Lighthouse/network performance; and
+- real-host Lighthouse/network performance;
+- a real production OpenAI/source run using the operator's selected model and API key; and
 - any archival image that has not actually been downloaded and viewed.
 
 A real LLM can still make a semantic judgment error even when it quotes a real source span. That is why the pipeline stops at **human review required**.
