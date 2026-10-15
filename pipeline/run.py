@@ -71,12 +71,11 @@ def main() -> int:
     ap.add_argument("--name", required=True)
     ap.add_argument("--sources", required=True, help="text file containing one seed URL per line")
     ap.add_argument("--out", required=True, help="must be exactly profiles/<slug>/")
-    ap.add_argument("--model", default=None, help="OpenAI model; defaults to OPENAI_MODEL or gpt-5.6-sol")
+    ap.add_argument("--model", default=None, help="required unless OPENAI_MODEL is set")
     args = ap.parse_args()
     try:
         return asyncio.run(_main(args))
     except Exception as e:
-        # Never print environment contents, request headers, or unredacted provider errors.
         safe = redact_text(f"{type(e).__name__}: {e}")
         print("Profile Factory error: " + safe, file=sys.stderr)
         return 2
