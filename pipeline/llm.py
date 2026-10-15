@@ -12,6 +12,11 @@ from .security import redact_text
 OPENAI_RESPONSES_ENDPOINT = "https://api.openai.com/v1/responses"
 
 
+class _NoAPIRedirects(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise RuntimeError("OpenAI API redirect refused; credentials remain at the fixed endpoint")
+
+
 class JSONClient(Protocol):
     def complete_json(self, system: str, user: str, *, temperature: float) -> Dict[str, Any]: ...
 
@@ -35,10 +40,12 @@ class OpenAIJSONClient:
         self._key = key
         self.model = selected.strip()
         self.endpoint = OPENAI_RESPONSES_ENDPOINT
-        self._opener = opener or urllib.request.urlopen
+        self._opener = opener or urllib.request.build_opener(_NoAPIRedirects()).open
 
     @staticmethod
     def _extract_text(data: Dict[str, Any]) -> str:
+        if not isinstance(data, dict) or data.get("status") != "completed" or data.get("error"):
+            raise RuntimeError("OpenAI response did not complete successfully")
         if isinstance(data.get("output_text"), str):
             return data["output_text"]
         parts: list[str] = []
@@ -48,6 +55,8 @@ class OpenAIJSONClient:
             for content in item.get("content", []) or []:
                 if isinstance(content, dict) and content.get("type") == "output_text" and isinstance(content.get("text"), str):
                     parts.append(content["text"])
+                elif isinstance(content, dict) and content.get("type") == "refusal":
+                    raise RuntimeError("OpenAI response refused the request")
         if not parts:
             raise RuntimeError("OpenAI response did not contain output text")
         return "\n".join(parts)
@@ -75,8 +84,10 @@ class OpenAIJSONClient:
         payload = {
             "model": self.model,
             "temperature": temperature,
+            "store": False,
+            "text": {"format": {"type": "json_object"}},
             "input": [
-                {"role": "system", "content": [{"type": "input_text", "text": system}]},
+                {"role": "system", "content": [{"type": "input_text", "text": system + "\nReturn one JSON object."}]},
                 {"role": "user", "content": [{"type": "input_text", "text": user}]},
             ],
         }

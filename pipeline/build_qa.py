@@ -47,6 +47,7 @@ class BuildQAAgent:
             list(args), cwd=self.repo_root, env=env or os.environ.copy(),
             capture_output=True, text=True, timeout=180
         )
+        print(f"QA {'PASS' if p.returncode == 0 else 'FAIL'}: {redact_text(' '.join(args))}", flush=True)
         return CommandResult(
             redact_text(" ".join(args)), p.returncode,
             redact_text(p.stdout), redact_text(p.stderr),
@@ -54,7 +55,14 @@ class BuildQAAgent:
 
     def _static_profile_checks(self, out_dir: Path) -> list[str]:
         errors: list[str] = []
-        html = (out_dir / "copy.html").read_text(encoding="utf-8")
+        html = "\n".join((out_dir / name).read_text(encoding="utf-8") for name in ("copy.html", "preview.html"))
+        if re.search(r"\bon[a-z]+\s*=|@import\b|url\s*\(", html, re.I):
+            errors.append("generated profile contains event handlers or CSS resource loads")
+        if "api.openai.com" in html.lower() or "OPENAI_API_KEY" in html or re.search(r"sk-[A-Za-z0-9_-]{20,}", html):
+            errors.append("generated profile contains an API endpoint or secret marker")
+        key = os.environ.get("OPENAI_API_KEY", "")
+        if key and key in html:
+            errors.append("generated profile contains the configured API secret")
         if re.search(r"<script\b", html, re.I):
             errors.append("generated profile contains a script element")
         if re.search(r"<(?:link|iframe|object|embed)\b", html, re.I):
@@ -91,15 +99,17 @@ class BuildQAAgent:
             return BuildQAResult(False, results, static_errors)
 
         site_server = subprocess.Popen(
-            [sys.executable, "-m", "http.server", "8731", "--directory", str(self.repo_root / "site")],
+            [sys.executable, "-m", "http.server", "8731", "--bind", "127.0.0.1", "--directory", str(self.repo_root / "site")],
             cwd=self.repo_root, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         )
         root_server = subprocess.Popen(
-            [sys.executable, "-m", "http.server", "8741", "--directory", str(self.repo_root)],
+            [sys.executable, "-m", "http.server", "8741", "--bind", "127.0.0.1", "--directory", str(self.repo_root)],
             cwd=self.repo_root, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         )
         try:
             time.sleep(0.8)
+            if any(proc.poll() is not None for proc in (site_server, root_server)):
+                return BuildQAResult(False, results, static_errors + ["QA server failed to bind; refusing to test another process's content"])
             env = os.environ.copy()
             env.setdefault("CHROMIUM", "/usr/bin/chromium")
             rel = out_dir.relative_to(self.repo_root).as_posix()

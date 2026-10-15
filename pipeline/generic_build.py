@@ -89,6 +89,7 @@ def _source_item(row: dict[str, str], profile_dir: Path) -> str:
 
     url, inst = _row_link(row)
     link = f'<a href="{E(url)}" rel="noopener noreferrer">{E(inst)}</a>' if url else E(inst)
+    metadata = " · ".join(value for value in (E(row.get("creator", "")), E(row.get("date_created", "")), link) if value)
     rights = row.get("rights_statement_verbatim", "").strip() or "NOT LOCATED IN RETRIEVED SOURCE TEXT"
     status = row.get("status", "").strip()
     desc_status = row.get("long_description_status", "").strip()
@@ -103,7 +104,7 @@ def _source_item(row: dict[str, str], profile_dir: Path) -> str:
 <h3 class="src-h">{E(row.get("title", "Untitled source"))}</h3>
 <p class="gloss">{E(row.get("gloss", ""))}</p>
 <div class="evidence-flags">{flags_html}</div>
-<p class="meta">{E(row.get("creator", ""))} · {E(row.get("date_created", ""))} · {link}</p>
+<p class="meta">{metadata}</p>
 <p class="rights"><b>Rights wording recorded</b><span>{E(rights)}</span></p></div></li>'''
 
 
@@ -115,7 +116,7 @@ def build_profile(profile_dir: Path, repo_root: Path | None = None) -> list[Path
     if not md_path.exists() or not man_path.exists():
         raise FileNotFoundError("generic build requires copy.md and media-manifest.csv in profile directory")
     md = md_path.read_text(encoding="utf-8")
-    with man_path.open(encoding="utf-8") as fh:
+    with man_path.open(encoding="utf-8", newline="\n") as fh:
         rows = list(csv.DictReader(fh))
     if not rows:
         raise ValueError("media-manifest.csv contains no source rows")
@@ -138,7 +139,7 @@ def build_profile(profile_dir: Path, repo_root: Path | None = None) -> list[Path
     else:
         anchor_html = '''<div class="anchor-placeholder" role="img" aria-label="No verified anchor photograph supplied">
 <span class="archive-label">ARCHIVAL IMAGE</span><strong>NO VERIFIED IMAGE SUPPLIED</strong>
-<span class="archive-rule" aria-hidden="true"></span><span>The profile remains evidence-complete without inventing one.</span></div>'''
+<span class="archive-rule" aria-hidden="true"></span><span>No historical image has been invented.</span></div>'''
 
     secs = "\n".join(
         f'''<details class="sec"{" open" if i == 0 else ""}><summary><span class="sec-no">0{i+1}</span><h3>{E(t)}</h3></summary><p>{E(b)}</p></details>'''
@@ -164,7 +165,7 @@ def build_profile(profile_dir: Path, repo_root: Path | None = None) -> list[Path
 .ihh-profile h1{{font-size:clamp(2.7rem,8vw,5.7rem);line-height:.98;font-weight:400;letter-spacing:-.035em;margin:.1rem 0 1.1rem;max-width:11ch}}
 .ihh-profile .opening{{font-size:clamp(1.12rem,2.3vw,1.38rem);line-height:1.5;max-width:35rem;margin:0;color:var(--mut)}}
 .ihh-profile figure.anchor{{margin:0;border-bottom:1px solid var(--rule)}}.ihh-profile figure.anchor>img{{width:100%;max-height:72vh;object-fit:cover;display:block}}
-.ihh-profile .anchor-placeholder{{min-height:clamp(18rem,48vw,38rem);background:repeating-linear-gradient(135deg,var(--paper2),var(--paper2) 1px,var(--paper) 1px,var(--paper) 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:var(--mut)}}
+.ihh-profile .anchor-placeholder{{min-height:clamp(12rem,28vw,24rem);background:repeating-linear-gradient(135deg,var(--paper2),var(--paper2) 1px,var(--paper) 1px,var(--paper) 18px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:var(--mut)}}
 .ihh-profile .anchor-placeholder strong{{font:700 clamp(1rem,2vw,1.35rem)/1.2 system-ui,sans-serif;letter-spacing:.12em;color:var(--ink);margin:.5rem 0 1rem}}.ihh-profile .archive-rule{{width:min(18rem,60vw);height:1px;background:var(--acc);margin:0 0 1rem}}
 .ihh-profile figcaption{{font:400 .82rem/1.55 system-ui,sans-serif;color:var(--mut);padding:1rem 1.2rem 1.2rem;max-width:68rem;margin:auto}}
 .ihh-profile .standfirst{{font-size:clamp(1.25rem,3vw,1.65rem);line-height:1.5;margin:clamp(2.6rem,7vw,5rem) 0 2rem}}
@@ -179,13 +180,14 @@ def build_profile(profile_dir: Path, repo_root: Path | None = None) -> list[Path
 .ihh-profile .src-item{{min-width:0;background:var(--paper);border:1px solid var(--rule);box-shadow:0 .7rem 1.8rem var(--shadow);padding:1rem;display:flex;flex-direction:column;gap:.8rem}}.ihh-profile .src-body{{min-width:0}}
 .ihh-profile .src-h{{font-size:1.05rem;line-height:1.35;margin:.15rem 0 .55rem;display:block}}.ihh-profile .gloss{{font:400 .91rem/1.55 system-ui,sans-serif;margin:0 0 .8rem;color:var(--ink)}}.ihh-profile .meta{{font:400 .76rem/1.55 system-ui,sans-serif;color:var(--mut);margin:.65rem 0}}
 .ihh-profile .rights{{font:400 .75rem/1.48 system-ui,sans-serif;color:var(--mut);border-top:1px solid var(--rule);padding-top:.7rem;margin:.7rem 0 0}}.ihh-profile .rights b,.ihh-profile .rights span{{display:block}}.ihh-profile .rights b{{color:var(--ink);margin-bottom:.25rem}}
+.ihh-profile .meta a{{display:inline-flex;align-items:center;min-height:24px;min-width:24px;padding:.15rem 0}}
 .ihh-profile .kindmark{{display:inline-block;border:1px solid var(--rule);padding:.42rem .55rem;margin:0;width:max-content;font:700 .66rem/1 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--mut)}}
 .ihh-profile .th{{width:100%;height:auto;display:block;border:1px solid var(--rule)}}.ihh-profile .ph-th{{min-height:11rem;background:repeating-linear-gradient(135deg,var(--paper2),var(--paper2) 1px,var(--paper) 1px,var(--paper) 14px);border:1px dashed var(--acc);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:1rem}}.ihh-profile .ph-th strong{{font:700 .8rem/1.25 system-ui,sans-serif;letter-spacing:.08em}}.ihh-profile .ph-rule{{width:60%;height:1px;background:var(--rule);margin:.7rem}}.ihh-profile .ph-file{{font:400 .68rem/1.4 ui-monospace,monospace;color:var(--mut);overflow-wrap:anywhere}}
 .ihh-profile .evidence-flags{{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0}}.ihh-profile .evidence-flag{{border:1px solid var(--acc);padding:.28rem .42rem;font:700 .62rem/1.2 system-ui,sans-serif;color:var(--acc)}}
 .ihh-profile .questions{{padding-top:1rem}}.ihh-profile .questions ol{{padding-left:1.35rem}}.ihh-profile .questions li{{margin:.75rem 0}}.ihh-profile .final-status{{margin-top:3rem;padding-top:1.4rem;border-top:2px solid var(--ink)}}
 @media(max-width:430px){{.ihh-profile{{font-size:18px}}.ihh-profile h1{{font-size:clamp(2.5rem,14vw,4rem)}}.ihh-profile summary{{grid-template-columns:1.8rem 1fr auto}}.ihh-profile details.sec>p{{padding-left:2.45rem}}}}
 @media(prefers-reduced-motion:reduce){{.ihh-profile *{{scroll-behavior:auto!important;transition:none!important;animation:none!important}}}}
-@media print{{.ihh-profile{{--paper:#fff;--paper2:#fff;--ink:#000;--mut:#333;--rule:#777;--acc:#000;--shadow:transparent}}.ihh-profile details>*:not(summary){{display:block!important}}.ihh-profile .src-item{{break-inside:avoid;box-shadow:none}}}}
+@media print{{.ihh-profile{{--paper:#fff;--paper2:#fff;--ink:#000;--mut:#333;--rule:#777;--acc:#000;--shadow:transparent}}.ihh-profile details::details-content{{content-visibility:visible!important;height:auto!important}}.ihh-profile details>*:not(summary){{display:block!important}}.ihh-profile .src-item{{break-inside:avoid;box-shadow:none}}}}
 </style>
 <header class="mast"><div class="w"><p class="status">{E(status)}</p><p class="eyebrow">IMMIGRANT HALL OF HONOR · EVIDENCE-GATED PROFILE</p><h1>{E(name)}</h1><p class="opening">{E(opening)}</p></div></header>
 <figure class="anchor">{anchor_html}<figcaption><b>Credit / source note:</b> {E(credit)}</figcaption></figure>
@@ -197,16 +199,16 @@ def build_profile(profile_dir: Path, repo_root: Path | None = None) -> list[Path
 </main></div>'''
 
     copy_html = profile_dir / "copy.html"
-    copy_html.write_text(out, encoding="utf-8")
+    copy_html.write_text(out, encoding="utf-8", newline="\n")
     full = md.rstrip() + "\n\n---\n\n## Source register\n\n" + "\n\n".join(
         f"**{r.get('item_no','')}. {r.get('title','Untitled source')}**\n\n{r.get('gloss','')}\n\n{r.get('stable_item_url','')}\n\nRights wording recorded: {r.get('rights_statement_verbatim','NOT LOCATED IN RETRIEVED SOURCE TEXT')}"
         for r in rows
-    ) + "\n\n---\n\n**PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.**\n"
+    ) + "\n\n---\n\n**DRAFT — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION. See build-qa-report.json for automated QA results.**\n"
     full_path = profile_dir / "copy-full.md"
-    full_path.write_text(full, encoding="utf-8")
+    full_path.write_text(full, encoding="utf-8", newline="\n")
     preview = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Preview — {E(name)}</title><style>body{{margin:0;font-family:Verdana,sans-serif;background:#fff;color:#333}}.host{{background:#222;color:#fff;padding:10px;font:14px/1.4 system-ui,sans-serif}}</style></head><body><div class="host">Simulated WordPress host · static profile preview</div>{out}<div class="host">End of generated block</div></body></html>'''
     preview_path = profile_dir / "preview.html"
-    preview_path.write_text(preview, encoding="utf-8")
+    preview_path.write_text(preview, encoding="utf-8", newline="\n")
     return [copy_html, full_path, preview_path]
 
 

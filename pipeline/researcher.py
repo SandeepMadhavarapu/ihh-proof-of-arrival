@@ -77,6 +77,8 @@ class ResearcherAgent:
                     draft.failure_reason = f"ResearcherAgent source excerpts exceed {MAX_TOTAL_RESEARCH_CHARS} characters; reduce seed set"
                     return draft
                 truncated = len(s.text) > len(txt)
+                s.research_excerpt_chars = len(txt)
+                s.research_truncated = truncated
                 blocks.append(
                     f"<SOURCE id=\"{s.source_id}\">\nURL: {s.url}\nTITLE: {s.title}\nSHA256: {s.sha256}\n"
                     f"EXCERPT_STATUS: {'TRUNCATED FOR RESEARCH DRAFT ONLY' if truncated else 'COMPLETE'}\n"

@@ -57,6 +57,7 @@ jobs:
           assert qa['passed'] is True, qa
           print('demo state: completed=true; verification=true; buildQA=true')
           PY
+          git diff --exit-code -- profiles/madeleine-albright/copy.md profiles/madeleine-albright/media-manifest.csv profiles/madeleine-albright/copy.html profiles/madeleine-albright/copy-full.md profiles/madeleine-albright/preview.html profiles/madeleine-albright/HUMAN-SIGNOFF-REQUIRED.txt
 
       - name: Static integrity
         run: node qa/integrity.mjs .

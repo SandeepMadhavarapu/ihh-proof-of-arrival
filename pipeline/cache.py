@@ -3,10 +3,12 @@ from __future__ import annotations
 import datetime as _dt
 import hashlib
 import html
+import http.client
 import json
 import os
 import re
 import shutil
+import socket
 import subprocess
 import tempfile
 import urllib.error
@@ -127,6 +129,54 @@ class _SafeRedirectHandler(urllib.request.HTTPRedirectHandler):
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
+def _public_connection(address, timeout=socket._GLOBAL_DEFAULT_TIMEOUT, source_address=None):
+    """Resolve once and connect to that validated numeric address (no DNS rebind gap)."""
+    host, port = address
+    infos = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
+    if not infos:
+        raise SecurityValidationError("source hostname resolved to no addresses")
+    for family, kind, proto, _, sockaddr in infos:
+        ip = sockaddr[0]
+        validate_public_http_url(f"http://[{ip}]/" if ":" in ip else f"http://{ip}/")
+    last_error = None
+    for family, kind, proto, _, sockaddr in infos:
+        sock = socket.socket(family, kind, proto)
+        try:
+            if timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+                sock.settimeout(timeout)
+            if source_address:
+                sock.bind(source_address)
+            sock.connect(sockaddr)
+            return sock
+        except OSError as exc:
+            last_error = exc
+            sock.close()
+    raise last_error or OSError("no source address connected")
+
+
+class _PublicHTTPConnection(http.client.HTTPConnection):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._create_connection = _public_connection
+
+
+class _PublicHTTPSConnection(http.client.HTTPSConnection):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # HTTPSConnection retains the original hostname for TLS SNI/certificate validation.
+        self._create_connection = _public_connection
+
+
+class _PublicHTTPHandler(urllib.request.HTTPHandler):
+    def http_open(self, req):
+        return self.do_open(_PublicHTTPConnection, req)
+
+
+class _PublicHTTPSHandler(urllib.request.HTTPSHandler):
+    def https_open(self, req):
+        return self.do_open(_PublicHTTPSConnection, req, context=self._context)
+
+
 class SourceFetcher:
     def __init__(
         self,
@@ -151,10 +201,12 @@ class SourceFetcher:
             return None
         try:
             meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            if not isinstance(meta, dict) or any(not isinstance(v, str) for v in meta.values()):
+                raise ValueError("cache metadata must be an object of strings")
             if meta.get("url") != url:
                 raise ValueError("cached URL does not match cache key")
             status = FetchStatus(meta["status"])
-        except (OSError, json.JSONDecodeError, KeyError, ValueError) as exc:
+        except (OSError, json.JSONDecodeError, KeyError, ValueError, TypeError) as exc:
             return SourceDocument(source_id, url, FetchStatus.UNPARSED, retrieved_at=_now(), error=f"cache metadata invalid: {type(exc).__name__}", from_cache=True)
 
         text = ""
@@ -208,7 +260,10 @@ class SourceFetcher:
                 resp = self._opener(req, self.timeout)
             else:
                 validate_public_http_url(url, resolve_dns=True)
-                opener = urllib.request.build_opener(_SafeRedirectHandler())
+                opener = urllib.request.build_opener(
+                    urllib.request.ProxyHandler({}), _SafeRedirectHandler(),
+                    _PublicHTTPHandler(), _PublicHTTPSHandler(),
+                )
                 resp = opener.open(req, timeout=self.timeout)
             with resp:
                 data = resp.read()

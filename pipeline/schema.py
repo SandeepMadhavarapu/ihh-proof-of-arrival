@@ -39,6 +39,8 @@ class SourceDocument:
     sha256: str = ""
     error: str = ""
     from_cache: bool = False
+    research_excerpt_chars: int = 0
+    research_truncated: bool = False
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
@@ -141,6 +143,8 @@ class ProfileDraft:
             "out_dir": f"profiles/{self.slug}/",
             "status": self.status,
             "completed": self.completed,
+            "human_signoff": "REQUIRED",
+            "museum_ready": False,
             "failure_reason": self.failure_reason,
             "source_count": len(self.sources),
             "claim_count": len(self.claims),

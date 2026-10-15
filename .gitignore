@@ -15,3 +15,11 @@ qa-out/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Per-run evidence is uploaded by CI; never commit a stale successful run.
+profiles/*/build-qa-report.json
+profiles/*/handoff-log.jsonl
+profiles/*/profile-state.json
+profiles/*/source-index.json
+profiles/*/verification-report.json
+profiles/*/research-draft.REJECTED.md

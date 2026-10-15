@@ -28,7 +28,7 @@ class LLMClientTests(unittest.TestCase):
             captured['url']=req.full_url
             captured['headers']=dict(req.header_items())
             captured['body']=json.loads(req.data.decode('utf-8'))
-            return FakeResponse({'output_text':'{"ok":true}'})
+            return FakeResponse({'status':'completed','output':[{'type':'message','content':[{'type':'output_text','text':'{"ok":true}'}]}]})
         with patch.dict(os.environ, {
             'OPENAI_API_KEY':'sk-test-secret',
             'OPENAI_MODEL':'test-model-id',
@@ -42,10 +42,13 @@ class LLMClientTests(unittest.TestCase):
         self.assertEqual(captured['url'],OPENAI_RESPONSES_ENDPOINT)
         self.assertNotIn('sk-test-secret', json.dumps(captured['body']))
         self.assertEqual(captured['body']['model'],'test-model-id')
+        self.assertEqual(captured['body']['temperature'],0)
+        self.assertEqual(captured['body']['text'],{'format':{'type':'json_object'}})
+        self.assertFalse(captured['body']['store'])
         self.assertIn('Bearer sk-test-secret', captured['headers'].get('Authorization',''))
 
     def test_http_error_never_echoes_api_key_or_full_provider_body(self):
-        secret='sk-super-secret-123456789'
+        secret='sk-' + 'super-secret-123456789'  # synthetic key assembled only inside this test
         body=json.dumps({'error':{'type':'invalid_request_error','message':f'bad request for {secret}; '+('x'*1000)}}).encode()
         def opener(req, timeout):
             raise urllib.error.HTTPError(req.full_url,401,'Unauthorized',{},io.BytesIO(body))

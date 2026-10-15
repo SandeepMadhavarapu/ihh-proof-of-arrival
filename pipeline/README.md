@@ -224,3 +224,13 @@ Passing automated gates is not museum publication approval. The following remain
 - any archival image that has not actually been downloaded and viewed.
 
 A real LLM can still make a semantic judgment error even when it quotes a real source span. That is why the pipeline stops at **human review required**.
+
+## Release hardening contract (2026-10-15)
+
+A rerun invalidates previous completion and QA before research. Early returns and exceptions persist a failed state; `human_signoff` remains `REQUIRED` and `museum_ready` remains false. A successful automated run is not a human approval. Files left from an earlier run are diagnostic history; the current profile-state and QA report govern completion.
+
+Source connections resolve and validate every address, then connect to the selected numeric address without a second DNS lookup. Redirects undergo the same checks. Ambient HTTP proxies are disabled for source retrieval, and HTTPS retains hostname certificate verification. Cache corruption is never accepted as evidence. Research excerpt sizes and truncation are recorded in source-index.json; verification and rights review reject sources over 60,000 characters or sets over 180,000 characters rather than silently reviewing a subset.
+
+The Responses client requires an explicit model, sends JSON mode through `text.format`, disables response storage, requires completed response status, and rejects refusals and redirects. The selected model must support JSON output and the required temperature settings (verification uses 0); unsupported configurations fail rather than retrying with weaker verification. No live model compatibility is asserted by offline transport fixtures. Contract reference: https://developers.openai.com/api/docs/guides/structured-outputs?api-mode=responses
+
+CI rejects committed demo copy/manifest/HTML drift after an end-to-end rebuild. Four screenshots cover desktop and mobile in both color schemes. The print gate tests disclosures without opening them programmatically.

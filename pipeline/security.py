@@ -41,13 +41,17 @@ def validate_public_http_url(
     DNS resolution is optional so unit tests with injected offline openers do not perform network
     calls. Real SourceFetcher calls enable it before making a request and on every redirect.
     """
-    if not isinstance(url, str) or not url or _CONTROL.search(url):
+    if not isinstance(url, str) or not url or _CONTROL.search(url) or "\\" in url or any(c.isspace() for c in url):
         raise SecurityValidationError("source URL is empty or contains control characters")
     p = urlsplit(url)
     if p.scheme.lower() not in {"http", "https"}:
         raise SecurityValidationError("source URL must use http or https")
     if not p.hostname:
         raise SecurityValidationError("source URL is missing a hostname")
+    try:
+        p.port
+    except ValueError as exc:
+        raise SecurityValidationError("source URL has an invalid port") from exc
     if p.username or p.password:
         raise SecurityValidationError("source URL may not contain credentials")
     host = p.hostname.rstrip(".").lower()
@@ -95,6 +99,8 @@ def validate_media_filename(filename: str) -> str:
         raise SecurityValidationError("media filename contains unsafe characters")
     if filename in {".", ".."} or "/" in filename or "\\" in filename:
         raise SecurityValidationError("media filename must be a basename only")
+    if filename.endswith((".", " ")) or re.match(r"^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\.|$)", filename, re.I):
+        raise SecurityValidationError("media filename is reserved or ambiguous on Windows")
     if Path(filename).name != filename:
         raise SecurityValidationError("media filename must not contain a path")
     return filename
@@ -104,6 +110,8 @@ def ensure_profile_output(repo_root: Path, out_dir: Path, expected_slug: str | N
     """Require exactly repo/profiles/<slug>, with no nesting or symlink escape."""
     repo = Path(repo_root).resolve()
     profiles = (repo / "profiles").resolve()
+    if profiles != repo / "profiles":
+        raise SecurityValidationError("profiles directory may not redirect outside its lexical path")
     out = Path(out_dir).resolve()
     if out.parent != profiles:
         raise SecurityValidationError(f"output must be exactly {profiles}/<slug>; got {out}")
@@ -111,12 +119,17 @@ def ensure_profile_output(repo_root: Path, out_dir: Path, expected_slug: str | N
         raise SecurityValidationError(f"output directory name must match slug '{expected_slug}'")
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", out.name):
         raise SecurityValidationError("profile slug contains unsupported characters")
+    if out.exists() and any(child.is_symlink() for child in out.iterdir()):
+        raise SecurityValidationError("profile artifacts may not be symlinks")
     return out
 
 
 def ensure_media_path(profile_dir: Path, filename: str) -> Path:
     validate_media_filename(filename)
-    media_root = (Path(profile_dir).resolve() / "media").resolve()
+    expected_root = Path(profile_dir).resolve() / "media"
+    media_root = expected_root.resolve()
+    if media_root != expected_root:
+        raise SecurityValidationError("media directory may not be a symlink escape")
     target = (media_root / filename).resolve()
     if target.parent != media_root:
         raise SecurityValidationError("media path escaped the profile media directory")

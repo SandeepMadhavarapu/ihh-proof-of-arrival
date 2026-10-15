@@ -49,41 +49,41 @@ She was raised as a Roman Catholic and was never told by her parents or anyone e
 
 ## Source register
 
-**1. Deterministic demo source snapshot**
+**1. Deterministic offline demo source snapshot**
 
-Source used by the deterministic pipeline demo.
+
 
 https://history.state.gov/departmenthistory/people/albright-madeleine-korbel
 
 Rights wording recorded: NOT LOCATED IN RETRIEVED SOURCE TEXT
 
-**2. Deterministic demo source snapshot**
+**2. Deterministic offline demo source snapshot**
 
-Source used by the deterministic pipeline demo.
+
 
 https://www.cbsnews.com/news/albright-renews-her-oath/
 
 Rights wording recorded: NOT LOCATED IN RETRIEVED SOURCE TEXT
 
-**3. Deterministic demo source snapshot**
+**3. Deterministic offline demo source snapshot**
 
-Source used by the deterministic pipeline demo.
+
 
 https://tile.loc.gov/storage-services/service/gdc/gdcfindingaidpdfs/ms018034/ms018034.pdf
 
 Rights wording recorded: NOT LOCATED IN RETRIEVED SOURCE TEXT
 
-**4. Deterministic demo source snapshot**
+**4. Deterministic offline demo source snapshot**
 
-Source used by the deterministic pipeline demo.
+
 
 https://www.washingtonpost.com/history/2022/03/23/madeleine-albright-jewish/
 
 Rights wording recorded: NOT LOCATED IN RETRIEVED SOURCE TEXT
 
-**5. Deterministic demo source snapshot**
+**5. Deterministic offline demo source snapshot**
 
-Source used by the deterministic pipeline demo.
+
 
 https://jweekly.com/2012/08/31/prague-winter-a-searing-account-of-hidden-jewish-family-history/
 
@@ -91,4 +91,4 @@ Rights wording recorded: NOT LOCATED IN RETRIEVED SOURCE TEXT
 
 ---
 
-**REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.**
+**DRAFT — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION. See build-qa-report.json for automated QA results.**

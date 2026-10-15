@@ -11,6 +11,10 @@ for(const scheme of ['light','dark']){
   const p=await ctx.newPage(); const errs=[]; p.on('pageerror',e=>errs.push(String(e)));
   await p.goto(U,{waitUntil:'load'}); await p.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));
   await p.screenshot({path:`qa-out/profile-factory/desktop-${scheme}.png`,fullPage:true});
+  await p.setViewportSize({width:390,height:900});
+  await p.screenshot({path:`qa-out/profile-factory/mobile-390-${scheme}.png`,fullPage:true});
+  ck(await p.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth+1),scheme+': mobile has no horizontal overflow');
+  await p.setViewportSize({width:1280,height:900});
   await p.addScriptTag({path:'node_modules/axe-core/axe.min.js'});
   const axeResult=await p.evaluate(async()=>{const r=await axe.run(document.querySelector('.ihh-profile'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa','best-practice']}});return {v:r.violations.map(x=>x.id+'×'+x.nodes.length),incomplete:r.incomplete.map(x=>x.id+'×'+x.nodes.length)}});
   ck(axeResult.v.length===0,scheme+': generated profile axe clean '+(axeResult.v.length?JSON.stringify(axeResult.v):''));
@@ -72,9 +76,10 @@ for(const w of [320,360,375,390,412,430,640,768,1024,1280,1440]){
 }
 
 {
-  const ctx=await b.newContext({viewport:{width:800,height:1000}}); const p=await ctx.newPage(); await p.goto(U,{waitUntil:'load'}); await p.emulateMedia({media:'print'}); await p.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+  const ctx=await b.newContext({viewport:{width:800,height:1000}}); const p=await ctx.newPage(); await p.goto(U,{waitUntil:'load'}); await p.emulateMedia({media:'print'});
   const printOver=await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1);
   ck(!printOver,'generated profile print layout has no horizontal overflow');
+  ck(await p.locator('details.sec > p').evaluateAll(nodes=>nodes.every(e=>e.checkVisibility())), 'print exposes all five narrative sections without toggling disclosures');
   await ctx.close();
 }
 
