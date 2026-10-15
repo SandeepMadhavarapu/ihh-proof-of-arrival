@@ -1,30 +1,22 @@
 #!/usr/bin/env bash
-# Clean-rebuild check: extract the shipped ZIP somewhere else, run both generators,
-# and prove the generated files in the package match what the generators produce.
+# Clean-rebuild check: run every generator and prove the generated files in the repo match
+# what the generators produce from their sources (cases.py, copy.md, media-manifest.csv).
+#   bash qa/rebuild.sh
 set -eu
-ZIP="${1:?usage: rebuild.sh /path/to/IHH-FINAL.zip}"
+R="$(cd "$(dirname "$0")/.." && pwd)"
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
-unzip -q "$ZIP" -d "$T"
-R="$T/IHH-FINAL"
-echo "extracted to $R"
-cp "$R/site/verify.html" "$T/verify.before"
-cp "$R/albright-wp/copy.html"     "$T/copy.before"
-cp "$R/albright-wp/copy-full.md"  "$T/full.before"
-cp "$R/albright-wp/preview.html"  "$T/preview.before"
-python3 "$R/site/gen.py"        >/dev/null
-python3 "$R/albright-wp/build.py" >/dev/null
+GEN=(site/verify.html site/albright.html site/lamarr.html site/pei.html site/cruz.html)
+for n in albright lamarr pei cruz; do
+  GEN+=("inductees/$n/copy.html" "inductees/$n/copy-full.md" "inductees/$n/preview.html")
+done
+for f in "${GEN[@]}"; do mkdir -p "$T/$(dirname "$f")"; cp "$R/$f" "$T/$f"; done
+python3 "$R/site/gen.py" >/dev/null
+python3 "$R/tools/build_profile.py" --all >/dev/null
+python3 "$R/tools/build_site_pages.py" >/dev/null
 fail=0
-if diff -q "$T/verify.before" "$R/site/verify.html" >/dev/null; then
-  echo "  OK   site/verify.html regenerates byte-identically"
-else echo "  FAIL site/verify.html drifted from cases.py"; fail=1; fi
-if diff -q "$T/copy.before" "$R/albright-wp/copy.html" >/dev/null; then
-  echo "  OK   albright-wp/copy.html regenerates byte-identically"
-else echo "  FAIL albright-wp/copy.html drifted from copy.md / the manifest"; fail=1; fi
-if diff -q "$T/full.before" "$R/albright-wp/copy-full.md" >/dev/null; then
-  echo "  OK   albright-wp/copy-full.md regenerates byte-identically"
-else echo "  FAIL albright-wp/copy-full.md drifted"; fail=1; fi
-if diff -q "$T/preview.before" "$R/albright-wp/preview.html" >/dev/null; then
-  echo "  OK   albright-wp/preview.html regenerates byte-identically"
-else echo "  FAIL albright-wp/preview.html drifted"; fail=1; fi
-echo "  OK   both generators ran from a path they had never seen"
-exit $fail
+for f in "${GEN[@]}"; do
+  if diff -q "$T/$f" "$R/$f" >/dev/null; then echo "  OK   $f regenerates byte-identically"
+  else echo "  FAIL $f drifted from its sources"; fail=1; fi
+done
+echo
+[ $fail = 0 ] && echo "ALL GENERATED FILES MATCH THEIR SOURCES" || { echo "REBUILD CHECK FAILED"; exit 1; }

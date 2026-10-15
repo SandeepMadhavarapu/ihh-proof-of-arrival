@@ -1,0 +1,7 @@
+node_modules/
+# Full-resolution originals and whole-file page dumps stay local; every one can be re-downloaded
+# from the download_url / stable_item_url columns of the inductee's media-manifest.csv.
+inductees/*/media/*
+!inductees/*/media/web/
+inductees/*/sources/nara-*/
+handover/*.zip

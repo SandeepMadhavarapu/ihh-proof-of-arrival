@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 let bad=0;
 /* SC 1.4.10 Reflow: no two-dimensional scrolling at 320 CSS px wide.
@@ -26,7 +26,7 @@ for (const [label,w] of [['320px (reflow)',320],['640px (=200% zoom)',640]]){
     if (horiz){bad++;n++; console.log('  ✗',label,pg,'scrollWidth',r.scrollW,'>',r.clientW, JSON.stringify(r.over));}
     await ctx.close();
   }
-  console.log((n?'':'  ✓ ')+label+': '+(n?'FAILURES ABOVE':'all 11 pages reflow with no horizontal scrolling'));
+  console.log((n?'':'  ✓ ')+label+': '+(n?'FAILURES ABOVE':'all '+PAGES.length+' pages reflow with no horizontal scrolling'));
 }
 await b.close();
 process.exit(bad?1:0);

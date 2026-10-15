@@ -1,7 +1,8 @@
 import { chromium } from 'playwright';
-const U='http://127.0.0.1:8741/albright-wp/preview.html';
+const IND=['albright','lamarr','pei','cruz'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
-const pass=[],fail=[]; const ck=(c,m)=>(c?pass:fail).push(m);
+const pass=[],fail=[]; let who=''; const ck=(c,m)=>(c?pass:fail).push(who+': '+m);
+for (const n of IND){ who=n; const U='http://127.0.0.1:8741/inductees/'+n+'/preview.html';
 
 for (const scheme of ['light','dark']){
   const ctx=await b.newContext({viewport:{width:1280,height:900},colorScheme:scheme});
@@ -77,7 +78,7 @@ ck(a.h1===1, 'exactly one h1');
 ck(a.scripts===0, 'ZERO script elements in the fragment');
 ck(a.externalRefs===0, 'zero external RESOURCES loaded (got '+a.externalRefs+')');
 ck(a.sourceLinks>=10, a.sourceLinks+' evidence links point at real sources');
-ck(a.fillme===4, 'byline placeholders are visibly marked for the volunteer (got '+a.fillme+')');
+ck(a.fillme===2, 'byline placeholders are visibly marked for the volunteer (got '+a.fillme+')');
 
 /* scoping: the hostile theme must not reach in, and the fragment must not reach out */
 const scope=await p.evaluate(()=>{
@@ -114,6 +115,7 @@ for (const w of [320,360,390,430,768,1280]){
   ck(!over, 'no horizontal scrolling at '+w+'px');
 }
 await ctx.close();
+}
 await b.close();
 pass.forEach(m=>console.log('  ✓ '+m));
 if(fail.length){console.log(''); fail.forEach(m=>console.log('  ✗ '+m)); console.log('\n'+fail.length+' FAILED of '+(pass.length+fail.length)); process.exit(1);}

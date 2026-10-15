@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 let bad=0;
 
@@ -36,7 +36,7 @@ for (const [label,w,h] of [['phone 375',375,812],['desktop 1280',1280,900]]){
     if(r.length){bad+=r.length; console.log('  ✗ '+label+' '+pg+':'); r.forEach(x=>console.log('      '+x));}
     await ctx.close();
   }
-  console.log('  '+(bad?'':'✓ ')+label+', no JavaScript: '+(bad?'see above':'all 11 pages fully readable and navigable'));
+  console.log('  '+(bad?'':'✓ ')+label+', no JavaScript: '+(bad?'see above':'all '+PAGES.length+' pages fully readable and navigable'));
 }
 await b.close();
 console.log(bad? '\nNO-JS FAULTS: '+bad : '\nNo content is hidden behind JavaScript on any page, at either width.');

@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 let bad=0;
 for (const pg of PAGES){
@@ -26,6 +26,6 @@ for (const pg of PAGES){
   if(out.length){bad+=out.length; console.log(pg+':'); out.forEach(o=>console.log('   ',o.t,'"'+o.txt+'"',o.c,o.w+'x'+o.h));}
   await ctx.close();
 }
-console.log(bad? '\nUNDERSIZED NON-INLINE TARGETS: '+bad : '\nEvery non-inline target on all 11 pages is at least 24x24.');
+console.log(bad? '\nUNDERSIZED NON-INLINE TARGETS: '+bad : '\nEvery non-inline target on all '+PAGES.length+' pages is at least 24x24.');
 await b.close();
 process.exit(bad?1:0);

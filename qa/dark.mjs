@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 let total=0;
 for (const scheme of ['light','dark']){
@@ -23,7 +23,7 @@ for (const scheme of ['light','dark']){
     total+=r.v.reduce((a,x)=>a+x.n,0);
     await ctx.close();
   }
-  console.log((n?'  ':'  ✓ ')+scheme+' scheme, toggles pressed, disclosures open: '+(n?n+' violations':'0 violations across 11 pages'));
+  console.log((n?'  ':'  ✓ ')+scheme+' scheme, toggles pressed, disclosures open: '+(n?n+' violations':'0 violations across '+PAGES.length+' pages'));
 }
 console.log('\nTOTAL: '+total);
 await b.close(); process.exit(total?1:0);

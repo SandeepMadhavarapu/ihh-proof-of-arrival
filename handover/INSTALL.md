@@ -1,0 +1,73 @@
+# Putting an inductee profile on the Immigrant Hall of Honor website
+
+Written for somebody who does not write code. Each profile should take about twenty minutes.
+Nothing here needs a plugin, a developer, or an account beyond your WordPress login.
+
+There is one folder per inductee: `albright/`, `lamarr/`, `pei/`, `cruz/`. Each holds:
+
+| File | What it is |
+|---|---|
+| `preview.html` | Open this in a browser first. It is exactly what the page will look like. |
+| `copy.html` | The page itself. You paste this into WordPress. |
+| `copy-full.md` | The same page as plain text, for when Custom HTML is not available (see Step 4). |
+| `media/web/` | The images the page uses, already resized for the web. |
+| `media-manifest.csv` | Every source and image: where it came from, its rights wording, its credit line. |
+| `search-log.csv` | How each item was found, including the searches that found nothing. |
+
+---
+
+## Step 1 — Put a name on it (two minutes, do it first)
+
+Open `copy.html` in any text editor. Search for `[NAME OF THE PERSON WHO CHECKED THIS]` and
+`[MONTH YEAR]`. They are highlighted yellow on the page so they cannot be missed.
+
+Replace them with the name of the person who has read the page and checked it against its
+sources, and the month you publish. **Do not publish with the placeholder still in it.** The
+byline is a promise that a named person stands behind the facts.
+
+## Step 2 — Upload the images (five minutes)
+
+1. In WordPress, go to **Media → Add New** and upload every file in `media/web/`.
+2. For each file, copy the **File URL** WordPress gives you.
+3. In `copy.html`, find each `src="media/web/<filename>"` and replace the part in quotes with
+   that URL. Each filename appears once or twice.
+
+Do not rename the files, and do not use "Save for Web" to shrink them further; the credits
+and rights are in the manifest, and the files are already sized for the web.
+
+## Step 3 — Paste it in (three minutes)
+
+1. Create a new page and title it with the inductee's name.
+2. Add one **Custom HTML** block.
+3. Paste the entire contents of `copy.html` into it.
+4. Preview. If your theme already shows the page title as a large heading, open the block and
+   delete the single line `<h1>…</h1>` near the top, so the page has only one main heading.
+5. Publish.
+
+## Step 4 — If Custom HTML is not available
+
+Some WordPress.com plans strip Custom HTML. Use `copy-full.md` instead and rebuild the page
+with ordinary blocks (Image, Heading, Paragraph, Quote, List). **Use `copy-full.md`, not any
+shorter file**: it carries every source, rights statement and credit line, and the page must
+not go up without them.
+
+---
+
+## What the page does and does not do
+
+- **No JavaScript.** The expanding sections are the browser's own `<details>` element.
+- **Scoped styling.** Everything is inside `.ihh-profile`; it cannot restyle the rest of the site.
+- **Nothing loaded from elsewhere** except the images you upload.
+- **Light and dark mode** follow the visitor's settings. **Printing** opens every section.
+
+## Before you publish each profile, check its open items
+
+Each `media-manifest.csv` has a `status` and `recommendation` column. Anything marked
+**CONFIRM** or **FOLLOW UP** needs a person with a web browser for five minutes — usually to
+re-read a rights statement on a site that blocked our automated tools. The list is in
+`OPEN-ITEMS.md` next to this file.
+
+## The one favour we ask
+
+Whoever does this: write down how long it took and every point where you had to stop and work
+something out. Nobody has yet run this handoff with a real volunteer.

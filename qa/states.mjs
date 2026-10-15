@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
-const SITE='http://127.0.0.1:8731/', WP='http://127.0.0.1:8741/albright-wp/preview.html';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+const SITE='http://127.0.0.1:8731/', WP='http://127.0.0.1:8741/inductees/albright/preview.html';
+const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 const pass=[],fail=[]; const ck=(c,m)=>(c?pass:fail).push(m);
 
@@ -61,8 +61,8 @@ for (const w of [320,360,390,430,768,1280,1600]){
   await p.goto(WP,{waitUntil:'load'});
   await p.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));
   await p.waitForTimeout(90);
-  if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1)) over.push('albright-wp');
-  ck(over.length===0, w+'px: no horizontal scrolling on 11 pages + the WP fragment '+(over.length?JSON.stringify(over):''));
+  if(await p.evaluate(()=>document.documentElement.scrollWidth>document.documentElement.clientWidth+1)) over.push('inductees/albright');
+  ck(over.length===0, w+'px: no horizontal scrolling on '+PAGES.length+' pages + the WP fragment '+(over.length?JSON.stringify(over):''));
   await ctx.close();
 }
 

@@ -97,21 +97,7 @@ ck(beforeEnter===afterEnter, 'Enter in the search field keeps the filter ("'+bef
 ck(!p2.url().includes('?'), 'Enter does not reload the page');
 await ctx2.close();
 
-/* The exhibit modal: Space belongs to the focused button; Tab stays trapped */
-const ctx3=await b.newContext({viewport:{width:1280,height:900}});
-const p3=await ctx3.newPage();
-await p3.goto('http://127.0.0.1:8731/albright.html',{waitUntil:'load'});
-await p3.getByRole('button',{name:'Exhibit mode',exact:true}).click(); await p3.waitForTimeout(250);
-await p3.getByRole('button',{name:'Close (Esc)',exact:true}).focus();
-await p3.keyboard.press('Space'); await p3.waitForTimeout(250);
-ck(!(await p3.evaluate(()=>document.querySelector('.ihh-stage').classList.contains('on'))),
-   'Space on the Close button closes the modal');
-await p3.getByRole('button',{name:'Exhibit mode',exact:true}).click(); await p3.waitForTimeout(250);
-await p3.keyboard.press('Shift+Tab'); await p3.waitForTimeout(150);
-ck(await p3.evaluate(()=>!!document.activeElement.closest('.ihh-stage')),
-   'Shift+Tab from the opening focus stays inside the modal');
-await p3.keyboard.press('Escape');
-await ctx3.close();
+/* The exhibit modal belonged to the old albright.html; generated profile pages have no modal. */
 
 /* axe again with every drawer forced open — the state axe cannot see by default */
 await p.evaluate(()=>document.querySelectorAll('details').forEach(d=>d.open=true));

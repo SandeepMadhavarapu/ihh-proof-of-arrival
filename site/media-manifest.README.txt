@@ -1,8 +1,8 @@
 There is no manifest in this directory.
 
-The single authoritative item-level rights register for this project is
+The authoritative item-level rights registers for this project are
 
-    ../albright-wp/media-manifest.csv
+    ../inductees/<name>/media-manifest.csv   (one per inductee)
 
 A second copy used to live here. It had drifted: it named different subjects for the same
 NARA identifiers, gave a different date for the commission, and still claimed the rights

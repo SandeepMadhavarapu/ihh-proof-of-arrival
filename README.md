@@ -1,12 +1,13 @@
-# Immigrant Hall of Honor — repaired package
+# Immigrant Hall of Honor: four inductee profiles
 
-**The required deliverable is `albright-wp/`.** It is one finished Madeleine Albright
-profile that a non-technical volunteer can paste into WordPress. Start at
-`albright-wp/INSTALL.md`.
+Content for the Immigrant Hall of Honor (IHH), Challenge+X Fall 2026. The brief asks for:
+the **types** of content that would make the inductee pages more engaging; **four inductees**
+to research; a **documented search**; the **best content** selected; and everything in a
+**format IHH can transfer** to its site.
 
-**`site/` is the optional standalone demonstration site.** It is not the deliverable and
-nothing depends on it. It exists because it holds the audit of the live IHH website and an
-interactive exhibit built from that audit.
+**The deliverable is `handover/`.** It holds one ready-to-paste WordPress profile for each of
+Madeleine Albright, Hedy Lamarr, I. M. Pei and Celia Cruz, with images, a rights register,
+and a log of how every item was found. Start at `handover/INSTALL.md`.
 
 ---
 
@@ -14,72 +15,55 @@ interactive exhibit built from that audit.
 
 | Path | What it is |
 |---|---|
-| **`albright-wp/`** | **The deliverable.** `copy.html` (paste this), `copy.md` (editorial text only), `copy-full.md` (**the complete page as Markdown** - use this one if Custom HTML blocks are unavailable), `INSTALL.md` (20-minute volunteer guide), `media-manifest.csv` (item-level rights register), `media/` (empty — see below), `build.py`, `verify-media.py`, `preview.html` |
-| `site/` | The optional 11-page site, including the Verification Desk |
-| `ledger/` | **`CLOSURE-LEDGER.md` / `.json` / `.csv`** — 116 findings with reproduction, root cause, fix and evidence, plus the raw evidence of what could not be done |
-| `qa/` | 12 browser/static harnesses plus `rebuild.sh`. Run them; they are the evidence |
+| **`handover/`** | **The deliverable.** One folder per inductee (`copy.html` to paste, `preview.html`, `copy-full.md`, `media/web/`, `media-manifest.csv`, `search-log.csv`), plus `INSTALL.md`, `OPEN-ITEMS.md` and a zip of the lot. Generated; do not edit by hand. |
+| `inductees/<name>/` | The sources of each profile: `copy.md` (the text), `media-manifest.csv` (every source and image, rights word for word), `search-log.csv`, full-resolution originals in `media/`, saved source documents in `sources/`. **Edit here.** |
+| `templates/` | For the next inductee: `copy-template.md`, `media-manifest.csv`, `search-log.csv`, `where-to-search.md`, `rights-guide.md`, `profile.css`. |
+| `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `package_handover.sh`, `open_items.py`. |
+| `site/` | The optional demonstration site, including the Verification Desk exhibit and the four profiles in the site's design. |
+| `ledger/`, `site/FINDINGS.md` | The earlier audit of the live IHH site (factual errors found on its inductee pages). **Share privately and kindly.** |
+| `qa/` | Browser and static test harnesses. |
 
-## Three things to know before you use any of it
+## The four profiles, and the document at the heart of each
 
-**1. There are no image files.** Six archival photographs are specified at item level in
-`albright-wp/media-manifest.csv` with their stable URLs. The machine that built this package
-is refused by `catalog.archives.gov` and `diplomacy.state.gov` at its network's egress proxy
-(HTTP 403 on CONNECT. `ledger/fetch-attempts.txt` is the authoritative record: five attempted URLs, all returning 000. `ledger/proxy-denial.txt` describes how the proxy refuses these hosts and warns that its own rolling raw log may have rotated past the archival entries — so fetch-attempts.txt, not the raw log, is the evidence.) Run
-`albright-wp/media/fetch-media.sh` from any ordinary network, then
-`python3 albright-wp/verify-media.py` to check what you got.
+| Inductee | Anchor | Key primary source found |
+|---|---|---|
+| Madeleine Albright | 2016 naturalization ceremony photo, National Archives | Her full 1998 speech to new citizens, recovered from the State Department's archived site: "in America, but not of America" |
+| Hedy Lamarr | Her 1942 patent drawing, signed "Hedy Kiesler Markey" | A 1945 letter in the National Archives: her lawyer, on behalf of "a British subject" in Beverly Hills, asks the U.S. Army to protect her father's Austrian oil fields from the Red Army |
+| I. M. Pei | 1935 Shanghai visa form with his photograph, age 18 | His complete 139-page immigration file: twelve years on student visas, then a trip to Canada to re-enter as a permanent resident |
+| Celia Cruz | Her sequin stage dress, Smithsonian NMAAHC (CC0) | President Clinton's 1994 National Medal of Arts remarks; Congress.gov proof that the "Congressional Gold Medal" on many websites never passed |
 
-**2. One document central to this story has never been opened by anyone who worked on it.**
-The 1998 State Department press statement about Albright's oath renewal is unreachable from
-here on every route including web archives. Earlier versions of this work quoted it at length
-anyway. They should not have. The profile now says so on its face, and uses a wire report of
-the same ceremony instead. Its date is also unresolved — filename and page title say 10
-November 1998, almost every citation says 11 November. The page shows the conflict.
+## What a person still has to do
 
-**3. `IHH-V3-DEEP-AUDIT.md` was not supplied.** It was named as required reading and contains
-72 findings; only the evidence ZIP arrived. The search is recorded in
-`ledger/missing-attachment.txt`. **This ledger holds 116 findings and does not close that
-audit.**
+`handover/OPEN-ITEMS.md` lists every item that needs a human with a browser or a phone: a few
+rights statements on sites that block automated tools, and records that need a login
+(passenger lists) or a request (naturalization files). **Every search log was run by an AI
+assistant and needs a team member to spot-check it** before it is presented as the team's work.
 
 ## Running it
 
 ```sh
-# look at the deliverable the way WordPress will render it
-python3 -m http.server 8741            # from this directory
-#   -> http://127.0.0.1:8741/albright-wp/preview.html
-
-# look at the optional site
+python3 -m http.server 8741                      # from this directory
+#   -> http://127.0.0.1:8741/handover/pei/preview.html   (any inductee)
 cd site && python3 -m http.server 8731
 #   -> http://127.0.0.1:8731/index.html
 
-# regenerate anything you edit
-python3 albright-wp/build.py           # copy.md + manifest  -> copy.html
-python3 site/gen.py                    # cases.py            -> verify.html
+# after editing inductees/<name>/copy.md or its manifest:
+bash tools/package_handover.sh                   # rebuilds the profiles and handover/
+python3 tools/build_site_pages.py                # refreshes the demo site pages
 
-# run the tests (needs: npm i playwright axe-core)
-# The browser harnesses need Playwright, axe-core and a Chromium binary.
-# Point CHROMIUM at yours if it is not at the default path:
-#   npm i playwright axe-core
-#   export CHROMIUM=/path/to/chrome
-#   python3 -m http.server 8731 --directory site &
-#   python3 -m http.server 8741 &
-node qa/integrity.mjs .                # static checks, no browser needed
-node qa/wp.mjs                         # the deliverable, anatomy + scoping + reflow
-node qa/states.mjs                     # reduced motion, print, widths, focus
-node qa/pixels.mjs                     # screenshots for the pixel contrast check
-for t in dark nojs interact repro targets reflow leak incomplete; do
-  echo "== $t"; node qa/$t.mjs || echo "FAILED: $t"
-done
-bash qa/rebuild.sh /path/to/IHH-FINAL.zip   # generators reproduce the shipped output
+# tests (needs: npm i playwright axe-core, and Chrome)
+export CHROMIUM="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+python3 -m http.server 8731 --directory site &  python3 -m http.server 8741 &
+node qa/integrity.mjs .
+for t in wp states dark nojs interact repro targets reflow leak; do node qa/$t.mjs || echo "FAILED: $t"; done
+bash qa/rebuild.sh                               # generated files match their sources
 ```
 
-## What is deliberately not finished
+## Decisions worth knowing
 
-Nine of the ten inductee profiles are unwritten — the brief asks for at least four and this
-package delivers one complete profile plus five case files covering five people. Three `slot`
-blocks in the site markup are marked and empty: the capital campaign facts, the leadership
-roster, and the analytics disclosure. **We will not invent an EIN, a fundraising goal or a
-board list.**
-
-No screen-reader user has tested any of this. No volunteer has run the handoff. No permission
-letter has been sent to any institution. `site/TESTS-RUN.md` lists what was and was not tested,
-and by whom it still needs to be.
+- **No AI-generated voices or video of inductees**, though the brief lists it. The brief also
+  asks that all content be reliable and verifiable. The reasoning is in `site/method.html`.
+- **Uncertainty is stated, not smoothed.** Celia Cruz's naturalization date is unknown and the
+  page says so. Disputed dates (Albright's 1998 ceremony on the 10th, the statement on the 11th)
+  are explained.
+- **Every image was looked at before it was described.** Alt text is at most 15 words.

@@ -119,7 +119,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**271 KB for the entire 11-page site**, against **2,869 KB for the current IHH homepage
+**308 KB of code and text for the entire 14-page site** (archival images extra), against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---
