@@ -95,7 +95,7 @@ jobs:
             node qa/$t.mjs
           done
 
-      - name: Generated profile QA
+      - name: Generated profile QA and visual evidence
         env:
           PROFILE_URL: http://127.0.0.1:8741/profiles/madeleine-albright/preview.html
         run: node qa/profile-factory.mjs
@@ -117,3 +117,4 @@ jobs:
             profiles/madeleine-albright/profile-state.json
             profiles/madeleine-albright/build-qa-report.json
             profiles/madeleine-albright/handoff-log.jsonl
+            qa-out/profile-factory/*.png
