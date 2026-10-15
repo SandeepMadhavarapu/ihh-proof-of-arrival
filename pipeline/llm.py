@@ -9,6 +9,9 @@ from typing import Any, Dict, Protocol
 from .security import redact_text
 
 
+OPENAI_RESPONSES_ENDPOINT = "https://api.openai.com/v1/responses"
+
+
 class JSONClient(Protocol):
     def complete_json(self, system: str, user: str, *, temperature: float) -> Dict[str, Any]: ...
 
@@ -18,7 +21,8 @@ class OpenAIJSONClient:
 
     The API key is read only from the environment and is never included in returned exceptions.
     A production model must be selected explicitly by --model or OPENAI_MODEL so the repository
-    never silently depends on a model id that may age out.
+    never silently depends on a model id that may age out. The bearer key is sent only to the fixed
+    official OpenAI HTTPS Responses endpoint; this client has no arbitrary API-base override.
     """
 
     def __init__(self, model: str | None = None, opener=None) -> None:
@@ -30,7 +34,7 @@ class OpenAIJSONClient:
             raise RuntimeError("OpenAI model is not configured; pass --model or set OPENAI_MODEL")
         self._key = key
         self.model = selected.strip()
-        self.endpoint = os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1").rstrip("/") + "/responses"
+        self.endpoint = OPENAI_RESPONSES_ENDPOINT
         self._opener = opener or urllib.request.urlopen
 
     @staticmethod
