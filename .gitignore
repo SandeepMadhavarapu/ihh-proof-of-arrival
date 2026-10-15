@@ -1,0 +1,25 @@
+# Profile Factory secrets and build-time caches
+.env
+.env.*
+!.env.example
+OPENAI_API_KEY
+*.key
+*.pem
+.profile-factory-cache/
+pipeline-cache/
+**/.profile-factory-cache/
+
+# Local test/browser output
+node_modules/
+qa-out/
+.DS_Store
+__pycache__/
+*.pyc
+
+# Per-run evidence is uploaded by CI; never commit a stale successful run.
+profiles/*/build-qa-report.json
+profiles/*/handoff-log.jsonl
+profiles/*/profile-state.json
+profiles/*/source-index.json
+profiles/*/verification-report.json
+profiles/*/research-draft.REJECTED.md
