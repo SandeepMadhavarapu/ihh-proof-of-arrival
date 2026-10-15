@@ -4,12 +4,12 @@ import datetime as dt
 import hashlib
 import json
 from pathlib import Path
-from typing import Any
 
 from .build_qa import BuildQAAgent, BuildQAResult
 from .media_rights import MediaRightsAgent, render_manifest
 from .researcher import ResearcherAgent
 from .schema import HandoffRecord, ProfileDraft
+from .security import ensure_profile_output, redact_text
 from .verifier import VerifierAgent
 
 
@@ -37,18 +37,15 @@ class Orchestrator:
         self.build_qa = build_qa
 
     def _assert_output_isolated(self, draft: ProfileDraft) -> None:
-        profiles = (self.repo_root / "profiles").resolve()
-        out = draft.out_dir.resolve()
-        if profiles not in out.parents:
-            raise ValueError(f"output must be under {profiles}; got {out}")
-        albright = (self.repo_root / "albright-wp").resolve()
-        if out == albright or albright in out.parents:
-            raise ValueError("Profile Factory may never write into albright-wp/")
+        ensure_profile_output(self.repo_root, draft.out_dir, draft.slug)
 
     def _handoff(self, draft: ProfileDraft, sender: str, receiver: str, summary: str, result: str, artifacts: dict[str, str] | None = None) -> None:
-        draft.handoffs.append(HandoffRecord(_now(), sender, receiver, summary, artifacts or {}, result))
+        safe_summary = redact_text(summary)
+        safe_artifacts = {k: redact_text(v) for k, v in (artifacts or {}).items()}
+        draft.handoffs.append(HandoffRecord(_now(), sender, receiver, safe_summary, safe_artifacts, result))
 
     def _write_log(self, draft: ProfileDraft) -> None:
+        self._assert_output_isolated(draft)
         draft.out_dir.mkdir(parents=True, exist_ok=True)
         p = draft.out_dir / "handoff-log.jsonl"
         p.write_text("\n".join(json.dumps(h.to_dict(), ensure_ascii=False) for h in draft.handoffs) + ("\n" if draft.handoffs else ""), encoding="utf-8")
@@ -98,14 +95,11 @@ class Orchestrator:
         (draft.out_dir / "copy.md").write_text(draft.copy_markdown, encoding="utf-8")
         (draft.out_dir / "media-manifest.csv").write_text(render_manifest(draft.media_rows), encoding="utf-8")
         (draft.out_dir / "HUMAN-SIGNOFF-REQUIRED.txt").write_text(
-            "REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.\n"
-            "The pipeline drafts and evidence-verifies claims, but a named human must still read the sources and finished page.\n",
+            "PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.\n"
+            "The pipeline evidence-gates claims and QA, but it can never mark a profile museum-ready.\n",
             encoding="utf-8",
         )
-        source_index = {
-            sid: s.to_dict() for sid, s in draft.sources.items()
-        }
-        # Do not copy cached source bodies into the profile; record fetch metadata/hashes only.
+        source_index = {sid: s.to_dict() for sid, s in draft.sources.items()}
         for meta in source_index.values():
             meta.pop("text", None)
         (draft.out_dir / "source-index.json").write_text(json.dumps(source_index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -114,21 +108,24 @@ class Orchestrator:
         qa = self.build_qa.run(draft.out_dir)
         (draft.out_dir / "build-qa-report.json").write_text(json.dumps({
             "passed": qa.passed,
-            "static_errors": qa.static_errors,
+            "static_errors": [redact_text(x) for x in qa.static_errors],
             "commands": [
                 {
-                    "command": c.command.replace(str(self.repo_root), "$REPO"),
+                    "command": redact_text(c.command.replace(str(self.repo_root), "$REPO")),
                     "returncode": c.returncode,
-                    "stdout": c.stdout.replace(str(self.repo_root), "$REPO"),
-                    "stderr": c.stderr.replace(str(self.repo_root), "$REPO"),
+                    "stdout": redact_text(c.stdout.replace(str(self.repo_root), "$REPO")),
+                    "stderr": redact_text(c.stderr.replace(str(self.repo_root), "$REPO")),
                 }
                 for c in qa.commands
             ],
         }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         self._handoff(draft, "BuildQAAgent", "Orchestrator", f"commands={len(qa.commands)}; qa_passed={qa.passed}", "PASS" if qa.passed else "FAIL")
         draft.completed = qa.passed
+        draft.status = "PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF" if qa.passed else "REQUIRES HUMAN SIGN-OFF"
         if not qa.passed:
             draft.failure_reason = "BuildQAAgent gate failed; see build-qa-report.json"
+        else:
+            draft.failure_reason = ""
         self._write_log(draft)
         (draft.out_dir / "profile-state.json").write_text(json.dumps(draft.to_summary(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         return draft, qa
