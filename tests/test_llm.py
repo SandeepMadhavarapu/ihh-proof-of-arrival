@@ -18,18 +18,23 @@ class FakeResponse:
 
 
 class LLMClientTests(unittest.TestCase):
-    def test_default_model_is_current_explicit_api_id_and_key_stays_out_of_payload(self):
+    def test_model_must_be_explicit_and_key_stays_out_of_payload(self):
+        with patch.dict(os.environ, {'OPENAI_API_KEY':'sk-test-secret'}, clear=True):
+            with self.assertRaisesRegex(RuntimeError,'model is not configured'):
+                OpenAIJSONClient(opener=lambda req, timeout: None)
+
         captured={}
         def opener(req, timeout):
             captured['headers']=dict(req.header_items())
             captured['body']=json.loads(req.data.decode('utf-8'))
             return FakeResponse({'output_text':'{"ok":true}'})
-        with patch.dict(os.environ, {'OPENAI_API_KEY':'sk-test-secret'}, clear=True):
+        with patch.dict(os.environ, {'OPENAI_API_KEY':'sk-test-secret','OPENAI_MODEL':'test-model-id'}, clear=True):
             c=OpenAIJSONClient(opener=opener)
-            self.assertEqual(c.model,'gpt-5.6-sol')
+            self.assertEqual(c.model,'test-model-id')
             out=c.complete_json('system','user',temperature=0.0)
         self.assertEqual(out,{'ok':True})
         self.assertNotIn('sk-test-secret', json.dumps(captured['body']))
+        self.assertEqual(captured['body']['model'],'test-model-id')
         self.assertIn('Bearer sk-test-secret', captured['headers'].get('Authorization',''))
 
     def test_http_error_never_echoes_api_key_or_full_provider_body(self):
@@ -37,7 +42,7 @@ class LLMClientTests(unittest.TestCase):
         body=json.dumps({'error':{'type':'invalid_request_error','message':f'bad request for {secret}; '+('x'*1000)}}).encode()
         def opener(req, timeout):
             raise urllib.error.HTTPError(req.full_url,401,'Unauthorized',{},io.BytesIO(body))
-        with patch.dict(os.environ, {'OPENAI_API_KEY':secret}, clear=True):
+        with patch.dict(os.environ, {'OPENAI_API_KEY':secret,'OPENAI_MODEL':'test-model-id'}, clear=True):
             c=OpenAIJSONClient(opener=opener)
             with self.assertRaises(RuntimeError) as ctx:
                 c.complete_json('system','user',temperature=0.0)
