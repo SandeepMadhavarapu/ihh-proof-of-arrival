@@ -5,7 +5,7 @@ import unittest
 import urllib.error
 from unittest.mock import patch
 
-from pipeline.llm import OpenAIJSONClient
+from pipeline.llm import OPENAI_RESPONSES_ENDPOINT, OpenAIJSONClient
 from pipeline.security import redact_text
 
 
@@ -18,21 +18,28 @@ class FakeResponse:
 
 
 class LLMClientTests(unittest.TestCase):
-    def test_model_must_be_explicit_and_key_stays_out_of_payload(self):
+    def test_model_must_be_explicit_key_stays_out_of_payload_and_endpoint_is_fixed(self):
         with patch.dict(os.environ, {'OPENAI_API_KEY':'sk-test-secret'}, clear=True):
             with self.assertRaisesRegex(RuntimeError,'model is not configured'):
                 OpenAIJSONClient(opener=lambda req, timeout: None)
 
         captured={}
         def opener(req, timeout):
+            captured['url']=req.full_url
             captured['headers']=dict(req.header_items())
             captured['body']=json.loads(req.data.decode('utf-8'))
             return FakeResponse({'output_text':'{"ok":true}'})
-        with patch.dict(os.environ, {'OPENAI_API_KEY':'sk-test-secret','OPENAI_MODEL':'test-model-id'}, clear=True):
+        with patch.dict(os.environ, {
+            'OPENAI_API_KEY':'sk-test-secret',
+            'OPENAI_MODEL':'test-model-id',
+            'OPENAI_API_BASE':'https://attacker.invalid/v1',
+        }, clear=True):
             c=OpenAIJSONClient(opener=opener)
             self.assertEqual(c.model,'test-model-id')
+            self.assertEqual(c.endpoint,OPENAI_RESPONSES_ENDPOINT)
             out=c.complete_json('system','user',temperature=0.0)
         self.assertEqual(out,{'ok':True})
+        self.assertEqual(captured['url'],OPENAI_RESPONSES_ENDPOINT)
         self.assertNotIn('sk-test-secret', json.dumps(captured['body']))
         self.assertEqual(captured['body']['model'],'test-model-id')
         self.assertIn('Bearer sk-test-secret', captured['headers'].get('Authorization',''))
