@@ -9,6 +9,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable, List, Sequence
 
+from .security import ensure_profile_output, redact_text
+
 
 @dataclass
 class CommandResult:
@@ -33,6 +35,7 @@ class BuildQAAgent:
     BROWSER_HARNESSES = [
         "dark.mjs", "pixels.mjs", "states.mjs", "reflow.mjs", "wp.mjs",
         "nojs.mjs", "targets.mjs", "leak.mjs", "interact.mjs", "incomplete.mjs",
+        "repro.mjs",
     ]
 
     def __init__(self, repo_root: Path, runner: Callable[..., subprocess.CompletedProcess] = subprocess.run) -> None:
@@ -44,7 +47,10 @@ class BuildQAAgent:
             list(args), cwd=self.repo_root, env=env or os.environ.copy(),
             capture_output=True, text=True, timeout=180
         )
-        return CommandResult(" ".join(args), p.returncode, p.stdout, p.stderr)
+        return CommandResult(
+            redact_text(" ".join(args)), p.returncode,
+            redact_text(p.stdout), redact_text(p.stderr),
+        )
 
     def _static_profile_checks(self, out_dir: Path) -> list[str]:
         errors: list[str] = []
@@ -53,15 +59,18 @@ class BuildQAAgent:
             errors.append("generated profile contains a script element")
         if re.search(r"<(?:link|iframe|object|embed)\b", html, re.I):
             errors.append("generated profile contains a visitor-side external resource element")
-        # Source <a href=https://...> links are allowed. src= must remain local.
         if re.search(r"\bsrc=[\"'](?:https?:)?//", html, re.I):
             errors.append("generated profile loads an external src resource")
+        if re.search(r"\bhref=[\"']\s*(?:javascript|data|file|vbscript):", html, re.I):
+            errors.append("generated profile contains an unsafe href scheme")
         if "REQUIRES HUMAN SIGN-OFF" not in html:
             errors.append("generated profile is not visibly marked REQUIRES HUMAN SIGN-OFF")
+        if "<main" not in html or "<h1" not in html:
+            errors.append("generated profile is missing expected semantic main/H1 structure")
         return errors
 
     def run(self, out_dir: Path) -> BuildQAResult:
-        out_dir = Path(out_dir).resolve()
+        out_dir = ensure_profile_output(self.repo_root, Path(out_dir).resolve())
         results: list[CommandResult] = []
         rel_out = out_dir.relative_to(self.repo_root)
         build = self._run([sys.executable, "albright-wp/build.py", "--profile-dir", str(rel_out)])
@@ -75,7 +84,6 @@ class BuildQAAgent:
         if not integrity.passed:
             return BuildQAResult(False, results, static_errors)
 
-        # Browser QA is a hard gate. Missing Playwright/axe/Chromium is UNVERIFIED, not success.
         dep = self._run(["node", "-e", "require.resolve('playwright'); require.resolve('axe-core'); console.log('browser QA dependencies present')"])
         results.append(dep)
         if not dep.passed:
