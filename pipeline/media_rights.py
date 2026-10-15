@@ -6,8 +6,7 @@ import io
 
 from .llm import JSONClient
 from .schema import FetchStatus, ProfileDraft
-from .security import SecurityValidationError, validate_alt if False else None
-from .security import validate_external_link, validate_media_filename
+from .security import SecurityValidationError, validate_external_link, validate_media_filename
 
 
 MANIFEST_COLUMNS = [
