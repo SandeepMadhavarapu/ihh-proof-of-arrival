@@ -15,11 +15,22 @@ for(const scheme of ['light','dark']){
   const axeResult=await p.evaluate(async()=>{const r=await axe.run(document.querySelector('.ihh-profile'),{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa','best-practice']}});return {v:r.violations.map(x=>x.id+'×'+x.nodes.length),incomplete:r.incomplete.map(x=>x.id+'×'+x.nodes.length)}});
   ck(axeResult.v.length===0,scheme+': generated profile axe clean '+(axeResult.v.length?JSON.stringify(axeResult.v):''));
   ck(errs.length===0,scheme+': generated profile has no page errors');
-  const semantics=await p.evaluate(()=>({h1:document.querySelectorAll('.ihh-profile h1').length,main:document.querySelectorAll('.ihh-profile main').length,status:document.querySelector('.ihh-profile .status')?.textContent||'',sourceDeck:!!document.querySelector('.ihh-profile .source-deck'),focusable:[...document.querySelectorAll('.ihh-profile summary,.ihh-profile a')].map(e=>{const r=e.getBoundingClientRect();return {w:r.width,h:r.height}})}));
+  const semantics=await p.evaluate(()=>{
+    const undersized=[];
+    document.querySelectorAll('.ihh-profile a[href],.ihh-profile summary').forEach(e=>{
+      const r=e.getBoundingClientRect();
+      if(!r.width||!r.height|| (r.width>=24&&r.height>=24)) return;
+      // WCAG 2.5.8 inline exception: a text link inside a larger run of prose may be smaller.
+      const par=e.closest('p,li,blockquote,figcaption,summary,label');
+      const inlineRun=e.tagName==='A' && par && par.textContent.trim().length > e.textContent.trim().length + 8;
+      if(!inlineRun) undersized.push({tag:e.tagName,text:(e.textContent||'').trim().slice(0,40),w:Math.round(r.width),h:Math.round(r.height)});
+    });
+    return {h1:document.querySelectorAll('.ihh-profile h1').length,main:document.querySelectorAll('.ihh-profile main').length,status:document.querySelector('.ihh-profile .status')?.textContent||'',sourceDeck:!!document.querySelector('.ihh-profile .source-deck'),undersized};
+  });
   ck(semantics.h1===1,scheme+': exactly one profile h1');
   ck(semantics.main===1,scheme+': exactly one profile main landmark');
   ck(semantics.sourceDeck,scheme+': provenance register is present');
-  ck(semantics.focusable.every(r=>r.w>=24&&r.h>=24),scheme+': summaries/links meet 24px target floor');
+  ck(semantics.undersized.length===0,scheme+': every non-inline summary/link meets 24px target floor '+(semantics.undersized.length?JSON.stringify(semantics.undersized):''));
   await ctx.close();
 }
 
