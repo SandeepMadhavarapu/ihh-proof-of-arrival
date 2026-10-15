@@ -17,17 +17,19 @@ class OpenAIJSONClient:
     """Minimal build-time OpenAI Responses API client.
 
     The API key is read only from the environment and is never included in returned exceptions.
-    The default model is an explicit current API model id rather than a ChatGPT product label.
+    A production model must be selected explicitly by --model or OPENAI_MODEL so the repository
+    never silently depends on a model id that may age out.
     """
 
     def __init__(self, model: str | None = None, opener=None) -> None:
         key = os.environ.get("OPENAI_API_KEY", "")
         if not key:
             raise RuntimeError("OPENAI_API_KEY is not set")
+        selected = model or os.environ.get("OPENAI_MODEL", "")
+        if not selected.strip():
+            raise RuntimeError("OpenAI model is not configured; pass --model or set OPENAI_MODEL")
         self._key = key
-        self.model = model or os.environ.get("OPENAI_MODEL", "gpt-5.6-sol")
-        if not self.model.strip():
-            raise RuntimeError("OpenAI model id is empty")
+        self.model = selected.strip()
         self.endpoint = os.environ.get("OPENAI_API_BASE", "https://api.openai.com/v1").rstrip("/") + "/responses"
         self._opener = opener or urllib.request.urlopen
 
