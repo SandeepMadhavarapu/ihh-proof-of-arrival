@@ -18,17 +18,22 @@ BASE = {
     "date_checked":"2026-10-12","status":"NOT DOWNLOADED","recommendation":"REVIEW"
 }
 
+
+def draft(text="Rights: Use permitted with credit.", url="https://example.test/item"):
+    d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
+    d.sources={"S001":SourceDocument("S001",url,FetchStatus.RETRIEVED,text=text)}
+    return d
+
+
 class MediaRightsTests(unittest.TestCase):
     def test_unconfirmed_subject_cannot_be_named_in_alt(self):
-        d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
-        d.sources={"S001":SourceDocument("S001","https://example.test",FetchStatus.RETRIEVED,text="Rights: Use permitted with credit.")}
+        d=draft()
         row=dict(BASE, source_id="S001", rights_statement_verbatim="Rights: Use permitted with credit.", alt_text="Ada Example at a ceremony.", long_description_status="SUBJECT UNCONFIRMED")
         asyncio.run(MediaRightsAgent(FakeRightsLLM([row])).run(d))
         self.assertIn("unconfirmed image subject", d.failure_reason)
 
     def test_rights_must_be_exact_source_span(self):
-        d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
-        d.sources={"S001":SourceDocument("S001","https://example.test",FetchStatus.RETRIEVED,text="Rights: Use permitted with credit.")}
+        d=draft()
         row=dict(BASE, source_id="S001", rights_statement_verbatim="Public domain.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
         asyncio.run(MediaRightsAgent(FakeRightsLLM([row])).run(d))
         self.assertIn("rights wording", d.failure_reason)
@@ -39,9 +44,26 @@ class MediaRightsTests(unittest.TestCase):
             "S001":SourceDocument("S001","https://example.test/one",FetchStatus.RETRIEVED,text="Rights: Use permitted."),
             "S002":SourceDocument("S002","https://example.test/two",FetchStatus.RETRIEVED,text="Second source text."),
         }
-        row=dict(BASE, source_id="S001", rights_statement_verbatim="Rights: Use permitted.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
+        row=dict(BASE, source_id="S001", stable_item_url="https://example.test/one", rights_statement_verbatim="Rights: Use permitted.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
         asyncio.run(MediaRightsAgent(FakeRightsLLM([row])).run(d))
         self.assertIn("manifest omitted retrieved source", d.failure_reason)
+
+    def test_invented_or_unsafe_urls_are_rejected(self):
+        d=draft(text="Rights: Use permitted with credit.")
+        invented=dict(BASE, source_id="S001", stable_item_url="https://invented.example/item", rights_statement_verbatim="Rights: Use permitted with credit.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
+        asyncio.run(MediaRightsAgent(FakeRightsLLM([invented])).run(d))
+        self.assertIn("was not found in retrieved source text", d.failure_reason)
+
+        d2=draft()
+        unsafe=dict(BASE, source_id="S001", stable_item_url="javascript:alert(1)", rights_statement_verbatim="Rights: Use permitted with credit.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
+        asyncio.run(MediaRightsAgent(FakeRightsLLM([unsafe])).run(d2))
+        self.assertIn("unsafe stable_item_url", d2.failure_reason)
+
+    def test_media_filename_path_traversal_is_rejected(self):
+        d=draft()
+        row=dict(BASE, source_id="S001", filename="../x.jpg", rights_statement_verbatim="Rights: Use permitted with credit.", alt_text="Archival photograph; subject unconfirmed.", long_description_status="SUBJECT UNCONFIRMED")
+        asyncio.run(MediaRightsAgent(FakeRightsLLM([row])).run(d))
+        self.assertIn("unsafe media filename", d.failure_reason)
 
     def test_alt_limits(self):
         self.assertTrue(validate_alt("Archival photograph; subject unconfirmed."))
