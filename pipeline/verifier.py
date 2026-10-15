@@ -37,8 +37,16 @@ def _clearly_nonclaim(sentence: str, subject_name: str = "") -> bool:
     s = sentence.strip()
     if not s:
         return True
-    low = s.lower()
-    if low.startswith(("status: requires human sign-off", "requires human sign-off", "pipeline verified")):
+    low = re.sub(r"\s+", " ", s.lower()).strip()
+    # Only exact/closed build-state notices may bypass historical evidence. Do not use a
+    # startswith rule: `REQUIRES HUMAN SIGN-OFF — <false historical claim>` must still be audited.
+    if low.rstrip(".") in {
+        "status: requires human sign-off",
+        "requires human sign-off",
+        "pipeline verified — requires human sign-off",
+        "no verified anchor photograph is supplied in this deterministic demo profile",
+        "no verified anchor photograph supplied in this test fixture",
+    }:
         return True
     if s.endswith("?"):
         return not _has_factual_signal(s, subject_name)
@@ -71,7 +79,6 @@ def extract_sentences(markdown: str) -> list[str]:
             continue
         if line.startswith("# "):
             flush()
-            # H1 is the inductee's identity and is visitor-facing.
             blocks.append(line[2:].strip())
             continue
         if line.startswith("## "):
@@ -99,7 +106,6 @@ def extract_sentences(markdown: str) -> list[str]:
 
     out: list[str] = []
     for block in blocks:
-        # Headings/attribution often lack punctuation; preserve them as single semantic units.
         if not re.search(r"[.!?]", block):
             out.append(re.sub(r"\s+", " ", block).strip())
             continue
