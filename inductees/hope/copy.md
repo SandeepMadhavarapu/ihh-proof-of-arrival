@@ -7,7 +7,7 @@ In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Oh
 1
 
 **Standfirst:**
-Bob Hope was born in a London suburb in 1903 and came to Cleveland as a boy of four. He became a United States citizen not by his own oath but through his father's, and grew into the entertainer most closely bound to the American military — the only person Congress ever named an honorary veteran of the armed forces.
+Bob Hope was born in a London suburb in 1903 and came to Cleveland as a boy of four. He became a United States citizen not by his own oath but through his father's, and grew into the entertainer most closely bound to the American military — the first civilian Congress ever named an honorary veteran of the armed forces.
 
 ---
 
