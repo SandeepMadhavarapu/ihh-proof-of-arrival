@@ -73,7 +73,7 @@ Albert Einstein, public statement on leaving Germany, 10 March 1933 (item 8).
 
 The anchor: the face that became shorthand for genius.
 
-Oren Jack Turner · 1947 · Wikimedia Commons
+Oren Jack Turner · mid-20th century · Wikimedia Commons
 <https://commons.wikimedia.org/wiki/File:3840px-Albert_Einstein_Head_cleaned.jpg>
 Rights, in the institution's words: "Commons labels this image public domain in the United States; country-specific restrictions are described on the file page."
 Image: `media/web/einstein-portrait-turner.jpg`
