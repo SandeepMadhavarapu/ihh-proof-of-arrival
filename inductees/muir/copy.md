@@ -37,7 +37,7 @@ His 1901 book *Our National Parks* caught the attention of President Theodore Ro
 
 ## Setting the record straight
 
-A museum should get the dates right, because this story is often told loosely. Yosemite became a national park in 1890, not 1898. The Grand Canyon, which Muir loved and defended, was proclaimed a national monument in 1908 and became a national park only in 1919 — five years after Muir had died, so he cannot have established the park itself. Muir died in a Los Angeles hospital in 1914, soon after losing his last great fight: the effort to save the Hetch Hetchy Valley from a dam, which Congress approved in 1913. We do not assert a date for his American naturalisation; no record we opened states one, and we would rather leave the gap visible than invent a number.
+A museum should get the dates right, and this story is often told loosely. Yosemite became a national park in 1890. The Grand Canyon, which Muir loved and defended, was proclaimed a national monument in 1908 and became a national park only in 1919 — five years after Muir had died, so he cannot have established the park itself. Muir died in a Los Angeles hospital in 1914, soon after losing his last great fight: the effort to save the Hetch Hetchy Valley from a dam, which Congress approved in 1913. We do not assert a date for his American naturalisation; no record we opened states one, and we would rather leave the gap visible than invent a number.
 
 ---
 

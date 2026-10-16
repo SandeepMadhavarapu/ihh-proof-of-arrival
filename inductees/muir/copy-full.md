@@ -37,7 +37,7 @@ His 1901 book *Our National Parks* caught the attention of President Theodore Ro
 
 ## Setting the record straight
 
-A museum should get the dates right, because this story is often told loosely. Yosemite became a national park in 1890, not 1898. The Grand Canyon, which Muir loved and defended, was proclaimed a national monument in 1908 and became a national park only in 1919 — five years after Muir had died, so he cannot have established the park itself. Muir died in a Los Angeles hospital in 1914, soon after losing his last great fight: the effort to save the Hetch Hetchy Valley from a dam, which Congress approved in 1913. We do not assert a date for his American naturalisation; no record we opened states one, and we would rather leave the gap visible than invent a number.
+A museum should get the dates right, and this story is often told loosely. Yosemite became a national park in 1890. The Grand Canyon, which Muir loved and defended, was proclaimed a national monument in 1908 and became a national park only in 1919 — five years after Muir had died, so he cannot have established the park itself. Muir died in a Los Angeles hospital in 1914, soon after losing his last great fight: the effort to save the Hetch Hetchy Valley from a dam, which Congress approved in 1913. We do not assert a date for his American naturalisation; no record we opened states one, and we would rather leave the gap visible than invent a number.
 
 ---
 
@@ -95,7 +95,7 @@ Rights, in the institution's words: "(not checked; cited only)"
 
 **3. NPS Geodiversity Atlas — Yosemite National Park**
 
-The National Park Service states Yosemite was “Established as a national park on October 1, 1890” — not 1898, as the live museum page gives it.
+The National Park Service dates Yosemite precisely: “Established as a national park on October 1, 1890.”
 
 National Park Service · n.d. · National Park Service
 <https://www.nps.gov/articles/nps-geodiversity-atlas-yosemite-national-park.htm>
@@ -135,7 +135,7 @@ Rights, in the institution's words: "Public domain (first published 1911)."
 
 **8. Grand Canyon: proclamation of 1908**
 
-Grand Canyon was proclaimed a national monument on 11 January 1908, and became a national park in 1919 — five years after Muir’s death. Corrects the live museum page’s “Grand Canyon (1908) National Park.”
+Grand Canyon was proclaimed a national monument on 11 January 1908 and became a national park in 1919 — five years after Muir’s death.
 
 National Park Service · n.d. · National Park Service
 <https://www.nps.gov/articles/lee-story-proclamation.htm>
