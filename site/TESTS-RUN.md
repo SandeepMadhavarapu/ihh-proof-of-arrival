@@ -119,7 +119,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**308 KB of code and text for the entire 14-page site** (archival images extra), against **2,869 KB for the current IHH homepage
+**320 KB of HTML, CSS, scripts and text across 14 pages (portrait and archival image files additional)**, against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---
@@ -140,3 +140,12 @@ alone.** 3 requests per page. Zero third-party hosts.
 If you are presenting this work: the tested block is tested and you may say so. The
 block above is not, and you may not. And the honest headline is not "it passes" — it is
 **"it passed, somebody else found nine things, and here is what changed."**
+
+
+## Local photographic design review — 15 October 2026
+
+The website now uses the original light palette regardless of system colour preference. Ten locally served photographic portraits have source records in `media/portrait-sources.json`; these are separate from the six still-missing Albright archival images. Final publication rights review remains pending.
+
+Validated in installed Edge: 37 integrity checks, 41 interaction checks, reflow across all 11 pages at 320/640 px, and no-JavaScript readability at 375/1280 px. The homepage and collection passed axe checks at desktop/mobile widths with both system colour preferences. Pixel contrast passed for 382 sampled text runs. Motion checks confirmed hover effects, reduced-motion suppression, and disabling motion when the preference changes. No merge or deployment is included in this design update.
+
+The pixel harness waits for temporary notifications to clear before sampling underlying text, avoiding measuring notification pixels as the text background. Contrast thresholds are unchanged.

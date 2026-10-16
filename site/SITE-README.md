@@ -1,6 +1,6 @@
 # Immigrant Hall of Honor — rebuild
 
-Fourteen pages. 308 KB of code and text, plus the archival images in `media/`. No framework, no build step, no third-party request, no tracking.
+Fourteen pages. 320 KB of HTML, CSS, scripts and text; portrait and archival image files in `media/` additional. No framework, no build step, no third-party request, no tracking.
 Open `index.html` in any browser. There is nothing to install.
 
 ## The pages
@@ -39,3 +39,7 @@ a claim block and edit it by hand.
 Three `slot` blocks are marked in the markup — the capital campaign facts, the leadership roster
 and the analytics disclosure. **We will not invent an EIN, a fundraising goal or a board list.**
 Nine of the ten inductee profiles are unwritten. Six image files are not downloaded.
+
+## Local photographic redesign preview
+
+Text payload figures above exclude image files. The new ten-image portrait gallery adds 404801 bytes. Photographs are hosted locally; original file records are linked on rights.html and recorded in media/portrait-sources.json. Reuse clearance is pending. These are separate from the six unprovided Albright archival objects. No image was generated.

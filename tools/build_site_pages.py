@@ -19,6 +19,21 @@ _, _, foot = rest.partition("</main>")
 head = head.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
 foot = foot.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
 
+def strip_dark_mode(css_html):
+    """Remove every @media (prefers-color-scheme:dark){...} block, balancing braces."""
+    out, i, key = [], 0, "@media (prefers-color-scheme:dark){"
+    while True:
+        j = css_html.find(key, i)
+        if j < 0:
+            return "".join(out) + css_html[i:]
+        out.append(css_html[i:j])
+        depth, k = 1, j + len(key)
+        while depth:
+            depth += {"{": 1, "}": -1}.get(css_html[k], 0)
+            k += 1
+        i = k
+
+
 base = os.path.join(ROOT, "inductees")
 for name in sorted(os.listdir(base)):
     src = os.path.join(base, name, "copy.html")
@@ -34,6 +49,9 @@ for name in sorted(os.listdir(base)):
     for f in os.listdir(os.path.join(base, name, "media", "web")):
         shutil.copy2(os.path.join(base, name, "media", "web", f), os.path.join(media_out, f))
     frag = frag.replace('src="media/web/', f'src="media/{name}/')
+    # The demo site is light-only (site.css sets color-scheme:light), so drop the profile's
+    # own dark-mode rules here. The WordPress package in handover/ keeps them.
+    frag = strip_dark_mode(frag)
     # The page's own <h1> is the person's name; drop the WordPress-only comment about it.
     frag = re.sub(r"<!-- If your theme already prints.*?-->\n", "", frag)
 
