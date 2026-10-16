@@ -1,7 +1,9 @@
 # Madeleine Albright profile — how to put this on the website
 
-Written for somebody who does not write code. It should take about twenty minutes.
-Nothing here needs a plugin, a developer, or an account.
+Written for somebody who does not write code. The twenty-minute installation time is an
+**untested designer estimate, not an observed volunteer result**; image retrieval, rights
+review, editorial approval, and troubleshooting may take longer. WordPress editing permission
+and an accountable technical owner are required. No additional runtime plugin is supplied.
 
 ---
 
@@ -19,9 +21,11 @@ publishing, not the placeholder.
 
 ## Step 2 — Get the photographs (fifteen minutes)
 
-The package ships with no image files. They are US federal records, free to use, but the
-machine that built this page was not allowed to reach the National Archives, so they could
-not be included.
+`albright-wp/media/` lacks the six archival photographs. The ten portraits shipped in
+`site/media/portraits/` belong to the separate demo and do not fill these slots. Consult each
+archival item record and transcribe its actual rights wording; do not assume that every image
+held by a federal institution is cleared for the intended use. Earlier retrieval attempts
+failed in the build environment; those logs do not establish present-day availability.
 
 Run `media/fetch-media.sh` on any computer with normal internet access, **or** do it by hand:
 
@@ -77,12 +81,16 @@ URLs it gives you, instead of `media/…`.
 ## What this page will and will not do
 
 **It has no JavaScript at all.** The expanding sections are the browser's own `<details>`
-element. There is nothing to break when WordPress updates, and nothing to maintain.
+element. No build step or third-party request is required at visitor runtime. Editorial
+upkeep, source-link and rights review, WordPress integration checks after updates, and named
+technical ownership are still required.
 
-**All its styling is scoped to `.ihh-profile`.** It cannot leak out and restyle your site.
+**All its styling is scoped to `.ihh-profile`.** The supplied QA fixture checks that those styles do not restyle its host. Test the
+museum's actual theme and plugins in staging; this is not a universal compatibility guarantee.
 
-**It loads nothing from anywhere else.** No font, no script, no tracker, no API. Once the
-images are in place it will render identically in ten years with no internet connection.
+**It loads nothing from anywhere else.** No font, no script, no tracker, no API. Local HTML and image assets can be retained for offline reading, but linked sources
+need network access. Browser and WordPress changes may affect rendering over time; no
+identical-rendering or maintenance-free lifetime is promised.
 
 **It follows your system's light or dark setting** automatically.
 

@@ -6,6 +6,22 @@ from pipeline.schema import FetchStatus, ProfileDraft, SourceDocument, Verdict
 from pipeline.verifier import VerifierAgent, extract_sentences
 
 
+# Synthetic test data, not historical biography. Context is deliberately long enough
+# to exercise the strengthened evidence gate, including headings and quotation attribution.
+FIXTURE_SOURCE = ("Ada Example Biography. Ada Example arrived in 1900. "
+                  "Fixture Archive reports: I arrived aboard a passenger ship in 1900. "
+                  "Example arrival. Example record. Example journey. Example archive. Example history.")
+
+
+FIXTURE_NONCLAIMS = {
+    "Status: REQUIRES HUMAN SIGN-OFF", "What does the source establish?",
+    "What remains unknown?", "What should a reviewer check?",
+    "What evidence would change the account?", "What should be documented next?",
+    "Trace the claim.", "Match the claim to the source.",
+    "Mark the boundary.", "List what remains unknown.",
+}
+
+
 class FakeVerifierLLM:
     def __init__(self, row_factory):
         self.row_factory = row_factory
@@ -22,20 +38,14 @@ def rows_for(markdown, *, unsupported=None, fake_span_for=None, editorial_for=No
     for i,s in enumerate(extract_sentences(markdown),1):
         if s == unsupported:
             rows.append({"index":i,"requires_evidence":True,"provenance":"PARAPHRASE","verdict":"UNSUPPORTED","evidence_source_id":"","evidence_span":"","reason":"No support","suggested_rewrite":""})
-        elif s == editorial_for:
+        elif s == editorial_for or s in FIXTURE_NONCLAIMS:
             rows.append({"index":i,"requires_evidence":False,"provenance":"UNRESOLVED","verdict":"UNSUPPORTED","evidence_source_id":"","evidence_span":"","reason":"editorial","suggested_rewrite":""})
         else:
             if s == fake_span_for:
                 span = "Ada arrived in 1899."
-            elif s == "Ada Example":
-                span = "Ada Example"
-            elif s == "I arrived in 1900.":
-                span = "I arrived in 1900."
-            elif s == "Quotation attribution: Fixture Archive":
-                span = "Fixture Archive"
             else:
-                span = "Ada arrived in 1900."
-            prov = "QUOTATION" if s == "I arrived in 1900." else "RECORD"
+                span = FIXTURE_SOURCE
+            prov = "QUOTATION" if s == "I arrived aboard a passenger ship in 1900." else "RECORD"
             rows.append({"index":i,"requires_evidence":True,"provenance":prov,"verdict":"CONFIRMED","evidence_source_id":"S001","evidence_span":span,"reason":"fixture support","suggested_rewrite":""})
     return rows
 
@@ -55,9 +65,9 @@ class RemediationLLM:
 
 class VerifierGateTests(unittest.TestCase):
     def _draft(self, sentence):
-        d = ProfileDraft("Ada Example", "ada-example", [], Path("profiles/ada-example"))
-        d.copy_markdown = f"# Ada Example\n\n**Opening line (sits above the photograph):**\n{sentence}\n"
-        d.sources = {"S001": SourceDocument("S001", "https://example.test/source", FetchStatus.RETRIEVED, text="Ada Example. Ada arrived in 1900. I arrived in 1900. The archive records the event.")}
+        d = ProfileDraft("Ada Example Biography", "ada-example", [], Path("profiles/ada-example"))
+        d.copy_markdown = f"# Ada Example Biography\n\n**Opening line (sits above the photograph):**\n{sentence}\n"
+        d.sources = {"S001": SourceDocument("S001", "https://example.test/source", FetchStatus.RETRIEVED, text=FIXTURE_SOURCE)}
         return d
 
     def test_planted_unsupported_claim_fails_gate(self):
@@ -69,32 +79,32 @@ class VerifierGateTests(unittest.TestCase):
         self.assertEqual(llm.temperatures, [0.0, 0.0])
 
     def test_supported_claim_passes_with_exact_span(self):
-        d = self._draft("Ada arrived in 1900.")
+        d = self._draft("Ada Example arrived in 1900.")
         llm = FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown))
         asyncio.run(VerifierAgent(llm).run(d))
         self.assertTrue(d.verification_report.gate_passed)
         self.assertTrue(all(c.verdict == Verdict.CONFIRMED for c in d.claims))
 
     def test_fake_exact_span_downgrades_confirmed(self):
-        d = self._draft("Ada arrived in 1900.")
-        llm = FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown, fake_span_for="Ada arrived in 1900."))
+        d = self._draft("Ada Example arrived in 1900.")
+        llm = FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown, fake_span_for="Ada Example arrived in 1900."))
         asyncio.run(VerifierAgent(llm).run(d))
         self.assertFalse(d.verification_report.gate_passed)
-        bad=[c for c in d.claims if c.sentence == "Ada arrived in 1900."][0]
+        bad=[c for c in d.claims if c.sentence == "Ada Example arrived in 1900."][0]
         self.assertEqual(bad.verdict, Verdict.UNSUPPORTED)
         self.assertIn("exact evidence span", bad.verifier_reason)
 
     def test_factual_heading_and_quote_attribution_are_in_verification_stream(self):
-        md='''# Ada Example\n\n---\n\n## First Woman Engineer\nAda arrived in 1900.\n\n---\n\n**First-person quotation (one, as reported by Fixture Archive):**\n> I arrived in 1900.\n'''
+        md='''# Ada Example Biography\n\n---\n\n## First Woman Engineer\nAda Example arrived in 1900.\n\n---\n\n**First-person quotation (one, as reported by Fixture Archive):**\n> I arrived aboard a passenger ship in 1900.\n'''
         units=extract_sentences(md)
-        self.assertIn("Ada Example", units)
+        self.assertIn("Ada Example Biography", units)
         self.assertIn("First Woman Engineer", units)
         self.assertIn("Quotation attribution: Fixture Archive", units)
-        self.assertIn("I arrived in 1900.", units)
+        self.assertIn("I arrived aboard a passenger ship in 1900.", units)
 
     def test_factual_question_cannot_bypass_evidence_by_being_marked_editorial(self):
-        d = self._draft("Why did Ada Example arrive in 1900?")
-        llm = FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown, editorial_for="Why did Ada Example arrive in 1900?"))
+        d = self._draft("Why did Ada Example Biography arrive in 1900?")
+        llm = FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown, editorial_for="Why did Ada Example Biography arrive in 1900?"))
         asyncio.run(VerifierAgent(llm, max_remediation_rounds=0).run(d))
         self.assertFalse(d.verification_report.gate_passed)
         q=[c for c in d.claims if c.sentence.endswith("1900?")][0]
@@ -110,7 +120,7 @@ class VerifierGateTests(unittest.TestCase):
         self.assertEqual(c.verdict,Verdict.UNSUPPORTED)
 
     def test_status_prefix_cannot_hide_a_historical_claim(self):
-        sentence="REQUIRES HUMAN SIGN-OFF — Ada Example won the Nobel Prize."
+        sentence="REQUIRES HUMAN SIGN-OFF — Ada Example Biography won the Nobel Prize."
         d=self._draft(sentence)
         llm=FakeVerifierLLM(lambda s,u: rows_for(d.copy_markdown, editorial_for=sentence))
         asyncio.run(VerifierAgent(llm, max_remediation_rounds=0).run(d))
@@ -127,11 +137,11 @@ class VerifierGateTests(unittest.TestCase):
         self.assertTrue(any("UNTRUSTED" in system for system in llm.systems))
 
     def test_remediation_rewrites_rejected_claim_then_reaudits(self):
-        original = '''# Ada Example\n\n**Status:** REQUIRES HUMAN SIGN-OFF\n\n**Opening line (sits above the photograph):**\nAda arrived in 1900.\n\n**Credit (sits immediately beneath the photograph):**\nAda arrived in 1900.\n\n**Standfirst:**\nAda arrived in 1900.\n\n---\n\n## One\nAda arrived in 1900.\n\n## Two\nAda won the Nobel Prize.\n\n## Three\nAda arrived in 1900.\n\n## Four\nAda arrived in 1900.\n\n## Five\nAda arrived in 1900.\n\n---\n\n**First-person quotation (one, as reported by Fixture Archive):**\n> I arrived in 1900.\n\n---\n\n## Five discussion questions\n1. What does the source establish?\n2. What remains unknown?\n3. What should a reviewer check?\n4. What evidence would change the account?\n5. What should be documented next?\n## Two activities\n**1. Trace the claim.** Match the claim to the source.\n**2. Mark the boundary.** List what remains unknown.\n'''
-        revised=original.replace("Ada won the Nobel Prize.", "Ada arrived in 1900.")
-        d=ProfileDraft("Ada Example","ada-example",[],Path("profiles/ada-example"))
+        original = '''# Ada Example Biography\n\n**Status:** REQUIRES HUMAN SIGN-OFF\n\n**Opening line (sits above the photograph):**\nAda Example arrived in 1900.\n\n**Credit (sits immediately beneath the photograph):**\nAda Example arrived in 1900.\n\n**Standfirst:**\nAda Example arrived in 1900.\n\n---\n\n## Example arrival\nAda Example arrived in 1900.\n\n## Example record\nAda won the Nobel Prize.\n\n## Example journey\nAda Example arrived in 1900.\n\n## Example archive\nAda Example arrived in 1900.\n\n## Example history\nAda Example arrived in 1900.\n\n---\n\n**First-person quotation (one, as reported by Fixture Archive):**\n> I arrived aboard a passenger ship in 1900.\n\n---\n\n## Five discussion questions\n1. What does the source establish?\n2. What remains unknown?\n3. What should a reviewer check?\n4. What evidence would change the account?\n5. What should be documented next?\n## Two activities\n**1. Trace the claim.** Match the claim to the source.\n**2. Mark the boundary.** List what remains unknown.\n'''
+        revised=original.replace("Ada won the Nobel Prize.", "Ada Example arrived in 1900.")
+        d=ProfileDraft("Ada Example Biography","ada-example",[],Path("profiles/ada-example"))
         d.copy_markdown=original
-        d.sources={"S001":SourceDocument("S001","https://example.test/source",FetchStatus.RETRIEVED,text="Ada Example. Ada arrived in 1900. I arrived in 1900. Fixture Archive.")}
+        d.sources={"S001":SourceDocument("S001","https://example.test/source",FetchStatus.RETRIEVED,text=FIXTURE_SOURCE)}
         llm=RemediationLLM(original,revised)
         asyncio.run(VerifierAgent(llm,max_remediation_rounds=1).run(d))
         self.assertTrue(d.verification_report.gate_passed)

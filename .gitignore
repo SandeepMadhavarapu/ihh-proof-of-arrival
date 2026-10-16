@@ -23,3 +23,9 @@ profiles/*/profile-state.json
 profiles/*/source-index.json
 profiles/*/verification-report.json
 profiles/*/research-draft.REJECTED.md
+
+# Local Python environments; retain source, tests, and reviewed generated artifacts.
+.venv/
+venv/
+.pytest_cache/
+Thumbs.db

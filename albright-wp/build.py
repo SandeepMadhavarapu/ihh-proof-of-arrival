@@ -10,7 +10,7 @@ import os, re, csv, html, sys
 HERE=os.path.dirname(os.path.abspath(__file__))
 
 # Add-only generic path for Profile Factory outputs. The no-argument Albright path below is
-# intentionally left unchanged so qa/rebuild.sh can prove byte-identical regeneration.
+# content is frozen; explicit LF writes preserve its bytes on Windows as well as Linux.
 def _run_generic_profile(argv):
     root=os.path.dirname(HERE)
     if root not in sys.path:
@@ -304,7 +304,7 @@ online. Sources last checked 2 October 2026.</p>
 </div>
 </div>
 '''
-open(os.path.join(HERE,"copy.html"),"w",encoding="utf-8").write(OUT)
+open(os.path.join(HERE,"copy.html"),"w",encoding="utf-8",newline="\n").write(OUT)
 
 # preview.html wraps the fragment in a deliberately hostile stand-in theme, so the preview
 # also demonstrates that the scoping holds. Generated here so it cannot drift from copy.html.
@@ -333,7 +333,7 @@ blockquote{font-size:11px;color:#999}
 <div class="host-chrome">End of block &mdash; theme chrome resumes</div>
 </body></html>
 """
-open(os.path.join(HERE,"preview.html"),"w",encoding="utf-8").write(PREVIEW)
+open(os.path.join(HERE,"preview.html"),"w",encoding="utf-8",newline="\n").write(PREVIEW)
 
 # ── the WordPress.com fallback route must publish the SAME page, minus styling.
 def md_item(r):
@@ -399,7 +399,7 @@ naturalisation, which does not appear to be online. Sources last checked 2 Octob
 **No image files ship with this package.** Six archival photographs are specified above with
 their stable URLs. Download them before publishing, or publish without them and say so.
 """)
-open(os.path.join(HERE,"copy-full.md"),"w",encoding="utf-8").write(FULL)
+open(os.path.join(HERE,"copy-full.md"),"w",encoding="utf-8",newline="\n").write(FULL)
 js = OUT.count("<script")
 print(f"copy.html written: {len(OUT)} chars, {len(rows)} source items, "
       f"{len(sections)} sections, {len(questions)} questions, {len(activities)} activities, "

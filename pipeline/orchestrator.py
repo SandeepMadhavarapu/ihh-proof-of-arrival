@@ -129,7 +129,7 @@ class Orchestrator:
         (draft.out_dir / "HUMAN-SIGNOFF-REQUIRED.txt").write_text(
             "DRAFT — REQUIRES HUMAN SIGN-OFF BEFORE MUSEUM PUBLICATION.\n"
             "The pipeline evidence-gates claims and QA, but it can never mark a profile museum-ready.\n",
-            encoding="utf-8",
+            encoding="utf-8", newline="\n",
         )
         source_index = {sid: s.to_dict() for sid, s in draft.sources.items()}
         for meta in source_index.values():

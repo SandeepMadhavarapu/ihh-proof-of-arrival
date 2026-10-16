@@ -19,7 +19,7 @@ Madeleine Korbel Albright was born on May 15, 1937, in Prague.
 ## Secretary of State
 She was sworn in on January 23, 1997, as the 64th Secretary of State.
 
-## Papers
+## Albright papers
 The papers of Madeleine Korbel Albright, U.S. secretary of state, diplomat, and educator, were given to the Library of Congress by Albright in 2014 and 2016.
 
 ## Access boundary
