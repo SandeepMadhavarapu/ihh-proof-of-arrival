@@ -9,6 +9,11 @@ to research; a **documented search**; the **best content** selected; and everyth
 Madeleine Albright, Hedy Lamarr, I. M. Pei and Celia Cruz, with images, a rights register,
 and a log of how every item was found. Start at `handover/INSTALL.md`.
 
+**Positioning: supplement/pilot, not replacement.** The board assessment recommends taking
+specific ideas now (option c), with a controlled WordPress pilot toward option b. Nothing here
+replaces the museum's website. See [POSITIONING.md](POSITIONING.md), [ROADMAP.md](ROADMAP.md)
+and [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ---
 
 ## What is in here
@@ -41,6 +46,10 @@ and a log of how every item was found. Start at `handover/INSTALL.md`.
 rights statements on sites that block automated tools, and records that need a login
 (passenger lists) or a request (naturalization files). **Every search log was run by an AI
 assistant and needs a team member to spot-check it** before it is presented as the team's work.
+
+The demo sitemap uses `https://example.invalid/` deliberately: it is a non-production
+deployment placeholder, not a set of working museum links. Before deployment, replace every
+placeholder with approved production URLs or omit the sitemap until configured.
 
 ## Running it
 
@@ -86,3 +95,15 @@ review rights, fact-check the profile, inspect any images, and approve museum pu
   page says so. Disputed dates (Albright's 1998 ceremony on the 10th, the statement on the 11th)
   are explained.
 - **Every image was looked at before it was described.** Alt text is at most 15 words.
+
+## What is deliberately not finished
+
+Six of the ten inductee profiles are unwritten; this package delivers four, each still needing
+a named person's editorial sign-off (the byline placeholder) before publication. The Profile
+Factory's deterministic demo does not count as another profile. No screen-reader user has
+tested any of this, no volunteer has run the WordPress handoff in the museum's real site, and
+no permission letter has been sent to any institution. `site/TESTS-RUN.md` lists what was and
+was not tested.
+
+The demo sitemap uses `https://example.invalid/` deliberately: it is a non-production
+placeholder. Replace it with approved production URLs, or omit the sitemap, before deployment.

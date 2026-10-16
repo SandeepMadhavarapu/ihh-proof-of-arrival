@@ -212,7 +212,7 @@ Research assisted by AI and checked by the team; every source above was opened a
 </div>
 </div>
 '''
-    open(os.path.join(folder, "copy.html"), "w", encoding="utf-8").write(out)
+    open(os.path.join(folder, "copy.html"), "w", encoding="utf-8", newline="\n").write(out)
 
     preview = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
@@ -230,7 +230,7 @@ p{{margin:0 0 24px}} ol,ul{{padding-left:60px}} blockquote{{font-size:11px;color
 <div class="host-chrome">End of block</div>
 </body></html>
 '''
-    open(os.path.join(folder, "preview.html"), "w", encoding="utf-8").write(preview)
+    open(os.path.join(folder, "preview.html"), "w", encoding="utf-8", newline="\n").write(preview)
 
     def md_item(r):
         lines = [f'**{r["item_no"]}. {r["title"]}**', "", r["gloss"], "",
@@ -243,7 +243,7 @@ p{{margin:0 0 24px}} ol,ul{{padding-left:60px}} blockquote{{font-size:11px;color
         return "\n".join(lines) + "\n"
 
     full = (md.rstrip() + "\n\n---\n\n## The sources\n\n" + "\n".join(md_item(r) for r in shown))
-    open(os.path.join(folder, "copy-full.md"), "w", encoding="utf-8").write(full)
+    open(os.path.join(folder, "copy-full.md"), "w", encoding="utf-8", newline="\n").write(full)
     print(f"{os.path.relpath(folder, ROOT)}: {len(p['sections'])} sections, {len(shown)} sources "
           f"({sum(1 for r in shown if r.get('_web'))} images), {len(p['questions'])} questions, "
           f"{len(p['activities'])} activities, {out.count('<script')} script tags")

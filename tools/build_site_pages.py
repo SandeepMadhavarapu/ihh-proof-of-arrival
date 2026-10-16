@@ -63,5 +63,5 @@ for name in sorted(os.listdir(base)):
     out = (page_head + '<main id="main" class="profile-page">\n'
            + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
            + frag + "\n</main>" + foot)
-    open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8").write(out)
+    open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8", newline="\n").write(out)
     print(f"site/{name}.html")

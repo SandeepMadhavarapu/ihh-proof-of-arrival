@@ -41,4 +41,4 @@ The CI run regenerates the static artifacts before testing them. Once the visual
 
 This demo does **not** replace or alter `albright-wp/`. The existing Albright deliverable remains frozen; its no-argument builder is byte-compared in CI and the repository's exact `qa/rebuild.sh` clean-rebuild harness is run from a fresh archive.
 
-A passing demo still stops at **PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF**. A named human must re-open the live sources, review rights, fact-check the finished profile, and approve museum publication.
+A passing demo still stops at **PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF**. A named human must re-open the live sources, review rights, fact-check the authored draft, and approve museum publication.

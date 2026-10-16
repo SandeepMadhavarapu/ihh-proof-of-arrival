@@ -30,3 +30,9 @@ inductees/*/media/*
 !inductees/*/media/web/
 inductees/*/sources/nara-*/
 handover/*.zip
+
+# Local Python environments; retain source, tests, and reviewed generated artifacts.
+.venv/
+venv/
+.pytest_cache/
+Thumbs.db

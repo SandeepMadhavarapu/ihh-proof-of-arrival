@@ -28,6 +28,25 @@ STRUCTURAL_HEADINGS = {
 MAX_SOURCE_CHARS = 60_000
 MAX_TOTAL_SOURCE_CHARS = 180_000
 
+# A lexical sanity check, not proof of entailment. Keep this set explicit and
+# deterministic so callers can understand why a citation was rejected.
+EVIDENCE_STOPWORDS = frozenset("""
+about after again also among because been before being between both could
+does during each from have having here into itself more most much must
+only other over same should some such than that their theirs them themselves
+then there these they this those through under until upon very were what
+when where which while whom whose will with within without would your
+""".split())
+
+
+def _words(text: str) -> list[str]:
+    return re.findall(r"[^\W\d_]+", text.lower(), flags=re.UNICODE)
+
+
+def _significant_tokens(text: str) -> set[str]:
+    return {word for word in _words(text)
+            if len(word) >= 4 and word not in EVIDENCE_STOPWORDS}
+
 # Only closed, process-oriented visitor text may bypass historical evidence. This is
 # intentionally an allowlist: arbitrary questions/instructions are evidence-required.
 _SAFE_NONCLAIMS = {
@@ -222,7 +241,11 @@ attribution, captions/credits, and factual premises inside questions/activities 
 
 For an evidence-requiring unit:
 - CONFIRMED only when one retrieved source directly supports the full meaning and you can copy an
-  EXACT contiguous source span into evidence_span.
+  EXACT contiguous source span into evidence_span. The span must contain at least 24 characters
+  and 4 words, and share at least 2 distinct significant words with the unit (lowercased words
+  of at least 4 characters, excluding common stopwords). Include supporting context for headings
+  and attribution; a name or isolated keyword alone is insufficient. These lexical requirements
+  do not replace checking that the source supports the full meaning.
 - QUOTATION requires the exact quoted words in source text.
 - PARAPHRASE must not be broader or more certain than the span.
 - Attribution must be supported by text identifying the speaker/reporting source.
@@ -339,6 +362,12 @@ Temperature is fixed by the caller at 0."""
                         (reason + " | ").strip(" |")
                         + "CONFIRMED downgraded: exact evidence span was not found in retrieved source text"
                     )
+                elif len(span.strip()) < 24 or len(_words(span)) < 4:
+                    verdict = Verdict.UNSUPPORTED
+                    reason += " | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+                elif len(_significant_tokens(span) & _significant_tokens(unit)) < 2:
+                    verdict = Verdict.UNSUPPORTED
+                    reason += " | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
                 elif provenance == Provenance.QUOTATION:
                     quoted = unit
                     if unit.lower().startswith("quotation attribution:"):
