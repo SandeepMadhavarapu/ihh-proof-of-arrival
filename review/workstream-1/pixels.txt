@@ -1,0 +1,9 @@
+Sampled 570 text runs against real composited pixels, across 20 pages in both colour schemes.
+Tightest 5 (measured / required):
+  5.05 / 4.5  light index      SPAN: Immigrant Hall of Honor · Digital exhi
+  5.05 / 4.5  dark  index      SPAN: Immigrant Hall of Honor · Digital exhi
+  5.10 / 4.5  light 404        A: Home
+  5.10 / 4.5  light about      A: Home
+  5.10 / 4.5  light accessibility A: Home
+
+  OK   every one of 570 sampled text runs meets its WCAG contrast minimum

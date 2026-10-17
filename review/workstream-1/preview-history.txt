@@ -1,0 +1,59 @@
+4fab8601a2cdd1f474e592da38833b131f71d61c preview: add Naismith & Strauss exhibits; scroll-reveal on exhibit pages
+58d06be18f86afa970a01d1a3e3394824b81ab3f preview: add Irving Berlin exhibit; Hope review fix (first civilian); name Tolochin
+d791f4e6b092ab80ee88b0d531a196d8f7fbef84 preview: add Bob Hope exhibit; fix unsourced card claims; hedge Einstein portrait date
+d0862291e032ada29909d26628fac318ea32edc9 preview: reframe Muir to stand alone; add Einstein exhibit
+6f39f894a7bf05814a1c2bbad150c8f138da9a3b preview: John Muir exhibit + homepage hero wall & background
+ inductees/berlin/copy-full.md                      | 113 ++++++++
+ inductees/berlin/copy.html                         | 212 ++++++++++++++
+ inductees/berlin/copy.md                           |  66 +++++
+ inductees/berlin/media-manifest.csv                |   6 +
+ .../berlin/media/web/berlin-portrait-nywts.jpg     | Bin 0 -> 33514 bytes
+ inductees/berlin/preview.html                      | 227 +++++++++++++++
+ inductees/einstein/copy-full.md                    | 137 ++++++++++
+ inductees/einstein/copy.html                       | 236 ++++++++++++++++
+ inductees/einstein/copy.md                         |  66 +++++
+ inductees/einstein/media-manifest.csv              |   9 +
+ .../media/web/einstein-portrait-turner.jpg         | Bin 0 -> 35413 bytes
+ inductees/einstein/preview.html                    | 251 +++++++++++++++++
+ inductees/hope/copy-full.md                        | 112 ++++++++
+ inductees/hope/copy.html                           | 212 ++++++++++++++
+ inductees/hope/copy.md                             |  65 +++++
+ inductees/hope/media-manifest.csv                  |   6 +
+ inductees/hope/media/web/hope-portrait-nbc.jpg     | Bin 0 -> 27755 bytes
+ inductees/hope/preview.html                        | 227 +++++++++++++++
+ inductees/muir/copy-full.md                        | 142 ++++++++++
+ inductees/muir/copy.html                           | 236 ++++++++++++++++
+ inductees/muir/copy.md                             |  71 +++++
+ inductees/muir/media-manifest.csv                  |   9 +
+ .../muir/media/web/muir-watkins-portrait-c1875.jpg | Bin 0 -> 25556 bytes
+ inductees/muir/preview.html                        | 251 +++++++++++++++++
+ inductees/naismith/copy-full.md                    | 134 +++++++++
+ inductees/naismith/copy.html                       | 228 ++++++++++++++++
+ inductees/naismith/copy.md                         |  71 +++++
+ inductees/naismith/media-manifest.csv              |   8 +
+ inductees/naismith/media/web/naismith-portrait.jpg | Bin 0 -> 45583 bytes
+ inductees/naismith/preview.html                    | 243 +++++++++++++++++
+ inductees/strauss/copy-full.md                     | 112 ++++++++
+ inductees/strauss/copy.html                        | 212 ++++++++++++++
+ inductees/strauss/copy.md                          |  65 +++++
+ inductees/strauss/media-manifest.csv               |   6 +
+ inductees/strauss/media/web/strauss-portrait.jpg   | Bin 0 -> 22220 bytes
+ inductees/strauss/preview.html                     | 227 +++++++++++++++
+ site/__pycache__/cases.cpython-313.pyc             | Bin 28902 -> 28897 bytes
+ site/assets/site.css                               |  50 +++-
+ site/assets/site.js                                |  51 ++++
+ site/berlin.html                                   | 279 +++++++++++++++++++
+ site/einstein.html                                 | 303 +++++++++++++++++++++
+ site/hope.html                                     | 279 +++++++++++++++++++
+ site/index.html                                    |  11 +-
+ site/inductees.html                                |  46 ++--
+ site/media/berlin/berlin-portrait-nywts.jpg        | Bin 0 -> 33514 bytes
+ site/media/einstein/einstein-portrait-turner.jpg   | Bin 0 -> 35413 bytes
+ site/media/hope/hope-portrait-nbc.jpg              | Bin 0 -> 27755 bytes
+ site/media/muir/muir-watkins-portrait-c1875.jpg    | Bin 0 -> 25556 bytes
+ site/media/naismith/naismith-portrait.jpg          | Bin 0 -> 45583 bytes
+ site/media/strauss/strauss-portrait.jpg            | Bin 0 -> 22220 bytes
+ site/muir.html                                     | 303 +++++++++++++++++++++
+ site/naismith.html                                 | 295 ++++++++++++++++++++
+ site/strauss.html                                  | 279 +++++++++++++++++++
+ 53 files changed, 5830 insertions(+), 26 deletions(-)

@@ -1,6 +1,7 @@
+import { PAGES } from './catalog.mjs';
 import { chromium } from 'playwright';
 const SITE='http://127.0.0.1:8731/', WP='http://127.0.0.1:8741/inductees/albright/preview.html';
-const PAGES=['index','inductees','verify','method','albright','lamarr','pei','cruz','share','about','rights','accessibility','privacy','404'];
+
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 const pass=[],fail=[]; const ck=(c,m)=>(c?pass:fail).push(m);
 

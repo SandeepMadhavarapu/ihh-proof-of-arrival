@@ -1,0 +1,321 @@
+{
+ "slug": "naismith",
+ "title": "Naismith — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/naismith/copy.md` are authorized by this note.",
+  "IHH starting page: [james-naismith](https://immigranthallofhonor.org/inductees/inductee-james-naismith/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "The IHH page and repository manifest were inspected. Existing source records are leads, not fresh confirmation of every IHH statement."
+ ],
+ "sources": {
+  "DCB": [
+   "Dictionary of Canadian Biography, “NAISMITH, JAMES”",
+   "https://www.biographi.ca/en/bio.php?id=9082"
+  ],
+  "TCE": [
+   "The Canadian Encyclopedia, “James Naismith”",
+   "https://thecanadianencyclopedia.ca/en/article/james-naismith"
+  ],
+  "KUX": [
+   "KU Libraries exhibit, “McGill University” (James Naismith’s Life and Legacy)",
+   "https://exhibits.lib.ku.edu/exhibits/show/naismith150/collections/mcgill"
+  ],
+  "KUN": [
+   "KU News, 15 Dec 2015, “Professor discovers only known audio recording of James Naismith”",
+   "https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith"
+  ],
+  "FIBA": [
+   "FIBA Hall of Fame, “James NAISMITH (CAN)”",
+   "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith"
+  ],
+  "ATOC": [
+   "Atlanta Tipoff Club, “History”",
+   "https://atltipoffclub.com/history/"
+  ],
+  "CSN": [
+   "Canadian Stamp News, “OTD: Grand opening of Naismith Memorial Basketball Hall of Fame”",
+   "https://canadianstampnews.com/otd-grand-opening-of-naismith-memorial-basketball-hall-of-fame/"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: James Naismith",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "NAISMITH, JAMES, educator, sports innovator, physician"
+    ]
+   ],
+   "note": "The name under which he lived and worked in the United States; no other U.S. name is recorded."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: James Naismith",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "NAISMITH, JAMES, educator, sports innovator, physician"
+    ]
+   ],
+   "note": "No different birth name is recorded in either reference work."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: Nov. 6, 1861, Almonte, Ontario, Canada",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "b. 6 Nov. 1861 in Ramsay Township, Upper Canada"
+    ],
+    [
+     "TCE",
+     "James Naismith was born on 6 November 1861 in Ramsay Township near Almonte, Ontario"
+    ]
+   ],
+   "note": "Date confirmed. Precision note: both sources place the birth in Ramsay Township, near Almonte. “Almonte, Ontario” is how The Canadian Encyclopedia’s own header gives it, so IHH’s wording is acceptable; “Ramsay Township, near Almonte” is the more exact form."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: Nov. 28, 1939, Lawrence, Kansas",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "d. 28 Nov. 1939 in Lawrence, Kans."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Dictionary of Canadian Biography."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: BA in physical education (1888) and a diploma at the Presbyterian College in Montreal (1890); Gross Medical College, M.D 1898",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "KUX",
+     "led to his graduation with a BA in 1887"
+    ],
+    [
+     "KUX",
+     "Naismith’s studies focused on philosophy and Hebrew"
+    ],
+    [
+     "TCE",
+     "He earned a diploma in theology in 1890."
+    ],
+    [
+     "DCB",
+     "He graduated with an md in April 1898."
+    ]
+   ],
+   "note": "Three of four parts confirmed: Presbyterian College diploma (1890) and Gross Medical College M.D. (1898). The BA is the problem: KU Libraries gives the year as 1887, not 1888, and the subject as philosophy and Hebrew, not physical education. Suggested wording: “B.A., McGill University (1887); diploma in theology, Presbyterian College, Montreal (1890); M.D., Gross Medical College, Denver (1898).”"
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Teacher, Coach",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "TCE",
+     "Dr. James Naismith, physical educator, author, inventor, chaplain, physician"
+    ],
+    [
+     "TCE",
+     "Naismith compiled a 55–60 coaching record at Kansas"
+    ]
+   ],
+   "note": "“Teacher” and “coach” are both supported. IHH could add “physician”, which both reference works give."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1925",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "he filed for American citizenship, which would be granted in 1925"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Dictionary of Canadian Biography."
+  },
+  "L25": {
+   "section": "Achievements",
+   "claim": "Served as Head of Physical Education at the International YMCA Training School (1891)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "TCE",
+     "In 1891, he became an instructor at the school."
+    ],
+    [
+     "DCB",
+     "in 1892, a physical instructor at the International Young Men’s Christian Association (YMCA) Training School"
+    ],
+    [
+     "TCE",
+     "physical education director Dr. Luther Gulick tasked Naismith"
+    ]
+   ],
+   "note": "The sources describe him as an instructor, not the head: Luther Gulick was the school’s physical education director. They also differ on the year (1891 vs 1892). Suggested wording: “Instructor at the International YMCA Training School, Springfield (from 1891)”."
+  },
+  "L26": {
+   "section": "Achievements",
+   "claim": "Invented the game of Basketball (1891)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "where he created the game in 1891"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Dictionary of Canadian Biography."
+  },
+  "L27": {
+   "section": "Achievements",
+   "claim": "Authored the original 13 rules of Basketball (1892)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DCB",
+     "Publication of Naismith’s 13 rules followed in 1892."
+    ]
+   ],
+   "note": "1892 is the publication year. The rules were written and first posted in December 1891, so “wrote 1891, published 1892” is the most exact form."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "Invented a type of football helmet (1893)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "DCB",
+     "In the fall of 1891, to protect his battered ears, he had devised the first known football headgear."
+    ]
+   ],
+   "note": "The Dictionary of Canadian Biography dates the headgear to fall 1891, not 1893."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Served as Chairman of the Physical Education Department at the University of Kansas (1898 – 1909)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "KUN",
+     "He was hired by the University of Kansas in 1898 to serve as chapel director, director of physical education and university physician"
+    ],
+    [
+     "KUN",
+     "chairing that department until 1924"
+    ]
+   ],
+   "note": "The start year (1898) is confirmed. KU’s own news office gives the end of his department chair as 1924, not 1909. Ask KU Archives which is correct before changing it; this is one KU account."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Coached basketball at the University of Kansas (1898 – 1908)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "KUN",
+     "was the first basketball coach from 1899 to 1907"
+    ],
+    [
+     "TCE",
+     "before handing head coaching duties to former student Forrest “Phog” Allen in 1907"
+    ]
+   ],
+   "note": "Two sources end his coaching in 1907, not 1908. KU gives 1899 as the start, matching the first playing season (1898–99); he was hired in 1898. Suggested: “Coached basketball at the University of Kansas (1898–1907)”. This matches the profile’s existing 1898–1907."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "The FIBA (International Basketball Federation) estimates that 450 million people a year play basketball around the world",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "TCE",
+     "estimated that globally, more than 450 million people play the game"
+    ]
+   ],
+   "note": "“More than 450 million” is confirmed as reported by The Canadian Encyclopedia; it was not found on a FIBA page, and “a year” is not in the source wording. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L36": {
+   "section": "Honours",
+   "claim": "Inducted into the Canadian Sports Hall of Fame (1955)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "TCE",
+     "Canada’s Sports Hall of Fame (1955)"
+    ]
+   ],
+   "note": "From The Canadian Encyclopedia’s honours list. Canada’s Sports Hall of Fame’s own record was not retrieved."
+  },
+  "L37": {
+   "section": "Honours",
+   "claim": "Honored with the name of the Naismith Basketball Hall of Fame (1959)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "TCE",
+     "In 1959, the Naismith Memorial Basketball Hall of Fame was established on the campus of Springfield College."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Canadian Encyclopedia."
+  },
+  "L38": {
+   "section": "Honours",
+   "claim": "Inducted into the Naismith Basketball Hall of Fame (1959)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "TCE",
+     "Naismith became the first member of the Basketball Hall of Fame in 1959."
+    ]
+   ],
+   "note": "The Hall of Fame’s own site (hoophall.com) was not retrieved. IHH lists the naming and the induction as two separate 1959 honours; they are related and could be combined."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Honored with the naming of the James Naismith Award (1969)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ATOC",
+     "In 1969, the founders sought to grow the brand nationally, and ultimately created the Naismith Trophy"
+    ]
+   ],
+   "note": "The awarding body calls it the “Naismith Trophy”."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Honored with a Canadian Stamp (1991)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "CSN",
+     "In 1991, Naismith and the 100th anniversary of the game of basketball were commemorated on a 40-cent stamp (Scott #1344) issued by Canada Post."
+    ]
+   ],
+   "note": "Source is a philatelic trade publication, not Canada Post’s own record."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Inducted into the FIBA (International Basketball Federation) Hall of Fame (2007)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "FIBA",
+     "2007 CLASS Category | Contributor"
+    ]
+   ],
+   "note": "FIBA’s own Hall of Fame record."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Basketball invention in Springfield in 1891; educator; subsequent global popularity and influence. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — search log is partial.** `inductees/naismith/search-log.csv` now records the preserved 16–17 October 2026 research calls and the 17 October 2026 reconciliation retrievals. Research done outside this repository, if any, is not in it.\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Retrieval attempts in this review\n\nThe KU original-rules page https://debrucecenter.ku.edu/rules and the attempted KU History biography were inaccessible. The existing profile’s 1925 citizenship and 1898–1907 coaching interval remain unchanged. Reconcile IHH’s 1898–1908 against the actual KU record before proposing public edits.\n\n## Institutional date conflict — unresolved\n\nThe [KU News account of 15 December 2015](https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith), retrieved 17 October 2026, says “first basketball coach from 1899 to 1907” and “chairing that department until 1924.” These differ from IHH’s coaching and department-chair intervals. **CORRECTION SUGGESTED for review, not applied:** clarify first appointment versus first playing season, and administrative role boundaries. The repository’s 1898–1907 interval is explicitly protected by the team lead and remains unchanged. This one account is not sufficient grounds to replace it. Rows L29 and L30 carry the same evidence with exact spans."
+}

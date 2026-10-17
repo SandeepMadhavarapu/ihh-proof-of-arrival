@@ -1,0 +1,2 @@
+
+Every non-inline target on all 20 pages is at least 24x24.

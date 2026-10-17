@@ -1,0 +1,195 @@
+{
+ "slug": "lamarr",
+ "title": "Lamarr — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/lamarr/copy.md` are authorized by this note.",
+  "IHH starting page: [hedy-lamarr](https://immigranthallofhonor.org/inductees/inductee-hedy-lamarr/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "Independent source read: [National Inventors Hall of Fame](https://www.invent.org/inductees/hedy-lamarr). A page being available does not verify every claim on IHH."
+ ],
+ "sources": {
+  "BRI": [
+   "Encyclopædia Britannica, “Hedy Lamarr”",
+   "https://www.britannica.com/biography/Hedy-Lamarr"
+  ],
+  "NIHF": [
+   "National Inventors Hall of Fame, “Hedy Lamarr”",
+   "https://www.invent.org/inductees/hedy-lamarr"
+  ],
+  "WOF": [
+   "Hollywood Walk of Fame, “Hedy Lamarr”",
+   "https://walkoffame.com/hedy-lamarr/"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: Hedy Lamarr",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from National Inventors Hall of Fame."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Hedwig Eva Maria Kiesler",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "Also known as: Hedwig Eva Maria Kiesler"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: Nov. 9, 1914, Vienna, Austria",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "Born Nov. 9, 1914 - Died Jan. 19, 2000"
+    ],
+    [
+     "WOF",
+     "Born: 1914-11-09, Vienna, Austria"
+    ]
+   ],
+   "note": "Note: Britannica gives the birth year as “1913/14”; the National Inventors Hall of Fame gives 1914."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: Jan. 19, 2000, Casselberry, Florida",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "died January 19, 2000, near Orlando, Florida, U.S."
+    ]
+   ],
+   "note": "Date confirmed. Britannica says “near Orlando”; Casselberry (a suburb of Orlando) is not named in the retrieved text."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: Max Reinhardt’s Berlin Dramatic School, 1929",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "At age 16 she enrolled in Max Reinhardt’s Berlin-based dramatic school"
+    ]
+   ],
+   "note": "The school is confirmed. Britannica gives her age (16), not a year. Given the 1913/14 birth-year uncertainty, 1929 cannot be confirmed."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Inventor, Actress",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age"
+    ],
+    [
+     "NIHF",
+     "Lamarr also worked with Hollywood composer George Antheil to invent a frequency hopping technique"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from National Inventors Hall of Fame."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1953",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "Lamarr became a U.S. citizen in 1953."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Co-Invention of Frequency-Hopping Spread Spectrum (1941)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "Lamarr also worked with Hollywood composer George Antheil to invent a frequency hopping technique"
+    ]
+   ],
+   "note": "Co-invention with George Antheil is confirmed. The 1941 date (the patent application) is not in this source; the patent itself, already in our profile’s manifest, records the filing date."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Patent for Secret Communication System (1942)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "When the patent was issued in 1942, it listed her maiden and married name at the time, Hedy Kiesler Markey."
+    ]
+   ],
+   "note": "U.S. Patent No. 2,292,387."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "Starred in more than 30 films",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No filmography count was checked. Britannica names individual films but gives no total."
+  },
+  "L38": {
+   "section": "Honours",
+   "claim": "Star on the Hollywood Walk of Fame (1960)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Motion Pictures Address 6247 Hollywood Blvd. Ceremony date 02/08/1960"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Hollywood Walk of Fame."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Won the Electronic Frontier Foundation (EFF) Pioneer Award (1997)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "it was acknowledged by the Electronic Frontier Foundation in 1997 as an important development in wireless communications"
+    ]
+   ],
+   "note": "The National Inventors Hall of Fame records the 1997 EFF recognition; EFF’s own Pioneer Award list was not retrieved."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "First woman to win the Invention Convention’s Bulbie Gnass Spirit of Achievement Award (1997)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No record of the 1997 Invention Convention “Bulbie” award was retrieved."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Inducted into the National Inventors Hall of Fame (2014)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NIHF",
+     "Frequency Hopping Communication System U.S. Patent No. 2,292,387 Inducted in 2014"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from National Inventors Hall of Fame."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Film career; wartime collaboration on frequency hopping; claimed relationship to Wi-Fi and Bluetooth; impact on perceptions of women in science and arts. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made."
+}

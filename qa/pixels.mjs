@@ -1,3 +1,4 @@
+import { PAGES } from './catalog.mjs';
 /* Contrast, measured from real composited pixels — not from declared tokens.
  *
  * axe-core reports colour-contrast as "incomplete" (not pass, not fail) wherever a
@@ -13,7 +14,7 @@
  */
 import { chromium } from 'playwright';
 const OUT = process.env.QA_OUT || '/tmp/qa-out';
-const PAGES=['index','about','accessibility','albright','inductees','method','privacy','rights','share','verify','404'];
+
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
   args:['--no-sandbox','--force-color-profile=srgb','--font-render-hinting=none']});
 

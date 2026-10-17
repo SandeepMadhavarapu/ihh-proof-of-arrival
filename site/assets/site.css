@@ -214,7 +214,7 @@ p{margin:0 0 1.05rem}
 .lede{font-size:1.2rem;line-height:1.6;color:var(--ink)}
 
 /* the drop cap — three lines deep, as a printer would set it */
-sectionsection.hero .lede::first-letter{
+section.hero:not(.arrival-hero) .lede::first-letter{
   float:left;font:400 3.9em/.78 var(--display);color:var(--accent);
   margin:.07em .09em -.04em 0;padding-right:.04em;
   text-shadow:1px 1px 0 var(--accent-soft)}
@@ -251,14 +251,14 @@ sectionsection.hero .lede::first-letter{
 
 /* ── the hero, set as a broadside ───────────────────────────────────────*/
 section.hero{padding-top:.6rem;text-align:center}
-sectionsection.hero .kicker{justify-content:center}
-sectionsection.hero .kicker::after{display:none}
-sectionsection.hero .kicker{
+section.hero:not(.arrival-hero) .kicker{justify-content:center}
+section.hero:not(.arrival-hero) .kicker::after{display:none}
+section.hero:not(.arrival-hero) .kicker{
   border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);
   padding:.55rem 0;display:block}
-sectionsection.hero h1{margin:1.3rem 0 1.2rem}
+section.hero:not(.arrival-hero) h1{margin:1.3rem 0 1.2rem}
 section.hero .lede{text-align:left;margin-top:1.6rem}
-sectionsection.hero .cta{justify-content:center}
+section.hero:not(.arrival-hero) .cta{justify-content:center}
 
 /* ── the tinted plate ───────────────────────────────────────────────────*/
 .band{
@@ -791,7 +791,7 @@ html{scroll-padding-top:5.5rem}
 .tally{max-width:58rem}
 
 /* the drop cap was one line too tall for a short standfirst */
-sectionsection.hero .lede::first-letter{font-size:3.35em;line-height:.82}
+section.hero:not(.arrival-hero) .lede::first-letter{font-size:3.35em;line-height:.82}
 
 /* the citation step — a finding without a citation is an opinion */
 /* visible by default so the page works with no script; the script hides it

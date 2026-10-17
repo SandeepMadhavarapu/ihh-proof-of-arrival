@@ -1,0 +1,2 @@
+  ✓ 320px (reflow): all 20 pages reflow with no horizontal scrolling
+  ✓ 640px (=200% zoom): all 20 pages reflow with no horizontal scrolling

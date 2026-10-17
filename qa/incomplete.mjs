@@ -1,5 +1,6 @@
+import { PAGES } from './catalog.mjs';
 import { chromium } from 'playwright';
-const PAGES=['index','inductees','verify','method','albright','share','about','rights','accessibility','privacy','404'];
+
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 let inc=0, reasons={};
 for (const pg of PAGES){

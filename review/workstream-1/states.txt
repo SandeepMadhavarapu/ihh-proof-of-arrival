@@ -1,0 +1,14 @@
+  ✓ prefers-reduced-motion: nothing animates on any page 
+  ✓ print: every collapsed section opens (0 still hidden)
+  ✓ print: interface chrome is removed (0 still shown)
+  ✓ print: WordPress fragment opens all sections (0 hidden)
+  ✓ 320px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 360px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 390px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 430px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 768px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 1280px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ 1600px: no horizontal scrolling on 20 pages + the WP fragment 
+  ✓ keyboard: every one of 30 focus stops shows a visible indicator (0 did not)
+
+ALL 12 STATE CHECKS PASSED

@@ -1,0 +1,1 @@
+No site-theme rule changes rendering inside the exhibit.

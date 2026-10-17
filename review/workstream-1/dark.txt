@@ -1,0 +1,4 @@
+  ✓ light scheme, toggles pressed, disclosures open: 0 violations across 20 pages
+  ✓ dark scheme, toggles pressed, disclosures open: 0 violations across 20 pages
+
+TOTAL: 0

@@ -1,0 +1,267 @@
+{
+ "slug": "albright",
+ "title": "Albright — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/albright/copy.md` are authorized by this note.",
+  "IHH starting page: [madeleine-albright](https://immigranthallofhonor.org/inductees/inductee-madeleine-albright/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "Independent source read: [US Department of State, Office of the Historian](https://history.state.gov/departmenthistory/people/albright-madeleine-korbel). A page being available does not verify every claim on IHH."
+ ],
+ "sources": {
+  "OH": [
+   "U.S. Department of State, Office of the Historian, “Madeleine Korbel Albright”",
+   "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel"
+  ],
+  "WEL": [
+   "Wellesley College, Albright Institute, “Secretary Albright”",
+   "https://www.wellesley.edu/academics/centers/albright/people"
+  ],
+  "GU": [
+   "Georgetown University, Mortara Center, “The Honorable Madeleine K. Albright”",
+   "https://mortara.georgetown.edu/profiles/the-honorable-madeleine-k-albright/"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L9": {
+   "section": "Facts",
+   "claim": "U.S. Name: Madeleine Jana Korbel Albright",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "Madeleine Korbel Albright, 64th Secretary of State"
+    ]
+   ],
+   "note": "The State Department uses “Madeleine Korbel Albright”. The middle name “Jana” is not in the retrieved sources."
+  },
+  "L10": {
+   "section": "Facts",
+   "claim": "Birth Name: Marie Jana Korbel",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "OH",
+     "Albright was born Marie Jean “Madlenka” Korbel on May 15, 1937, in Prague, Czechoslovakia."
+    ]
+   ],
+   "note": "The State Department’s historian gives “Marie Jean ‘Madlenka’ Korbel”. IHH’s “Marie Jana” may be the Czech form of the same name. IHH should either use the State Department form or explain the variant."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Born: May 15, 1937, Prague, Czechoslovakia",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "Albright was born Marie Jean “Madlenka” Korbel on May 15, 1937, in Prague, Czechoslovakia."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from U.S. Department of State."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Died: March 23, 2022, Washington DC",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "Born 1937 Died 2022"
+    ]
+   ],
+   "note": "The year is confirmed by the State Department. The exact date (March 23) and place (Washington, D.C.) were not in the retrieved text: two news sites tried were blocked or refused access."
+  },
+  "L14": {
+   "section": "Facts",
+   "claim": "Education: Wellesley College (B.A in Political Science 1959), Columbia University (Masters and Ph. D in Public Law and Government 1976)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "earned a B.A. in political science with honors from Wellesley College in 1959"
+    ],
+    [
+     "OH",
+     "She earned the Ph.D. in Public Law and Government at Columbia University in 1976."
+    ],
+    [
+     "WEL",
+     "Master’s and Doctorate degrees from Columbia University"
+    ]
+   ],
+   "note": "The master’s degree is confirmed; its year is not given."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Occupation: Politician, Author",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "WEL",
+     "Madeleine K. Albright was a professor, author, diplomat and businesswoman"
+    ]
+   ],
+   "note": "Status revised 17 Oct 2026: “Author” is confirmed; “Politician” is not in the source, which says “professor, author, diplomat and businesswoman”. IHH could use “Diplomat, Author”."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1957",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "became a U.S. citizen in 1957"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from U.S. Department of State."
+  },
+  "L25": {
+   "section": "Achievements",
+   "claim": "Member of President Carter’s National Security Council (1978 – 1981)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "From 1978 to 1981, she served as a staff member in the White House under President Jimmy Carter and on the National Security Council"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from U.S. Department of State."
+  },
+  "L26": {
+   "section": "Achievements",
+   "claim": "President of the Center of National Policy (1989 – 1992)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "GU",
+     "From 1989 to 1992, she served as President of the Center for National Policy."
+    ]
+   ],
+   "note": "Name note: it is the Center for National Policy (IHH writes “Center of National Policy”)."
+  },
+  "L27": {
+   "section": "Achievements",
+   "claim": "U.S Ambassador to the United Nations (1993 – 1997)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "Representative of the U.S.A. to the United Nations Appointed: January 27, 1993"
+    ],
+    [
+     "OH",
+     "Termination of Mission: January 21, 1997"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from U.S. Department of State."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "First female U.S. Secretary of State under President Clinton (1997 – 2001)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "OH",
+     "was nominated to be the first woman Secretary of State by President William Jefferson Clinton"
+    ],
+    [
+     "OH",
+     "ended her service on January 20, 2001"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from U.S. Department of State."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Chair of the National Democratic Institute for International Affairs (2001)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "GU",
+     "She also chaired the National Democratic Institute"
+    ]
+   ],
+   "note": "Chair confirmed; the 2001 start year is not in this source."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Board of Trustees for the Aspen Institute (2002)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not found in the retrieved sources: none of the three (State Department historian, Wellesley, Georgetown) mentions the Aspen Institute board."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "President of the Truman Scholarship Foundation (2003)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "GU",
+     "served as the president of the Truman Scholarship Foundation"
+    ]
+   ],
+   "note": "Role confirmed; the 2003 year is not in this source."
+  },
+  "L32": {
+   "section": "Achievements",
+   "claim": "Chair for NATO New Strategic Concept development (2009)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not found in the retrieved sources. NATO’s own record of the 2009–10 Group of Experts was not retrieved."
+  },
+  "L33": {
+   "section": "Achievements",
+   "claim": "Author of seven books, including public policy and memoir",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WEL",
+     "She was the author of seven New York Times bestselling books including her autobiography, Madam Secretary: A Memoir (2003)."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Wellesley College."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Order of the White Lion (1997, Czech)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No Czech presidential-office record of the Order of the White Lion was retrieved. Our own profile also lists this as an open item."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Induction into the National Women’s Hall of Fame (1998)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No record from the National Women’s Hall of Fame was retrieved."
+  },
+  "L42": {
+   "section": "Honours",
+   "claim": "Hanno R. Ellenbogen Citizenship Award (2000)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No record from the Hanno R. Ellenbogen Citizenship Award was retrieved."
+  },
+  "L43": {
+   "section": "Honours",
+   "claim": "Fulbright Prize for International Understanding (2001)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No record from the Fulbright Association was retrieved."
+  },
+  "L44": {
+   "section": "Honours",
+   "claim": "Presidential Medal of Freedom (2012)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WEL",
+     "Dr. Albright received the Presidential Medal of Freedom, the nation’s highest civilian honor, from President Obama on May 29, 2012."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Wellesley College."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: First female Secretary of State; Clinton service 1997–2001; family flight from communism; graduate study; UN appointment; NATO enlargement, Kosovo and democracy work; later professor, writer and adviser. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Caption claim inventory\n\n- **NOT VERIFIED:** UN headquarters located in New York City. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review.\n- **NOT VERIFIED:** Albright’s brooch collection and the statements conveyed. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review."
+}

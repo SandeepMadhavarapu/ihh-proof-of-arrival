@@ -1,0 +1,49 @@
+  NOT REPRO  A  no-JS hero paragraph invisible         
+               [{"t":"In July 1935 an American vice ","o":"1"},{"t":"I. M. Pei came to America on a","o":"1"}]  (.fade-up elements on page: 0)
+
+  NOT REPRO  B  no-JS mobile nav unreachable           
+               nav display=block; menu button is displayed but its only handler is JS
+
+  NOT REPRO  C-E albright profile has script or buttons
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E berlin profile has script or buttons  
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E cruz profile has script or buttons    
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E einstein profile has script or buttons
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E hope profile has script or buttons    
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E lamarr profile has script or buttons  
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E muir profile has script or buttons    
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E naismith profile has script or buttons
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E pei profile has script or buttons     
+               {"btn":0,"js":0}
+
+  NOT REPRO  C-E strauss profile has script or buttons 
+               {"btn":0,"js":0}
+
+  NOT REPRO  F  citation ignored outside case file 1   
+               case file 1 citation registered=true; citations shown after recording two=2 (expected 2)
+
+  NOT REPRO  G  Enter wipes search and filters         
+               "Showing 1 of 10."  ->  "Showing 1 of 10."   url/inductees.html
+
+  NOT REPRO  H  hero text column at 320px              
+               hero copy column 320px wide; figcaption 320px at x=0
+
+  NOT REPRO  I  loaded photo covers the hero credit    
+               topmost element over the credit line: ["FIGCAPTION","FIGURE.anchor","DIV.ihh-profile","MAIN.profile-page"]  (test used a 1px stand-in image, so this measures stacking only)
+
+Reproduced 0 of 16 findings.

@@ -1,0 +1,341 @@
+{
+ "slug": "einstein",
+ "title": "Einstein — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/einstein/copy.md` are authorized by this note.",
+  "IHH starting page: [albert-einstein](https://immigranthallofhonor.org/inductees/inductee-albert-einstein/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "Independent source read: [University of Zurich](https://www.news.uzh.ch/en/articles/news/2022/Doctor-Einstein.html). A page being available does not verify every claim on IHH."
+ ],
+ "sources": {
+  "BRI": [
+   "Encyclopædia Britannica, “Albert Einstein”",
+   "https://www.britannica.com/biography/Albert-Einstein"
+  ],
+  "NOB": [
+   "NobelPrize.org, “Albert Einstein – Biographical”",
+   "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/"
+  ],
+  "ETH": [
+   "ETH Library, “Einstein’s Studies at the Polytechnic Institute in Zurich (1896–1900)”",
+   "https://library.ethz.ch/en/collections-and-archives/platforms/einstein-online/studium-am-polytechnikum-in-zuerich-1896-1900.html"
+  ],
+  "AIP": [
+   "American Institute of Physics, “Einstein Exhibit — Chronology 1905”",
+   "https://history.aip.org/exhibits/einstein/chron-1905.htm"
+  ],
+  "DT": [
+   "National Archives DocsTeach, “Declaration of Intention for Albert Einstein”",
+   "https://docsteach.org/document/declaration-intention-einstein/"
+  ],
+  "FI": [
+   "The Franklin Institute, “Albert Einstein” (laureate record)",
+   "https://fi.edu/en/awards/laureates/albert-einstein"
+  ],
+  "BA": [
+   "Bibliotheca Alexandrina, Einstein 2005 exhibition, “Einstein’s Awards”",
+   "https://www.bibalex.org/Einstein2005/Awards.htm"
+  ],
+  "ET": [
+   "Einsteinturm Revisited project site, “Einstein Donation”",
+   "https://www.einsteinturm.com/en/einstein-donation"
+  ],
+  "LBL": [
+   "Berkeley Lab News Center, “Discoveries at the Edge of the Periodic Table: First Ever Measurements of Einsteinium” (3 Feb 2021)",
+   "https://newscenter.lbl.gov/2021/02/03/discoveries-at-the-edge-of-the-periodic-table-first-ever-measurements-of-einsteinium/"
+  ],
+  "USPS66": [
+   "USPS Stamps Forever, “Albert Einstein” (1966)",
+   "https://www.stampsforever.com/stamps/albert-einstein-1"
+  ],
+  "USPS79": [
+   "USPS Stamps Forever, “Albert Einstein” (1979)",
+   "https://www.stampsforever.com/stamps/albert-einstein"
+  ],
+  "TIME": [
+   "TIME, “Person Of The Century: Albert Einstein”",
+   "https://content.time.com/time/subscriber/article/0,33009,993017,00.html"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: Albert Einstein",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "Albert Einstein (born March 14, 1879, Ulm, Württemberg (now Baden-Württemberg), Germany"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Albert Einstein",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "Albert Einstein (born March 14, 1879, Ulm, Württemberg (now Baden-Württemberg), Germany"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: March 14, 1879 in Ulm, Germany",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "born March 14, 1879, Ulm, Württemberg (now Baden-Württemberg), Germany"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: April 18, 1955 in Princeton, New Jersey",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "died April 18, 1955, Princeton, New Jersey, U.S."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: Eidgenössische Polytechnische Schule (1911), Ph.D in Physics from University of Zurich (1906)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "ETH",
+     "In July 1900 he completed his studies at the Polytechnic Institute with a"
+    ],
+    [
+     "BRI",
+     "in 1911, following expansion in 1909 to full university status, it was renamed the Eidgenössische Technische Hochschule"
+    ],
+    [
+     "AIP",
+     "the degree was formally awarded January 15, 1906"
+    ]
+   ],
+   "note": "The Zurich Ph.D. (1906) is confirmed. The Polytechnic date is wrong: Einstein finished his diploma in July 1900. 1911 is the year the school was renamed, not a year Einstein studied there. Note: NobelPrize.org says 1901 for the diploma (“In 1901, the year he gained his diploma”); ETH’s own library says July 1900. Also, the Ph.D. was in physics in substance, but the faculty that awarded it was Zurich’s Philosophy II faculty."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Physicist",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "was a German-born physicist who developed the special and general theories of relativity"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1940",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "DT",
+     "In 1940, the man who had first proposed the theory of relativity in 1905 became a citizen of the United States."
+    ],
+    [
+     "NOB",
+     "He became a United States citizen in 1940"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from National Archives DocsTeach and NobelPrize.org."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "Published paper on the Theory of Special Relativity and E=mc² (1905)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "AIP",
+     "Sends Annalen der Physik his special relativity theory paper, “On the Electrodynamics of Moving Bodies.”"
+    ],
+    [
+     "AIP",
+     "Sends Annalen der Physik his mass-energy equivalence paper"
+    ]
+   ],
+   "note": "Special relativity and E=mc² were two separate 1905 papers (June and September). IHH could list them separately."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Published Paper on Brownian Motion (1905)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "AIP",
+     "May: Sends Annalen der Physik his Brownian Motion paper"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from American Institute of Physics."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Published Paper on Photoelectric Effect (1905)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "AIP",
+     "March 17: Sends Annalen der Physik his photoelectricity paper"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from American Institute of Physics."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "Published paper on the Theory of General Relativity (1915)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "NOB",
+     "in 1916 he published his paper on the general theory of relativity"
+    ]
+   ],
+   "note": "NobelPrize.org dates the general relativity paper to 1916. 1915 is usually given for his presentation of the field equations, but no retrieved source here states that. Suggested: “General theory of relativity (1915–16)”, or 1916 for the published paper."
+  },
+  "L32": {
+   "section": "Achievements",
+   "claim": "Pursued the Unified Field Theory",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NOB",
+     "In the 1920s, Einstein embarked on the construction of unified field theories"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from NobelPrize.org."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Honored with the naming of Einstein Tower in Potsdam, Germany (1920)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "ET",
+     "It was built in 1920-22 by Erich Mendelsohn"
+    ]
+   ],
+   "note": "The tower was built 1920–22, so construction began in 1920. When it took the name “Einstein Tower” is not stated, so “naming … (1920)” is unverified. Suggested: “Einstein Tower, Potsdam (built 1920–22)”."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Nobel Prize for Physics (1921)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "won the Nobel Prize for Physics in 1921 for his explanation of the photoelectric effect"
+    ]
+   ],
+   "note": "Note: per the Einsteinturm site, the 1921 prize was “awarded in 1922”. 1921 is correct as the prize year."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Copley Medal of the Royal Society of London (1925)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NOB",
+     "including the Copley Medal of the Royal Society of London in 1925"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from NobelPrize.org."
+  },
+  "L42": {
+   "section": "Honours",
+   "claim": "Gold Medal of the Royal Astronomical Society (1926)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BA",
+     "the Gold Medal of the Royal Astronomical Society in 1926"
+    ]
+   ],
+   "note": "From the Bibliotheca Alexandrina’s Einstein exhibition. The Royal Astronomical Society’s own list was not retrieved."
+  },
+  "L43": {
+   "section": "Honours",
+   "claim": "Max Planck Medal (1929)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BA",
+     "Einstein was the first winner of the Max Planck medal in 1929."
+    ]
+   ],
+   "note": "Detail IHH could add: he was its first recipient."
+  },
+  "L44": {
+   "section": "Honours",
+   "claim": "Franklin Medal of the Franklin Institute (1935)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NOB",
+     "the Franklin Medal of the Franklin Institute in 1935"
+    ],
+    [
+     "FI",
+     "Einstein was honored with the Franklin Award of The Franklin Institute in 1935."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from NobelPrize.org and The Franklin Institute."
+  },
+  "L45": {
+   "section": "Honours",
+   "claim": "Honored with the naming of Element 99, Einsteinium (1952)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "LBL",
+     "Element 99, named after Albert Einstein, was discovered at Berkeley Lab in 1952 and announced in 1955."
+    ]
+   ],
+   "note": "The element was discovered in 1952 but announced, with its name, in 1955. Suggested: “Element 99, einsteinium, named in his honour (discovered 1952; announced 1955)”."
+  },
+  "L46": {
+   "section": "Honours",
+   "claim": "Honored with US Stamp (1966, 1979)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "USPS66",
+     "First Day of Issue Date: March 14, 1966"
+    ],
+    [
+     "USPS79",
+     "First Day of Issue Date: March 4, 1979"
+    ]
+   ],
+   "note": "Both dates are from the U.S. Postal Service’s stamp archive."
+  },
+  "L47": {
+   "section": "Honours",
+   "claim": "Time Magazine Person of the Century (1999)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "TIME",
+     "See the Person of the Century issue."
+    ]
+   ],
+   "note": "TIME’s own page is titled “Person Of The Century: Albert Einstein”. The retrieved text does not show the 1999 issue date."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Princeton immigration dated 1932; special relativity and mass-energy relation dated 1905; general relativity dated 1915; curved spacetime; quantum theory, cosmology and nuclear physics influence. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — search log is partial.** `inductees/einstein/search-log.csv` now records the 17 October 2026 reconciliation retrievals. The original 16 October 2026 search terms for this profile were not preserved; only the sources recorded in `media-manifest.csv` are known. No queries were reconstructed. The team lead may supply the original record if one exists.\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Scoped evidence and proposed correction — approval required\n\n**CONFIRMED (doctorate year only):** UZH says “His doctorate and corresponding certificate were conferred in January 1906.” Row L15 now reconciles the full education entry with exact spans.\n\n**CORRECTION SUGGESTED:** IHH Princeton immigration 1932 → 1933. IAS describes its October 2, 1933 opening and says Einstein and Weyl “were in Europe and would arrive later in the month.” ([IAS](https://www.ias.edu/ideas/2008/batterson-opening-day), opening-day account). This supports Princeton arrival in October 1933, not every earlier US visit. No profile text changed."
+}
