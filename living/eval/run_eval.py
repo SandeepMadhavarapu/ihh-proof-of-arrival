@@ -104,10 +104,11 @@ def evaluate(write: bool = True) -> dict:
         "seconds": round(time.perf_counter() - started, 2),
     }
     summary["ci_pass"] = not false_accepts and not unexpected
-    if write:
-        (EVAL / "results.json").write_text(json.dumps({"summary": summary, "cases": rows}, ensure_ascii=False, indent=1) + "\n",
+    if write:   # written files carry no timing, so re-running on unchanged code changes nothing
+        stable = {k: v for k, v in summary.items() if k != "seconds"}
+        (EVAL / "results.json").write_text(json.dumps({"summary": stable, "cases": rows}, ensure_ascii=False, indent=1) + "\n",
                                            encoding="utf-8")
-        (EVAL / "RESULTS.md").write_text(report(summary, rows), encoding="utf-8", newline="\n")
+        (EVAL / "RESULTS.md").write_text(report(stable, rows), encoding="utf-8", newline="\n")
     return summary
 
 
@@ -142,7 +143,7 @@ def report(s: dict, rows: list[dict]) -> str:
         f"| Deterministic precision (positives / everything reaching the queue) | {s['deterministic_precision']} |",
         f"| Positives passing Gate 1 (evidence) alone | {s['positives_passing_gate1']} / {s['positives']} |",
         f"| Semantic gate (blind model judge) | {s['semantic_gate']} |",
-        f"| Run time | {s['seconds']} s |",
+        "| Run time | about 2 s on a laptop (printed by the script, not stored, so this file is reproducible) |",
         "",
         "Precision and recall here are for the **deterministic layer** with no model: a positive \"reaches the "
         "queue\" when every deterministic gate passes and only meaning is left for a person. Without a key, "

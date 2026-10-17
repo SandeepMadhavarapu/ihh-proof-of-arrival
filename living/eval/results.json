@@ -23,7 +23,6 @@
   "s2_full_gate1_on_ihh_label": 28,
   "s2_after_gate1_on_sentence": 41,
   "semantic_gate": "not yet measured (no API key; see living/eval/run_judge_eval.py)",
-  "seconds": 2.06,
   "ci_pass": true
  },
  "cases": [
