@@ -21,6 +21,87 @@ class JSONClient(Protocol):
     def complete_json(self, system: str, user: str, *, temperature: float) -> Dict[str, Any]: ...
 
 
+# Claude models documented as still accepting sampling parameters. Current models (Opus 4.7 and
+# later, the 5.x family) reject `temperature` with HTTP 400, so it is sent only to these.
+ANTHROPIC_TEMPERATURE_MODELS = frozenset({"claude-opus-4-6", "claude-sonnet-4-6", "claude-haiku-4-5"})
+
+
+class AnthropicJSONClient:
+    """Minimal build-time Claude client through the official `anthropic` SDK.
+
+    The key is read only from ANTHROPIC_API_KEY and the model only from ANTHROPIC_MODEL (or the
+    `model` argument); there is no hard-coded model. The SDK is imported lazily so the offline
+    test suite and every no-key run need no third-party package. JSON is requested with
+    structured outputs when a schema is supplied. A refusal or truncated answer raises, so callers
+    fail closed instead of reading partial output. Server-side model fallbacks are deliberately
+    NOT enabled: a judge that silently switches model would make its verdicts unreproducible.
+    """
+
+    def __init__(self, model: str | None = None, client: Any = None) -> None:
+        key = os.environ.get("ANTHROPIC_API_KEY", "")
+        if not key:
+            raise RuntimeError("ANTHROPIC_API_KEY is not set")
+        selected = (model or os.environ.get("ANTHROPIC_MODEL", "")).strip()
+        if not selected:
+            raise RuntimeError("Anthropic model is not configured; set ANTHROPIC_MODEL")
+        self._key = key
+        self.model = selected
+        self.effort = os.environ.get("ANTHROPIC_EFFORT", "").strip()
+        if client is None:
+            try:
+                import anthropic  # noqa: PLC0415 - optional dependency, only with a key
+            except ImportError:
+                raise RuntimeError("the 'anthropic' package is not installed; run: pip install anthropic") from None
+            client = anthropic.Anthropic(api_key=key, max_retries=2)
+        self._client = client
+
+    @property
+    def sampling(self) -> str:
+        return ("temperature=0" if self.model in ANTHROPIC_TEMPERATURE_MODELS
+                else "model default sampling (this model does not accept temperature)")
+
+    def complete_json(self, system: str, user: str, *, temperature: float,
+                      json_schema: Dict[str, Any] | None = None) -> Dict[str, Any]:
+        kwargs: Dict[str, Any] = {
+            "model": self.model,
+            "max_tokens": 16000,
+            "system": system + "\nReturn one JSON object.",
+            "messages": [{"role": "user", "content": user}],
+        }
+        output_config: Dict[str, Any] = {}
+        if self.effort:
+            output_config["effort"] = self.effort
+        if json_schema:
+            output_config["format"] = {"type": "json_schema", "schema": json_schema}
+        if output_config:
+            kwargs["output_config"] = output_config
+        if self.model in ANTHROPIC_TEMPERATURE_MODELS:
+            kwargs["temperature"] = temperature
+        try:
+            response = self._client.messages.create(**kwargs)
+        except Exception as exc:  # SDK error classes vary by version; never echo the key
+            detail = redact_text(f"{type(exc).__name__}: {getattr(exc, 'message', exc)}", [self._key])
+            raise RuntimeError("Anthropic API error: " + detail[:240]) from None
+        stop = getattr(response, "stop_reason", None)
+        if stop == "refusal":
+            raise RuntimeError("Anthropic model declined the request (refusal)")
+        if stop == "max_tokens":
+            raise RuntimeError("Anthropic response was truncated (max_tokens)")
+        text = "".join(getattr(b, "text", "") for b in getattr(response, "content", []) or []
+                       if getattr(b, "type", "") == "text").strip()
+        if text.startswith("```"):
+            text = text.strip("`")
+            if text.startswith("json"):
+                text = text[4:].lstrip()
+        try:
+            out = json.loads(text)
+        except json.JSONDecodeError:
+            raise RuntimeError("Anthropic model output was not valid JSON") from None
+        if not isinstance(out, dict):
+            raise RuntimeError("Anthropic JSON response must be an object")
+        return out
+
+
 class OpenAIJSONClient:
     """Minimal build-time OpenAI Responses API client.
 

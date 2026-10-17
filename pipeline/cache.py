@@ -86,17 +86,29 @@ def _atomic_write(path: Path, data: bytes) -> None:
 
 
 def _parse_pdf(data: bytes) -> Tuple[str, str]:
-    """Return (text, error). Never guesses when extraction is unavailable."""
+    """Return (text, error). Never guesses when extraction is unavailable.
+
+    pdftotext is asked for UTF-8 and its bytes are decoded explicitly. Decoding with the
+    platform default (or text=True) crashed the whole fetch on Windows in UTF-8 mode when the
+    tool emitted Latin-1; an unreadable PDF must only mark the page "could not read".
+    """
     exe = shutil.which("pdftotext")
     if not exe:
         return "", "PDF retrieved but pdftotext is unavailable; content left unparsed"
-    with tempfile.TemporaryDirectory() as td:
-        src = Path(td) / "source.pdf"
-        src.write_bytes(data)
-        p = subprocess.run([exe, str(src), "-"], capture_output=True, text=True, timeout=45)
-        if p.returncode != 0:
-            return "", f"pdftotext failed: {p.stderr.strip()[:300]}"
-        return p.stdout.strip(), ""
+    try:
+        with tempfile.TemporaryDirectory() as td:
+            src = Path(td) / "source.pdf"
+            src.write_bytes(data)
+            p = subprocess.run([exe, "-enc", "UTF-8", str(src), "-"], capture_output=True, timeout=45)
+    except (OSError, subprocess.SubprocessError) as exc:
+        return "", f"could not read PDF: {type(exc).__name__}"
+    stdout = (p.stdout or b"").decode("utf-8", "replace").strip()
+    if p.returncode != 0:
+        stderr = (p.stderr or b"").decode("utf-8", "replace").strip()
+        return "", f"pdftotext failed: {stderr[:300]}"
+    if not stdout:
+        return "", "could not read PDF: no extractable text"
+    return stdout, ""
 
 
 def extract_text(data: bytes, content_type: str, url: str) -> Tuple[str, str, str]:
@@ -177,14 +189,19 @@ class _PublicHTTPSHandler(urllib.request.HTTPSHandler):
         return self.do_open(_PublicHTTPSConnection, req, context=self._context)
 
 
+DEFAULT_USER_AGENT = "IHH-Profile-Factory/1.0 (+museum research; build-time fetch)"
+
+
 class SourceFetcher:
     def __init__(
         self,
         cache_dir: Path,
         timeout: int = 20,
         opener: Optional[Callable[[urllib.request.Request, int], object]] = None,
+        user_agent: str = DEFAULT_USER_AGENT,
     ) -> None:
         self.cache_dir = Path(cache_dir)
+        self.user_agent = user_agent
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.timeout = timeout
         self._opener = opener
@@ -250,7 +267,7 @@ class SourceFetcher:
         req = urllib.request.Request(
             url,
             headers={
-                "User-Agent": "IHH-Profile-Factory/1.0 (+museum research; build-time fetch)",
+                "User-Agent": self.user_agent,
                 "Accept": "text/html,application/pdf,text/plain,*/*;q=0.5",
             },
         )
