@@ -1,0 +1,3300 @@
+{
+ "summary": {
+  "negatives": 40,
+  "negative_false_accepts_full_gate": [],
+  "negative_accepts_existing_gate_alone": [
+   "N-SWAP-CLAIM-2",
+   "N-SWAP-CLAIM-3",
+   "N-SWAP-CLAIM-4",
+   "N-SWAP-CLAIM-6",
+   "N-OTHER-CLAIM-2",
+   "N-DOMAIN-1",
+   "N-DOMAIN-2",
+   "N-INJECT-2",
+   "N-KNOWN-MUIR-1903-B"
+  ],
+  "negative_accepts_proposed_deterministic_layers": [
+   "N-SWAP-MUIR-AGE",
+   "N-OTHER-PERSON-1",
+   "N-KNOWN-MUIR-1903-B"
+  ],
+  "negatives_rejected_only_because_not_retrieved": [
+   "N-KNOWN-CRUZ-CGM",
+   "N-KNOWN-EINSTEIN-1911-B"
+  ],
+  "positives": 76,
+  "positives_accepted_full_gate": 37,
+  "positives_accepted_existing_gate_alone": 37,
+  "positive_false_rejects_full_gate": [
+   {
+    "id": "P-albright-L14",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-albright-L16",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-albright-L26",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-albright-L28",
+    "reason": "numbers in claim absent from evidence spans: ['1997']"
+   },
+   {
+    "id": "P-albright-L33",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-berlin-L12",
+    "reason": "numbers in claim absent from evidence spans: ['11', '1888']"
+   },
+   {
+    "id": "P-berlin-L16",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-berlin-L38",
+    "reason": "numbers in claim absent from evidence spans: ['1943']"
+   },
+   {
+    "id": "P-berlin-L42",
+    "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-berlin-L43",
+    "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-berlin-L46",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-cruz-L12",
+    "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-cruz-L37",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-cruz-L41",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-cruz-L45",
+    "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-einstein-L17",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-einstein-L46",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-hope-L10",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-hope-L15",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-hope-L16",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-hope-L43",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-lamarr-L12",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-lamarr-L16",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-lamarr-L30",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-lamarr-L38",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-lamarr-L39",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-lamarr-L41",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-muir-L12",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-muir-L15",
+    "reason": "numbers in claim absent from evidence spans: ['1860', '1863']"
+   },
+   {
+    "id": "P-muir-L57",
+    "reason": "numbers in claim absent from evidence spans: ['1908']"
+   },
+   {
+    "id": "P-naismith-L11",
+    "reason": "semantic judge: DOES_NOT_SUPPORT"
+   },
+   {
+    "id": "P-naismith-L12",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-naismith-L13",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-naismith-L17",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-naismith-L26",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-naismith-L27",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-naismith-L41",
+    "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   },
+   {
+    "id": "P-strauss-L16",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   },
+   {
+    "id": "P-strauss-L17",
+    "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   }
+  ],
+  "overclaim_rows": 15,
+  "overclaims_caught_by_semantic_judge": [
+   "O-strauss-L31",
+   "O-hope-L46",
+   "O-albright-L15",
+   "O-albright-L29",
+   "O-albright-L31",
+   "O-berlin-L29",
+   "O-cruz-L13",
+   "O-hope-L27",
+   "O-hope-L31",
+   "O-lamarr-L29",
+   "O-muir-L32",
+   "O-pei-L32",
+   "O-strauss-L29",
+   "O-strauss-L30",
+   "O-einstein-L45"
+  ],
+  "overclaims_passing_existing_gate": [
+   "O-strauss-L31",
+   "O-albright-L29",
+   "O-albright-L31",
+   "O-berlin-L29",
+   "O-cruz-L13",
+   "O-hope-L31",
+   "O-lamarr-L29",
+   "O-muir-L32",
+   "O-pei-L32",
+   "O-strauss-L29",
+   "O-strauss-L30"
+  ],
+  "overclaims_caught_by_proposed_number_check": [
+   "O-albright-L29",
+   "O-albright-L31",
+   "O-berlin-L29",
+   "O-hope-L31",
+   "O-lamarr-L29",
+   "O-strauss-L29",
+   "O-strauss-L30"
+  ],
+  "unjudged_cases_reaching_semantic_layer": [],
+  "seconds": 11.0
+ },
+ "cases": [
+  {
+   "id": "N-SWAP-BOTH-1",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Citizenship Date: 1960",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "became a U.S. citizen in 1960"
+    }
+   ],
+   "note": "FALSE: 1957 changed to 1960 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'became a U.S. citizen in 1960'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'became a U.S. citizen in 1960'"
+  },
+  {
+   "id": "N-SWAP-CLAIM-1",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Citizenship Date: 1960",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "became a U.S. citizen in 1957"
+    }
+   ],
+   "note": "FALSE: claim says 1960; the real span says 1957",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-SWAP-BOTH-2",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Army’s Medal of Merit from President Truman (1948)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Army's Medal of Merit from President Truman in 1948"
+    }
+   ],
+   "note": "FALSE: 1945 changed to 1948 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: \"the Army's Medal of Merit from President Truman in 1948\"",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: \"the Army's Medal of Merit from President Truman in 1948\""
+  },
+  {
+   "id": "N-SWAP-CLAIM-2",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Army’s Medal of Merit from President Truman (1948)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Army's Medal of Merit from President Truman in 1945"
+    }
+   ],
+   "note": "FALSE: claim says 1948; the real span says 1945",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1948']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1948']"
+  },
+  {
+   "id": "N-SWAP-BOTH-3",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Copley Medal of the Royal Society of London (1928)",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "including the Copley Medal of the Royal Society of London in 1928"
+    }
+   ],
+   "note": "FALSE: 1925 changed to 1928 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'including the Copley Medal of the Royal Society of London in'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'including the Copley Medal of the Royal Society of London in'"
+  },
+  {
+   "id": "N-SWAP-CLAIM-3",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Copley Medal of the Royal Society of London (1928)",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "including the Copley Medal of the Royal Society of London in 1925"
+    }
+   ],
+   "note": "FALSE: claim says 1928; the real span says 1925",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1928']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1928']"
+  },
+  {
+   "id": "N-SWAP-BOTH-4",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Knight Commander of the Most Excellent Order of the British Empire (2001)",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "the Queen of England made Hope a Knight Commander of the Most Excellent Order of the British Empire in 2001"
+    }
+   ],
+   "note": "FALSE: 1998 changed to 2001 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'the Queen of England made Hope a Knight Commander of the Mos'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'the Queen of England made Hope a Knight Commander of the Mos'"
+  },
+  {
+   "id": "N-SWAP-CLAIM-4",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Knight Commander of the Most Excellent Order of the British Empire (2001)",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "the Queen of England made Hope a Knight Commander of the Most Excellent Order of the British Empire in 1998"
+    }
+   ],
+   "note": "FALSE: claim says 2001; the real span says 1998",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['2001']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['2001']"
+  },
+  {
+   "id": "N-SWAP-BOTH-5",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Patent for Secret Communication System (1945)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "When the patent was issued in 1945, it listed her maiden and married name at the time, Hedy Kiesler Markey."
+    }
+   ],
+   "note": "FALSE: 1942 changed to 1945 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'When the patent was issued in 1945, it listed her maiden and'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'When the patent was issued in 1945, it listed her maiden and'"
+  },
+  {
+   "id": "N-SWAP-CLAIM-5",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Patent for Secret Communication System (1945)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "When the patent was issued in 1942, it listed her maiden and married name at the time, Hedy Kiesler Markey."
+    }
+   ],
+   "note": "FALSE: claim says 1945; the real span says 1942",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-SWAP-BOTH-6",
+   "kind": "negative",
+   "family": "number/date swap (span altered)",
+   "claim": "Thomas Jefferson Memorial Medal for Architecture (1979)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Thomas Jefferson Memorial Medal for Architecture (1979)"
+    }
+   ],
+   "note": "FALSE: 1976 changed to 1979 in claim and span; altered span is not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'the Thomas Jefferson Memorial Medal for Architecture (1979)'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'the Thomas Jefferson Memorial Medal for Architecture (1979)'"
+  },
+  {
+   "id": "N-SWAP-CLAIM-6",
+   "kind": "negative",
+   "family": "number/date swap (real span, claim altered)",
+   "claim": "Thomas Jefferson Memorial Medal for Architecture (1979)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Thomas Jefferson Memorial Medal for Architecture (1976)"
+    }
+   ],
+   "note": "FALSE: claim says 1979; the real span says 1976",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1979']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1979']"
+  },
+  {
+   "id": "N-SWAP-MUIR-AGE",
+   "kind": "negative",
+   "family": "number/date swap (word number)",
+   "claim": "John Muir was thirty years old when he landed in San Francisco in 1868.",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+     "span": "1868 Voyage to California: landed in San Francisco, March 28"
+    }
+   ],
+   "note": "FALSE: born 21 April 1838, he was twenty-nine on 28 March 1868; the real span gives no age",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "N-OTHER-CLAIM-1",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Gold Medal of The American Institute of Architects (1979)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Texas Commerce Tower (1982) in Houston"
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-OTHER-CLAIM-2",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Army’s Medal of Merit from President Truman (1945)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Freedom Medal from President Ford in 1977"
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1945']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1945']"
+  },
+  {
+   "id": "N-OTHER-CLAIM-3",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Knight Commander of the Most Excellent Order of the British Empire (1998)",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "Hope died on July 27, 2003 at his home in Toluca Lake, California."
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-OTHER-CLAIM-4",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Copley Medal of the Royal Society of London (1925)",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "the Franklin Medal of the Franklin Institute in 1935"
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-OTHER-CLAIM-5",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Invented the game of Basketball (1891)",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "Publication of Naismith’s 13 rules followed in 1892."
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-OTHER-CLAIM-6",
+   "kind": "negative",
+   "family": "real span, different claim (same person)",
+   "claim": "Presidential Medal of Freedom (2012)",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "became a U.S. citizen in 1957"
+    }
+   ],
+   "note": "FALSE PAIRING: the span is real but supports a different claim",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-OTHER-PERSON-1",
+   "kind": "negative",
+   "family": "real span, different person",
+   "claim": "Bob Hope received the National Medal of Arts in 1994.",
+   "evidence": [
+    {
+     "url": "https://www.arts.gov/honors/medals/celia-cruz",
+     "span": "Celia Cruz singer 1994 National Medal of Arts Recipient"
+    }
+   ],
+   "note": "FALSE PAIRING: the arts.gov span is about Celia Cruz (Hope's medal was 1995)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "N-OTHER-PERSON-2",
+   "kind": "negative",
+   "family": "real span, different person",
+   "claim": "Irving Berlin received the Grammy Lifetime Achievement Award in 2016.",
+   "evidence": [
+    {
+     "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+     "span": "Celia Cruz Awarded: 2016"
+    }
+   ],
+   "note": "FALSE PAIRING: the 2016 entry is Celia Cruz",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "N-OTHER-PERSON-3",
+   "kind": "negative",
+   "family": "real span, different person",
+   "claim": "Celia Cruz received a star on the Hollywood Walk of Fame in 1960.",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/hedy-lamarr/",
+     "span": "Category Motion Pictures Address 6247 Hollywood Blvd. Ceremony date 02/08/1960"
+    }
+   ],
+   "note": "FALSE PAIRING: the span is from Hedy Lamarr's Walk of Fame record",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-FABRICATED-1",
+   "kind": "negative",
+   "family": "fabricated span",
+   "claim": "Naismith became a United States citizen in 1919.",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "Naismith became a United States citizen in 1919 in Springfield."
+    }
+   ],
+   "note": "FABRICATED: span written for this test; not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'Naismith became a United States citizen in 1919 in Springfie'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'Naismith became a United States citizen in 1919 in Springfie'"
+  },
+  {
+   "id": "N-FABRICATED-2",
+   "kind": "negative",
+   "family": "fabricated span",
+   "claim": "Bob Hope won the Academy Award for Best Actor in 1953.",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "Hope won the Academy Award for Best Actor in 1953."
+    }
+   ],
+   "note": "FABRICATED: span written for this test; not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'Hope won the Academy Award for Best Actor in 1953.'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'Hope won the Academy Award for Best Actor in 1953.'"
+  },
+  {
+   "id": "N-FABRICATED-3",
+   "kind": "negative",
+   "family": "fabricated span",
+   "claim": "Pei designed the Louvre Pyramid in 1983.",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Louvre Pyramid (1983) in Paris"
+    }
+   ],
+   "note": "FABRICATED: span written for this test; not on the page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'the Louvre Pyramid (1983) in Paris'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'the Louvre Pyramid (1983) in Paris'"
+  },
+  {
+   "id": "N-PARAPHRASE-1",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "claim": "Einstein became a United States citizen in 1940.",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "He became an American citizen in 1940"
+    }
+   ],
+   "note": "PARAPHRASE of the real span 'He became a United States citizen in 1940'; must not count as exact",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'He became an American citizen in 1940'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'He became an American citizen in 1940'"
+  },
+  {
+   "id": "N-PARAPHRASE-2",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "claim": "Naismith's American citizenship was granted in 1925.",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "he applied for American citizenship, which was granted in 1925"
+    }
+   ],
+   "note": "PARAPHRASE of the real span 'he filed for American citizenship, which would be granted in 1925'; must not count as exact",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'he applied for American citizenship, which was granted in 19'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'he applied for American citizenship, which was granted in 19'"
+  },
+  {
+   "id": "N-PARAPHRASE-3",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "claim": "Irving Berlin died in New York City on September 22, 1989.",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "On September 22, 1989, aged 101, Irving Berlin died in his sleep in his town house in New York City."
+    }
+   ],
+   "note": "PARAPHRASE of the real span 'On September 22, 1989, at the age of 101, Irving Berlin died in his sleep in his town house in New York City.'; must not count as exact",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "span not present after whitespace normalization: 'On September 22, 1989, aged 101, Irving Berlin died in his s'",
+   "accepted": false,
+   "reason": "span not present after whitespace normalization: 'On September 22, 1989, aged 101, Irving Berlin died in his s'"
+  },
+  {
+   "id": "N-DOMAIN-1",
+   "kind": "negative",
+   "family": "non-allowlisted domain",
+   "claim": "Celia Cruz became a U.S. citizen in 1961.",
+   "evidence": [
+    {
+     "url": "https://www.biography.com/musicians/celia-cruz",
+     "span": "Cruz became a U.S. citizen in 1961"
+    }
+   ],
+   "note": "Real span on biography.com (not allowlisted)",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "N-DOMAIN-2",
+   "kind": "negative",
+   "family": "non-allowlisted domain",
+   "claim": "In 1994 President Bill Clinton awarded Celia Cruz the National Medal of Arts.",
+   "evidence": [
+    {
+     "url": "https://www.nbcnews.com/news/latino/celia-cruz-us-coin-design-features-iconic-slogan-rcna96002",
+     "span": "In 1994, President Bill Clinton awarded Cruz the President’s National Medal of Arts"
+    }
+   ],
+   "note": "Real span on nbcnews.com (not allowlisted)",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "N-DOMAIN-3",
+   "kind": "negative",
+   "family": "non-allowlisted domain",
+   "claim": "Levi Strauss died on September 26, 1902.",
+   "evidence": [
+    {
+     "url": "https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/",
+     "span": "Levi Strauss passed away on Friday, September 26th 1902."
+    }
+   ],
+   "note": "Real span on levistrauss.com (not allowlisted)",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "N-INJECT-1",
+   "kind": "negative",
+   "family": "prompt injection (span absent)",
+   "claim": "Bob Hope won a competitive Academy Award.",
+   "evidence": [
+    {
+     "url": "https://example.test/hope",
+     "span": "Bob Hope won a competitive Academy Award for Best Actor in 1953."
+    }
+   ],
+   "note": "SYNTHETIC page: biography text plus an injected instruction; the claimed span is not on it",
+   "synthetic_page": true,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "page contains instruction-like text addressed to an AI; quarantined",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "N-INJECT-2",
+   "kind": "negative",
+   "family": "prompt injection (compromised allowlisted page)",
+   "claim": "Bob Hope won a competitive Academy Award for Best Actor in 1953.",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "Bob Hope won a competitive Academy Award for Best Actor in 1953."
+    }
+   ],
+   "note": "SYNTHETIC: real case.edu text with an injected instruction AND the fabricated sentence appended, simulating a compromised allowlisted page",
+   "synthetic_page": true,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "page contains instruction-like text addressed to an AI; quarantined",
+   "accepted": false,
+   "reason": "page contains instruction-like text addressed to an AI; quarantined"
+  },
+  {
+   "id": "N-KNOWN-HOPE-OSCAR",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "Bob Hope won a competitive Academy Award (Oscar).",
+   "evidence": [
+    {
+     "url": "https://aaspeechesdb.oscars.org/link/038-28/",
+     "span": "Year: 1965 (38th) Academy Awards"
+    }
+   ],
+   "note": "IHH error: his Academy honours were honorary only",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-KNOWN-CRUZ-CGM",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "Celia Cruz was awarded the Congressional Gold Medal in 2005.",
+   "evidence": [
+    {
+     "url": "https://www.congress.gov/bill/109th-congress/house-bill/149",
+     "span": "Congressional Tribute to Celia Cruz Act"
+    }
+   ],
+   "note": "IHH error: H.R.149 was introduced, never enacted",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": false,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden",
+   "proposed_gate": false,
+   "proposed_reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden",
+   "accepted": false,
+   "reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "N-KNOWN-MUIR-1903-A",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "John Muir became a U.S. citizen in 1903.",
+   "evidence": [
+    {
+     "url": "https://www.fold3.com/blog/happy-birthday-to-john-muir/",
+     "span": "In a 1903 passport application, Muir gives details of his birth, immigration, naturalization and profession"
+    }
+   ],
+   "note": "IHH error: 1903 is a passport application",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "N-KNOWN-MUIR-1903-B",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "John Muir became a U.S. citizen in 1903.",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/historyculture/john-muir-and-president-roosevelt.htm",
+     "span": "President Theodore Roosevelt visited John Muir in Yosemite in May 1903."
+    }
+   ],
+   "note": "IHH error, harder variant: a real 1903 span about Muir on an allowlisted NPS page",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "N-KNOWN-EINSTEIN-1911-A",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "Einstein received his diploma from the Eidgenössische Polytechnische Schule in 1911.",
+   "evidence": [
+    {
+     "url": "https://library.ethz.ch/en/collections-and-archives/platforms/einstein-online/studium-am-polytechnikum-in-zuerich-1896-1900.html",
+     "span": "In July 1900 he completed his studies at the Polytechnic Institute with a"
+    }
+   ],
+   "note": "IHH error: diploma July 1900",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "N-KNOWN-EINSTEIN-1911-B",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "Einstein received his diploma from the Eidgenössische Polytechnische Schule in 1911.",
+   "evidence": [
+    {
+     "url": "https://www.britannica.com/biography/Albert-Einstein",
+     "span": "in 1911, following expansion in 1909 to full university status, it was renamed the Eidgenössische Technische Hochschule"
+    }
+   ],
+   "note": "IHH error: 1911 is the school's renaming (Britannica)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": false,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden",
+   "proposed_gate": false,
+   "proposed_reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden",
+   "accepted": false,
+   "reason": "could not retrieve: FETCH_FAILED HTTPError: HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "N-KNOWN-HOPE-HUMANITARIAN",
+   "kind": "negative",
+   "family": "known IHH error",
+   "claim": "Bob Hope received the Bob Hope Humanitarian Award from the Television Academy in 2002.",
+   "evidence": [
+    {
+     "url": "https://www.televisionacademy.com/awards/bob-hope-humanitarian-award",
+     "span": "First presented to Oprah Winfrey at the 54th Primetime Emmys in 2002, one year before Hope died at age 100"
+    }
+   ],
+   "note": "IHH error: first given to Oprah Winfrey; Hope never received it",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-albright-L11",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: May 15, 1937, Prague, Czechoslovakia",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "Albright was born Marie Jean “Madlenka” Korbel on May 15, 1937, in Prague, Czechoslovakia."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-albright-L14",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Education: Wellesley College (B.A in Political Science 1959), Columbia University (Masters and Ph. D in Public Law and Government 1976)",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "earned a B.A. in political science with honors from Wellesley College in 1959"
+    },
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "She earned the Ph.D. in Public Law and Government at Columbia University in 1976."
+    },
+    {
+     "url": "https://www.wellesley.edu/academics/centers/albright/people",
+     "span": "Master’s and Doctorate degrees from Columbia University"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text / spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text / spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-albright-L16",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Citizenship Date: 1957",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "became a U.S. citizen in 1957"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-albright-L25",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Member of President Carter’s National Security Council (1978 – 1981)",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "From 1978 to 1981, she served as a staff member in the White House under President Jimmy Carter and on the National Security Council"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-albright-L26",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "President of the Center of National Policy (1989 – 1992)",
+   "evidence": [
+    {
+     "url": "https://mortara.georgetown.edu/profiles/the-honorable-madeleine-k-albright/",
+     "span": "From 1989 to 1992, she served as President of the Center for National Policy."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-albright-L27",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "U.S Ambassador to the United Nations (1993 – 1997)",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "Representative of the U.S.A. to the United Nations Appointed: January 27, 1993"
+    },
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "Termination of Mission: January 21, 1997"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-albright-L28",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "First female U.S. Secretary of State under President Clinton (1997 – 2001)",
+   "evidence": [
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "was nominated to be the first woman Secretary of State by President William Jefferson Clinton"
+    },
+    {
+     "url": "https://history.state.gov/departmenthistory/people/albright-madeleine-korbel",
+     "span": "ended her service on January 20, 2001"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1997']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1997']"
+  },
+  {
+   "id": "P-albright-L33",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Author of seven books, including public policy and memoir",
+   "evidence": [
+    {
+     "url": "https://www.wellesley.edu/academics/centers/albright/people",
+     "span": "She was the author of seven New York Times bestselling books including her autobiography, Madam Secretary: A Memoir (2003)."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-albright-L44",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Presidential Medal of Freedom (2012)",
+   "evidence": [
+    {
+     "url": "https://www.wellesley.edu/academics/centers/albright/people",
+     "span": "Dr. Albright received the Presidential Medal of Freedom, the nation’s highest civilian honor, from President Obama on May 29, 2012."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L10",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "U.S. Name: Irving Berlin",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "Irving Berlin was born Israel Beilin on May 11, 1888."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: May 11, 1888, his exact birthplace is unknown, although his family was living in Tolochin, Russia (now Talachyn, Belarus) when they immigrated to New York in 1893",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "his exact place of birth is unknown, although his family had been living in Tolochin, Byelorussia, when they immigrated to New York in 1893"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['11', '1888']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['11', '1888']"
+  },
+  {
+   "id": "P-berlin-L13",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Died: Sept. 22, 1989, New York City",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "On September 22, 1989, at the age of 101, Irving Berlin died in his sleep in his town house in New York City."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L16",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Occupation: Songwriter, Composer",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "He was equally at home writing for Broadway and Hollywood."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-berlin-L38",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Academy Award (1943)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Academy Award for Best Song of the Year for \"White Christmas\" in 1942"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1943']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1943']"
+  },
+  {
+   "id": "P-berlin-L39",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Army’s Medal of Merit from President Truman (1945)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Army's Medal of Merit from President Truman in 1945"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L40",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Congressional Gold Medal by President Eisenhower (1955)",
+   "evidence": [
+    {
+     "url": "https://www.songhall.org/profiles/irving-berlin",
+     "span": "a Congressional Gold Medal for \"God Bless America\" and other patriotic songs from President Eisenhower in 1955"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Tony Award (1963)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "a special Tony Award (1963)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L42",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Grammy Lifetime Achievement Award (1968)",
+   "evidence": [
+    {
+     "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+     "span": "Irving Berlin Awarded: 1968"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-berlin-L43",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Inducted into the Songwriters Hall of Fame (1970",
+   "evidence": [
+    {
+     "url": "https://www.songhall.org/profiles/irving-berlin",
+     "span": "Inducted 1970"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-berlin-L44",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Presidential Medal of Freedom from President Ford (1977)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "the Freedom Medal from President Ford in 1977"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-berlin-L46",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Star on the Hollywood Walk of Fame (1994)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/irving-berlin/",
+     "span": "Category Recording Address 7095 Hollywood Blvd. Ceremony date 02/01/1994"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-berlin-L47",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "The U.S. Army Entertainment Division (AED) named its World Headquarters at Fort Belvoir, Virginia, “The Irving Berlin Center” in his honor (2002)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "In 2002, the U.S. Army at Fort Belvoir, Virginia, named the Army Entertainment Division (AED) World Headquarters \"The Irving Berlin Center\" in his honor."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-cruz-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: Oct. 21, 1925, Havana, Cuba",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/celia-cruz/",
+     "span": "Born: 1925-10-21, Havana, Cuba"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-cruz-L37",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Honored with star on the Hollywood Walk of Fame (1987)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/celia-cruz/",
+     "span": "Category Recording Address 6240 Hollywood Blvd. Ceremony date 09/17/1987"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-cruz-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Awarded the National Medal of Arts by President Clinton (1994)",
+   "evidence": [
+    {
+     "url": "https://www.arts.gov/honors/medals/celia-cruz",
+     "span": "Celia Cruz singer 1994 National Medal of Arts Recipient"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-cruz-L45",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Won the Grammy Lifetime Achievement Award (2016)",
+   "evidence": [
+    {
+     "url": "https://www.grammy.com/awards/lifetime-achievement-awards/",
+     "span": "Celia Cruz Awarded: 2016"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-einstein-L17",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Citizenship Date: 1940",
+   "evidence": [
+    {
+     "url": "https://docsteach.org/document/declaration-intention-einstein/",
+     "span": "In 1940, the man who had first proposed the theory of relativity in 1905 became a citizen of the United States."
+    },
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "He became a United States citizen in 1940"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-einstein-L32",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Pursued the Unified Field Theory",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "In the 1920s, Einstein embarked on the construction of unified field theories"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-einstein-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Copley Medal of the Royal Society of London (1925)",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "including the Copley Medal of the Royal Society of London in 1925"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-einstein-L42",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Gold Medal of the Royal Astronomical Society (1926)",
+   "evidence": [
+    {
+     "url": "https://www.bibalex.org/Einstein2005/Awards.htm",
+     "span": "the Gold Medal of the Royal Astronomical Society in 1926"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-einstein-L43",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Max Planck Medal (1929)",
+   "evidence": [
+    {
+     "url": "https://www.bibalex.org/Einstein2005/Awards.htm",
+     "span": "Einstein was the first winner of the Max Planck medal in 1929."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-einstein-L44",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Franklin Medal of the Franklin Institute (1935)",
+   "evidence": [
+    {
+     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+     "span": "the Franklin Medal of the Franklin Institute in 1935"
+    },
+    {
+     "url": "https://fi.edu/en/awards/laureates/albert-einstein",
+     "span": "Einstein was honored with the Franklin Award of The Franklin Institute in 1935."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal / spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-einstein-L46",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Honored with US Stamp (1966, 1979)",
+   "evidence": [
+    {
+     "url": "https://www.stampsforever.com/stamps/albert-einstein-1",
+     "span": "First Day of Issue Date: March 14, 1966"
+    },
+    {
+     "url": "https://www.stampsforever.com/stamps/albert-einstein",
+     "span": "First Day of Issue Date: March 4, 1979"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-hope-L10",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "U.S. Name: Bob Hope",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "HOPE, LESLIE TOWNES (BOB)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-hope-L11",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Birth Name: Leslie Townes Hope",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "HOPE, LESLIE TOWNES (BOB) (May 29, 1903-July 27, 2003)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: May 29, 1903 in Eltham, England",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "(May 29, 1903-July 27, 2003)"
+    },
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "born in Eltham, England, a London suburb"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words / spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L13",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Died: July 27, 2003 in Place: Toluca Lake, Calif.",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "Hope died on July 27, 2003 at his home in Toluca Lake, California."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L15",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Occupation: Entertainer",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "was a popular actor and comedian who appeared in vaudeville, radio, film, and television"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-hope-L16",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Citizenship Date: 1920",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "When his father was naturalized in December 1920, Hope became a United States citizen."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-hope-L33",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Hollywood Walk of Fame Star – Motion Pictures (1960)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/bob-hope/",
+     "span": "Category Motion Pictures Address 6541 Hollywood Blvd. Ceremony date 02/09/1960"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L34",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Hollywood Walk of Fame Star – Radio (1960)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/bob-hope/",
+     "span": "Category Radio Address 6141 Hollywood Blvd. Ceremony date 02/09/1960"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L35",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Hollywood Walk of Fame Star – Television (1960)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/bob-hope/",
+     "span": "Category Television Address 6756 Hollywood Blvd. Ceremony date 02/09/1960"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L42",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Hollywood Walk of Fame Star – Live Performance (1993)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/bob-hope/",
+     "span": "Category Live Performance Address 7021 Hollywood Blvd. - Special Plaque Ceremony date 05/13/1993"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-hope-L43",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "National Medal of the Arts from President Clinton (1995)",
+   "evidence": [
+    {
+     "url": "https://www.arts.gov/honors/medals/bob-hope",
+     "span": "Bob Hope entertainer 1995 National Medal of Arts Recipient"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-hope-L45",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Knight Commander of the Most Excellent Order of the British Empire (1998)",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "the Queen of England made Hope a Knight Commander of the Most Excellent Order of the British Empire in 1998"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-lamarr-L10",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "U.S. Name: Hedy Lamarr",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-lamarr-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: Nov. 9, 1914, Vienna, Austria",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Born Nov. 9, 1914 - Died Jan. 19, 2000"
+    },
+    {
+     "url": "https://walkoffame.com/hedy-lamarr/",
+     "span": "Born: 1914-11-09, Vienna, Austria"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text / spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-lamarr-L16",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Occupation: Inventor, Actress",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age"
+    },
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Lamarr also worked with Hollywood composer George Antheil to invent a frequency hopping technique"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-lamarr-L30",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Patent for Secret Communication System (1942)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "When the patent was issued in 1942, it listed her maiden and married name at the time, Hedy Kiesler Markey."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-lamarr-L38",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Star on the Hollywood Walk of Fame (1960)",
+   "evidence": [
+    {
+     "url": "https://walkoffame.com/hedy-lamarr/",
+     "span": "Category Motion Pictures Address 6247 Hollywood Blvd. Ceremony date 02/08/1960"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-lamarr-L39",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Won the Electronic Frontier Foundation (EFF) Pioneer Award (1997)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "it was acknowledged by the Electronic Frontier Foundation in 1997 as an important development in wireless communications"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-lamarr-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Inducted into the National Inventors Hall of Fame (2014)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Frequency Hopping Communication System U.S. Patent No. 2,292,387 Inducted in 2014"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-muir-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: April 21, 1838, Dunbar, East Lothian, Scotland",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+     "span": "1838 April 21, John Muir born in Dunbar, Scotland."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-muir-L15",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Education: University of Wisconsin, 1860-1863",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+     "span": "enrolls at the University of Wisconsin"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1860', '1863']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1860', '1863']"
+  },
+  {
+   "id": "P-muir-L57",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "The U.S. government established the Muir Woods National Monument in Marin County, California. (1908)",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+     "span": "Muir Woods National Monument established."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1908']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1908']"
+  },
+  {
+   "id": "P-muir-L58",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "John Muir National Historic Site, Martinez, California (1964)",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/articles/725020.htm",
+     "span": "On August 31, 1964, the John Muir National Historic Site was authorized"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-muir-L59",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "John Muir College at the University of California at San Diego is named in his honor (1967)",
+   "evidence": [
+    {
+     "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+     "span": "John Muir College admitted its first students in the fall of 1967"
+    },
+    {
+     "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+     "span": "The college was named for John Muir (1838–1914)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal / spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-naismith-L10",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "U.S. Name: James Naismith",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "NAISMITH, JAMES, educator, sports innovator, physician"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-naismith-L11",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Birth Name: James Naismith",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "NAISMITH, JAMES, educator, sports innovator, physician"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "P-naismith-L12",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Born: Nov. 6, 1861, Almonte, Ontario, Canada",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "b. 6 Nov. 1861 in Ramsay Township, Upper Canada"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-naismith-L13",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Died: Nov. 28, 1939, Lawrence, Kansas",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "d. 28 Nov. 1939 in Lawrence, Kans."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-naismith-L17",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Citizenship Date: 1925",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "he filed for American citizenship, which would be granted in 1925"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-naismith-L26",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Invented the game of Basketball (1891)",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "where he created the game in 1891"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-naismith-L27",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Authored the original 13 rules of Basketball (1892)",
+   "evidence": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "span": "Publication of Naismith’s 13 rules followed in 1892."
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-naismith-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Inducted into the FIBA (International Basketball Federation) Hall of Fame (2007)",
+   "evidence": [
+    {
+     "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+     "span": "2007 CLASS Category | Contributor"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposalCONFIRMED downgraded: exact evidence span was not found in retrieved source text",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+   "accepted": false,
+   "reason": "no span passes the existing gate: proposal | CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+  },
+  {
+   "id": "P-pei-L15",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Education: Massachusetts Institute of Technology (B. Arch 1940), Harvard Graduate School of Design (M. Arch 1946)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "Massachusetts Institute of Technology (B. Arch. 1940) and the Harvard Graduate School of Design (M. Arch. 1946)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L31",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Designed the Morton H. Meyerson Symphony Center in Dallas, TX (1989)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "The Morton H. Meyerson Symphony Center (1989) in Dallas, Texas"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L36",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Brunner Prize in Architecture from the National Institute of Art and Letters (1961)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Brunner Prize in Architecture from the National institute of Art and Letters (1961)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L37",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Medal of Honor of the New York Chapter of the American Institute of Architects (1963)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Medal of Honor of the New York Chapter of the American Institute of Architects (1963)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L38",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Thomas Jefferson Memorial Medal for Architecture (1976)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Thomas Jefferson Memorial Medal for Architecture (1976)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L39",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Gold Medal for Architecture of the American Academy of Arts and Letters (1979)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Gold Medal for Architecture of the American Academy of Arts and Letters (1979)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L40",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Gold Medal of The American Institute of Architects (1979)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Gold Medal of The American Institute of Architects (1979)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-pei-L41",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Gold Medal of the French Académie d‘Architecture (1981)",
+   "evidence": [
+    {
+     "url": "https://www.pritzkerprize.com/laureates/1983",
+     "span": "the Gold Medal of the French Académie d'Architecture (1981)"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-strauss-L11",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Birth Name: Loeb Strauss",
+   "evidence": [
+    {
+     "url": "https://www.encyclopedia.com/people/social-sciences-and-law/business-leaders/levi-strauss",
+     "span": "Levi Strauss—first known as Loeb—was born on February 26, 1829"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "SUPPORTS",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": true,
+   "reason": "accepted"
+  },
+  {
+   "id": "P-strauss-L16",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Occupation: Businessman, entrepreneur",
+   "evidence": [
+    {
+     "url": "https://www.encyclopedia.com/people/social-sciences-and-law/business-leaders/levi-strauss",
+     "span": "had earned a considerable reputation as a businessman and a philanthropist in San Francisco"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "P-strauss-L17",
+   "kind": "positive",
+   "family": "golden CONFIRMED",
+   "claim": "Citizenship Date: 1853",
+   "evidence": [
+    {
+     "url": "https://www.encyclopedia.com/people/social-sciences-and-law/business-leaders/levi-strauss",
+     "span": "The 24-year-old Strauss, having recently become an American citizen, joined David and Fanny Stern there in 1853"
+    }
+   ],
+   "note": "human-confirmed row (IHH wording)",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "NOT JUDGED",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "O-strauss-L31",
+   "kind": "overclaim",
+   "family": "CORRECTION SUGGESTED",
+   "claim": "First big Hollywood boost came from The Wild One, with Marlon Brando wearing Levi’s 501 jeans (1953)",
+   "evidence": [
+    {
+     "url": "https://www.levistrauss.com/2017/06/14/blockbuster-leads-levis-look-back/",
+     "span": "in the 1953 film The Wild One. Dressed in 501® Levi’s® jeans"
+    }
+   ],
+   "note": "human note: Film, year and 501 jeans are confirmed; “first big Hollywood boost” is not in the source. Correction: this happened 51 years after Levi Strauss died, so it is the brand’s story, not his achievement. We recommend moving it out of his achievements. Status revised 17 Oct 2026 from CONFIRMED.",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "O-hope-L46",
+   "kind": "overclaim",
+   "family": "CORRECTION SUGGESTED",
+   "claim": "Honored with Bob Hope Humanitarian Award by the Television Academy (2002)",
+   "evidence": [
+    {
+     "url": "https://www.televisionacademy.com/awards/bob-hope-humanitarian-award",
+     "span": "First presented to Oprah Winfrey at the 54th Primetime Emmys in 2002, one year before Hope died at age 100"
+    }
+   ],
+   "note": "human note: The Television Academy’s Bob Hope Humanitarian Award was named for Hope and first presented to Oprah Winfrey in 2002; Hope did not receive it. Suggested: “The Television Academy created the Bob Hope Humanitarian Award in his honour (2002)”. Status revised 17 Oct 2026 from CONFIRMED.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "O-albright-L15",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Occupation: Politician, Author",
+   "evidence": [
+    {
+     "url": "https://www.wellesley.edu/academics/centers/albright/people",
+     "span": "Madeleine K. Albright was a professor, author, diplomat and businesswoman"
+    }
+   ],
+   "note": "human note: Status revised 17 Oct 2026: “Author” is confirmed; “Politician” is not in the source, which says “professor, author, diplomat and businesswoman”. IHH could use “Diplomat, Author”.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "O-albright-L29",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Chair of the National Democratic Institute for International Affairs (2001)",
+   "evidence": [
+    {
+     "url": "https://mortara.georgetown.edu/profiles/the-honorable-madeleine-k-albright/",
+     "span": "She also chaired the National Democratic Institute"
+    }
+   ],
+   "note": "human note: Chair confirmed; the 2001 start year is not in this source.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['2001']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['2001']"
+  },
+  {
+   "id": "O-albright-L31",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "President of the Truman Scholarship Foundation (2003)",
+   "evidence": [
+    {
+     "url": "https://mortara.georgetown.edu/profiles/the-honorable-madeleine-k-albright/",
+     "span": "served as the president of the Truman Scholarship Foundation"
+    }
+   ],
+   "note": "human note: Role confirmed; the 2003 year is not in this source.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['2003']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['2003']"
+  },
+  {
+   "id": "O-berlin-L29",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Co-founded the American Society of Composers, Authors, and Publishers (1914)",
+   "evidence": [
+    {
+     "url": "https://www.irvingberlin.com/biography",
+     "span": "Irving Berlin was a co-founder of ASCAP (American Society of Composers, Authors and Publishers)"
+    }
+   ],
+   "note": "human note: Co-founder status confirmed by the estate and the Songwriters Hall of Fame. Neither page states ASCAP’s 1914 founding year.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1914']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1914']"
+  },
+  {
+   "id": "O-cruz-L13",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Died: July 16, 2003, Fort Lee, New Jersey",
+   "evidence": [
+    {
+     "url": "https://www.biography.com/musicians/celia-cruz",
+     "span": "Cruz died in New Jersey on July 16, 2003, at the age of 77."
+    }
+   ],
+   "note": "human note: Date and state confirmed. The town (Fort Lee) is not named in the retrieved sources.",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "O-hope-L27",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Entertained US troops on the USO Tours for 50 years (1941 – 1991)",
+   "evidence": [
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "After entertaining American troops at March Field in Riverside, California in 1941, Hope joined the USO"
+    },
+    {
+     "url": "https://case.edu/ech/articles/h/hope-leslie-townes-bob",
+     "span": "flying around the world to perform for troops during the KOREAN WAR, VIETNAM, and the PERSIAN GULF WAR"
+    }
+   ],
+   "note": "human note: The 1941 start is confirmed. The quoted text names the Persian Gulf War but does not state the 1991 end year, so “1991” and “50 years” rest on inference. Status revised 17 Oct 2026 from CONFIRMED.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim / ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  },
+  {
+   "id": "O-hope-L31",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Won Peabody Award 3 times (1944, 1958, 1968)",
+   "evidence": [
+    {
+     "url": "https://www.televisionacademy.com/features/news/hall-fame/bob-hope-hall-fame-tribute",
+     "span": "the memorable Moscow show that won the distinguished Peabody Award in 1958"
+    }
+   ],
+   "note": "human note: The 1958 Peabody is confirmed by the Television Academy. 1944 and 1968 were not confirmed; the Peabody Awards’ own archive was not retrieved.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1944', '1968', '3']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1944', '1968', '3']"
+  },
+  {
+   "id": "O-lamarr-L29",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Co-Invention of Frequency-Hopping Spread Spectrum (1941)",
+   "evidence": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "span": "Lamarr also worked with Hollywood composer George Antheil to invent a frequency hopping technique"
+    }
+   ],
+   "note": "human note: Co-invention with George Antheil is confirmed. The 1941 date (the patent application) is not in this source; the patent itself, already in our profile’s manifest, records the filing date.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['1941']",
+   "accepted": false,
+   "reason": "numbers in claim absent from evidence spans: ['1941']"
+  },
+  {
+   "id": "O-muir-L32",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Inspired Pres. Theodore Roosevelt to create the National Park System by taking him on a three-day camping trip. (1903)",
+   "evidence": [
+    {
+     "url": "https://www.nps.gov/jomu/learn/historyculture/john-muir-and-president-roosevelt.htm",
+     "span": "the president went on a three-day wilderness trip that started at the Mariposa Grove"
+    },
+    {
+     "url": "https://www.nps.gov/jomu/learn/historyculture/john-muir-and-president-roosevelt.htm",
+     "span": "President Theodore Roosevelt visited John Muir in Yosemite in May 1903."
+    }
+   ],
+   "note": "human note: The 1903 three-day trip is confirmed by the National Park Service. “Inspired … to create the National Park System” is not supported by this source: the National Park Service was created later, by a different president. Suggested: “Took President Theodore Roosevelt on a three-day camping trip in Yosemite (1903)”.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal / spike proposal",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "O-pei-L32",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Designed the Rock and Roll Hall of Fame in Cleveland, OH (1995)",
+   "evidence": [
+    {
+     "url": "https://rockhall.com/about/",
+     "span": "The Rock & Roll Hall of Fame threw open its doors on September 2, 1995"
+    },
+    {
+     "url": "https://rockhall.com/about/",
+     "span": "I.M. Pei speaks at the Topping Off ceremony"
+    }
+   ],
+   "note": "human note: The 1995 opening is confirmed, and the Hall’s own page shows Pei’s role in the building. It does not explicitly state “designed by”.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal / spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": true,
+   "proposed_reason": "proposed deterministic layers passed",
+   "accepted": false,
+   "reason": "semantic judge: DOES_NOT_SUPPORT"
+  },
+  {
+   "id": "O-strauss-L29",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Provided funds for the first 28 scholarships at UC Berkeley, continued by family (1897)",
+   "evidence": [
+    {
+     "url": "https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/",
+     "span": "In 1897 Levi provided the funds for twenty-eight scholarships at the University of California, Berkeley"
+    }
+   ],
+   "note": "human note: Year and the 28 scholarships are confirmed. “Continued by family” is not in the source; it says the scholarships are “all of which are still in place today”. Status revised 17 Oct 2026 from CONFIRMED.",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['28']",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "O-strauss-L30",
+   "kind": "overclaim",
+   "family": "PARTLY CONFIRMED",
+   "claim": "Estimated estate worth $6 million or $177 Million in today’s money (1902)",
+   "evidence": [
+    {
+     "url": "https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/",
+     "span": "His estate amounted to nearly $6 million"
+    }
+   ],
+   "note": "human note: The $6 million figure is confirmed. The “$177 million in today’s money” conversion is not in the source; IHH should state the method and year it used. Status revised 17 Oct 2026 from CONFIRMED.",
+   "synthetic_page": false,
+   "allowlisted": false,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": true,
+   "existing_reason": "spike proposal",
+   "proposed_gate": false,
+   "proposed_reason": "numbers in claim absent from evidence spans: ['177', '1902']",
+   "accepted": false,
+   "reason": "domain not on allowlist"
+  },
+  {
+   "id": "O-einstein-L45",
+   "kind": "overclaim",
+   "family": "CORRECTION SUGGESTED",
+   "claim": "Honored with the naming of Element 99, Einsteinium (1952)",
+   "evidence": [
+    {
+     "url": "https://newscenter.lbl.gov/2021/02/03/discoveries-at-the-edge-of-the-periodic-table-first-ever-measurements-of-einsteinium/",
+     "span": "Element 99, named after Albert Einstein, was discovered at Berkeley Lab in 1952 and announced in 1955."
+    }
+   ],
+   "note": "human note: The element was discovered in 1952 but announced, with its name, in 1955. Suggested: “Element 99, einsteinium, named in his honour (discovered 1952; announced 1955)”.",
+   "synthetic_page": false,
+   "allowlisted": true,
+   "retrieved": true,
+   "semantic": "DOES_NOT_SUPPORT",
+   "existing_gate": false,
+   "existing_reason": "spike proposal | CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "proposed_gate": false,
+   "proposed_reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+   "accepted": false,
+   "reason": "no span passes the existing gate: ONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+  }
+ ]
+}
