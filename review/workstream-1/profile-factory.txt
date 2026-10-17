@@ -1,0 +1,37 @@
+  ✓ light: mobile has no horizontal overflow
+  ✓ light: generated profile axe clean 
+  ✓ light: generated profile has no page errors
+  ✓ light: exactly one profile h1
+  ✓ light: exactly one profile main landmark
+  ✓ light: provenance register is present
+  ✓ light: every non-inline summary/link meets 24px target floor 
+  ✓ dark: mobile has no horizontal overflow
+  ✓ dark: generated profile axe clean 
+  ✓ dark: generated profile has no page errors
+  ✓ dark: exactly one profile h1
+  ✓ dark: exactly one profile main landmark
+  ✓ dark: provenance register is present
+  ✓ dark: every non-inline summary/link meets 24px target floor 
+  ✓ generated profile: no horizontal scroll at 320px
+  ✓ generated profile: no horizontal scroll at 360px
+  ✓ generated profile: no horizontal scroll at 375px
+  ✓ generated profile: no horizontal scroll at 390px
+  ✓ generated profile: no horizontal scroll at 412px
+  ✓ generated profile: no horizontal scroll at 430px
+  ✓ generated profile: no horizontal scroll at 640px
+  ✓ generated profile: no horizontal scroll at 768px
+  ✓ generated profile: no horizontal scroll at 1024px
+  ✓ generated profile: no horizontal scroll at 1280px
+  ✓ generated profile: no horizontal scroll at 1440px
+  ✓ generated profile has zero scripts
+  ✓ generated profile loads zero external src resources
+  ✓ generated profile has zero link/iframe/object/embed runtime dependencies
+  ✓ generated profile has zero unsafe href schemes
+  ✓ generated profile exposes human sign-off status
+  ✓ generated profile has five narrative sections
+  ✓ generated profile remains substantive with JavaScript disabled
+  ✓ generated profile honors reduced motion with no active animation/transition
+  ✓ generated profile print layout has no horizontal overflow
+  ✓ print exposes all five narrative sections without toggling disclosures
+
+ALL 35 PROFILE FACTORY CHECKS PASSED

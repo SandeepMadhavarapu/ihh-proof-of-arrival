@@ -1,6 +1,6 @@
 # Positioning: a supplement and pilot, not a replacement
 
-The board adjudication of 16 October 2026 is the adoption baseline: **option (c) today — take specific ideas — with a controlled pilot toward option (b), supplementing the existing WordPress site. Do not replace the museum website.**
+The board adjudication of 16 October 2026 is the adoption baseline: **option (c) today — take specific ideas — with a controlled pilot toward option (b), supplementing the existing WordPress site. No replacement is authorized at this stage.**
 
 ## What this project is
 
@@ -12,7 +12,7 @@ The standalone demo includes ten photographic portraits with source records. The
 
 ## What this project is not
 
-It is not a replacement for the museum's content inventory or operating website. It does not provide the full ten-profile collection (six are unwritten), community story intake and review, nominations, complete approved institutional pages, production donation/subscription services, or a named maintainer. It contains illustrative institutional pages with unresolved placeholders; they are not approved museum facts. No person has been appointed by this repository to operate it after the hackathon.
+It is not a replacement for the museum's content inventory or operating website. Ten profile drafts now exist; it does not provide approved publication of the full collection, community story intake and review, nominations, complete approved institutional pages, production donation/subscription services, or a named maintainer. It contains illustrative institutional pages with unresolved placeholders; they are not approved museum facts. No person has been appointed by this repository to operate it after the hackathon.
 
 The demo's `example.invalid` sitemap URLs are intentional non-production placeholders. They must be replaced with approved deployment URLs or the sitemap omitted before serving a production site.
 
@@ -25,3 +25,7 @@ The [ranked roadmap](ROADMAP.md) records outstanding conditions and unassigned a
 ## Source and build discipline
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Never repair a generated artifact by hand. Prove reproducibility with `bash qa/rebuild.sh`.
+
+## Sponsor meeting update — 17 October 2026
+
+Reported by team lead from sponsor meeting: IHH is open to considering a new website. This is not a written commitment, publication approval or authorization to replace the live site. All ten profiles are the content target; four is the minimum. A redesigned site remains optional and follows the content, verification and engagement workstreams.

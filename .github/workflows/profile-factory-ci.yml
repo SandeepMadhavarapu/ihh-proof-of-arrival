@@ -2,7 +2,7 @@ name: Profile Factory CI
 
 on:
   push:
-    branches: [feat/profile-factory, content/four-inductees, main]
+    branches: [feat/profile-factory, content/four-inductees, preview-muir-homepage, main, "workstream-1-**"]
   pull_request:
 
 jobs:
@@ -47,7 +47,10 @@ jobs:
           git diff --exit-code -- profiles/madeleine-albright/copy.md profiles/madeleine-albright/media-manifest.csv profiles/madeleine-albright/copy.html profiles/madeleine-albright/copy-full.md profiles/madeleine-albright/preview.html profiles/madeleine-albright/HUMAN-SIGNOFF-REQUIRED.txt
 
       - name: Static integrity
-        run: node qa/integrity.mjs .
+        run: |
+          node qa/integrity.mjs .
+          python qa/handover.py
+          python qa/secrets.py
 
       - name: Static visitor-runtime and secret scan
         run: |

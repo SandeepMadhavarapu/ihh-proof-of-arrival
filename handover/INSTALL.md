@@ -1,9 +1,9 @@
 # Putting an inductee profile on the Immigrant Hall of Honor website
 
-Written for somebody who does not write code. Each profile should take about twenty minutes.
+Written for somebody who does not write code. Installation time is untested; twenty minutes was an initial estimate.
 Nothing here needs a plugin, a developer, or an account beyond your WordPress login.
 
-There is one folder per inductee: `albright/`, `lamarr/`, `pei/`, `cruz/`. Each holds:
+There is one folder per inductee: `albright/`, `berlin/`, `cruz/`, `einstein/`, `hope/`, `lamarr/`, `muir/`, `naismith/`, `pei/`, `strauss/`. Each holds:
 
 | File | What it is |
 |---|---|
@@ -12,7 +12,8 @@ There is one folder per inductee: `albright/`, `lamarr/`, `pei/`, `cruz/`. Each 
 | `copy-full.md` | The same page as plain text, for when Custom HTML is not available (see Step 4). |
 | `media/web/` | The images the page uses, already resized for the web. |
 | `media-manifest.csv` | Every source and image: where it came from, its rights wording, its credit line. |
-| `search-log.csv` | How each item was found, including the searches that found nothing. |
+| `search-log.csv` | Research history when supplied. Missing for Berlin, Einstein, Hope, Muir, Naismith and Strauss; these are OPEN ITEMS, not invented logs. |
+| `ihh-content-reconciliation.md` | Private editorial inventory: IHH facts, achievements and honours, evidence, proposed corrections and unresolved checks. Never publish or link this note. |
 
 ---
 
@@ -42,7 +43,7 @@ and rights are in the manifest, and the files are already sized for the web.
 3. Paste the entire contents of `copy.html` into it.
 4. Preview. If your theme already shows the page title as a large heading, open the block and
    delete the single line `<h1>…</h1>` near the top, so the page has only one main heading.
-5. Publish.
+5. Keep as a draft until the named editor approves every open item and the staged page. Then the museum controls publication.
 
 ## Step 4 — If Custom HTML is not available
 
@@ -71,3 +72,9 @@ re-read a rights statement on a site that blocked our automated tools. The list 
 
 Whoever does this: write down how long it took and every point where you had to stop and work
 something out. Nobody has yet run this handoff with a real volunteer.
+
+## Rebuilding and reviewing
+
+Run `bash tools/package_handover.sh` from a checkout. Tracked `media/web/` files are the fallback when full-resolution originals are absent. Originals remain gitignored. The packager reports every missing research log and preserves reconciliation notes.
+
+The reconciliation notes retain the existing IHH facts / achievements / honours structure for editorial review. They are not approved replacement copy. Historical corrections and additional structured public content await the team lead’s approval; no facts in `inductees/*/copy.md` were changed in Workstream 1.

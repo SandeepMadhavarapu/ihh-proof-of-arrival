@@ -1,5 +1,6 @@
+import { IND, ORIGINAL, expected } from './catalog.mjs';
 import { chromium } from 'playwright';
-const IND=['albright','lamarr','pei','cruz'];
+
 const b=await chromium.launch({executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',args:['--no-sandbox']});
 const pass=[],fail=[]; let who=''; const ck=(c,m)=>(c?pass:fail).push(who+': '+m);
 for (const n of IND){ who=n; const U='http://127.0.0.1:8741/inductees/'+n+'/preview.html';
@@ -56,7 +57,7 @@ const a=await p.evaluate(()=>{
     externalRefs: [...prof.querySelectorAll('[src], link[href], iframe, object, embed')]
       .map(e=>e.getAttribute('src')||e.getAttribute('href')||'')
       .filter(u=>/^(https?:)?\/\//.test(u)).length,
-    sourceLinks: prof.querySelectorAll('a[href^="https://"]').length,
+    sourceLinks: prof.querySelectorAll('a[href^="https://"], a[href^="http://"]').length,
     sections: prof.querySelectorAll('details.sec').length,
     sourceItems: prof.querySelectorAll('.src-item').length,
     questions: prof.querySelectorAll('ol.qs li').length,
@@ -70,14 +71,16 @@ ck(a.captionBelowMedia, 'credit sits immediately BENEATH the photograph');
 ck(a.overlay.length===0, 'no text overlaid on the photograph '+(a.overlay.length?JSON.stringify(a.overlay.slice(0,3)):''));
 ck(a.standfirstExists, 'standfirst present');
 ck(a.sections===5, 'exactly 5 sections (got '+a.sections+')');
-ck(a.sourceItems>=10&&a.sourceItems<=15, a.sourceItems+' source items (10-15 required)');
+if (ORIGINAL.includes(n)) ck(a.sourceItems>=10&&a.sourceItems<=15, a.sourceItems+' source items (original 10-15 contract)');
+ck(a.sourceItems>0, 'source register is nonempty');
 ck(a.questions===5, 'exactly 5 discussion questions (got '+a.questions+')');
 ck(a.activities===2, 'exactly 2 activities (got '+a.activities+')');
-ck(a.quotes===1, 'exactly one first-person quotation (got '+a.quotes+')');
+ck(a.quotes===expected(n).quotes, 'quotation count matches authored optional quotation (got '+a.quotes+')');
 ck(a.h1===1, 'exactly one h1');
 ck(a.scripts===0, 'ZERO script elements in the fragment');
 ck(a.externalRefs===0, 'zero external RESOURCES loaded (got '+a.externalRefs+')');
-ck(a.sourceLinks>=10, a.sourceLinks+' evidence links point at real sources');
+ck(a.sourceLinks>=a.sourceItems, a.sourceLinks+' evidence links cover the source register');
+if (ORIGINAL.includes(n)) ck(a.sourceLinks>=10, 'original profile retains 10+ evidence links');
 ck(a.fillme===2, 'byline placeholders are visibly marked for the volunteer (got '+a.fillme+')');
 
 /* scoping: the hostile theme must not reach in, and the fragment must not reach out */

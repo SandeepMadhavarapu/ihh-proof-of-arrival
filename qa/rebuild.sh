@@ -5,14 +5,23 @@
 set -eu
 R="$(cd "$(dirname "$0")/.." && pwd)"
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
-GEN=(site/verify.html site/albright.html site/lamarr.html site/pei.html site/cruz.html)
-for n in albright lamarr pei cruz; do
+GEN=(site/verify.html handover/OPEN-ITEMS.md)
+for dir in "$R"/inductees/*/; do
+  [ -f "$dir/copy.md" ] || continue
+  n=$(basename "$dir")
+  GEN+=("site/$n.html" "handover/$n/copy.html" "handover/$n/copy-full.md" "handover/$n/preview.html" "handover/$n/media-manifest.csv")
   GEN+=("inductees/$n/copy.html" "inductees/$n/copy-full.md" "inductees/$n/preview.html")
+  for asset in "$dir"media/web/*; do
+    file=$(basename "$asset")
+    GEN+=("inductees/$n/media/web/$file" "handover/$n/media/web/$file" "site/media/$n/$file")
+  done
+  [ ! -f "$dir/search-log.csv" ] || GEN+=("handover/$n/search-log.csv")
 done
 for f in "${GEN[@]}"; do mkdir -p "$T/$(dirname "$f")"; cp "$R/$f" "$T/$f"; done
 python3 "$R/site/gen.py" >/dev/null
 python3 "$R/tools/build_profile.py" --all >/dev/null
 python3 "$R/tools/build_site_pages.py" >/dev/null
+bash "$R/tools/package_handover.sh" >/dev/null
 fail=0
 for f in "${GEN[@]}"; do
   if diff -q "$T/$f" "$R/$f" >/dev/null; then echo "  OK   $f regenerates byte-identically"

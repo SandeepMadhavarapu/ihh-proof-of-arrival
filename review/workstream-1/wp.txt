@@ -1,0 +1,310 @@
+  ✓ albright: light: axe clean on the fragment 
+  ✓ albright: light: no JS errors
+  ✓ albright: dark: axe clean on the fragment 
+  ✓ albright: dark: no JS errors
+  ✓ albright: opening sentence sits ABOVE the photograph
+  ✓ albright: credit sits immediately BENEATH the photograph
+  ✓ albright: no text overlaid on the photograph 
+  ✓ albright: standfirst present
+  ✓ albright: exactly 5 sections (got 5)
+  ✓ albright: 14 source items (original 10-15 contract)
+  ✓ albright: source register is nonempty
+  ✓ albright: exactly 5 discussion questions (got 5)
+  ✓ albright: exactly 2 activities (got 2)
+  ✓ albright: quotation count matches authored optional quotation (got 1)
+  ✓ albright: exactly one h1
+  ✓ albright: ZERO script elements in the fragment
+  ✓ albright: zero external RESOURCES loaded (got 0)
+  ✓ albright: 16 evidence links cover the source register
+  ✓ albright: original profile retains 10+ evidence links
+  ✓ albright: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ albright: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ albright: theme's uppercase transform does not reach inside
+  ✓ albright: fragment's styles do not leak out to the host
+  ✓ albright: all 5 section headers reachable by Tab (reached 10)
+  ✓ albright: Enter toggles a section closed
+  ✓ albright: Enter toggles it open again
+  ✓ albright: no horizontal scrolling at 320px
+  ✓ albright: no horizontal scrolling at 360px
+  ✓ albright: no horizontal scrolling at 390px
+  ✓ albright: no horizontal scrolling at 430px
+  ✓ albright: no horizontal scrolling at 768px
+  ✓ albright: no horizontal scrolling at 1280px
+  ✓ berlin: light: axe clean on the fragment 
+  ✓ berlin: light: no JS errors
+  ✓ berlin: dark: axe clean on the fragment 
+  ✓ berlin: dark: no JS errors
+  ✓ berlin: opening sentence sits ABOVE the photograph
+  ✓ berlin: credit sits immediately BENEATH the photograph
+  ✓ berlin: no text overlaid on the photograph 
+  ✓ berlin: standfirst present
+  ✓ berlin: exactly 5 sections (got 5)
+  ✓ berlin: source register is nonempty
+  ✓ berlin: exactly 5 discussion questions (got 5)
+  ✓ berlin: exactly 2 activities (got 2)
+  ✓ berlin: quotation count matches authored optional quotation (got 1)
+  ✓ berlin: exactly one h1
+  ✓ berlin: ZERO script elements in the fragment
+  ✓ berlin: zero external RESOURCES loaded (got 0)
+  ✓ berlin: 7 evidence links cover the source register
+  ✓ berlin: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ berlin: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ berlin: theme's uppercase transform does not reach inside
+  ✓ berlin: fragment's styles do not leak out to the host
+  ✓ berlin: all 5 section headers reachable by Tab (reached 15)
+  ✓ berlin: Enter toggles a section closed
+  ✓ berlin: Enter toggles it open again
+  ✓ berlin: no horizontal scrolling at 320px
+  ✓ berlin: no horizontal scrolling at 360px
+  ✓ berlin: no horizontal scrolling at 390px
+  ✓ berlin: no horizontal scrolling at 430px
+  ✓ berlin: no horizontal scrolling at 768px
+  ✓ berlin: no horizontal scrolling at 1280px
+  ✓ cruz: light: axe clean on the fragment 
+  ✓ cruz: light: no JS errors
+  ✓ cruz: dark: axe clean on the fragment 
+  ✓ cruz: dark: no JS errors
+  ✓ cruz: opening sentence sits ABOVE the photograph
+  ✓ cruz: credit sits immediately BENEATH the photograph
+  ✓ cruz: no text overlaid on the photograph 
+  ✓ cruz: standfirst present
+  ✓ cruz: exactly 5 sections (got 5)
+  ✓ cruz: 10 source items (original 10-15 contract)
+  ✓ cruz: source register is nonempty
+  ✓ cruz: exactly 5 discussion questions (got 5)
+  ✓ cruz: exactly 2 activities (got 2)
+  ✓ cruz: quotation count matches authored optional quotation (got 1)
+  ✓ cruz: exactly one h1
+  ✓ cruz: ZERO script elements in the fragment
+  ✓ cruz: zero external RESOURCES loaded (got 0)
+  ✓ cruz: 12 evidence links cover the source register
+  ✓ cruz: original profile retains 10+ evidence links
+  ✓ cruz: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ cruz: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ cruz: theme's uppercase transform does not reach inside
+  ✓ cruz: fragment's styles do not leak out to the host
+  ✓ cruz: all 5 section headers reachable by Tab (reached 12)
+  ✓ cruz: Enter toggles a section closed
+  ✓ cruz: Enter toggles it open again
+  ✓ cruz: no horizontal scrolling at 320px
+  ✓ cruz: no horizontal scrolling at 360px
+  ✓ cruz: no horizontal scrolling at 390px
+  ✓ cruz: no horizontal scrolling at 430px
+  ✓ cruz: no horizontal scrolling at 768px
+  ✓ cruz: no horizontal scrolling at 1280px
+  ✓ einstein: light: axe clean on the fragment 
+  ✓ einstein: light: no JS errors
+  ✓ einstein: dark: axe clean on the fragment 
+  ✓ einstein: dark: no JS errors
+  ✓ einstein: opening sentence sits ABOVE the photograph
+  ✓ einstein: credit sits immediately BENEATH the photograph
+  ✓ einstein: no text overlaid on the photograph 
+  ✓ einstein: standfirst present
+  ✓ einstein: exactly 5 sections (got 5)
+  ✓ einstein: source register is nonempty
+  ✓ einstein: exactly 5 discussion questions (got 5)
+  ✓ einstein: exactly 2 activities (got 2)
+  ✓ einstein: quotation count matches authored optional quotation (got 1)
+  ✓ einstein: exactly one h1
+  ✓ einstein: ZERO script elements in the fragment
+  ✓ einstein: zero external RESOURCES loaded (got 0)
+  ✓ einstein: 10 evidence links cover the source register
+  ✓ einstein: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ einstein: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ einstein: theme's uppercase transform does not reach inside
+  ✓ einstein: fragment's styles do not leak out to the host
+  ✓ einstein: all 5 section headers reachable by Tab (reached 15)
+  ✓ einstein: Enter toggles a section closed
+  ✓ einstein: Enter toggles it open again
+  ✓ einstein: no horizontal scrolling at 320px
+  ✓ einstein: no horizontal scrolling at 360px
+  ✓ einstein: no horizontal scrolling at 390px
+  ✓ einstein: no horizontal scrolling at 430px
+  ✓ einstein: no horizontal scrolling at 768px
+  ✓ einstein: no horizontal scrolling at 1280px
+  ✓ hope: light: axe clean on the fragment 
+  ✓ hope: light: no JS errors
+  ✓ hope: dark: axe clean on the fragment 
+  ✓ hope: dark: no JS errors
+  ✓ hope: opening sentence sits ABOVE the photograph
+  ✓ hope: credit sits immediately BENEATH the photograph
+  ✓ hope: no text overlaid on the photograph 
+  ✓ hope: standfirst present
+  ✓ hope: exactly 5 sections (got 5)
+  ✓ hope: source register is nonempty
+  ✓ hope: exactly 5 discussion questions (got 5)
+  ✓ hope: exactly 2 activities (got 2)
+  ✓ hope: quotation count matches authored optional quotation (got 0)
+  ✓ hope: exactly one h1
+  ✓ hope: ZERO script elements in the fragment
+  ✓ hope: zero external RESOURCES loaded (got 0)
+  ✓ hope: 7 evidence links cover the source register
+  ✓ hope: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ hope: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ hope: theme's uppercase transform does not reach inside
+  ✓ hope: fragment's styles do not leak out to the host
+  ✓ hope: all 5 section headers reachable by Tab (reached 15)
+  ✓ hope: Enter toggles a section closed
+  ✓ hope: Enter toggles it open again
+  ✓ hope: no horizontal scrolling at 320px
+  ✓ hope: no horizontal scrolling at 360px
+  ✓ hope: no horizontal scrolling at 390px
+  ✓ hope: no horizontal scrolling at 430px
+  ✓ hope: no horizontal scrolling at 768px
+  ✓ hope: no horizontal scrolling at 1280px
+  ✓ lamarr: light: axe clean on the fragment 
+  ✓ lamarr: light: no JS errors
+  ✓ lamarr: dark: axe clean on the fragment 
+  ✓ lamarr: dark: no JS errors
+  ✓ lamarr: opening sentence sits ABOVE the photograph
+  ✓ lamarr: credit sits immediately BENEATH the photograph
+  ✓ lamarr: no text overlaid on the photograph 
+  ✓ lamarr: standfirst present
+  ✓ lamarr: exactly 5 sections (got 5)
+  ✓ lamarr: 11 source items (original 10-15 contract)
+  ✓ lamarr: source register is nonempty
+  ✓ lamarr: exactly 5 discussion questions (got 5)
+  ✓ lamarr: exactly 2 activities (got 2)
+  ✓ lamarr: quotation count matches authored optional quotation (got 1)
+  ✓ lamarr: exactly one h1
+  ✓ lamarr: ZERO script elements in the fragment
+  ✓ lamarr: zero external RESOURCES loaded (got 0)
+  ✓ lamarr: 13 evidence links cover the source register
+  ✓ lamarr: original profile retains 10+ evidence links
+  ✓ lamarr: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ lamarr: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ lamarr: theme's uppercase transform does not reach inside
+  ✓ lamarr: fragment's styles do not leak out to the host
+  ✓ lamarr: all 5 section headers reachable by Tab (reached 10)
+  ✓ lamarr: Enter toggles a section closed
+  ✓ lamarr: Enter toggles it open again
+  ✓ lamarr: no horizontal scrolling at 320px
+  ✓ lamarr: no horizontal scrolling at 360px
+  ✓ lamarr: no horizontal scrolling at 390px
+  ✓ lamarr: no horizontal scrolling at 430px
+  ✓ lamarr: no horizontal scrolling at 768px
+  ✓ lamarr: no horizontal scrolling at 1280px
+  ✓ muir: light: axe clean on the fragment 
+  ✓ muir: light: no JS errors
+  ✓ muir: dark: axe clean on the fragment 
+  ✓ muir: dark: no JS errors
+  ✓ muir: opening sentence sits ABOVE the photograph
+  ✓ muir: credit sits immediately BENEATH the photograph
+  ✓ muir: no text overlaid on the photograph 
+  ✓ muir: standfirst present
+  ✓ muir: exactly 5 sections (got 5)
+  ✓ muir: source register is nonempty
+  ✓ muir: exactly 5 discussion questions (got 5)
+  ✓ muir: exactly 2 activities (got 2)
+  ✓ muir: quotation count matches authored optional quotation (got 1)
+  ✓ muir: exactly one h1
+  ✓ muir: ZERO script elements in the fragment
+  ✓ muir: zero external RESOURCES loaded (got 0)
+  ✓ muir: 10 evidence links cover the source register
+  ✓ muir: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ muir: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ muir: theme's uppercase transform does not reach inside
+  ✓ muir: fragment's styles do not leak out to the host
+  ✓ muir: all 5 section headers reachable by Tab (reached 15)
+  ✓ muir: Enter toggles a section closed
+  ✓ muir: Enter toggles it open again
+  ✓ muir: no horizontal scrolling at 320px
+  ✓ muir: no horizontal scrolling at 360px
+  ✓ muir: no horizontal scrolling at 390px
+  ✓ muir: no horizontal scrolling at 430px
+  ✓ muir: no horizontal scrolling at 768px
+  ✓ muir: no horizontal scrolling at 1280px
+  ✓ naismith: light: axe clean on the fragment 
+  ✓ naismith: light: no JS errors
+  ✓ naismith: dark: axe clean on the fragment 
+  ✓ naismith: dark: no JS errors
+  ✓ naismith: opening sentence sits ABOVE the photograph
+  ✓ naismith: credit sits immediately BENEATH the photograph
+  ✓ naismith: no text overlaid on the photograph 
+  ✓ naismith: standfirst present
+  ✓ naismith: exactly 5 sections (got 5)
+  ✓ naismith: source register is nonempty
+  ✓ naismith: exactly 5 discussion questions (got 5)
+  ✓ naismith: exactly 2 activities (got 2)
+  ✓ naismith: quotation count matches authored optional quotation (got 1)
+  ✓ naismith: exactly one h1
+  ✓ naismith: ZERO script elements in the fragment
+  ✓ naismith: zero external RESOURCES loaded (got 0)
+  ✓ naismith: 9 evidence links cover the source register
+  ✓ naismith: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ naismith: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ naismith: theme's uppercase transform does not reach inside
+  ✓ naismith: fragment's styles do not leak out to the host
+  ✓ naismith: all 5 section headers reachable by Tab (reached 15)
+  ✓ naismith: Enter toggles a section closed
+  ✓ naismith: Enter toggles it open again
+  ✓ naismith: no horizontal scrolling at 320px
+  ✓ naismith: no horizontal scrolling at 360px
+  ✓ naismith: no horizontal scrolling at 390px
+  ✓ naismith: no horizontal scrolling at 430px
+  ✓ naismith: no horizontal scrolling at 768px
+  ✓ naismith: no horizontal scrolling at 1280px
+  ✓ pei: light: axe clean on the fragment 
+  ✓ pei: light: no JS errors
+  ✓ pei: dark: axe clean on the fragment 
+  ✓ pei: dark: no JS errors
+  ✓ pei: opening sentence sits ABOVE the photograph
+  ✓ pei: credit sits immediately BENEATH the photograph
+  ✓ pei: no text overlaid on the photograph 
+  ✓ pei: standfirst present
+  ✓ pei: exactly 5 sections (got 5)
+  ✓ pei: 13 source items (original 10-15 contract)
+  ✓ pei: source register is nonempty
+  ✓ pei: exactly 5 discussion questions (got 5)
+  ✓ pei: exactly 2 activities (got 2)
+  ✓ pei: quotation count matches authored optional quotation (got 1)
+  ✓ pei: exactly one h1
+  ✓ pei: ZERO script elements in the fragment
+  ✓ pei: zero external RESOURCES loaded (got 0)
+  ✓ pei: 15 evidence links cover the source register
+  ✓ pei: original profile retains 10+ evidence links
+  ✓ pei: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ pei: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ pei: theme's uppercase transform does not reach inside
+  ✓ pei: fragment's styles do not leak out to the host
+  ✓ pei: all 5 section headers reachable by Tab (reached 10)
+  ✓ pei: Enter toggles a section closed
+  ✓ pei: Enter toggles it open again
+  ✓ pei: no horizontal scrolling at 320px
+  ✓ pei: no horizontal scrolling at 360px
+  ✓ pei: no horizontal scrolling at 390px
+  ✓ pei: no horizontal scrolling at 430px
+  ✓ pei: no horizontal scrolling at 768px
+  ✓ pei: no horizontal scrolling at 1280px
+  ✓ strauss: light: axe clean on the fragment 
+  ✓ strauss: light: no JS errors
+  ✓ strauss: dark: axe clean on the fragment 
+  ✓ strauss: dark: no JS errors
+  ✓ strauss: opening sentence sits ABOVE the photograph
+  ✓ strauss: credit sits immediately BENEATH the photograph
+  ✓ strauss: no text overlaid on the photograph 
+  ✓ strauss: standfirst present
+  ✓ strauss: exactly 5 sections (got 5)
+  ✓ strauss: source register is nonempty
+  ✓ strauss: exactly 5 discussion questions (got 5)
+  ✓ strauss: exactly 2 activities (got 2)
+  ✓ strauss: quotation count matches authored optional quotation (got 0)
+  ✓ strauss: exactly one h1
+  ✓ strauss: ZERO script elements in the fragment
+  ✓ strauss: zero external RESOURCES loaded (got 0)
+  ✓ strauss: 7 evidence links cover the source register
+  ✓ strauss: byline placeholders are visibly marked for the volunteer (got 2)
+  ✓ strauss: theme's Impact heading font does not reach inside (got Georgia)
+  ✓ strauss: theme's uppercase transform does not reach inside
+  ✓ strauss: fragment's styles do not leak out to the host
+  ✓ strauss: all 5 section headers reachable by Tab (reached 15)
+  ✓ strauss: Enter toggles a section closed
+  ✓ strauss: Enter toggles it open again
+  ✓ strauss: no horizontal scrolling at 320px
+  ✓ strauss: no horizontal scrolling at 360px
+  ✓ strauss: no horizontal scrolling at 390px
+  ✓ strauss: no horizontal scrolling at 430px
+  ✓ strauss: no horizontal scrolling at 768px
+  ✓ strauss: no horizontal scrolling at 1280px
+
+ALL 308 CHECKS PASSED

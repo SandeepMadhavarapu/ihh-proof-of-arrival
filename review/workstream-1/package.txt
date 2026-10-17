@@ -1,0 +1,17 @@
+inductees/albright: 5 sections, 14 sources (4 images), 5 questions, 2 activities, 0 script tags
+inductees/berlin: 5 sections, 5 sources (1 images), 5 questions, 2 activities, 0 script tags
+inductees/cruz: 5 sections, 10 sources (2 images), 5 questions, 2 activities, 0 script tags
+inductees/einstein: 5 sections, 8 sources (1 images), 5 questions, 2 activities, 0 script tags
+inductees/hope: 5 sections, 5 sources (1 images), 5 questions, 2 activities, 0 script tags
+inductees/lamarr: 5 sections, 11 sources (5 images), 5 questions, 2 activities, 0 script tags
+inductees/muir: 5 sections, 8 sources (1 images), 5 questions, 2 activities, 0 script tags
+inductees/naismith: 5 sections, 7 sources (1 images), 5 questions, 2 activities, 0 script tags
+inductees/pei: 5 sections, 13 sources (7 images), 5 questions, 2 activities, 0 script tags
+inductees/strauss: 5 sections, 5 sources (1 images), 5 questions, 2 activities, 0 script tags
+OPEN ITEM: berlin/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: einstein/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: hope/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: muir/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: naismith/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual research log.
+handover/ assembled (human sign-off pending): 7.4M zip

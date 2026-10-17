@@ -251,9 +251,9 @@ sectionsection.hero .lede::first-letter{
 
 /* ── the hero, set as a broadside ───────────────────────────────────────*/
 section.hero{padding-top:.6rem;text-align:center}
-sectionsection.hero .kicker{justify-content:center}
-sectionsection.hero .kicker::after{display:none}
-sectionsection.hero .kicker{
+section.hero .kicker{justify-content:center}
+section.hero .kicker::after{display:none}
+section.hero .kicker{
   border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);
   padding:.55rem 0;display:block}
 sectionsection.hero h1{margin:1.3rem 0 1.2rem}

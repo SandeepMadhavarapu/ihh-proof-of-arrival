@@ -1,0 +1,43 @@
+
+PASS (39)
+  ✓ 20 claims rendered (15+ expected)
+  ✓ every one of the 20 claims has an evidence drawer
+  ✓ 47 evidence items across 20 claims
+  ✓ curator findings start closed
+  ✓ tally starts at 0
+  ✓ sheet starts empty
+  ✓ first verdict control is focusable
+  ✓ arrow keys move and select within the radio group (got contradicted)
+  ✓ recording a verdict opens the curator finding
+  ✓ claim marked answered
+  ✓ tally incremented to 1
+  ✓ agreement reported: "Your finding matches the curator."
+  ✓ status line reports agreement
+  ✓ finding sheet built
+  ✓ citation step hidden before a verdict is recorded
+  ✓ citation step appears once a verdict is recorded
+  ✓ citation recorded on the finding sheet
+  ✓ visitor may reject the curator’s own evidence
+  ✓ disagreement recorded without overriding the visitor
+  ✓ curator reasoning shown even when you disagree
+  ✓ clear resets the tally
+  ✓ clear re-closes the curator findings
+  ✓ clear empties the sheet
+  ✓ no JS errors (none)
+  ✓ verdicts register in all 5 case files
+  ✓ citations register in all 5 case files (got 5 of 5)
+  ✓ tally counts across case files
+  ✓ Enter in the search field keeps the filter ("Showing 1 of 10." -> "Showing 1 of 10.")
+  ✓ Enter does not reload the page
+  ✓ axe clean with ALL drawers open 
+  ✓ all targets ≥24×24 
+  ✓ no-JS: all 20 claims present
+  ✓ no-JS: all 47 evidence items present
+  ✓ no-JS: every curator verdict still in the page
+  ✓ no-JS: every lesson still readable
+  ✓ no-JS: 60 verdict controls (3 per claim) still usable
+  ✓ no-JS: 67 citation controls (one per evidence item plus "none") still usable
+  ✓ no-JS: the citation step is visible (not gated on script)
+  ✓ no-JS: evidence drawer opens natively
+
+ALL 39 CHECKS PASSED
