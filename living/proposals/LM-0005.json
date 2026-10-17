@@ -1,0 +1,108 @@
+{
+ "id": "LM-0005",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "A Canadian at the Springfield gym",
+ "sentence": "Instead, drawn to lay ministry through sport, a radical decision that distanced him from his sister, Naismith forewent ordination to become a student in 1890–91 and then, in 1892, a physical instructor at the International Young Men’s Christian Association (YMCA) Training School in Springfield, Mass.",
+ "claim": "Instead, drawn to lay ministry through sport, a radical decision that distanced him from his sister, Naismith forewent ordination to become a student in 1890–91 and then, in 1892, a physical instructor at the International Young Men’s Christian Association (YMCA) Training School in Springfield, Mass.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "Instead, drawn to lay ministry through sport, a radical decision that distanced him from his sister, Naismith forewent ordination to become a student in 1890–91 and then, in 1892, a physical instructor at the International Young Men’s Christian Association (YMCA) Training School in Springfield, Mass.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1890, 1892])",
+   "names the inductee in the sentence",
+   "tier 2 source (biographi.ca)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "low sportsman Robert Tait McKenzie would remember; together the jaunty pair joined the 5th Battalion of Infantry (Royal Scots of Canada) [see Sir Frederick Oscar Warren Loomis]. Naismith was licensed to preach in 1890. College principal Donald Harvey MacVicar* leaned on him to give up the perceived evils of athletics. Instead, drawn to lay ministry through sport, a radical decision that distanced him from his sister, Naismith forewent ordination to become a student in 1890–91 and then, in 1892, a physical instructor at the International Young Men’s Christian Association (YMCA) Training School in Springfield, Mass. At this centre for advanced learning in administration and physical education, the salvation of the body and the soul became his creed. He was struck by the groundbreaking ideas in social psychology of the superintendent of the physical department, Dr Luther Halsey Gulick, particularly his concepts of teamwork. Invent",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca"
+   ],
+   "tiers": {
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "1890": [
+     "biographi.ca"
+    ],
+    "1892": [
+     "biographi.ca"
+    ],
+    "91": [
+     "biographi.ca"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "'1890' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "'1892' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "'91' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+  "Gate 2: '1890' is not stated by two independent domains (found in: ['biographi.ca'])",
+  "Gate 2: '1892' is not stated by two independent domains (found in: ['biographi.ca'])",
+  "Gate 2: '91' is not stated by two independent domains (found in: ['biographi.ca'])"
+ ],
+ "created_at": "2026-10-17T18:35:27+00:00",
+ "decision": {},
+ "related": ""
+}

@@ -1,0 +1,104 @@
+{
+ "id": "LM-0021",
+ "kind": "correction",
+ "slug": "lamarr",
+ "section": "An only child in Vienna",
+ "sentence": "She was born Hedwig Kiesler in 1913 in Vienna, the only child in a wealthy assimilated Jewish family, less than a year before the outbreak of World War I.",
+ "claim": "She was born Hedwig Kiesler in 1913 in Vienna, the only child in a wealthy assimilated Jewish family, less than a year before the outbreak of World War I.",
+ "evidence": [
+  {
+   "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+   "span": "She was born Hedwig Kiesler in 1913 in Vienna, the only child in a wealthy assimilated Jewish family, less than a year before the outbreak of World War I.",
+   "retrieved_at": "2026-10-17T18:39:40+00:00",
+   "sha256": "0ffa92fe71b42cebfa6a83df60b27118604de5fa80013246c0826d1333a1b94a",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/b76599ad3be25bf0ad521f53631fb97753a854ad84cd793acb74c406e454b2d1.body",
+   "tier": 2,
+   "title": "Lamarr, Hedy (1913–2000) | Encyclopedia.com"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1913])",
+   "names the inductee in the sentence",
+   "tier 2 source (encyclopedia.com)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "pending",
+ "verdict": "CONFLICT",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "ankind (1957); The Female Animal (1958); Instant Karma (1990). Although internationally famous as a Hollywood femme fatale, Hedy Lamarr was also an inventor whose work with composer George Antheil laid the groundwork for both military communications systems and the mobile telephone systems now in use around the world. She was born Hedwig Kiesler in 1913 in Vienna, the only child in a wealthy assimilated Jewish family, less than a year before the outbreak of World War I. Her father Emil was a bank director and her mother Gertrud was a concert pianist who gave up her career to raise their daughter. Known to friends and family as Hedy, Lamarr attended Vienna's most exclusive private schools but showed little interest in her studies. While enrolled in a finishing school, she signed up fo",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal",
+    "contains a superlative or 'first'"
+   ],
+   "domains": [
+    "encyclopedia.com"
+   ],
+   "tiers": {
+    "encyclopedia.com": 2
+   },
+   "per_fact": {
+    "1913": [
+     "encyclopedia.com"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['encyclopedia.com']",
+    "needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'encyclopedia.com': 2}",
+    "'1913' is not stated by two independent domains (found in: ['encyclopedia.com'])",
+    "'only' is not stated by two independent domains (found in: ['encyclopedia.com'])"
+   ]
+  },
+  "gate4": {
+   "passed": false,
+   "reasons": [
+    "conflicts with an existing fact (copy.md): 'She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family.' gives [1914]; shared topic words ['born', 'child', 'family', 'jewish', 'vienna', 'wealthy']"
+   ],
+   "conflict_with": "copy.md: She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family."
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "conflict goes to a person first"
+  }
+ },
+ "reasons": [
+  "Gate 4: conflicts with an existing fact (copy.md): 'She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family.' gives [1914]; shared topic words ['born', 'child', 'family', 'jewish', 'vienna', 'wealthy']",
+  "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['encyclopedia.com']",
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'encyclopedia.com': 2}",
+  "Gate 2: '1913' is not stated by two independent domains (found in: ['encyclopedia.com'])",
+  "Gate 2: 'only' is not stated by two independent domains (found in: ['encyclopedia.com'])"
+ ],
+ "created_at": "2026-10-17T18:37:41+00:00",
+ "decision": {},
+ "related": "copy.md: She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family."
+}

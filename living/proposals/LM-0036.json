@@ -1,0 +1,95 @@
+{
+ "id": "LM-0036",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "American at last",
+ "sentence": "Neither Lamarr nor Antheil ever earned money from their invention.",
+ "claim": "Neither Lamarr nor Antheil ever earned money from their invention.",
+ "evidence": [
+  {
+   "url": "https://www.invent.org/inductees/hedy-lamarr",
+   "span": "Although Lamarr and Antheil never profited from their invention during their lifetime",
+   "retrieved_at": "2026-10-17T18:39:36+00:00",
+   "sha256": "62c83b6ef95d7239089b1b80b3dd5d96febbc2878432a871425a34c6a9fe698f",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/4dad02a8b8a11ca20eef501f204f6b3d569b040cc6630da6880939c74a24c3e8.body",
+   "tier": 2,
+   "title": "Hedy Lamarr │ The National Inventors Hall of Fame"
+  },
+  {
+   "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+   "span": "Neither Lamarr nor Antheil, who died in 1959, would ever earn a cent from their invention.",
+   "retrieved_at": "2026-10-17T18:39:40+00:00",
+   "sha256": "0ffa92fe71b42cebfa6a83df60b27118604de5fa80013246c0826d1333a1b94a",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/b76599ad3be25bf0ad521f53631fb97753a854ad84cd793acb74c406e454b2d1.body",
+   "tier": 2,
+   "title": "Lamarr, Hedy (1913–2000) | Encyclopedia.com"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-lamarr-4",
+  "confidence": null,
+  "rationale": [],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "pending",
+ "verdict": "NEEDS_HUMAN_JUDGMENT",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "ed torpedoes. Multiple radio frequencies were used to broadcast a radio signal, switching frequencies at split-second intervals in a seemingly random manner that would sound like mere noise to anyone listening. But if both the sender and receiver of the signal hopped frequencies at the same time, the signal was clear. Although Lamarr and Antheil never profited from their invention during their lifetime, it was acknowledged by the Electronic Frontier Foundation in 1997 as an important development in wireless communications. When the patent was issued in 1942, it listed her maiden and married name at the time, Hedy Kiesler Markey. Print To print images individually, right-click on each one and select \"Save As\" to down",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "ile. Apparently, some Navy people who read the patent papers hastily concluded, after seeing the word \"player piano\" in the text, that somehow a device as bulky as a player piano would have to be jammed into a torpedo. After two decades, the inventors' patent rights to exclusive use or licensing of the device expired. Neither Lamarr nor Antheil, who died in 1959, would ever earn a cent from their invention. Although shunned by the U.S. Navy, the basic Lamarr-Antheil concept had been a sound one, and in 1957 it was reviewed by engineers at the Sylvania Electronic Systems Division in Buffalo, New York. Using modern electronics rather than piano rolls, Sylvania's engineering staff created a system that emerged as a basic to",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NEEDS HUMAN JUDGMENT",
+   "reason": "no semantic judge configured (no API key)"
+  }
+ },
+ "reasons": [
+  "Gate 3: no semantic judge configured; a person must judge meaning"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

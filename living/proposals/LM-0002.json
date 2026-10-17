@@ -1,0 +1,117 @@
+{
+ "id": "LM-0002",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "An American at last",
+ "sentence": "James Naismith also gave back to his adopted country as an immigrant who volunteered to serve as a military chaplain in the Kansas National Guard in 1915, then served during World War I in France as a member of the YMCA War Work Council.",
+ "claim": "He also gave back to his adopted country as an immigrant who volunteered to serve as a military chaplain in the Kansas National Guard in 1915, then served during World War I in France as a member of the YMCA War Work Council.",
+ "evidence": [
+  {
+   "url": "https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith",
+   "span": "He also gave back to his adopted country as an immigrant who volunteered to serve as a military chaplain in the Kansas National Guard in 1915, then served during World War I in France as a member of the YMCA War Work Council.",
+   "retrieved_at": "2026-10-17T18:39:32+00:00",
+   "sha256": "950c166cda9019dc61782040e99a5e6b5ac593eacb8f189a8297f85234e560f7",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/ac170f5f9acba0d40ae6150faa6c903ba9266b6ab8595297c24c3750c4456d2c.body",
+   "tier": 2,
+   "title": "Featured news and headlines | KU News"
+  },
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "Military service and the First World War Appointed a chaplain in the Kansas National Guard in 1915 and ordained in April 1916, Naismith served in the Mexican border conflict that year.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.67,
+  "rationale": [
+   "states a date ([1915])",
+   "tier 2 source (ku.edu)",
+   "same date found on an independent domain: biographi.ca"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " life, but he famously refused to patent or otherwise profit from the game, including rejecting an extremely lucrative endorsement deal from a major cigarette company at a time when it was common for star athletes and coaches to endorse cigarettes. As a doctor, the negative health effects of smoking were clear to him. He also gave back to his adopted country as an immigrant who volunteered to serve as a military chaplain in the Kansas National Guard in 1915, then served during World War I in France as a member of the YMCA War Work Council. He also was a mentor to many students, including a young African-American student named John McLendon, who would go on to become a groundbreaking basketball coach and member of the Naismith Memorial Basketball Hall of Fame. \"Naismith’s story is a great American success story,\" Zogry said, \"and I’m proud to have found ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "ns with his Ontario kin. Learned in four languages besides English, he most enjoyed western films and the novels of Zane Grey, and was an avid boater and fisherman. Photographs show a solid, suited man with a thick moustache and glasses. He spoke English with a barely noticeable Scottish – some said Canadian – accent. Military service and the First World War Appointed a chaplain in the Kansas National Guard in 1915 and ordained in April 1916, Naismith served in the Mexican border conflict that year. His main adversary was organized prostitution in the military camps, where he set up basketball courts for recreational diversion. On leave from his university, he did an American tour with the YMCA in 1917 during the First World War. He was in France from the fall of that year until 1919, organizing sports for Americ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca",
+    "ku.edu"
+   ],
+   "tiers": {
+    "ku.edu": 2,
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "1915": [
+     "biographi.ca",
+     "ku.edu"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ku.edu': 2, 'biographi.ca': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ku.edu': 2, 'biographi.ca': 2}"
+ ],
+ "created_at": "2026-10-17T18:35:27+00:00",
+ "decision": {},
+ "related": ""
+}

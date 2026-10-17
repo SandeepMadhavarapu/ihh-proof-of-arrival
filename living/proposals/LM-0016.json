@@ -1,0 +1,103 @@
+{
+ "id": "LM-0016",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Kansas",
+ "sentence": "James Naismith (1861–1939) was a Canadian educator, physician, and Presbyterian minister who became known internationally for his invention of basketball.",
+ "claim": "James Naismith (1861–1939) was a Canadian educator, physician, and Presbyterian minister who became known internationally for his invention of basketball.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "James Naismith (1861–1939) was a Canadian educator, physician, and Presbyterian minister who became known internationally for his invention of basketball.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1861, 1939])",
+   "names the inductee in the sentence",
+   "tier 2 source (biographi.ca)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "Activities North America – Canada – Quebec – Montréal/Outaouais North America – United States of America Europe – France Share Tweet New Biographies Minor Corrections Biography of the Day See previous Themes, Essays, and Guides Sports The First World War Confederation Women in the DCB/DBC See complete list Share Tweet James Naismith (1861–1939) was a Canadian educator, physician, and Presbyterian minister who became known internationally for his invention of basketball. After studying at McGill College and the Presbyterian College of Montreal, he decided to pursue lay ministry through sport and enrolled in the Young Men’s Christian Association Training School in Springfield, Mass., where he created the game in 1891. He later earned a medical degree and served as head of physical educ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca"
+   ],
+   "tiers": {
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "1861": [
+     "biographi.ca"
+    ],
+    "1939": [
+     "biographi.ca"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "'1861' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "'1939' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+  "Gate 2: '1861' is not stated by two independent domains (found in: ['biographi.ca'])",
+  "Gate 2: '1939' is not stated by two independent domains (found in: ['biographi.ca'])"
+ ],
+ "created_at": "2026-10-17T18:37:31+00:00",
+ "decision": {},
+ "related": ""
+}

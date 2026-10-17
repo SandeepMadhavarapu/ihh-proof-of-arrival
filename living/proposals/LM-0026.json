@@ -1,0 +1,95 @@
+{
+ "id": "LM-0026",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "A farm boy from Dunbar",
+ "sentence": "The Muir Special Project (MSP) major is a BA degree only and is intended for students who have specific talents and interests that are not accommodated by one of the departmental majors.",
+ "claim": "The Muir Special Project (MSP) major is a BA degree only and is intended for students who have specific talents and interests that are not accommodated by one of the departmental majors.",
+ "evidence": [
+  {
+   "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+   "span": "The Muir Special Project (MSP) major is a BA degree only and is intended for students who have specific talents and interests that are not accommodated by one of the departmental majors.",
+   "retrieved_at": "2026-10-17T18:39:50+00:00",
+   "sha256": "6ef55080966af9369471496415b7293d2760bf0ece6ef34d0178104465959b50",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/4d1aefc462f0d45d5d46b6be7812f8d733b2a269d4975963eba2e0c7802fbc68.body",
+   "tier": 2,
+   "title": "John Muir College (overview)"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.33,
+  "rationale": [
+   "mentions an honour or award",
+   "names the inductee in the sentence",
+   "tier 2 source (ucsd.edu)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "f Chemistry and Biochemistry requires Physics 1A-B-C, Physics 2A-B and C or D, or Physics 4A-B-C-D-E, etc. The physical and life sciences, applied sciences (the Jacobs School of Engineering majors) together with certain social sciences (including cognitive science and economics), require at least one year of calculus. The Muir Special Project (MSP) major is a BA degree only and is intended for students who have specific talents and interests that are not accommodated by one of the departmental majors. Each proposal and senior thesis or project must be approved by the Muir provost. The MSP normally includes regular course work and independent study representing up to fifteen upper-division four-unit courses as well as a project or thesis. The project may be one of two kinds: creative work of some sort (e.g., a book ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "describes an award or honour",
+    "contains a superlative or 'first'"
+   ],
+   "domains": [
+    "ucsd.edu"
+   ],
+   "tiers": {
+    "ucsd.edu": 2
+   },
+   "per_fact": {},
+   "reasons": [
+    "needs two independent domains (describes an award or honour; contains a superlative or 'first'); has 1: ['ucsd.edu']",
+    "needs at least one tier-1 source (describes an award or honour; contains a superlative or 'first'); tiers: {'ucsd.edu': 2}",
+    "'only' is not stated by two independent domains (found in: ['ucsd.edu'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (describes an award or honour; contains a superlative or 'first'); has 1: ['ucsd.edu']",
+  "Gate 2: needs at least one tier-1 source (describes an award or honour; contains a superlative or 'first'); tiers: {'ucsd.edu': 2}",
+  "Gate 2: 'only' is not stated by two independent domains (found in: ['ucsd.edu'])"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

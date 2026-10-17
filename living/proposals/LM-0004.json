@@ -1,0 +1,45 @@
+{
+ "id": "LM-0004",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "A Canadian at the Springfield gym",
+ "sentence": "Early life and education After the deaths of their parents in 1870, James Naismith and his sister and brother were raised by their bachelor uncle Peter Johnston Young in a Scottish-immigrant environment on a farm north of Almonte, Ont.",
+ "claim": "Early life and education After the deaths of their parents in 1870, James Naismith and his sister and brother were raised by their bachelor uncle Peter Johnston Young in a Scottish-immigrant environment on a farm north of Almonte, Ont.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "Early life and education After the deaths of their parents in 1870, James Naismith and his sister and brother were raised by their bachelor uncle Peter Johnston Young in a Scottish-immigrant environment on a farm north of Almonte, Ont.",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 2,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1870])",
+   "names the inductee in the sentence",
+   "tier 2 source (biographi.ca)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:27+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}

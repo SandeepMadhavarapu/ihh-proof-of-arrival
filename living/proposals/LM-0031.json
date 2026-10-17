@@ -1,0 +1,116 @@
+{
+ "id": "LM-0031",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Kansas",
+ "sentence": "In 1889 James Naismith took charge of the gymnasium at McGill University.",
+ "claim": "In 1889 James Naismith took charge of the gymnasium at McGill University.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "While there, in 1889, he took on the directorship of McGill’s gymnasium",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  },
+  {
+   "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/introduction/1880s",
+   "span": "continuing James Naismith’s appointment as Instructor in Gymnastics for 1889-1890",
+   "retrieved_at": "2026-10-17T18:39:55+00:00",
+   "sha256": "aa8344cd2415bc3c3745b20c885ec1bcfb3c2030937150b2707389ea4ecf36df",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/1ec4ceb6c9e8847b0965fc4ad1a7da99313be2bbfdb4afe4a783f04424bb93a8.body",
+   "tier": 2,
+   "title": "1880s · James Naismith’s Life and Legacy: Celebrating 150 Years · KU Libraries Exhibits"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-naismith-1R",
+  "confidence": null,
+  "rationale": [
+   "Evidence-only narrowing of F-naismith-1: end year dropped because only one source gives it."
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "ol, and after spending some time in a lumber camp, Jim enrolled in Montreal’s McGill College in 1882 on a scholarship, bent on the ministry. Following graduation in 1887 (ba in mental and moral philosophy), having achieved success too in rugby football and other sports, he entered the Presbyterian College of Montreal. While there, in 1889, he took on the directorship of McGill’s gymnasium; he himself played sports with ferocious intensity and a Christian bearing. “He had abundant vitality,” childhood friend and fellow sportsman Robert Tait McKenzie would remember; together the jaunty pair joined the 5th Battalion of Infantry (Royal Scots of Canada) [see Sir Frederick Oscar Warren Loomis]. Naismith was ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/introduction/1880s",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "tic Association Entry for February 6, 1886 Minutes of the McGill University Athletic Association Cover page; October 8, 1884 Minutes of the Board of Governors, McGill University Entry September 15, 1888 Interior of the gymnasium at Burnside Hall, McGill University Minutes of the Board of Governors of McGill Universit, continuing James Naismith’s appointment as Instructor in Gymnastics for 1889-1890 ← Timeline 1890s → Contact Libraries 785-864-8983 University of Kansas Libraries 1425 Jayhawk Blvd Lawrence, Kansas 66045 Send us your comments or questions about the Libraries website. Articles & Databases Library Catalog e-Journals Subject & Course Guides Locations & Hours My Account Request Books, Articles, ... Ask",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca",
+    "ku.edu"
+   ],
+   "tiers": {
+    "biographi.ca": 2,
+    "ku.edu": 2
+   },
+   "per_fact": {
+    "1889": [
+     "biographi.ca",
+     "ku.edu"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'ku.edu': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'ku.edu': 2}"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

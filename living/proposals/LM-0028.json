@@ -1,0 +1,128 @@
+{
+ "id": "LM-0028",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Thirteen rules and two peach baskets",
+ "sentence": "Naismith worked for the YMCA in France during the First World War, from 1917 to 1919.",
+ "claim": "Naismith worked for the YMCA in France during the First World War, from 1917 to 1919.",
+ "evidence": [
+  {
+   "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+   "span": "YMCA Secretary in France: 1917-1919",
+   "retrieved_at": "2026-10-17T18:39:54+00:00",
+   "sha256": "62fe991c02f24cd87a9ac99bc36bd62bca06cec44161692b5acdae5d6440f282",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/728dac5fe12b8649d5f38bc9fa960a80f400085d495f4efb06b331e91021f3f1.body",
+   "tier": 2,
+   "title": "James NAISMITH (CAN) | About FIBA"
+  },
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "On leave from his university, he did an American tour with the YMCA in 1917 during the First World War. He was in France from the fall of that year until 1919, organizing sports for American soldiers",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-naismith-3",
+  "confidence": null,
+  "rationale": [
+   "Novelty key terms corrected after the first run: 'First World War' matched an unrelated copy.md sentence."
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "coming a huge success: 1892 Physical Education Director in the YMCA in Denver, Colorado, U.S.A.: 1895-1898 Degree in Medicine in the Gross Medical College of the University of Colorado (U.S.A.): 1895-1898 Physical education professor, chapel director and basketball coach at the University of Kansas (U.S.A.): 1898-1937 YMCA Secretary in France: 1917-1919 Distinctions & Recognitions Honorary Master in Physical Education: 1910 Tosses the ball in the first basketball game of the 1936 Berlin Olympic Games Professor Emeritus of the University of Kansas (after having retired at age 76): 1937 Legum Doctorate Degree of the McGill University: 1938 Honorary Doctor of Divinity a",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "nt. Military service and the First World War Appointed a chaplain in the Kansas National Guard in 1915 and ordained in April 1916, Naismith served in the Mexican border conflict that year. His main adversary was organized prostitution in the military camps, where he set up basketball courts for recreational diversion. On leave from his university, he did an American tour with the YMCA in 1917 during the First World War. He was in France from the fall of that year until 1919, organizing sports for American soldiers and working as director of the association’s social-hygiene section. Near the end of the war, he filed for American citizenship, which would be granted in 1925. Post-war activities and basketball fame Following his return to Kansas, Naismith resumed teaching and became active in such national organizations as the Amer",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal",
+    "contains a superlative or 'first'"
+   ],
+   "domains": [
+    "biographi.ca",
+    "fiba.basketball"
+   ],
+   "tiers": {
+    "fiba.basketball": 2,
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "1917": [
+     "biographi.ca",
+     "fiba.basketball"
+    ],
+    "1919": [
+     "biographi.ca",
+     "fiba.basketball"
+    ],
+    "ord:1": [
+     "biographi.ca"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'fiba.basketball': 2, 'biographi.ca': 2}",
+    "'ord:1' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "'first' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'fiba.basketball': 2, 'biographi.ca': 2}",
+  "Gate 2: 'ord:1' is not stated by two independent domains (found in: ['biographi.ca'])",
+  "Gate 2: 'first' is not stated by two independent domains (found in: ['biographi.ca'])"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

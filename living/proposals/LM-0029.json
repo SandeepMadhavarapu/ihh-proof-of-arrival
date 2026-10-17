@@ -1,0 +1,115 @@
+{
+ "id": "LM-0029",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Kansas",
+ "sentence": "Naismith received an honorary doctorate (LLD) from McGill University in 1938.",
+ "claim": "Naismith received an honorary doctorate (LLD) from McGill University in 1938.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "He was awarded honorary degrees by McGill (lld) in 1938 and the Presbyterian College of Montreal (dd) in April 1939.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  },
+  {
+   "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+   "span": "Legum Doctorate Degree of the McGill University: 1938",
+   "retrieved_at": "2026-10-17T18:39:54+00:00",
+   "sha256": "62fe991c02f24cd87a9ac99bc36bd62bca06cec44161692b5acdae5d6440f282",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/728dac5fe12b8649d5f38bc9fa960a80f400085d495f4efb06b331e91021f3f1.body",
+   "tier": 2,
+   "title": "James NAISMITH (CAN) | About FIBA"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-naismith-4",
+  "confidence": null,
+  "rationale": [],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "st of tournaments and other functions. In Canada again that year, he made stops at places such as Almonte, Toronto, and Edmonton, where he met the female basketball squad coached by John Percy Page*, the Edmonton Grads. Normally sparing in his plaudits, Naismith considered it to be one of the finest teams of all time. He was awarded honorary degrees by McGill (lld) in 1938 and the Presbyterian College of Montreal (dd) in April 1939. Seven months later he died of a heart attack in the aftermath of a cerebral haemorrhage. Assessment James Naismith’s single significant contribution to basketball was its creation, but in a global sport that accomplishment was enough to guarantee stupendous memorialization. Among many tributes, he would be inducted in",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "at the University of Kansas (U.S.A.): 1898-1937 YMCA Secretary in France: 1917-1919 Distinctions & Recognitions Honorary Master in Physical Education: 1910 Tosses the ball in the first basketball game of the 1936 Berlin Olympic Games Professor Emeritus of the University of Kansas (after having retired at age 76): 1937 Legum Doctorate Degree of the McGill University: 1938 Honorary Doctor of Divinity at the Presbyterian College in Montreal: 1939 Life Member of the National Association of Physical Education, in the U.S.A.: 1941 Honorary President of the National Association of Basketball Coaches in the U.S.A.: 1941 Streets and buildings in Almonte, Springfield and Lawrence carry his name",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal",
+    "describes an award or honour"
+   ],
+   "domains": [
+    "biographi.ca",
+    "fiba.basketball"
+   ],
+   "tiers": {
+    "biographi.ca": 2,
+    "fiba.basketball": 2
+   },
+   "per_fact": {
+    "1938": [
+     "biographi.ca",
+     "fiba.basketball"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

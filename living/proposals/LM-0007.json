@@ -1,0 +1,46 @@
+{
+ "id": "LM-0007",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "American at last",
+ "sentence": "Patent No. 2,292,387 Inducted in 2014 Born Nov. 9, 1914 - Died Jan. 19, 2000 Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age, starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\".",
+ "claim": "Patent No. 2,292,387 Inducted in 2014 Born Nov. 9, 1914 - Died Jan. 19, 2000 Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age, starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\".",
+ "evidence": [
+  {
+   "url": "https://www.invent.org/inductees/hedy-lamarr",
+   "span": "Patent No. 2,292,387 Inducted in 2014 Born Nov. 9, 1914 - Died Jan. 19, 2000 Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age, starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\".",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 2,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1914, 2000, 2014])",
+   "mentions an honour or award",
+   "names the inductee in the sentence",
+   "tier 2 source (invent.org)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:40+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}
