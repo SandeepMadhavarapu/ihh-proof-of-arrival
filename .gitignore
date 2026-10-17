@@ -36,3 +36,6 @@ handover/*.zip
 venv/
 .pytest_cache/
 Thumbs.db
+
+# Living Museum: fetched pages, snapshots, human imports, simulations (never committed)
+living/.cache/

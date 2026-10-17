@@ -1,0 +1,4 @@
+{
+ "_note": "Only these inductee slugs are built into site/. Adding a folder under inductees/ publishes nothing until its slug is added here in a reviewed pull request.",
+ "published": ["albright", "berlin", "cruz", "einstein", "hope", "lamarr", "muir", "naismith", "pei", "strauss"]
+}

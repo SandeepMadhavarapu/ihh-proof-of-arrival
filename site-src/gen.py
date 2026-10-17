@@ -6,7 +6,8 @@ Run from anywhere:  python3 gen.py
 Paths are resolved relative to this file, so a fresh extraction works unchanged.
 """
 import os, sys, re
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.abspath(__file__))  # site-src/: generator and its data
+SITE = os.path.join(os.path.dirname(HERE), "site")  # site/: deployable output only
 sys.path.insert(0, HERE)
 from cases import CASES
 
@@ -78,7 +79,7 @@ def claim_html(c, cl, i, total):
   </li>'''
 
 def main():
-    shell=open(os.path.join(HERE,"about.html"),encoding="utf-8").read()
+    shell=open(os.path.join(SITE,"about.html"),encoding="utf-8").read()
     head=shell[shell.index("<body>"):shell.index("</header>")+len("</header>")]
     foot=shell[shell.index('<footer class="site-foot">'):]
 
@@ -204,7 +205,7 @@ def main():
     out = out.replace(' href="about.html" aria-current="page"', ' href="about.html"')
     out = out.replace('<li><a href="verify.html">Verify</a></li>',
                       '<li><a href="verify.html" aria-current="page">Verify</a></li>')
-    path=os.path.join(HERE,"verify.html")
+    path=os.path.join(SITE,"verify.html")
     open(path,"w",encoding="utf-8",newline="\n").write(out)
     print(f"verify.html: {TOTAL} claims, {EV} evidence items ({LINKED} linked), {len(out)} chars")
 

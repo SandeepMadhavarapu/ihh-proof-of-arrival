@@ -1,0 +1,4 @@
+{
+ "_note": "Visitor-facing feed. Only living/publisher.py appends here, as part of an approval pull request. Never add entries by hand or seed it with examples.",
+ "entries": []
+}

@@ -48,7 +48,8 @@ for (const n of IND){
 }
 
 /* withdrawn claim must not survive as an assertion anywhere */
-for (const f of [...html.map(x=>join(site,x)), join(site,'FINDINGS.md')]){
+const siteSrc=join(ROOT,'site-src');
+for (const f of [...html.map(x=>join(site,x)), join(siteSrc,'FINDINGS.md')]){
   const s=read(f);
   let bad=false;
   for(const m of s.matchAll(/two contradictory copyright regimes/gi)){
@@ -117,7 +118,7 @@ walk(site);
 const trueKB=Math.floor(wbytes/1024);
 const claimed=new Set();
 for (const f of ['FINDINGS.md','SITE-README.md','TESTS-RUN.md','method.html']){
-  const fp=join(site,f); if(!existsSync(fp)) continue;
+  const fp=f.endsWith('.html')?join(site,f):join(siteSrc,f); if(!existsSync(fp)) continue;
   for (const m of read(fp).matchAll(/(?<![\d,])(\d{2,4})(?:&nbsp;|\s)KB/g)) claimed.add(Number(m[1]));
 }
 /* 2869 is the measured weight of the LIVE IHH homepage, quoted for comparison; it is not
@@ -128,7 +129,7 @@ ck(claimed.size>0, 'site weight is stated in the documentation ('+[...claimed].j
 ck(wrong.length===0, 'every stated site weight matches the shipped bytes ('+trueKB+' KB)'+(wrong.length?' — stale: '+JSON.stringify(wrong):''));
 
 /* generators must be path-portable */
-for (const g of [join(site,'gen.py'), join(ROOT,'tools','build_profile.py'), join(ROOT,'tools','build_site_pages.py')]){
+for (const g of [join(siteSrc,'gen.py'), join(ROOT,'tools','build_profile.py'), join(ROOT,'tools','build_site_pages.py')]){
   ck(!/\/home\/claude/.test(read(g)), 'no absolute build-machine path in '+g.split('/').pop());
 }
 pass.forEach(m=>console.log('  OK   '+m));
