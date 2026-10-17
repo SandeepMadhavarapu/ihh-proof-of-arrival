@@ -1,7 +1,7 @@
 # John Muir
 
 **Opening line:**
-In March 1868 a thirty-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.
+In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.
 
 **Anchor item:**
 1
