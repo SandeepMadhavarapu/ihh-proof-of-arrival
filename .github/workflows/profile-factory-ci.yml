@@ -2,7 +2,7 @@ name: Profile Factory CI
 
 on:
   push:
-    branches: [feat/profile-factory, content/four-inductees, preview-muir-homepage, main, "workstream-1-**"]
+    branches: [feat/profile-factory, content/four-inductees, preview-muir-homepage, main, "workstream-1-**", "ws2-**"]
   pull_request:
 
 jobs:
@@ -26,6 +26,9 @@ jobs:
 
       - name: Offline Python tests
         run: python -m unittest discover -s tests -v
+
+      - name: Living Museum gate eval (offline fixtures, no key; fails on any false accept)
+        run: python living/eval/run_eval.py
 
       - name: Prove every generated profile and site page matches its sources
         run: bash qa/rebuild.sh

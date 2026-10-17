@@ -1,0 +1,69 @@
+# Living Museum source allowlist. Reviewed by a person; changes go through a pull request.
+#
+# tier 1 = primary or official: government (.gov, .mil), national archives and libraries,
+#          the Smithsonian, the inductee's official estate, and an awarding body speaking about
+#          its own award.
+# tier 2 = established reference: encyclopedias, national biography dictionaries, universities
+#          (.edu), halls of fame.
+# Anything not listed is rejected, however accurate it looks. No wikis, blogs, content farms or
+# social media. A domain on this list is not a guarantee: allowlisted pages have been found to
+# contain errors and copied prose, which is why dates, numbers, awards and superlatives need two
+# independent domains (at least one tier 1) AND a human approval.
+#
+# Format (kept deliberately simple; read by living/config.py without third-party packages):
+#   suffixes / domains: "- name | tier | note"   (a domain also matches its subdomains)
+
+version: 1
+user_agent: IHH-Living-Museum/1.0 (+https://github.com/SandeepMadhavarapu/ihh-proof-of-arrival; museum fact-checking; contact via repository)
+rate_limit_seconds: 3
+request_timeout_seconds: 25
+
+suffixes:
+  - .gov | 1 | U.S. federal, state and local government, incl. Library of Congress, National Archives, NPS
+  - .mil | 1 | U.S. military
+  - .edu | 2 | universities and colleges (si.edu is listed separately as tier 1)
+
+domains:
+  - si.edu | 1 | Smithsonian Institution (museums, archives, Air and Space)
+  - docsteach.org | 1 | U.S. National Archives education site
+  - stampsforever.com | 1 | U.S. Postal Service stamp archive
+  - hdbg.de | 1 | Haus der Bayerischen Geschichte (Bavarian state history institution)
+  - bibalex.org | 1 | Bibliotheca Alexandrina (national library)
+  - irvingberlin.com | 1 | official estate of Irving Berlin
+  - nobelprize.org | 1 | Nobel Prize outreach, awarding-body record
+  - pritzkerprize.com | 1 | Pritzker Architecture Prize, awarding-body record
+  - oscars.org | 1 | Academy of Motion Picture Arts and Sciences, awarding-body record
+  - grammy.com | 1 | Recording Academy, awarding-body record
+  - goldenglobes.com | 1 | Golden Globe Awards, awarding-body record
+  - televisionacademy.com | 1 | Television Academy, awarding-body record
+  - britannica.com | 2 | Encyclopaedia Britannica
+  - encyclopedia.com | 2 | Encyclopedia.com (compiles published reference works)
+  - thecanadianencyclopedia.ca | 2 | The Canadian Encyclopedia
+  - biographi.ca | 2 | Dictionary of Canadian Biography (national biography dictionary)
+  - ethz.ch | 2 | ETH Zurich library and archives
+  - wisconsinhistory.org | 2 | Wisconsin Historical Society
+  - invent.org | 2 | National Inventors Hall of Fame
+  - songhall.org | 2 | Songwriters Hall of Fame
+  - walkoffame.com | 2 | Hollywood Walk of Fame (use the star record, not the biography prose)
+  - rockhall.com | 2 | Rock & Roll Hall of Fame
+  - fiba.basketball | 2 | FIBA Hall of Fame
+  - hoophall.com | 2 | Naismith Memorial Basketball Hall of Fame
+
+# Names that must appear near a quoted span (entity check). Case-sensitive.
+entities:
+  albright: Madeleine Albright | Albright | Korbel
+  berlin: Irving Berlin | Israel Beilin | Israel Baline | Berlin
+  cruz: Celia Cruz | Cruz
+  einstein: Albert Einstein | Einstein
+  hope: Bob Hope | Leslie Townes Hope | HOPE, LESLIE TOWNES | Hope
+  lamarr: Hedy Lamarr | Lamarr | Hedwig Kiesler | Kiesler | Hedy Kiesler Markey
+  muir: John Muir | Muir
+  naismith: James Naismith | Naismith | NAISMITH
+  pei: I.M. Pei | I. M. Pei | Ieoh Ming Pei | Pei
+  strauss: Levi Strauss | Strauss | Loeb | Löb
+
+# Pages the finder reads first, per inductee. Every one must also pass the allowlist.
+seeds:
+  naismith: https://www.biographi.ca/en/bio.php?id=9082 | https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith | https://exhibits.lib.ku.edu/exhibits/show/naismith150/introduction/1880s | https://exhibits.lib.ku.edu/exhibits/show/naismith150/collections/mcgill | https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith
+  lamarr: https://www.invent.org/inductees/hedy-lamarr | https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop | https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000
+  muir: https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm | https://www.nps.gov/jomu/learn/historyculture/john-muir-and-president-roosevelt.htm | https://www.nps.gov/articles/725020.htm | https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html

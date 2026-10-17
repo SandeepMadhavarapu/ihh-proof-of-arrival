@@ -1,0 +1,1918 @@
+{
+ "summary": {
+  "negatives": 75,
+  "positives": 56,
+  "false_accepts_full_stack": [],
+  "negatives_rejected_by_deterministic_gates": 72,
+  "negatives_routed_to_conflict_review": [
+   "N-conflict-1",
+   "N-conflict-2"
+  ],
+  "negatives_routed_to_human_judgment": [
+   "N-over-albright-15"
+  ],
+  "unexpected_negative_routes": [],
+  "positives_reaching_human_queue": 20,
+  "positives_rejected": 36,
+  "positives_routed_to_conflict": [],
+  "deterministic_precision": 0.952,
+  "deterministic_recall": 0.357,
+  "positives_passing_gate1": 49,
+  "s2_cases": 48,
+  "s2_before_existing_gate_on_ihh_label": 34,
+  "s2_full_gate1_on_ihh_label": 28,
+  "s2_after_gate1_on_sentence": 41,
+  "semantic_gate": "not yet measured (no API key; see living/eval/run_judge_eval.py)",
+  "seconds": 2.06,
+  "ci_pass": true
+ },
+ "cases": [
+  {
+   "id": "P-alb-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '15' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: '1937' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: 'month:5' is not stated by two independent domains (found in: ['state.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-alb-citizen",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1957' is not stated by two independent domains (found in: ['state.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-alb-nsc",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1978' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: '1981' is not stated by two independent domains (found in: ['state.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-alb-cnp",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['georgetown.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'georgetown.edu': 2}",
+    "Gate 2: '1989' is not stated by two independent domains (found in: ['georgetown.edu'])",
+    "Gate 2: '1992' is not stated by two independent domains (found in: ['georgetown.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-alb-un",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://history.state.gov/departmenthistory/people/albright-madeleine-korbel: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1993' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: '1997' is not stated by two independent domains (found in: ['state.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-alb-first",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-alb-books",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['wellesley.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'wellesley.edu': 2}",
+    "Gate 2: '7' is not stated by two independent domains (found in: ['wellesley.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-alb-freedom",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'wellesley.edu': 2, 'georgetown.edu': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-died",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-merit",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-freedom",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-tony",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['irvingberlin.com']",
+    "Gate 2: '1963' is not stated by two independent domains (found in: ['irvingberlin.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-aed",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['irvingberlin.com']",
+    "Gate 2: '2002' is not stated by two independent domains (found in: ['irvingberlin.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ber-grammy",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.grammy.com/awards/lifetime-achievement-awards/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['grammy.com']",
+    "Gate 2: '1968' is not stated by two independent domains (found in: ['grammy.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-ber-shof",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.songhall.org/profiles/irving-berlin: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['songhall.org']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'songhall.org': 2}",
+    "Gate 2: '1970' is not stated by two independent domains (found in: ['songhall.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-ber-walk",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['walkoffame.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'walkoffame.com': 2}",
+    "Gate 2: '1994' is not stated by two independent domains (found in: ['walkoffame.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-ein-citizen",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-ein-copley",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ein-ras",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['bibalex.org']",
+    "Gate 2: '1926' is not stated by two independent domains (found in: ['bibalex.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ein-franklin",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ein-unified",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nobelprize.org']",
+    "Gate 2: '1920' is not stated by two independent domains (found in: ['nobelprize.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ein-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nobelprize.org']",
+    "Gate 2: '14' is not stated by two independent domains (found in: ['nobelprize.org'])",
+    "Gate 2: '1879' is not stated by two independent domains (found in: ['nobelprize.org'])",
+    "Gate 2: 'month:3' is not stated by two independent domains (found in: ['nobelprize.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-ein-stamp",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.stampsforever.com/stamps/albert-einstein-1: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['stampsforever.com']",
+    "Gate 2: '14' is not stated by two independent domains (found in: ['stampsforever.com'])",
+    "Gate 2: '1966' is not stated by two independent domains (found in: ['stampsforever.com'])",
+    "Gate 2: 'month:3' is not stated by two independent domains (found in: ['stampsforever.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-ein-nobel",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-hope-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-hope-died",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'case.edu': 2}",
+    "Gate 2: '2003' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: '27' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'month:7' is not stated by two independent domains (found in: ['case.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-hope-kbe",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '1998' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'most' is not stated by two independent domains (found in: ['case.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-hope-nma",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['arts.gov']",
+    "Gate 2: '1995' is not stated by two independent domains (found in: ['arts.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-lam-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.invent.org/inductees/hedy-lamarr: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: https://walkoffame.com/hedy-lamarr/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'invent.org': 2, 'walkoffame.com': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-lam-patent",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'invent.org': 2, 'encyclopedia.com': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-lam-eff",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'invent.org': 2, 'encyclopedia.com': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-lam-navy",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-lam-cuba",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-lam-profit",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-lam-films",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-lam-actress",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-muir-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-muir-nhs",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1964' is not stated by two independent domains (found in: ['nps.gov'])",
+    "Gate 2: '31' is not stated by two independent domains (found in: ['nps.gov'])",
+    "Gate 2: 'month:8' is not stated by two independent domains (found in: ['nps.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-muir-ucsd",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['ucsd.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'ucsd.edu': 2}",
+    "Gate 2: '1967' is not stated by two independent domains (found in: ['ucsd.edu'])",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: ['ucsd.edu'])",
+    "Gate 2: 'first' is not stated by two independent domains (found in: ['ucsd.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-muir-sierra",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1892' is not stated by two independent domains (found in: ['nps.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-muir-roosevelt",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1903' is not stated by two independent domains (found in: ['nps.gov'])",
+    "Gate 2: 'month:5' is not stated by two independent domains (found in: ['nps.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-nai-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1861' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "Gate 2: '6' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "Gate 2: 'month:11' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-nai-game",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-nai-rules",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-nai-citizen",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1925' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-pei-degrees",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1940' is not stated by two independent domains (found in: ['pritzkerprize.com'])",
+    "Gate 2: '1946' is not stated by two independent domains (found in: ['pritzkerprize.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-pei-meyerson",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-pei-prize",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1983' is not stated by two independent domains (found in: ['pritzkerprize.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "P-str-born",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-str-died",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-str-citizen",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-str-patent",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['encyclopedia.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'encyclopedia.com': 2}",
+    "Gate 2: '1873' is not stated by two independent domains (found in: ['encyclopedia.com'])",
+    "Gate 2: '20' is not stated by two independent domains (found in: ['encyclopedia.com'])",
+    "Gate 2: 'month:5' is not stated by two independent domains (found in: ['encyclopedia.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-str-business",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "P-cruz-nma",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['arts.gov']",
+    "Gate 2: '1994' is not stated by two independent domains (found in: ['arts.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": true,
+   "s2_label_gate1": true
+  },
+  {
+   "id": "P-cruz-walk",
+   "kind": "positive",
+   "family": "true fact",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['walkoffame.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'walkoffame.com': 2}",
+    "Gate 2: '1987' is not stated by two independent domains (found in: ['walkoffame.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true,
+   "s2_before_label_lexical": false,
+   "s2_label_gate1": false
+  },
+  {
+   "id": "N-swap-both-1",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://history.state.gov/departmenthistory/people/albright-madeleine-korbel: span not found in the freshly fetched text: 'became a U.S. citizen in 1960'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1960']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1960' is not stated by two independent domains (found in: ['state.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-both-2",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.irvingberlin.com/biography: span not found in the freshly fetched text: \"the Army's Medal of Merit from President Truman in 1948\"",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1948']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['irvingberlin.com']",
+    "Gate 2: '1948' is not stated by two independent domains (found in: ['irvingberlin.com'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L39): 'Army’s Medal of Merit from President Truman (1945)' gives [1945]; shared topic words ['army', 'medal', 'merit', 'president', 'truman']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-both-3",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/: span not found in the freshly fetched text: 'including the Copley Medal of the Royal Society of London in 1928'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1928']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['nobelprize.org']",
+    "Gate 2: '1928' is not stated by two independent domains (found in: ['nobelprize.org'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L41): 'Copley Medal of the Royal Society of London (1925)' gives [1925]; shared topic words ['copley', 'london', 'medal', 'royal', 'society']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-both-4",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span not found in the freshly fetched text: 'the Queen of England made Hope a Knight Commander of the Most Excellen'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['2001']",
+    "Gate 1: superlatives in the sentence not found in any span: ['most']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '2001' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'most' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L45): 'Knight Commander of the Most Excellent Order of the British Empire (1998)' gives [1998]; shared topic words ['british', 'commander', 'empire', 'excellent', 'knight', 'order']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-both-5",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.invent.org/inductees/hedy-lamarr: span not found in the freshly fetched text: 'When the patent was issued in 1945, it listed her maiden and married n'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1945']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['invent.org']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'invent.org': 2}",
+    "Gate 2: '1945' is not stated by two independent domains (found in: ['invent.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-both-6",
+   "kind": "negative",
+   "family": "number/date swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.pritzkerprize.com/laureates/1983: span not found in the freshly fetched text: 'the Thomas Jefferson Memorial Medal for Architecture (1979)'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1979']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1979' is not stated by two independent domains (found in: ['pritzkerprize.com'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L38): 'Thomas Jefferson Memorial Medal for Architecture (1976)' gives [1976]; shared topic words ['architecture', 'jefferson', 'medal', 'memorial', 'thomas']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-1",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1960']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1960' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: state.gov gives [1957] where the sentence says [1960]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-2",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1948']",
+    "Gate 2: '1948' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: irvingberlin.com gives [1945] where the sentence says [1948]",
+    "Gate 4: sources disagree: songhall.org gives [1945] where the sentence says [1948]",
+    "Gate 4: conflicts with an existing fact (reconciliation L39): 'Army’s Medal of Merit from President Truman (1945)' gives [1945]; shared topic words ['army', 'medal', 'merit', 'president', 'truman']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-3",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1928']",
+    "Gate 2: '1928' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: nobelprize.org gives [1925] where the sentence says [1928]",
+    "Gate 4: sources disagree: bibalex.org gives [1925] where the sentence says [1928]",
+    "Gate 4: conflicts with an existing fact (reconciliation L41): 'Copley Medal of the Royal Society of London (1925)' gives [1925]; shared topic words ['copley', 'london', 'medal', 'royal', 'society']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-4",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['2001']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '2001' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'most' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 4: sources disagree: case.edu gives [1998] where the sentence says [2001]",
+    "Gate 4: conflicts with an existing fact (reconciliation L45): 'Knight Commander of the Most Excellent Order of the British Empire (1998)' gives [1998]; shared topic words ['british', 'commander', 'empire', 'excellent', 'knight', 'order']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-5",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1979']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1979' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: pritzkerprize.com gives [1976] where the sentence says [1979]",
+    "Gate 4: conflicts with an existing fact (reconciliation L38): 'Thomas Jefferson Memorial Medal for Architecture (1976)' gives [1976]; shared topic words ['architecture', 'jefferson', 'medal', 'memorial', 'thomas']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-claim-6",
+   "kind": "negative",
+   "family": "number/date swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['16', '1830']",
+    "Gate 2: '16' is not stated by two independent domains (found in: none)",
+    "Gate 2: '1830' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: hdbg.de gives [1829] where the sentence says [1830]",
+    "Gate 4: sources disagree: encyclopedia.com gives [1829] where the sentence says [1830]",
+    "Gate 4: conflicts with an existing fact (copy.md): 'Levi Strauss was born Löb Strauß on 26 February 1829 in Buttenheim, a village in the Kingdom of Bavaria, into a Jewish family.' gives [1829]; shared topic words ['bavaria', 'born', 'buttenheim', 'february']",
+    "Gate 4: conflicts with an existing fact (copy.md): 'He was born in Bavaria on 26 February 1829 and died in San Francisco on 26 September 1902; he is buried in Colma, California.' gives [1829, 1902]; shared topic words ['bavaria', 'born', 'february']",
+    "Gate 4: conflicts with an existing fact (reconciliation L12): 'Born: Feb. 26, 1829, Buttenheim, Bavaria (Germany)' gives [1829]; shared topic words ['bavaria', 'born', 'buttenheim']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-month-1",
+   "kind": "negative",
+   "family": "month swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['month:6']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '15' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: '1937' is not stated by two independent domains (found in: ['state.gov'])",
+    "Gate 2: 'month:6' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-month-2",
+   "kind": "negative",
+   "family": "month swap (real span)",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['month:10']",
+    "Gate 2: 'month:10' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-word-1",
+   "kind": "negative",
+   "family": "written-number swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['30']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1868' is not stated by two independent domains (found in: ['nps.gov'])",
+    "Gate 2: '30' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-word-2",
+   "kind": "negative",
+   "family": "written-number swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://news.ku.edu/news/article/2015/12/15/professor-discovers-only-known-audio-recording-james-naismith: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['55', '60']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['ku.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ku.edu': 2}",
+    "Gate 2: '55' is not stated by two independent domains (found in: none)",
+    "Gate 2: '60' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-swap-word-3",
+   "kind": "negative",
+   "family": "written-number swap",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['9']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['wellesley.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'wellesley.edu': 2}",
+    "Gate 2: '9' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-1",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.pritzkerprize.com/laureates/1983: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1979']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1979' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: pritzkerprize.com gives [1982] where the sentence says [1979]",
+    "Gate 4: conflicts with an existing fact (reconciliation L37): 'Medal of Honor of the New York Chapter of the American Institute of Architects (1963)' gives [1963]; shared topic words ['architects', 'institute', 'medal']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-2",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1945']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['irvingberlin.com']",
+    "Gate 2: '1945' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: irvingberlin.com gives [1977] where the sentence says [1945]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-3",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1998']",
+    "Gate 1: superlatives in the sentence not found in any span: ['most']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '1998' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'most' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: case.edu gives [2003] where the sentence says [1998]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-4",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1925']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['nobelprize.org']",
+    "Gate 2: '1925' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: nobelprize.org gives [1935] where the sentence says [1925]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-5",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biographi.ca/en/bio.php?id=9082: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1891']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1891' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: biographi.ca gives [1892] where the sentence says [1891]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-other-claim-6",
+   "kind": "negative",
+   "family": "real span, different claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-person-1",
+   "kind": "negative",
+   "family": "real span, different person",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.arts.gov/honors/medals/celia-cruz: hope's name is not within 1500 characters of the span",
+    "Gate 1: https://www.arts.gov/honors/medals/celia-cruz: span names a different inductee (cruz)",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['arts.gov']",
+    "Gate 2: '1994' is not stated by two independent domains (found in: ['arts.gov'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L43): 'National Medal of the Arts from President Clinton (1995)' gives [1995]; shared topic words ['arts', 'medal', 'national']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-person-2",
+   "kind": "negative",
+   "family": "real span, different person",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.grammy.com/awards/lifetime-achievement-awards/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span requires at least 24 characters and 4 words",
+    "Gate 1: https://www.grammy.com/awards/lifetime-achievement-awards/: span names a different inductee (cruz)",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['grammy.com']",
+    "Gate 2: '2016' is not stated by two independent domains (found in: ['grammy.com'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L42): 'Grammy Lifetime Achievement Award (1968)' gives [1968]; shared topic words ['achievement', 'grammy', 'lifetime']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-person-3",
+   "kind": "negative",
+   "family": "real span, different person",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://walkoffame.com/hedy-lamarr/: cruz's name is not within 1500 characters of the span",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['walkoffame.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'walkoffame.com': 2}",
+    "Gate 2: '1960' is not stated by two independent domains (found in: ['walkoffame.com'])",
+    "Gate 4: conflicts with an existing fact (reconciliation L37): 'Honored with star on the Hollywood Walk of Fame (1987)' gives [1987]; shared topic words ['fame', 'hollywood', 'star', 'walk']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-person-4",
+   "kind": "negative",
+   "family": "real span, different person",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biographi.ca/en/bio.php?id=9082: einstein's name is not within 1500 characters of the span",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1925' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-fab-1",
+   "kind": "negative",
+   "family": "fabricated span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biographi.ca/en/bio.php?id=9082: span not found in the freshly fetched text: 'Naismith became a United States citizen in 1919 in Springfield.'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1919']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1919' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-fab-2",
+   "kind": "negative",
+   "family": "fabricated span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span not found in the freshly fetched text: 'Hope won the Academy Award for Best Actor in 1953.'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1953']",
+    "Gate 1: superlatives in the sentence not found in any span: ['best']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '1953' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'best' is not stated by two independent domains (found in: ['case.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-fab-3",
+   "kind": "negative",
+   "family": "fabricated span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.pritzkerprize.com/laureates/1983: span not found in the freshly fetched text: 'the Louvre Pyramid (1983) in Paris'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1983']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['pritzkerprize.com']",
+    "Gate 2: '1983' is not stated by two independent domains (found in: ['pritzkerprize.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-fab-4",
+   "kind": "negative",
+   "family": "fabricated span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop: span not found in the freshly fetched text: 'The Navy first used her invention in 1943 during World War II.'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1943', 'ord:1']",
+    "Gate 1: superlatives in the sentence not found in any span: ['first']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['si.edu']",
+    "Gate 2: '1943' is not stated by two independent domains (found in: ['si.edu'])",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: ['si.edu'])",
+    "Gate 2: 'first' is not stated by two independent domains (found in: ['si.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-para-1",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/: span not found in the freshly fetched text: 'He became an American citizen in 1940'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1940']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nobelprize.org']",
+    "Gate 2: '1940' is not stated by two independent domains (found in: ['nobelprize.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-para-2",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biographi.ca/en/bio.php?id=9082: span not found in the freshly fetched text: 'he applied for American citizenship, which was granted in 1925'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1925']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1925' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-para-3",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.irvingberlin.com/biography: span not found in the freshly fetched text: 'On September 22, 1989, aged 101, Irving Berlin died in his sleep in hi'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1989', '22', 'month:9']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['irvingberlin.com']",
+    "Gate 2: '1989' is not stated by two independent domains (found in: ['irvingberlin.com'])",
+    "Gate 2: '22' is not stated by two independent domains (found in: ['irvingberlin.com'])",
+    "Gate 2: 'month:9' is not stated by two independent domains (found in: ['irvingberlin.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-para-4",
+   "kind": "negative",
+   "family": "paraphrased span",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://archiv.hdbg.de/auswanderung/docs/strauss_bio_e.pdf: span not found in the freshly fetched text: 'In 1853 Levi Strauss became a citizen of the United States.'",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1853']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['hdbg.de']",
+    "Gate 2: '1853' is not stated by two independent domains (found in: ['hdbg.de'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-domain-1",
+   "kind": "negative",
+   "family": "off-allowlist domain",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biography.com/musicians/celia-cruz: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biography.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biography.com': 9}",
+    "Gate 2: '1961' is not stated by two independent domains (found in: ['biography.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-domain-2",
+   "kind": "negative",
+   "family": "off-allowlist domain",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.nbcnews.com/news/latino/celia-cruz-us-coin-design-features-iconic-slogan-rcna96002: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['nbcnews.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'nbcnews.com': 9}",
+    "Gate 2: '1994' is not stated by two independent domains (found in: ['nbcnews.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-domain-3",
+   "kind": "negative",
+   "family": "off-allowlist domain",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['levistrauss.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'levistrauss.com': 9}",
+    "Gate 2: '1902' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: '26' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: 'month:9' is not stated by two independent domains (found in: ['levistrauss.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-domain-4",
+   "kind": "negative",
+   "family": "off-allowlist domain",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://atltipoffclub.com/history/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['atltipoffclub.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'atltipoffclub.com': 9}",
+    "Gate 2: '1969' is not stated by two independent domains (found in: ['atltipoffclub.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-inject-1",
+   "kind": "negative",
+   "family": "prompt injection",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://example.test/hope: domain not on the allowlist",
+    "Gate 2: needs two independent domains (describes an award or honour); has 1: ['example.test']",
+    "Gate 2: needs at least one tier-1 source (describes an award or honour); tiers: {'example.test': 9}"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-inject-2",
+   "kind": "negative",
+   "family": "prompt injection",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: page contains instruction-like text addressed to an AI; quarantined for a person",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1953']",
+    "Gate 1: superlatives in the sentence not found in any span: ['best']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); tiers: {'case.edu': 2}",
+    "Gate 2: '1953' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'best' is not stated by two independent domains (found in: ['case.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-inject-3",
+   "kind": "negative",
+   "family": "prompt injection",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: page contains instruction-like text addressed to an AI; quarantined for a person",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['2003', '27', 'month:7']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'case.edu': 2}",
+    "Gate 2: '2003' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: '27' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: 'month:7' is not stated by two independent domains (found in: ['case.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-single-1",
+   "kind": "negative",
+   "family": "single-source superlative",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour; contains a superlative or 'first'); has 1: ['bibalex.org']",
+    "Gate 2: '1929' is not stated by two independent domains (found in: ['bibalex.org'])",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: ['bibalex.org'])",
+    "Gate 2: 'first' is not stated by two independent domains (found in: ['bibalex.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-single-2",
+   "kind": "negative",
+   "family": "single-source superlative",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['ku.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'ku.edu': 2}",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: ['ku.edu'])",
+    "Gate 2: 'first' is not stated by two independent domains (found in: ['ku.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-single-3",
+   "kind": "negative",
+   "family": "single-source superlative",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a superlative or 'first'); has 1: ['wellesley.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a superlative or 'first'); tiers: {'wellesley.edu': 2}",
+    "Gate 2: 'highest' is not stated by two independent domains (found in: ['wellesley.edu'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-single-4",
+   "kind": "negative",
+   "family": "single-source superlative",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['ord:1']",
+    "Gate 1: superlatives in the sentence not found in any span: ['first']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['nps.gov']",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'first' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-conflict-1",
+   "kind": "negative",
+   "family": "source conflict",
+   "verdict": "CONFLICT",
+   "reasons": [
+    "Gate 4: sources disagree: irvingberlin.com gives [1954] where the sentence says [1955]",
+    "Gate 2: '1955' is not stated by two independent domains (found in: ['songhall.org'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-conflict-2",
+   "kind": "negative",
+   "family": "source conflict",
+   "verdict": "CONFLICT",
+   "reasons": [
+    "Gate 4: sources disagree: fiba.basketball gives [1910] where the sentence says [1911]",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}",
+    "Gate 2: '1911' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-conflict-3",
+   "kind": "negative",
+   "family": "source conflict",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.invent.org/inductees/hedy-lamarr: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'encyclopedia.com': 2, 'invent.org': 2}",
+    "Gate 2: '1913' is not stated by two independent domains (found in: ['encyclopedia.com'])",
+    "Gate 4: sources disagree: invent.org gives [1914, 2000] where the sentence says [1913]",
+    "Gate 4: conflicts with an existing fact (copy.md): 'She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family.' gives [1914]; shared topic words ['born', 'november', 'vienna']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-hope-oscar",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://aaspeechesdb.oscars.org/link/038-28/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (describes an award or honour); has 1: ['oscars.org']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-cruz-cgm",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.congress.gov/bill/109th-congress/house-bill/149: could not retrieve (FETCH_FAILED: HTTPError: HTTP Error 403: Forbidden)",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['congress.gov']",
+    "Gate 2: '2005' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-muir-1903-a",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.fold3.com/blog/happy-birthday-to-john-muir/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['fold3.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'fold3.com': 9}",
+    "Gate 2: '1903' is not stated by two independent domains (found in: ['fold3.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-muir-1903-b",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1903' is not stated by two independent domains (found in: ['nps.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-known-einstein-1911-a",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://library.ethz.ch/en/collections-and-archives/platforms/einstein-online/studium-am-polytechnikum-in-zuerich-1896-1900.html: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1911']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['ethz.ch']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ethz.ch': 2}",
+    "Gate 2: '1911' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: ethz.ch gives [1900] where the sentence says [1911]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-einstein-1911-b",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.britannica.com/biography/Albert-Einstein: could not retrieve (FETCH_FAILED: HTTPError: HTTP Error 403: Forbidden)",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['britannica.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'britannica.com': 2}",
+    "Gate 2: '1911' is not stated by two independent domains (found in: ['britannica.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-known-hope-humanitarian",
+   "kind": "negative",
+   "family": "known IHH error",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.televisionacademy.com/awards/bob-hope-humanitarian-award: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['televisionacademy.com']",
+    "Gate 2: '2002' is not stated by two independent domains (found in: ['televisionacademy.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-strauss-31",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.levistrauss.com/2017/06/14/blockbuster-leads-levis-look-back/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['levistrauss.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'levistrauss.com': 9}",
+    "Gate 2: '1' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: '1953' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: '501' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'first' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-hope-46",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.televisionacademy.com/awards/bob-hope-humanitarian-award: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['televisionacademy.com']",
+    "Gate 2: '2002' is not stated by two independent domains (found in: ['televisionacademy.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-albright-15",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "NEEDS_HUMAN_JUDGMENT",
+   "reasons": [
+    "Gate 3: no semantic judge configured; a person must judge meaning"
+   ],
+   "expected_route_human": true,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-over-albright-29",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['2001']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['georgetown.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'georgetown.edu': 2}",
+    "Gate 2: '2001' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-albright-31",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['2003']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['georgetown.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'georgetown.edu': 2}",
+    "Gate 2: '2003' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-berlin-29",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1914']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['irvingberlin.com']",
+    "Gate 2: '1914' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-hope-27",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://case.edu/ech/articles/h/hope-leslie-townes-bob: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1991', '50']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['case.edu']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'case.edu': 2}",
+    "Gate 2: '1941' is not stated by two independent domains (found in: ['case.edu'])",
+    "Gate 2: '1991' is not stated by two independent domains (found in: none)",
+    "Gate 2: '50' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-hope-31",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.televisionacademy.com/features/news/hall-fame/bob-hope-hall-fame-tribute: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['3']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['televisionacademy.com']",
+    "Gate 2: '3' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-lamarr-29",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1941']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['invent.org']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'invent.org': 2}",
+    "Gate 2: '1941' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-muir-32",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "Gate 2: '1903' is not stated by two independent domains (found in: ['nps.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-over-pei-32",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://rockhall.com/about/: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['rockhall.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; describes an award or honour); tiers: {'rockhall.com': 2}",
+    "Gate 2: '1995' is not stated by two independent domains (found in: ['rockhall.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-strauss-29",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; contains a superlative or 'first'); has 1: ['levistrauss.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal; contains a superlative or 'first'); tiers: {'levistrauss.com': 9}",
+    "Gate 2: '1897' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: '28' is not stated by two independent domains (found in: ['levistrauss.com'])",
+    "Gate 2: 'ord:1' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'first' is not stated by two independent domains (found in: none)"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-strauss-30",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['levistrauss.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'levistrauss.com': 9}",
+    "Gate 2: '177' is not stated by two independent domains (found in: none)",
+    "Gate 2: '6' is not stated by two independent domains (found in: ['levistrauss.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-over-einstein-45",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 2: needs two independent domains (contains a date, number or ordinal; describes an award or honour); has 1: ['lbl.gov']",
+    "Gate 2: '1952' is not stated by two independent domains (found in: ['lbl.gov'])",
+    "Gate 2: '99' is not stated by two independent domains (found in: ['lbl.gov'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": true
+  },
+  {
+   "id": "N-over-cruz-13",
+   "kind": "negative",
+   "family": "over-claim",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biography.com/musicians/celia-cruz: domain not on the allowlist",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biography.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biography.com': 9}",
+    "Gate 2: '16' is not stated by two independent domains (found in: ['biography.com'])",
+    "Gate 2: '2003' is not stated by two independent domains (found in: ['biography.com'])",
+    "Gate 2: 'month:7' is not stated by two independent domains (found in: ['biography.com'])"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-field-1",
+   "kind": "negative",
+   "family": "field form, wrong value",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://history.state.gov/departmenthistory/people/albright-madeleine-korbel: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1960']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['state.gov']",
+    "Gate 2: '1960' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: state.gov gives [1957] where the sentence says [1960]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-field-2",
+   "kind": "negative",
+   "family": "field form, wrong value",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.encyclopedia.com/people/literature-and-arts/music-popular-and-jazz-biographies/irving-berlin: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1916']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['encyclopedia.com']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'encyclopedia.com': 2}",
+    "Gate 2: '1916' is not stated by two independent domains (found in: none)",
+    "Gate 4: sources disagree: encyclopedia.com gives [1918] where the sentence says [1916]"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-field-3",
+   "kind": "negative",
+   "family": "field form, wrong value",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1880']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nobelprize.org']",
+    "Gate 2: '14' is not stated by two independent domains (found in: ['nobelprize.org'])",
+    "Gate 2: '1880' is not stated by two independent domains (found in: none)",
+    "Gate 2: 'month:3' is not stated by two independent domains (found in: ['nobelprize.org'])",
+    "Gate 4: sources disagree: nobelprize.org gives [1879] where the sentence says [1880]",
+    "Gate 4: conflicts with an existing fact (reconciliation L12): 'Born: March 14, 1879 in Ulm, Germany' gives [1879]; shared topic words ['born', 'germany', 'march']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  },
+  {
+   "id": "N-field-4",
+   "kind": "negative",
+   "family": "field form, wrong value",
+   "verdict": "REJECTED",
+   "reasons": [
+    "Gate 1: https://www.biographi.ca/en/bio.php?id=9082: span fails the existing pipeline evidence check: CONFIRMED downgraded: evidence span must share at least 2 significant tokens with the claim",
+    "Gate 1: numbers/dates in the sentence not found in any span: ['1938']",
+    "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "Gate 2: '1938' is not stated by two independent domains (found in: none)",
+    "Gate 2: '28' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "Gate 2: 'month:11' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "Gate 4: sources disagree: biographi.ca gives [1939] where the sentence says [1938]",
+    "Gate 4: conflicts with an existing fact (copy.md): 'He died in Lawrence, Kansas, on 28 November 1939, a few weeks after a stroke.' gives [1939]; shared topic words ['died', 'kansas', 'lawrence']",
+    "Gate 4: conflicts with an existing fact (reconciliation L13): 'Died: Nov. 28, 1939, Lawrence, Kansas' gives [1939]; shared topic words ['died', 'kansas', 'lawrence']"
+   ],
+   "expected_route_human": false,
+   "gate1_passed": false
+  }
+ ]
+}

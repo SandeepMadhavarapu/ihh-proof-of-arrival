@@ -1,0 +1,88 @@
+name: Living Museum (find and verify)
+
+# MANUAL ONLY. Nothing here runs on a schedule until a person uncomments the cron lines.
+# Before the first run, a repository admin adds (Settings > Secrets and variables > Actions):
+#   secret   ANTHROPIC_API_KEY   - for the blind semantic judge (optional: without it every
+#                                  proposal that passes the deterministic gates says
+#                                  NEEDS HUMAN JUDGMENT)
+#   variable ANTHROPIC_MODEL     - e.g. claude-opus-5-5
+# This workflow only ever opens a pull request that adds files under living/proposals/.
+# It never edits copy.md, a manifest or site/, never pushes to main, and never merges.
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Inductee slug to research (e.g. naismith)"
+        required: true
+      limit:
+        description: "Maximum new candidates"
+        required: false
+        default: "5"
+  # schedule:
+  #   - cron: "0 6 * * 1"   # Mondays 06:00 UTC. Uncomment only after reading living/README-FOR-IHH.md.
+
+permissions:
+  contents: write        # to push the proposals branch (never main)
+  pull-requests: write   # to open the pull request
+
+concurrency:
+  group: living-museum
+  cancel-in-progress: false
+
+jobs:
+  find-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HAS_JUDGE_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Kill switch
+        run: |
+          if [ -f living/PAUSED ]; then
+            echo "living/PAUSED exists: the Living Museum is paused. Nothing runs."
+            exit 0
+          fi
+          echo "not paused" > "$RUNNER_TEMP/go"
+
+      - uses: actions/setup-python@v5
+        if: hashFiles('living/PAUSED') == ''
+        with:
+          python-version: '3.12'
+
+      - name: Install the optional judge client (only if a key exists)
+        if: hashFiles('living/PAUSED') == '' && env.HAS_JUDGE_KEY == 'true'
+        run: pip install anthropic
+
+      - name: Find and verify (capped)
+        if: hashFiles('living/PAUSED') == ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+          ANTHROPIC_EFFORT: high
+          PYTHONUTF8: "1"
+        run: |
+          python living/run.py --max-fetches 30 --max-seconds 600 find --slug "${{ inputs.slug }}" --limit "${{ inputs.limit }}"
+          python living/run.py --max-fetches 30 --max-seconds 600 --max-llm-calls 20 verify
+          python living/run.py status
+
+      - name: Open a pull request with the new proposals (never to main directly)
+        if: hashFiles('living/PAUSED') == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- living/proposals; then
+            echo "No new proposals."; exit 0
+          fi
+          branch="living/queue-${{ github.run_id }}"
+          git config user.name "living-museum-bot"
+          git config user.email "living-museum-bot@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add living/proposals
+          git commit -m "Living Museum: new proposals for ${{ inputs.slug }} (pending human review)"
+          git push origin "$branch"
+          gh pr create --draft --base "${{ github.ref_name }}" --head "$branch" \
+            --title "Living Museum: proposals for ${{ inputs.slug }} (review queue only)" \
+            --body "New proposals for review. Nothing here changes a public page. Review them with: python living/run.py review"
