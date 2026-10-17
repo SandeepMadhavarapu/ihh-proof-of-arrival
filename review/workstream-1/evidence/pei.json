@@ -1,0 +1,329 @@
+{
+ "slug": "pei",
+ "title": "Pei — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/pei/copy.md` are authorized by this note.",
+  "IHH starting page: [i-m-pei](https://immigranthallofhonor.org/inductees/inductee-i-m-pei/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "Independent source read: [Pritzker Architecture Prize](https://www.pritzkerprize.com/laureates/1983). A page being available does not verify every claim on IHH."
+ ],
+ "sources": {
+  "BRI": [
+   "Encyclopædia Britannica, “I.M. Pei”",
+   "https://www.britannica.com/biography/I-M-Pei"
+  ],
+  "PZ": [
+   "The Pritzker Architecture Prize, “I.M. Pei” (1983 laureate)",
+   "https://www.pritzkerprize.com/laureates/1983"
+  ],
+  "C100": [
+   "Committee of 100, “About us”",
+   "https://www.committee100.org/about-us/"
+  ],
+  "RH": [
+   "Rock & Roll Hall of Fame, “About”",
+   "https://rockhall.com/about/"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: I.M. Pei",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "I.M. Pei Chinese-born American architect Also known as: Ieoh Ming Pei"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Ieoh Ming Pei",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "Also known as: Ieoh Ming Pei"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: April 26, 1917, Guangzhou, China",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "born April 26, 1917, Guangzhou, China"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: May 16, 2019, New York City",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "died May 16, 2019, New York, New York, U.S."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: Massachusetts Institute of Technology (B. Arch 1940), Harvard Graduate School of Design (M. Arch 1946)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "Massachusetts Institute of Technology (B. Arch. 1940) and the Harvard Graduate School of Design (M. Arch. 1946)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Architect and Designer",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "was a Chinese-born American architect noted for his large, elegantly designed urban buildings"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1954",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "He became a U.S. citizen in 1954."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L26": {
+   "section": "Achievements",
+   "claim": "Designed the JFK Presidential Library in Boston, MA (1964)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "PZ",
+     "the John Fitzgerald Kennedy Library (1979) near Boston"
+    ]
+   ],
+   "note": "The Pritzker biography dates the Kennedy Library to 1979, its completion. 1964 is likely the year Pei was selected; no source here states that. Suggested: “John F. Kennedy Presidential Library, Boston (completed 1979)”."
+  },
+  "L27": {
+   "section": "Achievements",
+   "claim": "Designed Texas Commerce Tower in Houston, TX (1980)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "PZ",
+     "the Texas Commerce Tower (1982) in Houston"
+    ]
+   ],
+   "note": "The Pritzker biography gives 1982, not 1980."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "Designed the Glass Pyramid of the Louvre in Paris, France (1983)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "BRI",
+     "the glass pyramid (1989) he designed for the Louvre in Paris"
+    ]
+   ],
+   "note": "The pyramid was completed in 1989. 1983 is not supported by either source; it may be when the commission began. Suggested: “Glass Pyramid of the Louvre, Paris (completed 1989)”."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Designed the East Wing of the National Art Gallery (1983)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "PZ",
+     "the East Building of the National Gallery of Art (1978)"
+    ],
+    [
+     "BRI",
+     "the East Building (1978) of the National Gallery of Art"
+    ]
+   ],
+   "note": "The building is the East Building of the National Gallery of Art (not “East Wing of the National Art Gallery”). Two sources give 1978, not 1983."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Co-founded the Committee of 100, which promotes Chinese-American participation in all aspects of American life (1989)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "C100",
+     "1989 Committee of 100 is founded by Yo-Yo Ma, I.M. Pei, Henry S. Tang, Oscar Tang, Chien-Shiung Wu, and Shirley Young."
+    ]
+   ],
+   "note": "From the Committee of 100’s own history."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "Designed the Morton H. Meyerson Symphony Center in Dallas, TX (1989)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "The Morton H. Meyerson Symphony Center (1989) in Dallas, Texas"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L32": {
+   "section": "Achievements",
+   "claim": "Designed the Rock and Roll Hall of Fame in Cleveland, OH (1995)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "RH",
+     "The Rock & Roll Hall of Fame threw open its doors on September 2, 1995"
+    ],
+    [
+     "RH",
+     "I.M. Pei speaks at the Topping Off ceremony"
+    ]
+   ],
+   "note": "The 1995 opening is confirmed, and the Hall’s own page shows Pei’s role in the building. It does not explicitly state “designed by”."
+  },
+  "L36": {
+   "section": "Honours",
+   "claim": "Brunner Prize in Architecture from the National Institute of Art and Letters (1961)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Brunner Prize in Architecture from the National institute of Art and Letters (1961)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L37": {
+   "section": "Honours",
+   "claim": "Medal of Honor of the New York Chapter of the American Institute of Architects (1963)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Medal of Honor of the New York Chapter of the American Institute of Architects (1963)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L38": {
+   "section": "Honours",
+   "claim": "Thomas Jefferson Memorial Medal for Architecture (1976)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Thomas Jefferson Memorial Medal for Architecture (1976)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Gold Medal for Architecture of the American Academy of Arts and Letters (1979)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Gold Medal for Architecture of the American Academy of Arts and Letters (1979)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Gold Medal of The American Institute of Architects (1979)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Gold Medal of The American Institute of Architects (1979)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Gold Medal of the French Académie d‘Architecture (1981)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "PZ",
+     "the Gold Medal of the French Académie d'Architecture (1981)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from The Pritzker Architecture Prize."
+  },
+  "L42": {
+   "section": "Honours",
+   "claim": "Pritzker Prize (considered the “Nobel Prize” of architecture) (1983)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "He received the prestigious Pritzker Prize in 1983."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L43": {
+   "section": "Honours",
+   "claim": "Praemium Imperiale (1989)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "the Japan Art Association’s Praemium Imperiale prize for architecture (1989)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L44": {
+   "section": "Honours",
+   "claim": "Presidential Medal of Freedom (1993)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "the U.S. Presidential Medal of Freedom (1993)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  },
+  "L45": {
+   "section": "Honours",
+   "claim": "Officer in the French Legion of Honor (1993)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BRI",
+     "he was made an officer of the French Legion of Honor in 1993"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopædia Britannica."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: 1935 arrival and education; Louvre, Rock Hall, National Gallery and JFK projects; geometric forms and light. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Caption claim inventory\n\n- **NOT VERIFIED:** Louvre in Paris. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review.\n- **NOT VERIFIED:** JFK Library in Boston. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review."
+}

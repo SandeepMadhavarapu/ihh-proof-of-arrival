@@ -1,0 +1,224 @@
+{
+ "slug": "strauss",
+ "title": "Strauss — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/strauss/copy.md` are authorized by this note.",
+  "IHH starting page: [levi-strauss](https://immigranthallofhonor.org/inductees/inductee-levi-strauss/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "The IHH page and repository manifest were inspected. Existing source records are leads, not fresh confirmation of every IHH statement."
+ ],
+ "sources": {
+  "LSC": [
+   "Levi Strauss & Co., “The Story of Levi Strauss” (14 Mar 2013)",
+   "https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/"
+  ],
+  "ENC": [
+   "Encyclopedia.com, “Levi Strauss”",
+   "https://www.encyclopedia.com/people/social-sciences-and-law/business-leaders/levi-strauss"
+  ],
+  "LSG": [
+   "Levi Strauss & Co., “Throwback Thursday: Giving Back Through the Years” (7 May 2015)",
+   "https://www.levistrauss.com/2015/05/07/throwback-thursday-giving-back-through-the-years/"
+  ],
+  "LSB": [
+   "Levi Strauss & Co., “Blockbuster Leads in Levi’s®: A Look Back” (14 Jun 2017)",
+   "https://www.levistrauss.com/2017/06/14/blockbuster-leads-levis-look-back/"
+  ],
+  "SEC": [
+   "Levi Strauss & Co., Q4 and fiscal-year 2023 results, SEC Form 8-K Exhibit 99.1 (25 Jan 2024)",
+   "https://www.sec.gov/Archives/edgar/data/94845/000009484524000011/exhibit991-4q2023pressrele.htm"
+  ],
+  "HDBG": [
+   "Haus der Bayerischen Geschichte, “Levi Strauss – a Bavarian-American Success Story” (biography PDF; text layer read 17 Oct 2026)",
+   "https://archiv.hdbg.de/auswanderung/docs/strauss_bio_e.pdf"
+  ]
+ },
+ "empty_sections": {
+  "Honours": "No separate section was present in the retrieved IHH page."
+ },
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: Levi Strauss",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "Levi Strauss, the inventor of the quintessential American garment, was born in Buttenheim, Bavaria"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Levi Strauss & Co."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Loeb Strauss",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ENC",
+     "Levi Strauss—first known as Loeb—was born on February 26, 1829"
+    ]
+   ],
+   "note": "In German the name is Löb; “Loeb” is the standard English transliteration."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: Feb. 26, 1829, Buttenheim, Bavaria (Germany)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "was born in Buttenheim, Bavaria on February 26, 1829"
+    ]
+   ],
+   "note": "Note for IHH: a second passage in the Encyclopedia.com compilation gives February 16, 1829. The company archive’s February 26 agrees with IHH."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: Sept. 26, 1902, San Francisco, Calif.",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "Levi Strauss passed away on Friday, September 26th 1902."
+    ],
+    [
+     "HDBG",
+     "On September 26 1902, Levi Strauss died at his San Francisco home."
+    ]
+   ],
+   "note": "Date from the company history; date and place (San Francisco) from the Haus der Bayerischen Geschichte biography, re-read 17 Oct 2026."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: n/a",
+   "status": "NO CLAIM",
+   "evidence": [],
+   "note": "IHH gives “n/a” for education, so there is no claim to verify. Neither LS&Co nor encyclopedia.com records formal education beyond the trade."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Businessman, entrepreneur",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ENC",
+     "had earned a considerable reputation as a businessman and a philanthropist in San Francisco"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Encyclopedia.com."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1853",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ENC",
+     "The 24-year-old Strauss, having recently become an American citizen, joined David and Fanny Stern there in 1853"
+    ],
+    [
+     "HDBG",
+     "In 1853, Levi became an American citizen."
+    ]
+   ],
+   "note": "The Haus der Bayerischen Geschichte biography gives 1853. Encyclopedia.com agrees he had “recently become” a citizen when he moved to San Francisco in 1853. No naturalization record was examined."
+  },
+  "L26": {
+   "section": "Achievements",
+   "claim": "Founded Levi Strauss & Co. (1853)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "Levi journeyed to San Francisco in 1853 to make his fortune"
+    ],
+    [
+     "LSC",
+     "He established a wholesale dry goods business under his own name"
+    ],
+    [
+     "LSC",
+     "Levi eventually renamed his company “Levi Strauss & Co.”"
+    ]
+   ],
+   "note": "Precision note: the business was founded in 1853 under his own name and renamed “Levi Strauss & Co.” later. “Founded the business that became Levi Strauss & Co. (1853)” is exact."
+  },
+  "L27": {
+   "section": "Achievements",
+   "claim": "Established practice of using profits to help the community with donations to San Francisco orphanage (1854)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSG",
+     "In 1854, he donated $5 to a San Francisco orphanage"
+    ]
+   ],
+   "note": "From the company’s own history page."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "Obtained patent, with tailor Jacob Davis, for the rivets on blue jeans (1873)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "The patent was granted to Jacob Davis and Levi Strauss & Company on May 20, 1873"
+    ]
+   ],
+   "note": "Also confirmed against the patent itself, U.S. Patent No. 139,121 (item 2 of the profile manifest)."
+  },
+  "L29": {
+   "section": "Achievements",
+   "claim": "Provided funds for the first 28 scholarships at UC Berkeley, continued by family (1897)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "In 1897 Levi provided the funds for twenty-eight scholarships at the University of California, Berkeley"
+    ]
+   ],
+   "note": "Year and the 28 scholarships are confirmed. “Continued by family” is not in the source; it says the scholarships are “all of which are still in place today”. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Estimated estate worth $6 million or $177 Million in today’s money (1902)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "LSC",
+     "His estate amounted to nearly $6 million"
+    ]
+   ],
+   "note": "The $6 million figure is confirmed. The “$177 million in today’s money” conversion is not in the source; IHH should state the method and year it used. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "First big Hollywood boost came from The Wild One, with Marlon Brando wearing Levi’s 501 jeans (1953)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "LSB",
+     "in the 1953 film The Wild One. Dressed in 501® Levi’s® jeans"
+    ]
+   ],
+   "note": "Film, year and 501 jeans are confirmed; “first big Hollywood boost” is not in the source. Correction: this happened 51 years after Levi Strauss died, so it is the brand’s story, not his achievement. We recommend moving it out of his achievements. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L32": {
+   "section": "Achievements",
+   "claim": "In 2023, Levi Strauss company reported revenue of $6.179 billion.",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "SEC",
+     "Net revenues $ 1,642 $ 1,589 3% 2% $ 6,179 $ 6,169"
+    ]
+   ],
+   "note": "The figure is correct: $6,179 million for the fiscal year ended 26 November 2023, per the company’s SEC filing. Correction: this is company revenue 121 years after his death, not one of Levi Strauss’s achievements. We recommend removing it. Status revised 17 Oct 2026 from CONFIRMED."
+  }
+ },
+ "profile_notes": [
+  "**Emigration year.** LS&Co.’s company history says “Two years after his father succumbed to tuberculosis in 1846, Levi and his sisters emigrated to New York” ([source](https://www.levistrauss.com/2013/03/14/the-story-of-levi-strauss/), read 17 Oct 2026), which implies about 1848. Our `inductees/strauss/copy.md` says 1847, as does the Haus der Bayerischen Geschichte biography (“emigrate to America in 1847 via Bremerhaven”, [PDF](https://archiv.hdbg.de/auswanderung/docs/strauss_bio_e.pdf), read 17 Oct 2026). Not changed; the team should decide whether to keep 1847 or say “1847 or 1848”."
+ ],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Blue-jeans invention and marketing in 1873; Davis partnership; riveted denim for miners and workers; subsequent cultural significance. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — search log is partial.** `inductees/strauss/search-log.csv` now records the preserved 16–17 October 2026 research calls and the 17 October 2026 reconciliation retrievals. Research done outside this repository, if any, is not in it.\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Scoped evidence\n\nThe Haus der Bayerischen Geschichte [biography PDF](https://archiv.hdbg.de/auswanderung/docs/strauss_bio_e.pdf) was re-read on 17 October 2026 and is now cited, with exact spans, in rows L13 and L17.\n\n## Caption claim inventory\n\n- **NOT VERIFIED:** Original intended users of riveted denim: miners and workers. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review."
+}
