@@ -34,27 +34,27 @@
   OK   strauss.html: no script inside the profile
   OK   strauss.html: all 2 images have alt text
   OK   strauss.html: anchor image carries its rights wording
-  OK   no un-retracted copyright claim in 404.html
-  OK   no un-retracted copyright claim in about.html
-  OK   no un-retracted copyright claim in accessibility.html
-  OK   no un-retracted copyright claim in albright.html
-  OK   no un-retracted copyright claim in berlin.html
-  OK   no un-retracted copyright claim in cruz.html
-  OK   no un-retracted copyright claim in einstein.html
-  OK   no un-retracted copyright claim in hope.html
-  OK   no un-retracted copyright claim in index.html
-  OK   no un-retracted copyright claim in inductees.html
-  OK   no un-retracted copyright claim in lamarr.html
-  OK   no un-retracted copyright claim in method.html
-  OK   no un-retracted copyright claim in muir.html
-  OK   no un-retracted copyright claim in naismith.html
-  OK   no un-retracted copyright claim in pei.html
-  OK   no un-retracted copyright claim in privacy.html
-  OK   no un-retracted copyright claim in rights.html
-  OK   no un-retracted copyright claim in share.html
-  OK   no un-retracted copyright claim in strauss.html
-  OK   no un-retracted copyright claim in verify.html
-  OK   no un-retracted copyright claim in FINDINGS.md
+  OK   no un-retracted copyright claim in site\404.html
+  OK   no un-retracted copyright claim in site\about.html
+  OK   no un-retracted copyright claim in site\accessibility.html
+  OK   no un-retracted copyright claim in site\albright.html
+  OK   no un-retracted copyright claim in site\berlin.html
+  OK   no un-retracted copyright claim in site\cruz.html
+  OK   no un-retracted copyright claim in site\einstein.html
+  OK   no un-retracted copyright claim in site\hope.html
+  OK   no un-retracted copyright claim in site\index.html
+  OK   no un-retracted copyright claim in site\inductees.html
+  OK   no un-retracted copyright claim in site\lamarr.html
+  OK   no un-retracted copyright claim in site\method.html
+  OK   no un-retracted copyright claim in site\muir.html
+  OK   no un-retracted copyright claim in site\naismith.html
+  OK   no un-retracted copyright claim in site\pei.html
+  OK   no un-retracted copyright claim in site\privacy.html
+  OK   no un-retracted copyright claim in site\rights.html
+  OK   no un-retracted copyright claim in site\share.html
+  OK   no un-retracted copyright claim in site\strauss.html
+  OK   no un-retracted copyright claim in site\verify.html
+  OK   no un-retracted copyright claim in site\FINDINGS.md
   OK   albright: WordPress fragment contains zero script tags
   OK   albright: fragment loads no external resource
   OK   albright: original fragment retains 10+ source items
@@ -143,8 +143,8 @@
   OK   handover/INSTALL.md present
   OK   site weight is stated in the documentation (462 KB found)
   OK   every stated site weight matches the shipped bytes (462 KB)
-  OK   no absolute build-machine path in gen.py
-  OK   no absolute build-machine path in build_profile.py
-  OK   no absolute build-machine path in build_site_pages.py
+  OK   no absolute build-machine path in site\gen.py
+  OK   no absolute build-machine path in tools\build_profile.py
+  OK   no absolute build-machine path in tools\build_site_pages.py
 
 ALL 148 INTEGRITY CHECKS PASSED

@@ -1,9 +1,3 @@
-OPEN ITEM: berlin/search-log.csv missing; team lead will supply the actual research log.
-OPEN ITEM: einstein/search-log.csv missing; team lead will supply the actual research log.
-OPEN ITEM: hope/search-log.csv missing; team lead will supply the actual research log.
-OPEN ITEM: muir/search-log.csv missing; team lead will supply the actual research log.
-OPEN ITEM: naismith/search-log.csv missing; team lead will supply the actual research log.
-OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual research log.
   OK   site/verify.html regenerates byte-identically
   OK   handover/OPEN-ITEMS.md regenerates byte-identically
   OK   site/albright.html regenerates byte-identically
@@ -27,6 +21,7 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   handover/albright/media/web/albright-2016-naturalization.jpg regenerates byte-identically
   OK   site/media/albright/albright-2016-naturalization.jpg regenerates byte-identically
   OK   handover/albright/search-log.csv regenerates byte-identically
+  OK   handover/albright/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/berlin.html regenerates byte-identically
   OK   handover/berlin/copy.html regenerates byte-identically
   OK   handover/berlin/copy-full.md regenerates byte-identically
@@ -38,6 +33,8 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/berlin/media/web/berlin-portrait-nywts.jpg regenerates byte-identically
   OK   handover/berlin/media/web/berlin-portrait-nywts.jpg regenerates byte-identically
   OK   site/media/berlin/berlin-portrait-nywts.jpg regenerates byte-identically
+  OK   handover/berlin/search-log.csv regenerates byte-identically
+  OK   handover/berlin/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/cruz.html regenerates byte-identically
   OK   handover/cruz/copy.html regenerates byte-identically
   OK   handover/cruz/copy-full.md regenerates byte-identically
@@ -53,6 +50,7 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   handover/cruz/media/web/cruz-2024-quarter-reverse-usmint.jpg regenerates byte-identically
   OK   site/media/cruz/cruz-2024-quarter-reverse-usmint.jpg regenerates byte-identically
   OK   handover/cruz/search-log.csv regenerates byte-identically
+  OK   handover/cruz/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/einstein.html regenerates byte-identically
   OK   handover/einstein/copy.html regenerates byte-identically
   OK   handover/einstein/copy-full.md regenerates byte-identically
@@ -64,6 +62,8 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/einstein/media/web/einstein-portrait-turner.jpg regenerates byte-identically
   OK   handover/einstein/media/web/einstein-portrait-turner.jpg regenerates byte-identically
   OK   site/media/einstein/einstein-portrait-turner.jpg regenerates byte-identically
+  OK   handover/einstein/search-log.csv regenerates byte-identically
+  OK   handover/einstein/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/hope.html regenerates byte-identically
   OK   handover/hope/copy.html regenerates byte-identically
   OK   handover/hope/copy-full.md regenerates byte-identically
@@ -75,6 +75,8 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/hope/media/web/hope-portrait-nbc.jpg regenerates byte-identically
   OK   handover/hope/media/web/hope-portrait-nbc.jpg regenerates byte-identically
   OK   site/media/hope/hope-portrait-nbc.jpg regenerates byte-identically
+  OK   handover/hope/search-log.csv regenerates byte-identically
+  OK   handover/hope/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/lamarr.html regenerates byte-identically
   OK   handover/lamarr/copy.html regenerates byte-identically
   OK   handover/lamarr/copy-full.md regenerates byte-identically
@@ -99,6 +101,7 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   handover/lamarr/media/web/lamarr-1945-property-claim-p2.jpg regenerates byte-identically
   OK   site/media/lamarr/lamarr-1945-property-claim-p2.jpg regenerates byte-identically
   OK   handover/lamarr/search-log.csv regenerates byte-identically
+  OK   handover/lamarr/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/muir.html regenerates byte-identically
   OK   handover/muir/copy.html regenerates byte-identically
   OK   handover/muir/copy-full.md regenerates byte-identically
@@ -110,6 +113,8 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/muir/media/web/muir-watkins-portrait-c1875.jpg regenerates byte-identically
   OK   handover/muir/media/web/muir-watkins-portrait-c1875.jpg regenerates byte-identically
   OK   site/media/muir/muir-watkins-portrait-c1875.jpg regenerates byte-identically
+  OK   handover/muir/search-log.csv regenerates byte-identically
+  OK   handover/muir/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/naismith.html regenerates byte-identically
   OK   handover/naismith/copy.html regenerates byte-identically
   OK   handover/naismith/copy-full.md regenerates byte-identically
@@ -121,6 +126,8 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/naismith/media/web/naismith-portrait.jpg regenerates byte-identically
   OK   handover/naismith/media/web/naismith-portrait.jpg regenerates byte-identically
   OK   site/media/naismith/naismith-portrait.jpg regenerates byte-identically
+  OK   handover/naismith/search-log.csv regenerates byte-identically
+  OK   handover/naismith/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/pei.html regenerates byte-identically
   OK   handover/pei/copy.html regenerates byte-identically
   OK   handover/pei/copy-full.md regenerates byte-identically
@@ -151,6 +158,7 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   handover/pei/media/web/pei-1978-east-building-highsmith.jpg regenerates byte-identically
   OK   site/media/pei/pei-1978-east-building-highsmith.jpg regenerates byte-identically
   OK   handover/pei/search-log.csv regenerates byte-identically
+  OK   handover/pei/ihh-content-reconciliation.md regenerates byte-identically
   OK   site/strauss.html regenerates byte-identically
   OK   handover/strauss/copy.html regenerates byte-identically
   OK   handover/strauss/copy-full.md regenerates byte-identically
@@ -162,5 +170,7 @@ OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual rese
   OK   inductees/strauss/media/web/strauss-portrait.jpg regenerates byte-identically
   OK   handover/strauss/media/web/strauss-portrait.jpg regenerates byte-identically
   OK   site/media/strauss/strauss-portrait.jpg regenerates byte-identically
+  OK   handover/strauss/search-log.csv regenerates byte-identically
+  OK   handover/strauss/ihh-content-reconciliation.md regenerates byte-identically
 
 ALL GENERATED FILES MATCH THEIR SOURCES
