@@ -13,9 +13,9 @@ manifests and search logs by `tools/open_items.py`; fix the item there, then re-
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, Irving Berlin.** USE (anchor). Usable. Press photograph labelled public domain on the Wikimedia Commons file record; label transcribed, not re-verified at a rights office. Exact date not established here. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:Irving_Berlin_NYWTS.jpg>
 - **Source item 4, Certificate of Naturalization — oath taken 6 February 1918.** SPOTLIGHT. The date of Berlin’s citizenship oath (6 February 1918) is given by the Encyclopedia.com biography (item 3). The certificate itself was not accessed; verify against the naturalization record before publication. <https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/berlin-irving>
+- **Search: gap declaration at not preserved.** FOLLOW UP. The original 2026-10-16 search terms for this profile were not preserved. Only the sources recorded in media-manifest.csv are known; no queries are reconstructed here. The team lead may supply the original record if one exists. (`not preserved`)
 
 ## Cruz
 
@@ -32,15 +32,15 @@ manifests and search logs by `tools/open_items.py`; fix the item there, then re-
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, Albert Einstein.** USE (anchor). Usable in the United States. Public-domain label transcribed from the Wikimedia Commons file record; some non-US restrictions are noted there. Exact date not established here; given as mid-twentieth century. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:3840px-Albert_Einstein_Head_cleaned.jpg>
+- **Search: gap declaration at not preserved.** FOLLOW UP. The original 2026-10-16 search terms for this profile were not preserved. Only the sources recorded in media-manifest.csv are known; no queries are reconstructed here. The team lead may supply the original record if one exists. (`not preserved`)
 
 ## Hope
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, Bob Hope.** USE (anchor). Usable. Television publicity photograph, labelled public domain on the Wikimedia Commons file record; label transcribed, not re-verified at a rights office. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:Bob_Hope_1969_Publicity_Photo.jpg>
+- **Search: gap declaration at not preserved.** FOLLOW UP. The original 2026-10-16 search terms for this profile were not preserved. Only the sources recorded in media-manifest.csv are known; no queries are reconstructed here. The team lead may supply the original record if one exists. (`not preserved`)
 
 ## Lamarr
 
@@ -55,15 +55,13 @@ manifests and search logs by `tools/open_items.py`; fix the item there, then re-
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **Profile correction approval required.** See the repository-correction section of ihh-content-reconciliation.md before publication; the profile is unchanged.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, John Muir.** USE (anchor). Usable. Photograph published c.1875, in the public domain in the United States. Rights label transcribed from the Wikimedia Commons file record, not re-verified at a rights office. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:John_Muir_Watkins_Portrait_circa_1875_Edit.png>
+- **Search: gap declaration at not preserved.** FOLLOW UP. The original 2026-10-16 search terms for this profile were not preserved. Only the sources recorded in media-manifest.csv are known; no queries are reconstructed here. The team lead may supply the original record if one exists. (`not preserved`)
 
 ## Naismith
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, Dr. James Naismith.** USE (anchor). Usable. Photograph labelled public domain on the Wikimedia Commons file record (PD-1996 / PD Canada); label transcribed, not re-verified at a rights office. Author unknown; dated 'before 1939' on the record. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:Dr._James_Naismith.jpg>
 - **Source item 4, Naismith's original rules of 'Basket Ball' (13 rules).** SPOTLIGHT. Public-domain historical document (1891). We quote Rule 1 from the University of Kansas digital transcription of the original; we have not examined the physical document and do not reproduce a scan of it. <https://debrucecenter.ku.edu/rules>
 
@@ -82,6 +80,5 @@ manifests and search logs by `tools/open_items.py`; fix the item there, then re-
 
 - **Editorial sign-off pending.** A named human must check the profile and its evidence before publication.
 - **Reconciliation review pending.** Review ihh-content-reconciliation.md; proposals do not authorize changing copy.md.
-- **MISSING SEARCH LOG: search-log.csv.** Research took place outside this repository. The team lead will supply the actual research record. No substitute log was fabricated.
 - **Source item 1, Levi Strauss.** USE (anchor). Usable in the United States. Photograph labelled public domain on the Wikimedia Commons file record; label transcribed, not re-verified at a rights office. The record notes the image may not be public domain outside the United States (for example in Germany), under the rule of the shorter term. Author unknown; dated 'before 1902'. Final publication review recommended. <https://commons.wikimedia.org/wiki/File:Levi_Strauss_1.jpg>
 

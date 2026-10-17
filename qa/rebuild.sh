@@ -16,11 +16,13 @@ for dir in "$R"/inductees/*/; do
     GEN+=("inductees/$n/media/web/$file" "handover/$n/media/web/$file" "site/media/$n/$file")
   done
   [ ! -f "$dir/search-log.csv" ] || GEN+=("handover/$n/search-log.csv")
+  [ ! -f "$R/review/workstream-1/evidence/$n.json" ] || GEN+=("handover/$n/ihh-content-reconciliation.md")
 done
 for f in "${GEN[@]}"; do mkdir -p "$T/$(dirname "$f")"; cp "$R/$f" "$T/$f"; done
 python3 "$R/site/gen.py" >/dev/null
 python3 "$R/tools/build_profile.py" --all >/dev/null
 python3 "$R/tools/build_site_pages.py" >/dev/null
+python3 "$R/tools/write_reconciliation.py" "$R"/review/workstream-1/evidence/*.json >/dev/null
 bash "$R/tools/package_handover.sh" >/dev/null
 fail=0
 for f in "${GEN[@]}"; do
