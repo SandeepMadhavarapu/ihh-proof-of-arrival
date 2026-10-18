@@ -113,11 +113,37 @@
     return 'evidence ' + r.value + ' — ' + lab.querySelector('span').textContent.replace(/^\d+\.\s*/,'');
   }
 
+  /* Show a short confirmation right under the evidence question, so a
+     visitor can see their choice registered without scrolling to the sheet. */
+  function updateCiteNote(cl, verdict){
+    var fs = cl.querySelector('.cite');
+    if (!fs) return;
+    var note = fs.querySelector('.cite-note');
+    var r = fs.querySelector('input[type=radio]:checked');
+    if (!r){
+      if (note) note.remove();
+      return;
+    }
+    if (!note){
+      note = document.createElement('p');
+      note.className = 'cite-note';
+      note.setAttribute('aria-live', 'polite');
+      fs.appendChild(note);
+    }
+    var what = (r.value === '0')
+      ? 'none of the evidence convinced you'
+      : 'evidence ' + r.value + ' settled it';
+    note.textContent = verdict
+      ? 'Noted: ' + what + '. Added to your finding sheet below.'
+      : 'Noted: ' + what + '. Record your finding above too, and this will be added to your finding sheet.';
+  }
+
   function render(){
     var rows = [], done = 0, agree = 0;
 
     claims.forEach(function(cl){
       var v = picked(cl), truth = cl.dataset.verdict;
+      updateCiteNote(cl, v);
       var tag = cl.querySelector('.agree-note');
 
       if (!v){

@@ -947,3 +947,6 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 .profile-page{padding:0}
 .profile-page .crumb{max-width:62rem;margin:1rem auto 0;padding:0 1.15rem;font-size:.9rem}
 .profile-page .crumb a{display:inline-block;min-height:24px;padding:4px 0}
+
+/* Confirmation under the evidence question on the Verification Desk */
+.cite-note{margin:.6rem 0 0;font:italic 400 .92rem/1.4 var(--text);color:var(--accent)}
