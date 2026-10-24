@@ -1,0 +1,263 @@
+{
+ "_note": "R3 research record. Every 'spans' entry must be found, after whitespace normalization, on the page at 'url' when re-fetched; check_media_permissions.py re-checks them all. Retrieved 24 October 2026. 'via' says how the page was read: 'fetch' (living.fetch rules: identifying User-Agent, robots.txt) or 'browser' (an ordinary visit in the built-in browser pane). Nothing was submitted or sent anywhere.",
+ "pages": [
+  {
+   "id": "loc-naismith-blog",
+   "url": "https://blogs.loc.gov/loc/2016/03/a-voice-from-hoops-history/",
+   "via": "browser",
+   "spans": [
+    "The “We the People” recordings were part of the WOR-AM collection of radio programs donated to the Library on lacquer discs in 1984.",
+    "the recording is about 2.5 minutes long"
+   ]
+  },
+  {
+   "id": "ku-naismith-radio",
+   "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/collections/radio-interview",
+   "via": "fetch",
+   "spans": [
+    "This excerpt from a January 31, 1939, broadcast of the radio program \"We the People\" hosted in New York by Gabriel Heatter is believed to be the only known audio recording of Naismith.",
+    "However, usage rights do not extend to granting permission for use or to copying the audio for anyone other party."
+   ]
+  },
+  {
+   "id": "loc-legal",
+   "url": "https://www.loc.gov/legal/",
+   "via": "browser",
+   "spans": [
+    "As a publicly supported institution, we generally do not own the rights to materials in our collections.",
+    "Transmission or reproduction of protected items beyond what is allowed by fair use or other exemptions requires written permission from the copyright holder."
+   ]
+  },
+  {
+   "id": "loc-hope-radio",
+   "url": "https://www.loc.gov/exhibits/bobhope/radio.html",
+   "via": "browser",
+   "spans": [
+    "Recording of The Pepsodent Show, February 3, 1948. Lacquer disk. Bob Hope Collection, Motion Picture, Broadcasting and Recorded Sound Division, Library of Congress"
+   ]
+  },
+  {
+   "id": "hope-foundation-contact",
+   "url": "https://bobhope.com/contact",
+   "via": "fetch",
+   "spans": [
+    "For information related to the use of Bob Hope’s image, read our Terms of Use."
+   ]
+  },
+  {
+   "id": "miller-albright",
+   "url": "https://millercenter.org/the-presidency/presidential-oral-histories/madeleine-k-albright-oral-history",
+   "via": "fetch",
+   "spans": [
+    "Interview Date(s) August 30, 2006",
+    "This is the Madeleine Albright interview as a part of the Clinton Presidential History Project.",
+    "© Copyright 2026. Rector and Visitors of the University of Virginia"
+   ]
+  },
+  {
+   "id": "miller-contact",
+   "url": "https://millercenter.org/contact",
+   "via": "fetch",
+   "spans": [
+    "P.O. Box 400406 Charlottesville, VA 22904"
+   ]
+  },
+  {
+   "id": "clinton-albright-1996",
+   "url": "https://clinton.presidentiallibraries.us/items/show/12627",
+   "via": "fetch",
+   "spans": [
+    "1996-10-28, Dayton History Project Interview with Madeleine Albright October 28, 1996",
+    "Collection Bosnian Declassified Records"
+   ]
+  },
+  {
+   "id": "clinton-research",
+   "url": "https://www.clintonlibrary.gov/research",
+   "via": "fetch",
+   "spans": [
+    "Learn more about reproductions, requests, and access to the av collections."
+   ]
+  },
+  {
+   "id": "jfk-pei-oh",
+   "url": "https://www.jfklibrary.org/asset-viewer/archives/jfkoh-imp-01",
+   "via": "browser",
+   "spans": [
+    "Use Restriction Status None",
+    "Copyright Status Donated to the United States",
+    "Date(s) of Materials 18 March 2003",
+    "I.M. Pei, recorded interview by Vicki Daitch, March 18, 2003, (page number), John F. Kennedy Library Oral History Program."
+   ]
+  },
+  {
+   "id": "jfk-copyright",
+   "url": "https://www.jfklibrary.org/archives/research-support-services/copyright",
+   "via": "browser",
+   "spans": [
+    "In other cases, the donor of the physical materials in a collection also donated copyright of protected materials within the collection, placing those items in the public domain.",
+    "Audiovisual items: JFK.AVarchives@nara.gov"
+   ]
+  },
+  {
+   "id": "nara-pei-casefile",
+   "url": "https://catalog.archives.gov/id/28882547",
+   "via": "browser",
+   "spans": [
+    "Access: Unrestricted , Use: Unrestricted",
+    "Ship of Arrival: President Coolidge, 08/28/1935"
+   ]
+  },
+  {
+   "id": "nara-lamarr-file",
+   "url": "https://catalog.archives.gov/id/74395327",
+   "via": "browser",
+   "spans": [
+    "M-92 Hedwig Loder (Née Lamarr)",
+    "Access: Unrestricted , Use: Unrestricted"
+   ]
+  },
+  {
+   "id": "nara-order",
+   "url": "https://www.archives.gov/research/order",
+   "via": "fetch",
+   "spans": [
+    "The most common are preservation priorities, copyright, and donor restrictions."
+   ]
+  },
+  {
+   "id": "uspto-terms",
+   "url": "https://www.uspto.gov/terms-use-uspto-websites",
+   "via": "fetch",
+   "spans": [
+    "Subject to limited exceptions reflected in 37 CFR 1.71(d) & (e) and 1.84(s), the text and drawings of a patent are typically not subject to copyright restrictions.",
+    "it is requested that in any subsequent use the United States Patent and Trademark Office (USPTO) be given appropriate acknowledgement"
+   ]
+  },
+  {
+   "id": "aip-einstein-1932",
+   "url": "https://history.aip.org/catalog/icos/24126.html",
+   "via": "fetch",
+   "spans": [
+    "Einstein, Albert, 1879-1955 Mein glaubensbekenntnis [sound recording] / 1932."
+   ]
+  },
+  {
+   "id": "aip-einstein-1940",
+   "url": "https://history.aip.org/catalog/icos/24147.html",
+   "via": "fetch",
+   "spans": [
+    "Einstein, Albert, 1879-1955 Dialog on the present war and the future of Europe [sound recording] / 1940."
+   ]
+  },
+  {
+   "id": "huji-einstein",
+   "url": "https://en.huji.ac.il/einstein",
+   "via": "fetch",
+   "spans": [
+    "In 1982, the Estate of Albert Einstein transferred all the literary rights to Einstein's writings to the Hebrew University of Jerusalem",
+    "In 1991, the Executive of the Hebrew University of Jerusalem decided to transfer responsibility for all copyright issues pertaining to Albert Einstein to the office of the Curator of the Albert Einstein Archives in Jerusalem."
+   ]
+  },
+  {
+   "id": "docsteach-einstein",
+   "url": "https://docsteach.org/documents/document/declaration-intention-einstein",
+   "via": "fetch",
+   "spans": [
+    "Rights: Public Domain, Free of Known Copyright Restrictions.",
+    "Declaration of Intention for Albert Einstein; 1/15/1936"
+   ]
+  },
+  {
+   "id": "nypl-berlin-recordings",
+   "url": "https://archives.nypl.org/rha/20489",
+   "via": "browser",
+   "spans": [
+    "This collection contains non-commercial recordings of Irving Berlin and his music. The recordings are from radio broadcasts, live performances, and private recordings.",
+    "No copying of private, non-commercial material is allowed without the written permission of the proprietary rights holder.",
+    "For further information contact the Curator, The Rodgers and Hammerstein Archives of Recorded Sound."
+   ]
+  },
+  {
+   "id": "nypl-irving-sings-berlin",
+   "url": "https://www.nypl.org/research/research-catalog/bib/b16425702",
+   "via": "browser",
+   "spans": [
+    "Irving sings Berlin [sound recording].",
+    "New York, N.Y. : Koch International Classics, p2001.",
+    "1 sound disc (53:40 min.)",
+    "Library of Congress songwriter series"
+   ]
+  },
+  {
+   "id": "berlin-estate-licensing",
+   "url": "https://www.irvingberlin.com/licensing-rentals",
+   "via": "browser",
+   "spans": [
+    "To use an Irving Berlin song for advertising, TV, films, video games, etc., please contact: Universal Music Publishing"
+   ]
+  },
+  {
+   "id": "neu-cruz-2002",
+   "url": "https://thekatztapes.library.northeastern.edu/item/neu:4f16gw61g",
+   "via": "fetch",
+   "spans": [
+    "Interview with Celia Cruz, Cuban-American singer",
+    "Date created 2002",
+    "Type of resource Sound recording",
+    "Copyright Northeastern University. This Item is protected by copyright and/or related rights.",
+    "Requests for permission to publish material should be discussed with the Northeastern University Archives and Special Collections."
+   ]
+  },
+  {
+   "id": "pbs-lamarr-tapes",
+   "url": "https://www.pbs.org/wnet/americanmasters/bombshell-hedy-lamarr-story-journalist-unearths-audio-taped-hedy-interviews/10186",
+   "via": "fetch",
+   "spans": [
+    "Journalist Fleming Meeks unearths never-before-heard audio tapes of Hollywood actress Hedy Lamarr",
+    "So in all there were four tapes"
+   ]
+  },
+  {
+   "id": "pacific-muir-conversation",
+   "url": "https://scholarlycommons.pacific.edu/jmr-all/56",
+   "via": "fetch",
+   "spans": [
+    "give for a phonographic record of those wonderful talks!",
+    "Copyright Status Copyright status unknown",
+    "Please contact this institution directly to obtain copies of the images or permission to publish or use"
+   ]
+  },
+  {
+   "id": "calisphere-muir-letter",
+   "url": "https://calisphere.org/item/ark:/13030/kt1779r4pm/",
+   "via": "browser",
+   "spans": [
+    "Letter from John Muir to [Family], 1903 Nov 19",
+    "The unpublished works of John Muir are copyrighted by the Muir-Hanna Trust."
+   ]
+  },
+  {
+   "id": "lsco-history",
+   "url": "https://www.levistrauss.com/history/",
+   "via": "fetch",
+   "spans": [
+    "History"
+   ]
+  },
+  {
+   "id": "uspto-strauss-patent",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/0139121",
+   "via": "fetch-image-pdf",
+   "spans": [],
+   "note": "USPTO PDF of U.S. Patent 139,121 (1873). Downloaded; it is a scanned image with no text layer, so no span can be quoted from it. Rights evidence: uspto-terms."
+  },
+  {
+   "id": "uspto-lamarr-patent",
+   "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/2292387",
+   "via": "fetch-image-pdf",
+   "spans": [],
+   "note": "USPTO PDF of U.S. Patent 2,292,387 (1942). Downloaded; scanned image with no text layer. Rights evidence: uspto-terms."
+  }
+ ]
+}
