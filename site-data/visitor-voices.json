@@ -1,0 +1,6 @@
+{
+ "_note": "How visitors send Margin Notes and Verify reports from the built site. adapter: none (notes switched off; approved notes still shown), wordpress (pending WordPress comments; see handover/INTEGRATION-COMMENTS.md) or email (mailto fallback). The local demo adapter cannot be set here: it exists only inside voices/demo_server.py.",
+ "adapter": "none",
+ "wordpress": {"site": "", "post_ids": {}},
+ "email": {"address": ""}
+}

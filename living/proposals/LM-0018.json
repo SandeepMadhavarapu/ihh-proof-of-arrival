@@ -1,0 +1,103 @@
+{
+ "id": "LM-0018",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Thirteen rules and two peach baskets",
+ "sentence": "Publication of Naismith’s 13 rules followed in 1892.",
+ "claim": "Publication of Naismith’s 13 rules followed in 1892.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "Publication of Naismith’s 13 rules followed in 1892.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1892])",
+   "names the inductee in the sentence",
+   "tier 2 source (biographi.ca)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " suspended peach baskets on 21 Dec. 1891 (some sources give the 15th). Among the 18 players were 5 Canadians, including Naismith. Another, Finlay Grant MacDonald of Nova Scotia, would recall that in the fall the football team, to which he also belonged, had experimented with a hat and a pail attached to each goalpost. Publication of Naismith’s 13 rules followed in 1892. The game exploded in popularity across North America via the network of YMCA branches, coming to Ottawa, Montreal, and Toronto that same year, and St Stephen (St Stephen–Milltown), N.B., the following year. By 1896 it was going professional; by 1900 girls as well as boys were playing in a public-school basketball leag",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca"
+   ],
+   "tiers": {
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "13": [
+     "biographi.ca"
+    ],
+    "1892": [
+     "biographi.ca"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+    "'13' is not stated by two independent domains (found in: ['biographi.ca'])",
+    "'1892' is not stated by two independent domains (found in: ['biographi.ca'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['biographi.ca']",
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2}",
+  "Gate 2: '13' is not stated by two independent domains (found in: ['biographi.ca'])",
+  "Gate 2: '1892' is not stated by two independent domains (found in: ['biographi.ca'])"
+ ],
+ "created_at": "2026-10-17T18:37:31+00:00",
+ "decision": {},
+ "related": ""
+}

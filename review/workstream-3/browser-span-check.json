@@ -1,0 +1,23 @@
+{
+ "_note": "Final-pass results for pages read in the built-in browser (an ordinary visit; script fetches were refused with 403 or the page needs JavaScript). Each span was searched for in document.body innerText or textContent after whitespace normalization. Re-checked 24 October 2026.",
+ "results": {
+  "loc-naismith-blog": "2/2 spans found",
+  "loc-legal": "2/2 spans found",
+  "loc-hope-radio": "1/1 spans found",
+  "jfk-pei-oh": "4/4 spans found",
+  "jfk-copyright": "2/2 spans found",
+  "nara-pei-casefile": "2/2 spans found",
+  "nara-lamarr-file": "2/2 spans found",
+  "nypl-berlin-recordings": "3/3 spans found",
+  "nypl-irving-sings-berlin": "4/4 spans found",
+  "berlin-estate-licensing": "1/1 spans found",
+  "calisphere-muir-letter": "2/2 spans found"
+ },
+ "could_not_retrieve": {
+  "https://www.loc.gov/research-centers/recorded-sound/about-this-research-center/": "Cloudflare bot check in the browser; not bypassed",
+  "https://aip.ipac.sirsidynix.net (AIP full catalog records)": "Cloudflare bot check; not bypassed",
+  "https://www.albert-einstein.org/": "browser site not allowed; robots.txt unreachable for the fetcher (treated as disallow)",
+  "https://millercenter.org (browser)": "browser site not allowed; read with the polite fetcher instead",
+  "https://patents.google.com/patent/US139121A/en": "robots.txt unreachable (treated as disallow); USPTO PDF used instead"
+ }
+}

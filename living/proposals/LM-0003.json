@@ -1,0 +1,46 @@
+{
+ "id": "LM-0003",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "A Canadian at the Springfield gym",
+ "sentence": "(Press coverage noted that Donald MacLennan Barton had brought the game to Toronto’s YMCAs from the Chicago branch in 1892.) In 1936 Naismith was thrilled to be sent to the Olympics in Berlin, where he watched the United States defeat Canada 19 to 8 to win the first gold medal in basketball.",
+ "claim": "(Press coverage noted that Donald MacLennan Barton had brought the game to Toronto’s YMCAs from the Chicago branch in 1892.) In 1936 Naismith was thrilled to be sent to the Olympics in Berlin, where he watched the United States defeat Canada 19 to 8 to win the first gold medal in basketball.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "(Press coverage noted that Donald MacLennan Barton had brought the game to Toronto’s YMCAs from the Chicago branch in 1892.) In 1936 Naismith was thrilled to be sent to the Olympics in Berlin, where he watched the United States defeat Canada 19 to 8 to win the first gold medal in basketball.",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 2,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1892, 1936])",
+   "mentions an honour or award",
+   "names the inductee in the sentence",
+   "tier 2 source (biographi.ca)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:27+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}

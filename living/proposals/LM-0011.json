@@ -1,0 +1,45 @@
+{
+ "id": "LM-0011",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "Making the parks",
+ "sentence": "Strentzel;Muir family move to mansion. 1890 Yosemite becomes a National Park. 1892 Founding of the Sierra Club, end of ranching career for John Muir. 1893 Trip to Europe with William Keith. 1894 Mountains of California published. 1899 Mt.",
+ "claim": "Strentzel;Muir family move to mansion. 1890 Yosemite becomes a National Park. 1892 Founding of the Sierra Club, end of ranching career for John Muir. 1893 Trip to Europe with William Keith. 1894 Mountains of California published. 1899 Mt.",
+ "evidence": [
+  {
+   "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+   "span": "Strentzel;Muir family move to mansion. 1890 Yosemite becomes a National Park. 1892 Founding of the Sierra Club, end of ranching career for John Muir. 1893 Trip to Europe with William Keith. 1894 Mountains of California published. 1899 Mt.",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 1,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1890, 1892, 1893, 1894, 1899])",
+   "names the inductee in the sentence",
+   "tier 1 source (nps.gov)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:54+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}

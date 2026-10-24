@@ -1,0 +1,45 @@
+{
+ "id": "LM-0008",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "Escape to Hollywood",
+ "sentence": "(Was It Really Movie Star Hedy Lamarr?) May 16, 2013 By Paul Ceruzzi Home Who Invented GPS?",
+ "claim": "(Was It Really Movie Star Hedy Lamarr?) May 16, 2013 By Paul Ceruzzi Home Who Invented GPS?",
+ "evidence": [
+  {
+   "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+   "span": "(Was It Really Movie Star Hedy Lamarr?) May 16, 2013 By Paul Ceruzzi Home Who Invented GPS?",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 1,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([2013])",
+   "names the inductee in the sentence",
+   "tier 1 source (si.edu)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:40+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}

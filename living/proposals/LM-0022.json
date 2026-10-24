@@ -1,0 +1,98 @@
+{
+ "id": "LM-0022",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "Escape to Hollywood",
+ "sentence": "By this time, Lamarr was being thought of in film circles as a potential star, and she took advantage of her growing reputation by accepting an offer in 1932 to appear in a film by the Czech director Gustav Machaty.",
+ "claim": "By this time, Lamarr was being thought of in film circles as a potential star, and she took advantage of her growing reputation by accepting an offer in 1932 to appear in a film by the Czech director Gustav Machaty.",
+ "evidence": [
+  {
+   "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+   "span": "By this time, Lamarr was being thought of in film circles as a potential star, and she took advantage of her growing reputation by accepting an offer in 1932 to appear in a film by the Czech director Gustav Machaty.",
+   "retrieved_at": "2026-10-17T18:39:40+00:00",
+   "sha256": "0ffa92fe71b42cebfa6a83df60b27118604de5fa80013246c0826d1333a1b94a",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/b76599ad3be25bf0ad521f53631fb97753a854ad84cd793acb74c406e454b2d1.body",
+   "tier": 2,
+   "title": "Lamarr, Hedy (1913–2000) | Encyclopedia.com"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.44,
+  "rationale": [
+   "states a date ([1932])",
+   "names the inductee in the sentence",
+   "tier 2 source (encyclopedia.com)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "d in an offer for her first leading role in a film, in Wir brauchen kein Geld (We Don't Need Money), in which she performed opposite Heinz Rühmann. Wir brauchen kein Geld was not a hit, but the next film in which she starred, Die Koffer des Herrn O.F. (Mr. O.F.'s Suitcases), was both a critical and box-office success. By this time, Lamarr was being thought of in film circles as a potential star, and she took advantage of her growing reputation by accepting an offer in 1932 to appear in a film by the Czech director Gustav Machaty. With a working title of Symphonie der Liebe (Symphony of Love), the film's script called for its lead actress to appear nude in two brief scenes. It was explained to her that these would be extreme long shots, and she signed up for the project. When the film was released in 1933 under the title Extase (Ecstasy), it be",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "encyclopedia.com"
+   ],
+   "tiers": {
+    "encyclopedia.com": 2
+   },
+   "per_fact": {
+    "1932": [
+     "encyclopedia.com"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['encyclopedia.com']",
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'encyclopedia.com': 2}",
+    "'1932' is not stated by two independent domains (found in: ['encyclopedia.com'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['encyclopedia.com']",
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'encyclopedia.com': 2}",
+  "Gate 2: '1932' is not stated by two independent domains (found in: ['encyclopedia.com'])"
+ ],
+ "created_at": "2026-10-17T18:37:41+00:00",
+ "decision": {},
+ "related": ""
+}

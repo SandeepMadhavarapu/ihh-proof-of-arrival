@@ -13,11 +13,16 @@ Writes  <folder>/copy.html      paste into ONE WordPress "Custom HTML" block
 
 The format of copy.md is documented in templates/copy-template.md.
 """
-import csv, html, os, re, subprocess, sys
+import csv, hashlib, html, os, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = open(os.path.join(ROOT, "templates", "profile.css"), encoding="utf-8").read()
 IMG_EXT = (".jpg", ".jpeg", ".png", ".tif", ".tiff")
+# Added only to profiles that carry approved Living Museum facts, so other pages stay byte-identical.
+BADGE_CSS = (".ihh-profile .vbadge{display:inline-block;margin:.15rem 0 0;padding:.05rem .45rem;"
+             "font:400 .76rem/1.6 system-ui,sans-serif;color:var(--mut);border:1px solid var(--rule);"
+             "border-radius:2px;white-space:normal}\n"
+             ".ihh-profile .vbadge a{color:var(--ink)}\n")
 E = html.escape
 
 
@@ -28,6 +33,26 @@ def inline(s):
     s = re.sub(r"\*(.+?)\*", r"<em>\1</em>", s)
     s = re.sub(r"\[(.+?)\]\((https?://[^)]+)\)", r'<a href="\2" rel="noopener">\1</a>', s)
     return s
+
+
+def slugify(s, n=24):
+    s = re.sub(r"[^a-z0-9]+", "-", html.unescape(s).lower()).strip("-")
+    return s[:n].rstrip("-") or "section"
+
+
+class Anchors:
+    """Stable passage ids for Margin Notes: section slug + a short hash of the passage's text.
+    The same text always gets the same id, so ids survive rebuilds; an edited passage gets a
+    new id, and voices/anchors.py re-attaches notes to it by their quoted text instead."""
+
+    def __init__(self, slug):
+        self.slug, self.seen = slug, {}
+
+    def __call__(self, section, rendered):
+        text = " ".join(html.unescape(re.sub(r"<[^>]+>", "", rendered)).split())
+        base = f"{self.slug}-{slugify(section)}-{hashlib.sha1(text.encode('utf-8')).hexdigest()[:6]}"
+        n = self.seen[base] = self.seen.get(base, 0) + 1
+        return f' id="{base if n == 1 else f"{base}-{n}"}" data-ihh-anchor'
 
 
 def field(md, label):
@@ -89,12 +114,33 @@ def web_copy(folder, filename):
     return "media/web/" + out_name
 
 
+VERIFIED = re.compile(r"\s*\{verified:(LM-\d+)\}\s*$")
+
+
+def load_verified(folder):
+    """Approved Living Museum facts for this profile (written only by living/publisher.py)."""
+    path = os.path.join(folder, "verified-facts.json")
+    if not os.path.exists(path):
+        return {}
+    import json
+    with open(path, encoding="utf-8") as fh:
+        return {f["id"]: f for f in json.load(fh)["facts"]}
+
+
+def checked(iso):
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{d} {['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][m - 1]} {y}"
+
+
 def build(folder):
     folder = os.path.abspath(folder)
     md = open(os.path.join(folder, "copy.md"), encoding="utf-8").read()
+    verified = load_verified(folder)
+    cited = {n for f in verified.values() for n in f["source_items"]}
     rows = list(csv.DictReader(open(os.path.join(folder, "media-manifest.csv"), encoding="utf-8")))
     shown = [r for r in rows if not r["recommendation"].upper().startswith("DROP")]
     p = parse(md)
+    aid = Anchors(os.path.basename(folder))
     by_no = {r["item_no"]: r for r in rows}
 
     for r in shown:
@@ -118,19 +164,34 @@ def build(folder):
                if r["duplicate_or_original"].upper().startswith("DUPLICATE") else "")
         link = (f'<a href="{E(r["stable_item_url"])}" rel="noopener">{E(r["institution"])}</a>'
                 if r["stable_item_url"] else E(r["institution"]))
-        return f'''    <li class="src-item">
+        anchor = f' id="src-{r["item_no"]}"' if r["item_no"] in cited else ""
+        return f'''    <li class="src-item"{anchor}>
       {thumb}
       <h3 class="src-h">{E(r["title"])}</h3>
-      <p class="gloss">{E(r["gloss"])}</p>
+      <p class="gloss"{aid("sources", E(r["gloss"]))}>{E(r["gloss"])}</p>
       {dup}
       <p class="meta">{E(r["creator"])} &middot; {E(r["date_created"])} &middot; {link}</p>
       <p class="rights"><b>Rights, in the institution&rsquo;s words:</b> {E(r["rights_statement_verbatim"])}</p>
     </li>'''
 
+    def para(x, section):
+        m = VERIFIED.search(x)
+        if not m:
+            return f"<p{aid(section, inline(x))}>{inline(x)}</p>"
+        fact = verified.get(m.group(1))
+        if fact is None:
+            sys.exit(f"{folder}: copy.md cites {m.group(1)} but verified-facts.json has no such fact")
+        links = ", ".join(f'<a href="#src-{n}">{n}</a>' for n in fact["source_items"])
+        word = "Source" if len(fact["source_items"]) == 1 else "Sources"
+        badge = (f'<span class="vbadge"><span aria-hidden="true">&#10003;</span> Verified &middot; '
+                 f'{word} {links} &middot; Last checked <time datetime="{fact["last_checked"]}">'
+                 f'{checked(fact["last_checked"])}</time></span>')
+        return f'<p class="vfact"{aid(section, inline(x[:m.start()]))}>{inline(x[:m.start()])} {badge}</p>'
+
     secs = "\n".join(
         f'''  <details class="sec"{' open' if i == 0 else ''}>
     <summary><h3>{E(t)}</h3></summary>
-    {"".join(f"<p>{inline(x)}</p>" for x in paras)}
+    {"".join(para(x, t) for x in paras)}
   </details>''' for i, (t, paras) in enumerate(p["sections"]))
 
     spotlight = ""
@@ -139,19 +200,19 @@ def build(folder):
         excerpt = ""
         if p["spot_text"]:
             ex = " ".join(l.lstrip("> ").strip() for l in p["spot_text"].group(1).splitlines())
-            excerpt = f'<blockquote class="excerpt"><p>{inline(ex)}</p></blockquote>'
+            excerpt = f'<blockquote class="excerpt"><p{aid("document", inline(ex))}>{inline(ex)}</p></blockquote>'
         img = (f'<img class="th" src="{s["_web"]}" alt="{E(s["alt_text"])}" loading="lazy">'
                if s.get("_web") else "")
         spotlight = f'''<section class="doc">
   <p class="label">The document behind this story</p>
   {img}
   <p><b>{E(s["title"])}</b> &mdash; {E(s["creator"])}, {E(s["date_created"])}.</p>
-  <p>{inline(p["spot_intro"])}</p>
+  <p{aid("document", inline(p["spot_intro"]))}>{inline(p["spot_intro"])}</p>
   {excerpt}
   <p class="meta">{credit(s)}</p>
 </section>'''
 
-    quote = (f'<blockquote class="pull">&ldquo;{inline(p["quote"])}&rdquo;'
+    quote = (f'<blockquote class="pull"{aid("quote", inline(p["quote"]))}>&ldquo;{inline(p["quote"])}&rdquo;'
              f'<cite>{inline(p["quote_source"])}</cite></blockquote>') if p["quote"] else ""
     qs = "\n".join(f"      <li>{inline(q)}</li>" for q in p["questions"])
     acts = "\n".join(f"      <li><b>{inline(t)}</b> {inline(b)}</li>" for t, b in p["activities"])
@@ -167,21 +228,21 @@ def build(folder):
      Generated by tools/build_profile.py from copy.md and media-manifest.csv. Edit those. -->
 <div class="ihh-profile">
 <style>
-{CSS}.ihh-profile .doc img.th{{margin:0 0 1rem}}
+{CSS}{BADGE_CSS if verified else ""}.ihh-profile .doc img.th{{margin:0 0 1rem}}
 .ihh-profile blockquote.excerpt{{margin:1rem 0;padding-left:1rem;border-left:3px solid var(--rule);font-size:1rem;color:var(--ink);font-style:normal}}
 </style>
 
-<p class="opening">{inline(p["opening"])}</p>
+<p class="opening"{aid("opening", inline(p["opening"]))}>{inline(p["opening"])}</p>
 
 <figure class="anchor">
   <img src="{anchor["_web"]}" alt="{E(anchor["alt_text"])}" loading="eager">
-  <figcaption><b>{E(anchor["title"])}.</b> {credit(anchor)}</figcaption>
+  <figcaption{aid("anchor-caption", E(anchor["title"]))}><b>{E(anchor["title"])}.</b> {credit(anchor)}</figcaption>
 </figure>
 
 <div class="w">
 <!-- If your theme already prints the page title as a heading, delete the next line. -->
 <h1>{E(p["name"])}</h1>
-<p class="standfirst">{inline(p["standfirst"])}</p>
+<p class="standfirst"{aid("standfirst", inline(p["standfirst"]))}>{inline(p["standfirst"])}</p>
 
 {spotlight}
 
@@ -246,7 +307,12 @@ p{{margin:0 0 24px}} ol,ul{{padding-left:60px}} blockquote{{font-size:11px;color
             lines += [f'Image: `{r["_web"]}`', f'Credit: {r["required_credit"]}', f'Alt text: {r["alt_text"]}']
         return "\n".join(lines) + "\n"
 
-    full = (md.rstrip() + "\n\n---\n\n## The sources\n\n" + "\n".join(md_item(r) for r in shown))
+    def plain_marker(m):
+        f = verified[m.group(1)]
+        return f" (Verified: sources {', '.join(f['source_items'])}; last checked {checked(f['last_checked'])})"
+
+    md_out = re.sub(r"\s*\{verified:(LM-\d+)\}", plain_marker, md) if verified else md
+    full = (md_out.rstrip() + "\n\n---\n\n## The sources\n\n" + "\n".join(md_item(r) for r in shown))
     open(os.path.join(folder, "copy-full.md"), "w", encoding="utf-8", newline="\n").write(full)
     print(f"{os.path.relpath(folder, ROOT)}: {len(p['sections'])} sections, {len(shown)} sources "
           f"({sum(1 for r in shown if r.get('_web'))} images), {len(p['questions'])} questions, "

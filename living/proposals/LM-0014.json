@@ -1,0 +1,101 @@
+{
+ "id": "LM-0014",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "The Range of Light",
+ "sentence": "NPS The Strentzel-Muir Ranch appears today much as it did during the period of significance of 1849 to 1914, when the site was initially laid out and occupied by the Strentzel and Muir families.",
+ "claim": "NPS The Strentzel-Muir Ranch appears today much as it did during the period of significance of 1849 to 1914, when the site was initially laid out and occupied by the Strentzel and Muir families.",
+ "evidence": [
+  {
+   "url": "https://www.nps.gov/articles/725020.htm",
+   "span": "NPS The Strentzel-Muir Ranch appears today much as it did during the period of significance of 1849 to 1914, when the site was initially laid out and occupied by the Strentzel and Muir families.",
+   "retrieved_at": "2026-10-17T18:39:46+00:00",
+   "sha256": "65675c37fc9153604c48a052d672f6a8b1e4110ac466314288d78680fd80cd42",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/9ef5aa5c15e1f0a1d4a188e0fb9f1b6f9eda8e88eab5a1a0fcf08633bf3add38.body",
+   "tier": 1,
+   "title": "John Muir National Historic Site Cultural Landscape (U.S. National Park Service)"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1849, 1914])",
+   "names the inductee in the sentence",
+   "tier 1 source (nps.gov)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.nps.gov/articles/725020.htm",
+     "tier": 1,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "it society through sound forestry, soil conservation, and cultivation of landscape beauty. The Martinez Adobe, built in 1849, maintains the appearance of an adobe from the ranch era. Natural Systems and Features, Land Use, Circulation, and Buildings and Structures are all contributing characteristics of the landscape. NPS The Strentzel-Muir Ranch appears today much as it did during the period of significance of 1849 to 1914, when the site was initially laid out and occupied by the Strentzel and Muir families. This period encompasses the construction of key landscape features such as the Martinez Adobe, Muir House, Carriage House, orchards, roads, and vegetation. The Muir House was recognized as one of the few remaining significant examples of a Victorian Italianate country house that was popular among the more prosperous f",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "nps.gov"
+   ],
+   "tiers": {
+    "nps.gov": 1
+   },
+   "per_fact": {
+    "1849": [
+     "nps.gov"
+    ],
+    "1914": [
+     "nps.gov"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "'1849' is not stated by two independent domains (found in: ['nps.gov'])",
+    "'1914' is not stated by two independent domains (found in: ['nps.gov'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+  "Gate 2: '1849' is not stated by two independent domains (found in: ['nps.gov'])",
+  "Gate 2: '1914' is not stated by two independent domains (found in: ['nps.gov'])"
+ ],
+ "created_at": "2026-10-17T18:35:54+00:00",
+ "decision": {},
+ "related": ""
+}

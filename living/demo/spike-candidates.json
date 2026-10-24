@@ -1,0 +1,407 @@
+[
+ {
+  "id": "F-naismith-1",
+  "slug": "naismith",
+  "section": "Achievements",
+  "award": false,
+  "claim": "McGill University appointed James Naismith its Instructor in Gymnastics for 1889-1890.",
+  "evidence": [
+   {
+    "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/introduction/1880s",
+    "domain": "ku.edu",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "continuing James Naismith’s appointment as Instructor in Gymnastics for 1889-1890"
+   },
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "While there, in 1889, he took on the directorship of McGill’s gymnasium"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": false,
+  "semantic": "SUPPORTS",
+  "status": "REJECTED",
+  "reasons": [
+   "second-source rule failed: {\"domains\": [\"biographi.ca\", \"ku.edu\"], \"numbers_missing_per_source\": {\"ku.edu\": [], \"biographi.ca\": [\"1890\"]}}"
+  ]
+ },
+ {
+  "id": "F-naismith-2",
+  "slug": "naismith",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Naismith was director of physical education at the YMCA in Denver, Colorado, from 1895 to 1898.",
+  "evidence": [
+   {
+    "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+    "domain": "fiba.basketball",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Physical Education Director in the YMCA in Denver, Colorado, U.S.A.: 1895-1898"
+   },
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "In 1895, with a family to support, he accepted the directorship of physical education at the large YMCA in Denver, Colo."
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": false,
+  "semantic": "SUPPORTS",
+  "status": "REJECTED",
+  "reasons": [
+   "second-source rule failed: {\"domains\": [\"biographi.ca\", \"fiba.basketball\"], \"numbers_missing_per_source\": {\"fiba.basketball\": [], \"biographi.ca\": [\"1898\"]}}"
+  ]
+ },
+ {
+  "id": "F-naismith-3",
+  "slug": "naismith",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Naismith worked for the YMCA in France during the First World War, from 1917 to 1919.",
+  "finder_note": "Novelty key terms corrected after the first run: 'First World War' matched an unrelated copy.md sentence.",
+  "evidence": [
+   {
+    "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+    "domain": "fiba.basketball",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "YMCA Secretary in France: 1917-1919"
+   },
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "On leave from his university, he did an American tour with the YMCA in 1917 during the First World War. He was in France from the fall of that year until 1919, organizing sports for American soldiers"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-naismith-4",
+  "slug": "naismith",
+  "section": "Honours",
+  "award": true,
+  "claim": "Naismith received an honorary doctorate (LLD) from McGill University in 1938.",
+  "evidence": [
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "He was awarded honorary degrees by McGill (lld) in 1938 and the Presbyterian College of Montreal (dd) in April 1939."
+   },
+   {
+    "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+    "domain": "fiba.basketball",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Legum Doctorate Degree of the McGill University: 1938"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-naismith-5",
+  "slug": "naismith",
+  "section": "Honours",
+  "award": true,
+  "claim": "The International YMCA Training School granted Naismith an honorary MA in physical education in 1911.",
+  "finder_note": "Sources conflict on the year (DCB 1911, FIBA 1910); expected to fail the second-source rule.",
+  "evidence": [
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "In recognition of his contributions, the International YMCA Training School had granted him an honorary ma in physical education in 1911."
+   },
+   {
+    "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+    "domain": "fiba.basketball",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Honorary Master in Physical Education: 1910"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": false,
+  "semantic": "DOES_NOT_SUPPORT",
+  "status": "REJECTED",
+  "reasons": [
+   "second-source rule failed: {\"domains\": [\"biographi.ca\", \"fiba.basketball\"], \"numbers_missing_per_source\": {\"biographi.ca\": [], \"fiba.basketball\": [\"1911\"]}}",
+   "semantic judge: DOES_NOT_SUPPORT"
+  ]
+ },
+ {
+  "id": "F-naismith-1R",
+  "slug": "naismith",
+  "section": "Achievements",
+  "award": false,
+  "remediation_of": "F-naismith-1",
+  "claim": "In 1889 James Naismith took charge of the gymnasium at McGill University.",
+  "finder_note": "Evidence-only narrowing of F-naismith-1: end year dropped because only one source gives it.",
+  "evidence": [
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "While there, in 1889, he took on the directorship of McGill’s gymnasium"
+   },
+   {
+    "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/introduction/1880s",
+    "domain": "ku.edu",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "continuing James Naismith’s appointment as Instructor in Gymnastics for 1889-1890"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-naismith-2R",
+  "slug": "naismith",
+  "section": "Achievements",
+  "award": false,
+  "remediation_of": "F-naismith-2",
+  "claim": "In 1895 Naismith became director of physical education at the YMCA in Denver, Colorado.",
+  "finder_note": "Evidence-only narrowing of F-naismith-2: end year dropped because only one source gives it.",
+  "evidence": [
+   {
+    "url": "https://www.biographi.ca/en/bio.php?id=9082",
+    "domain": "biographi.ca",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "In 1895, with a family to support, he accepted the directorship of physical education at the large YMCA in Denver, Colo."
+   },
+   {
+    "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+    "domain": "fiba.basketball",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Physical Education Director in the YMCA in Denver, Colorado, U.S.A.: 1895-1898"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-lamarr-1",
+  "slug": "lamarr",
+  "section": "Achievements",
+  "award": false,
+  "claim": "The U.S. Navy did not use Lamarr and Antheil's frequency-hopping invention during World War II.",
+  "evidence": [
+   {
+    "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+    "domain": "si.edu",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "The Navy did not use her invention during World War II."
+   },
+   {
+    "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+    "domain": "encyclopedia.com",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Although shunned by the U.S. Navy, the basic Lamarr-Antheil concept had been a sound one"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": false,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-lamarr-2",
+  "slug": "lamarr",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Frequency hopping based on the Lamarr-Antheil concept was used in U.S. military communications during the Cuban Missile Crisis in 1962.",
+  "evidence": [
+   {
+    "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+    "domain": "si.edu",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "The technology was later used for military communications, including during the Cuban Missile Crisis in 1962"
+   },
+   {
+    "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+    "domain": "encyclopedia.com",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "It was installed in time to be utilized on American ships sent to enforce a blockade on Cuba in 1962 during the missile crisis"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-lamarr-3",
+  "slug": "lamarr",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Lamarr starred in the films Ziegfeld Girl and Samson and Delilah.",
+  "finder_note": "Year (1949) dropped: no second allowlisted, retrievable domain gave it.",
+  "evidence": [
+   {
+    "url": "https://www.invent.org/inductees/hedy-lamarr",
+    "domain": "invent.org",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\""
+   },
+   {
+    "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+    "domain": "encyclopedia.com",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "In one of her best-known roles, as Delilah in Cecil B. De Mille's 1949 Biblical epic Samson and Delilah"
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": false,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-lamarr-4",
+  "slug": "lamarr",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Neither Lamarr nor Antheil ever earned money from their invention.",
+  "evidence": [
+   {
+    "url": "https://www.invent.org/inductees/hedy-lamarr",
+    "domain": "invent.org",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Although Lamarr and Antheil never profited from their invention during their lifetime"
+   },
+   {
+    "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+    "domain": "encyclopedia.com",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "Neither Lamarr nor Antheil, who died in 1959, would ever earn a cent from their invention."
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": false,
+  "second_source_ok": true,
+  "semantic": "SUPPORTS",
+  "status": "PROPOSE FOR HUMAN REVIEW",
+  "reasons": []
+ },
+ {
+  "id": "F-lamarr-5",
+  "slug": "lamarr",
+  "section": "Achievements",
+  "award": false,
+  "claim": "Lamarr met the composer George Antheil in 1940.",
+  "finder_note": "Only one allowlisted, retrievable source gives 1940; expected to fail the second-source rule.",
+  "evidence": [
+   {
+    "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+    "domain": "si.edu",
+    "allowlisted": true,
+    "retrieved": true,
+    "retrieval_date": "2026-10-17",
+    "span": "In 1940, Lamarr met the American avant-garde composer George Antheil."
+   }
+  ],
+  "novelty_terms_found_in_copy": [],
+  "gate": true,
+  "gate_reason": "proposed deterministic layers passed",
+  "needs_second_source": true,
+  "second_source_ok": false,
+  "semantic": "SUPPORTS",
+  "status": "REJECTED",
+  "reasons": [
+   "second-source rule failed: {\"domains\": [\"si.edu\"], \"numbers_missing_per_source\": {\"si.edu\": []}}"
+  ]
+ }
+]

@@ -1,0 +1,45 @@
+{
+ "id": "LM-0012",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "Setting the record straight",
+ "sentence": "Muir Woods National Monument established. 1909 Stickeen Published (John's only children story). 1910 Helen married Buel Funk. 1911 My First Summer in the Sierra Published. 1911-1912 Trip to South America and Africa (73 years old). 1912 The Yosemite Published. 1913 The Story of My Boyhood and Youth Published.",
+ "claim": "Muir Woods National Monument established. 1909 Stickeen Published (John's only children story). 1910 Helen married Buel Funk. 1911 My First Summer in the Sierra Published. 1911-1912 Trip to South America and Africa (73 years old). 1912 The Yosemite Published. 1913 The Story of My Boyhood and Youth Published.",
+ "evidence": [
+  {
+   "url": "https://www.nps.gov/jomu/learn/education/education-john-muir-chronology.htm",
+   "span": "Muir Woods National Monument established. 1909 Stickeen Published (John's only children story). 1910 Helen married Buel Funk. 1911 My First Summer in the Sierra Published. 1911-1912 Trip to South America and Africa (73 years old). 1912 The Yosemite Published. 1913 The Story of My Boyhood and Youth Published.",
+   "retrieved_at": "",
+   "sha256": "",
+   "retrieved_by": "",
+   "snapshot": "",
+   "tier": 1,
+   "title": ""
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1909, 1910, 1911, 1912, 1913])",
+   "names the inductee in the sentence",
+   "tier 1 source (nps.gov)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "NOT_VERIFIED",
+ "gates": {},
+ "reasons": [
+  "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ ],
+ "created_at": "2026-10-17T18:35:54+00:00",
+ "decision": {
+  "by": "Claude Code (developer housekeeping)",
+  "at": "2026-10-17T18:37:15+00:00",
+  "action": "reject",
+  "reason": "Housekeeping by Claude Code (developer), not a judgment on any fact: finder v1 glued text from several page blocks into this candidate (sentence-splitting defect, fixed in finder v2). Kept on record; never deleted."
+ },
+ "related": ""
+}

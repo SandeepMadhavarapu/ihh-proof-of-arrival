@@ -1,0 +1,116 @@
+{
+ "id": "LM-0013",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "Making the parks",
+ "sentence": "On August 31, 1964, the John Muir National Historic Site was authorized “as a public national memorial to John Muir in recognition of his efforts as a conservationist and a crusader for national parks and reservations\" (General Management Plan and Environmental Assessment 1991: Appendix 1).",
+ "claim": "On August 31, 1964, the John Muir National Historic Site was authorized “as a public national memorial to John Muir in recognition of his efforts as a conservationist and a crusader for national parks and reservations\" (General Management Plan and Environmental Assessment 1991: Appendix 1).",
+ "evidence": [
+  {
+   "url": "https://www.nps.gov/articles/725020.htm",
+   "span": "On August 31, 1964, the John Muir National Historic Site was authorized “as a public national memorial to John Muir in recognition of his efforts as a conservationist and a crusader for national parks and reservations\" (General Management Plan and Environmental Assessment 1991: Appendix 1).",
+   "retrieved_at": "2026-10-17T18:39:46+00:00",
+   "sha256": "65675c37fc9153604c48a052d672f6a8b1e4110ac466314288d78680fd80cd42",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/9ef5aa5c15e1f0a1d4a188e0fb9f1b6f9eda8e88eab5a1a0fcf08633bf3add38.body",
+   "tier": 1,
+   "title": "John Muir National Historic Site Cultural Landscape (U.S. National Park Service)"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1964, 1991])",
+   "names the inductee in the sentence",
+   "tier 1 source (nps.gov)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.nps.gov/articles/725020.htm",
+     "tier": 1,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "e of the Muir House. It is a nationally significant site in areas of conservation, social/humanitarian concerns, literature, and science. These areas were specifically linked to John Muir and his extensive efforts to establish national parks and to bring his environmental experiences to the public through his writing. On August 31, 1964, the John Muir National Historic Site was authorized “as a public national memorial to John Muir in recognition of his efforts as a conservationist and a crusader for national parks and reservations\" (General Management Plan and Environmental Assessment 1991: Appendix 1). The establishment of the park at this time was fortunate, as most of the land surrounding the park was developed, or soon to be developed, with homes, businesses, and roads. John Muir is reconized for his conservation work with other leaders to save Hetch Hetchy and establish Forest Reserves (which served as the found",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "nps.gov"
+   ],
+   "tiers": {
+    "nps.gov": 1
+   },
+   "per_fact": {
+    "1": [
+     "nps.gov"
+    ],
+    "1964": [
+     "nps.gov"
+    ],
+    "1991": [
+     "nps.gov"
+    ],
+    "31": [
+     "nps.gov"
+    ],
+    "month:8": [
+     "nps.gov"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "'1' is not stated by two independent domains (found in: ['nps.gov'])",
+    "'1964' is not stated by two independent domains (found in: ['nps.gov'])",
+    "'1991' is not stated by two independent domains (found in: ['nps.gov'])",
+    "'31' is not stated by two independent domains (found in: ['nps.gov'])",
+    "'month:8' is not stated by two independent domains (found in: ['nps.gov'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+  "Gate 2: '1' is not stated by two independent domains (found in: ['nps.gov'])",
+  "Gate 2: '1964' is not stated by two independent domains (found in: ['nps.gov'])",
+  "Gate 2: '1991' is not stated by two independent domains (found in: ['nps.gov'])",
+  "Gate 2: '31' is not stated by two independent domains (found in: ['nps.gov'])",
+  "Gate 2: 'month:8' is not stated by two independent domains (found in: ['nps.gov'])"
+ ],
+ "created_at": "2026-10-17T18:35:54+00:00",
+ "decision": {},
+ "related": ""
+}

@@ -68,3 +68,69 @@ class LLMClientTests(unittest.TestCase):
 
 
 if __name__ == '__main__': unittest.main()
+
+
+class _Block:
+    def __init__(self, text): self.type = "text"; self.text = text
+
+
+class _Msg:
+    def __init__(self, text, stop="end_turn"): self.content = [_Block(text)]; self.stop_reason = stop
+
+
+class _FakeAnthropic:
+    def __init__(self, reply=None, error=None):
+        self.calls = []
+        self.reply, self.error = reply, error
+        self.messages = self
+
+    def create(self, **kwargs):
+        self.calls.append(kwargs)
+        if self.error:
+            raise self.error
+        return self.reply
+
+
+class AnthropicClientTests(unittest.TestCase):
+    def test_key_and_model_must_come_from_environment(self):
+        from pipeline.llm import AnthropicJSONClient
+        with patch.dict(os.environ, {}, clear=True):
+            with self.assertRaisesRegex(RuntimeError, "ANTHROPIC_API_KEY is not set"):
+                AnthropicJSONClient(client=_FakeAnthropic())
+        with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-ant-test-secret"}, clear=True):
+            with self.assertRaisesRegex(RuntimeError, "ANTHROPIC_MODEL"):
+                AnthropicJSONClient(client=_FakeAnthropic())
+
+    def test_schema_sent_temperature_only_where_accepted(self):
+        from pipeline.llm import AnthropicJSONClient
+        schema = {"type": "object", "properties": {"ok": {"type": "boolean"}}, "required": ["ok"], "additionalProperties": False}
+        for model, expect_temp in [("claude-opus-5-5", False), ("claude-haiku-4-5", True)]:
+            fake = _FakeAnthropic(_Msg('{"ok": true}'))
+            with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "sk-ant-test-secret", "ANTHROPIC_MODEL": model}, clear=True):
+                c = AnthropicJSONClient(client=fake)
+                self.assertEqual(c.complete_json("sys", "user", temperature=0.0, json_schema=schema), {"ok": True})
+            sent = fake.calls[0]
+            self.assertEqual(sent["model"], model)
+            self.assertEqual(sent["output_config"]["format"], {"type": "json_schema", "schema": schema})
+            self.assertEqual("temperature" in sent, expect_temp)
+            self.assertNotIn("sk-ant-test-secret", json.dumps(sent))
+            self.assertNotIn("fallbacks", sent)
+
+    def test_refusal_truncation_and_bad_json_fail_closed(self):
+        from pipeline.llm import AnthropicJSONClient
+        env = {"ANTHROPIC_API_KEY": "sk-ant-test-secret", "ANTHROPIC_MODEL": "claude-opus-5-5"}
+        for reply, pattern in [(_Msg("", "refusal"), "refusal"), (_Msg('{"ok"', "max_tokens"), "truncated"),
+                               (_Msg("not json"), "not valid JSON"), (_Msg("[1, 2]"), "must be an object")]:
+            with patch.dict(os.environ, env, clear=True):
+                with self.assertRaisesRegex(RuntimeError, pattern):
+                    AnthropicJSONClient(client=_FakeAnthropic(reply)).complete_json("s", "u", temperature=0.0)
+
+    def test_provider_error_never_echoes_key(self):
+        from pipeline.llm import AnthropicJSONClient
+        env = {"ANTHROPIC_API_KEY": "sk-ant-test-secret", "ANTHROPIC_MODEL": "claude-opus-5-5"}
+        with patch.dict(os.environ, env, clear=True):
+            c = AnthropicJSONClient(client=_FakeAnthropic(error=ValueError("bad key sk-ant-test-secret")))
+            with self.assertRaises(RuntimeError) as cm:
+                c.complete_json("s", "u", temperature=0.0)
+        self.assertNotIn("sk-ant-test-secret", str(cm.exception))
+        self.assertIsNone(cm.exception.__cause__)

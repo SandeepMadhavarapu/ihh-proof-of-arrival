@@ -1,0 +1,118 @@
+{
+ "id": "LM-0001",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "A Canadian at the Springfield gym",
+ "sentence": "Naismith’s studies focused on philosophy and Hebrew, and led to his graduation with a BA in 1887.",
+ "claim": "Naismith’s studies focused on philosophy and Hebrew, and led to his graduation with a BA in 1887.",
+ "evidence": [
+  {
+   "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/collections/mcgill",
+   "span": "Naismith’s studies focused on philosophy and Hebrew, and led to his graduation with a BA in 1887.",
+   "retrieved_at": "2026-10-17T18:39:24+00:00",
+   "sha256": "98c2ff6db5f09bea06e123b1aa63252563c4c9b0bd398ae922c51c78a15e8cc6",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/e07078bd1e7fb85a04cdefa95ef68d93b3077d37bc30dd672836e4d7bfc6171d.body",
+   "tier": 2,
+   "title": "McGill University · James Naismith’s Life and Legacy: Celebrating 150 Years · KU Libraries Exhibits"
+  },
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "Following graduation in 1887 (ba in mental and moral philosophy), having achieved success too in rugby football and other sports, he entered the Presbyterian College of Montreal.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.78,
+  "rationale": [
+   "states a date ([1887])",
+   "names the inductee in the sentence",
+   "tier 2 source (ku.edu)",
+   "same date found on an independent domain: biographi.ca"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://exhibits.lib.ku.edu/exhibits/show/naismith150/collections/mcgill",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " of the University’s administrative records, the McGill University Archives holds the traces of Naismith’s presence at this institution. The records of the Office of the Registrar reveal his student directory card, documenting the sessions he attended at McGill from 1883 to 1887, and tracking his subsequent positions. Naismith’s studies focused on philosophy and Hebrew, and led to his graduation with a BA in 1887. It is said he arrived here with the intention of abstaining from athletic activity in order to concentrate on his studies. But we also know that he did not resist the draw to athletics for long: we soon find him participating in football and ground gymnastics as an undergraduate. William Notman’s and A.G. Walford’s gr",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "raised by their bachelor uncle Peter Johnston Young in a Scottish-immigrant environment on a farm north of Almonte, Ont. Educated at nearby Bennies Corners and Almonte’s high school, and after spending some time in a lumber camp, Jim enrolled in Montreal’s McGill College in 1882 on a scholarship, bent on the ministry. Following graduation in 1887 (ba in mental and moral philosophy), having achieved success too in rugby football and other sports, he entered the Presbyterian College of Montreal. While there, in 1889, he took on the directorship of McGill’s gymnasium; he himself played sports with ferocious intensity and a Christian bearing. “He had abundant vitality,” childhood friend and fellow sportsman Robert Tait McKenzie would remember; together the jaunty pair joined the 5th Battalion of Infantry (Royal",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca",
+    "ku.edu"
+   ],
+   "tiers": {
+    "ku.edu": 2,
+    "biographi.ca": 2
+   },
+   "per_fact": {
+    "1887": [
+     "biographi.ca",
+     "ku.edu"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ku.edu': 2, 'biographi.ca': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'ku.edu': 2, 'biographi.ca': 2}"
+ ],
+ "created_at": "2026-10-17T18:35:27+00:00",
+ "decision": {},
+ "related": ""
+}

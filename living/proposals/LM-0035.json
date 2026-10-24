@@ -1,0 +1,97 @@
+{
+ "id": "LM-0035",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "Escape to Hollywood",
+ "sentence": "Lamarr starred in the films Ziegfeld Girl and Samson and Delilah.",
+ "claim": "Lamarr starred in the films Ziegfeld Girl and Samson and Delilah.",
+ "evidence": [
+  {
+   "url": "https://www.invent.org/inductees/hedy-lamarr",
+   "span": "starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\"",
+   "retrieved_at": "2026-10-17T18:38:19+00:00",
+   "sha256": "2a416c36ec7ebc3a66fb1604eaa2339608afc30bc6e914c3cfbdc4d5d662d9ec",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/4dad02a8b8a11ca20eef501f204f6b3d569b040cc6630da6880939c74a24c3e8.body",
+   "tier": 2,
+   "title": "Hedy Lamarr │ The National Inventors Hall of Fame"
+  },
+  {
+   "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+   "span": "In one of her best-known roles, as Delilah in Cecil B. De Mille's 1949 Biblical epic Samson and Delilah",
+   "retrieved_at": "2026-10-17T18:38:23+00:00",
+   "sha256": "d0842a6568da8f4fed6801fbf01fa37735461f880c29c01da14f10a0688ad9e1",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/b76599ad3be25bf0ad521f53631fb97753a854ad84cd793acb74c406e454b2d1.body",
+   "tier": 2,
+   "title": "Lamarr, Hedy (1913–2000) | Encyclopedia.com"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-lamarr-3",
+  "confidence": null,
+  "rationale": [
+   "Year (1949) dropped: no second allowlisted, retrievable domain gave it."
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "pending",
+ "verdict": "NEEDS_HUMAN_JUDGMENT",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.invent.org/inductees/hedy-lamarr",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "nductee Search Open Image Open Image Open Image Open Image Open Image Open Image Open Image Open Image Hedy Lamarr Frequency Hopping Communication System U.S. Patent No. 2,292,387 Inducted in 2014 Born Nov. 9, 1914 - Died Jan. 19, 2000 Actress Hedy Lamarr was best known for her work in Hollywood during its Golden Age, starring in films such as \"Ziegfeld Girl\" and \"Samson and Delilah\". But Lamarr also worked with Hollywood composer George Antheil to invent a frequency hopping technique that today is referenced as an important development in the field of wireless communications. Born in Austria, Lamarr had at one time been married to a munitions manufacturer, giving her the foundation for her knowle",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "increasingly frustrated in her film roles. In the 1942 film White Cargo, she played a seductress on a plantation in a British African colony. Her line \"I am Tondelayo\" became perfect foil for comedians including Jack Benny, who created a character on his radio show named Tondelayo Schwartzkopf, an imaginary salesgirl. In one of her best-known roles, as Delilah in Cecil B. De Mille's 1949 Biblical epic Samson and Delilah (co-starring Victor Mature), she wore a clinging gown made out of feathers from De Mille's personal collection of prize peacocks. By the early 1950s, starring roles were getting more difficult for Lamarr to find, and she sometimes turned down important roles she did not care for, including one in De Mille's circus epi",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NEEDS HUMAN JUDGMENT",
+   "reason": "no semantic judge configured (no API key)"
+  }
+ },
+ "reasons": [
+  "Gate 3: no semantic judge configured; a person must judge meaning"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

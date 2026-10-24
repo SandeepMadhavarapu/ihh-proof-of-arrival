@@ -1,0 +1,92 @@
+{
+ "id": "LM-0027",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "A farm boy from Dunbar",
+ "sentence": "While John Muir College does not call for the completion of a minor to fulfill its requirements for the degree of bachelor of arts or bachelor of science, it does acknowledge the completion of an approved departmental minor on a student’s transcript.",
+ "claim": "While John Muir College does not call for the completion of a minor to fulfill its requirements for the degree of bachelor of arts or bachelor of science, it does acknowledge the completion of an approved departmental minor on a student’s transcript.",
+ "evidence": [
+  {
+   "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+   "span": "While John Muir College does not call for the completion of a minor to fulfill its requirements for the degree of bachelor of arts or bachelor of science, it does acknowledge the completion of an approved departmental minor on a student’s transcript.",
+   "retrieved_at": "2026-10-17T18:39:50+00:00",
+   "sha256": "6ef55080966af9369471496415b7293d2760bf0ece6ef34d0178104465959b50",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/4d1aefc462f0d45d5d46b6be7812f8d733b2a269d4975963eba2e0c7802fbc68.body",
+   "tier": 2,
+   "title": "John Muir College (overview)"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.33,
+  "rationale": [
+   "mentions an honour or award",
+   "names the inductee in the sentence",
+   "tier 2 source (ucsd.edu)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://registrar.ucsd.edu/catalog/11-12/front/JMuir.html",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "requirements, including grade changes, by the end of the proposed graduating quarter. Students will graduate at the end of the quarter in which deficiencies are satisfied. It is the students’ responsibility to contact their department adviser to verify that they have satisfied departmental requirements for graduation. While John Muir College does not call for the completion of a minor to fulfill its requirements for the degree of bachelor of arts or bachelor of science, it does acknowledge the completion of an approved departmental minor on a student’s transcript. No upper-division courses may be used to satisfy both a major and a minor. For a minor, students are required to complete a minimum of twenty-eight units of interrelated work, of which at least twenty units must be upper-division. Departments or programs may establish more stringent criteria than the minimum. A formal",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "describes an award or honour"
+   ],
+   "domains": [
+    "ucsd.edu"
+   ],
+   "tiers": {
+    "ucsd.edu": 2
+   },
+   "per_fact": {},
+   "reasons": [
+    "needs two independent domains (describes an award or honour); has 1: ['ucsd.edu']",
+    "needs at least one tier-1 source (describes an award or honour); tiers: {'ucsd.edu': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (describes an award or honour); has 1: ['ucsd.edu']",
+  "Gate 2: needs at least one tier-1 source (describes an award or honour); tiers: {'ucsd.edu': 2}"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

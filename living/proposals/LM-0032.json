@@ -1,0 +1,116 @@
+{
+ "id": "LM-0032",
+ "kind": "fact",
+ "slug": "naismith",
+ "section": "Kansas",
+ "sentence": "In 1895 Naismith became director of physical education at the YMCA in Denver, Colorado.",
+ "claim": "In 1895 Naismith became director of physical education at the YMCA in Denver, Colorado.",
+ "evidence": [
+  {
+   "url": "https://www.biographi.ca/en/bio.php?id=9082",
+   "span": "In 1895, with a family to support, he accepted the directorship of physical education at the large YMCA in Denver, Colo.",
+   "retrieved_at": "2026-10-17T18:39:28+00:00",
+   "sha256": "ca07224edeae3e933ea9d0029d450a52cf7e3b8e5ef8e418e1935ca1640ade6d",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/d87bfeb060f47aec6cf10a7550ea47cc161a10da397296b344d7a05315e3b1b0.body",
+   "tier": 2,
+   "title": "NAISMITH, JAMES – Dictionary of Canadian Biography"
+  },
+  {
+   "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+   "span": "Physical Education Director in the YMCA in Denver, Colorado, U.S.A.: 1895-1898",
+   "retrieved_at": "2026-10-17T18:39:54+00:00",
+   "sha256": "62fe991c02f24cd87a9ac99bc36bd62bca06cec44161692b5acdae5d6440f282",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/728dac5fe12b8649d5f38bc9fa960a80f400085d495f4efb06b331e91021f3f1.body",
+   "tier": 2,
+   "title": "James NAISMITH (CAN) | About FIBA"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-naismith-2R",
+  "confidence": null,
+  "rationale": [
+   "Evidence-only narrowing of F-naismith-2: end year dropped because only one source gives it."
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.biographi.ca/en/bio.php?id=9082",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " at Yale University developed the technique of dribbling the ball in the mid 1890s (rather than passing it while remaining stationary), he hailed the movement as “one of the sweetest, prettiest plays.” Marriage and medical school While in Springfield, Naismith married Maude Sherman, herself an early basketball player. In 1895, with a family to support, he accepted the directorship of physical education at the large YMCA in Denver, Colo. At the same time, to round out his ability to care for the body, he enrolled there in the Gross Medical College. He graduated with an md in April 1898. A new opportunity at the University of Kansas That fall, tormented by the accidental death of a student in his gymnasium, Naismith found a fresh opportunity – as chape",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://about.fiba.basketball/en/fiba-hall-of-fame/hall-of-famers/james-naismith",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "nter months. On 21st December 1891, the first game of basketball is played between Dr. Naismith's students Published the Basketball Rules in January 1892 in the magazine \"\"Triangle\"\" James Naismith refuses the suggestion to give his name ('Naismith Ball') to the new sport which is already becoming a huge success: 1892 Physical Education Director in the YMCA in Denver, Colorado, U.S.A.: 1895-1898 Degree in Medicine in the Gross Medical College of the University of Colorado (U.S.A.): 1895-1898 Physical education professor, chapel director and basketball coach at the University of Kansas (U.S.A.): 1898-1937 YMCA Secretary in France: 1917-1919 Distinctions & Recognitions Honorary Master in Physical Education: 191",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "biographi.ca",
+    "fiba.basketball"
+   ],
+   "tiers": {
+    "biographi.ca": 2,
+    "fiba.basketball": 2
+   },
+   "per_fact": {
+    "1895": [
+     "biographi.ca",
+     "fiba.basketball"
+    ]
+   },
+   "reasons": [
+    "needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs at least one tier-1 source (contains a date, number or ordinal); tiers: {'biographi.ca': 2, 'fiba.basketball': 2}"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

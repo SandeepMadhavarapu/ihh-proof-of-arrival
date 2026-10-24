@@ -1,0 +1,11 @@
+# Changes to these paths need a review from the owner before they can merge.
+# Turn on "Require review from Code Owners" in the branch protection rule for main
+# (see living/BRANCH-PROTECTION.md). This file does nothing until that setting is on.
+/inductees/  @SandeepMadhavarapu
+/site/       @SandeepMadhavarapu
+/site-data/  @SandeepMadhavarapu
+/site-src/   @SandeepMadhavarapu
+/tools/      @SandeepMadhavarapu
+/pipeline/   @SandeepMadhavarapu
+/living/     @SandeepMadhavarapu
+/.github/    @SandeepMadhavarapu

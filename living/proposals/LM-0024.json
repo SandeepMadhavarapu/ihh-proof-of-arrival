@@ -1,0 +1,96 @@
+{
+ "id": "LM-0024",
+ "kind": "fact",
+ "slug": "muir",
+ "section": "The Range of Light",
+ "sentence": "Erected in 1882, The Muir House is situated atop a knoll and historically looked out over the orchards and vineyards of the Strentzel-Muir Ranch and the Alhambra Valley.",
+ "claim": "Erected in 1882, The Muir House is situated atop a knoll and historically looked out over the orchards and vineyards of the Strentzel-Muir Ranch and the Alhambra Valley.",
+ "evidence": [
+  {
+   "url": "https://www.nps.gov/articles/725020.htm",
+   "span": "Erected in 1882, The Muir House is situated atop a knoll and historically looked out over the orchards and vineyards of the Strentzel-Muir Ranch and the Alhambra Valley.",
+   "retrieved_at": "2026-10-17T18:39:46+00:00",
+   "sha256": "65675c37fc9153604c48a052d672f6a8b1e4110ac466314288d78680fd80cd42",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/9ef5aa5c15e1f0a1d4a188e0fb9f1b6f9eda8e88eab5a1a0fcf08633bf3add38.body",
+   "tier": 1,
+   "title": "John Muir National Historic Site Cultural Landscape (U.S. National Park Service)"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1882])",
+   "names the inductee in the sentence",
+   "tier 1 source (nps.gov)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://www.nps.gov/articles/725020.htm",
+     "tier": 1,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " clay loam soils provided agricultural land for the orchards and gardens developed by John Muir and Muir's father-in-law Dr. Strentzel. “[I hold] dearly cherished memories about…the fine garden grounds full of trees and bushes and flowers that my wife and father-in-law planted – fine things from every land.\" John Muir Erected in 1882, The Muir House is situated atop a knoll and historically looked out over the orchards and vineyards of the Strentzel-Muir Ranch and the Alhambra Valley. NPS North Orchard. Today, most of the orchard is comprised of peach, sweet cherry, almond, and peach trees, growing in rows that are variably spaced. NPS The John Muir National Historic Site is historically significant for its connection to the Conservation Movement, its association with John Muir, and the Victorian I",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "nps.gov"
+   ],
+   "tiers": {
+    "nps.gov": 1
+   },
+   "per_fact": {
+    "1882": [
+     "nps.gov"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+    "'1882' is not stated by two independent domains (found in: ['nps.gov'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['nps.gov']",
+  "Gate 2: '1882' is not stated by two independent domains (found in: ['nps.gov'])"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

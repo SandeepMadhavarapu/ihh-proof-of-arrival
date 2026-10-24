@@ -1,0 +1,112 @@
+{
+ "id": "LM-0034",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "The inventor",
+ "sentence": "Frequency hopping based on the Lamarr-Antheil concept was used in U.S. military communications during the Cuban Missile Crisis in 1962.",
+ "claim": "Frequency hopping based on the Lamarr-Antheil concept was used in U.S. military communications during the Cuban Missile Crisis in 1962.",
+ "evidence": [
+  {
+   "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+   "span": "The technology was later used for military communications, including during the Cuban Missile Crisis in 1962",
+   "retrieved_at": "2026-10-17T18:38:26+00:00",
+   "sha256": "3e9d175eba0e86357a7974c91347b94bc5c81bd820f7d1f0d782aa6a6bc6cc39",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/900678d47c6745fb8e08eec3fa232b01fe110df7bec4eab47a1ff87686b35f6a.body",
+   "tier": 1,
+   "title": "Who Invented GPS? (Was It Really Movie Star Hedy Lamarr?) | National Air and Space Museum"
+  },
+  {
+   "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+   "span": "It was installed in time to be utilized on American ships sent to enforce a blockade on Cuba in 1962 during the missile crisis",
+   "retrieved_at": "2026-10-17T18:38:23+00:00",
+   "sha256": "d0842a6568da8f4fed6801fbf01fa37735461f880c29c01da14f10a0688ad9e1",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/b76599ad3be25bf0ad521f53631fb97753a854ad84cd793acb74c406e454b2d1.body",
+   "tier": 2,
+   "title": "Lamarr, Hedy (1913–2000) | Encyclopedia.com"
+  }
+ ],
+ "finder": {
+  "mode": "spike: Claude Code acting as finder on 2026-10-17 (ws2-spike 88c45ba)",
+  "spike_id": "F-lamarr-2",
+  "confidence": null,
+  "rationale": [],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "pending",
+ "verdict": "NEEDS_HUMAN_JUDGMENT",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+     "tier": 1,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": "n 1942, she raised $25 million in war bonds, around $343 million today.\" Both the invention and the fundraising is a dramatic turn of events for the young wife that once broke bread with Hitler's compatriots. Decades later Lamarr and Antheil's invention was rediscovered and became the basis for secure communications. \"The technology was later used for military communications, including during the Cuban Missile Crisis in 1962,\" explains Lansberg. Today, the paper tapes are replaced by digital computer circuits. These generate sequences of “pseudo-random numbers” (PRN) that hop the frequencies of the transmitter and receiver in synch. Because the technique requires a wider band of frequencies than a normal radio transmission , it is called ",
+     "entity_on_page": true,
+     "entity_near_span": true
+    },
+    {
+     "url": "https://www.encyclopedia.com/women/encyclopedias-almanacs-transcripts-and-maps/lamarr-hedy-1913-2000",
+     "tier": 2,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " basic Lamarr-Antheil concept had been a sound one, and in 1957 it was reviewed by engineers at the Sylvania Electronic Systems Division in Buffalo, New York. Using modern electronics rather than piano rolls, Sylvania's engineering staff created a system that emerged as a basic tool for secure military communications. It was installed in time to be utilized on American ships sent to enforce a blockade on Cuba in 1962 during the missile crisis, using mainframe computers to protect U.S. military messages from the Soviets. The essential principle of the Lamarr-Antheil Communication System remains valid. Microchips and digital signal processing have made the technique ready for a mass market, and, by relying on state-of-the-art spread-spectrum technology, it e",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": true,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "encyclopedia.com",
+    "si.edu"
+   ],
+   "tiers": {
+    "si.edu": 1,
+    "encyclopedia.com": 2
+   },
+   "per_fact": {
+    "1962": [
+     "encyclopedia.com",
+     "si.edu"
+    ]
+   },
+   "reasons": []
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NEEDS HUMAN JUDGMENT",
+   "reason": "no semantic judge configured (no API key)"
+  }
+ },
+ "reasons": [
+  "Gate 3: no semantic judge configured; a person must judge meaning"
+ ],
+ "created_at": "2026-10-17T18:37:54+00:00",
+ "decision": {},
+ "related": ""
+}

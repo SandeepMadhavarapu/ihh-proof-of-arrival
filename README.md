@@ -25,7 +25,7 @@ and [CONTRIBUTING.md](CONTRIBUTING.md).
 | `templates/` | For the next inductee: `copy-template.md`, `media-manifest.csv`, `search-log.csv`, `where-to-search.md`, `rights-guide.md`, `profile.css`. |
 | `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `package_handover.sh`, `open_items.py`. |
 | `site/` | The optional demonstration site, including the Verification Desk exhibit and the four profiles in the site's design. |
-| `ledger/`, `site/FINDINGS.md` | The earlier audit of the live IHH site (factual errors found on its inductee pages). **Share privately and kindly.** |
+| `ledger/`, `site-src/FINDINGS.md` | The earlier audit of the live IHH site (factual errors found on its inductee pages). **Share privately and kindly.** |
 | `qa/` | Browser and static test harnesses, including `profile-factory.mjs`. |
 | `pipeline/` | **Profile Factory** (Sandeep): a build-time tool that turns an inductee name and seed source URLs into an evidence-gated draft profile under `profiles/<slug>/`. See `pipeline/README.md`. |
 | `profiles/` | Profile Factory outputs only. Each stays **REQUIRES HUMAN SIGN-OFF**; its Albright demo is not a substitute for `inductees/albright/`. |
@@ -102,7 +102,7 @@ Six of the ten inductee profiles are unwritten; this package delivers four, each
 a named person's editorial sign-off (the byline placeholder) before publication. The Profile
 Factory's deterministic demo does not count as another profile. No screen-reader user has
 tested any of this, no volunteer has run the WordPress handoff in the museum's real site, and
-no permission letter has been sent to any institution. `site/TESTS-RUN.md` lists what was and
+no permission letter has been sent to any institution. `site-src/TESTS-RUN.md` lists what was and
 was not tested.
 
 The demo sitemap uses `https://example.invalid/` deliberately: it is a non-production

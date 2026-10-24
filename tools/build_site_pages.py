@@ -1,23 +1,39 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Wrap each built inductee profile in the demo site's page chrome.
+"""Wrap each published inductee profile in the demo site's page chrome.
 
     python3 tools/build_profile.py --all      # first
     python3 tools/build_site_pages.py
 
-For every inductees/<name>/copy.html this writes site/<name>.html and copies the page's
-web images to site/media/<name>/. The chrome (head, header, footer) is taken from
-site/inductees.html so the profile pages cannot drift from the rest of the site.
+Only the slugs listed in site-data/published.json are published: for each one this writes
+site/<slug>.html and copies the page's web images to site/media/<slug>/. A folder under
+inductees/ that is not on that list is never published, whatever it contains. It also writes
+site/new.html ("New at the Museum") from site-data/new-at-the-museum.json, which only the
+approval step (living/publisher.py, through a reviewed pull request) ever appends to.
+Margin Notes: site-data/visitor-voices.json chooses how visitors send notes (none, wordpress or
+email; never the local demo), and only notes marked approved in site-data/approved-notes.json
+are drawn, each re-attached to its passage by voices/anchors.py or left out and reported.
+The chrome (head, header, footer) is taken from site/inductees.html so generated pages cannot
+drift from the rest of the site. This script reads nothing under living/.
 """
-import html, os, re, shutil
+import datetime, html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "site")
-chrome = open(os.path.join(SITE, "inductees.html"), encoding="utf-8").read()
-head, _, rest = chrome.partition('<main id="main" class="wide">')
-_, _, foot = rest.partition("</main>")
-head = head.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
-foot = foot.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
+sys.path.insert(0, ROOT)
+from voices import render as voices_render  # noqa: E402
+
+E = html.escape
+NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
+NOTES_JS = '<script src="assets/margin-notes.js" defer></script>\n'
+
+
+def with_notes(head, foot, css, js):
+    if css:
+        head = head.replace("</head>", NOTES_CSS + "</head>", 1)
+    if js:
+        foot = foot.replace("</body>", NOTES_JS + "</body>", 1)
+    return head, foot
+
 
 def strip_dark_mode(css_html):
     """Remove every @media (prefers-color-scheme:dark){...} block, balancing braces."""
@@ -34,34 +50,122 @@ def strip_dark_mode(css_html):
         i = k
 
 
-base = os.path.join(ROOT, "inductees")
-for name in sorted(os.listdir(base)):
-    src = os.path.join(base, name, "copy.html")
-    if not os.path.exists(src):
-        continue
-    frag = open(src, encoding="utf-8").read()
-    person = re.search(r"<h1>(.+?)</h1>", frag).group(1)
-    standfirst = html.unescape(re.sub(r"<[^>]+>", "", re.search(r'<p class="standfirst">(.+?)</p>', frag, re.S).group(1)))
-    desc = html.escape(" ".join(standfirst.split())[:200], quote=True)
+def published_slugs(root):
+    path = os.path.join(root, "site-data", "published.json")
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    slugs = data["published"]
+    if not isinstance(slugs, list) or not all(isinstance(s, str) and re.fullmatch(r"[a-z0-9-]+", s) for s in slugs):
+        sys.exit(f"{path}: 'published' must be a list of lowercase slugs")
+    return slugs
 
-    media_out = os.path.join(SITE, "media", name)
-    os.makedirs(media_out, exist_ok=True)
-    for f in os.listdir(os.path.join(base, name, "media", "web")):
-        shutil.copy2(os.path.join(base, name, "media", "web", f), os.path.join(media_out, f))
-    frag = frag.replace('src="media/web/', f'src="media/{name}/')
-    # The demo site is light-only (site.css sets color-scheme:light), so drop the profile's
-    # own dark-mode rules here. The WordPress package in handover/ keeps them.
-    frag = strip_dark_mode(frag)
-    # The page's own <h1> is the person's name; drop the WordPress-only comment about it.
-    frag = re.sub(r"<!-- If your theme already prints.*?-->\n", "", frag)
 
-    page_head = re.sub(r"<title>.*?</title>", f"<title>{person} | Immigrant Hall of Honor</title>", head)
-    page_head = re.sub(r'(<meta name="description" content=")[^"]*', r"\g<1>" + desc, page_head)
-    page_head = re.sub(r'(<meta property="og:title" content=")[^"]*', rf"\g<1>{person} | Immigrant Hall of Honor", page_head)
-    page_head = re.sub(r'(<meta property="og:description" content=")[^"]*', r"\g<1>" + desc, page_head)
+def chrome(site):
+    with open(os.path.join(site, "inductees.html"), encoding="utf-8") as f:
+        page = f.read()
+    head, _, rest = page.partition('<main id="main" class="wide">')
+    _, _, foot = rest.partition("</main>")
+    head = head.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
+    foot = foot.replace('<li><a href="inductees.html" aria-current="page">', '<li><a href="inductees.html">')
+    return head, foot
 
-    out = (page_head + '<main id="main" class="profile-page">\n'
-           + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
-           + frag + "\n</main>" + foot)
-    open(os.path.join(SITE, f"{name}.html"), "w", encoding="utf-8", newline="\n").write(out)
-    print(f"site/{name}.html")
+
+def retitle(head, title, desc):
+    head = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", head)
+    head = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + desc, head)
+    head = re.sub(r'(<meta property="og:title" content=")[^"]*', lambda m: m.group(1) + title, head)
+    return re.sub(r'(<meta property="og:description" content=")[^"]*', lambda m: m.group(1) + desc, head)
+
+
+def nice_date(iso):
+    d = datetime.date.fromisoformat(iso)
+    return f"{d.day} {d.strftime('%B')} {d.year}"
+
+
+def build_new_page(root, site, head, foot, names):
+    with open(os.path.join(root, "site-data", "new-at-the-museum.json"), encoding="utf-8") as f:
+        feed = json.load(f)
+    entries = sorted(feed.get("entries", []), key=lambda e: (e["date"], e["id"]), reverse=True)
+    items = []
+    for e in entries:
+        if e["slug"] not in names:
+            continue  # never link to a page that is not published
+        srcs = "; ".join(f'<a href="{E(s["url"])}" rel="noopener">{E(s["title"])}</a> ({E(s["institution"])})'
+                         for s in e["sources"])
+        items.append(f'''  <li class="new-item">
+    <p class="new-meta"><time datetime="{E(e["date"])}">{nice_date(e["date"])}</time> &middot; <a href="{E(e["slug"])}.html">{E(names[e["slug"]])}</a></p>
+    <p class="new-text">{E(e["sentence"])}</p>
+    <p class="new-src">Source{"s" if len(e["sources"]) > 1 else ""}: {srcs}</p>
+  </li>''')
+    body = ('<ol class="new-list">\n' + "\n".join(items) + "\n</ol>") if items else (
+        '<p class="note new-empty">Nothing new yet. When our team has checked a new discovery '
+        'against its original source and approved it, it will appear here with that source.</p>')
+    main = f'''<main id="main" class="wide">
+
+<h1>New at the Museum</h1>
+<p class="lede">Fresh discoveries about our inductees, newest first. Each one was found in a
+trusted archive or reference work, checked word for word against that source, and approved by a
+person on our team before it was added to the inductee&rsquo;s page.</p>
+
+{body}
+</main>'''
+    title = "New at the Museum | Immigrant Hall of Honor"
+    desc = "Recently checked and approved discoveries about the inductees, each with its source."
+    out = retitle(head, title, desc) + main + foot
+    with open(os.path.join(site, "new.html"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(out)
+    print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
+
+
+def main(root=ROOT, site=None, voices=None):
+    """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy."""
+    site = site or os.path.join(root, "site")
+    cfg = voices_render.load_config(root, voices)
+    approved = voices_render.load_approved(root) if voices is None else []
+    base = os.path.join(root, "inductees")
+    head, foot = chrome(site)
+    slugs = published_slugs(root)
+    for name in sorted(os.listdir(base)):
+        if os.path.isdir(os.path.join(base, name)) and name not in slugs:
+            print(f"not published (not in site-data/published.json): inductees/{name}")
+    names = {}
+    for name in slugs:
+        src = os.path.join(base, name, "copy.html")
+        if not os.path.exists(src):
+            sys.exit(f"site-data/published.json lists '{name}' but inductees/{name}/copy.html does not exist")
+        with open(src, encoding="utf-8") as f:
+            frag = f.read()
+        person = re.search(r"<h1>(.+?)</h1>", frag).group(1)
+        names[name] = html.unescape(person)
+        standfirst = html.unescape(re.sub(r"<[^>]+>", "", re.search(r'<p class="standfirst"[^>]*>(.+?)</p>', frag, re.S).group(1)))
+        desc = html.escape(" ".join(standfirst.split())[:200], quote=True)
+
+        media_out = os.path.join(site, "media", name)
+        os.makedirs(media_out, exist_ok=True)
+        for f in os.listdir(os.path.join(base, name, "media", "web")):
+            shutil.copy2(os.path.join(base, name, "media", "web", f), os.path.join(media_out, f))
+        frag = frag.replace('src="media/web/', f'src="media/{name}/')
+        # The demo site is light-only (site.css sets color-scheme:light), so drop the profile's
+        # own dark-mode rules here. The WordPress package in handover/ keeps them.
+        frag = strip_dark_mode(frag)
+        # The page's own <h1> is the person's name; drop the WordPress-only comment about it.
+        frag = re.sub(r"<!-- If your theme already prints.*?-->\n", "", frag)
+
+        frag, index, flagged = voices_render.annotate(frag, name, [n for n in approved if n["page"] == name], cfg)
+        for nid in flagged:
+            print(f"  FLAGGED for the moderator: note {nid} on {name} no longer matches any passage; not shown")
+        on = cfg["adapter"] != "none"
+        page_head, page_foot = with_notes(retitle(head, f"{person} | Immigrant Hall of Honor", desc), foot,
+                                          bool(index) or on, on)
+        attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
+        out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
+               + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
+               + frag + index + "\n</main>" + page_foot)
+        with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(out)
+        print(f"site/{name}.html")
+    build_new_page(root, site, head, foot, names)
+
+
+if __name__ == "__main__":
+    main()

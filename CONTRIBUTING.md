@@ -10,7 +10,7 @@ Read [POSITIONING.md](POSITIONING.md) and [ROADMAP.md](ROADMAP.md) first. This i
 |---|---|---|
 | `inductees/<name>/copy.md`, `inductees/<name>/media-manifest.csv` | `python tools/build_profile.py --all`, then `python tools/build_site_pages.py` and `bash tools/package_handover.sh` | That inductee's `copy.html`, `copy-full.md`, `preview.html`; `site/<name>.html`; `handover/` |
 | `profiles/<slug>/copy.md`, `profiles/<slug>/media-manifest.csv` | `python -m pipeline.generic_build --profile-dir profiles/<slug>` | That profile's `copy.html`, `copy-full.md`, `preview.html` |
-| `site/cases.py` (and generator template when needed) | `python site/gen.py` | `site/verify.html` |
+| `site-src/cases.py` (and generator template when needed) | `python site-src/gen.py` | `site/verify.html` |
 | `ledger/findings.py` (and serializer when needed) | `python ledger/emit.py` | `ledger/CLOSURE-LEDGER.md`, `.json`, `.csv` |
 
 Every generated file must regenerate byte-for-byte from its sources; `bash qa/rebuild.sh` checks this. Do not change fixtures or expected results merely to hide failures. If a stricter contract requires more informative synthetic evidence, retain the original assertions and explain the fixture changes.

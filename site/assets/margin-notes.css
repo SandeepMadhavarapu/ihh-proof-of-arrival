@@ -1,0 +1,97 @@
+/* Margin Notes and "Spot something? Tell us" (voices/).
+   Light: ink #1a1714 on #fbfaf8 17.0:1, muted #56514a 7.9:1, accent #7a2e1e 9.6:1,
+          white on accent 10.1:1, control border #8a8378 3.6:1.
+   Dark (only where the host opts in with data-ihh-scheme="auto"): ink #ece7df on #1e1b16
+          13.9:1, muted #a7a096 6.9:1, accent #e29c87 7.4:1, #15130f on accent 8.3:1,
+          control border #8a8378 4.2:1. Checked by tests/test_voices.py. */
+:root{--vv-p:#fbfaf8;--vv-p2:#f3f0ea;--vv-ink:#1a1714;--vv-mut:#56514a;--vv-rule:#8a8378;
+  --vv-acc:#7a2e1e;--vv-on:#ffffff;--vv-kid:#f6efd9}
+@media (prefers-color-scheme:dark){html.vv-dark-ok{--vv-p:#1e1b16;--vv-p2:#15130f;--vv-ink:#ece7df;
+  --vv-mut:#a7a096;--vv-acc:#e29c87;--vv-on:#15130f;--vv-kid:#2c2616}}
+
+.vv-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* The rail: count of approved notes and the Add a note control, floated into the right margin
+   of the passage so the text itself is never interrupted. */
+.vv-rail{float:right;display:inline-flex;gap:.3rem;margin:0 0 .3rem .6rem;font-style:normal}
+.vv-mark,.vv-add,.vv-nojs,.vv-sel,.vv-claim-btn{font:500 .78rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;
+  letter-spacing:0;text-transform:none;min-height:24px;box-sizing:border-box}
+.vv-mark{display:inline-flex;align-items:center;justify-content:center;min-width:24px;padding:0 .4rem;
+  border-radius:999px;background:var(--vv-acc);color:var(--vv-on)!important;text-decoration:none!important}
+.vv-mark:hover{text-decoration:underline}
+.vv-add,.vv-nojs{display:inline-flex;align-items:center;padding:.15rem .55rem;border:1px solid var(--vv-rule);
+  border-radius:999px;background:var(--vv-p);color:var(--vv-mut)!important;text-decoration:none!important;cursor:pointer}
+.vv-add:hover,.vv-nojs:hover{color:var(--vv-acc)!important;border-color:var(--vv-acc)}
+html.vv-js .vv-nojs{display:none}
+.vv-mark:focus-visible,.vv-add:focus-visible,.vv-nojs:focus-visible,.vv-sel:focus-visible,
+.vv-claim-btn:focus-visible,.vv-panel :focus-visible,.vv-index a:focus-visible,.vv-form :focus-visible{
+  outline:3px solid var(--vv-acc);outline-offset:2px}
+
+/* "Add a note on this" beside highlighted text */
+.vv-sel{position:absolute;z-index:900;padding:.35rem .7rem;border:0;border-radius:4px;
+  background:var(--vv-acc);color:var(--vv-on);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+
+/* The panel: a side sheet on wide screens, a bottom sheet on phones */
+.vv-panel{position:fixed;z-index:1000;top:0;right:0;bottom:0;width:min(27rem,100%);box-sizing:border-box;
+  overflow-y:auto;padding:1.1rem 1.2rem 1.6rem;background:var(--vv-p);color:var(--vv-ink);
+  border-left:1px solid var(--vv-rule);box-shadow:-6px 0 24px rgba(0,0,0,.18);
+  font:400 1rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left}
+.vv-panel[hidden]{display:none}
+@media (max-width:640px){.vv-panel{top:auto;left:0;width:100%;max-height:88vh;border-left:0;
+  border-top:1px solid var(--vv-rule);border-radius:12px 12px 0 0;box-shadow:0 -6px 24px rgba(0,0,0,.2)}}
+.vv-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}
+.vv-panel h2{margin:0 0 .6rem;font:600 1.15rem/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--vv-ink);text-transform:none;letter-spacing:0}
+.vv-panel h2:focus{outline:none}
+.vv-x{min-width:44px;min-height:44px;border:1px solid var(--vv-rule);border-radius:4px;background:var(--vv-p);
+  color:var(--vv-ink);font-size:1.3rem;line-height:1;cursor:pointer}
+.vv-ctx-l{margin:0 0 .25rem;font-size:.85rem;color:var(--vv-mut)}
+.vv-ctx{margin:0 0 1rem;padding:.6rem .8rem;border-left:3px solid var(--vv-acc);background:var(--vv-p2);
+  font:italic 400 .95rem/1.45 Georgia,serif;color:var(--vv-ink);max-height:9rem;overflow:auto;overflow-wrap:anywhere}
+.vv-done{margin:1rem 0;padding:.8rem 1rem;border:1px solid var(--vv-rule);background:var(--vv-p2);color:var(--vv-ink)}
+.vv-done:focus{outline:3px solid var(--vv-acc)}
+
+/* Forms (the panel and the Verify page's general form) */
+.vv-form{color:var(--vv-ink);font:400 1rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.vv-form fieldset{margin:0 0 .9rem;padding:0;border:0;min-width:0}
+.vv-form legend,.vv-form label{display:block;margin:0 0 .25rem;font-weight:600;color:var(--vv-ink)}
+.vv-form legend{padding:0}
+.vv-form label .vv-opt{font-weight:400;color:var(--vv-mut)}
+.vv-form .vv-type{display:flex;align-items:center;gap:.5rem;font-weight:400;min-height:32px;margin:0}
+.vv-form .vv-type input{width:20px;height:20px;margin:0;accent-color:var(--vv-acc)}
+.vv-form textarea,.vv-form input[type=text],.vv-form input[type=email],.vv-form select{display:block;width:100%;
+  box-sizing:border-box;margin:0 0 .8rem;padding:.55rem .6rem;border:1px solid var(--vv-rule);border-radius:4px;
+  background:var(--vv-p);color:var(--vv-ink);font:inherit;font-size:16px}
+.vv-form textarea{resize:vertical;min-height:7rem;margin-bottom:.2rem}
+.vv-count{margin:0 0 .8rem;font-size:.85rem;color:var(--vv-mut)}
+.vv-kid{margin:0 0 .9rem;padding:.6rem .8rem;border-radius:4px;background:var(--vv-kid);color:var(--vv-ink);font-size:.9rem}
+.vv-hp{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden}
+.vv-err{margin:0 0 .8rem;color:var(--vv-acc);font-weight:600}
+.vv-send{min-height:44px;padding:.55rem 1.1rem;border:0;border-radius:4px;background:var(--vv-acc);color:var(--vv-on);
+  font:600 1rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.vv-send[disabled]{opacity:.7;cursor:progress}
+
+/* Notes on this page */
+.vv-index{max-width:44rem;margin:3rem auto 1rem;padding:1.2rem 1.3rem;border-top:2px solid var(--vv-acc);
+  color:var(--vv-ink);font:400 1rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;box-sizing:border-box}
+.vv-index h2{margin:0 0 .4rem}
+.vv-lede,.vv-empty{color:var(--vv-mut);font-size:.92rem}
+.vv-list{list-style:none;margin:1rem 0 0;padding:0}
+.vv-entry{margin:0 0 1.4rem;padding:0 0 1rem;border-bottom:1px solid var(--vv-rule)}
+.vv-q{margin:0 0 .6rem;padding-left:.8rem;border-left:3px solid var(--vv-rule);font:italic 400 .95rem/1.45 Georgia,serif;
+  color:var(--vv-ink);overflow-wrap:anywhere}
+.vv-notes{list-style:none;margin:0;padding:0}
+.vv-note{margin:0 0 .7rem}
+.vv-meta{margin:0;font-size:.82rem;color:var(--vv-mut)}
+.vv-type{font-weight:600;color:var(--vv-acc)}
+.vv-text{margin:.15rem 0 0;white-space:pre-line;overflow-wrap:anywhere}
+.vv-back{margin:.3rem 0 0;font-size:.85rem}
+.vv-index a{color:var(--vv-acc)}
+
+/* Verify page */
+.vv-claim{margin:.8rem 0 0}
+.vv-claim-btn{display:inline-flex;align-items:center;min-height:44px;padding:.4rem .9rem;border:1px solid var(--vv-rule);
+  border-radius:4px;background:var(--vv-p);color:var(--vv-acc);cursor:pointer;text-decoration:none;font-size:.9rem}
+.vv-tell .vv-form{max-width:36rem}
+@media print{.vv-rail,.vv-sel,.vv-panel,.vv-claim{display:none!important}}

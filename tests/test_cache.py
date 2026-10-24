@@ -78,3 +78,53 @@ class CacheTests(unittest.TestCase):
 
 
 if __name__ == "__main__": unittest.main()
+
+
+class PdfParseRegressionTests(unittest.TestCase):
+    """A PDF that cannot be decoded must mark the page unreadable, never crash the run."""
+
+    def _run(self, stdout, returncode=0, stderr=b""):
+        import subprocess
+        from pipeline import cache
+        done = subprocess.CompletedProcess(["pdftotext"], returncode, stdout=stdout, stderr=stderr)
+        with patch.object(cache.shutil, "which", return_value="/usr/bin/pdftotext"), \
+             patch.object(cache.subprocess, "run", return_value=done) as run:
+            out = cache._parse_pdf(b"%PDF-1.4 fixture")
+        return out, run
+
+    def test_latin1_bytes_decode_without_crashing(self):
+        (text, err), run = self._run("In 1853, Levi became an American citiz\xe9n.".encode("latin-1"))
+        self.assertEqual(err, "")
+        self.assertIn("In 1853, Levi became", text)
+        self.assertIn("-enc", run.call_args.args[0])
+        self.assertNotIn("text", run.call_args.kwargs)
+
+    def test_missing_stdout_is_could_not_read(self):
+        (text, err), _ = self._run(None)
+        self.assertEqual(text, "")
+        self.assertIn("could not read PDF", err)
+
+    def test_subprocess_error_is_could_not_read(self):
+        import subprocess
+        from pipeline import cache
+        with patch.object(cache.shutil, "which", return_value="/usr/bin/pdftotext"), \
+             patch.object(cache.subprocess, "run", side_effect=subprocess.TimeoutExpired("pdftotext", 45)):
+            text, err = cache._parse_pdf(b"%PDF-1.4 fixture")
+        self.assertEqual(text, "")
+        self.assertIn("could not read PDF", err)
+
+    def test_fetch_of_unreadable_pdf_is_unparsed_not_exception(self):
+        from pipeline import cache
+
+        class Resp:
+            headers = {"Content-Type": "application/pdf"}
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def read(self): return b"%PDF-1.4 fixture"
+            def geturl(self): return "https://example.test/doc.pdf"
+
+        with tempfile.TemporaryDirectory() as td, \
+             patch.object(cache, "_parse_pdf", return_value=("", "could not read PDF: no extractable text")):
+            d = SourceFetcher(Path(td), opener=lambda req, timeout: Resp()).fetch("S001", "https://example.test/doc.pdf")
+        self.assertEqual(d.status, FetchStatus.UNPARSED)
+        self.assertIn("could not read PDF", d.error)

@@ -1,0 +1,101 @@
+{
+ "id": "LM-0009",
+ "kind": "fact",
+ "slug": "lamarr",
+ "section": "An only child in Vienna",
+ "sentence": "In 1933, an 18-year old Lamarr married Austrian industrialist, Fritz Mandl.",
+ "claim": "In 1933, an 18-year old Lamarr married Austrian industrialist, Fritz Mandl.",
+ "evidence": [
+  {
+   "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+   "span": "In 1933, an 18-year old Lamarr married Austrian industrialist, Fritz Mandl.",
+   "retrieved_at": "2026-10-17T18:39:43+00:00",
+   "sha256": "3e9d175eba0e86357a7974c91347b94bc5c81bd820f7d1f0d782aa6a6bc6cc39",
+   "retrieved_by": "network",
+   "snapshot": "living/.cache/verifier/900678d47c6745fb8e08eec3fa232b01fe110df7bec4eab47a1ff87686b35f6a.body",
+   "tier": 1,
+   "title": "Who Invented GPS? (Was It Really Movie Star Hedy Lamarr?) | National Air and Space Museum"
+  }
+ ],
+ "finder": {
+  "mode": "extractive (no model)",
+  "confidence": 0.56,
+  "rationale": [
+   "states a date ([1933])",
+   "names the inductee in the sentence",
+   "tier 1 source (si.edu)"
+  ],
+  "needs_editor": true
+ },
+ "media": {},
+ "status": "rejected",
+ "verdict": "REJECTED",
+ "gates": {
+  "gate1": {
+   "passed": true,
+   "reasons": [],
+   "checks": [
+    {
+     "url": "https://airandspace.si.edu/stories/editorial/gps-%E2%80%93-hollywood-actress-player-piano-and-hip-hop",
+     "tier": 1,
+     "retrieved_by": "network",
+     "span_present": true,
+     "pipeline_gate": true,
+     "context": " Force, correctly, with suggesting this coding scheme for GPS. They also credit the genesis of the idea to the actress Hedy Lamarr. Who was Hedy Lamarr? A movie poster for I Cospiratori starring Hedy Lamarr. Lamarr began acting in her home country of Austria under a version of her birth name, Hedwig Eva Maria Kiesler. In 1933, an 18-year old Lamarr married Austrian industrialist, Fritz Mandl. He had strong connections with both Mussolini, leader of facist Italy, and Hitler, leader of Nazi Germany. Over dinner conversations he had with his colleagues, Lamarr became acquainted with some of the advanced weapons the Nazis would later employ to such great effect. Among them were radio-controlled glide bombs. In",
+     "entity_on_page": true,
+     "entity_near_span": true
+    }
+   ],
+   "numbers_missing": [],
+   "superlatives_missing": []
+  },
+  "gate2": {
+   "passed": false,
+   "required": true,
+   "why": [
+    "contains a date, number or ordinal"
+   ],
+   "domains": [
+    "si.edu"
+   ],
+   "tiers": {
+    "si.edu": 1
+   },
+   "per_fact": {
+    "18": [
+     "si.edu"
+    ],
+    "1933": [
+     "si.edu"
+    ]
+   },
+   "reasons": [
+    "needs two independent domains (contains a date, number or ordinal); has 1: ['si.edu']",
+    "'18' is not stated by two independent domains (found in: ['si.edu'])",
+    "'1933' is not stated by two independent domains (found in: ['si.edu'])"
+   ]
+  },
+  "gate4": {
+   "passed": true,
+   "reasons": [],
+   "conflict_with": ""
+  },
+  "gate5": {
+   "passed": true,
+   "required": false,
+   "reasons": []
+  },
+  "gate3": {
+   "status": "NOT RUN",
+   "reason": "an earlier deterministic gate failed"
+  }
+ },
+ "reasons": [
+  "Gate 2: needs two independent domains (contains a date, number or ordinal); has 1: ['si.edu']",
+  "Gate 2: '18' is not stated by two independent domains (found in: ['si.edu'])",
+  "Gate 2: '1933' is not stated by two independent domains (found in: ['si.edu'])"
+ ],
+ "created_at": "2026-10-17T18:35:40+00:00",
+ "decision": {},
+ "related": ""
+}
