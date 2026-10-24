@@ -812,6 +812,8 @@ section.hero:not(.arrival-hero) .lede::first-letter{font-size:3.35em;line-height
 .cite-opts .none{font-style:italic;color:var(--muted)}
 .cite-opts input{margin-top:.15rem}
 .sheet-list .sl-cite{grid-column:1/-1;font:italic 400 .83rem/1.4 var(--text);color:var(--muted)}
+/* Confirmation under the evidence question on the Verification Desk */
+.cite-note{margin:.6rem 0 0;font:italic 400 .92rem/1.4 var(--text);color:var(--accent)}
 
 .frame-note{border:1px solid var(--rule-strong);background:var(--paper);
   padding:1.6rem 1.6rem 1.4rem;margin:2.8rem auto 0;max-width:48rem}

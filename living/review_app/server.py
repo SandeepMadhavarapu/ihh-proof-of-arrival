@@ -80,7 +80,7 @@ def card(p, sources) -> str:
                     "fixture": "Offline test fixture"}.get(by, by)
         ctx = highlight(c["context"], " ".join(e.span.split())) if c.get("context") else f"<mark>{E(e.span)}</mark>"
         ev_html.append(f"""<div class=card><p><span class="badge {'ok' if tier == 1 else 'warn' if tier == 2 else 'bad'}">Tier {tier or '—'}</span>
-<b>{E(registrable_domain(e.url))}</b> &middot; <a href="{E(e.url)}" rel="noopener noreferrer">open source</a></p>
+<b>{E(registrable_domain(e.url))}</b> &middot; {f'<code>{E(e.url)}</code> (given by a visitor: not a link; check it by hand)' if e.retrieved_by == "visitor" else f'<a href="{E(e.url)}" rel="noopener noreferrer">open source</a>'}</p>
 <p class=mut>{E(by_label)} {E(e.retrieved_at)} &middot; sha256 {E(e.sha256[:16]) or '—'}</p>
 <blockquote>{ctx}</blockquote></div>""")
     rows = []
@@ -104,6 +104,7 @@ def card(p, sources) -> str:
     can_approve = p.status == "pending" and p.verdict in PUBLISHABLE_VERDICTS and p.kind == "fact"
     why_not = "" if can_approve else ("<p class=mut>Approval is disabled: " + (
         "the gates rejected it." if p.verdict == "REJECTED" else
+        "this is a visitor's tip, not copy. If the source holds up, file a fact proposal with an exact span from it." if p.kind == "tip" else
         "this is a correction or re-verification item; an editor acts on it by hand." if p.kind != "fact" else
         f"status is {p.status}." if p.status != "pending" else f"verdict is {p.verdict}.") + "</p>")
     form = f"""<form method=post action="/decide"><input type=hidden name=token value="{TOKEN}"><input type=hidden name=id value="{p.id}">
@@ -116,6 +117,7 @@ def card(p, sources) -> str:
 <h2 id="h-{p.id}">{p.id} &middot; {E(p.slug)} &middot; {E(p.kind)} <span class="badge {VERDICT_CLASS.get(p.verdict, 'mut')}">{E(VERDICT_TEXT.get(p.verdict, p.verdict))}</span></h2>
 <p class=mut>Status: {E(p.status)} &middot; section: {E(p.section)} &middot; finder: {E(finder.get('mode', ''))} (confidence {E(str(finder.get('confidence', '—')))}) &middot; independent domains: {len(domains)} ({E(', '.join(domains))})</p>
 <div class=row><div><h3>Proposed sentence</h3><blockquote>{E(p.sentence)}</blockquote>{editor}
+{f"<h3>Visitor tip (not copy)</h3><blockquote>{E(finder.get('visitor_text', ''))}</blockquote><p class=mut>Source given: {E(finder.get('visitor_source', ''))}</p>" if p.kind == "tip" else ""}
 {f"<p class=warn><b>Conflicts with:</b> {E(p.related)}</p>" if p.related else ""}
 <h3>Gates</h3><table>{''.join(rows)}</table>
 {"<ul>" + "".join(f"<li>{E(r)}</li>" for r in p.reasons) + "</ul>" if p.reasons else ""}</div>

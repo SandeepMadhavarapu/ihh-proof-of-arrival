@@ -17,7 +17,7 @@ from typing import Any
 
 from .config import AUDIT_LOG, PROPOSALS
 
-KINDS = ("fact", "media", "correction", "reverify")
+KINDS = ("fact", "media", "correction", "reverify", "tip")   # tip: from a visitor, voices/bridge.py
 STATUSES = ("pending", "approved", "rejected", "published")
 VERDICTS = ("NOT_VERIFIED", "PASSED_ALL_GATES", "NEEDS_HUMAN_JUDGMENT", "CONFLICT", "REJECTED")
 
@@ -41,7 +41,7 @@ class Evidence:
 @dataclass
 class Proposal:
     id: str
-    kind: str                   # fact | media | correction | reverify
+    kind: str                   # fact | media | correction | reverify | tip
     slug: str
     section: str                # target section heading in copy.md
     sentence: str               # proposed visitor-facing copy (ages 12-18)

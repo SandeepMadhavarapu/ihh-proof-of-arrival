@@ -39,3 +39,6 @@ Thumbs.db
 
 # Living Museum: fetched pages, snapshots, human imports, simulations (never committed)
 living/.cache/
+
+# Visitor Voices local demo: its own site copy, notes, audit log and tips (never committed)
+voices/.demo/

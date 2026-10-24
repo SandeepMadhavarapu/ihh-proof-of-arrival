@@ -54,6 +54,8 @@ def verify_pending(store: Store, *, dry_run: bool = False, max_fetches: int | No
     for p in store.all():
         if p.status != "pending" or p.verdict != "NOT_VERIFIED":
             continue
+        if p.kind == "tip":     # a visitor's tip has no span yet; a curator files a fact proposal
+            continue
         old = p.status
         verify(p, fetcher, sources, judge)
         if not dry_run:

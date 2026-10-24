@@ -13,7 +13,7 @@ Writes  <folder>/copy.html      paste into ONE WordPress "Custom HTML" block
 
 The format of copy.md is documented in templates/copy-template.md.
 """
-import csv, html, os, re, subprocess, sys
+import csv, hashlib, html, os, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = open(os.path.join(ROOT, "templates", "profile.css"), encoding="utf-8").read()
@@ -33,6 +33,26 @@ def inline(s):
     s = re.sub(r"\*(.+?)\*", r"<em>\1</em>", s)
     s = re.sub(r"\[(.+?)\]\((https?://[^)]+)\)", r'<a href="\2" rel="noopener">\1</a>', s)
     return s
+
+
+def slugify(s, n=24):
+    s = re.sub(r"[^a-z0-9]+", "-", html.unescape(s).lower()).strip("-")
+    return s[:n].rstrip("-") or "section"
+
+
+class Anchors:
+    """Stable passage ids for Margin Notes: section slug + a short hash of the passage's text.
+    The same text always gets the same id, so ids survive rebuilds; an edited passage gets a
+    new id, and voices/anchors.py re-attaches notes to it by their quoted text instead."""
+
+    def __init__(self, slug):
+        self.slug, self.seen = slug, {}
+
+    def __call__(self, section, rendered):
+        text = " ".join(html.unescape(re.sub(r"<[^>]+>", "", rendered)).split())
+        base = f"{self.slug}-{slugify(section)}-{hashlib.sha1(text.encode('utf-8')).hexdigest()[:6]}"
+        n = self.seen[base] = self.seen.get(base, 0) + 1
+        return f' id="{base if n == 1 else f"{base}-{n}"}" data-ihh-anchor'
 
 
 def field(md, label):
@@ -120,6 +140,7 @@ def build(folder):
     rows = list(csv.DictReader(open(os.path.join(folder, "media-manifest.csv"), encoding="utf-8")))
     shown = [r for r in rows if not r["recommendation"].upper().startswith("DROP")]
     p = parse(md)
+    aid = Anchors(os.path.basename(folder))
     by_no = {r["item_no"]: r for r in rows}
 
     for r in shown:
@@ -147,16 +168,16 @@ def build(folder):
         return f'''    <li class="src-item"{anchor}>
       {thumb}
       <h3 class="src-h">{E(r["title"])}</h3>
-      <p class="gloss">{E(r["gloss"])}</p>
+      <p class="gloss"{aid("sources", E(r["gloss"]))}>{E(r["gloss"])}</p>
       {dup}
       <p class="meta">{E(r["creator"])} &middot; {E(r["date_created"])} &middot; {link}</p>
       <p class="rights"><b>Rights, in the institution&rsquo;s words:</b> {E(r["rights_statement_verbatim"])}</p>
     </li>'''
 
-    def para(x):
+    def para(x, section):
         m = VERIFIED.search(x)
         if not m:
-            return f"<p>{inline(x)}</p>"
+            return f"<p{aid(section, inline(x))}>{inline(x)}</p>"
         fact = verified.get(m.group(1))
         if fact is None:
             sys.exit(f"{folder}: copy.md cites {m.group(1)} but verified-facts.json has no such fact")
@@ -165,12 +186,12 @@ def build(folder):
         badge = (f'<span class="vbadge"><span aria-hidden="true">&#10003;</span> Verified &middot; '
                  f'{word} {links} &middot; Last checked <time datetime="{fact["last_checked"]}">'
                  f'{checked(fact["last_checked"])}</time></span>')
-        return f'<p class="vfact">{inline(x[:m.start()])} {badge}</p>'
+        return f'<p class="vfact"{aid(section, inline(x[:m.start()]))}>{inline(x[:m.start()])} {badge}</p>'
 
     secs = "\n".join(
         f'''  <details class="sec"{' open' if i == 0 else ''}>
     <summary><h3>{E(t)}</h3></summary>
-    {"".join(para(x) for x in paras)}
+    {"".join(para(x, t) for x in paras)}
   </details>''' for i, (t, paras) in enumerate(p["sections"]))
 
     spotlight = ""
@@ -179,19 +200,19 @@ def build(folder):
         excerpt = ""
         if p["spot_text"]:
             ex = " ".join(l.lstrip("> ").strip() for l in p["spot_text"].group(1).splitlines())
-            excerpt = f'<blockquote class="excerpt"><p>{inline(ex)}</p></blockquote>'
+            excerpt = f'<blockquote class="excerpt"><p{aid("document", inline(ex))}>{inline(ex)}</p></blockquote>'
         img = (f'<img class="th" src="{s["_web"]}" alt="{E(s["alt_text"])}" loading="lazy">'
                if s.get("_web") else "")
         spotlight = f'''<section class="doc">
   <p class="label">The document behind this story</p>
   {img}
   <p><b>{E(s["title"])}</b> &mdash; {E(s["creator"])}, {E(s["date_created"])}.</p>
-  <p>{inline(p["spot_intro"])}</p>
+  <p{aid("document", inline(p["spot_intro"]))}>{inline(p["spot_intro"])}</p>
   {excerpt}
   <p class="meta">{credit(s)}</p>
 </section>'''
 
-    quote = (f'<blockquote class="pull">&ldquo;{inline(p["quote"])}&rdquo;'
+    quote = (f'<blockquote class="pull"{aid("quote", inline(p["quote"]))}>&ldquo;{inline(p["quote"])}&rdquo;'
              f'<cite>{inline(p["quote_source"])}</cite></blockquote>') if p["quote"] else ""
     qs = "\n".join(f"      <li>{inline(q)}</li>" for q in p["questions"])
     acts = "\n".join(f"      <li><b>{inline(t)}</b> {inline(b)}</li>" for t, b in p["activities"])
@@ -211,17 +232,17 @@ def build(folder):
 .ihh-profile blockquote.excerpt{{margin:1rem 0;padding-left:1rem;border-left:3px solid var(--rule);font-size:1rem;color:var(--ink);font-style:normal}}
 </style>
 
-<p class="opening">{inline(p["opening"])}</p>
+<p class="opening"{aid("opening", inline(p["opening"]))}>{inline(p["opening"])}</p>
 
 <figure class="anchor">
   <img src="{anchor["_web"]}" alt="{E(anchor["alt_text"])}" loading="eager">
-  <figcaption><b>{E(anchor["title"])}.</b> {credit(anchor)}</figcaption>
+  <figcaption{aid("anchor-caption", E(anchor["title"]))}><b>{E(anchor["title"])}.</b> {credit(anchor)}</figcaption>
 </figure>
 
 <div class="w">
 <!-- If your theme already prints the page title as a heading, delete the next line. -->
 <h1>{E(p["name"])}</h1>
-<p class="standfirst">{inline(p["standfirst"])}</p>
+<p class="standfirst"{aid("standfirst", inline(p["standfirst"]))}>{inline(p["standfirst"])}</p>
 
 {spotlight}
 

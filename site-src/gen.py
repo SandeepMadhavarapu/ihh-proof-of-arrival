@@ -5,11 +5,14 @@
 Run from anywhere:  python3 gen.py
 Paths are resolved relative to this file, so a fresh extraction works unchanged.
 """
-import os, sys, re
+import html, json, os, sys, re
 HERE = os.path.dirname(os.path.abspath(__file__))  # site-src/: generator and its data
-SITE = os.path.join(os.path.dirname(HERE), "site")  # site/: deployable output only
+ROOT = os.path.dirname(HERE)
+SITE = os.path.join(ROOT, "site")  # site/: deployable output only
 sys.path.insert(0, HERE)
+sys.path.insert(0, ROOT)
 from cases import CASES
+from voices import render as voices_render
 
 VERDICTS = [("confirmed","Confirmed"),("unsupported","Not supported"),("contradicted","Contradicted")]
 LABEL = dict(VERDICTS)
@@ -30,7 +33,75 @@ def ev_html(items):
           f'        <p class="ev-ref">{cite}</p></li>')
     return "\n".join(out)
 
-def claim_html(c, cl, i, total):
+def claim_report(cfg, cl):
+    """No-JS route to "Report or add to this claim"; margin-notes.js adds the button."""
+    if cfg["adapter"] == "none":
+        return ""
+    href = voices_render.nojs_href(cfg, "verify", cl["id"])
+    link = (f'<a class="vv-nojs vv-ui" href="{html.escape(href)}">Report or add to this claim</a>' if href else "")
+    return f'\n    <p class="vv-claim">{link}</p>'
+
+
+def inductee_options():
+    with open(os.path.join(ROOT, "site-data", "published.json"), encoding="utf-8") as f:
+        slugs = json.load(f)["published"]
+    opts = []
+    for s in slugs:
+        with open(os.path.join(ROOT, "inductees", s, "copy.md"), encoding="utf-8") as f:
+            name = re.search(r"^# (.+)$", f.read(), re.M).group(1).strip()
+        opts.append(f'      <option value="{s}">{html.escape(name)}</option>')
+    return "\n".join(opts)
+
+
+def tell_html(cfg):
+    """The general "Spot something? Tell us" form. Sent by margin-notes.js, or without
+    JavaScript straight to the demo's form handler; WordPress and email say what to do instead."""
+    if cfg["adapter"] == "none":
+        return ""
+    # Never a GET form: without the demo's handler, the form stays hidden until the script runs,
+    # so nothing a visitor types can end up in an address bar.
+    action = ' method="post" action="/voices/form"' if cfg["adapter"] == "demo" else ' method="post" hidden'
+    nojs = ""
+    if cfg["adapter"] == "email":
+        addr = html.escape(cfg["email"]["address"])
+        nojs = f'<noscript><p class="note">Without JavaScript, email the curators at <a href="mailto:{addr}">{addr}</a>.</p></noscript>'
+    elif cfg["adapter"] == "wordpress":
+        nojs = '<noscript><p class="note">Without JavaScript, use the comment form at the end of this page.</p></noscript>'
+    return f'''
+<section class="vv-tell" id="tell" aria-labelledby="tell-h">
+  <h2 id="tell-h">Spot something? Tell us</h2>
+  <p>Know something about one of our inductees that we have missed, or think we have
+  something wrong? Tell a curator. A person reads every message, and nothing on a page
+  changes until a curator has checked it against a trusted source.</p>
+  {nojs}
+  <form class="vv-form" id="vv-tell-form"{action}>
+    <input type="hidden" name="kind" value="tip"><input type="hidden" name="type" value="more">
+    <label for="tell-inductee">Which inductee is it about?</label>
+    <select id="tell-inductee" name="inductee">
+{inductee_options()}
+      <option value="general">Someone else, or the museum in general</option>
+    </select>
+    <label for="tell-text">What you know</label>
+    <textarea id="tell-text" name="text" maxlength="1000" rows="5" required></textarea>
+    <label for="tell-source">Your source <span class="vv-opt">(optional: a book, website, record or family document)</span></label>
+    <input type="text" id="tell-source" name="source" maxlength="300">
+    <label for="tell-rel">How you know <span class="vv-opt">(optional, for example: family member, teacher, researcher)</span></label>
+    <input type="text" id="tell-rel" name="relationship" maxlength="100">
+    <p class="vv-kid" id="tell-kid">{voices_render.under13()}</p>
+    <label for="tell-name">First name <span class="vv-opt">(optional)</span></label>
+    <input type="text" id="tell-name" name="name" maxlength="40" autocomplete="given-name" aria-describedby="tell-kid">
+    <label for="tell-email">Email <span class="vv-opt">(optional, never shown; only so a curator can reply)</span></label>
+    <input type="email" id="tell-email" name="email" maxlength="120" autocomplete="email" aria-describedby="tell-kid">
+    <div class="vv-hp" aria-hidden="true"><label for="tell-website">Leave this empty</label><input type="text" id="tell-website" name="website" tabindex="-1" autocomplete="off"></div>
+    <p class="vv-err" role="alert" hidden></p>
+    <button type="submit" class="vv-send">Send to a curator</button>
+  </form>
+  <p class="vv-done" id="vv-tell-done" role="status" tabindex="-1" hidden></p>
+</section>
+'''
+
+
+def claim_html(c, cl, i, total, cfg):
     tag = ('<span class="cl-tag live">Published on immigranthallofhonor.org</span>'
            if cl["origin"]=="live" else
            '<span class="cl-tag ours">This exhibit&rsquo;s own claim</span>')
@@ -75,18 +146,21 @@ def claim_html(c, cl, i, total):
       <p class="stamp {cl['verdict']}">{LABEL[cl['verdict']]}</p>
       <p>{cl['reasoning']}</p>
       <p class="lesson"><b>What this one teaches.</b> {cl['lesson']}</p>
-    </details>
+    </details>{claim_report(cfg, cl)}
   </li>'''
 
-def main():
-    shell=open(os.path.join(SITE,"about.html"),encoding="utf-8").read()
+def main(site=SITE, voices=None):
+    """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy."""
+    cfg = voices_render.load_config(ROOT, voices)
+    on = cfg["adapter"] != "none"
+    shell=open(os.path.join(site,"about.html"),encoding="utf-8").read()
     head=shell[shell.index("<body>"):shell.index("</header>")+len("</header>")]
     foot=shell[shell.index('<footer class="site-foot">'):]
 
     sections=[]
     for c in CASES:
         t=len(c["claims"])
-        claims="\n\n".join(claim_html(c,cl,i+1,t) for i,cl in enumerate(c["claims"]))
+        claims="\n\n".join(claim_html(c,cl,i+1,t,cfg) for i,cl in enumerate(c["claims"]))
         sections.append(f'''<section class="case" id="case-{c['id']}" aria-labelledby="h-{c['id']}">
   <p class="case-kick">Case file &mdash; arrived {c['arrived']} from {c['from']}</p>
   <h2 id="h-{c['id']}">{c['name']}</h2>
@@ -109,7 +183,8 @@ def main():
 
     jump="\n".join('    <li><a href="#case-%s">%s</a></li>'%(c["id"],c["name"]) for c in CASES)
 
-    main_html=f'''<main id="main" class="wide">
+    attrs = voices_render.page_attrs(cfg, "verify") if on else ""
+    main_html=f'''<main id="main" class="wide"{attrs}>
 
 <section class="hero vd-hero">
   <p class="kicker">An interactive exhibit</p>
@@ -178,7 +253,7 @@ def main():
   </p>
   <p class="note" id="copy-note" hidden></p>
 </section>
-
+{tell_html(cfg)}
 <section class="colleague">
   <h2>Why a museum would build this</h2>
   <p>Every other way of making a history site &ldquo;engaging&rdquo; asks the visitor to trust
@@ -205,7 +280,10 @@ def main():
     out = out.replace(' href="about.html" aria-current="page"', ' href="about.html"')
     out = out.replace('<li><a href="verify.html">Verify</a></li>',
                       '<li><a href="verify.html" aria-current="page">Verify</a></li>')
-    path=os.path.join(SITE,"verify.html")
+    if on:
+        out = out.replace("</head>", '<link rel="stylesheet" href="assets/margin-notes.css">\n</head>', 1)
+        out = out.replace("</body>", '<script src="assets/margin-notes.js" defer></script>\n</body>', 1)
+    path=os.path.join(site,"verify.html")
     open(path,"w",encoding="utf-8",newline="\n").write(out)
     print(f"verify.html: {TOTAL} claims, {EV} evidence items ({LINKED} linked), {len(out)} chars")
 

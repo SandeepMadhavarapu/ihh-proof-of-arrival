@@ -1,6 +1,6 @@
 # Immigrant Hall of Honor — optional standalone demo
 
-Twenty-one pages. 466 KB of HTML, CSS, scripts and text; portrait and archival image files in `media/` additional. No framework, no build step, no third-party request, no tracking.
+Twenty-one pages. 505 KB of HTML, CSS, scripts and text; portrait and archival image files in `media/` additional. No framework, no build step, no third-party request, no tracking.
 Open `index.html` in any browser. There is nothing to install.
 
 This is a supplement/pilot demonstration, not a museum-site replacement. See

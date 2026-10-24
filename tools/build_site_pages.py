@@ -10,13 +10,29 @@ site/<slug>.html and copies the page's web images to site/media/<slug>/. A folde
 inductees/ that is not on that list is never published, whatever it contains. It also writes
 site/new.html ("New at the Museum") from site-data/new-at-the-museum.json, which only the
 approval step (living/publisher.py, through a reviewed pull request) ever appends to.
+Margin Notes: site-data/visitor-voices.json chooses how visitors send notes (none, wordpress or
+email; never the local demo), and only notes marked approved in site-data/approved-notes.json
+are drawn, each re-attached to its passage by voices/anchors.py or left out and reported.
 The chrome (head, header, footer) is taken from site/inductees.html so generated pages cannot
 drift from the rest of the site. This script reads nothing under living/.
 """
 import datetime, html, json, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+from voices import render as voices_render  # noqa: E402
+
 E = html.escape
+NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
+NOTES_JS = '<script src="assets/margin-notes.js" defer></script>\n'
+
+
+def with_notes(head, foot, css, js):
+    if css:
+        head = head.replace("</head>", NOTES_CSS + "</head>", 1)
+    if js:
+        foot = foot.replace("</body>", NOTES_JS + "</body>", 1)
+    return head, foot
 
 
 def strip_dark_mode(css_html):
@@ -101,8 +117,11 @@ person on our team before it was added to the inductee&rsquo;s page.</p>
     print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
 
 
-def main(root=ROOT):
-    site = os.path.join(root, "site")
+def main(root=ROOT, site=None, voices=None):
+    """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy."""
+    site = site or os.path.join(root, "site")
+    cfg = voices_render.load_config(root, voices)
+    approved = voices_render.load_approved(root) if voices is None else []
     base = os.path.join(root, "inductees")
     head, foot = chrome(site)
     slugs = published_slugs(root)
@@ -118,7 +137,7 @@ def main(root=ROOT):
             frag = f.read()
         person = re.search(r"<h1>(.+?)</h1>", frag).group(1)
         names[name] = html.unescape(person)
-        standfirst = html.unescape(re.sub(r"<[^>]+>", "", re.search(r'<p class="standfirst">(.+?)</p>', frag, re.S).group(1)))
+        standfirst = html.unescape(re.sub(r"<[^>]+>", "", re.search(r'<p class="standfirst"[^>]*>(.+?)</p>', frag, re.S).group(1)))
         desc = html.escape(" ".join(standfirst.split())[:200], quote=True)
 
         media_out = os.path.join(site, "media", name)
@@ -132,10 +151,16 @@ def main(root=ROOT):
         # The page's own <h1> is the person's name; drop the WordPress-only comment about it.
         frag = re.sub(r"<!-- If your theme already prints.*?-->\n", "", frag)
 
-        page_head = retitle(head, f"{person} | Immigrant Hall of Honor", desc)
-        out = (page_head + '<main id="main" class="profile-page">\n'
+        frag, index, flagged = voices_render.annotate(frag, name, [n for n in approved if n["page"] == name], cfg)
+        for nid in flagged:
+            print(f"  FLAGGED for the moderator: note {nid} on {name} no longer matches any passage; not shown")
+        on = cfg["adapter"] != "none"
+        page_head, page_foot = with_notes(retitle(head, f"{person} | Immigrant Hall of Honor", desc), foot,
+                                          bool(index) or on, on)
+        attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
+        out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
                + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
-               + frag + "\n</main>" + foot)
+               + frag + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
             f.write(out)
         print(f"site/{name}.html")

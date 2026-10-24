@@ -1,0 +1,4 @@
+{
+ "_note": "Visitor notes a curator has approved. Only entries with status approved are ever drawn on the site. Written by voices/export_approved.py from the moderation store, and changed only through a reviewed pull request. Never put visitor text in inductees/*/copy.md.",
+ "notes": []
+}

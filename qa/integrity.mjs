@@ -44,7 +44,7 @@ for (const n of IND){
   ck(!prof.includes('<script'), n+'.html: no script inside the profile');
   const imgs=[...prof.matchAll(/<img [^>]*>/g)].map(m=>m[0]);
   ck(imgs.length>0 && imgs.every(t=>/alt="[^"]{10,}"/.test(t)), n+'.html: all '+imgs.length+' images have alt text');
-  ck(/<figcaption>[\s\S]*?Rights, in the institution/.test(prof), n+'.html: anchor image carries its rights wording');
+  ck(/<figcaption[^>]*>[\s\S]*?Rights, in the institution/.test(prof), n+'.html: anchor image carries its rights wording');
 }
 
 /* withdrawn claim must not survive as an assertion anywhere */
