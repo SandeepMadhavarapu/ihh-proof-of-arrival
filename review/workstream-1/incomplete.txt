@@ -1,0 +1,4 @@
+axe "incomplete" colour-contrast nodes across 11 pages: 73
+  70×  Element's background color could not be determined due to a background gradient
+  2×  Element's background color could not be determined due to a pseudo element
+  1×  Element content contains only non-text characters

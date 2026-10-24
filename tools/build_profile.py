@@ -72,10 +72,14 @@ def parse(md):
 def web_copy(folder, filename):
     """1600px JPEG for the page; originals stay untouched in media/."""
     src = os.path.join(folder, "media", filename)
-    if not os.path.exists(src):
-        return None
     out_name = os.path.splitext(filename)[0] + ".jpg"
     out = os.path.join(folder, "media", "web", out_name)
+    if not os.path.exists(src):
+        # Full-resolution originals deliberately stay outside Git. A fresh checkout
+        # builds from the reviewed web derivative without recompressing it.
+        if os.path.isfile(out) and os.path.getsize(out) > 0:
+            return "media/web/" + out_name
+        return None
     os.makedirs(os.path.dirname(out), exist_ok=True)
     if not os.path.exists(out) or os.path.getmtime(out) < os.path.getmtime(src):
         cmd = (["sips", "-s", "format", "jpeg", "-s", "formatOptions", "82", "-Z", "1600", src, "--out", out]

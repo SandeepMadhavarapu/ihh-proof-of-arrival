@@ -1,0 +1,178 @@
+OPEN ITEM: berlin/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: einstein/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: hope/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: muir/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: naismith/search-log.csv missing; team lead will supply the actual research log.
+OPEN ITEM: strauss/search-log.csv missing; team lead will supply the actual research log.
+  OK   site/verify.html regenerates byte-identically
+  OK   handover/OPEN-ITEMS.md regenerates byte-identically
+  OK   site/albright.html regenerates byte-identically
+  OK   handover/albright/copy.html regenerates byte-identically
+  OK   handover/albright/copy-full.md regenerates byte-identically
+  OK   handover/albright/preview.html regenerates byte-identically
+  OK   handover/albright/media-manifest.csv regenerates byte-identically
+  OK   inductees/albright/copy.html regenerates byte-identically
+  OK   inductees/albright/copy-full.md regenerates byte-identically
+  OK   inductees/albright/preview.html regenerates byte-identically
+  OK   inductees/albright/media/web/albright-1997-commission-duplicate.jpg regenerates byte-identically
+  OK   handover/albright/media/web/albright-1997-commission-duplicate.jpg regenerates byte-identically
+  OK   site/media/albright/albright-1997-commission-duplicate.jpg regenerates byte-identically
+  OK   inductees/albright/media/web/albright-1997-swearing-in.jpg regenerates byte-identically
+  OK   handover/albright/media/web/albright-1997-swearing-in.jpg regenerates byte-identically
+  OK   site/media/albright/albright-1997-swearing-in.jpg regenerates byte-identically
+  OK   inductees/albright/media/web/albright-1999-truman-library-1.jpg regenerates byte-identically
+  OK   handover/albright/media/web/albright-1999-truman-library-1.jpg regenerates byte-identically
+  OK   site/media/albright/albright-1999-truman-library-1.jpg regenerates byte-identically
+  OK   inductees/albright/media/web/albright-2016-naturalization.jpg regenerates byte-identically
+  OK   handover/albright/media/web/albright-2016-naturalization.jpg regenerates byte-identically
+  OK   site/media/albright/albright-2016-naturalization.jpg regenerates byte-identically
+  OK   handover/albright/search-log.csv regenerates byte-identically
+  OK   site/berlin.html regenerates byte-identically
+  OK   handover/berlin/copy.html regenerates byte-identically
+  OK   handover/berlin/copy-full.md regenerates byte-identically
+  OK   handover/berlin/preview.html regenerates byte-identically
+  OK   handover/berlin/media-manifest.csv regenerates byte-identically
+  OK   inductees/berlin/copy.html regenerates byte-identically
+  OK   inductees/berlin/copy-full.md regenerates byte-identically
+  OK   inductees/berlin/preview.html regenerates byte-identically
+  OK   inductees/berlin/media/web/berlin-portrait-nywts.jpg regenerates byte-identically
+  OK   handover/berlin/media/web/berlin-portrait-nywts.jpg regenerates byte-identically
+  OK   site/media/berlin/berlin-portrait-nywts.jpg regenerates byte-identically
+  OK   site/cruz.html regenerates byte-identically
+  OK   handover/cruz/copy.html regenerates byte-identically
+  OK   handover/cruz/copy-full.md regenerates byte-identically
+  OK   handover/cruz/preview.html regenerates byte-identically
+  OK   handover/cruz/media-manifest.csv regenerates byte-identically
+  OK   inductees/cruz/copy.html regenerates byte-identically
+  OK   inductees/cruz/copy-full.md regenerates byte-identically
+  OK   inductees/cruz/preview.html regenerates byte-identically
+  OK   inductees/cruz/media/web/cruz-1970s-dress-arteaga-nmaahc.jpg regenerates byte-identically
+  OK   handover/cruz/media/web/cruz-1970s-dress-arteaga-nmaahc.jpg regenerates byte-identically
+  OK   site/media/cruz/cruz-1970s-dress-arteaga-nmaahc.jpg regenerates byte-identically
+  OK   inductees/cruz/media/web/cruz-2024-quarter-reverse-usmint.jpg regenerates byte-identically
+  OK   handover/cruz/media/web/cruz-2024-quarter-reverse-usmint.jpg regenerates byte-identically
+  OK   site/media/cruz/cruz-2024-quarter-reverse-usmint.jpg regenerates byte-identically
+  OK   handover/cruz/search-log.csv regenerates byte-identically
+  OK   site/einstein.html regenerates byte-identically
+  OK   handover/einstein/copy.html regenerates byte-identically
+  OK   handover/einstein/copy-full.md regenerates byte-identically
+  OK   handover/einstein/preview.html regenerates byte-identically
+  OK   handover/einstein/media-manifest.csv regenerates byte-identically
+  OK   inductees/einstein/copy.html regenerates byte-identically
+  OK   inductees/einstein/copy-full.md regenerates byte-identically
+  OK   inductees/einstein/preview.html regenerates byte-identically
+  OK   inductees/einstein/media/web/einstein-portrait-turner.jpg regenerates byte-identically
+  OK   handover/einstein/media/web/einstein-portrait-turner.jpg regenerates byte-identically
+  OK   site/media/einstein/einstein-portrait-turner.jpg regenerates byte-identically
+  OK   site/hope.html regenerates byte-identically
+  OK   handover/hope/copy.html regenerates byte-identically
+  OK   handover/hope/copy-full.md regenerates byte-identically
+  OK   handover/hope/preview.html regenerates byte-identically
+  OK   handover/hope/media-manifest.csv regenerates byte-identically
+  OK   inductees/hope/copy.html regenerates byte-identically
+  OK   inductees/hope/copy-full.md regenerates byte-identically
+  OK   inductees/hope/preview.html regenerates byte-identically
+  OK   inductees/hope/media/web/hope-portrait-nbc.jpg regenerates byte-identically
+  OK   handover/hope/media/web/hope-portrait-nbc.jpg regenerates byte-identically
+  OK   site/media/hope/hope-portrait-nbc.jpg regenerates byte-identically
+  OK   site/lamarr.html regenerates byte-identically
+  OK   handover/lamarr/copy.html regenerates byte-identically
+  OK   handover/lamarr/copy-full.md regenerates byte-identically
+  OK   handover/lamarr/preview.html regenerates byte-identically
+  OK   handover/lamarr/media-manifest.csv regenerates byte-identically
+  OK   inductees/lamarr/copy.html regenerates byte-identically
+  OK   inductees/lamarr/copy-full.md regenerates byte-identically
+  OK   inductees/lamarr/preview.html regenerates byte-identically
+  OK   inductees/lamarr/media/web/lamarr-1939-portrait-lat.jpg regenerates byte-identically
+  OK   handover/lamarr/media/web/lamarr-1939-portrait-lat.jpg regenerates byte-identically
+  OK   site/media/lamarr/lamarr-1939-portrait-lat.jpg regenerates byte-identically
+  OK   inductees/lamarr/media/web/lamarr-1942-patent-2292387-sheet1.jpg regenerates byte-identically
+  OK   handover/lamarr/media/web/lamarr-1942-patent-2292387-sheet1.jpg regenerates byte-identically
+  OK   site/media/lamarr/lamarr-1942-patent-2292387-sheet1.jpg regenerates byte-identically
+  OK   inductees/lamarr/media/web/lamarr-1942-patent-2292387-text-p1.jpg regenerates byte-identically
+  OK   handover/lamarr/media/web/lamarr-1942-patent-2292387-text-p1.jpg regenerates byte-identically
+  OK   site/media/lamarr/lamarr-1942-patent-2292387-text-p1.jpg regenerates byte-identically
+  OK   inductees/lamarr/media/web/lamarr-1945-property-claim-p1.jpg regenerates byte-identically
+  OK   handover/lamarr/media/web/lamarr-1945-property-claim-p1.jpg regenerates byte-identically
+  OK   site/media/lamarr/lamarr-1945-property-claim-p1.jpg regenerates byte-identically
+  OK   inductees/lamarr/media/web/lamarr-1945-property-claim-p2.jpg regenerates byte-identically
+  OK   handover/lamarr/media/web/lamarr-1945-property-claim-p2.jpg regenerates byte-identically
+  OK   site/media/lamarr/lamarr-1945-property-claim-p2.jpg regenerates byte-identically
+  OK   handover/lamarr/search-log.csv regenerates byte-identically
+  OK   site/muir.html regenerates byte-identically
+  OK   handover/muir/copy.html regenerates byte-identically
+  OK   handover/muir/copy-full.md regenerates byte-identically
+  OK   handover/muir/preview.html regenerates byte-identically
+  OK   handover/muir/media-manifest.csv regenerates byte-identically
+  OK   inductees/muir/copy.html regenerates byte-identically
+  OK   inductees/muir/copy-full.md regenerates byte-identically
+  OK   inductees/muir/preview.html regenerates byte-identically
+  OK   inductees/muir/media/web/muir-watkins-portrait-c1875.jpg regenerates byte-identically
+  OK   handover/muir/media/web/muir-watkins-portrait-c1875.jpg regenerates byte-identically
+  OK   site/media/muir/muir-watkins-portrait-c1875.jpg regenerates byte-identically
+  OK   site/naismith.html regenerates byte-identically
+  OK   handover/naismith/copy.html regenerates byte-identically
+  OK   handover/naismith/copy-full.md regenerates byte-identically
+  OK   handover/naismith/preview.html regenerates byte-identically
+  OK   handover/naismith/media-manifest.csv regenerates byte-identically
+  OK   inductees/naismith/copy.html regenerates byte-identically
+  OK   inductees/naismith/copy-full.md regenerates byte-identically
+  OK   inductees/naismith/preview.html regenerates byte-identically
+  OK   inductees/naismith/media/web/naismith-portrait.jpg regenerates byte-identically
+  OK   handover/naismith/media/web/naismith-portrait.jpg regenerates byte-identically
+  OK   site/media/naismith/naismith-portrait.jpg regenerates byte-identically
+  OK   site/pei.html regenerates byte-identically
+  OK   handover/pei/copy.html regenerates byte-identically
+  OK   handover/pei/copy-full.md regenerates byte-identically
+  OK   handover/pei/preview.html regenerates byte-identically
+  OK   handover/pei/media-manifest.csv regenerates byte-identically
+  OK   inductees/pei/copy.html regenerates byte-identically
+  OK   inductees/pei/copy-full.md regenerates byte-identically
+  OK   inductees/pei/preview.html regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1935-penn-admission-radiogram.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1935-penn-admission-radiogram.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1935-penn-admission-radiogram.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1935-san-francisco-arrival-statement.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1935-san-francisco-arrival-statement.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1935-san-francisco-arrival-statement.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1935-shanghai-consulate-precis.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1935-shanghai-consulate-precis.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1935-shanghai-consulate-precis.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1946-change-of-status-p1.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1946-change-of-status-p1.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1946-change-of-status-p1.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1947-harvard-dean-letter.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1947-harvard-dean-letter.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1947-harvard-dean-letter.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1947-permanent-residence-calais.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1947-permanent-residence-calais.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1947-permanent-residence-calais.jpg regenerates byte-identically
+  OK   inductees/pei/media/web/pei-1978-east-building-highsmith.jpg regenerates byte-identically
+  OK   handover/pei/media/web/pei-1978-east-building-highsmith.jpg regenerates byte-identically
+  OK   site/media/pei/pei-1978-east-building-highsmith.jpg regenerates byte-identically
+  OK   handover/pei/search-log.csv regenerates byte-identically
+  OK   site/strauss.html regenerates byte-identically
+  OK   handover/strauss/copy.html regenerates byte-identically
+  OK   handover/strauss/copy-full.md regenerates byte-identically
+  OK   handover/strauss/preview.html regenerates byte-identically
+  OK   handover/strauss/media-manifest.csv regenerates byte-identically
+  OK   inductees/strauss/copy.html regenerates byte-identically
+  OK   inductees/strauss/copy-full.md regenerates byte-identically
+  OK   inductees/strauss/preview.html regenerates byte-identically
+  OK   inductees/strauss/media/web/strauss-portrait.jpg regenerates byte-identically
+  OK   handover/strauss/media/web/strauss-portrait.jpg regenerates byte-identically
+  OK   site/media/strauss/strauss-portrait.jpg regenerates byte-identically
+
+ALL GENERATED FILES MATCH THEIR SOURCES
+PASS albright: package, media, reconciliation and research-log disclosure
+PASS berlin: package, media, reconciliation and research-log disclosure
+PASS cruz: package, media, reconciliation and research-log disclosure
+PASS einstein: package, media, reconciliation and research-log disclosure
+PASS hope: package, media, reconciliation and research-log disclosure
+PASS lamarr: package, media, reconciliation and research-log disclosure
+PASS muir: package, media, reconciliation and research-log disclosure
+PASS naismith: package, media, reconciliation and research-log disclosure
+PASS pei: package, media, reconciliation and research-log disclosure
+PASS strauss: package, media, reconciliation and research-log disclosure
+PASS all ten handover packages
+PASS key-like secret scan across all tracked text files (including Markdown)

@@ -1,0 +1,4 @@
+  ✓ phone 375, no JavaScript: all 20 pages fully readable and navigable
+  ✓ desktop 1280, no JavaScript: all 20 pages fully readable and navigable
+
+No content is hidden behind JavaScript on any page, at either width.

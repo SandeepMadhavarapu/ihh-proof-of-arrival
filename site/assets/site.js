@@ -280,3 +280,54 @@
     items.forEach(function(item){item.classList.remove('exhibit-enter');});
   });
 })();
+
+
+/* Exhibit scroll reveal. Section blocks on an inductee page ease in as the
+   reader reaches them. Pure enhancement: the hidden start state lives behind
+   html.reveal-on, which is added here only when motion is allowed, so with
+   this file removed every block stays visible. The hero is left untouched,
+   and blocks already on screen at load are revealed in the same synchronous
+   pass — before the browser paints — so nothing flashes. */
+(function(){
+  'use strict';
+  var profile = document.querySelector('.ihh-profile');
+  if (!profile) return;
+  if (!('IntersectionObserver' in window)) return;
+  var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches) return;
+
+  var targets = [].slice.call(profile.querySelectorAll(
+    '.sec, .doc, blockquote.pull, .qs, .acts, .sources, .colophon'));
+  if (!targets.length) return;
+
+  targets.forEach(function(el){ el.classList.add('rv'); });
+  document.documentElement.classList.add('reveal-on');
+
+  /* Reveal anything already in (or above) the viewport immediately, in this
+     same tick, so the first painted frame shows them fully — no flash. */
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  var pending = [];
+  targets.forEach(function(el){
+    var r = el.getBoundingClientRect();
+    if (r.top < vh * 0.92) el.classList.add('is-in');
+    else pending.push(el);
+  });
+
+  if (!pending.length) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in');
+      observer.unobserve(entry.target);
+    });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:0});
+  pending.forEach(function(el){ observer.observe(el); });
+
+  /* If the reader turns on reduced-motion mid-visit, drop the effect and
+     make sure every block is shown. */
+  motion.addEventListener('change', function(event){
+    if (!event.matches) return;
+    observer.disconnect();
+    targets.forEach(function(el){ el.classList.add('is-in'); });
+  });
+})();

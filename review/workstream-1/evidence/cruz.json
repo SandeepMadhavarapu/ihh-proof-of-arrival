@@ -1,0 +1,263 @@
+{
+ "slug": "cruz",
+ "title": "Cruz — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/cruz/copy.md` are authorized by this note.",
+  "IHH starting page: [celia-cruz](https://immigranthallofhonor.org/inductees/inductee-celia-cruz/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "The IHH page and repository manifest were inspected. Existing source records are leads, not fresh confirmation of every IHH statement."
+ ],
+ "sources": {
+  "BIO": [
+   "Biography.com (A&E), “Celia Cruz”",
+   "https://www.biography.com/musicians/celia-cruz"
+  ],
+  "NBC": [
+   "NBC News, “Celia Cruz U.S. coin design is out and features her iconic slogan” (24 Jul 2023)",
+   "https://www.nbcnews.com/news/latino/celia-cruz-us-coin-design-features-iconic-slogan-rcna96002"
+  ],
+  "NEA": [
+   "National Endowment for the Arts, “Celia Cruz” (National Medal of Arts)",
+   "https://www.arts.gov/honors/medals/celia-cruz"
+  ],
+  "WOF": [
+   "Hollywood Walk of Fame, “Celia Cruz”",
+   "https://walkoffame.com/celia-cruz/"
+  ],
+  "GRAM": [
+   "Recording Academy, “Lifetime Achievement Award”",
+   "https://www.grammy.com/awards/lifetime-achievement-awards/"
+  ],
+  "CONG": [
+   "Congress.gov, H.R.149 (109th Congress), “Congressional Tribute to Celia Cruz Act”",
+   "https://www.congress.gov/bill/109th-congress/house-bill/149"
+  ],
+  "NMAAHC": [
+   "Smithsonian NMAAHC, “Dress worn by Celia Cruz” (2013.8)",
+   "https://nmaahc.si.edu/object/nmaahc_2013.8"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: Celia Cruz",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BIO",
+     "Name: Celia Cruz"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Biography.com (A&E)."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Úrsula Hilaria Celia Caridad Cruz Alfonso",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Tried: Biography.com and the Smithsonian NMAAHC object record (https://nmaahc.si.edu/object/nmaahc_2013.8). Neither gives the full birth name “Úrsula Hilaria Celia Caridad Cruz Alfonso”. Needs a Cuban civil record or an authoritative biography."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: Oct. 21, 1925, Havana, Cuba",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BIO",
+     "Cruz was born in Havana, Cuba on October 21, 1925."
+    ],
+    [
+     "WOF",
+     "Born: 1925-10-21, Havana, Cuba"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Biography.com (A&E) and Hollywood Walk of Fame."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: July 16, 2003, Fort Lee, New Jersey",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "BIO",
+     "Cruz died in New Jersey on July 16, 2003, at the age of 77."
+    ]
+   ],
+   "note": "Date and state confirmed. The town (Fort Lee) is not named in the retrieved sources."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Education: n/a",
+   "status": "NO CLAIM",
+   "evidence": [],
+   "note": "IHH gives “n/a”; nothing to verify."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Occupation: Singer",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "BIO",
+     "Celia Cruz was a Cuban American singer"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Biography.com (A&E)."
+  },
+  "L17": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1961",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "BIO",
+     "Cruz became a U.S. citizen in 1961"
+    ]
+   ],
+   "note": "One secondary source, without a citation, supports 1961. No naturalization record was located. Our own profile deliberately leaves the date open for that reason. Treat 1961 as a lead until a record (or the National Archives index) confirms it."
+  },
+  "L30": {
+   "section": "Achievements",
+   "claim": "Produced 70 songs, 23 gold records",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "BIO",
+     "she made more than 75 records, including 23 that went gold"
+    ],
+    [
+     "NBC",
+     "recorded over 80 albums — and 23 of them went gold"
+    ]
+   ],
+   "note": "The 23 gold records are confirmed by two sources. “70 songs” is a mix-up: the sources count records or albums (more than 75, or over 80), not songs. Suggested: “Recorded more than 75 albums, 23 of which went gold”."
+  },
+  "L31": {
+   "section": "Achievements",
+   "claim": "Founded the Celia Cruz Foundation (2002)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Tried: Biography.com and NBC News. Neither mentions the Celia Cruz Foundation or its founding year."
+  },
+  "L37": {
+   "section": "Honours",
+   "claim": "Honored with star on the Hollywood Walk of Fame (1987)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Recording Address 6240 Hollywood Blvd. Ceremony date 09/17/1987"
+    ]
+   ],
+   "note": "From the Walk of Fame’s own record."
+  },
+  "L38": {
+   "section": "Honours",
+   "claim": "Won 2 Grammy Awards (1988, 2003)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "NBC",
+     "She was a three-time Grammy winner and four-time Latin Grammy recipient."
+    ]
+   ],
+   "note": "NBC News counts three Grammy wins, not two. The Recording Academy’s own winners database was not queried, so the years (1988, 2003) and the third win are unconfirmed."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Won 4 Latin Grammy Awards (2000, 2001, 2002, 2004)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "NBC",
+     "She was a three-time Grammy winner and four-time Latin Grammy recipient."
+    ]
+   ],
+   "note": "Four Latin Grammys confirmed; the years were not checked against the Latin Recording Academy’s records."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Honored with Colombia’s National Medal of Arts (1990)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No Colombian government record of the 1990 national medal was retrieved."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "Awarded the National Medal of Arts by President Clinton (1994)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NEA",
+     "Celia Cruz singer 1994 National Medal of Arts Recipient"
+    ],
+    [
+     "NBC",
+     "In 1994, President Bill Clinton awarded Cruz the President’s National Medal of Arts"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from NBC News and National Endowment for the Arts."
+  },
+  "L42": {
+   "section": "Honours",
+   "claim": "Inducted into the Billboard Latin Music Hall of Fame (1994)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No Billboard record of the 1994 Hall of Fame induction was retrieved."
+  },
+  "L43": {
+   "section": "Honours",
+   "claim": "Awarded the Congressional Gold Medal (2005)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "CONG",
+     "Congressional Tribute to Celia Cruz Act"
+    ],
+    [
+     "CONG",
+     "This bill has the status Introduced"
+    ]
+   ],
+   "note": "Important: according to Congress.gov, the 2005 bill to award Celia Cruz a Congressional Gold Medal (H.R.149) was introduced and referred to a subcommittee but never passed. It records no award. We recommend removing this line unless IHH has evidence of a different, enacted bill."
+  },
+  "L44": {
+   "section": "Honours",
+   "claim": "Inducted into the Apollo Theatre Hall of Fame (2014)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No Apollo Theater record of the 2014 Hall of Fame induction was retrieved."
+  },
+  "L45": {
+   "section": "Honours",
+   "claim": "Won the Grammy Lifetime Achievement Award (2016)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "GRAM",
+     "Celia Cruz Awarded: 2016"
+    ]
+   ],
+   "note": "From the Recording Academy’s own list."
+  },
+  "L46": {
+   "section": "Honours",
+   "claim": "Honored as the first Afro-Latina woman on a US quarter (2023)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "NBC",
+     "The 2024 Celia Cruz Quarter is the 14th coin in the American Women Quarters Program."
+    ],
+    [
+     "NBC",
+     "who will be the first Afro Latina to be featured on a U.S. coin"
+    ]
+   ],
+   "note": "“First Afro-Latina on a U.S. coin” is confirmed. The coin is the 2024 quarter; its design was unveiled in July 2023. Suggested year: 2024."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Salsa prominence; career longer than five decades; 70-plus albums; Grammy wins; Afro-Cuban roots; international influence; signature exclamation. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Retrieval attempts in this review\n\nThe old Mint coin record redirected to a general archive without the Cruz item. The attempted 2024 press-release URL was inaccessible. Congress.gov H.R.149 (109th Congress) could not be retrieved in this review. These failures establish neither a medal award nor its absence; review the legislative status and 2024 coin issue evidence before proposing a public correction.\n\n**Update, 17 October 2026:** Congress.gov’s record of H.R.149 (109th Congress) was retrieved in the evidence pass; its exact spans are in row L43 (introduced, never enacted). The 2024 quarter is evidenced in row L46.\n\n## Caption claim inventory\n\n- **NOT VERIFIED:** 1994 National Medal of Arts presentation by Clinton. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review.\n- **NOT VERIFIED:** Four Latin Grammy awards. IHH caption read; institutional item identification or event evidence has not been independently established for the complete caption in this review."
+}

@@ -1,0 +1,18 @@
+QA PASS: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -m pipeline.generic_build --profile-dir profiles/madeleine-albright
+QA PASS: node qa/integrity.mjs .
+QA PASS: node -e require.resolve('playwright'); require.resolve('axe-core'); console.log('browser QA dependencies present')
+QA PASS: node qa/dark.mjs
+QA PASS: node qa/pixels.mjs
+QA PASS: node qa/states.mjs
+QA PASS: node qa/reflow.mjs
+QA PASS: node qa/wp.mjs
+QA PASS: node qa/nojs.mjs
+QA PASS: node qa/targets.mjs
+QA PASS: node qa/leak.mjs
+QA PASS: node qa/interact.mjs
+QA PASS: node qa/incomplete.mjs
+QA PASS: node qa/repro.mjs
+QA PASS: node qa/profile-factory.mjs
+DEMO PIPELINE COMPLETE
+STATUS: PIPELINE VERIFIED — REQUIRES HUMAN SIGN-OFF
+claims=15 sources=5 qa_commands=15

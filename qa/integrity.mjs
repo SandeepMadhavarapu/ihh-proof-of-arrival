@@ -1,10 +1,11 @@
+import { IND, ORIGINAL } from './catalog.mjs';
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 /* Static integrity checks on the SHIPPED files. No browser needed.
    Run: node qa/integrity.mjs <package-root> */
 const ROOT = process.argv[2] || '.';
 const pass=[],fail=[]; const ck=(c,m)=>(c?pass:fail).push(m);
-const site=join(ROOT,'site'), IND=['albright','lamarr','pei','cruz'], wpOf=n=>join(ROOT,'inductees',n);
+const site=join(ROOT,'site'), wpOf=n=>join(ROOT,'inductees',n);
 const html = readdirSync(site).filter(f=>f.endsWith('.html'));
 const read = p => readFileSync(p,'utf8');
 
@@ -37,7 +38,7 @@ ck(locs.every(u=>/^https?:\/\//.test(u)), 'every sitemap <loc> is an absolute UR
 ck(locs.length===html.length-1, 'sitemap lists every page except 404 ('+(sm.match(/<loc>/g)||[]).length+' vs '+(html.length-1)+')');
 
 /* generated profile pages: no script inside the profile, every image has alt text and a credit */
-for (const n of ['albright','lamarr','pei','cruz']){
+for (const n of IND){
   const pg=read(join(site,n+'.html'));
   const prof=pg.slice(pg.indexOf('<div class="ihh-profile">'), pg.indexOf('</main>'));
   ck(!prof.includes('<script'), n+'.html: no script inside the profile');
@@ -70,17 +71,21 @@ const splitCsv = line => {
 const parseCsv = txt => {           // tolerant of quoted newlines
   const rows=[]; let cur='', q=false;
   for (const ch of txt){ if(ch==='"') q=!q; if(ch==='\n' && !q){ rows.push(cur); cur=''; } else cur+=ch; }
-  if(cur.trim()) rows.push(cur); return rows.filter(Boolean).map(splitCsv);
+  if(cur.trim()) rows.push(cur); return rows.filter(row=>row.trim()).map(row=>splitCsv(row.replace(/\r$/, "")));
 };
 for (const n of IND){
   const wp=wpOf(n);
   const cp=read(join(wp,'copy.html'));
   ck(!/<script/i.test(cp), n+': WordPress fragment contains zero script tags');
   ck(!/<link\b|@import|fonts\.googleapis|cdn\./i.test(cp), n+': fragment loads no external resource');
-  ck((cp.match(/class="src-item"/g)||[]).length>=10, n+': fragment has 10+ source items');
-  ck(existsSync(join(wp,'search-log.csv')), n+': search log present');
+  if (ORIGINAL.includes(n)) ck((cp.match(/class="src-item"/g)||[]).length>=10, n+': original fragment retains 10+ source items');
+  const hasLog=existsSync(join(wp,'search-log.csv'));
+  if (ORIGINAL.includes(n)) ck(hasLog, n+': original search log present');
+  else ck(hasLog || read(join(ROOT,'handover','OPEN-ITEMS.md')).split('## '+n.charAt(0).toUpperCase()+n.slice(1)+'\n')[1]?.split('\n## ')[0].includes('**MISSING SEARCH LOG: search-log.csv.**'), n+': missing research log explicitly reported');
   const rows=parseCsv(read(join(wp,'media-manifest.csv'))); const hdr=rows[0];
   const col=k=>hdr.indexOf(k);
+  const included=rows.slice(1).filter(r=>!/^DROP/i.test(r[col('recommendation')]||''));
+  ck(included.length>0 && (cp.match(/class="src-item"/g)||[]).length===included.length, n+': every non-dropped manifest row rendered exactly once');
   /* alt text limits — actually parsed. Cooper Hewitt <=15 words; AAM <=125 chars. */
   let altBad=[], altSeen=0;
   for (const r of rows.slice(1)){

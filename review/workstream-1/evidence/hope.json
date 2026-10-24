@@ -1,0 +1,354 @@
+{
+ "slug": "hope",
+ "title": "Hope — IHH content reconciliation",
+ "retrieved": "2026-10-17",
+ "header": [
+  "Private editorial working note, 17 October 2026. **REQUIRES HUMAN SIGN-OFF.** This is not approved visitor copy. No changes to `inductees/hope/copy.md` are authorized by this note.",
+  "IHH starting page: [bob-hope](https://immigranthallofhonor.org/inductees/inductee-bob-hope/), retrieved during this review. Line references identify the retrieved text view, not a stable page anchor. Facts are inventoried below in IHH’s order. Compound rows retain all their components; NOT VERIFIED applies to each component unless a narrower status is explicitly stated.",
+  "Independent source read: [Case Western Reserve University, Encyclopedia of Cleveland History](https://case.edu/ech/articles/h/hope-leslie-townes-bob). A page being available does not verify every claim on IHH."
+ ],
+ "sources": {
+  "ECH": [
+   "Case Western Reserve University, Encyclopedia of Cleveland History, “HOPE, LESLIE TOWNES (BOB)”",
+   "https://case.edu/ech/articles/h/hope-leslie-townes-bob"
+  ],
+  "AMPAS": [
+   "Academy of Motion Picture Arts and Sciences, Acceptance Speech Database, record 038-28",
+   "https://aaspeechesdb.oscars.org/link/038-28/"
+  ],
+  "TVA": [
+   "Television Academy, “Bob Hope: Hall of Fame Tribute”",
+   "https://www.televisionacademy.com/features/news/hall-fame/bob-hope-hall-fame-tribute"
+  ],
+  "TVH": [
+   "Television Academy, “Bob Hope Humanitarian Award”",
+   "https://www.televisionacademy.com/awards/bob-hope-humanitarian-award"
+  ],
+  "JFK": [
+   "John F. Kennedy Presidential Library & Museum, “Congressional Gold Medal Presented to Bob Hope” (MO 2023.5.1)",
+   "https://jfk.artifacts.archives.gov/objects/23476/congressional-gold-medal-presented-to-bob-hope"
+  ],
+  "NEA": [
+   "National Endowment for the Arts, “Bob Hope” (National Medal of Arts)",
+   "https://www.arts.gov/honors/medals/bob-hope"
+  ],
+  "WOF": [
+   "Hollywood Walk of Fame, “Bob Hope”",
+   "https://walkoffame.com/bob-hope/"
+  ],
+  "GG": [
+   "Golden Globes, “Bob Hope” (awards database)",
+   "https://goldenglobes.com/person/bob-hope/"
+  ],
+  "GGD": [
+   "Golden Globes, “Cecil B. DeMille Award”",
+   "https://goldenglobes.com/cecil-b-demille-award/"
+  ]
+ },
+ "empty_sections": {},
+ "rows": {
+  "L10": {
+   "section": "Facts",
+   "claim": "U.S. Name: Bob Hope",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "HOPE, LESLIE TOWNES (BOB)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Case Western Reserve University."
+  },
+  "L11": {
+   "section": "Facts",
+   "claim": "Birth Name: Leslie Townes Hope",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "HOPE, LESLIE TOWNES (BOB) (May 29, 1903-July 27, 2003)"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Case Western Reserve University."
+  },
+  "L12": {
+   "section": "Facts",
+   "claim": "Born: May 29, 1903 in Eltham, England",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "(May 29, 1903-July 27, 2003)"
+    ],
+    [
+     "ECH",
+     "born in Eltham, England, a London suburb"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Case Western Reserve University."
+  },
+  "L13": {
+   "section": "Facts",
+   "claim": "Died: July 27, 2003 in Place: Toluca Lake, Calif.",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "Hope died on July 27, 2003 at his home in Toluca Lake, California."
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Case Western Reserve University."
+  },
+  "L15": {
+   "section": "Facts",
+   "claim": "Occupation: Entertainer",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "was a popular actor and comedian who appeared in vaudeville, radio, film, and television"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Case Western Reserve University."
+  },
+  "L16": {
+   "section": "Facts",
+   "claim": "Citizenship Date: 1920",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "When his father was naturalized in December 1920, Hope became a United States citizen."
+    ]
+   ],
+   "note": "Note for IHH: citizenship came through his father’s naturalization; Hope took no oath of his own."
+  },
+  "L27": {
+   "section": "Achievements",
+   "claim": "Entertained US troops on the USO Tours for 50 years (1941 – 1991)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "After entertaining American troops at March Field in Riverside, California in 1941, Hope joined the USO"
+    ],
+    [
+     "ECH",
+     "flying around the world to perform for troops during the KOREAN WAR, VIETNAM, and the PERSIAN GULF WAR"
+    ]
+   ],
+   "note": "The 1941 start is confirmed. The quoted text names the Persian Gulf War but does not state the 1991 end year, so “1991” and “50 years” rest on inference. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L28": {
+   "section": "Achievements",
+   "claim": "Hosted The Bob Hope Show (Radio: 1938 – 1955) and (Television: 1950 -1996)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "beginning The Bob Hope Show, sponsored by Pepsodent, on NBC in 1938"
+    ],
+    [
+     "ECH",
+     "Hope's first television appearance was in the \"Star Spangled Revue,\" which aired on Easter Sunday in 1950"
+    ],
+    [
+     "ECH",
+     "His popular television specials, beginning in 1954, would air regularly until 1996."
+    ]
+   ],
+   "note": "Radio start (1938) and television 1950–1996 are confirmed. The radio end year (1955) is not in this source."
+  },
+  "L30": {
+   "section": "Honours",
+   "claim": "Won an Academy Award 5 times (1941, 1945, 1953, 1960, 1966)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "AMPAS",
+     "Year: 1965 (38th) Academy Awards"
+    ]
+   ],
+   "note": "“Won an Academy Award 5 times” overstates it. Hope never won a competitive Oscar; his Academy honours were honorary or special awards. Three are on record in the Academy’s own materials: Honorary Award for 1952, Jean Hersholt Humanitarian Award for 1959, Honorary Award for 1965 (the last confirmed here in the Academy’s database). Two more (1940, 1944) are widely reported but were not found in Academy records. IHH’s years (1941, 1945, 1953, 1960, 1966) appear to be ceremony years. Suggested: “Received five honorary and special awards from the Academy of Motion Picture Arts and Sciences (never a competitive Oscar)”, once the two 1940s honours are confirmed."
+  },
+  "L31": {
+   "section": "Honours",
+   "claim": "Won Peabody Award 3 times (1944, 1958, 1968)",
+   "status": "PARTLY CONFIRMED",
+   "evidence": [
+    [
+     "TVA",
+     "the memorable Moscow show that won the distinguished Peabody Award in 1958"
+    ]
+   ],
+   "note": "The 1958 Peabody is confirmed by the Television Academy. 1944 and 1968 were not confirmed; the Peabody Awards’ own archive was not retrieved."
+  },
+  "L32": {
+   "section": "Honours",
+   "claim": "Won a Golden Globe 2 times (1958, 1963)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "GG",
+     "1958 WINNER Special Achievement Award BOB HOPE"
+    ],
+    [
+     "GGD",
+     "Bing Crosby, Bob Hope, Doris Day"
+    ]
+   ],
+   "note": "The Golden Globes database lists one win for Hope: a 1958 Special Achievement Award. The Golden Globes’ Cecil B. DeMille page names him as a later DeMille awardee, but gives no year, so 1963 is unconfirmed. Suggested: “Golden Globe Special Achievement Award (1958); Cecil B. DeMille Award”, with the year once confirmed."
+  },
+  "L33": {
+   "section": "Honours",
+   "claim": "Hollywood Walk of Fame Star – Motion Pictures (1960)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Motion Pictures Address 6541 Hollywood Blvd. Ceremony date 02/09/1960"
+    ]
+   ],
+   "note": "From the Walk of Fame’s own record."
+  },
+  "L34": {
+   "section": "Honours",
+   "claim": "Hollywood Walk of Fame Star – Radio (1960)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Radio Address 6141 Hollywood Blvd. Ceremony date 02/09/1960"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Hollywood Walk of Fame."
+  },
+  "L35": {
+   "section": "Honours",
+   "claim": "Hollywood Walk of Fame Star – Television (1960)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Television Address 6756 Hollywood Blvd. Ceremony date 02/09/1960"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from Hollywood Walk of Fame."
+  },
+  "L36": {
+   "section": "Honours",
+   "claim": "Won the Laurel Award 2 times (1962, 1963)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not checked: no awarding-body record of a “Laurel Award” for Hope was retrieved. IHH should name the awarding guild, which makes it checkable."
+  },
+  "L37": {
+   "section": "Honours",
+   "claim": "Congressional Gold Medal from President Kennedy (1963)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "JFK",
+     "by act of Congress June 8, 1962"
+    ],
+    [
+     "JFK",
+     "Date Presented 9/11/63"
+    ]
+   ],
+   "note": "Authorized by act of Congress on 8 June 1962; the Kennedy Library artifact record gives the presentation date as 9/11/63 (11 September 1963). IHH’s 1963 is the presentation year; labelling it “presented 1963 (authorized 1962)” would be exact."
+  },
+  "L38": {
+   "section": "Honours",
+   "claim": "Won a Primetime Emmy Award 2 times (1966, 1984)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Tried: Television Academy Hall of Fame tribute (https://www.televisionacademy.com/features/news/hall-fame/bob-hope-hall-fame-tribute). It does not list Emmy wins by year. The Academy’s nominees-and-winners database was not queried."
+  },
+  "L39": {
+   "section": "Honours",
+   "claim": "Medal of Freedom from President Johnson (1969)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "No primary record (White House or presidential library) of the 1969 Presidential Medal of Freedom was retrieved."
+  },
+  "L40": {
+   "section": "Honours",
+   "claim": "Won People’s Choice Award 5 times (1975, 1976, 1977, 1978, 1985)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not checked: no People’s Choice Awards record was retrieved."
+  },
+  "L41": {
+   "section": "Honours",
+   "claim": "US Air Force Order of the Sword (1980)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not checked: no U.S. Air Force record of the Order of the Sword was retrieved."
+  },
+  "L42": {
+   "section": "Honours",
+   "claim": "Hollywood Walk of Fame Star – Live Performance (1993)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "WOF",
+     "Category Live Performance Address 7021 Hollywood Blvd. - Special Plaque Ceremony date 05/13/1993"
+    ]
+   ],
+   "note": "The Walk of Fame records it as a special plaque."
+  },
+  "L43": {
+   "section": "Honours",
+   "claim": "National Medal of the Arts from President Clinton (1995)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "NEA",
+     "Bob Hope entertainer 1995 National Medal of Arts Recipient"
+    ]
+   ],
+   "note": "Every part of the IHH claim appears in the quoted text from National Endowment for the Arts."
+  },
+  "L44": {
+   "section": "Honours",
+   "claim": "Ronald Reagan Freedom Award (1997)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not checked: no Ronald Reagan Presidential Foundation record was retrieved."
+  },
+  "L45": {
+   "section": "Honours",
+   "claim": "Knight Commander of the Most Excellent Order of the British Empire (1998)",
+   "status": "CONFIRMED",
+   "evidence": [
+    [
+     "ECH",
+     "the Queen of England made Hope a Knight Commander of the Most Excellent Order of the British Empire in 1998"
+    ]
+   ],
+   "note": "As a non-British citizen he held it as an honorary knighthood."
+  },
+  "L46": {
+   "section": "Honours",
+   "claim": "Honored with Bob Hope Humanitarian Award by the Television Academy (2002)",
+   "status": "CORRECTION SUGGESTED",
+   "evidence": [
+    [
+     "TVH",
+     "First presented to Oprah Winfrey at the 54th Primetime Emmys in 2002, one year before Hope died at age 100"
+    ]
+   ],
+   "note": "The Television Academy’s Bob Hope Humanitarian Award was named for Hope and first presented to Oprah Winfrey in 2002; Hope did not receive it. Suggested: “The Television Academy created the Bob Hope Humanitarian Award in his honour (2002)”. Status revised 17 Oct 2026 from CONFIRMED."
+  },
+  "L47": {
+   "section": "Honours",
+   "claim": "Honored with the name of Bob Hope Airport in Burbank, Calif. (2003)",
+   "status": "NOT VERIFIED",
+   "evidence": [],
+   "note": "Not checked: no record from the airport authority was retrieved."
+  }
+ },
+ "profile_notes": [],
+ "tail": "## Biography and captions\n\n**NOT VERIFIED as a whole.** Additional narrative claims to check individually: Cleveland immigration dated 1920 in biography versus 1908 in facts; vaudeville, radio, film and TV career; USO for five decades; over 50 films. Any repeated facts inherit only the scoped evidence above. Interpretive praise is not a verifiable historical fact and should receive editorial review. Image captions and identification remain subject to the item-level rights and identity review in the manifest.\n\n## Integration and open items\n\nCarry forward the Facts, Achievements and Honours headings as above when IHH approves the supported entries. Do not copy unresolved entries into the public profile. The existing narrative is unchanged; a public structured block is pending approval of its factual content. Do not link this note from visitor pages.\n\n- **OPEN ITEM — search log is partial.** `inductees/hope/search-log.csv` now records the 17 October 2026 reconciliation retrievals. The original 16 October 2026 search terms for this profile were not preserved; only the sources recorded in `media-manifest.csv` are known. No queries were reconstructed. The team lead may supply the original record if one exists.\n- **OPEN ITEM — unresolved factual inventory.** NOT VERIFIED is not a finding that IHH is wrong. Retrieve the responsible institution’s exact evidence before approving any additional entry.\n- **OPEN ITEM — named editorial and rights sign-off.** Existing byline placeholders remain. No museum-ready designation is made.\n\n## Proposed biography correction — approval required\n\n**CORRECTION SUGGESTED:** IHH biography immigration year 1920 → 1908. Case Western Reserve’s account says “to Cleveland in March 1908” ([source](https://case.edu/ech/articles/h/hope-leslie-townes-bob), family-arrival paragraph). The IHH facts block already says 1908. This proposal changes no repository profile."
+}

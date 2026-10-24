@@ -1,0 +1,150 @@
+  OK   no form can submit personal data by GET 
+  OK   the story page collects nothing
+  OK   no href="#" placeholder links (0)
+  OK   no sitemap <loc> asserts the live museum domain
+  OK   every sitemap <loc> is an absolute URL as the spec requires
+  OK   sitemap lists every page except 404 (19 vs 19)
+  OK   albright.html: no script inside the profile
+  OK   albright.html: all 5 images have alt text
+  OK   albright.html: anchor image carries its rights wording
+  OK   berlin.html: no script inside the profile
+  OK   berlin.html: all 2 images have alt text
+  OK   berlin.html: anchor image carries its rights wording
+  OK   cruz.html: no script inside the profile
+  OK   cruz.html: all 3 images have alt text
+  OK   cruz.html: anchor image carries its rights wording
+  OK   einstein.html: no script inside the profile
+  OK   einstein.html: all 2 images have alt text
+  OK   einstein.html: anchor image carries its rights wording
+  OK   hope.html: no script inside the profile
+  OK   hope.html: all 2 images have alt text
+  OK   hope.html: anchor image carries its rights wording
+  OK   lamarr.html: no script inside the profile
+  OK   lamarr.html: all 7 images have alt text
+  OK   lamarr.html: anchor image carries its rights wording
+  OK   muir.html: no script inside the profile
+  OK   muir.html: all 2 images have alt text
+  OK   muir.html: anchor image carries its rights wording
+  OK   naismith.html: no script inside the profile
+  OK   naismith.html: all 2 images have alt text
+  OK   naismith.html: anchor image carries its rights wording
+  OK   pei.html: no script inside the profile
+  OK   pei.html: all 9 images have alt text
+  OK   pei.html: anchor image carries its rights wording
+  OK   strauss.html: no script inside the profile
+  OK   strauss.html: all 2 images have alt text
+  OK   strauss.html: anchor image carries its rights wording
+  OK   no un-retracted copyright claim in site\404.html
+  OK   no un-retracted copyright claim in site\about.html
+  OK   no un-retracted copyright claim in site\accessibility.html
+  OK   no un-retracted copyright claim in site\albright.html
+  OK   no un-retracted copyright claim in site\berlin.html
+  OK   no un-retracted copyright claim in site\cruz.html
+  OK   no un-retracted copyright claim in site\einstein.html
+  OK   no un-retracted copyright claim in site\hope.html
+  OK   no un-retracted copyright claim in site\index.html
+  OK   no un-retracted copyright claim in site\inductees.html
+  OK   no un-retracted copyright claim in site\lamarr.html
+  OK   no un-retracted copyright claim in site\method.html
+  OK   no un-retracted copyright claim in site\muir.html
+  OK   no un-retracted copyright claim in site\naismith.html
+  OK   no un-retracted copyright claim in site\pei.html
+  OK   no un-retracted copyright claim in site\privacy.html
+  OK   no un-retracted copyright claim in site\rights.html
+  OK   no un-retracted copyright claim in site\share.html
+  OK   no un-retracted copyright claim in site\strauss.html
+  OK   no un-retracted copyright claim in site\verify.html
+  OK   no un-retracted copyright claim in site\FINDINGS.md
+  OK   albright: WordPress fragment contains zero script tags
+  OK   albright: fragment loads no external resource
+  OK   albright: original fragment retains 10+ source items
+  OK   albright: original search log present
+  OK   albright: every non-dropped manifest row rendered exactly once
+  OK   albright: manifest alt_text column parsed (6 values)
+  OK   albright: every alt text <=15 words and <=125 chars
+  OK   albright: every image used was viewed before it was described
+  OK   albright: all 5 images present in media/web
+  OK   berlin: WordPress fragment contains zero script tags
+  OK   berlin: fragment loads no external resource
+  OK   berlin: missing research log explicitly reported
+  OK   berlin: every non-dropped manifest row rendered exactly once
+  OK   berlin: manifest alt_text column parsed (1 values)
+  OK   berlin: every alt text <=15 words and <=125 chars
+  OK   berlin: every image used was viewed before it was described
+  OK   berlin: all 2 images present in media/web
+  OK   cruz: WordPress fragment contains zero script tags
+  OK   cruz: fragment loads no external resource
+  OK   cruz: original fragment retains 10+ source items
+  OK   cruz: original search log present
+  OK   cruz: every non-dropped manifest row rendered exactly once
+  OK   cruz: manifest alt_text column parsed (2 values)
+  OK   cruz: every alt text <=15 words and <=125 chars
+  OK   cruz: every image used was viewed before it was described
+  OK   cruz: all 3 images present in media/web
+  OK   einstein: WordPress fragment contains zero script tags
+  OK   einstein: fragment loads no external resource
+  OK   einstein: missing research log explicitly reported
+  OK   einstein: every non-dropped manifest row rendered exactly once
+  OK   einstein: manifest alt_text column parsed (1 values)
+  OK   einstein: every alt text <=15 words and <=125 chars
+  OK   einstein: every image used was viewed before it was described
+  OK   einstein: all 2 images present in media/web
+  OK   hope: WordPress fragment contains zero script tags
+  OK   hope: fragment loads no external resource
+  OK   hope: missing research log explicitly reported
+  OK   hope: every non-dropped manifest row rendered exactly once
+  OK   hope: manifest alt_text column parsed (1 values)
+  OK   hope: every alt text <=15 words and <=125 chars
+  OK   hope: every image used was viewed before it was described
+  OK   hope: all 2 images present in media/web
+  OK   lamarr: WordPress fragment contains zero script tags
+  OK   lamarr: fragment loads no external resource
+  OK   lamarr: original fragment retains 10+ source items
+  OK   lamarr: original search log present
+  OK   lamarr: every non-dropped manifest row rendered exactly once
+  OK   lamarr: manifest alt_text column parsed (5 values)
+  OK   lamarr: every alt text <=15 words and <=125 chars
+  OK   lamarr: every image used was viewed before it was described
+  OK   lamarr: all 7 images present in media/web
+  OK   muir: WordPress fragment contains zero script tags
+  OK   muir: fragment loads no external resource
+  OK   muir: missing research log explicitly reported
+  OK   muir: every non-dropped manifest row rendered exactly once
+  OK   muir: manifest alt_text column parsed (1 values)
+  OK   muir: every alt text <=15 words and <=125 chars
+  OK   muir: every image used was viewed before it was described
+  OK   muir: all 2 images present in media/web
+  OK   naismith: WordPress fragment contains zero script tags
+  OK   naismith: fragment loads no external resource
+  OK   naismith: missing research log explicitly reported
+  OK   naismith: every non-dropped manifest row rendered exactly once
+  OK   naismith: manifest alt_text column parsed (1 values)
+  OK   naismith: every alt text <=15 words and <=125 chars
+  OK   naismith: every image used was viewed before it was described
+  OK   naismith: all 2 images present in media/web
+  OK   pei: WordPress fragment contains zero script tags
+  OK   pei: fragment loads no external resource
+  OK   pei: original fragment retains 10+ source items
+  OK   pei: original search log present
+  OK   pei: every non-dropped manifest row rendered exactly once
+  OK   pei: manifest alt_text column parsed (7 values)
+  OK   pei: every alt text <=15 words and <=125 chars
+  OK   pei: every image used was viewed before it was described
+  OK   pei: all 9 images present in media/web
+  OK   strauss: WordPress fragment contains zero script tags
+  OK   strauss: fragment loads no external resource
+  OK   strauss: missing research log explicitly reported
+  OK   strauss: every non-dropped manifest row rendered exactly once
+  OK   strauss: manifest alt_text column parsed (1 values)
+  OK   strauss: every alt text <=15 words and <=125 chars
+  OK   strauss: every image used was viewed before it was described
+  OK   strauss: all 2 images present in media/web
+  OK   albright: manifest preserves the commission's duplicate identification
+  OK   handover/INSTALL.md present
+  OK   site weight is stated in the documentation (462 KB found)
+  OK   every stated site weight matches the shipped bytes (462 KB)
+  OK   no absolute build-machine path in site\gen.py
+  OK   no absolute build-machine path in tools\build_profile.py
+  OK   no absolute build-machine path in tools\build_site_pages.py
+
+ALL 148 INTEGRITY CHECKS PASSED
