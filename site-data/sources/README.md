@@ -42,7 +42,7 @@ python3 tools/build_site_pages.py       # draws them on the pages
 | `permission` | yes | `pending`, `granted` or `link-only` (see below). |
 | `credit` | no | The holder's required credit line, copied exactly. |
 | `description` | no | One plain sentence. |
-| `placeholder` | no | `true` only for layout examples. Placeholder entries are labelled on the page and are the only entries allowed to say `TODO`. |
+| `placeholder` | no | `true` only for layout examples. Placeholders are the only entries allowed to say `TODO`, and they are **never shown on the published site**: only in a preview build (`python3 tools/build_site_pages.py --preview`, or the local Visitor Voices demo). Rebuild without `--preview` before committing. |
 
 ## Permission
 
@@ -62,3 +62,4 @@ done by people; nothing in this repository contacts anyone.
 - `url` must be `https://`. `embed_url` must be on an allowed host.
 - No `TODO` anywhere unless the entry has `"placeholder": true`.
 - Every `id` in a file is different.
+- Every value is text in quotes (except `placeholder`, which is `true` or `false`).

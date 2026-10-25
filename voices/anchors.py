@@ -82,9 +82,9 @@ class _Ends(HTMLParser):
     def __init__(self, src: str) -> None:
         super().__init__(convert_charrefs=True)
         self.src, self.stack, self.ends = src, [], {}
-        self.lines = [0]
-        for line in src.splitlines(keepends=True):
-            self.lines.append(self.lines[-1] + len(line))
+        # HTMLParser.getpos() counts only "\n" as a line break; str.splitlines() would also split
+        # on \r, U+2028 and others and push every later offset out of place.
+        self.lines = [0] + [i + 1 for i, ch in enumerate(src) if ch == "\n"]
 
     def _offset(self) -> int:
         line, col = self.getpos()

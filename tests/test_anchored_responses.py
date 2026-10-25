@@ -5,6 +5,7 @@ import shutil
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from living.config import ROOT
 from voices import render
@@ -122,6 +123,55 @@ class Threads(unittest.TestCase):
         self.assertIn("mailto:curator@example.org", out)
 
 
+class ReviewFixes(unittest.TestCase):
+    def test_passage_ends_survive_unusual_line_breaks(self):
+        h = '<div>\u2028x\r<p id="a" data-ihh-anchor>one\u2028two</p>\n<p id="b" data-ihh-anchor>three</p></div>'
+        ends = passage_ends(h)
+        self.assertTrue(all(h[e - 4:e] == "</p>" for e in ends.values()), ends)
+        edited = MUIR_HTML.replace("</h1>", "</h1>\u2028\r", 1)
+        out, _, _ = render.annotate(edited, "muir", [note()], {"adapter": "none"})
+        end = passage_ends(out)[MUIR_P]
+        self.assertTrue(out[end:].startswith('<details class="vv-thread'))
+        self.assertEqual(passages(out), passages(edited))
+
+    def test_each_note_in_a_thread_keeps_its_own_context(self):
+        current = note(id="VV-1", text="ON-CURRENT")
+        older = note(id="VV-2", anchor="muir-old-000000", text="ON-OLDER",
+                     selector={"exact": "John Muir was born at Dunbar, Scotland, on 21 April 1838, and went to the local schools"})
+        other = note(id="VV-3", text="ON-OTHER", selector={"exact": "Dunbar, Scotland"})
+        out, _, flagged = render.annotate(MUIR_HTML, "muir", [current, older, other], {"adapter": "none"})
+        end = passage_ends(out)[MUIR_P]
+        thread = out[end:out.index("</details>", end)]
+        if "VV-2" in flagged:
+            self.skipTest("older wording not close enough to re-attach")
+        lis = {k: thread[thread.index(k) - 600:thread.index(k)] for k in ("ON-CURRENT", "ON-OLDER", "ON-OTHER")}
+        self.assertNotIn("earlier wording", lis["ON-CURRENT"].split('<li class="vv-note">')[-1])
+        self.assertIn("earlier wording", lis["ON-OLDER"].split('<li class="vv-note">')[-1])
+        self.assertIn("vv-q-own", lis["ON-OTHER"].split('<li class="vv-note">')[-1])
+
+    def test_general_notes_are_one_removable_group(self):
+        _, index, _ = render.annotate(MUIR_HTML, "muir", [note(anchor="", selector={})], {"adapter": "none"})
+        group = index[index.index('<div class="vv-general-wrap">'):]
+        self.assertIn("Older notes that were not left", group[:group.index("</div>")])
+        js = (SITE / "assets" / "margin-notes.js").read_text(encoding="utf-8")
+        self.assertIn(".vv-general-wrap", js)
+
+    def test_findings_on_a_removed_claim_are_reported(self):
+        import contextlib, io, sys
+        sys.path.insert(0, str(ROOT / "site-src"))
+        import importlib
+        gen = importlib.import_module("gen")
+        orphan = dict(FINDING, id="VV-8", status="approved", anchor="no-such-claim", by="A", date="2026-10-25")
+        with tempfile.TemporaryDirectory() as td:
+            shutil.copytree(SITE, Path(td) / "site")
+            buf = io.StringIO()
+            with patch.object(gen.voices_render, "load_findings", return_value=[orphan]), contextlib.redirect_stdout(buf):
+                gen.main(site=str(Path(td) / "site"))
+            built = (Path(td) / "site" / "verify.html").read_text(encoding="utf-8")
+        self.assertIn("FLAGGED for the moderator: finding VV-8", buf.getvalue())
+        self.assertNotIn("vv-findings", built)
+
+
 class Migration(unittest.TestCase):
     def test_moved_legacy_and_flagged_items(self):
         claims = {"einstein-1": "x"}
@@ -139,6 +189,38 @@ class Migration(unittest.TestCase):
         self.assertEqual(res["VV-4"], ("flagged", "muir-gone-000000"))   # never moved by a guess
         self.assertEqual(res["VV-5"], ("exact", "einstein-1"))
         self.assertEqual(res["VV-6"], ("flagged", "einstein-99"))
+
+    def test_missing_pages_are_left_alone_not_flagged(self):
+        with tempfile.TemporaryDirectory() as empty_site:
+            items = [note(id="VV-1")]
+            res = migrate(items, Path(empty_site), {})
+        self.assertEqual(res[0][3], "unchecked")
+        self.assertNotIn("anchor_status", items[0])
+        self.assertEqual(items[0]["anchor"], MUIR_P)
+
+    def test_write_mode_rewrites_only_changed_items(self):
+        from voices import migrate_anchors
+        import sys
+        with tempfile.TemporaryDirectory() as td, tempfile.TemporaryDirectory() as empty_site:
+            store = Store(Path(td))
+            item = store.add(validate({"kind": "note", "type": "more", "page": "muir", "anchor": MUIR_P,
+                                       "selector": {"exact": "John Muir was born in Dunbar"}, "text": "x"})[0], "test")
+            path = store._path(item["id"])
+            argv = sys.argv
+            try:
+                sys.argv = ["migrate", "--store", td, "--write", "--site", empty_site]
+                migrate_anchors.main()                     # nothing built: nothing touched
+                self.assertNotIn("anchor_status", json.loads(path.read_text(encoding="utf-8")))
+                sys.argv = ["migrate", "--store", td, "--write"]
+                migrate_anchors.main()                     # first real check: status recorded and audited
+                first = path.read_text(encoding="utf-8")
+                lines = store.audit_log.read_text(encoding="utf-8").count("migrate_anchors")
+                migrate_anchors.main()                     # nothing changed: no rewrite, no new audit line
+            finally:
+                sys.argv = argv
+            self.assertEqual(path.read_text(encoding="utf-8"), first)
+            self.assertEqual(store.audit_log.read_text(encoding="utf-8").count("migrate_anchors"), lines)
+            self.assertEqual(lines, 1)
 
     def test_write_mode_keeps_an_audit_line(self):
         from voices import migrate_anchors

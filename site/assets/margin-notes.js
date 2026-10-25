@@ -342,32 +342,50 @@
     (prof ? prof.parentNode : root).insertBefore(sec, prof ? prof.nextSibling : null);
     return sec;
   }
-  function noteItem(n){
-    var item = el('li', 'vv-note'), meta = el('p', 'vv-meta');
-    meta.appendChild(el('span', 'vv-type', LABEL[n.type] || 'Note'));
-    meta.appendChild(document.createTextNode(' · ' + (n.by || 'A visitor') + ' · '));
+  /* Type label, first name and date: one header for every note and finding (as voices/render.py). */
+  function meta(label, n){
+    var m = el('p', 'vv-meta');
+    m.appendChild(el('span', 'vv-type', label));
+    m.appendChild(document.createTextNode(' · ' + (n.by || 'A visitor') + ' · '));
     var t = el('time', null, n.date || ''); if (n.date) t.setAttribute('datetime', n.date);
-    meta.appendChild(t);
-    item.appendChild(meta);
+    m.appendChild(t);
+    return m;
+  }
+  function clip(q){ return q.length > 300 ? q.slice(0, 300).replace(/\s+\S*$/, '') + '…' : q; }
+  function exactOf(n){ return norm((n.selector && n.selector.exact) || ''); }
+  function onPage(q, p){ return plainQuotes(passageText(p)).indexOf(plainQuotes(q)) !== -1; }
+  /* The passage a thread quotes once: the first note's words still on the page, else the passage now. */
+  function headerQuote(list, p){
+    for (var i = 0; i < list.length; i++){ var q = exactOf(list[i]); if (q && onPage(q, p)) return q; }
+    return passageText(p);
+  }
+  /* One note. If it answered other words than the thread quotes, it shows its own; if those words
+     are no longer on the page, it says it was left on an earlier wording. */
+  function noteItem(n, p, header){
+    var item = el('li', 'vv-note'), q = exactOf(n);
+    item.appendChild(meta(LABEL[n.type] || 'Note', n));
+    if (p && q && !onPage(q, p)){
+      item.appendChild(el('blockquote', 'vv-q vv-q-own', clip(q)));
+      item.appendChild(el('p', 'vv-was', 'This comment was left on an earlier wording of the passage.'));
+    } else if (header && q && q !== header){
+      item.appendChild(el('blockquote', 'vv-q vv-q-own', clip(q)));
+    }
     item.appendChild(el('p', 'vv-text', String(n.text || '').replace(EMAIL, '[email removed]')));
     return item;
   }
-  function quoted(n, p){
-    var frag = document.createDocumentFragment();
-    var q = (n.selector && n.selector.exact) || passageText(p);
-    frag.appendChild(el('blockquote', 'vv-q', q.length > 300 ? q.slice(0, 300).replace(/\s+\S*$/, '') + '…' : q));
-    if (plainQuotes(passageText(p)).indexOf(plainQuotes(norm(q))) === -1)
-      frag.appendChild(el('p', 'vv-was', 'This comment was left on an earlier wording of the passage.'));
+  function threadBody(list, p, cls){
+    var frag = document.createDocumentFragment(), header = headerQuote(list, p);
+    frag.appendChild(el('blockquote', 'vv-q', clip(header)));
+    var ul = el('ul', cls);
+    list.forEach(function(n){ ul.appendChild(noteItem(n, p, header)); });
+    frag.appendChild(ul);
     return frag;
   }
   /* A count that expands, right under the passage it belongs to. */
   function thread(p, list){
     var k = list.length, d = el('details', 'vv-thread vv-ui'); d.id = 'vv-t-' + p.id;
     d.appendChild(el('summary', null, k + ' visitor comment' + (k > 1 ? 's' : '') + ' on this section'));
-    d.appendChild(quoted(list[0], p));
-    var ul = el('ul', 'vv-notes plain');
-    list.forEach(function(n){ ul.appendChild(noteItem(n)); });
-    d.appendChild(ul);
+    d.appendChild(threadBody(list, p, 'vv-notes plain'));
     p.insertAdjacentElement('afterend', d);
   }
   function draw(notes){
@@ -380,7 +398,7 @@
       placed[p.id].push(n);
     });
     order.sort(function(a, b){ return passages.indexOf(a) - passages.indexOf(b); });
-    [].slice.call(root.querySelectorAll('.vv-mark, .vv-thread, .vv-general-h, .vv-general')).forEach(function(m){ m.remove(); });
+    [].slice.call(root.querySelectorAll('.vv-mark, .vv-thread, .vv-general-wrap')).forEach(function(m){ m.remove(); });
     var sec = index(), list = sec.querySelector('.vv-list'), empty = sec.querySelector('.vv-empty');
     list.textContent = '';
     if (empty) empty.hidden = order.length > 0 || general.length > 0;
@@ -391,19 +409,19 @@
       m.appendChild(el('span', 'vv-sr', ' visitor note' + (k > 1 ? 's' : '') + ' on this passage'));
       var r = rail(p); r.insertBefore(m, r.firstChild);
       var li = el('li', 'vv-entry'); li.id = 'vv-' + p.id;
-      li.appendChild(quoted(placed[p.id][0], p));
-      var ul = el('ul', 'vv-notes');
-      placed[p.id].forEach(function(n){ ul.appendChild(noteItem(n)); });
-      li.appendChild(ul);
+      li.appendChild(threadBody(placed[p.id], p, 'vv-notes'));
       var back = el('p', 'vv-back'), a = el('a', null, 'Back to the passage'); a.href = '#' + p.id;
       back.appendChild(a); li.appendChild(back);
       list.appendChild(li);
     });
     if (general.length){
-      sec.appendChild(el('h3', 'vv-general-h', 'General notes on this page'));
+      var wrap = el('div', 'vv-general-wrap');
+      wrap.appendChild(el('h3', 'vv-general-h', 'General notes on this page'));
+      wrap.appendChild(el('p', 'vv-lede', 'Older notes that were not left on a particular section.'));
       var g = el('ul', 'vv-notes vv-general');
       general.forEach(function(n){ g.appendChild(noteItem(n)); });
-      sec.appendChild(g);
+      wrap.appendChild(g);
+      sec.appendChild(wrap);
     }
   }
   /* Verify: approved findings under their claim, as a tally that expands. */
@@ -421,10 +439,8 @@
       d.appendChild(el('summary', null, fs.length + ' visitor finding' + (fs.length > 1 ? 's' : '') + ': ' + counts.join(' · ')));
       var ul = el('ul', 'vv-notes plain'), cur = norm((cl.querySelector('.cl-text') || {}).textContent || '');
       fs.forEach(function(f){
-        var item = el('li', 'vv-note'), meta = el('p', 'vv-meta');
-        meta.appendChild(el('span', 'vv-type', 'My finding: ' + VERDICT[f.verdict]));
-        meta.appendChild(document.createTextNode(' · ' + (f.by || 'A visitor') + ' · ' + (f.date || '')));
-        item.appendChild(meta);
+        var item = el('li', 'vv-note');
+        item.appendChild(meta('My finding: ' + VERDICT[f.verdict], f));
         if (f.text) item.appendChild(el('p', 'vv-text', String(f.text).replace(EMAIL, '[email removed]')));
         var was = norm((f.selector && f.selector.exact) || '');
         if (was && was !== cur) item.appendChild(el('p', 'vv-was', 'Shared on an earlier wording of this claim.'));

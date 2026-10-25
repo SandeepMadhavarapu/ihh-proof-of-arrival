@@ -13,7 +13,7 @@ import sys
 from collections import defaultdict
 from urllib.parse import quote
 
-from .anchors import passage_ends, passages, reattach
+from .anchors import norm, passage_ends, passages, reattach
 from .core import EMAIL_RE, FINDING_LABEL, TYPES, UNDER_13, VERDICTS, display_name
 
 E = html.escape
@@ -92,22 +92,41 @@ def _clip(q: str) -> str:
     return q if len(q) <= 300 else q[:300].rsplit(" ", 1)[0] + "…"
 
 
-def _note_li(n: dict) -> str:
-    return (f'<li class="vv-note"><p class="vv-meta"><span class="vv-type">{E(TYPES[n["type"]])}</span> &middot; '
-            f'{E(display_name(n.get("by", "")))} &middot; <time datetime="{E(n.get("date", ""))}">{E(n.get("date", ""))}</time></p>'
+def _meta(label: str, n: dict) -> str:
+    """Type label, first name and date: the one header every note and finding uses."""
+    d = E(n.get("date", ""))
+    return (f'<p class="vv-meta"><span class="vv-type">{E(label)}</span> &middot; '
+            f'{E(display_name(n.get("by", "")))} &middot; <time datetime="{d}">{d}</time></p>')
+
+
+def _exact(n: dict) -> str:
+    return norm((n.get("selector") or {}).get("exact") or "")
+
+
+def _header_quote(notes: list[dict], current: str) -> str:
+    """The passage a thread quotes once at the top: the first note's words if they are still on
+    the page, otherwise the passage as it reads now."""
+    q = next((_exact(n) for n in notes if _exact(n) and _exact(n) in current), "")
+    return q or current
+
+
+def _note_li(n: dict, current: str = "", header: str = "") -> str:
+    """One note. If it answered other words than the thread quotes, it shows its own; if those
+    words are no longer on the page, it says it was left on an earlier wording."""
+    q, extra = _exact(n), ""
+    if current and q and q not in current:
+        extra = (f'<blockquote class="vv-q vv-q-own">{E(_clip(q))}</blockquote>'
+                 '<p class="vv-was">This comment was left on an earlier wording of the passage.</p>')
+    elif header and q and q != header:
+        extra = f'<blockquote class="vv-q vv-q-own">{E(_clip(q))}</blockquote>'
+    return (f'<li class="vv-note">{_meta(TYPES[n["type"]], n)}{extra}'
             f'<p class="vv-text">{note_text(n.get("text", ""))}</p></li>')
 
 
-def _quoted(n: dict, current: str) -> str:
-    """What the visitor responded to. If the passage has since been reworded, say so."""
-    q = norm_ws((n.get("selector") or {}).get("exact") or "") or current
-    changed = bool(q) and q not in current
-    note = '<p class="vv-was">This comment was left on an earlier wording of the passage.</p>' if changed else ""
-    return f'<blockquote class="vv-q">{E(_clip(q))}</blockquote>{note}'
-
-
-def norm_ws(s: str) -> str:
-    return " ".join(html.unescape(s).split())
+def _thread_body(notes: list[dict], current: str, ul_class: str) -> str:
+    header = _header_quote(notes, current)
+    return (f'<blockquote class="vv-q">{E(_clip(header))}</blockquote>'
+            f'<ul class="{ul_class}">{"".join(_note_li(n, current, header) for n in notes)}</ul>')
 
 
 def annotate(frag: str, page: str, notes: list[dict], cfg: dict) -> tuple[str, str, list[str]]:
@@ -122,7 +141,7 @@ def annotate(frag: str, page: str, notes: list[dict], cfg: dict) -> tuple[str, s
     placed, flagged, general = defaultdict(list), [], []
     for n in notes:
         sel = n.get("selector") or {}
-        if not n.get("anchor") and not norm_ws(sel.get("exact", "")):
+        if not n.get("anchor") and not norm(sel.get("exact", "")):
             general.append(n)
             continue
         aid, _ = reattach(n.get("anchor", ""), sel, texts)
@@ -149,23 +168,21 @@ def annotate(frag: str, page: str, notes: list[dict], cfg: dict) -> tuple[str, s
         k = len(placed[aid])
         thread = (f'<details class="vv-thread vv-ui" id="vv-t-{aid}"><summary>{k} visitor comment'
                   f'{"s" if k > 1 else ""} on this section</summary>'
-                  f'{_quoted(placed[aid][0], texts[aid])}'
-                  f'<ul class="vv-notes plain">{"".join(_note_li(n) for n in placed[aid])}</ul></details>')
+                  f'{_thread_body(placed[aid], texts[aid], "vv-notes plain")}</details>')
         frag = frag[:ends[aid]] + thread + frag[ends[aid]:]
     frag = re.sub(r' id="([a-z0-9-]+)" data-ihh-anchor>', opener, frag)
     if not placed and not general and not on:
         return frag, "", flagged
     items = []
     for aid in (a for a in texts if a in placed):
-        items.append(f'<li class="vv-entry" id="vv-{aid}">{_quoted(placed[aid][0], texts[aid])}'
-                     f'<ul class="vv-notes">{"".join(_note_li(n) for n in placed[aid])}</ul>'
+        items.append(f'<li class="vv-entry" id="vv-{aid}">{_thread_body(placed[aid], texts[aid], "vv-notes")}'
                      f'<p class="vv-back"><a href="#{aid}">Back to the passage</a></p></li>')
     body = (f'<ol class="vv-list">{"".join(items)}</ol>' if items else
             '<ol class="vv-list"></ol><p class="vv-empty">No notes on this page yet.</p>')
     if general:
-        body += ('<h3 class="vv-general-h">General notes on this page</h3>'
+        body += ('<div class="vv-general-wrap"><h3 class="vv-general-h">General notes on this page</h3>'
                  '<p class="vv-lede">Older notes that were not left on a particular section.</p>'
-                 f'<ul class="vv-notes vv-general">{"".join(_note_li(n) for n in general)}</ul>')
+                 f'<ul class="vv-notes vv-general">{"".join(_note_li(n) for n in general)}</ul></div>')
     index = f'''
 <section class="vv-index" id="notes" aria-labelledby="notes-h">
 <h2 id="notes-h">Notes on this page</h2>
@@ -184,13 +201,11 @@ def findings_block(claim_id: str, claim_text: str, findings: list[dict]) -> str:
         return ""
     counts = [(v, sum(1 for f in mine if f["verdict"] == v)) for v in VERDICTS]
     tally = " &middot; ".join(f"{k} {E(VERDICTS[v])}" for v, k in counts if k)
-    current = norm_ws(re.sub(r"<[^>]+>", "", claim_text))
+    current = norm(re.sub(r"<[^>]+>", "", claim_text))
     lis = "".join(
-        f'<li class="vv-note"><p class="vv-meta"><span class="vv-type">{E(FINDING_LABEL)}: {E(VERDICTS[f["verdict"]])}</span> &middot; '
-        f'{E(display_name(f.get("by", "")))} &middot; <time datetime="{E(f.get("date", ""))}">{E(f.get("date", ""))}</time></p>'
+        '<li class="vv-note">' + _meta(FINDING_LABEL + ": " + VERDICTS[f["verdict"]], f)
         + (f'<p class="vv-text">{note_text(f["text"])}</p>' if f.get("text") else "")
-        + ('<p class="vv-was">Shared on an earlier wording of this claim.</p>'
-           if norm_ws((f.get("selector") or {}).get("exact", "")) not in ("", current) else "")
+        + ('<p class="vv-was">Shared on an earlier wording of this claim.</p>' if _exact(f) not in ("", current) else "")
         + "</li>" for f in mine)
     k = len(mine)
     return (f'\n    <details class="vv-thread vv-findings" id="vv-t-{E(claim_id)}"><summary>{k} visitor finding'

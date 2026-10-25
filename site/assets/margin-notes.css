@@ -111,3 +111,4 @@ html.vv-js .vv-nojs{display:none}
 .vv-share{margin-left:.5rem}
 @media print{.vv-thread>summary{list-style:none}.vv-thread>*:not(summary){display:block!important}}
 .vv-share[hidden]{display:none}
+.vv-q-own{margin:.3rem 0 .4rem;font-size:.85rem}

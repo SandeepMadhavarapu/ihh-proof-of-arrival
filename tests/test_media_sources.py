@@ -48,6 +48,16 @@ class Format(unittest.TestCase):
                     ms.load(td, "x")
                 self.assertIn(why, str(ctx.exception))
 
+    def test_wrong_types_get_a_clear_error_not_a_crash(self):
+        for entry, field in ((dict(GOOD, date=1940), "'date' must be text"), (dict(GOOD, id=12), "'id' must be text"),
+                             (dict(GOOD, creator=None), "'creator' must be text"),
+                             (dict(GOOD, placeholder="yes"), "placeholder must be true or false")):
+            with tempfile.TemporaryDirectory() as td:
+                write(td, "x", [entry])
+                with self.assertRaises(ms.SourceError) as ctx:
+                    ms.load(td, "x")
+                self.assertIn(field, str(ctx.exception))
+
     def test_duplicate_ids_are_refused(self):
         with tempfile.TemporaryDirectory() as td:
             write(td, "x", [GOOD, GOOD])
@@ -105,10 +115,17 @@ class BuiltSite(unittest.TestCase):
             for host in ms.EMBED_HOSTS:
                 self.assertNotRegex(text, r'\bsrc="https://' + re.escape(host), page.name)
 
-    def test_placeholders_are_labelled_on_the_page(self):
-        cruz = (SITE / "cruz.html").read_text(encoding="utf-8")
-        self.assertIn("Placeholder &mdash; not a real source", cruz)
-        self.assertIn("ms-placeholder", cruz)
+    def test_placeholders_never_reach_the_published_pages(self):
+        for page in SITE.glob("*.html"):
+            text = page.read_text(encoding="utf-8")
+            self.assertNotIn("ms-placeholder", text, page.name)
+            self.assertNotIn("Placeholder &mdash; not a real source", text, page.name)
+
+    def test_placeholders_are_drawn_and_labelled_in_a_preview_build(self):
+        preview = ms.render(str(ROOT), "cruz", preview=True)
+        self.assertIn("Placeholder &mdash; not a real source", preview)
+        self.assertIn("ms-placeholder", preview)
+        self.assertNotIn("ms-placeholder", ms.render(str(ROOT), "cruz"))
 
 
 if __name__ == "__main__":

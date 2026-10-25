@@ -29,6 +29,7 @@ sys.path.insert(0, str(ROOT))
 from living.proposals import Store as LivingStore, verify_chain  # noqa: E402
 from voices import bridge  # noqa: E402
 from voices.anchors import passages, reattach  # noqa: E402
+from voices.claims import claim_cases as _claim_cases, claim_texts  # noqa: E402
 from voices.core import CONFIRMATION, ID_RE, TYPES, UNDER_13, VERDICTS, RateLimit, Store, public, type_label, validate  # noqa: E402
 
 DEMO = ROOT / "voices" / ".demo"
@@ -80,14 +81,12 @@ def living() -> LivingStore:
 
 
 def claims() -> dict[str, str]:
-    cases = _load_gen().CASES
-    return {cl["id"]: " ".join(html.unescape(re.sub(r"<[^>]+>", "", cl["text"])).split())
-            for c in cases for cl in c["claims"]}
+    return claim_texts()
 
 
 def claim_cases() -> dict[str, str]:
     """claim id -> inductee slug (each Verify case file is named by its inductee's slug)."""
-    return {cl["id"]: c["id"] for c in _load_gen().CASES for cl in c["claims"]}
+    return _claim_cases()
 
 
 def page_passages(page: str) -> dict[str, str]:

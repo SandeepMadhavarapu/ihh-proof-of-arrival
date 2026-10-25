@@ -5,7 +5,9 @@
     site-data/sources/<slug>.json       {"sources": [ {...}, ... ]}   (format: site-data/sources/README.md)
     python3 tools/media_sources.py      # check every file without building the site
 
-tools/build_site_pages.py calls render() for every published profile. A file that breaks the
+tools/build_site_pages.py calls render() for every published profile. Entries marked
+"placeholder": true appear only in a preview build (--preview, or the local demo), never on the
+published pages. A file that breaks the
 format stops the build with the reason, so a typo can never quietly publish a bad entry.
 
 Permission decides what the page does with a source:
@@ -44,6 +46,12 @@ def check(entry, where):
     bad = sorted(set(entry) - FIELDS)
     if bad:
         raise SourceError(f"{where} [{sid}]: unknown field(s) {', '.join(bad)} (allowed: {', '.join(sorted(FIELDS))})")
+    for k, v in entry.items():
+        if k == "placeholder":
+            if not isinstance(v, bool):
+                raise SourceError(f"{where} [{sid}]: placeholder must be true or false")
+        elif not isinstance(v, str):
+            raise SourceError(f"{where} [{sid}]: '{k}' must be text in quotes, e.g. \"{k}\": \"...\" (got {type(v).__name__})")
     for k in REQUIRED:
         if not str(entry.get(k) or "").strip():
             raise SourceError(f"{where} [{sid}]: '{k}' is required")
@@ -130,9 +138,11 @@ def item_html(s):
             + f'  {desc}{player}\n  <p class="ms-perm">{label} {link}</p>{credit}\n</li>')
 
 
-def render(root, slug):
-    """The section for one profile page. Always drawn, so the structure is visible on every page."""
-    items = load(root, slug)
+def render(root, slug, preview=False):
+    """The section for one profile page. Always drawn, so the structure is visible on every page.
+    Placeholder entries (layout examples full of TODO) are drawn only in a preview build: the local
+    demo, or `python3 tools/build_site_pages.py --preview`. The published site never shows them."""
+    items = [s for s in load(root, slug) if preview or s.get("placeholder") is not True]
     body = ('<ul class="ms-list plain">\n' + "\n".join(item_html(s) for s in items) + "\n</ul>") if items else (
         '<p class="ms-empty">No outside interviews or media have been added for this person yet.</p>')
     return f'''

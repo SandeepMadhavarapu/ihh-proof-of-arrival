@@ -120,8 +120,10 @@ person on our team before it was added to the inductee&rsquo;s page.</p>
     print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
 
 
-def main(root=ROOT, site=None, voices=None):
-    """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy."""
+def main(root=ROOT, site=None, voices=None, preview=None):
+    """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy.
+    `preview` draws placeholder sources too; it is on for the demo's copy and for --preview."""
+    preview = (voices is not None) if preview is None else preview
     site = site or os.path.join(root, "site")
     cfg = voices_render.load_config(root, voices)
     approved = voices_render.load_approved(root) if voices is None else []
@@ -158,7 +160,7 @@ def main(root=ROOT, site=None, voices=None):
         for nid in flagged:
             print(f"  FLAGGED for the moderator: note {nid} on {name} no longer matches any passage; not shown")
         try:
-            media = media_sources.render(root, name)
+            media = media_sources.render(root, name, preview)
         except media_sources.SourceError as e:
             sys.exit(f"ERROR {e}")
         on = cfg["adapter"] != "none"
@@ -175,4 +177,5 @@ def main(root=ROOT, site=None, voices=None):
 
 
 if __name__ == "__main__":
-    main()
+    # --preview: also draw placeholder sources, to see the layout locally. Never commit that build.
+    main(preview="--preview" in sys.argv[1:])

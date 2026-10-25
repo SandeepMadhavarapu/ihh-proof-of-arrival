@@ -156,6 +156,11 @@ def main(site=SITE, voices=None):
     # Approved visitor findings, each tied to its claim id. The demo's own build draws none here;
     # its findings arrive through margin-notes.js instead.
     findings = voices_render.load_findings(ROOT) if voices is None else []
+    known = {cl["id"] for c in CASES for cl in c["claims"]}
+    for f in findings:
+        if f.get("anchor") not in known:
+            print(f"  FLAGGED for the moderator: finding {f.get('id', '?')} is on claim {f.get('anchor') or '-'}, "
+                  f"which no longer exists; not shown")
     shell=open(os.path.join(site,"about.html"),encoding="utf-8").read()
     head=shell[shell.index("<body>"):shell.index("</header>")+len("</header>")]
     foot=shell[shell.index('<footer class="site-foot">'):]
