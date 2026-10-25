@@ -20,11 +20,11 @@ Leave that window open. Press Ctrl+C there to stop.
 
 | Time | Do this | You should see |
 |---|---|---|
-| 0:00 | Open <http://127.0.0.1:8770/muir.html>. Open **A farm boy from Dunbar** and highlight the first sentence. | An **Add a note on this** button under the highlight. Every passage also has a keyboard-reachable **Add a note** button in its margin. ([01](../review/workstream-3/screenshots/01-desktop-highlight.jpg)) |
+| 0:00 | Open <http://127.0.0.1:8770/muir.html>. Open **A farm boy from Dunbar** and highlight the first sentence. | A **Comment on this** button under the highlight. Every passage also has a keyboard-reachable **Comment on this section** button in its margin. ([01](../review/workstream-3/screenshots/01-desktop-highlight.jpg)) |
 | 0:10 | Click it. Choose **My perspective**, write a note, and optionally give a first name. Press **Send to a curator**. | The panel quotes the passage and shows the under-13 notice. After sending: "Thanks — a curator reviews every note before it appears." ([02](../review/workstream-3/screenshots/02-desktop-panel.jpg), [03](../review/workstream-3/screenshots/03-desktop-confirmation.jpg)) |
 | 0:20 | Reload the page. | **Nothing new on the page.** The note is pending. |
 | 0:25 | Open <http://127.0.0.1:8770/voices/moderate>. Type your name and press **Approve**. | The note, the passage it attaches to ("exact"), and an intact audit log. ([04](../review/workstream-3/screenshots/04-desktop-moderator.jpg)) |
-| 0:35 | Back to the Muir page and reload. | A **1** in the margin beside that sentence. It links to **Notes on this page**, which shows the type, first name and date. ([05](../review/workstream-3/screenshots/05-desktop-margin-marker.jpg), [06](../review/workstream-3/screenshots/06-desktop-notes-index.jpg)) |
+| 0:35 | Back to the Muir page and reload. | A **1** in the margin beside that sentence, and directly under the passage a **1 visitor comment on this section** line that expands to the comment with the passage it answers. The count also links to **Notes on this page**, which shows the type, first name and date. ([05](../review/workstream-3/screenshots/05-desktop-margin-marker.jpg), [06](../review/workstream-3/screenshots/06-desktop-notes-index.jpg)) |
 | 0:45 | Open <http://127.0.0.1:8770/verify.html>. Under the Muir claim "Helped establish … Grand Canyon (1908) National Park", press **Report or add to this claim**. Write what you know and give a source. Send. | The same panel, with the claim quoted and **Something looks wrong** preselected. ([07](../review/workstream-3/screenshots/07-desktop-verify-report.jpg), [08](../review/workstream-3/screenshots/08-desktop-verify-sent.jpg)) |
 | 0:55 | Reload the moderator page. | The report is in the **moderation queue**. Because it has a source, it is also in the **Living Museum queue** as a *tip* with an empty sentence: a curator has to find an exact span before anything can be published. Any HTML typed into the report is shown as plain text. ([09](../review/workstream-3/screenshots/09-desktop-moderation-claim.jpg), [10](../review/workstream-3/screenshots/10-desktop-living-museum-queue.jpg)) |
 
@@ -41,7 +41,7 @@ Phone width (375px) screenshots:
 ## Things worth showing if there is time
 
 - **Without JavaScript.** Turn scripts off and reload a profile. Each passage shows a plain
-  **Add a note** link, for example `/voices/form?page=muir&passage=muir-a-farm-boy-from-dunbar-5f55a0`.
+  **Comment on this section** link, for example `/voices/form?page=muir&passage=muir-a-farm-boy-from-dunbar-5f55a0`.
   It opens a form with that passage already quoted and filled in, and the form posts normally.
 - **Esc** closes the panel and puts focus back on the button that opened it.
 - **Edits don't lose notes.** Edit a word in that Muir paragraph in `inductees/muir/copy.md`,

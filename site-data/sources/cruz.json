@@ -1,0 +1,20 @@
+{
+ "_note": "Interviews and media for this inductee from other institutions. Format: site-data/sources/README.md. The entry below is a PLACEHOLDER to show the layout; replace it with a real, permission-checked source.",
+ "sources": [
+  {
+   "id": "cruz-placeholder-performance-video",
+   "title": "TODO: title of a recorded interview or performance",
+   "kind": "video",
+   "creator": "TODO: creator",
+   "creator_role": "creator",
+   "institution": "TODO: holding museum or broadcaster",
+   "date": "TODO",
+   "url": "TODO",
+   "embed_url": "TODO",
+   "permission": "granted",
+   "credit": "TODO: the holder's required credit line",
+   "description": "TODO: one sentence. Layout example of a source with permission granted.",
+   "placeholder": true
+  }
+ ]
+}

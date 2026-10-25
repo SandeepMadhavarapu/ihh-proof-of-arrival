@@ -29,7 +29,7 @@ sys.path.insert(0, str(ROOT))
 from living.proposals import Store as LivingStore, verify_chain  # noqa: E402
 from voices import bridge  # noqa: E402
 from voices.anchors import passages, reattach  # noqa: E402
-from voices.core import CONFIRMATION, ID_RE, TYPES, UNDER_13, RateLimit, Store, public, validate  # noqa: E402
+from voices.core import CONFIRMATION, ID_RE, TYPES, UNDER_13, VERDICTS, RateLimit, Store, public, type_label, validate  # noqa: E402
 
 DEMO = ROOT / "voices" / ".demo"
 SITE = DEMO / "site"
@@ -106,6 +106,13 @@ def approved_notes(page: str) -> list[dict]:
     return out
 
 
+def approved_findings() -> list[dict]:
+    """Approved Verify findings whose claim still exists (claim ids are stable in site-src/cases.py)."""
+    known = claims()
+    return [public(i) for i in store().all()
+            if i["status"] == "approved" and i["kind"] == "finding" and i["anchor"] in known]
+
+
 def receive(form: dict, client: str) -> tuple[int, str]:
     sub, errors = validate(form)
     if errors == ["spam"]:
@@ -172,9 +179,12 @@ def moderate_page() -> str:
                      f'Re-attach it by hand or reject it.</p>' if aid is None else
                      f'<p>Attaches to <code>{E(aid)}</code> ({E(how)}). <a href="/{E(it["page"])}.html#{E(aid)}">See the passage</a></p>')
             quote = it["selector"].get("exact", "")
-        elif it["kind"] == "claim":
-            quote = cl.get(it["anchor"], "")
-            where = f'<p>Claim <code>{E(it["anchor"])}</code> on the <a href="/verify.html#{E(it["anchor"])}">Verify page</a></p>'
+        elif it["kind"] in ("claim", "finding"):
+            quote = cl.get(it["anchor"], "") or it.get("selector", {}).get("exact", "")
+            verdict = f' &middot; their finding: <b>{E(VERDICTS.get(it.get("verdict", ""), ""))}</b>' if it["kind"] == "finding" else ""
+            where = (f'<p class="flag">FLAGGED: claim <code>{E(it["anchor"])}</code> no longer exists. It will not be shown.</p>'
+                     if it["anchor"] not in cl else
+                     f'<p>Claim <code>{E(it["anchor"])}</code> on the <a href="/verify.html#{E(it["anchor"])}">Verify page</a>{verdict}</p>')
         else:
             quote, where = "", f'<p>General tip about <b>{E(it["inductee"])}</b></p>'
         act = (f'''<form class="vv-form" method="post" action="/voices/moderate"><input type="hidden" name="token" value="{TOKEN}">
@@ -183,9 +193,9 @@ def moderate_page() -> str:
 <input type="text" id="why-{E(it['id'])}" name="why"><button class="vv-send" name="action" value="approve">Approve</button>
 <button class="vv-send" name="action" value="reject">Reject</button></form>''' if it["status"] == "pending" else
                "".join(f'<p class="st">{E(d["action"])}d by {E(d["by"])} at {E(d["at"])} {E(d["why"])}</p>' for d in it["decisions"]))
-        rows.append(f'''<section class="vv-mod" id="{E(it['id'])}"><p class="st">{E(it['id'])} &middot; {E(it['status'])} &middot; {E(it['kind'])} &middot; {E(TYPES[it['type']])} &middot; {E(it['page'])}</p>
+        rows.append(f'''<section class="vv-mod" id="{E(it['id'])}"><p class="st">{E(it['id'])} &middot; {E(it['status'])} &middot; {E(it['kind'])} &middot; {E(type_label(it))} &middot; {E(it['page'])}</p>
 {where}{f'<blockquote class="vv-ctx">{E(quote)}</blockquote>' if quote else ''}
-<p><b>Visitor wrote:</b></p><p class="vv-text">{E(it['text'])}</p>
+<p><b>Visitor wrote:</b></p><p class="vv-text">{E(it['text']) or '<i>(no comment, only their finding)</i>'}</p>
 <table><tr><th>Source</th><td>{E(it['source']) or '&mdash;'} {'(plain text, not a link)' if it['source'] else ''}</td></tr>
 <tr><th>Relationship</th><td>{E(it.get('relationship', '')) or '&mdash;'}</td></tr>
 <tr><th>Name</th><td>{E(it['name']) or '&mdash;'} (shown as &ldquo;{E(public(it)['by'])}&rdquo;)</td></tr>
@@ -241,7 +251,8 @@ class Handler(BaseHTTPRequestHandler):
         u = urllib.parse.urlsplit(self.path)
         q = urllib.parse.parse_qs(u.query)
         if u.path == "/voices/api/notes":
-            return self._json(200, {"notes": approved_notes(q.get("page", [""])[0])})
+            pg = q.get("page", [""])[0]
+            return self._json(200, {"notes": approved_findings() if pg == "verify" else approved_notes(pg)})
         if u.path == "/voices/form":
             return self._send(200, nojs_form(q))
         if u.path == "/voices/moderate":

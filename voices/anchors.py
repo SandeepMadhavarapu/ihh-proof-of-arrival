@@ -5,7 +5,8 @@ tools/build_profile.py gives every paragraph, fact, quote and caption a stable i
 plus a TextQuoteSelector (https://www.w3.org/TR/annotation-model/#text-quote-selector):
 the exact words chosen, and up to 32 characters either side.
 
-When the copy is edited, a passage's id changes. `reattach` then finds where the note belongs:
+Each passage's notes are drawn as a thread directly after it (voices/render.py, using
+passage_ends). When the copy is edited, a passage's id changes. `reattach` then finds where the note belongs:
 
   1. "exact"  the stored id still exists and still contains the quoted words
   2. "moved"  prefix + exact + suffix (or exact alone, if it occurs once) found in another passage
@@ -71,6 +72,46 @@ def passages(page_html: str) -> dict[str, str]:
     p = _Passages()
     p.feed(page_html)
     return {aid: norm("".join(p.found[aid])) for aid in p.order}
+
+
+class _Ends(HTMLParser):
+    """Character offset just past the closing tag of every element marked data-ihh-anchor."""
+
+    VOID = _Passages.VOID
+
+    def __init__(self, src: str) -> None:
+        super().__init__(convert_charrefs=True)
+        self.src, self.stack, self.ends = src, [], {}
+        self.lines = [0]
+        for line in src.splitlines(keepends=True):
+            self.lines.append(self.lines[-1] + len(line))
+
+    def _offset(self) -> int:
+        line, col = self.getpos()
+        return self.lines[line - 1] + col
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.VOID:
+            return
+        a = dict(attrs)
+        self.stack.append((tag, a.get("id") if "data-ihh-anchor" in a else None))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i][0] == tag:
+                aid = self.stack[i][1]
+                if aid:
+                    self.ends[aid] = self.src.index(">", self._offset()) + 1
+                del self.stack[i:]
+                return
+
+
+def passage_ends(page_html: str) -> dict[str, int]:
+    """{anchor id: offset just after that passage's closing tag}, so a thread can follow it."""
+    p = _Ends(page_html)
+    p.feed(page_html)
+    p.close()
+    return p.ends
 
 
 def selector(text: str, start: int, end: int) -> dict:

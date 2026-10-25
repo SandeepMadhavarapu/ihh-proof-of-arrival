@@ -101,7 +101,7 @@ def tell_html(cfg):
 '''
 
 
-def claim_html(c, cl, i, total, cfg):
+def claim_html(c, cl, i, total, cfg, findings=()):
     tag = ('<span class="cl-tag live">Published on immigranthallofhonor.org</span>'
            if cl["origin"]=="live" else
            '<span class="cl-tag ours">This exhibit&rsquo;s own claim</span>')
@@ -146,13 +146,16 @@ def claim_html(c, cl, i, total, cfg):
       <p class="stamp {cl['verdict']}">{LABEL[cl['verdict']]}</p>
       <p>{cl['reasoning']}</p>
       <p class="lesson"><b>What this one teaches.</b> {cl['lesson']}</p>
-    </details>{claim_report(cfg, cl)}
+    </details>{voices_render.findings_block(cl['id'], cl['text'], list(findings))}{claim_report(cfg, cl)}
   </li>'''
 
 def main(site=SITE, voices=None):
     """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy."""
     cfg = voices_render.load_config(ROOT, voices)
     on = cfg["adapter"] != "none"
+    # Approved visitor findings, each tied to its claim id. The demo's own build draws none here;
+    # its findings arrive through margin-notes.js instead.
+    findings = voices_render.load_findings(ROOT) if voices is None else []
     shell=open(os.path.join(site,"about.html"),encoding="utf-8").read()
     head=shell[shell.index("<body>"):shell.index("</header>")+len("</header>")]
     foot=shell[shell.index('<footer class="site-foot">'):]
@@ -160,7 +163,7 @@ def main(site=SITE, voices=None):
     sections=[]
     for c in CASES:
         t=len(c["claims"])
-        claims="\n\n".join(claim_html(c,cl,i+1,t,cfg) for i,cl in enumerate(c["claims"]))
+        claims="\n\n".join(claim_html(c,cl,i+1,t,cfg,findings) for i,cl in enumerate(c["claims"]))
         sections.append(f'''<section class="case" id="case-{c['id']}" aria-labelledby="h-{c['id']}">
   <p class="case-kick">Case file &mdash; arrived {c['arrived']} from {c['from']}</p>
   <h2 id="h-{c['id']}">{c['name']}</h2>
@@ -280,8 +283,9 @@ def main(site=SITE, voices=None):
     out = out.replace(' href="about.html" aria-current="page"', ' href="about.html"')
     out = out.replace('<li><a href="verify.html">Verify</a></li>',
                       '<li><a href="verify.html" aria-current="page">Verify</a></li>')
-    if on:
+    if on or findings:
         out = out.replace("</head>", '<link rel="stylesheet" href="assets/margin-notes.css">\n</head>', 1)
+    if on:
         out = out.replace("</body>", '<script src="assets/margin-notes.js" defer></script>\n</body>', 1)
     path=os.path.join(site,"verify.html")
     open(path,"w",encoding="utf-8",newline="\n").write(out)

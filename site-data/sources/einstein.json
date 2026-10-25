@@ -1,0 +1,20 @@
+{
+ "_note": "Interviews and media for this inductee from other institutions. Format: site-data/sources/README.md. The entry below is a PLACEHOLDER to show the layout; replace it with a real, permission-checked source.",
+ "sources": [
+  {
+   "id": "einstein-placeholder-interview",
+   "title": "TODO: title of an interview or documentary clip, as the holding institution gives it",
+   "kind": "video",
+   "creator": "TODO: historian or interviewer",
+   "creator_role": "historian",
+   "institution": "TODO: holding museum or archive",
+   "date": "TODO",
+   "url": "TODO",
+   "embed_url": "",
+   "permission": "pending",
+   "credit": "TODO: the holder's required credit line",
+   "description": "TODO: one sentence on why this recording matters. Layout example only.",
+   "placeholder": true
+  }
+ ]
+}

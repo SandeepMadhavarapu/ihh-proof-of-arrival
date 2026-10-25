@@ -345,3 +345,27 @@
     targets.forEach(function(el){ el.classList.add('is-in'); });
   });
 })();
+
+/* Interviews and media: a recording whose holder granted permission loads only when the visitor
+   presses Play, so the page makes no request to the player's host until then. Without this
+   script the Play button is an ordinary link to the holder's page. */
+(function(){
+  'use strict';
+  [].slice.call(document.querySelectorAll('.ms-embed[data-embed]')).forEach(function(box){
+    var play = box.querySelector('.ms-play'), src = box.getAttribute('data-embed');
+    if (!play || !/^https:\/\//.test(src)) return;
+    play.addEventListener('click', function(e){
+      e.preventDefault();
+      var f = document.createElement('iframe');
+      f.src = src;
+      f.title = box.getAttribute('data-title') || 'Recording';
+      f.setAttribute('allow', 'fullscreen; picture-in-picture');
+      f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      f.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation allow-popups');
+      f.className = 'ms-frame';
+      box.textContent = '';
+      box.appendChild(f);
+      f.focus();
+    });
+  });
+})();

@@ -1,0 +1,115 @@
+"""Offline tests: interviews and media from other institutions, and their permission rules."""
+import json
+import re
+import tempfile
+import unittest
+from pathlib import Path
+
+from living.config import ROOT
+from tools import media_sources as ms
+
+SITE = ROOT / "site"
+GOOD = {"id": "x-clip", "title": "A clip", "kind": "video", "institution": "A museum",
+        "url": "https://museum.example/item/1", "permission": "pending"}
+
+
+def write(td, slug, sources):
+    d = Path(td) / "site-data" / "sources"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / f"{slug}.json").write_text(json.dumps({"sources": sources}), encoding="utf-8")
+    return td
+
+
+class Format(unittest.TestCase):
+    def test_seed_files_are_valid_and_every_entry_is_a_marked_placeholder(self):
+        files = sorted((ROOT / "site-data" / "sources").glob("*.json"))
+        self.assertGreaterEqual(len(files), 2)
+        for f in files:
+            for s in ms.load(str(ROOT), f.stem):
+                if s.get("placeholder") is True:
+                    self.assertIn("TODO", s["title"], f.name)
+                    self.assertEqual(s["url"], "TODO", f"{f.name}: placeholders must not carry a real-looking URL")
+
+    def test_mistakes_are_refused_with_the_reason(self):
+        cases = {
+            "unknown field": dict(GOOD, permision="granted"),
+            "permission must be": dict(GOOD, permission="yes"),
+            "kind must be": dict(GOOD, kind="podcast"),
+            "url must be": dict(GOOD, url="http://museum.example/item"),
+            "still says TODO": dict(GOOD, title="TODO: a title"),
+            "embed_url must be": dict(GOOD, permission="granted", embed_url="https://evil.example/player"),
+            "date must be": dict(GOOD, date="March 1940"),
+            "'institution' is required": {k: v for k, v in GOOD.items() if k != "institution"},
+        }
+        for why, entry in cases.items():
+            with tempfile.TemporaryDirectory() as td:
+                write(td, "x", [entry])
+                with self.assertRaises(ms.SourceError, msg=why) as ctx:
+                    ms.load(td, "x")
+                self.assertIn(why, str(ctx.exception))
+
+    def test_duplicate_ids_are_refused(self):
+        with tempfile.TemporaryDirectory() as td:
+            write(td, "x", [GOOD, GOOD])
+            with self.assertRaises(ms.SourceError):
+                ms.load(td, "x")
+
+    def test_no_file_means_no_sources(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(ms.load(td, "nobody"), [])
+            self.assertIn("No outside interviews or media", ms.render(td, "nobody"))
+
+
+class Permission(unittest.TestCase):
+    def render_one(self, **kw):
+        with tempfile.TemporaryDirectory() as td:
+            write(td, "x", [dict(GOOD, **kw)])
+            return ms.render(td, "x")
+
+    def test_pending_and_link_only_only_link_out(self):
+        for perm in ("pending", "link-only"):
+            out = self.render_one(permission=perm, embed_url="https://www.youtube-nocookie.com/embed/abc")
+            self.assertNotIn("data-embed", out, perm)
+            self.assertNotIn("<iframe", out, perm)
+            self.assertNotIn("youtube-nocookie", out, perm)
+            self.assertIn('href="https://museum.example/item/1"', out, perm)
+            self.assertIn("A museum", out)
+
+    def test_granted_loads_nothing_until_play(self):
+        out = self.render_one(permission="granted", embed_url="https://www.youtube-nocookie.com/embed/abc")
+        self.assertIn('data-embed="https://www.youtube-nocookie.com/embed/abc"', out)
+        self.assertIn("Play the recording", out)
+        self.assertNotIn("<iframe", out)
+        self.assertNotRegex(out, r'\bsrc="https://www\.youtube')
+
+    def test_granted_without_a_player_is_still_a_link(self):
+        out = self.render_one(permission="granted")
+        self.assertNotIn("data-embed", out)
+        self.assertIn("Shown with permission of A museum", out)
+
+    def test_attribution_is_escaped(self):
+        out = self.render_one(creator="<b>Dr X</b>", creator_role="historian", date="1940")
+        self.assertIn("&lt;b&gt;Dr X&lt;/b&gt; (historian) &middot; A museum &middot; 1940", out)
+
+
+class BuiltSite(unittest.TestCase):
+    def test_every_published_profile_has_the_section(self):
+        for page in json.loads((ROOT / "site-data" / "published.json").read_text(encoding="utf-8"))["published"]:
+            text = (SITE / f"{page}.html").read_text(encoding="utf-8")
+            self.assertIn('id="interviews-and-media"', text, page)
+
+    def test_built_pages_make_no_request_to_a_player_host(self):
+        for page in SITE.glob("*.html"):
+            text = page.read_text(encoding="utf-8")
+            self.assertNotIn("<iframe", text, page.name)
+            for host in ms.EMBED_HOSTS:
+                self.assertNotRegex(text, r'\bsrc="https://' + re.escape(host), page.name)
+
+    def test_placeholders_are_labelled_on_the_page(self):
+        cruz = (SITE / "cruz.html").read_text(encoding="utf-8")
+        self.assertIn("Placeholder &mdash; not a real source", cruz)
+        self.assertIn("ms-placeholder", cruz)
+
+
+if __name__ == "__main__":
+    unittest.main()

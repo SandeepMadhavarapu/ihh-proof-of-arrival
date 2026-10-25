@@ -20,7 +20,13 @@ from pathlib import Path
 
 TYPES = {"perspective": "My perspective", "more": "I know more",
          "wrong": "Something looks wrong", "question": "Question"}
-KINDS = ("note", "claim", "tip")        # margin note | Verify claim report | Verify general form
+# margin note | Verify claim report | Verify general form | Verify verdict shared by a visitor
+KINDS = ("note", "claim", "tip", "finding")
+# A "finding" is the visitor's own verdict on one Verify claim (the agree/disagree step), tied to
+# that claim's id like a note is tied to its passage. Its comment is optional: the verdict is the
+# response. Labels match site-src/gen.py VERDICTS.
+VERDICTS = {"confirmed": "Confirmed", "unsupported": "Not supported", "contradicted": "Contradicted"}
+FINDING_LABEL = "My finding"
 STATUSES = ("pending", "approved", "rejected")
 LIMITS = {"text": 1000, "source": 300, "relationship": 100, "name": 40, "email": 120,
           "exact": 600, "prefix": 64, "suffix": 64}
@@ -51,10 +57,15 @@ def validate(form: dict) -> tuple[dict | None, list[str]]:
     if kind not in KINDS:
         errors.append("unknown kind")
     typ = form.get("type", "")
-    if typ not in TYPES:
+    verdict = str(form.get("verdict") or "")
+    if kind == "finding":
+        typ = "finding"
+        if verdict not in VERDICTS:
+            errors.append("record your finding first")
+    elif typ not in TYPES:
         errors.append("choose what kind of note this is")
     text = clean(form.get("text"), 10 ** 6)
-    if not text:
+    if not text and kind != "finding":      # a finding's verdict is its content; its comment is optional
         errors.append("write something first")
     elif len(text) > LIMITS["text"]:
         errors.append(f"keep it under {LIMITS['text']} characters")
@@ -62,7 +73,7 @@ def validate(form: dict) -> tuple[dict | None, list[str]]:
     anchor = str(form.get("anchor") or "")
     if not ID_RE.fullmatch(page):
         errors.append("missing page")
-    if kind in ("note", "claim") and not ID_RE.fullmatch(anchor):
+    if kind in ("note", "claim", "finding") and not ID_RE.fullmatch(anchor):
         errors.append("missing passage")
     email = clean(form.get("email"), LIMITS["email"])
     if email and not EMAIL_RE.fullmatch(email):
@@ -76,14 +87,15 @@ def validate(form: dict) -> tuple[dict | None, list[str]]:
         "source": clean(form.get("source"), LIMITS["source"]) if typ in ("more", "wrong") or kind == "tip" else "",
         "relationship": clean(form.get("relationship"), LIMITS["relationship"]) if kind == "tip" else "",
         "inductee": page if kind == "tip" else "",
+        "verdict": verdict if kind == "finding" else "",
         "name": clean(form.get("name"), LIMITS["name"]),
         "email": email,
         "selector": {"type": "TextQuoteSelector",
                      "exact": clean(sel.get("exact"), LIMITS["exact"]),
                      "prefix": clean(sel.get("prefix"), LIMITS["prefix"]),
-                     "suffix": clean(sel.get("suffix"), LIMITS["suffix"])} if kind == "note" else {},
+                     "suffix": clean(sel.get("suffix"), LIMITS["suffix"])} if kind in ("note", "finding") else {},
     }
-    if kind == "note" and not sub["selector"]["exact"]:
+    if kind in ("note", "finding") and not sub["selector"]["exact"]:
         return None, ["missing quoted passage"]
     return sub, []
 
@@ -110,12 +122,19 @@ def display_name(name: str) -> str:
     return first[:20] if first and not EMAIL_RE.search(name) else "A visitor"
 
 
+def type_label(item: dict) -> str:
+    return FINDING_LABEL if item.get("kind") == "finding" else TYPES.get(item.get("type", ""), "Note")
+
+
 def public(item: dict) -> dict:
     """The only fields of an item that may ever be shown: never the email, never the source link."""
-    return {"id": item["id"], "page": item["page"], "anchor": item.get("anchor", ""),
-            "selector": item.get("selector", {}), "type": item["type"], "type_label": TYPES[item["type"]],
-            "text": EMAIL_RE.sub("[email removed]", item["text"]),
-            "by": display_name(item.get("name", "")), "date": item["created_at"][:10]}
+    out = {"id": item["id"], "kind": item.get("kind", "note"), "page": item["page"], "anchor": item.get("anchor", ""),
+           "selector": item.get("selector", {}), "type": item["type"], "type_label": type_label(item),
+           "text": EMAIL_RE.sub("[email removed]", item["text"]),
+           "by": display_name(item.get("name", "")), "date": item["created_at"][:10]}
+    if item.get("kind") == "finding":
+        out["verdict"] = item.get("verdict", "")
+    return out
 
 
 class Store:

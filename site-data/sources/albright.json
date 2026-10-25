@@ -1,0 +1,20 @@
+{
+ "_note": "Interviews and media for this inductee from other institutions. Format: site-data/sources/README.md. The entry below is a PLACEHOLDER to show the layout; replace it with a real, permission-checked source.",
+ "sources": [
+  {
+   "id": "albright-placeholder-oral-history",
+   "title": "TODO: title of an oral history interview",
+   "kind": "oral-history",
+   "creator": "TODO: interviewer",
+   "creator_role": "interviewer",
+   "institution": "TODO: holding institution",
+   "date": "TODO",
+   "url": "TODO",
+   "embed_url": "",
+   "permission": "link-only",
+   "credit": "",
+   "description": "TODO: one sentence. Layout example of a link-only source.",
+   "placeholder": true
+  }
+ ]
+}

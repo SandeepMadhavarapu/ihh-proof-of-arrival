@@ -87,10 +87,10 @@
   }
   var isVerify = !!document.querySelector('.claims');
   if (!isVerify) passages.forEach(function(p){
-    var b = el('button', 'vv-add', 'Add a note');
+    var b = el('button', 'vv-add', 'Comment on this section');
     b.type = 'button';
     var words = passageText(p).split(' ').slice(0, 8).join(' ');
-    b.setAttribute('aria-label', 'Add a note on the passage beginning: ' + words);
+    b.setAttribute('aria-label', 'Comment on the section beginning: ' + words);
     b.addEventListener('click', function(){
       open({kind: 'note', anchor: p.id, selector: wholeSelector(p), quote: passageText(p), trigger: b});
     });
@@ -98,7 +98,7 @@
   });
 
   /* ── "Add a note on this" for highlighted text ── */
-  var selBtn = el('button', 'vv-sel vv-ui', 'Add a note on this');
+  var selBtn = el('button', 'vv-sel vv-ui', 'Comment on this');
   selBtn.type = 'button'; selBtn.hidden = true;
   var pending = null, selTimer = null;
   selBtn.addEventListener('mousedown', function(e){ e.preventDefault(); });   // keep the selection
@@ -137,10 +137,10 @@
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-labelledby', 'vv-title');
   var head = el('div', 'vv-head');
-  var title = el('h2', null, 'Add a note'); title.id = 'vv-title'; title.tabIndex = -1;
+  var title = el('h2', null, 'Comment on this section'); title.id = 'vv-title'; title.tabIndex = -1;
   var x = el('button', 'vv-x', '×'); x.type = 'button'; x.setAttribute('aria-label', 'Close');
   head.appendChild(title); head.appendChild(x);
-  var ctxL = el('p', 'vv-ctx-l', 'On this passage:');
+  var ctxL = el('p', 'vv-ctx-l', 'You are responding to:');
   var ctx = el('blockquote', 'vv-ctx');
   var form = el('form', 'vv-form'); form.noValidate = true;
   var fs = el('fieldset', 'vv-types'); fs.appendChild(el('legend', null, 'What kind of note is it?'));
@@ -156,6 +156,7 @@
     input.id = id;
     return [lab, input];
   }
+  var verdictP = el('p', 'vv-verdict'); verdictP.hidden = true;
   var text = el('textarea'); text.maxLength = MAX; text.rows = 5; text.required = true;
   var count = el('p', 'vv-count'); count.id = 'vv-count'; text.setAttribute('aria-describedby', 'vv-count');
   var source = el('input'); source.type = 'text'; source.maxLength = 300;
@@ -170,8 +171,9 @@
   field('vv-website', 'Leave this empty', '', hpIn).forEach(function(n){ hp.appendChild(n); });
   var err = el('p', 'vv-err'); err.setAttribute('role', 'alert'); err.hidden = true;
   var send = el('button', 'vv-send', 'Send to a curator'); send.type = 'submit';
-  form.appendChild(fs);
-  field('vv-text', 'Your note', '', text).forEach(function(n){ form.appendChild(n); });
+  form.appendChild(fs); form.appendChild(verdictP);
+  var textLabel = field('vv-text', 'Your note', '', text);
+  textLabel.forEach(function(n){ form.appendChild(n); });
   form.appendChild(count); form.appendChild(srcWrap); form.appendChild(kid);
   field('vv-name', 'First name', '(optional, shown with your note)', name).forEach(function(n){ form.appendChild(n); });
   field('vv-email', 'Email', '(optional, never shown; only so a curator can reply)', email).forEach(function(n){ form.appendChild(n); });
@@ -188,13 +190,21 @@
   function type(scope){ var r = scope.querySelector('input[type=radio]:checked'); return r ? r.value : ''; }
 
   var current = null;
+  var VERDICT = {confirmed: 'Confirmed', unsupported: 'Not supported', contradicted: 'Contradicted'};
   function open(c){
     current = c;
-    title.textContent = c.kind === 'claim' ? 'Report or add to this claim' : 'Add a note';
-    ctxL.textContent = c.kind === 'claim' ? 'The claim:' : 'On this passage:';
+    var finding = c.kind === 'finding';
+    title.textContent = c.kind === 'claim' ? 'Report or add to this claim' :
+                        finding ? 'Share your finding with the museum' : 'Comment on this section';
+    ctxL.textContent = c.kind === 'note' ? 'You are responding to:' : 'The claim:';
     ctx.textContent = c.quote;
     form.reset(); tick(); err.hidden = true; done.hidden = true; form.hidden = false; send.disabled = false;
     srcWrap.hidden = true;
+    fs.hidden = finding; verdictP.hidden = !finding; text.required = !finding;
+    verdictP.textContent = finding ? 'Your finding: ' + VERDICT[c.verdict] : '';
+    textLabel[0].firstChild.nodeValue = finding ? 'Why? ' : 'Your note';
+    if (finding && !textLabel[0].querySelector('.vv-opt')) textLabel[0].appendChild(el('span', 'vv-opt', '(optional)'));
+    if (!finding){ var o = textLabel[0].querySelector('.vv-opt'); if (o) o.remove(); }
     if (c.kind === 'claim'){ fs.querySelector('input[value=wrong]').checked = true; srcWrap.hidden = false; }
     panel.hidden = false;
     title.focus();
@@ -218,14 +228,16 @@
     return sent.length < 3;
   }
   function problem(p){
-    if (!p.type) return 'Choose what kind of note this is.';
-    if (!p.text) return 'Write something first.';
+    if (p.kind === 'finding'){ if (!VERDICT[p.verdict]) return 'Record your finding first.'; }
+    else if (!p.type) return 'Choose what kind of note this is.';
+    if (!p.text && p.kind !== 'finding') return 'Write something first.';
     if (p.text.length > MAX) return 'Keep it under ' + MAX + ' characters.';
     if (p.email && !/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(p.email)) return 'That email address does not look right. It is optional, so you can leave it empty.';
     return '';
   }
   function wpBody(p){
-    var lines = ['[ihh-note v1 kind=' + p.kind + ' type=' + p.type + ' page=' + p.page + ' anchor=' + (p.anchor || '-') + ']'];
+    var lines = ['[ihh-note v1 kind=' + p.kind + ' type=' + p.type + ' page=' + p.page + ' anchor=' + (p.anchor || '-') +
+                 (p.verdict ? ' verdict=' + p.verdict : '') + ']'];
     if (p.selector && p.selector.exact){
       lines.push('Quote: ' + p.selector.exact);
       if (p.selector.prefix) lines.push('Before: ' + p.selector.prefix);
@@ -245,7 +257,7 @@
       return fetch(cfg.wp + '/wp-comments-post.php', {method: 'POST', body: body, credentials: 'same-origin', redirect: 'manual'})
         .then(function(r){ if (r.type === 'opaqueredirect' || r.ok) return CONFIRM; throw new Error('status ' + r.status); });
     }
-    var subject = (p.kind === 'note' ? 'Note on ' : 'Report on ') + p.page + (p.anchor ? ', ' + p.anchor : '');
+    var subject = (p.kind === 'note' ? 'Note on ' : p.kind === 'finding' ? 'Finding on ' : 'Report on ') + p.page + (p.anchor ? ', ' + p.anchor : '');
     location.href = 'mailto:' + cfg.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(wpBody(p));
     return Promise.resolve('Your email app should open with your note filled in. Once you send it: ' + CONFIRM);
   }
@@ -263,12 +275,12 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if (!current) return;
-    var p = {kind: current.kind, type: type(fs), page: cfg.page, anchor: current.anchor,
-             selector: current.kind === 'note' ? current.selector : {}, text: text.value.trim(),
+    var p = {kind: current.kind, type: current.kind === 'finding' ? 'finding' : type(fs), page: cfg.page, anchor: current.anchor,
+             selector: current.kind === 'claim' ? {} : current.selector, verdict: current.verdict || '', text: text.value.trim(),
              source: srcWrap.hidden ? '' : source.value.trim(), name: name.value.trim(), email: email.value.trim(),
              website: hpIn.value};
     submit(p, {err: err,
-      focusBad: function(){ (p.type ? text : fs.querySelector('input')).focus(); },
+      focusBad: function(){ (p.type || p.kind === 'finding' ? text : fs.querySelector('input')).focus(); },
       busy: function(b){ send.disabled = b; send.textContent = b ? 'Sending…' : 'Send to a curator'; },
       ok: function(msg){ form.hidden = true; done.textContent = msg; done.hidden = false; done.focus(); }});
   });
@@ -284,6 +296,20 @@
       open({kind: 'claim', anchor: cl.id, quote: t ? norm(t.textContent) : '', trigger: b});
     });
     box.appendChild(b);
+    /* Share my finding: the visitor's verdict, tied to this claim's id, with the claim quoted. */
+    var share = el('button', 'vv-claim-btn vv-share', 'Share my finding with the museum'); share.type = 'button';
+    share.hidden = true;
+    share.setAttribute('aria-label', 'Share your finding on ' + (cl.getAttribute('data-case') || '') + ', claim ' + (cl.getAttribute('data-n') || ''));
+    share.addEventListener('click', function(){
+      var r = cl.querySelector('.vd input[type=radio]:checked'), t = cl.querySelector('.cl-text');
+      if (!r) return;
+      var q = t ? norm(t.textContent) : '';
+      open({kind: 'finding', anchor: cl.id, verdict: r.value, quote: q,
+            selector: {type: 'TextQuoteSelector', exact: q.slice(0, 600), prefix: '', suffix: ''}, trigger: share});
+    });
+    cl.addEventListener('change', function(e){ if (e.target.closest('.vd')) share.hidden = false; });
+    if (cl.querySelector('.vd input[type=radio]:checked')) share.hidden = false;
+    box.appendChild(share);
   });
   var tell = document.getElementById('vv-tell-form');
   if (tell){
@@ -316,42 +342,97 @@
     (prof ? prof.parentNode : root).insertBefore(sec, prof ? prof.nextSibling : null);
     return sec;
   }
+  function noteItem(n){
+    var item = el('li', 'vv-note'), meta = el('p', 'vv-meta');
+    meta.appendChild(el('span', 'vv-type', LABEL[n.type] || 'Note'));
+    meta.appendChild(document.createTextNode(' · ' + (n.by || 'A visitor') + ' · '));
+    var t = el('time', null, n.date || ''); if (n.date) t.setAttribute('datetime', n.date);
+    meta.appendChild(t);
+    item.appendChild(meta);
+    item.appendChild(el('p', 'vv-text', String(n.text || '').replace(EMAIL, '[email removed]')));
+    return item;
+  }
+  function quoted(n, p){
+    var frag = document.createDocumentFragment();
+    var q = (n.selector && n.selector.exact) || passageText(p);
+    frag.appendChild(el('blockquote', 'vv-q', q.length > 300 ? q.slice(0, 300).replace(/\s+\S*$/, '') + '…' : q));
+    if (plainQuotes(passageText(p)).indexOf(plainQuotes(norm(q))) === -1)
+      frag.appendChild(el('p', 'vv-was', 'This comment was left on an earlier wording of the passage.'));
+    return frag;
+  }
+  /* A count that expands, right under the passage it belongs to. */
+  function thread(p, list){
+    var k = list.length, d = el('details', 'vv-thread vv-ui'); d.id = 'vv-t-' + p.id;
+    d.appendChild(el('summary', null, k + ' visitor comment' + (k > 1 ? 's' : '') + ' on this section'));
+    d.appendChild(quoted(list[0], p));
+    var ul = el('ul', 'vv-notes plain');
+    list.forEach(function(n){ ul.appendChild(noteItem(n)); });
+    d.appendChild(ul);
+    p.insertAdjacentElement('afterend', d);
+  }
   function draw(notes){
-    var placed = {}, order = [];
+    var placed = {}, order = [], general = [];
     notes.forEach(function(n){
+      if (!n.anchor && !(n.selector && norm(n.selector.exact || ''))){ general.push(n); return; }   // legacy: never had a passage
       var p = locate(n.anchor, n.selector);
       if (!p) return;
       if (!placed[p.id]){ placed[p.id] = []; order.push(p); }
       placed[p.id].push(n);
     });
     order.sort(function(a, b){ return passages.indexOf(a) - passages.indexOf(b); });
-    [].slice.call(root.querySelectorAll('.vv-mark')).forEach(function(m){ m.remove(); });
+    [].slice.call(root.querySelectorAll('.vv-mark, .vv-thread, .vv-general-h, .vv-general')).forEach(function(m){ m.remove(); });
     var sec = index(), list = sec.querySelector('.vv-list'), empty = sec.querySelector('.vv-empty');
     list.textContent = '';
-    if (empty) empty.hidden = order.length > 0;
+    if (empty) empty.hidden = order.length > 0 || general.length > 0;
+    order.forEach(function(p){ thread(p, placed[p.id]); });
     order.forEach(function(p){
       var k = placed[p.id].length;
       var m = el('a', 'vv-mark', String(k)); m.href = '#vv-' + p.id;
       m.appendChild(el('span', 'vv-sr', ' visitor note' + (k > 1 ? 's' : '') + ' on this passage'));
       var r = rail(p); r.insertBefore(m, r.firstChild);
       var li = el('li', 'vv-entry'); li.id = 'vv-' + p.id;
-      var q = (placed[p.id][0].selector && placed[p.id][0].selector.exact) || passageText(p);
-      li.appendChild(el('blockquote', 'vv-q', q.length > 300 ? q.slice(0, 300).replace(/\s+\S*$/, '') + '…' : q));
+      li.appendChild(quoted(placed[p.id][0], p));
       var ul = el('ul', 'vv-notes');
-      placed[p.id].forEach(function(n){
-        var item = el('li', 'vv-note'), meta = el('p', 'vv-meta');
-        meta.appendChild(el('span', 'vv-type', LABEL[n.type] || 'Note'));
-        meta.appendChild(document.createTextNode(' · ' + (n.by || 'A visitor') + ' · '));
-        var t = el('time', null, n.date || ''); if (n.date) t.setAttribute('datetime', n.date);
-        meta.appendChild(t);
-        item.appendChild(meta);
-        item.appendChild(el('p', 'vv-text', String(n.text || '').replace(EMAIL, '[email removed]')));
-        ul.appendChild(item);
-      });
+      placed[p.id].forEach(function(n){ ul.appendChild(noteItem(n)); });
       li.appendChild(ul);
       var back = el('p', 'vv-back'), a = el('a', null, 'Back to the passage'); a.href = '#' + p.id;
       back.appendChild(a); li.appendChild(back);
       list.appendChild(li);
+    });
+    if (general.length){
+      sec.appendChild(el('h3', 'vv-general-h', 'General notes on this page'));
+      var g = el('ul', 'vv-notes vv-general');
+      general.forEach(function(n){ g.appendChild(noteItem(n)); });
+      sec.appendChild(g);
+    }
+  }
+  /* Verify: approved findings under their claim, as a tally that expands. */
+  function drawFindings(list){
+    var by = {};
+    list.forEach(function(f){ if (VERDICT[f.verdict] && document.getElementById(f.anchor)) (by[f.anchor] = by[f.anchor] || []).push(f); });
+    [].slice.call(document.querySelectorAll('.cl .vv-findings')).forEach(function(d){ d.remove(); });
+    Object.keys(by).forEach(function(id){
+      var cl = document.getElementById(id), fs = by[id], counts = [];
+      Object.keys(VERDICT).forEach(function(v){
+        var k = fs.filter(function(f){ return f.verdict === v; }).length;
+        if (k) counts.push(k + ' ' + VERDICT[v]);
+      });
+      var d = el('details', 'vv-thread vv-findings'); d.id = 'vv-t-' + id;
+      d.appendChild(el('summary', null, fs.length + ' visitor finding' + (fs.length > 1 ? 's' : '') + ': ' + counts.join(' · ')));
+      var ul = el('ul', 'vv-notes plain'), cur = norm((cl.querySelector('.cl-text') || {}).textContent || '');
+      fs.forEach(function(f){
+        var item = el('li', 'vv-note'), meta = el('p', 'vv-meta');
+        meta.appendChild(el('span', 'vv-type', 'My finding: ' + VERDICT[f.verdict]));
+        meta.appendChild(document.createTextNode(' · ' + (f.by || 'A visitor') + ' · ' + (f.date || '')));
+        item.appendChild(meta);
+        if (f.text) item.appendChild(el('p', 'vv-text', String(f.text).replace(EMAIL, '[email removed]')));
+        var was = norm((f.selector && f.selector.exact) || '');
+        if (was && was !== cur) item.appendChild(el('p', 'vv-was', 'Shared on an earlier wording of this claim.'));
+        ul.appendChild(item);
+      });
+      d.appendChild(ul);
+      var box = cl.querySelector('.vv-claim');
+      cl.insertBefore(d, box || null);
     });
   }
   function firstName(s){
@@ -369,7 +450,9 @@
     return {type: m[2], anchor: m[4], selector: sel, text: parts.slice(1).join('\n').trim(),
             by: firstName(c.author_name), date: String(c.date || '').slice(0, 10)};
   }
-  if (!isVerify){
+  if (isVerify){
+    if (adapter.load) adapter.load(cfg).then(function(list){ drawFindings((list || []).filter(function(f){ return f.kind === 'finding'; })); }, function(){});
+  } else {
     if (adapter.load){
       adapter.load(cfg).then(function(notes){ draw(notes || []); }, function(){});
     } else if (cfg.adapter === 'wordpress' && cfg.post){

@@ -40,7 +40,8 @@ documentation, linked at each step. Try them on a staging copy first.
   `GET /wp-json/wp/v2/comments?post=<ID>`. That endpoint's `status` argument defaults to
   `approve`, so pending and spam comments are not returned.
   ([reference](https://developer.wordpress.org/rest-api/reference/comments/))
-  The script draws a small count in the margin and a "Notes on this page" list. It writes every
+  The script draws a small count in the margin, an expandable "N visitor comments on this section"
+  thread directly under the passage (with the passage quoted), and a "Notes on this page" list. It writes every
   word as plain text and never as HTML, never makes a visitor's link clickable, and shows only
   a first name (or "A visitor") and the date. Emails are never shown.
 
@@ -208,7 +209,7 @@ We did not install anything, create any account, or change any setting on IHH's 
 
 If WordPress comments are not wanted, set `site-data/visitor-voices.json` to
 `{"adapter": "email", "email": {"address": "<an address IHH chooses>"}}` and rebuild. The
-"Add a note" button then opens the visitor's own email app, with the passage and their note
+"Comment on this section" button then opens the visitor's own email app, with the passage and their note
 filled in. Without JavaScript, each passage gets a plain `mailto:` link whose subject names the
 passage. Nothing is stored on the website. A curator reads the mailbox, and notes appear only
 when a curator adds them to `site-data/approved-notes.json` (via `voices/export_approved.py`

@@ -1,4 +1,4 @@
-"""Write approved margin notes to site-data/approved-notes.json, for a static build of the site.
+"""Write approved margin notes and Verify findings to site-data/approved-notes.json, for a static build.
 
     python -m voices.export_approved --store <moderation folder> [--out site-data/approved-notes.json]
 
@@ -23,8 +23,8 @@ NOTE = ("Visitor notes a curator has approved. Only entries with status approved
 
 
 def export(store: Store) -> dict:
-    notes = [dict(public(i), status="approved", kind="note") for i in store.all()
-             if i["status"] == "approved" and i["kind"] == "note"]
+    notes = [dict(public(i), status="approved") for i in store.all()
+             if i["status"] == "approved" and i["kind"] in ("note", "finding")]
     return {"_note": NOTE, "notes": notes}
 
 

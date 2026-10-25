@@ -76,7 +76,7 @@ Live homepage, real browser, 2 October 2026:
 
 | | immigranthallofhonor.org | This rebuild |
 |---|---|---|
-| Page weight | **2,869 KB** (homepage alone) | **505 KB** of HTML, CSS, scripts and text across twenty-one pages; portrait and archival image files additional |
+| Page weight | **2,869 KB** (homepage alone) | **521 KB** of HTML, CSS, scripts and text across twenty-one pages; portrait and archival image files additional |
 | HTTP requests | 56 | 3 per page |
 | `<h1>` elements | **0** | 1 on every page |
 | Heading sequence | `H6 > H6 > H6 > H6 > H6 > H6 > H3 > H2` | `H1 > H2 > H3` |
@@ -122,7 +122,7 @@ This is the finding to lead with. It is not a design opinion; it is a list of ho
 
 ## 5. What this rebuild does differently
 
-**Twenty-one pages. 505 KB of HTML, CSS, scripts and text; portrait and archival image files additional. Zero third-party requests. Zero axe violations. One H1 per page.**
+**Twenty-one pages. 521 KB of HTML, CSS, scripts and text; portrait and archival image files additional. Zero third-party requests. Zero axe violations. One H1 per page.**
 
 1. **Every claim sourced, every image credited** — the Albright profile carries 14 source items — 6 catalogued archival photographs with each institution's rights statement reproduced word for word, and 8 text sources — plus 4 lines of imagery considered and **turned down with the reason given**, and 2 records the National Archives Catalog does not describe at item level, named rather than hidden.
 2. **A rights and reuse policy** — the page they do not have, and the one a museum is judged on.

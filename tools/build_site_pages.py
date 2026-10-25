@@ -13,6 +13,8 @@ approval step (living/publisher.py, through a reviewed pull request) ever append
 Margin Notes: site-data/visitor-voices.json chooses how visitors send notes (none, wordpress or
 email; never the local demo), and only notes marked approved in site-data/approved-notes.json
 are drawn, each re-attached to its passage by voices/anchors.py or left out and reported.
+Interviews and media from other institutions: site-data/sources/<slug>.json, checked and drawn by
+tools/media_sources.py (link out until permission is granted).
 The chrome (head, header, footer) is taken from site/inductees.html so generated pages cannot
 drift from the rest of the site. This script reads nothing under living/.
 """
@@ -21,6 +23,7 @@ import datetime, html, json, os, re, shutil, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from voices import render as voices_render  # noqa: E402
+from tools import media_sources  # noqa: E402
 
 E = html.escape
 NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
@@ -154,13 +157,17 @@ def main(root=ROOT, site=None, voices=None):
         frag, index, flagged = voices_render.annotate(frag, name, [n for n in approved if n["page"] == name], cfg)
         for nid in flagged:
             print(f"  FLAGGED for the moderator: note {nid} on {name} no longer matches any passage; not shown")
+        try:
+            media = media_sources.render(root, name)
+        except media_sources.SourceError as e:
+            sys.exit(f"ERROR {e}")
         on = cfg["adapter"] != "none"
         page_head, page_foot = with_notes(retitle(head, f"{person} | Immigrant Hall of Honor", desc), foot,
                                           bool(index) or on, on)
         attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
         out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
                + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
-               + frag + index + "\n</main>" + page_foot)
+               + frag + media + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
             f.write(out)
         print(f"site/{name}.html")

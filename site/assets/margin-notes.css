@@ -95,3 +95,19 @@ html.vv-js .vv-nojs{display:none}
   border-radius:4px;background:var(--vv-p);color:var(--vv-acc);cursor:pointer;text-decoration:none;font-size:.9rem}
 .vv-tell .vv-form{max-width:36rem}
 @media print{.vv-rail,.vv-sel,.vv-panel,.vv-claim{display:none!important}}
+
+/* Per-section threads: a count that expands right under the passage (or Verify claim) it answers. */
+.vv-thread{margin:.2rem 0 1rem;border-left:3px solid var(--vv-acc);background:var(--vv-p2);
+  font:400 .9rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--vv-ink)}
+.vv-thread>summary{cursor:pointer;min-height:24px;padding:.45rem .75rem;color:var(--vv-acc);font-weight:600}
+.vv-thread>summary:focus-visible{outline:3px solid var(--vv-acc);outline-offset:2px}
+.vv-thread[open]>summary{border-bottom:1px solid var(--vv-rule)}
+.vv-thread .vv-q,.vv-thread .vv-notes,.vv-thread .vv-was{margin-left:.75rem;margin-right:.75rem}
+.vv-thread .vv-q{margin-top:.6rem}
+.vv-thread .vv-notes{padding-left:0;list-style:none}
+.vv-was{margin:.25rem 0 .5rem;font-size:.82rem;font-style:italic;color:var(--vv-mut)}
+.vv-verdict{margin:0 0 .8rem;font-weight:600;color:var(--vv-ink)}
+.vv-general-h{margin:1.4rem 0 .3rem;font-size:1.05rem}
+.vv-share{margin-left:.5rem}
+@media print{.vv-thread>summary{list-style:none}.vv-thread>*:not(summary){display:block!important}}
+.vv-share[hidden]{display:none}
