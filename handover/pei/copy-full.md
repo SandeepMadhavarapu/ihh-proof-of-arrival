@@ -200,3 +200,15 @@ Born 26 April 1917, Guangzhou; died 16 May 2019, New York; U.S. citizen 1954 —
 Britannica Editors · 2026-10-05 · Encyclopaedia Britannica
 <https://www.britannica.com/biography/I-M-Pei>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**I.M. Pei, Oral History Interview JFK #1 (JFKOH-IMP-01), interviewer Vicki Daitch**
+
+Pei interviewed for the John F. Kennedy Library's oral history program. Transcript online at the holder's site.
+
+Vicki Daitch (interviewer), John F. Kennedy Presidential Library and Museum (National Archives), 2003-03-18
+<https://www.jfklibrary.org/asset-viewer/archives/jfkoh-imp-01>
+Link only: the recording stays with John F. Kennedy Presidential Library and Museum (National Archives).

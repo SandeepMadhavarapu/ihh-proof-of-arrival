@@ -180,3 +180,15 @@ A scholar's account of her escape, her Jewish background, and how Mayer renamed 
 Ruth Barton, Shalvi/Hyman Encyclopedia of Jewish Women · last updated 2021-06-23 · Jewish Women's Archive
 <https://jwa.org/encyclopedia/article/lamarr-hedy>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**Audio tapes of a telephone interview with Hedy Lamarr, found by journalist Fleming Meeks (used in 'Bombshell: The Hedy Lamarr Story')**
+
+Taped telephone interviews with Hedy Lamarr, described on this PBS American Masters page. The tapes are privately held.
+
+Fleming Meeks (journalist), PBS American Masters (page about the tapes; the tapes themselves are privately held)
+<https://www.pbs.org/wnet/americanmasters/bombshell-hedy-lamarr-story-journalist-unearths-audio-taped-hedy-interviews/10186>
+Link only: the recording stays with PBS American Masters (page about the tapes; the tapes themselves are privately held).

@@ -161,3 +161,15 @@ Reports that she is the first Afro-Latina featured on a U.S. coin, and the 14th 
 Edwin Flores, NBC News · 2023-07-24 · NBC News
 <https://www.nbcnews.com/news/latino/celia-cruz-us-coin-design-features-iconic-slogan-rcna96002>
 Rights, in the institution's words: "All rights reserved."
+
+---
+
+## Interviews and media from other institutions
+
+**Interview with Celia Cruz, Cuban-American singer (Larry Katz collection, The Katz Tapes)**
+
+Celia Cruz interviewed in 2002, from the Larry Katz collection (The Katz Tapes) at Northeastern University.
+
+Northeastern University Library Archives and Special Collections, 2002
+<https://thekatztapes.library.northeastern.edu/item/neu:4f16gw61g>
+Link only: the recording stays with Northeastern University Library Archives and Special Collections.

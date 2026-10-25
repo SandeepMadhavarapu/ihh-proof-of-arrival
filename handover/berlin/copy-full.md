@@ -111,3 +111,15 @@ Source of the quotation above, said the same year he brought out “God Bless Am
 Irving Berlin · 1938-09-04 · New York Journal American; quoted by Encyclopedia.com
 <https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/berlin-irving>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**Irving Berlin collection of non-commercial sound recordings (radio broadcasts; live performances; private recordings)**
+
+Radio broadcasts, live performances and private recordings of Irving Berlin, held at the New York Public Library.
+
+Rodgers and Hammerstein Archives of Recorded Sound, The New York Public Library
+<https://archives.nypl.org/rha/20489>
+Link only: the recording stays with Rodgers and Hammerstein Archives of Recorded Sound, The New York Public Library.

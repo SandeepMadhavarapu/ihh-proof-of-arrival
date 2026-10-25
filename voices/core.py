@@ -24,7 +24,7 @@ TYPES = {"perspective": "My perspective", "more": "I know more",
 KINDS = ("note", "claim", "tip", "finding")
 # A "finding" is the visitor's own verdict on one Verify claim (the agree/disagree step), tied to
 # that claim's id like a note is tied to its passage. Its comment is optional: the verdict is the
-# response. Labels match site-src/gen.py VERDICTS.
+# response. site-src/gen.py builds the Verify page's verdict radios from this same dict.
 VERDICTS = {"confirmed": "Confirmed", "unsupported": "Not supported", "contradicted": "Contradicted"}
 FINDING_LABEL = "My finding"
 STATUSES = ("pending", "approved", "rejected")

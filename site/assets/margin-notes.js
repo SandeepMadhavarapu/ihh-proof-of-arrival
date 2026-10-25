@@ -456,25 +456,37 @@
     w = w.replace(/[^\w'\-À-ɏ]/g, '');
     return w && !/@/.test(s) ? w.slice(0, 20) : 'A visitor';
   }
+  /* An approved WordPress comment written by wpBody(): a margin note, or (on Verify) a finding. */
   function fromWordPress(c){
     var raw = String((c.content && c.content.rendered) || '').replace(/<br\s*\/?>/gi, '\n').replace(/<\/p>/gi, '\n');
     var txt = new DOMParser().parseFromString(raw, 'text/html').body.textContent || '';
-    var m = txt.match(/\[ihh-note v1 kind=(\w+) type=(\w+) page=([a-z0-9-]+) anchor=([a-z0-9-]+)\]/);
-    if (!m || m[1] !== 'note' || !LABEL[m[2]]) return null;
+    var m = txt.match(/\[ihh-note v1 kind=(\w+) type=(\w+) page=([a-z0-9-]+) anchor=([a-z0-9-]+)(?: verdict=(\w+))?\]/);
+    if (!m) return null;
+    var ok = (m[1] === 'note' && LABEL[m[2]]) || (m[1] === 'finding' && VERDICT[m[5]]);
+    if (!ok) return null;
     var parts = txt.split(/\n=====\n/), headLines = parts[0].split('\n'), sel = {exact: ''};
     headLines.forEach(function(l){ if (l.indexOf('Quote: ') === 0) sel.exact = l.slice(7); });
-    return {type: m[2], anchor: m[4], selector: sel, text: parts.slice(1).join('\n').trim(),
-            by: firstName(c.author_name), date: String(c.date || '').slice(0, 10)};
+    return {kind: m[1], type: m[2], verdict: m[5] || '', anchor: m[4], selector: sel,
+            text: parts.slice(1).join('\n').trim(), by: firstName(c.author_name), date: String(c.date || '').slice(0, 10)};
   }
+  function wordpressComments(){
+    return fetch(cfg.wp + '/wp-json/wp/v2/comments?post=' + encodeURIComponent(cfg.post) + '&per_page=100', {credentials: 'omit'})
+      .then(function(r){ return r.ok ? r.json() : []; })
+      .then(function(list){ return (list || []).map(fromWordPress).filter(Boolean); });
+  }
+  function onlyFindings(list){ return (list || []).filter(function(f){ return f.kind === 'finding'; }); }
   if (isVerify){
-    if (adapter.load) adapter.load(cfg).then(function(list){ drawFindings((list || []).filter(function(f){ return f.kind === 'finding'; })); }, function(){});
+    if (adapter.load) adapter.load(cfg).then(function(list){ drawFindings(onlyFindings(list)); }, function(){});
+    else if (cfg.adapter === 'wordpress' && cfg.post)
+      wordpressComments().then(function(list){ var f = onlyFindings(list); if (f.length) drawFindings(f); }, function(){});
   } else {
     if (adapter.load){
       adapter.load(cfg).then(function(notes){ draw(notes || []); }, function(){});
     } else if (cfg.adapter === 'wordpress' && cfg.post){
-      fetch(cfg.wp + '/wp-json/wp/v2/comments?post=' + encodeURIComponent(cfg.post) + '&per_page=100', {credentials: 'omit'})
-        .then(function(r){ return r.ok ? r.json() : []; })
-        .then(function(list){ var n = (list || []).map(fromWordPress).filter(Boolean); if (n.length) draw(n); }, function(){});
+      wordpressComments().then(function(list){
+        var n = list.filter(function(x){ return x.kind === 'note'; });
+        if (n.length) draw(n);
+      }, function(){});
     }
   }
 })();

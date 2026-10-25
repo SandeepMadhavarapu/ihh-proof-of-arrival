@@ -112,12 +112,20 @@ form are built into `site/verify.html` when notes are switched on. To use them o
 put the same wrapper (with `data-ihh-page="verify"`) around the Verify page content. Reports
 arrive as pending comments on that page, with `kind=claim` or `kind=tip` in the first line.
 
+After a visitor records their own verdict on a claim, a **Share my finding with the museum**
+button appears. It sends a comment whose first line reads `kind=finding ... anchor=<claim id>
+verdict=confirmed|unsupported|contradicted`; the comment text is optional. Set
+`wordpress.post_ids.verify` in `site-data/visitor-voices.json` to the Verify page's post ID, and
+approved findings are read back and shown under their claim as a tally ("2 visitor findings:
+1 Confirmed · 1 Contradicted") that expands to the comments.
+
 ### 6. Moderating (WP Admin → Comments)
 
 - **Pending** holds every new note and report. Read the first line to see which passage or claim
   it is about.
-- **Approve** publishes a margin note. Reports from the Verify page (`kind=claim` and `kind=tip`)
-  are never drawn on the page, even when approved. Approving one just means "dealt with".
+- **Approve** publishes a margin note, or a Verify finding (`kind=finding`). Reports from the
+  Verify page (`kind=claim` and `kind=tip`) are never drawn on the page, even when approved.
+  Approving one just means "dealt with".
 - **Trash or Spam** for anything else. Do not approve a note that contains a full name, school,
   address or any contact details of a young visitor. Reject it, or edit those details out first.
 - **Living Museum.** If an "I know more" or "Something looks wrong" report gives a source, a

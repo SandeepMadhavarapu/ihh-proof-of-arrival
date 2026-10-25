@@ -110,3 +110,15 @@ The Library of Congress holds the Bob Hope Collection and mounted the exhibition
 Library of Congress · 2000 · Library of Congress
 <https://www.loc.gov/exhibits/bobhope/>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**Recording of The Pepsodent Show, February 3, 1948 (Bob Hope Collection)**
+
+A 1948 broadcast of Bob Hope's radio show, from the Library of Congress's Bob Hope Collection.
+
+Library of Congress, Motion Picture, Broadcasting and Recorded Sound Division, 1948-02-03
+<https://www.loc.gov/exhibits/bobhope/radio.html>
+Link only: the recording stays with Library of Congress, Motion Picture, Broadcasting and Recorded Sound Division.

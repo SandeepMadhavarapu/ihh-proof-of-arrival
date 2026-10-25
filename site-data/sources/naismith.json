@@ -1,0 +1,17 @@
+{
+ "_note": "Interviews and media for this inductee held by other institutions. Format: site-data/sources/README.md. Entries come from handover/MEDIA-PERMISSIONS.md (researched 24 October 2026); every one is link-only until the holder grants written permission. Change 'permission' only when that permission is on file.",
+ "sources": [
+  {
+   "id": "naismith-we-the-people-1939",
+   "title": "James Naismith interview on 'We the People' (WOR radio, host Gabriel Heatter), WOR-AM collection",
+   "kind": "interview",
+   "creator": "Gabriel Heatter",
+   "creator_role": "host",
+   "institution": "Library of Congress, Recorded Sound Section (WOR-AM collection)",
+   "date": "1939-01-31",
+   "url": "https://blogs.loc.gov/loc/2016/03/a-voice-from-hoops-history/",
+   "permission": "link-only",
+   "description": "The inventor of basketball interviewed on WOR radio's 'We the People' in 1939, described by the Library of Congress."
+  }
+ ]
+}

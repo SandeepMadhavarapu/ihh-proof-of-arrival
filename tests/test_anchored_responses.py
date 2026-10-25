@@ -240,6 +240,26 @@ class Migration(unittest.TestCase):
 
 
 class BrowserScript(unittest.TestCase):
+    def test_quote_and_attribution_are_separate_words(self):
+        text = [t for t in passages((SITE / "einstein.html").read_text(encoding="utf-8")).values() if "As long as" in t][0]
+        self.assertIn("rule.\u201d Albert Einstein", text)
+
+    def test_wordpress_findings_are_parsed_and_read_back(self):
+        js = (SITE / "assets" / "margin-notes.js").read_text(encoding="utf-8")
+        self.assertIn("(?: verdict=(\\w+))?", js)
+        self.assertIn("m[1] === 'finding' && VERDICT[m[5]]", js)
+        self.assertIn("wordpressComments().then(function(list){ var f = onlyFindings(list)", js)
+
+    def test_verdict_labels_have_one_definition(self):
+        from voices.core import VERDICTS
+        js = (SITE / "assets" / "margin-notes.js").read_text(encoding="utf-8")
+        m = re.search(r"var VERDICT = \{(.*?)\};", js)
+        js_verdicts = dict(re.findall(r"(\w+): '([^']+)'", m.group(1)))
+        self.assertEqual(js_verdicts, VERDICTS)
+        verify = (SITE / "verify.html").read_text(encoding="utf-8")
+        for value, label in VERDICTS.items():
+            self.assertIn(f'value="{value}"><span>{label}</span>', verify)
+
     def test_script_still_never_writes_visitor_text_as_html(self):
         js = (SITE / "assets" / "margin-notes.js").read_text(encoding="utf-8")
         for bad in ("innerHTML", "insertAdjacentHTML", "document.write", "outerHTML"):

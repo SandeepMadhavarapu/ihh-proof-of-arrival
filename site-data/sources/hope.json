@@ -1,0 +1,15 @@
+{
+ "_note": "Interviews and media for this inductee held by other institutions. Format: site-data/sources/README.md. Entries come from handover/MEDIA-PERMISSIONS.md (researched 24 October 2026); every one is link-only until the holder grants written permission. Change 'permission' only when that permission is on file.",
+ "sources": [
+  {
+   "id": "hope-pepsodent-show-1948",
+   "title": "Recording of The Pepsodent Show, February 3, 1948 (Bob Hope Collection)",
+   "kind": "audio",
+   "institution": "Library of Congress, Motion Picture, Broadcasting and Recorded Sound Division",
+   "date": "1948-02-03",
+   "url": "https://www.loc.gov/exhibits/bobhope/radio.html",
+   "permission": "link-only",
+   "description": "A 1948 broadcast of Bob Hope's radio show, from the Library of Congress's Bob Hope Collection."
+  }
+ ]
+}

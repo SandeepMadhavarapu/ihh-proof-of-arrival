@@ -1,6 +1,16 @@
 {
- "_note": "Interviews and media for this inductee from other institutions. Format: site-data/sources/README.md. The entry below is a PLACEHOLDER to show the layout; replace it with a real, permission-checked source.",
+ "_note": "Interviews and media for this inductee held by other institutions. Format: site-data/sources/README.md. Entries come from handover/MEDIA-PERMISSIONS.md (researched 24 October 2026); every one is link-only until the holder grants written permission. Change 'permission' only when that permission is on file.",
  "sources": [
+  {
+   "id": "cruz-katz-tapes-interview-2002",
+   "title": "Interview with Celia Cruz, Cuban-American singer (Larry Katz collection, The Katz Tapes)",
+   "kind": "interview",
+   "institution": "Northeastern University Library Archives and Special Collections",
+   "date": "2002",
+   "url": "https://thekatztapes.library.northeastern.edu/item/neu:4f16gw61g",
+   "permission": "link-only",
+   "description": "Celia Cruz interviewed in 2002, from the Larry Katz collection (The Katz Tapes) at Northeastern University."
+  },
   {
    "id": "cruz-placeholder-performance-video",
    "title": "TODO: title of a recorded interview or performance",

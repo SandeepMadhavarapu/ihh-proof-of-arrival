@@ -14,7 +14,10 @@ sys.path.insert(0, ROOT)
 from cases import CASES
 from voices import render as voices_render
 
-VERDICTS = [("confirmed","Confirmed"),("unsupported","Not supported"),("contradicted","Contradicted")]
+# One definition of the verdicts, shared with visitor findings (voices/core.py). margin-notes.js
+# keeps its own copy for the browser; tests/test_anchored_responses.py checks the two match.
+from voices.core import VERDICTS as _VERDICTS
+VERDICTS = list(_VERDICTS.items())
 LABEL = dict(VERDICTS)
 TAGTEXT = {
  "RECORD":"Record", "QUOTATION":"Quotation", "PARAPHRASE":"Paraphrase",

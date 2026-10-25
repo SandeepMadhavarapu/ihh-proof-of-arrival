@@ -203,3 +203,23 @@ A 1997 report of her response to the discovery, written at the time.
 Jewish Telegraphic Agency · 1997-07-15 · JTA Archive
 <https://www.jta.org/archive/behind-the-headlines-albright-names-of-grandparents-forever-seared-into-my-heart-2>
 Rights, in the institution's words: "All rights reserved."
+
+---
+
+## Interviews and media from other institutions
+
+**Madeleine K. Albright oral history, Clinton Presidential History Project (interviewer Russell Riley)**
+
+Albright in her own words, interviewed for the Clinton Presidential History Project. Transcript online at the holder's site.
+
+Russell Riley (interviewer), Miller Center, University of Virginia, 2006-08-30
+<https://millercenter.org/the-presidency/presidential-oral-histories/madeleine-k-albright-oral-history>
+Link only: the recording stays with Miller Center, University of Virginia.
+
+**Dayton History Project Interview with Madeleine Albright (declassified, Bosnian Declassified Records)**
+
+A declassified interview from the Dayton History Project. Transcript (a scan of the paper record) at the holder's site.
+
+Clinton Presidential Library & Museum (National Archives), 1996-10-28
+<https://clinton.presidentiallibraries.us/items/show/12627>
+Link only: the recording stays with Clinton Presidential Library & Museum (National Archives).

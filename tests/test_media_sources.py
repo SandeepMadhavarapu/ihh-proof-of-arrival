@@ -102,6 +102,40 @@ class Permission(unittest.TestCase):
         self.assertIn("&lt;b&gt;Dr X&lt;/b&gt; (historian) &middot; A museum &middot; 1940", out)
 
 
+class Package(unittest.TestCase):
+    def test_wordpress_block_links_out_and_has_no_script(self):
+        block = (ROOT / "inductees" / "einstein" / "copy.html").read_text(encoding="utf-8")
+        part = block[block.index(ms.WP_START):block.index(ms.WP_END)]
+        self.assertIn("Interviews and media from other institutions", part)
+        self.assertIn('href="https://history.aip.org/catalog/icos/24126.html"', part)
+        self.assertNotIn("<script", block)
+        self.assertNotIn("data-embed", block)
+        self.assertNotIn("TODO", part)
+
+    def test_wordpress_block_never_embeds_even_when_granted(self):
+        with tempfile.TemporaryDirectory() as td:
+            write(td, "x", [dict(GOOD, permission="granted", embed_url="https://www.youtube-nocookie.com/embed/abc")])
+            html_out, md, css = ms.render_wp(td, "x")
+        self.assertNotIn("youtube-nocookie", html_out)
+        self.assertIn('href="https://museum.example/item/1"', html_out)
+        self.assertIn("https://museum.example/item/1", md)
+
+    def test_no_sources_means_no_package_section(self):
+        with tempfile.TemporaryDirectory() as td:
+            self.assertEqual(ms.render_wp(td, "nobody"), ("", "", ""))
+
+    def test_site_page_shows_the_section_once(self):
+        page = (SITE / "einstein.html").read_text(encoding="utf-8")
+        self.assertEqual(page.count("Interviews and media from other institutions</h2>"), 1)
+        self.assertNotIn(ms.WP_START, page)
+
+    def test_real_sources_are_link_only_until_permission_is_on_file(self):
+        for f in (ROOT / "site-data" / "sources").glob("*.json"):
+            for s in ms.load(str(ROOT), f.stem):
+                if s.get("placeholder") is not True:
+                    self.assertEqual(s["permission"], "link-only", f"{f.name}: {s['id']}")
+
+
 class BuiltSite(unittest.TestCase):
     def test_every_published_profile_has_the_section(self):
         for page in json.loads((ROOT / "site-data" / "published.json").read_text(encoding="utf-8"))["published"]:

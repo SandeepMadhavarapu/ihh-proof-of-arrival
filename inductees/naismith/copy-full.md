@@ -132,3 +132,15 @@ Source for two specific facts: Naismith coached basketball at the University of 
 Wikipedia · n.d. · Wikipedia
 <https://en.wikipedia.org/wiki/James_Naismith>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**James Naismith interview on 'We the People' (WOR radio, host Gabriel Heatter), WOR-AM collection**
+
+The inventor of basketball interviewed on WOR radio's 'We the People' in 1939, described by the Library of Congress.
+
+Gabriel Heatter (host), Library of Congress, Recorded Sound Section (WOR-AM collection), 1939-01-31
+<https://blogs.loc.gov/loc/2016/03/a-voice-from-hoops-history/>
+Link only: the recording stays with Library of Congress, Recorded Sound Section (WOR-AM collection).

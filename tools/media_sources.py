@@ -155,6 +155,49 @@ here only when its holder has given permission.</p>
 </section>'''
 
 
+# The WordPress package's version: no JavaScript is allowed in that block, so every source is a
+# link to its holder, even when permission is granted (an editor can add the holder's own embed
+# code in WordPress once permission is on file). Placeholders never appear. Between the markers so
+# tools/build_site_pages.py can swap in the site's own version.
+WP_START, WP_END = "<!-- ms:start -->", "<!-- ms:end -->"
+WP_CSS = (".ihh-profile ol.media{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;"
+          "grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.6rem}\n"
+          ".ihh-profile .ms-wp-item{border-top:2px solid var(--ink);padding-top:.9rem}\n")
+
+
+def render_wp(root, slug):
+    """(HTML for the WordPress block, Markdown for copy-full.md, CSS); empty when there is nothing."""
+    items = [s for s in load(root, slug) if s.get("placeholder") is not True]
+    if not items:
+        return "", "", ""
+    perm = {"granted": "Shown with permission of {i}.", "link-only": "Link only: the recording stays with {i}.",
+            "pending": "Permission requested. Link only until the holder agrees."}
+    lis, md = [], []
+    for s in items:
+        who = ", ".join(x for x in ((s.get("creator", "") + (f" ({s['creator_role']})" if s.get("creator_role") else "")).strip(),
+                                     s["institution"], s.get("date", "")) if x)
+        lis.append(f'''    <li class="ms-wp-item">
+      <p class="kindmark">{E(KINDS[s["kind"]])}</p>
+      <h3 class="src-h">{E(s["title"])}</h3>
+      {f'<p class="gloss">{E(s["description"])}</p>' if s.get("description") else ""}
+      <p class="meta">{E(who)}</p>
+      <p class="rights">{E(perm[s["permission"]].format(i=s["institution"]))} <a href="{E(s["url"])}" rel="noopener">View at {E(s["institution"])}</a></p>
+    </li>''')
+        md.append(f"**{s['title']}**\n\n" + (f"{s['description']}\n\n" if s.get("description") else "")
+                  + f"{who}\n<{s['url']}>\n{perm[s['permission']].format(i=s['institution'])}\n")
+    html_out = (f'''{WP_START}
+<div class="wide">
+<h2>Interviews and media from other institutions</h2>
+<p class="gloss">First-person recordings and expert perspectives held by other museums, archives and
+media organisations. Each links to the institution that holds it.</p>
+<ol class="media">
+{chr(10).join(lis)}
+</ol>
+</div>
+{WP_END}''')
+    return html_out, "## Interviews and media from other institutions\n\n" + "\n".join(md), WP_CSS
+
+
 def main():
     folder = os.path.join(ROOT, "site-data", "sources")
     files = sorted(f for f in os.listdir(folder) if f.endswith(".json")) if os.path.isdir(folder) else []

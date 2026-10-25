@@ -135,3 +135,23 @@ Source of the quotation above: Einstein’s public statement of 10 March 1933, a
 Albert Einstein; context via MacTutor · 1933-03-10 · MacTutor History of Mathematics Archive, University of St Andrews
 <https://mathshistory.st-andrews.ac.uk/Extras/Einstein_German_Academies>
 Rights, in the institution's words: "(not checked; cited only)"
+
+---
+
+## Interviews and media from other institutions
+
+**Mein glaubensbekenntnis [sound recording] (Einstein speaking)**
+
+A recording of Einstein speaking, catalogued by the American Institute of Physics.
+
+American Institute of Physics, Niels Bohr Library & Archives, 1932
+<https://history.aip.org/catalog/icos/24126.html>
+Link only: the recording stays with American Institute of Physics, Niels Bohr Library & Archives.
+
+**Dialog on the present war and the future of Europe [sound recording] (Einstein speaking)**
+
+A 1940 recording of Einstein speaking, catalogued by the American Institute of Physics.
+
+American Institute of Physics, Niels Bohr Library & Archives, 1940
+<https://history.aip.org/catalog/icos/24147.html>
+Link only: the recording stays with American Institute of Physics, Niels Bohr Library & Archives.

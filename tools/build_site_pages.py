@@ -159,6 +159,8 @@ def main(root=ROOT, site=None, voices=None, preview=None):
         frag, index, flagged = voices_render.annotate(frag, name, [n for n in approved if n["page"] == name], cfg)
         for nid in flagged:
             print(f"  FLAGGED for the moderator: note {nid} on {name} no longer matches any passage; not shown")
+        # copy.html carries the WordPress (link-only) version of the sources; the site draws its own.
+        frag = re.sub(re.escape(media_sources.WP_START) + r".*?" + re.escape(media_sources.WP_END) + r"\n?", "", frag, flags=re.S)
         try:
             media = media_sources.render(root, name, preview)
         except media_sources.SourceError as e:

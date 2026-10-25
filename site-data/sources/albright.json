@@ -1,20 +1,27 @@
 {
- "_note": "Interviews and media for this inductee from other institutions. Format: site-data/sources/README.md. The entry below is a PLACEHOLDER to show the layout; replace it with a real, permission-checked source.",
+ "_note": "Interviews and media for this inductee held by other institutions. Format: site-data/sources/README.md. Entries come from handover/MEDIA-PERMISSIONS.md (researched 24 October 2026); every one is link-only until the holder grants written permission. Change 'permission' only when that permission is on file.",
  "sources": [
   {
-   "id": "albright-placeholder-oral-history",
-   "title": "TODO: title of an oral history interview",
+   "id": "albright-miller-center-oral-history-2006",
+   "title": "Madeleine K. Albright oral history, Clinton Presidential History Project (interviewer Russell Riley)",
    "kind": "oral-history",
-   "creator": "TODO: interviewer",
+   "creator": "Russell Riley",
    "creator_role": "interviewer",
-   "institution": "TODO: holding institution",
-   "date": "TODO",
-   "url": "TODO",
-   "embed_url": "",
+   "institution": "Miller Center, University of Virginia",
+   "date": "2006-08-30",
+   "url": "https://millercenter.org/the-presidency/presidential-oral-histories/madeleine-k-albright-oral-history",
    "permission": "link-only",
-   "credit": "",
-   "description": "TODO: one sentence. Layout example of a link-only source.",
-   "placeholder": true
+   "description": "Albright in her own words, interviewed for the Clinton Presidential History Project. Transcript online at the holder's site."
+  },
+  {
+   "id": "albright-dayton-history-project-1996",
+   "title": "Dayton History Project Interview with Madeleine Albright (declassified, Bosnian Declassified Records)",
+   "kind": "interview",
+   "institution": "Clinton Presidential Library & Museum (National Archives)",
+   "date": "1996-10-28",
+   "url": "https://clinton.presidentiallibraries.us/items/show/12627",
+   "permission": "link-only",
+   "description": "A declassified interview from the Dayton History Project. Transcript (a scan of the paper record) at the holder's site."
   }
  ]
 }
