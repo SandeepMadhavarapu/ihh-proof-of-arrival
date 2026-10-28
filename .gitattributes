@@ -1,0 +1,4 @@
+# Preserve canonical text bytes for rebuilds and shipped-size checks on every OS.
+* text=auto eol=lf
+*.jpg binary
+*.png binary

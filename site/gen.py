@@ -205,7 +205,7 @@ def main():
     out = out.replace('<li><a href="verify.html">Verify</a></li>',
                       '<li><a href="verify.html" aria-current="page">Verify</a></li>')
     path=os.path.join(HERE,"verify.html")
-    open(path,"w",encoding="utf-8").write(out)
+    open(path,"w",encoding="utf-8",newline="\n").write(out)
     print(f"verify.html: {TOTAL} claims, {EV} evidence items ({LINKED} linked), {len(out)} chars")
 
 if __name__=="__main__":

@@ -92,7 +92,7 @@ class DemoJSONClient:
             "Birth record": ("S001", "Birth record", "RECORD"),
             "Secretary of State": ("S001", "Secretary of State", "RECORD"),
             "She was sworn in on January 23, 1997, as the 64th Secretary of State.": ("S001", "She was sworn in on January 23, 1997, as the 64th Secretary of State.", "RECORD"),
-            "Papers": ("S003", "Papers", "RECORD"),
+            "Albright papers": ("S003", "Papers", "RECORD"),
             "The papers of Madeleine Korbel Albright, U.S. secretary of state, diplomat, and educator, were given to the Library of Congress by Albright in 2014 and 2016.": ("S003", "The papers of Madeleine Korbel Albright, U.S. secretary of state, diplomat, and educator, were given to the Library of Congress by Albright in 2014 and 2016.", "RECORD"),
             "Access boundary": ("S003", "Access boundary", "RECORD"),
             "Access to digital content is available onsite only in the Manuscript Reading Room and requires advanced notice.": ("S003", "Access to digital content is available onsite only in the Manuscript Reading Room and requires advanced notice.", "RECORD"),
@@ -105,6 +105,8 @@ class DemoJSONClient:
         if unit not in mapping:
             return True, "", "", "UNRESOLVED"
         sid, span, provenance = mapping[unit]
+        # Cite the complete small fixture context, not isolated heading/name tokens.
+        span = FIXTURES[DEMO_URLS[int(sid[1:]) - 1]]
         return True, sid, span, provenance
 
     def complete_json(self, system: str, user: str, *, temperature: float):
