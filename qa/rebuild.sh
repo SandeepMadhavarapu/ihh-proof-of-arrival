@@ -5,7 +5,7 @@
 set -eu
 R="$(cd "$(dirname "$0")/.." && pwd)"
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
-GEN=(site/verify.html site/new.html handover/OPEN-ITEMS.md site/sitemap.xml site/robots.txt site/index.html)
+GEN=(site/verify.html site/new.html handover/OPEN-ITEMS.md handover/CORRECTIONS-MEMO-FOR-IHH.md site/sitemap.xml site/robots.txt site/index.html)
 for dir in "$R"/inductees/*/; do
   [ -f "$dir/copy.md" ] || continue
   n=$(basename "$dir")
