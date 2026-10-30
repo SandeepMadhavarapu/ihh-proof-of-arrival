@@ -4,20 +4,23 @@ Everything below was executed in a real headless Chromium against the built site
 over HTTP. The scripts are in `qa/`. **The last section lists what still has not been
 tested, and by whom it needs to be.**
 
-## Latest full run — 30 October 2026 (branch `ws5c-release-fixes`, before merge)
+## Latest full run — 30 October 2026 (branch `ws7-look-closer`, before merge)
 
 Run locally on Linux with Chromium; GitHub Actions CI runs the same suite on every pull request.
 
 | Check | Result |
 |---|---|
-| `python -m unittest discover -s tests` | 168 tests, OK |
-| `bash qa/rebuild.sh` | all generated files match their sources |
+| `python -m unittest discover -s tests` | 190 tests, OK (15 new in `tests/test_artifacts.py`, including planted wrong dates, names, spans and rights) |
+| `python tools/artifacts.py` | 4 artifacts, 25 notes: every quoted span found word for word; every name, number and date in a note found in its spans |
+| `bash qa/rebuild.sh` | all generated files match their sources (now including Look closer pages, images and WordPress blocks) |
 | `python qa/handover.py` | all ten handover packages pass |
 | `python qa/secrets.py` | pass |
 | `python living/eval/run_eval.py` | pass, 0 false accepts |
-| `node qa/integrity.mjs .` | 149 checks pass |
-| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro | all pass (0 axe violations; 626 text runs meet contrast; 318 WordPress checks) |
-| Smoke test: 21 pages at 375px and 1280px (console errors, broken links/images, sideways scroll) | 0 issues |
+| `node qa/integrity.mjs .` | 150 checks pass |
+| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro | all pass (0 axe violations on 22 pages; 712 text runs meet contrast; every target at least 24×24; 318 WordPress checks) |
+| Look closer zoom, at 375px and 1280px | zoom on and off, 0 axe violations while zoomed, keyboard Enter on a marker opens its note |
+| The four Look closer WordPress blocks, standalone at 375px and 1280px | 0 axe violations, no sideways scroll, no script, every image loads |
+| Smoke test: 22 pages (and the 23-page public demonstration build) at 375px and 1280px (console errors, broken links, anchors and images, sideways scroll; axe on the demonstration build) | 0 issues |
 
 Still not tested: no screen-reader user, no teenage reader, no volunteer WordPress handoff on
 the museum's real site. Older sections below are kept as a dated record.
@@ -137,7 +140,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**530 KB of HTML, CSS, scripts and text across 21 pages (portrait and archival image files additional)**, against **2,869 KB for the current IHH homepage
+**584 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival image files additional)**, against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---

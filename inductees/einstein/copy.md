@@ -43,7 +43,7 @@ Einstein's dates are garbled surprisingly often, and a museum should be exact. H
 2
 
 **Spotlight introduction:**
-This is Einstein's "first papers." A Declaration of Intention is the statement an immigrant makes under oath that they intend to become a citizen and to renounce allegiance to any foreign state. Einstein filed his in a federal court in New Jersey on 15 January 1936; the original is held by the National Archives, which places it in the public domain. We cite it here rather than reproduce the scan, which we could not retrieve.
+This is Einstein's "first papers." A Declaration of Intention is the statement an immigrant makes under oath that they intend to become a citizen and to renounce allegiance to any foreign state. Einstein filed his in a federal court in New Jersey on 15 January 1936; the original is held by the National Archives, which places it in the public domain. The scan itself, with numbered notes on what each part of the form records, is in this page's Look closer section.
 
 **Quotation:**
 > As long as I have any choice, I will only stay in a country where political liberty, toleration, and equality of all citizens before the law are the rule.

@@ -22,11 +22,11 @@ and [CONTRIBUTING.md](CONTRIBUTING.md).
 
 | Path | What it is |
 |---|---|
-| **`handover/`** | **The deliverable.** One folder per inductee (`copy.html` to paste, `preview.html`, `copy-full.md`, `media/web/`, `media-manifest.csv`, `search-log.csv`), plus `INSTALL.md`, `OPEN-ITEMS.md` and a zip of the lot. Generated; do not edit by hand. |
+| **`handover/`** | **The deliverable.** One folder per inductee (`copy.html` to paste, `preview.html`, `copy-full.md`, `media/web/`, `media-manifest.csv`, `search-log.csv`), plus `look-closer-<id>.html` (an annotated document, no JavaScript) for Einstein, Lamarr, Pei and Strauss, `INSTALL.md`, `OPEN-ITEMS.md` and a zip of the lot. Generated; do not edit by hand. |
 | `inductees/<name>/` | The sources of each profile: `copy.md` (the text), `media-manifest.csv` (every source and image, rights word for word), `search-log.csv`, full-resolution originals in `media/`, saved source documents in `sources/`. **Edit here.** |
 | `templates/` | For the next inductee: `copy-template.md`, `media-manifest.csv`, `search-log.csv`, `where-to-search.md`, `rights-guide.md`, `profile.css`. |
-| `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `package_handover.sh`, `open_items.py`. |
-| `site/` | The optional demonstration site: the ten profiles in the site's design, the Verification Desk (a corrections log), New at the Museum, and Margin Notes (off until IHH connects WordPress). |
+| `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `artifacts.py` (Look closer: checks every annotation against its quoted source, then renders it), `package_handover.sh`, `open_items.py`. |
+| `site/` | The optional demonstration site: the ten profiles in the site's design, the Verification Desk (a corrections log), Look closer (four annotated primary documents), New at the Museum, and Margin Notes (off until IHH connects WordPress). |
 | `living/` | The Living Museum: finder, five-gate verifier, human approval queue, publisher and watchdog. Nothing reaches the site without a person approving it in a pull request. |
 | `voices/` | Visitor Voices / Margin Notes: notes anchored to the passage that prompted them, moderated before they appear. |
 | `ledger/`, `site-src/FINDINGS.md` | The earlier audit of the live IHH site. The detailed corrections for IHH's editors are generated locally into `private/` (git-ignored) by `python3 site-src/gen.py` and handed over directly. **Share privately and kindly.** |
@@ -43,6 +43,17 @@ document: Albright's 1998 remarks to new citizens, Lamarr's 1942 patent, Pei's 1
 immigration file, and the Congress.gov record showing Cruz's Congressional Gold Medal bill never
 passed. Every profile ends with "Human editorial sign-off pending" until a named person has
 checked it.
+
+## Look closer
+
+`site-data/artifacts/research.json` holds four primary documents (Lamarr's and Davis/Strauss's
+patents, Pei's 1935 consulate précis, Einstein's 1936 Declaration of Intention): a transcription,
+the holder's rights wording, and 4 to 7 numbered notes, each with the exact words it rests on (from
+the document itself, a related page of the same record, or the inductee's `copy.md`).
+`tools/artifacts.py` refuses to build if a quoted span is not found word for word, or if a name,
+number or date in a note is missing from its spans. The notes were drafted with AI; that check
+catches invented details, not a wrong reading, so a person still reviews them. Where a document
+disagrees with a profile (Einstein's form records a 1935 entry via Bermuda), the note says so.
 
 ## What a person still has to do
 

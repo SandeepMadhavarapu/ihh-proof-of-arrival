@@ -23,6 +23,8 @@ for dir in "$ROOT"/inductees/*/; do
   fi
   cp -R "$dir/media/web/." "$out/media/web/"
 done
+# Look closer: one static WordPress block per annotated artifact, with its image (checked first).
+python3 "$ROOT/tools/artifacts.py" --handover
 python3 "$ROOT/tools/open_items.py" > "$ROOT/handover/OPEN-ITEMS.md"
 cd "$ROOT"
 python3 - <<'PYZIP'

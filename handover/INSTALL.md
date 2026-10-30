@@ -54,6 +54,23 @@ with ordinary blocks (Image, Heading, Paragraph, Quote, List). **Use `copy-full.
 shorter file**: it carries every source, rights statement and credit line, and the page must
 not go up without them.
 
+## Optional — Add "Look closer" (four profiles, five minutes each)
+
+Einstein, Lamarr, Pei and Strauss each have one annotated document: `look-closer-<name>.html`,
+with its image in `media/artifacts/`. It is a scan of a real record (a patent, a visa form, a
+citizenship declaration) with numbered notes that explain each part, and each note shows the
+exact words it comes from.
+
+1. Upload the image in `media/artifacts/` to the Media Library and copy its URL.
+2. On the inductee's page, add a second **Custom HTML** block below the profile and paste the
+   whole `look-closer-….html` file into it.
+3. Replace the two `media/artifacts/…` paths in the block with the URL from step 1. Preview.
+
+Like the profile, it has no JavaScript: the numbers are links that jump to the notes. Every
+document is public domain or unrestricted, and the rights wording is printed under the image.
+The notes were drafted with AI and checked mechanically against their sources (names, numbers
+and dates); a person on the museum's side should still read them before publishing.
+
 ---
 
 ## What the page does and does not do

@@ -15,6 +15,9 @@ email; never the local demo), and only notes marked approved in site-data/approv
 are drawn, each re-attached to its passage by voices/anchors.py or left out and reported.
 Interviews and media from other institutions: site-data/sources/<slug>.json, checked and drawn by
 tools/media_sources.py (link out until permission is granted).
+Look closer: site-data/artifacts/research.json, checked by tools/artifacts.py (every note's names,
+numbers and dates against its quoted evidence) before anything is written; draws a section on each
+profile that has an artifact, copies the images to site/media/artifacts/ and writes site/artifacts.html.
 The chrome (head, header, footer) is taken from site/inductees.html so generated pages cannot
 drift from the rest of the site. This script reads nothing under living/.
 """
@@ -24,6 +27,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from voices import render as voices_render  # noqa: E402
 from tools import media_sources  # noqa: E402
+from tools import artifacts  # noqa: E402
 
 E = html.escape
 NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
@@ -120,6 +124,17 @@ person on our team before it was added to the inductee&rsquo;s page.</p>
     print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
 
 
+def build_artifacts_page(site, head, foot, arts, names):
+    shown = [a for a in arts if a["slug"] in names]  # never link to a page that is not published
+    title = "Look closer | Immigrant Hall of Honor"
+    desc = "Real documents from the inductees' lives, with numbered notes that each show their source."
+    h = retitle(head, title, desc).replace('<li><a href="artifacts.html">', '<li><a href="artifacts.html" aria-current="page">')
+    f = foot.replace('<li><a href="artifacts.html">', '<li><a href="artifacts.html" aria-current="page">')
+    with open(os.path.join(site, "artifacts.html"), "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(h + artifacts.index_main(shown, names) + f)
+    print(f"site/artifacts.html ({len(shown)} artifacts)")
+
+
 def main(root=ROOT, site=None, voices=None, preview=None):
     """`site` and `voices` are only ever overridden by voices/demo_server.py, for its own copy.
     `preview` draws placeholder sources too; it is on for the demo's copy and for --preview."""
@@ -130,6 +145,11 @@ def main(root=ROOT, site=None, voices=None, preview=None):
     base = os.path.join(root, "inductees")
     head, foot = chrome(site)
     slugs = published_slugs(root)
+    try:
+        arts = artifacts.check()
+    except artifacts.CheckError as e:
+        sys.exit(f"ERROR Look closer: {e}")
+    artifacts.copy_images(site)
     for name in sorted(os.listdir(base)):
         if os.path.isdir(os.path.join(base, name)) and name not in slugs:
             print(f"not published (not in site-data/published.json): inductees/{name}")
@@ -171,11 +191,12 @@ def main(root=ROOT, site=None, voices=None, preview=None):
         attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
         out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
                + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
-               + frag + media + index + "\n</main>" + page_foot)
+               + frag + artifacts.site_section(name, arts) + media + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
             f.write(out)
         print(f"site/{name}.html")
     build_new_page(root, site, head, foot, names)
+    build_artifacts_page(site, head, foot, arts, names)
 
 
 if __name__ == "__main__":

@@ -18,6 +18,10 @@ for dir in "$R"/inductees/*/; do
   [ ! -f "$dir/search-log.csv" ] || GEN+=("handover/$n/search-log.csv")
   [ ! -f "$R/review/workstream-1/evidence/$n.json" ] || GEN+=("handover/$n/ihh-content-reconciliation.md")
 done
+GEN+=(site/artifacts.html)
+while read -r slug id img; do
+  GEN+=("site/media/artifacts/$img" "handover/$slug/look-closer-$id.html" "handover/$slug/media/artifacts/$img")
+done < <(python3 -c 'import json,sys; [print(a["slug"],a["id"],a["image"]) for a in json.load(open(sys.argv[1]))["artifacts"]]' "$R/site-data/artifacts/research.json")
 for f in "${GEN[@]}"; do mkdir -p "$T/$(dirname "$f")"; cp "$R/$f" "$T/$f"; done
 python3 "$R/site-src/gen.py" >/dev/null
 python3 "$R/tools/build_profile.py" --all >/dev/null
