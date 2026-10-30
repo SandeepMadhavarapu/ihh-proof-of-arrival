@@ -45,3 +45,6 @@ voices/.demo/
 
 # Private material for IHH: generated locally, handed over directly, never committed.
 private/
+
+# Public demonstration build (tools/build_live.py); deployed by .github/workflows/pages.yml
+_live/

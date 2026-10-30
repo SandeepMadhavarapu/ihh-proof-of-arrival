@@ -90,7 +90,7 @@
     var b = el('button', 'vv-add', 'Comment on this section');
     b.type = 'button';
     var words = passageText(p).split(' ').slice(0, 8).join(' ');
-    b.setAttribute('aria-label', 'Comment on the section beginning: ' + words);
+    b.setAttribute('aria-label', 'Comment on this section, beginning: ' + words);   // visible text first (WCAG 2.5.3)
     b.addEventListener('click', function(){
       open({kind: 'note', anchor: p.id, selector: wholeSelector(p), quote: passageText(p), trigger: b});
     });
@@ -299,7 +299,7 @@
     /* Share my finding: the visitor's verdict, tied to this claim's id, with the claim quoted. */
     var share = el('button', 'vv-claim-btn vv-share', 'Share my finding with the museum'); share.type = 'button';
     share.hidden = true;
-    share.setAttribute('aria-label', 'Share your finding on ' + (cl.getAttribute('data-case') || '') + ', claim ' + (cl.getAttribute('data-n') || ''));
+    share.setAttribute('aria-label', 'Share my finding with the museum: ' + (cl.getAttribute('data-case') || '') + ', claim ' + (cl.getAttribute('data-n') || ''));
     share.addEventListener('click', function(){
       var r = cl.querySelector('.vd input[type=radio]:checked'), t = cl.querySelector('.cl-text');
       if (!r) return;

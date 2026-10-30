@@ -67,6 +67,10 @@ cd site && python3 -m http.server 8731
 bash tools/package_handover.sh                   # rebuilds the profiles and handover/
 python3 tools/build_site_pages.py                # refreshes the demo site pages
 
+# public demonstration copy (what GitHub Pages serves): banner, noindex, notes kept in the
+# visitor's own browser; never touches site/ or handover/
+python3 tools/build_live.py                      # -> _live/ (git-ignored)
+
 # tests (needs: npm i playwright axe-core, and Chrome)
 export CHROMIUM="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 python3 -m http.server 8731 --directory site &  python3 -m http.server 8741 &

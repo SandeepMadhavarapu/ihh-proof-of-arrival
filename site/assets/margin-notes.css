@@ -66,7 +66,9 @@ html.vv-js .vv-nojs{display:none}
 .vv-form textarea{resize:vertical;min-height:7rem;margin-bottom:.2rem}
 .vv-count{margin:0 0 .8rem;font-size:.85rem;color:var(--vv-mut)}
 .vv-kid{margin:0 0 .9rem;padding:.6rem .8rem;border-radius:4px;background:var(--vv-kid);color:var(--vv-ink);font-size:.9rem}
-.vv-hp{position:absolute!important;left:-10000px;width:1px;height:1px;overflow:hidden}
+.vv-hp{position:absolute!important;left:-10000px;width:32px;height:32px;overflow:hidden}
+/* the honeypot is off-screen and out of the tab order; its box is still sized like any control */
+.vv-hp input{width:24px!important;min-width:24px;height:24px;padding:0;border-width:1px;box-sizing:border-box}
 .vv-err{margin:0 0 .8rem;color:var(--vv-acc);font-weight:600}
 .vv-send{min-height:44px;padding:.55rem 1.1rem;border:0;border-radius:4px;background:var(--vv-acc);color:var(--vv-on);
   font:600 1rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
