@@ -19,12 +19,14 @@ There is one folder per inductee: `albright/`, `berlin/`, `cruz/`, `einstein/`, 
 
 ## Step 1 — Put a name on it (two minutes, do it first)
 
-Open `copy.html` in any text editor. Search for `[NAME OF THE PERSON WHO CHECKED THIS]` and
-`[MONTH YEAR]`. They are highlighted yellow on the page so they cannot be missed.
+Until a person has signed it off, the end of each profile reads: "Researched with AI assistance
+from the sources listed above. Human editorial sign-off pending."
 
-Replace them with the name of the person who has read the page and checked it against its
-sources, and the month you publish. **Do not publish with the placeholder still in it.** The
-byline is a promise that a named person stands behind the facts.
+When a member of your team has read the page and checked it against its sources, ask the
+developer to add a `**Compiled by:**` field (the name and month on the line beneath it) to
+that profile's `copy.md` and rebuild (`python tools/build_profile.py --all`). The line then becomes "Researched and compiled
+for the Immigrant Hall of Honor by <name>, <month year>." Never put a name there for someone who
+has not done that check. The byline is a promise that a named person stands behind the facts.
 
 ## Step 2 — Upload the images (five minutes)
 
