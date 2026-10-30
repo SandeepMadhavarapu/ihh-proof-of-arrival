@@ -4,17 +4,17 @@ The board adjudication of 16 October 2026 is the adoption baseline: **option (c)
 
 ## What this project is
 
-- **Four WordPress-ready-format profiles** (Albright, Lamarr, Pei, Cruz) in `handover/`, built from `inductees/<name>/`: authored text, archival images that were downloaded and viewed, item-level rights wording, and a search log for each. “Verified” here means only the specifically recorded checks; it is not independent historical, rights, accessibility, or publication certification. Byline/editorial placeholders remain and `handover/OPEN-ITEMS.md` lists checks still needing a person. They are not publication-ready.
+- **Ten WordPress-ready-format profiles** (all current inductees) in `handover/`, built from `inductees/<name>/`: authored text, archival images that were downloaded and viewed, item-level rights wording, and a search log for each. “Verified” here means only the specifically recorded checks; it is not independent historical, rights, accessibility, or publication certification. Each byline says human editorial sign-off is pending, and `handover/OPEN-ITEMS.md` lists checks still needing a person. They are not publication-ready.
 - **The Verification Desk educational exhibit**, in the optional `site/` demo: five case files, twenty claims, and forty-seven evidence items. Automated interaction tests are evidence of tested behavior, not evidence of learning outcomes.
 - **A build-time verification pipeline** that produces static draft profiles. Exact source membership, minimum span length, and lexical overlap reject some bad citations; they do not establish that a source is true or that its meaning supports the claim. Semantic judgment and human sign-off remain necessary. A passing fixture demo is not a newly researched biography.
 
-The standalone demo includes ten photographic portraits with source records. These are separate from the archival images in the four profiles. Publication reuse review is still pending for both.
+The standalone demo includes ten photographic portraits with source records. These are separate from the archival images in the profiles. Publication reuse review is still pending for both.
 
 ## What this project is not
 
 It is not a replacement for the museum's content inventory or operating website. Ten profile drafts now exist; it does not provide approved publication of the full collection, community story intake and review, nominations, complete approved institutional pages, production donation/subscription services, or a named maintainer. It contains illustrative institutional pages with unresolved placeholders; they are not approved museum facts. No person has been appointed by this repository to operate it after the hackathon.
 
-The demo's `example.invalid` sitemap URLs are intentional non-production placeholders. They must be replaced with approved deployment URLs or the sitemap omitted before serving a production site.
+The demo's sitemap and robots.txt are generated for the demonstration address only (robots.txt disallows crawling). They must be changed to approved production URLs before serving a production site.
 
 ## Adoption boundary
 

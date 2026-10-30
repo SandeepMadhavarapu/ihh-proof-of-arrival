@@ -42,3 +42,6 @@ living/.cache/
 
 # Visitor Voices local demo: its own site copy, notes, audit log and tips (never committed)
 voices/.demo/
+
+# Private material for IHH: generated locally, handed over directly, never committed.
+private/
