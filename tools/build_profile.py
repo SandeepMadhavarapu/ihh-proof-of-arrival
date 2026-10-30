@@ -225,9 +225,15 @@ def build(folder):
         media_html, media_md, media_css = media_sources.render_wp(ROOT, os.path.basename(folder))
     except media_sources.SourceError as e:
         sys.exit(f"ERROR {e}")
-    compiled = inline(p["compiled"]) if p["compiled"] else (
-        '<span class="fillme">[NAME OF THE PERSON WHO CHECKED THIS]</span>, '
-        '<span class="fillme">[MONTH YEAR]</span>')
+    # The byline never carries a placeholder or an invented reviewer. A name appears only when
+    # copy.md has a "Compiled by" field that a person filled in after actually reviewing the
+    # profile; until then the line says plainly that human sign-off is pending.
+    if p["compiled"]:
+        byline = (f'Researched and compiled for the Immigrant Hall of Honor by {inline(p["compiled"])}.\n'
+                  'Research assisted by AI; every source used is listed and linked above.')
+    else:
+        byline = ('<span class="signoff-pending">Researched with AI assistance from the sources listed above. '
+                  'Human editorial sign-off pending.</span>')
 
     out = f'''<!-- {E(p["name"]).upper()} — inductee profile for the Immigrant Hall of Honor
      Paste this whole file into ONE WordPress "Custom HTML" block. No JavaScript, no external
@@ -281,8 +287,7 @@ the institution that holds it and gives that institution&rsquo;s own rights word
 {acts}
 </ol>
 
-<p class="byline">Researched and compiled for the Immigrant Hall of Honor by {compiled}.
-Research assisted by AI and checked by the team; every source above was opened and read.</p>
+<p class="byline">{byline}</p>
 </div>
 </div>
 '''

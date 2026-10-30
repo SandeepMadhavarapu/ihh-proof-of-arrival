@@ -65,6 +65,8 @@ const a=await p.evaluate(()=>{
     quotes: prof.querySelectorAll('blockquote.pull').length,
     h1: prof.querySelectorAll('h1').length,
     fillme: prof.querySelectorAll('.fillme').length,
+    byline: (prof.querySelector('p.byline')||{}).textContent||'',
+    bracketed: /\[[A-Z][A-Z ,'/-]{4,}\]/.test(prof.textContent),
   };});
 ck(a.openingAboveMedia, 'opening sentence sits ABOVE the photograph');
 ck(a.captionBelowMedia, 'credit sits immediately BENEATH the photograph');
@@ -81,7 +83,9 @@ ck(a.scripts===0, 'ZERO script elements in the fragment');
 ck(a.externalRefs===0, 'zero external RESOURCES loaded (got '+a.externalRefs+')');
 ck(a.sourceLinks>=a.sourceItems, a.sourceLinks+' evidence links cover the source register');
 if (ORIGINAL.includes(n)) ck(a.sourceLinks>=10, 'original profile retains 10+ evidence links');
-ck(a.fillme===2, 'byline placeholders are visibly marked for the volunteer (got '+a.fillme+')');
+ck(a.fillme===0 && !a.bracketed, 'no bracketed placeholder text anywhere in the profile');
+ck(/Human editorial sign-off pending\./.test(a.byline) || /Researched and compiled for the Immigrant Hall of Honor by \S/.test(a.byline),
+   'byline either names a reviewer or states plainly that human sign-off is pending (got: '+a.byline.trim().slice(0,80)+')');
 
 /* scoping: the hostile theme must not reach in, and the fragment must not reach out */
 const scope=await p.evaluate(()=>{
