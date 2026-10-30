@@ -311,3 +311,17 @@ Then show the work, and let the 2,869 KB against this package's weight do its ow
 **And say this out loud:** of the twenty claims on the Verification Desk, two of our own six claims failed. One of them is a correction we made to IHH that was itself wrong. A team
 that shows you its own retractions is telling you something about how it checked everything
 else.
+
+## IHH self-description used in the footer and About page (checked 30 October 2026)
+
+The previous footer and About text called IHH "a 501(c)(3) non-profit". IHH's own homepage does
+not say that, so it was replaced with IHH's own wording, read from https://immigranthallofhonor.org/
+on 30 October 2026 in an ordinary browser tab. Exact spans used:
+
+- "HONORING IMMIGRANTS. PRESERVING THEIR STORIES." (footer, set in sentence case)
+- "A NEW MUSEUM COMING TO CENTRAL TEXAS" (footer, set in sentence case)
+- "The Immigrant Hall of Honor celebrates those contributions and preserves the stories behind them." (About)
+- "laying the foundation for an interactive national museum in Central Texas" (About)
+
+The "EIN: [publish your EIN here]" placeholder was removed; IHH can add its own registration
+details. "501(c)" does not appear anywhere on the homepage text as read.
