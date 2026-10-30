@@ -4,6 +4,24 @@ Everything below was executed in a real headless Chromium against the built site
 over HTTP. The scripts are in `qa/`. **The last section lists what still has not been
 tested, and by whom it needs to be.**
 
+## Latest full run — 30 October 2026 (branch `ws5c-release-fixes`, before merge)
+
+Run locally on Linux with Chromium; GitHub Actions CI runs the same suite on every pull request.
+
+| Check | Result |
+|---|---|
+| `python -m unittest discover -s tests` | 168 tests, OK |
+| `bash qa/rebuild.sh` | all generated files match their sources |
+| `python qa/handover.py` | all ten handover packages pass |
+| `python qa/secrets.py` | pass |
+| `python living/eval/run_eval.py` | pass, 0 false accepts |
+| `node qa/integrity.mjs .` | 149 checks pass |
+| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro | all pass (0 axe violations; 626 text runs meet contrast; 318 WordPress checks) |
+| Smoke test: 21 pages at 375px and 1280px (console errors, broken links/images, sideways scroll) | 0 issues |
+
+Still not tested: no screen-reader user, no teenage reader, no volunteer WordPress handoff on
+the museum's real site. Older sections below are kept as a dated record.
+
 ---
 
 ## An independent audit found nine defects this suite had passed
