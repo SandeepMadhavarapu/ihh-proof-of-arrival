@@ -5,7 +5,7 @@
 set -eu
 R="$(cd "$(dirname "$0")/.." && pwd)"
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
-GEN=(site/verify.html site/new.html handover/OPEN-ITEMS.md)
+GEN=(site/verify.html site/new.html handover/OPEN-ITEMS.md site/sitemap.xml site/robots.txt site/index.html)
 for dir in "$R"/inductees/*/; do
   [ -f "$dir/copy.md" ] || continue
   n=$(basename "$dir")
@@ -22,6 +22,8 @@ for f in "${GEN[@]}"; do mkdir -p "$T/$(dirname "$f")"; cp "$R/$f" "$T/$f"; done
 python3 "$R/site-src/gen.py" >/dev/null
 python3 "$R/tools/build_profile.py" --all >/dev/null
 python3 "$R/tools/build_site_pages.py" >/dev/null
+python3 "$R/tools/build_site_meta.py" >/dev/null
+python3 "$R/tools/build_home.py" >/dev/null
 python3 "$R/tools/write_reconciliation.py" "$R"/review/workstream-1/evidence/*.json >/dev/null
 bash "$R/tools/package_handover.sh" >/dev/null
 fail=0
