@@ -1,0 +1,54 @@
+# Publish the PUBLIC DEMONSTRATION build (a student prototype, not IHH's website) to GitHub Pages.
+# Runs on every push to main (and by hand). It deploys only _live/, built by tools/build_live.py
+# from site/, and only after the offline tests and the clean-rebuild check pass.
+# Action versions, permissions and the github-pages environment follow GitHub's documentation:
+#   https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages
+# One-time setting (repository owner): Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+name: Publish demonstration site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline tests
+        run: python -m unittest discover -s tests
+      - name: Generated files match their sources
+        run: bash qa/rebuild.sh
+      - name: Build the demonstration copy
+        run: python tools/build_live.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _live
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
