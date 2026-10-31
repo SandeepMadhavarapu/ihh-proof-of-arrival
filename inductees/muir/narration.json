@@ -1,0 +1,124 @@
+{
+  "slug": "muir",
+  "name": "John Muir",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT (AI), for team review",
+  "guide": [
+    {
+      "line": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild."
+    },
+    {
+      "line": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage."
+    },
+    {
+      "line": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin."
+    },
+    {
+      "line": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way."
+    },
+    {
+      "line": "In 1868 he sailed by way of Cuba and Panama, crossed the isthmus, and came up the coast to San Francisco in March.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "In 1868 he sailed by way of Cuba and Panama, crossed the isthmus, and came up the coast to San Francisco in March."
+    },
+    {
+      "line": "For years Muir read the Sierra's glaciers, meadows and storms at first hand, and in 1874 his \"Studies in the Sierra\" began a long career as a writer who could make a reader feel a landscape they had never seen.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "For years Muir read the Sierra's glaciers, meadows and storms at first hand, and in 1874 his \"Studies in the Sierra\" began a long career as a writer who could make a reader feel a landscape they had never seen."
+    },
+    {
+      "line": "Writing, for Muir, was a way of defending what he loved.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Writing, for Muir, was a way of defending what he loved."
+    },
+    {
+      "line": "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park; the National Park Service dates it precisely to 1 October 1890.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park; the National Park Service dates it precisely to 1 October 1890."
+    },
+    {
+      "line": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch."
+    },
+    {
+      "line": "The two slipped away from the official party into the back country for several days; Roosevelt went home and threw the weight of the presidency behind protecting the nation's forests, parks and monuments.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "The two slipped away from the official party into the back country for several days; Roosevelt went home and threw the weight of the presidency behind protecting the nation's forests, parks and monuments."
+    },
+    {
+      "line": "Listen to this quotation:",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    },
+    {
+      "line": "When we try to pick out anything by itself, we find it hitched to everything else in the universe.",
+      "kind": "quote",
+      "copy_md_line": 54,
+      "copy_md_sentence": "When we try to pick out anything by itself, we find it hitched to everything else in the universe."
+    },
+    {
+      "line": "Which place would you want to protect, and why?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild."
+    },
+    {
+      "line": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage."
+    },
+    {
+      "line": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin."
+    },
+    {
+      "line": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way."
+    },
+    {
+      "line": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ]
+}

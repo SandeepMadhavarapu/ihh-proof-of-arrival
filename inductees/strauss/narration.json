@@ -1,0 +1,130 @@
+{
+  "slug": "strauss",
+  "name": "Levi Strauss",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT (AI), for team review",
+  "guide": [
+    {
+      "line": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847."
+    },
+    {
+      "line": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods."
+    },
+    {
+      "line": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush."
+    },
+    {
+      "line": "Strauss settled in San Francisco to run the West Coast arm of the family firm — Levi Strauss & Co. — supplying the miners, shopkeepers and households of a city booming almost overnight.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Strauss settled in San Francisco to run the West Coast arm of the family firm — Levi Strauss & Co. — supplying the miners, shopkeepers and households of a city booming almost overnight."
+    },
+    {
+      "line": "He did not dig for gold; he sold to the people who did, and to everyone who came to feed and clothe them.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He did not dig for gold; he sold to the people who did, and to everyone who came to feed and clothe them."
+    },
+    {
+      "line": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets."
+    },
+    {
+      "line": "The idea worked, and his customers wanted more, but Davis could not afford the seventy-dollar fee to patent it.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "The idea worked, and his customers wanted more, but Davis could not afford the seventy-dollar fee to patent it."
+    },
+    {
+      "line": "He wrote to Levi Strauss & Co., the firm that supplied his cloth, and proposed they take out the patent together.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "He wrote to Levi Strauss & Co., the firm that supplied his cloth, and proposed they take out the patent together."
+    },
+    {
+      "line": "Strauss agreed to finance it.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Strauss agreed to finance it."
+    },
+    {
+      "line": "He endowed scholarships at the University of California and supported orphanages and Jewish charities in the city.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He endowed scholarships at the University of California and supported orphanages and Jewish charities in the city."
+    },
+    {
+      "line": "He never married, and when he died he left his business to his nephews and much of his fortune to charity.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He never married, and when he died he left his business to his nephews and much of his fortune to charity."
+    },
+    {
+      "line": "Listen to this quotation:",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    },
+    {
+      "line": "My invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping.",
+      "kind": "quote",
+      "copy_md_line": 51,
+      "copy_md_sentence": "My invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping."
+    },
+    {
+      "line": "How would you share credit for something you made together?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847."
+    },
+    {
+      "line": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods."
+    },
+    {
+      "line": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush."
+    },
+    {
+      "line": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets."
+    },
+    {
+      "line": "He endowed scholarships at the University of California and supported orphanages and Jewish charities in the city.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He endowed scholarships at the University of California and supported orphanages and Jewish charities in the city."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ]
+}

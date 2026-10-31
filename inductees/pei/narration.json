@@ -1,0 +1,148 @@
+{
+  "slug": "pei",
+  "name": "I. M. Pei",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT (AI), for team review",
+  "guide": [
+    {
+      "line": "I. M. Pei came to America on a two-year student visa.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "I. M. Pei came to America on a two-year student visa."
+    },
+    {
+      "line": "He sailed on the steamship President Coolidge and arrived at San Francisco on 28 August 1935.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He sailed on the steamship *President Coolidge* and arrived at San Francisco on 28 August 1935."
+    },
+    {
+      "line": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned."
+    },
+    {
+      "line": "Because the consulate in Shanghai had spelled his name \"Pe,\" that is the name on his early American papers.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "Because the consulate in Shanghai had spelled his name \"Pe,\" that is the name on his early American papers."
+    },
+    {
+      "line": "Pei started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "Pei started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology."
+    },
+    {
+      "line": "Every year or two he had to apply again for permission to stay.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "Every year or two he had to apply again for permission to stay."
+    },
+    {
+      "line": "By 1946 he was married to Eileen Loo and teaching at Harvard.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "By 1946 he was married to Eileen Loo and teaching at Harvard."
+    },
+    {
+      "line": "Harvard asked for him to stay one more year as a teaching fellow.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Harvard asked for him to stay one more year as a teaching fellow."
+    },
+    {
+      "line": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside."
+    },
+    {
+      "line": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later."
+    },
+    {
+      "line": "Twelve years after he arrived, he was finally allowed to stay.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "Twelve years after he arrived, he was finally allowed to stay."
+    },
+    {
+      "line": "He became a U.S. citizen in 1954.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He became a U.S. citizen in 1954."
+    },
+    {
+      "line": "Pei designed buildings across the United States and the world, including the East Building of the National Gallery of Art in Washington, which opened in 1978.",
+      "kind": "fact",
+      "copy_md_line": 40,
+      "copy_md_sentence": "Pei designed buildings across the United States and the world, including the East Building of the National Gallery of Art in Washington, which opened in 1978."
+    },
+    {
+      "line": "His most famous design is the glass pyramid that forms the main entrance of the Louvre in Paris.",
+      "kind": "fact",
+      "copy_md_line": 42,
+      "copy_md_sentence": "His most famous design is the glass pyramid that forms the main entrance of the Louvre in Paris."
+    },
+    {
+      "line": "Listen to this quotation:",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    },
+    {
+      "line": "It is understood that the subject expects to return to China to teach after this year's work at Harvard.",
+      "kind": "quote",
+      "copy_md_line": 56,
+      "copy_md_sentence": "It is understood that the subject expects to return to China to teach after this year's work at Harvard."
+    },
+    {
+      "line": "What would you hope to build in a new home?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "I. M. Pei came to America on a two-year student visa.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "I. M. Pei came to America on a two-year student visa."
+    },
+    {
+      "line": "He sailed on the steamship President Coolidge and arrived at San Francisco on 28 August 1935.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He sailed on the steamship *President Coolidge* and arrived at San Francisco on 28 August 1935."
+    },
+    {
+      "line": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned."
+    },
+    {
+      "line": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later."
+    },
+    {
+      "line": "Pei designed buildings across the United States and the world, including the East Building of the National Gallery of Art in Washington, which opened in 1978.",
+      "kind": "fact",
+      "copy_md_line": 40,
+      "copy_md_sentence": "Pei designed buildings across the United States and the world, including the East Building of the National Gallery of Art in Washington, which opened in 1978."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ]
+}

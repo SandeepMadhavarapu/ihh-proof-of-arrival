@@ -1,0 +1,130 @@
+{
+  "slug": "naismith",
+  "name": "James Naismith",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT (AI), for team review",
+  "guide": [
+    {
+      "line": "James Naismith was born in Canada in 1861 and invented basketball in Massachusetts in 1891, as an immigrant physical-education instructor asked to tame a roomful of bored young men through a long New England winter.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "James Naismith was born in Canada in 1861 and invented basketball in Massachusetts in 1891, as an immigrant physical-education instructor asked to tame a roomful of bored young men through a long New England winter."
+    },
+    {
+      "line": "He trained in Canada before crossing into the United States, and by the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "He trained in Canada before crossing into the United States, and by the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts."
+    },
+    {
+      "line": "In the autumn of 1891 the head of the department, Luther Halsey Gulick, set his instructors a problem: invent an indoor game that could keep a class of young men fit and interested through the winter, when it was too cold and dark to play outside.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In the autumn of 1891 the head of the department, Luther Halsey Gulick, set his instructors a problem: invent an indoor game that could keep a class of young men fit and interested through the winter, when it was too cold and dark to play outside."
+    },
+    {
+      "line": "Naismith was given two weeks to solve it.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "Naismith was given two weeks to solve it."
+    },
+    {
+      "line": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it."
+    },
+    {
+      "line": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead."
+    },
+    {
+      "line": "He fixed them to the balcony railings at either end of the gym, about ten feet up, and posted the rules on the wall so the students could read them.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He fixed them to the balcony railings at either end of the gym, about ten feet up, and posted the rules on the wall so the students could read them."
+    },
+    {
+      "line": "The first game, in December 1891, was played with a soccer ball and the baskets, nine players a side.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "The first game, in December 1891, was played with a soccer ball and the baskets, nine players a side."
+    },
+    {
+      "line": "But the game spread with astonishing speed through the YMCA network, and the rules were published in 1892.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "But the game spread with astonishing speed through the YMCA network, and the rules were published in 1892."
+    },
+    {
+      "line": "In 1898 Naismith earned a medical degree in Denver and then moved to Lawrence, Kansas, where he would spend the rest of his career.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In 1898 Naismith earned a medical degree in Denver and then moved to Lawrence, Kansas, where he would spend the rest of his career."
+    },
+    {
+      "line": "He died in Lawrence, Kansas, on 28 November 1939, a few weeks after a stroke.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He died in Lawrence, Kansas, on 28 November 1939, a few weeks after a stroke."
+    },
+    {
+      "line": "Listen to this quotation:",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    },
+    {
+      "line": "The ball may be thrown in any direction with one or both hands.",
+      "kind": "quote",
+      "copy_md_line": 51,
+      "copy_md_sentence": "The ball may be thrown in any direction with one or both hands."
+    },
+    {
+      "line": "What would you change if you could invent a game?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "James Naismith was born in Canada in 1861 and invented basketball in Massachusetts in 1891, as an immigrant physical-education instructor asked to tame a roomful of bored young men through a long New England winter.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "James Naismith was born in Canada in 1861 and invented basketball in Massachusetts in 1891, as an immigrant physical-education instructor asked to tame a roomful of bored young men through a long New England winter."
+    },
+    {
+      "line": "He trained in Canada before crossing into the United States, and by the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "He trained in Canada before crossing into the United States, and by the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts."
+    },
+    {
+      "line": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it."
+    },
+    {
+      "line": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead."
+    },
+    {
+      "line": "At the University of Kansas he served as chapel director and the head of physical education, becoming a full professor in 1906 and retiring only in June 1937.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "At the University of Kansas he served as chapel director and the head of physical education, becoming a full professor in 1906 and retiring only in June 1937."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ]
+}
