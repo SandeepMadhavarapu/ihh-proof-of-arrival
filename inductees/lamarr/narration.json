@@ -2,13 +2,37 @@
   "slug": "lamarr",
   "name": "Hedy Lamarr",
   "written_on": "2026-10-31",
-  "writer": "ChatGPT (AI), for team review",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
   "guide": [
     {
       "line": "Hedy Lamarr arrived in America in 1937 as a film star.",
       "kind": "fact",
       "copy_md_line": 10,
       "copy_md_sentence": "Hedy Lamarr arrived in America in 1937 as a film star."
+    },
+    {
+      "line": "She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "She was born Hedwig Eva Maria Kiesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family."
+    },
+    {
+      "line": "She became an actress as a teenager.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "She became an actress as a teenager."
+    },
+    {
+      "line": "Her first major role, in the Czechoslovak film Ecstasy, in 1933, made her famous and scandalous across Europe.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "Her first major role, in the Czechoslovak film *Ecstasy* (1933), made her famous and scandalous across Europe."
+    },
+    {
+      "line": "That same year she married Fritz Mandl, a wealthy munitions manufacturer and arms dealer.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "That same year she married Fritz Mandl, a wealthy munitions manufacturer and arms dealer."
     },
     {
       "line": "In 1937 she left Mandl, and Austria.",
@@ -23,28 +47,22 @@
       "copy_md_sentence": "She reached America by way of London, where she met the Hollywood studio boss Louis B. Mayer, who was looking for European talent."
     },
     {
-      "line": "Either in London or on board the liner Normandie, she signed a contract with Metro-Goldwyn-Mayer.",
-      "kind": "fact",
-      "copy_md_line": 22,
-      "copy_md_sentence": "Either in London or on board the liner *Normandie*, she signed a contract with Metro-Goldwyn-Mayer."
-    },
-    {
       "line": "Mayer gave her a new name, Hedy Lamarr, after his favorite silent-film star, Barbara La Marr.",
       "kind": "fact",
       "copy_md_line": 24,
       "copy_md_sentence": "Mayer gave her a new name, Hedy Lamarr, after his favorite silent-film star, Barbara La Marr."
     },
     {
+      "line": "A few months after she left, Nazi Germany annexed Austria.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "A few months after she left, Nazi Germany annexed Austria."
+    },
+    {
       "line": "Lamarr and her friend George Antheil, an avant-garde composer, were fierce opponents of the Nazis.",
       "kind": "fact",
       "copy_md_line": 28,
       "copy_md_sentence": "Lamarr and her friend George Antheil, an avant-garde composer, were fierce opponents of the Nazis."
-    },
-    {
-      "line": "Together she worked out a way to steer a torpedo by radio without the enemy being able to jam the signal.",
-      "kind": "fact",
-      "copy_md_line": 28,
-      "copy_md_sentence": "Together she worked out a way to steer a torpedo by radio without the enemy being able to jam the signal."
     },
     {
       "line": "The trick was to keep changing the radio frequency.",
@@ -65,6 +83,18 @@
       "copy_md_sentence": "They filed the patent on 10 June 1941."
     },
     {
+      "line": "Their patent explains:",
+      "kind": "intro",
+      "copy_md_line": 30,
+      "copy_md_sentence": "\"In a conventional player piano record there may be 88 rows of perforations,\" their patent explains, \"and in our system such a record would permit the use of 88 different carrier frequencies.\""
+    },
+    {
+      "line": "In a conventional player piano record there may be 88 rows of perforations.",
+      "kind": "quote",
+      "copy_md_line": 30,
+      "copy_md_sentence": "In a conventional player piano record there may be 88 rows of perforations."
+    },
+    {
       "line": "It was granted on 11 August 1942 as U.S. Patent 2,292,387, \"Secret Communication System.\"",
       "kind": "fact",
       "copy_md_line": 32,
@@ -77,19 +107,13 @@
       "copy_md_sentence": "Hedy Lamarr became a United States citizen on 10 April 1953, sixteen years after she arrived, at a ceremony in federal court in Los Angeles."
     },
     {
-      "line": "Listen to this quotation:",
-      "kind": "transition",
-      "copy_md_line": 0,
-      "copy_md_sentence": ""
+      "line": "In 2014 they were inducted into the National Inventors Hall of Fame.",
+      "kind": "fact",
+      "copy_md_line": 44,
+      "copy_md_sentence": "In 1997 the Electronic Frontier Foundation honored her and Antheil, and in 2014 they were inducted into the National Inventors Hall of Fame."
     },
     {
-      "line": "Briefly, our system as adapted for radio control of a remote craft, employs a pair of synchronous records, one at the transmitting station and one at the receiving station, which change the tuning of the transmitting and receiving apparatus from time to time, so that without knowledge of the records an enemy would be unable to determine at what frequency a controlling impulse would be sent.",
-      "kind": "quote",
-      "copy_md_line": 55,
-      "copy_md_sentence": "Briefly, our system as adapted for radio control of a remote craft, employs a pair of synchronous records, one at the transmitting station and one at the receiving station, which change the tuning of the transmitting and receiving apparatus from time to time, so that without knowledge of the records an enemy would be unable to determine at what frequency a controlling impulse would be sent."
-    },
-    {
-      "line": "What unexpected interests would you like others to notice in you?",
+      "line": "What would you invent if you could work on any problem, with any partner?",
       "kind": "question",
       "copy_md_line": 0,
       "copy_md_sentence": ""
@@ -103,16 +127,28 @@
       "copy_md_sentence": "Hedy Lamarr arrived in America in 1937 as a film star."
     },
     {
-      "line": "She reached America by way of London, where she met the Hollywood studio boss Louis B. Mayer, who was looking for European talent.",
-      "kind": "fact",
-      "copy_md_line": 22,
-      "copy_md_sentence": "She reached America by way of London, where she met the Hollywood studio boss Louis B. Mayer, who was looking for European talent."
-    },
-    {
       "line": "She left behind a husband who sold arms, a homeland about to be swallowed by Nazi Germany, and her father's fortune.",
       "kind": "fact",
       "copy_md_line": 10,
       "copy_md_sentence": "She left behind a husband who sold arms, a homeland about to be swallowed by Nazi Germany, and her father's fortune."
+    },
+    {
+      "line": "In the summer of 1941, a Hollywood film star filed a patent for a way to keep the enemy from jamming a torpedo.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "In the summer of 1941, a Hollywood film star filed a patent for a way to keep the enemy from jamming a torpedo."
+    },
+    {
+      "line": "She signed it with her legal name: Hedy Kiesler Markey.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "She signed it with her legal name: Hedy Kiesler Markey."
+    },
+    {
+      "line": "The trick was to keep changing the radio frequency.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "The trick was to keep changing the radio frequency."
     },
     {
       "line": "A transmitter on a ship and a receiver in the torpedo would hop from frequency to frequency at the same moment, guided by matching paper rolls like those in a player piano.",
@@ -132,5 +168,9 @@
       "copy_md_line": 0,
       "copy_md_sentence": ""
     }
-  ]
+  ],
+  "word_counts": {
+    "guide": 272,
+    "short": 141
+  }
 }

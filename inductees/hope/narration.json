@@ -2,7 +2,7 @@
   "slug": "hope",
   "name": "Bob Hope",
   "written_on": "2026-10-31",
-  "writer": "ChatGPT (AI), for team review",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
   "guide": [
     {
       "line": "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
@@ -35,16 +35,96 @@
       "copy_md_sentence": "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\""
     },
     {
-      "line": "Broadway brought him Roberta and the 1936 Ziegfeld Follies; from 1938, radio brought him The Bob Hope Show on NBC.",
+      "line": "Hollywood made him a star.",
       "kind": "fact",
-      "copy_md_line": 22,
-      "copy_md_sentence": "Broadway brought him *Roberta* and the 1936 Ziegfeld Follies; from 1938, radio brought him *The Bob Hope Show* on NBC."
+      "copy_md_line": 24,
+      "copy_md_sentence": "Hollywood made him a star."
     },
     {
-      "line": "In 1941 Hope entertained troops at an air base in California, joined the USO, and never really stopped.",
+      "line": "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
       "kind": "fact",
       "copy_md_line": 28,
-      "copy_md_sentence": "In 1941 Hope entertained troops at an air base in California, joined the USO, and never really stopped."
+      "copy_md_sentence": "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War."
+    },
+    {
+      "line": "In 1997 the House of Representatives made him the first civilian ever named an honorary veteran of the United States armed forces.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "The armed forces named him an honorary \"Four Star Hero\" in 1992 and awarded him the Distinguished Service Medal in 1995, and in 1997 the House of Representatives made him the first civilian ever named an honorary veteran of the United States armed forces."
+    },
+    {
+      "line": "Hope never took a citizenship oath of his own.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "Hope never took a citizenship oath of his own."
+    },
+    {
+      "line": "Under the law of the time, a child became a citizen automatically when a parent was naturalised.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "Under the law of the time, a child became a citizen automatically when a parent was naturalised — and so, as the record plainly states, \"when his father was naturalized in December 1920, Hope became a United States citizen.\""
+    },
+    {
+      "line": "As the record plainly states:",
+      "kind": "intro",
+      "copy_md_line": 34,
+      "copy_md_sentence": "Under the law of the time, a child became a citizen automatically when a parent was naturalised — and so, as the record plainly states, \"when his father was naturalized in December 1920, Hope became a United States citizen.\""
+    },
+    {
+      "line": "When his father was naturalized in December 1920, Hope became a United States citizen.",
+      "kind": "quote",
+      "copy_md_line": 34,
+      "copy_md_sentence": "When his father was naturalized in December 1920, Hope became a United States citizen."
+    },
+    {
+      "line": "He was seventeen.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "He was seventeen."
+    },
+    {
+      "line": "The boy who had crossed the Atlantic at four was made an American by an act in which he took no part.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "The boy who had crossed the Atlantic at four was made an American by an act in which he took no part."
+    },
+    {
+      "line": "This is the citation read out when he received his second Honorary Award:",
+      "kind": "intro",
+      "copy_md_line": 48,
+      "copy_md_sentence": "This is the citation read out when he received his second Honorary Award — the exact words the Academy used."
+    },
+    {
+      "line": "To Bob Hope for unique and distinguished service to our industry and the Academy.",
+      "kind": "quote",
+      "copy_md_line": 51,
+      "copy_md_sentence": "To Bob Hope for unique and distinguished service to our industry and the Academy."
+    },
+    {
+      "line": "Is a citizen made by a ceremony, or by the life a person lives in a country?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio."
+    },
+    {
+      "line": "Among the seven sons was a four-year-old named Leslie Townes Hope.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Among the seven sons was a four-year-old named Leslie Townes Hope."
+    },
+    {
+      "line": "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\"",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\""
     },
     {
       "line": "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
@@ -65,72 +145,14 @@
       "copy_md_sentence": "The boy who had crossed the Atlantic at four was made an American by an act in which he took no part."
     },
     {
-      "line": "The Academy of Motion Picture Arts and Sciences records three honours for him: an Honorary Award for 1952, the Jean Hersholt Humanitarian Award for 1959, and a second Honorary Award for 1965, presented in the spring of 1966.",
-      "kind": "fact",
-      "copy_md_line": 40,
-      "copy_md_sentence": "The Academy of Motion Picture Arts and Sciences records three honours for him: an Honorary Award for 1952, the Jean Hersholt Humanitarian Award for 1959, and a second Honorary Award for 1965, presented in the spring of 1966."
-    },
-    {
-      "line": "None of the confirmed honours is a competitive Academy Award.",
-      "kind": "fact",
-      "copy_md_line": 40,
-      "copy_md_sentence": "None of the confirmed honours is a competitive Academy Award."
-    },
-    {
-      "line": "Listen to this quotation:",
-      "kind": "transition",
-      "copy_md_line": 0,
-      "copy_md_sentence": ""
-    },
-    {
-      "line": "To Bob Hope for unique and distinguished service to our industry and the Academy.",
-      "kind": "quote",
-      "copy_md_line": 51,
-      "copy_md_sentence": "To Bob Hope for unique and distinguished service to our industry and the Academy."
-    },
-    {
-      "line": "How would you choose to make people feel at home?",
-      "kind": "question",
-      "copy_md_line": 0,
-      "copy_md_sentence": ""
-    }
-  ],
-  "short": [
-    {
-      "line": "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
-      "kind": "fact",
-      "copy_md_line": 4,
-      "copy_md_sentence": "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio."
-    },
-    {
-      "line": "Among the seven sons was a four-year-old named Leslie Townes Hope.",
-      "kind": "fact",
-      "copy_md_line": 4,
-      "copy_md_sentence": "Among the seven sons was a four-year-old named Leslie Townes Hope."
-    },
-    {
-      "line": "The boy went to the Fairmount schools and East High, sang in the Church of the Covenant choir, took dancing lessons, and boxed briefly under the name \"Packy East\" before losing in a novice championship and giving it up.",
-      "kind": "fact",
-      "copy_md_line": 18,
-      "copy_md_sentence": "The boy went to the Fairmount schools and East High, sang in the Church of the Covenant choir, took dancing lessons, and boxed briefly under the name \"Packy East\" before losing in a novice championship and giving it up."
-    },
-    {
-      "line": "After a 1934 short and The Big Broadcast of 1938, he teamed with Bing Crosby and Dorothy Lamour for the \"Road\" pictures, and from 1950 he was a fixture of American television, with specials running almost every year into the 1990s.",
-      "kind": "fact",
-      "copy_md_line": 24,
-      "copy_md_sentence": "After a 1934 short and *The Big Broadcast of 1938*, he teamed with Bing Crosby and Dorothy Lamour for the \"Road\" pictures, and from 1950 he was a fixture of American television, with specials running almost every year into the 1990s."
-    },
-    {
-      "line": "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
-      "kind": "fact",
-      "copy_md_line": 28,
-      "copy_md_sentence": "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War."
-    },
-    {
       "line": "Read the full story, with every source, on this page.",
       "kind": "transition",
       "copy_md_line": 0,
       "copy_md_sentence": ""
     }
-  ]
+  ],
+  "word_counts": {
+    "guide": 291,
+    "short": 129
+  }
 }

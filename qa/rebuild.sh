@@ -19,6 +19,14 @@ for dir in "$R"/inductees/*/; do
   [ ! -f "$R/review/workstream-1/evidence/$n.json" ] || GEN+=("handover/$n/ihh-content-reconciliation.md")
 done
 GEN+=(site/artifacts.html)
+for dir in "$R"/inductees/*/; do
+  n=$(basename "$dir")
+  [ -f "$dir/narration.json" ] || continue
+  # captions and blocks regenerate byte-identically; the MP3/MP4 files are checked against the
+  # SHA-256 in site-data/narration/manifest.json by tools/narration.py instead
+  GEN+=("site/media/$n/listen/$n-guide.vtt" "site/media/$n/listen/$n-short.vtt" "handover/$n/listen-$n.html"
+        "handover/$n/media/listen/$n-guide.vtt" "handover/$n/media/listen/$n-short.vtt")
+done
 while read -r slug id img; do
   GEN+=("site/media/artifacts/$img" "handover/$slug/look-closer-$id.html" "handover/$slug/media/artifacts/$img")
 done < <(python3 -c 'import json,sys; [print(a["slug"],a["id"],a["image"]) for a in json.load(open(sys.argv[1]))["artifacts"]]' "$R/site-data/artifacts/research.json")

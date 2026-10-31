@@ -18,6 +18,9 @@ tools/media_sources.py (link out until permission is granted).
 Look closer: site-data/artifacts/research.json, checked by tools/artifacts.py (every note's names,
 numbers and dates against its quoted evidence) before anything is written; draws a section on each
 profile that has an artifact, copies the images to site/media/artifacts/ and writes site/artifacts.html.
+Listen: inductees/<slug>/narration.json and site-data/narration/, checked by tools/narration.py (every
+narrated line traced to copy.md, every media file against its recorded hash); draws a "Listen and
+watch" section on each profile and copies its audio, video and captions to site/media/<slug>/listen/.
 The chrome (head, header, footer) is taken from site/inductees.html so generated pages cannot
 drift from the rest of the site. This script reads nothing under living/.
 """
@@ -28,6 +31,7 @@ sys.path.insert(0, ROOT)
 from voices import render as voices_render  # noqa: E402
 from tools import media_sources  # noqa: E402
 from tools import artifacts  # noqa: E402
+from tools import narration  # noqa: E402
 
 E = html.escape
 NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
@@ -150,6 +154,11 @@ def main(root=ROOT, site=None, voices=None, preview=None):
     except artifacts.CheckError as e:
         sys.exit(f"ERROR Look closer: {e}")
     artifacts.copy_images(site)
+    try:
+        scripts, manifest = narration.check()
+    except narration.CheckError as e:
+        sys.exit(f"ERROR Listen: {e}")
+    narration.copy_site_media(site, scripts, manifest)
     for name in sorted(os.listdir(base)):
         if os.path.isdir(os.path.join(base, name)) and name not in slugs:
             print(f"not published (not in site-data/published.json): inductees/{name}")
@@ -191,7 +200,8 @@ def main(root=ROOT, site=None, voices=None, preview=None):
         attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
         out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
                + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
-               + frag + artifacts.site_section(name, arts) + media + index + "\n</main>" + page_foot)
+               + frag + narration.site_section(name, scripts, manifest, frag) + artifacts.site_section(name, arts)
+               + media + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
             f.write(out)
         print(f"site/{name}.html")

@@ -2,43 +2,43 @@
   "slug": "muir",
   "name": "John Muir",
   "written_on": "2026-10-31",
-  "writer": "ChatGPT (AI), for team review",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
   "guide": [
     {
-      "line": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild.",
+      "line": "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.",
       "kind": "fact",
-      "copy_md_line": 10,
-      "copy_md_sentence": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild."
+      "copy_md_line": 4,
+      "copy_md_sentence": "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen."
     },
     {
-      "line": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage.",
+      "line": "John Muir was born in Dunbar, Scotland, on 21 April 1838, and attended the local schools until he was eleven.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "John Muir was born in Dunbar, Scotland, on 21 April 1838, and attended the local schools until he was eleven."
+    },
+    {
+      "line": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland.",
       "kind": "fact",
       "copy_md_line": 16,
       "copy_md_sentence": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage."
     },
     {
-      "line": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin.",
+      "line": "In 1867, working in a carriage shop in Indianapolis, a file slipped and blinded him in one eye.",
       "kind": "fact",
-      "copy_md_line": 18,
-      "copy_md_sentence": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin."
+      "copy_md_line": 22,
+      "copy_md_sentence": "In 1867, working in a carriage shop in Indianapolis, a file slipped and blinded him in one eye; the other went dark in sympathy, and he lay in a shuttered room for weeks."
     },
     {
-      "line": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way.",
+      "line": "When his sight came back he resolved to give up machinery and devote himself to the natural world.",
       "kind": "fact",
-      "copy_md_line": 18,
-      "copy_md_sentence": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way."
+      "copy_md_line": 22,
+      "copy_md_sentence": "When his sight came back he resolved to give up machinery and devote himself to the natural world, and set out to walk roughly a thousand miles from Indianapolis to the Gulf of Mexico."
     },
     {
-      "line": "In 1868 he sailed by way of Cuba and Panama, crossed the isthmus, and came up the coast to San Francisco in March.",
+      "line": "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\"",
       "kind": "fact",
       "copy_md_line": 24,
-      "copy_md_sentence": "In 1868 he sailed by way of Cuba and Panama, crossed the isthmus, and came up the coast to San Francisco in March."
-    },
-    {
-      "line": "For years Muir read the Sierra's glaciers, meadows and storms at first hand, and in 1874 his \"Studies in the Sierra\" began a long career as a writer who could make a reader feel a landscape they had never seen.",
-      "kind": "fact",
-      "copy_md_line": 28,
-      "copy_md_sentence": "For years Muir read the Sierra's glaciers, meadows and storms at first hand, and in 1874 his \"Studies in the Sierra\" began a long career as a writer who could make a reader feel a landscape they had never seen."
+      "copy_md_sentence": "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\""
     },
     {
       "line": "Writing, for Muir, was a way of defending what he loved.",
@@ -47,16 +47,22 @@
       "copy_md_sentence": "Writing, for Muir, was a way of defending what he loved."
     },
     {
-      "line": "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park; the National Park Service dates it precisely to 1 October 1890.",
+      "line": "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park.",
       "kind": "fact",
       "copy_md_line": 34,
       "copy_md_sentence": "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park; the National Park Service dates it precisely to 1 October 1890."
     },
     {
-      "line": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch.",
+      "line": "Two years later Muir and a circle of allies founded the Sierra Club \"to do something for wildness and make the mountains glad.\"",
       "kind": "fact",
-      "copy_md_line": 28,
-      "copy_md_sentence": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch."
+      "copy_md_line": 34,
+      "copy_md_sentence": "Two years later Muir and a circle of allies founded the Sierra Club \"to do something for wildness and make the mountains glad.\""
+    },
+    {
+      "line": "President Theodore Roosevelt came west in 1903 to see Yosemite with Muir himself.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "His 1901 book *Our National Parks* caught the attention of President Theodore Roosevelt, who came west in 1903 to see Yosemite with Muir himself."
     },
     {
       "line": "The two slipped away from the official party into the back country for several days; Roosevelt went home and threw the weight of the presidency behind protecting the nation's forests, parks and monuments.",
@@ -65,19 +71,19 @@
       "copy_md_sentence": "The two slipped away from the official party into the back country for several days; Roosevelt went home and threw the weight of the presidency behind protecting the nation's forests, parks and monuments."
     },
     {
-      "line": "Listen to this quotation:",
-      "kind": "transition",
-      "copy_md_line": 0,
-      "copy_md_sentence": ""
+      "line": "Muir wrote:",
+      "kind": "intro",
+      "copy_md_line": 48,
+      "copy_md_sentence": "Its opening lines are the plainest statement Muir ever wrote of why wild country was worth a nation's trouble."
     },
     {
-      "line": "When we try to pick out anything by itself, we find it hitched to everything else in the universe.",
+      "line": "Thousands of tired, nerve-shaken, over-civilized people are beginning to find out that going to the mountains is going home; that wildness is a necessity.",
       "kind": "quote",
-      "copy_md_line": 54,
-      "copy_md_sentence": "When we try to pick out anything by itself, we find it hitched to everything else in the universe."
+      "copy_md_line": 51,
+      "copy_md_sentence": "Thousands of tired, nerve-shaken, over-civilized people are beginning to find out that going to the mountains is going home; that wildness is a necessity."
     },
     {
-      "line": "Which place would you want to protect, and why?",
+      "line": "Which wild place near you would you fight to protect, and how would you persuade other people to help?",
       "kind": "question",
       "copy_md_line": 0,
       "copy_md_sentence": ""
@@ -91,28 +97,28 @@
       "copy_md_sentence": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild."
     },
     {
-      "line": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage.",
+      "line": "He helped win Yosemite its national park, founded the Sierra Club, and took a president camping among the giant sequoias.",
       "kind": "fact",
-      "copy_md_line": 16,
-      "copy_md_sentence": "In 1849 his family emigrated to the United States and settled on Wisconsin farmland — first at Fountain Lake, then at Hickory Hill Farm near Portage."
+      "copy_md_line": 10,
+      "copy_md_sentence": "He helped win Yosemite its national park, founded the Sierra Club, and took a president camping among the giant sequoias."
     },
     {
-      "line": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin.",
+      "line": "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.",
       "kind": "fact",
-      "copy_md_line": 18,
-      "copy_md_sentence": "In 1860 he carried his inventions to the state fair in Madison, won prizes and notice, and entered the University of Wisconsin."
+      "copy_md_line": 4,
+      "copy_md_sentence": "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen."
     },
     {
-      "line": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way.",
+      "line": "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\"",
       "kind": "fact",
-      "copy_md_line": 18,
-      "copy_md_sentence": "He left after about three years without a degree, having fallen for botany and geology, and wandered the northern states and Canada doing odd jobs along the way."
+      "copy_md_line": 24,
+      "copy_md_sentence": "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\""
     },
     {
-      "line": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch.",
+      "line": "Writing, for Muir, was a way of defending what he loved.",
       "kind": "fact",
-      "copy_md_line": 28,
-      "copy_md_sentence": "In 1880 he married Louie Strentzel, settled in Martinez, California, raised two daughters, and ran the family fruit ranch."
+      "copy_md_line": 30,
+      "copy_md_sentence": "Writing, for Muir, was a way of defending what he loved."
     },
     {
       "line": "Read the full story, with every source, on this page.",
@@ -120,5 +126,9 @@
       "copy_md_line": 0,
       "copy_md_sentence": ""
     }
-  ]
+  ],
+  "word_counts": {
+    "guide": 273,
+    "short": 124
+  }
 }
