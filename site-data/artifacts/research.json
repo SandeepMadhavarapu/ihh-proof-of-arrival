@@ -1,0 +1,755 @@
+{
+ "_note": "Look closer: annotated artifacts. Every factual statement in a hotspot is backed by an exact span from (a) 'artifact' = this transcription of the artifact itself, (b) 'related' = the transcription of a related page of the same record, or (c) 'profile' = the inductee's verified copy.md. tools/artifacts.py checks every span and every name, number and date before building. Annotations were drafted with AI and checked against the sources listed.",
+ "researched_on": "2026-10-30",
+ "researcher": "Claude (AI), for team review",
+ "artifacts": [
+  {
+   "id": "lamarr-patent-2292387",
+   "slug": "lamarr",
+   "title": "Secret Communication System, U.S. Patent 2,292,387 (drawing sheet 1)",
+   "holder": "United States Patent and Trademark Office",
+   "item_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/2292387",
+   "identifier": "U.S. Patent 2,292,387",
+   "download_url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/2292387",
+   "image": "lamarr-1942-patent-2292387-sheet1.jpg",
+   "image_from": "inductees/lamarr/media/web/lamarr-1942-patent-2292387-sheet1.jpg (downloaded and viewed 2026-10-15)",
+   "page_shown": "Drawing sheet 1 of 2",
+   "credit": "U.S. Patent 2,292,387. United States Patent and Trademark Office.",
+   "rights": {
+    "source_url": "https://www.uspto.gov/terms-use-uspto-websites",
+    "exact_span": "the text and drawings of a patent are typically not subject to copyright restrictions",
+    "qualifier_span": "Subject to limited exceptions reflected in 37 CFR 1.71(d) & (e)",
+    "status": "U.S. patent: typically not subject to copyright",
+    "checked": "2026-10-30"
+   },
+   "alt": "1942 patent drawing: radio circuits for a transmitter, a receiver and a torpedo, signed by the two inventors.",
+   "transcription": "Aug. 11, 1942. H. K. MARKEY ET AL 2,292,387 SECRET COMMUNICATION SYSTEM Filed June 10, 1941 2 Sheets-Sheet 1\nFig. 1. OSC. 100~ OSC. 500~ VARIABLE FREQUENCY CARRIER OSCILLATOR MODULATOR AMPLIFIER\nFig. 2. SELECTOR AMPLIFIER DETECTOR 100~ FILTER RECTIFIER 500~ FILTER RECTIFIER\nFig. 3. TRANSMITTING STATION TORPEDO\nInventors Hedy Kiesler Markey George Antheil By [signature of the attorneys] Attorneys",
+   "transcription_note": "Printed labels and signatures only; the drawing's reference numerals are left out.",
+   "related_title": "First page of the patent's text (page 1 of the specification)",
+   "related_text": "Patented Aug. 11, 1942 2,292,387 UNITED STATES PATENT OFFICE SECRET COMMUNICATION SYSTEM Hedy Kiesler Markey, Los Angeles, and George Antheil, Manhattan Beach, Calif. Application June 10, 1941, Serial No. 397,412\nThis invention relates broadly to secret communication systems involving the use of carrier waves of different frequencies, and is especially useful in the remote control of dirigible craft, such as torpedoes.\nBriefly, our system as adapted for radio control of a remote craft, employs a pair of synchronous records, one at the transmitting station and one at the receiving station, which change the tuning of the transmitting and receiving apparatus from time to time, so that without knowledge of the records an enemy would be unable to determine at what frequency a controlling impulse would be sent.\nFurthermore, we contemplate employing records of the type used for many years in player pianos, and which consist of long rolls of paper having perforations variously positioned in a plurality of longitudinal rows along the records.\nIn a conventional player piano record there may be 88 rows of perforations, and in our system such a record would permit the use of 88 different carrier frequencies, from one to another of which both the transmitting and receiving station would be changed at intervals.\nThe two records may be synchronized by driving them with accurately calibrated constant-speed spring motors, such as are employed for driving clocks and chronometers.\nFig. 1 is a schematic diagram of the apparatus at a transmitting station;\nFig. 2 is a schematic diagram of the apparatus at a receiving station;\nFig. 3 is a schematic diagram illustrating a starting circuit for starting the motors at the transmitting and receiving stations simultaneously;",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 12,
+      "y": 9,
+      "w": 63,
+      "h": 6.5
+     },
+     "region_note": "Printed header: date, name, number, title, filing date",
+     "title": "Her legal name",
+     "text": "The header reads H. K. Markey, not Hedy Lamarr. She signed the patent with her legal name, Hedy Kiesler Markey. It was filed on June 10, 1941 and granted on Aug. 11, 1942.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "H. K. MARKEY ET AL"
+      },
+      {
+       "source": "profile",
+       "exact_span": "She signed it with her legal name: Hedy Kiesler Markey."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "Filed June 10, 1941"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "Aug. 11, 1942."
+      },
+      {
+       "source": "profile",
+       "exact_span": "Mayer gave her a new name, Hedy Lamarr"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 18,
+      "y": 22.5,
+      "w": 52,
+      "h": 7
+     },
+     "region_note": "Fig. 1 boxes: variable frequency carrier oscillator, modulator, amplifier",
+     "title": "The transmitter",
+     "text": "Figure 1 is the sending side. A variable frequency carrier oscillator lets the transmitter change from one radio frequency to another at intervals.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "Fig. 1 is a schematic diagram of the apparatus at a transmitting station;"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "VARIABLE FREQUENCY CARRIER OSCILLATOR"
+      },
+      {
+       "source": "related",
+       "exact_span": "secret communication systems involving the use of carrier waves of different frequencies"
+      },
+      {
+       "source": "related",
+       "exact_span": "from one to another of which both the transmitting and receiving station would be changed at intervals"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 48,
+      "y": 34.5,
+      "w": 29,
+      "h": 6.5
+     },
+     "region_note": "Fig. 1 paper roll running between two spools and a motor",
+     "title": "A player-piano roll",
+     "text": "This paper roll is the secret key. The inventors borrowed the idea from player pianos: a piano roll may have 88 rows of holes, so their system could use 88 different frequencies.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "we contemplate employing records of the type used for many years in player pianos"
+      },
+      {
+       "source": "related",
+       "exact_span": "In a conventional player piano record there may be 88 rows of perforations, and in our system such a record would permit the use of 88 different carrier frequencies"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 18,
+      "y": 47,
+      "w": 31,
+      "h": 7
+     },
+     "region_note": "Fig. 2 boxes: selector, amplifier, detector",
+     "title": "The receiver",
+     "text": "Figure 2 is the receiving side. A matching roll changes its tuning at the same moments, so only a receiver with the same record can follow the signal.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "Fig. 2 is a schematic diagram of the apparatus at a receiving station;"
+      },
+      {
+       "source": "related",
+       "exact_span": "employs a pair of synchronous records, one at the transmitting station and one at the receiving station, which change the tuning of the transmitting and receiving apparatus from time to time"
+      },
+      {
+       "source": "related",
+       "exact_span": "without knowledge of the records an enemy would be unable to determine at what frequency a controlling impulse would be sent"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 9,
+      "y": 64,
+      "w": 20,
+      "h": 20
+     },
+     "region_note": "Fig. 3: dashed boxes labelled transmitting station and torpedo",
+     "title": "Ship and torpedo",
+     "text": "Figure 3 starts the motors at both ends at the same moment: the transmitting station and the torpedo. Without the records, an enemy could not tell which frequency the next command would use.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "Fig. 3 is a schematic diagram illustrating a starting circuit for starting the motors at the transmitting and receiving stations simultaneously;"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "TRANSMITTING STATION TORPEDO"
+      },
+      {
+       "source": "related",
+       "exact_span": "without knowledge of the records an enemy would be unable to determine at what frequency a controlling impulse would be sent"
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 46,
+      "y": 73,
+      "w": 34,
+      "h": 10.5
+     },
+     "region_note": "Signatures: Inventors Hedy Kiesler Markey, George Antheil; attorneys",
+     "title": "Two inventors",
+     "text": "The inventors sign here: Hedy Kiesler Markey and George Antheil, an avant-garde composer and her friend.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Inventors Hedy Kiesler Markey George Antheil"
+      },
+      {
+       "source": "profile",
+       "exact_span": "Lamarr and her friend George Antheil, an avant-garde composer"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Find the word on this sheet that tells you where the receiver was meant to ride.",
+    "answer": "TORPEDO, in Figure 3, at the lower left.",
+    "hotspot": 5,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "Fig. 3. TRANSMITTING STATION TORPEDO"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": []
+  },
+  {
+   "id": "strauss-patent-139121",
+   "slug": "strauss",
+   "title": "Fastening Pocket-Openings, U.S. Patent 139,121 (drawing)",
+   "holder": "United States Patent and Trademark Office (scan via Google Patents)",
+   "item_url": "https://patents.google.com/patent/US139121A/en",
+   "identifier": "U.S. Patent 139,121",
+   "download_url": "https://patentimages.storage.googleapis.com/36/44/79/5c0abae625daba/US139121.pdf",
+   "image": "strauss-1873-patent-139121-drawing.jpg",
+   "image_from": "Page 1 of the patent PDF, rendered and viewed 2026-10-30; white margins trimmed",
+   "page_shown": "Drawing (PDF page 1 of 2)",
+   "credit": "U.S. Patent 139,121 (1873). United States Patent and Trademark Office.",
+   "rights": {
+    "source_url": "https://www.uspto.gov/terms-use-uspto-websites",
+    "exact_span": "the text and drawings of a patent are typically not subject to copyright restrictions",
+    "qualifier_span": "Subject to limited exceptions reflected in 37 CFR 1.71(d) & (e)",
+    "status": "U.S. patent: typically not subject to copyright",
+    "checked": "2026-10-30"
+   },
+   "alt": "1873 patent drawing of a man in work trousers, with small rivets marked at the pocket corners.",
+   "transcription": "J. W. DAVIS. Fastening Pocket-Openings. No. 139,121. Patented May 20, 1873.\nFig. 1. [Letters on the drawing: A once, and b five times.]\nWitnesses [two signatures; the first is illegible] C. M. Richardson\nInventor Jacob W. Davis per Dewey & Co. Attys\nAM. PHOTO-LITHOGRAPHIC CO. N.Y. (OSBORNE'S PROCESS)",
+   "transcription_note": "Handwritten signatures transcribed where legible.",
+   "related_title": "The patent's specification (PDF page 2 of 2)",
+   "related_text": "UNITED STATES PATENT OFFICE. JACOB W. DAVIS, OF RENO, NEVADA, ASSIGNOR TO HIMSELF AND LEVI STRAUSS & COMPANY, OF SAN FRANCISCO, CALIFORNIA. IMPROVEMENT IN FASTENING POCKET-OPENINGS. Specification forming part of Letters Patent No. 139,121, dated May 20, 1873; application filed August 9, 1872.\nMy invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping or starting from frequent pressure or strain thereon; and it consists in the employment of a metal rivet or eyelet at each edge of the pocket-opening, to prevent the ripping of the seam at those points.\nA is the side seam in a pair of pants, drawers, or other article of wearing apparel, which terminates at the pockets; and b b represent the rivets at each edge of the pocket opening.\nThe seams are usually ripped or started by the placing of the hands in the pockets and the consequent pressure or strain upon them.\nTo strengthen this part I employ a rivet, eyelet, or other equivalent metal stud, b, which I pass through a hole at the end of the seam, so as to bind the two parts of cloth together, and then head it down upon both sides so as to firmly unite the two parts.\nI am aware that rivets have been used for securing seams in shoes\nAs a new article of manufacture, a pair of pantaloons having the pocket-openings secured at each edge by means of rivets, substantially in the manner described and shown, whereby the seams at the points named are prevented from ripping, as set forth.",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 3,
+      "y": 1.5,
+      "w": 82,
+      "h": 8
+     },
+     "region_note": "Printed header: J. W. Davis, title, number, date",
+     "title": "Davis's patent",
+     "text": "The drawing is labelled with Jacob W. Davis's name, not Levi Strauss's. It was Patent No. 139,121, granted May 20, 1873. Davis assigned it to himself and Levi Strauss & Company.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "J. W. DAVIS."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "No. 139,121. Patented May 20, 1873."
+      },
+      {
+       "source": "related",
+       "exact_span": "JACOB W. DAVIS, OF RENO, NEVADA, ASSIGNOR TO HIMSELF AND LEVI STRAUSS & COMPANY"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 30,
+      "y": 42,
+      "w": 27,
+      "h": 8.5
+     },
+     "region_note": "Waistband and pocket corners marked b",
+     "title": "The rivets",
+     "text": "Each small b is a metal rivet at the edge of a pocket opening. The seams there usually ripped when hands were pushed into the pockets; a rivet binds the cloth together.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "b b represent the rivets at each edge of the pocket opening."
+      },
+      {
+       "source": "related",
+       "exact_span": "The seams are usually ripped or started by the placing of the hands in the pockets and the consequent pressure or strain upon them."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 29,
+      "y": 48,
+      "w": 11,
+      "h": 43
+     },
+     "region_note": "Side seam running down the leg, marked A",
+     "title": "Side seam A",
+     "text": "A is the side seam, which ends at the pocket. That end is exactly where the rivet goes.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "A is the side seam in a pair of pants, drawers, or other article of wearing apparel, which terminates at the pockets"
+      },
+      {
+       "source": "related",
+       "exact_span": "which I pass through a hole at the end of the seam"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 44,
+      "y": 51,
+      "w": 8,
+      "h": 4
+     },
+     "region_note": "Rivet marked b at the bottom of the fly",
+     "title": "How it is fixed",
+     "text": "Each rivet is pushed through a hole and then hammered flat on both sides, locking the two layers of cloth together.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "which I pass through a hole at the end of the seam, so as to bind the two parts of cloth together, and then head it down upon both sides so as to firmly unite the two parts"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 65,
+      "y": 87,
+      "w": 29,
+      "h": 12
+     },
+     "region_note": "Inventor signature: Jacob W. Davis per Dewey & Co. Attys",
+     "title": "The inventor",
+     "text": "The inventor who signs here is Jacob W. Davis, a tailor in Reno, Nevada. The rivet idea was his; Levi Strauss & Co. financed the patent and made the trousers.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Inventor Jacob W. Davis"
+      },
+      {
+       "source": "profile",
+       "exact_span": "a tailor in Reno, Nevada, named Jacob Davis"
+      },
+      {
+       "source": "profile",
+       "exact_span": "the rivet idea was Jacob Davis's"
+      },
+      {
+       "source": "profile",
+       "exact_span": "Strauss was the partner who financed and manufactured it"
+      },
+      {
+       "source": "profile",
+       "exact_span": "The riveted \"waist overall\" — later simply the jean — was born, and Levi Strauss & Co. began manufacturing it."
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "How many rivets marked b can you find on the trousers?",
+    "answer": "Five. Look along the waistband, down the curve of the pocket, and at the bottom of the fly.",
+    "hotspot": 2,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "b five times"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": []
+  },
+  {
+   "id": "einstein-declaration-1936",
+   "slug": "einstein",
+   "title": "Declaration of Intention for Albert Einstein, 15 January 1936",
+   "holder": "National Archives at New York (Records of District Courts of the United States, RG 21)",
+   "item_url": "https://catalog.archives.gov/id/596270",
+   "identifier": "National Archives Identifier 596270",
+   "download_url": "https://i0.wp.com/docsteach.org/wp-content/uploads/documents/596270/orig_596270_2062.jpg",
+   "image": "einstein-1936-declaration-of-intention.jpg",
+   "image_from": "National Archives DocsTeach scan (https://docsteach.org/document/declaration-intention-einstein/), viewed and captured 2026-10-30 at 1300 px wide",
+   "page_shown": "The single-page form (triplicate, given to the declarant)",
+   "credit": "Declaration of Intention for Albert Einstein, 15 January 1936. National Archives at New York, Records of District Courts of the United States, RG 21 (National Archives Identifier 596270).",
+   "rights": {
+    "source_url": "https://docsteach.org/document/declaration-intention-einstein/",
+    "exact_span": "Rights: Public Domain, Free of Known Copyright Restrictions.",
+    "status": "public domain",
+    "checked": "2026-10-30"
+   },
+   "alt": "Einstein's 1936 Declaration of Intention form, with his photograph and his signature.",
+   "transcription": "TRIPLICATE (To be given to declarant) No. 1442 UNITED STATES OF AMERICA DECLARATION OF INTENTION (Invalid for all purposes seven years after the date hereof)\nUnited States of America District of New Jersey ss: In the District Court of The United States at Trenton, N. J.\nI, Dr. Albert Einstein now residing at 112 Mercer St., Princeton Mercer N.J. occupation Professor, aged 56 years, do declare on oath that my personal description is: Sex Male, color White, complexion Fair, color of eyes Brown color of hair Grey, height 5 feet 7 inches; weight 175 pounds; visible distinctive marks none race Hebrew; nationality German\nI was born in Ulm Germany on March 14 1879 I am married. The name of my wife [a typed word struck out] is Elsa we were married on April 6th 1917, at Berlin Germany; she or he was born at Hechinge[n] Germany, on January 18, 1877, entered the United States at New York N.Y., on June 3, 1935, for permanent residence therein, and now resides at With me I have 2 children, and the name, date and place of birth, and place of residence of each of said children are as follows: Albert born 5-14-1905 and Eduard born 6-28-1910 both born and reside in Switzerland\nI have not heretofore made a declaration of intention: my last foreign residence was Bermuda Great Britain I emigrated to the United States of America from Bermuda Great Britain my lawful entry for permanent residence in the United States was at New York N.Y. under the name of Albert Einstein, on June 3, 1935 on the vessel SS Queen of Bermuda\nI will, before being admitted to citizenship, renounce forever all allegiance and fidelity to any foreign prince, potentate, state, or sovereignty, and particularly, by name, to the prince, potentate, state, or sovereignty of which I may be at the time of admission a citizen or subject; I am not an anarchist; I am not a polygamist nor a believer in the practice of polygamy; and it is my intention in good faith to become a citizen of the United States of America and to reside permanently therein; and I certify that the photograph affixed to the duplicate and triplicate hereof is a likeness of me: So help me God.\n[signature] Albert Einstein\nSubscribed and sworn to before me in the office of the Clerk of said Court, at Trenton, N. J. this 15th day of January anno Domini 1936. Certification No. 3-120742 from the Commissioner of Immigration and Naturalization showing the lawful entry of the declarant for permanent residence on the date stated above, has been received by me.\nGeorge T. Cranmer Clerk of the U. S. District Court. By [signature] Deputy Clerk.\n[photograph, signed] Albert Einstein (The seal of the court will be impressed so as to cover a portion of the photograph)\nForm 2202-L-A U. S. DEPARTMENT OF LABOR IMMIGRATION AND NATURALIZATION SERVICE No. 5773",
+   "transcription_note": "Typed entries as they appear on the form, including the categories the 1930s form required. [n] marks a letter partly hidden by an overprinted label. Handwritten signatures are marked [signature].",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 30,
+      "y": 6.5,
+      "w": 51,
+      "h": 8.5
+     },
+     "region_note": "Form title: Declaration of Intention",
+     "title": "His “first papers”",
+     "text": "A Declaration of Intention was an immigrant's sworn “first papers”: the formal statement that he meant to become a citizen. The form warns that it expires after seven years.",
+     "evidence": [
+      {
+       "source": "profile",
+       "exact_span": "an immigrant's sworn \"first papers,\" the formal statement that he meant to become a citizen"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "(Invalid for all purposes seven years after the date hereof)"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "DECLARATION OF INTENTION"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 14.5,
+      "y": 22.5,
+      "w": 81.5,
+      "h": 5.5
+     },
+     "region_note": "Name, address and occupation lines",
+     "title": "Professor, Princeton",
+     "text": "He gave his name as Dr. Albert Einstein of 112 Mercer St., Princeton. Occupation: Professor. Age: 56.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Dr. Albert Einstein now residing at 112 Mercer St., Princeton"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "occupation Professor, aged 56 years"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 14.5,
+      "y": 33.5,
+      "w": 81.5,
+      "h": 2.5
+     },
+     "region_note": "Birth line: Ulm, Germany, March 14, 1879",
+     "title": "Born in Ulm",
+     "text": "He was born in Ulm, Germany, on March 14, 1879.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "I was born in Ulm Germany on March 14 1879"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 14.5,
+      "y": 42.5,
+      "w": 81.5,
+      "h": 3.5
+     },
+     "region_note": "Children: Albert and Eduard",
+     "title": "Two sons in Switzerland",
+     "text": "His two sons, Albert and Eduard, were both born and still living in Switzerland.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Albert born 5-14-1905 and Eduard born 6-28-1910 both born and reside in Switzerland"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 14.5,
+      "y": 52.5,
+      "w": 81.5,
+      "h": 8
+     },
+     "region_note": "Last foreign residence and lawful entry: Bermuda, New York, June 3, 1935, SS Queen of Bermuda",
+     "title": "Entry from Bermuda",
+     "text": "This box records his lawful entry for permanent residence: New York, June 3, 1935, on the SS Queen of Bermuda. He had come to Princeton in 1933, so this records a later, separate entry.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "my lawful entry for permanent residence in the United States was at New York N.Y. under the name of Albert Einstein, on June 3, 1935 on the vessel SS Queen of Bermuda"
+      },
+      {
+       "source": "profile",
+       "exact_span": "He came to the United States to stay in 1933"
+      },
+      {
+       "source": "profile",
+       "exact_span": "He would live in Princeton for the rest of his life."
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 15.5,
+      "y": 68,
+      "w": 29,
+      "h": 23.5
+     },
+     "region_note": "Photograph signed Albert Einstein",
+     "title": "Photo and signature",
+     "text": "He swore that this photograph was a likeness of him, and signed it.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "I certify that the photograph affixed to the duplicate and triplicate hereof is a likeness of me"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "[photograph, signed] Albert Einstein"
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "region": {
+      "x": 46,
+      "y": 68.5,
+      "w": 50,
+      "h": 7
+     },
+     "region_note": "Sworn at Trenton, 15th day of January 1936",
+     "title": "Sworn in Trenton",
+     "text": "He swore to it at Trenton, N. J., on the 15th day of January, 1936. He took the oath of citizenship in 1940.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "at Trenton, N. J. this 15th day of January anno Domini 1936"
+      },
+      {
+       "source": "profile",
+       "exact_span": "He took the oath of citizenship in 1940"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "What was the name of the ship on which Einstein made his lawful entry for permanent residence?",
+    "answer": "The SS Queen of Bermuda, arriving at New York on June 3, 1935.",
+    "hotspot": 5,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "my lawful entry for permanent residence in the United States was at New York N.Y. under the name of Albert Einstein, on June 3, 1935 on the vessel SS Queen of Bermuda"
+     }
+    ]
+   },
+   "conflicts": [
+    "The form records a lawful entry for permanent residence on June 3, 1935 (via Bermuda). The profile says he came to the United States to stay in 1933. These are not in conflict, but the profile does not mention the 1935 entry; a reviewer may want to add it to copy.md. Hotspot 5 presents both, without explaining why he re-entered, because no source on file gives the reason."
+   ],
+   "not_retrieved": [
+    "The National Archives Catalog page for 596270 was not re-read for this pass; rights wording is from the National Archives' DocsTeach page."
+   ]
+  },
+  {
+   "id": "pei-precis-1935",
+   "slug": "pei",
+   "title": "Précis of Investigation, American Consulate-General, Shanghai, July 20, 1935",
+   "holder": "National Archives at San Francisco (Records of the Immigration and Naturalization Service, RG 85)",
+   "item_url": "https://catalog.archives.gov/id/28882547",
+   "identifier": "National Archives Identifier 28882547 (page 135 of 139)",
+   "download_url": "https://catalog.archives.gov/medialz/san-francisco/rg-085/296445/28882547/28882547_Page_135.jpg",
+   "image": "pei-1935-shanghai-consulate-precis.jpg",
+   "image_from": "inductees/pei/media/web/pei-1935-shanghai-consulate-precis.jpg (downloaded and viewed 2026-10-15)",
+   "page_shown": "Page 135 of 139",
+   "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 135 of 139).",
+   "rights": {
+    "source_url": "https://catalog.archives.gov/id/28882547",
+    "exact_span": "Access Restriction(s): Unrestricted. Use Restriction(s): Unrestricted.",
+    "status": "unrestricted (U.S. federal record)",
+    "checked": "2026-10-15"
+   },
+   "alt": "1935 Shanghai consulate visa form with a photo of eighteen-year-old Ieoh-ming Pe, signed by him.",
+   "transcription": "(Shanghai C-39) (Approved by Department January 10, 1924) AMERICAN CONSULATE-GENERAL SHANGHAI, CHINA. July 20, 1935. 15-16 PRECIS OF INVESTIGATION.\nName: Pe, Ieoh-ming ([name in Chinese characters]) Nationality: Chinese. Class: Student. Passport Visa No. 13/1935-36. Section 6 Certificate issued by the Commissioner of Public Safety at Shanghai, China, on July 12, 1935. Visa granted by this Consulate-General on: July 13, 1935. Bearer's birthplace: Canton, China. Family (ages by ---- reckoning): Not married.\nReview of bearer's education: Graduated from St. John's Middle School in 1934. For the past year has attended St. John's University.\nPlans for education in the United States: Will attend the University of Pennsylvania for six years studying for A.M. degree.\nProvision for financial support: Full support is to be provided by applicant's father, Tsuyee Pei, manager of the Bank of China, who is very well fixed finanacially.\nReference in the United States: Not acquainted.\nConsular investigation and remarks: Examination has been made of the applicant who has presented a telegram accepting him as a student from the University of Pennsylvania; a letter from St. John's University stating that he is a student there and recommending him; a letter from his father guaranteeing full support.\n[photograph, signed] Ieoh-ming Pe\nIntended departure: Steamship: PRESIDENT COOLIDGE Sailing date: August 13, 1935 Port of entry: San Francisco.\n[signature] James B. Pilcher American Vice Consul. 811.11 JBP/Jts",
+   "transcription_note": "'finanacially' is spelled that way on the form.",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 18.5,
+      "y": 5,
+      "w": 65.5,
+      "h": 8.5
+     },
+     "region_note": "Header: American Consulate-General, Shanghai, July 20, 1935, Precis of Investigation",
+     "title": "Shanghai, July 1935",
+     "text": "This is a visa investigation from the American Consulate-General in Shanghai, China, dated July 20, 1935.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "AMERICAN CONSULATE-GENERAL SHANGHAI, CHINA. July 20, 1935."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "PRECIS OF INVESTIGATION."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 10,
+      "y": 15,
+      "w": 51,
+      "h": 3
+     },
+     "region_note": "Name line: Pe, Ieoh-ming, with Chinese characters",
+     "title": "“Pe”, not “Pei”",
+     "text": "The consulate spelled his name Pe, Ieoh-ming. Because of this form, Pe is the name on his early American papers.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Name: Pe, Ieoh-ming"
+      },
+      {
+       "source": "profile",
+       "exact_span": "Because the consulate in Shanghai had spelled his name \"Pe,\" that is the name on his early American papers."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 10,
+      "y": 20.5,
+      "w": 23,
+      "h": 2.5
+     },
+     "region_note": "Class: Student",
+     "title": "Class: Student",
+     "text": "He came as a student. In 1935, almost all other Chinese immigration to the United States was banned, but the Immigration Act of 1924 allowed in Chinese students.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Class: Student."
+      },
+      {
+       "source": "profile",
+       "exact_span": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "SHANGHAI, CHINA. July 20, 1935."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 10.5,
+      "y": 50.5,
+      "w": 77.5,
+      "h": 4
+     },
+     "region_note": "Plans for education",
+     "title": "The plan: six years",
+     "text": "The plan was the University of Pennsylvania, for six years. He started there but soon moved to the Massachusetts Institute of Technology. Twelve years after he arrived, he was finally allowed to stay.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Will attend the University of Pennsylvania for six years"
+      },
+      {
+       "source": "profile",
+       "exact_span": "Pei started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology."
+      },
+      {
+       "source": "profile",
+       "exact_span": "Twelve years after he arrived, he was finally allowed to stay."
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 10.5,
+      "y": 56.5,
+      "w": 86.5,
+      "h": 5
+     },
+     "region_note": "Provision for financial support",
+     "title": "Who paid",
+     "text": "His father, Tsuyee Pei, a manager of the Bank of China, promised full support. The consulate noted that he was “very well fixed” (the form spells it “finanacially”).",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Full support is to be provided by applicant's father, Tsuyee Pei, manager of the Bank of China, who is very well fixed finanacially."
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 14.5,
+      "y": 73,
+      "w": 23,
+      "h": 18
+     },
+     "region_note": "Photograph signed Ieoh-ming Pe",
+     "title": "Eighteen years old",
+     "text": "An American vice consul pinned this photograph to the form, and the eighteen-year-old student signed his name across it.",
+     "evidence": [
+      {
+       "source": "profile",
+       "exact_span": "an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Ieoh-ming Pe."
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "region": {
+      "x": 40.5,
+      "y": 82,
+      "w": 44.5,
+      "h": 6.5
+     },
+     "region_note": "Intended departure: President Coolidge, August 13, 1935, San Francisco",
+     "title": "The voyage",
+     "text": "He sailed on the President Coolidge on August 13, 1935, and arrived at San Francisco on 28 August 1935.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Steamship: PRESIDENT COOLIDGE Sailing date: August 13, 1935 Port of entry: San Francisco."
+      },
+      {
+       "source": "profile",
+       "exact_span": "arrived at San Francisco on 28 August 1935"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Find the name of Pei's father on the form.",
+    "answer": "Tsuyee Pei, in the line about financial support.",
+    "hotspot": 5,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "applicant's father, Tsuyee Pei"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": []
+  }
+ ]
+}

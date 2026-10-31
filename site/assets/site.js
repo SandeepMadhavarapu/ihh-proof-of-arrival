@@ -369,3 +369,26 @@
     });
   });
 })();
+
+/* ── Look closer: zoom ───────────────────────────────────────────────────
+   The document image and its numbered notes work without this. The button
+   only enlarges the image inside its own scrolling frame. */
+(function(){
+  'use strict';
+  var btns = document.querySelectorAll('.lc-zoom');
+  Array.prototype.forEach.call(btns, function(b){
+    var stage = document.getElementById(b.getAttribute('aria-controls'));
+    if (!stage) return;
+    b.addEventListener('click', function(){
+      var on = stage.classList.toggle('lc-zoomed');
+      b.setAttribute('aria-pressed', String(on));
+      if (on) {
+        stage.setAttribute('tabindex', '0');
+        stage.setAttribute('role', 'group');
+        stage.setAttribute('aria-label', 'Zoomed document. Scroll or use the arrow keys to move around it.');
+      } else {
+        ['tabindex', 'role', 'aria-label'].forEach(function(a){ stage.removeAttribute(a); });
+      }
+    });
+  });
+})();
