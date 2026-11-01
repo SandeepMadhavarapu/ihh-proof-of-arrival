@@ -1,0 +1,158 @@
+{
+  "slug": "berlin",
+  "name": "Irving Berlin",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing."
+    },
+    {
+      "line": "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\"",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\""
+    },
+    {
+      "line": "Berlin was born Israel Baline on 11 May 1888 in the Russian Empire.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "Berlin was born Israel Baline on 11 May 1888 in the Russian Empire."
+    },
+    {
+      "line": "The exact town is genuinely uncertain.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "The exact town is genuinely uncertain: the standard reference works give Tyumen, in Siberia, while Berlin's biographers have more often pointed to Tolochin, in what is now Belarus."
+    },
+    {
+      "line": "His father died while Israel was still a boy, and he left school to help support the family, selling newspapers and singing for coins.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "His father died while Israel was still a boy, and he left school to help support the family, selling newspapers and singing for coins."
+    },
+    {
+      "line": "He became a singing waiter in the saloons of the Bowery, and there began putting his own words to the tunes of the day.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He became a singing waiter in the saloons of the Bowery, and there began putting his own words to the tunes of the day."
+    },
+    {
+      "line": "A printer set his name on the sheet music as \"I. Berlin,\" and he kept it.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "A printer set his name on the sheet music as \"I. Berlin,\" and he kept it."
+    },
+    {
+      "line": "In 1911 \"Alexander's Ragtime Band\" made him famous on both sides of the Atlantic.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "In 1911 \"Alexander's Ragtime Band\" made him famous on both sides of the Atlantic."
+    },
+    {
+      "line": "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork."
+    },
+    {
+      "line": "Within months the new citizen was drafted.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "Within months the new citizen was drafted."
+    },
+    {
+      "line": "It was around this time, too, that he first drafted a patriotic song he judged too solemn, and put it away in a drawer.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "It was around this time, too, that he first drafted a patriotic song he judged too solemn, and put it away in a drawer."
+    },
+    {
+      "line": "In 1938, with war returning to Europe, Berlin took that song back out and reworked it.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "In 1938, with war returning to Europe, Berlin took that song back out and reworked it."
+    },
+    {
+      "line": "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts."
+    },
+    {
+      "line": "Four years later, in the film Holiday Inn, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "Four years later, in the film *Holiday Inn*, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award."
+    },
+    {
+      "line": "He said this the same year he brought out \"God Bless America\":",
+      "kind": "intro",
+      "copy_md_line": 52,
+      "copy_md_sentence": "He said it the same year he brought out \"God Bless America.\""
+    },
+    {
+      "line": "I'd like to write a great peace song, but it's hard to do, because you have trouble dramatizing peace.",
+      "kind": "quote",
+      "copy_md_line": 49,
+      "copy_md_sentence": "I'd like to write a great peace song, but it's hard to do, because you have trouble dramatizing peace."
+    },
+    {
+      "line": "Why might someone who arrived as a newcomer write the songs a whole country sings?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing."
+    },
+    {
+      "line": "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\"",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\""
+    },
+    {
+      "line": "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork."
+    },
+    {
+      "line": "Within months the new citizen was drafted.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "Within months the new citizen was drafted."
+    },
+    {
+      "line": "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts."
+    },
+    {
+      "line": "Four years later, in the film Holiday Inn, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "Four years later, in the film *Holiday Inn*, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 296,
+    "short": 123
+  }
+}

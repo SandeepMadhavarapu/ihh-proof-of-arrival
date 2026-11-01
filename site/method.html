@@ -34,28 +34,33 @@
 
 <section class="hero">
   <p class="kicker">Method</p>
-  <h1>How this was made, and the one thing we refused to build</h1>
+  <h1>How this was made, and what we refused to fake</h1>
   <p class="lede">This page exists because a museum should be able to show its working. It records
-  what we did, what we declined to do for the Immigrant Hall of Honor even though the brief invited
-  it, and the evidence behind both decisions.</p>
+  what we did, the one thing we declined to do for the Immigrant Hall of Honor even though the brief
+  invited it, what we built in its place, and the evidence behind each decision.</p>
 </section>
 
 <section class="band quiet">
-  <h2>The refusal</h2>
+  <h2>What we refused, and what we built instead</h2>
   <p>Slide 5 of the IHH challenge brief lists three possible resource types. The third is
-  <b>&ldquo;AI generated video and audio of or about inductees.&rdquo;</b> We did not build it, and
-  we are not going to.</p>
+  <b>&ldquo;AI generated video and audio of or about inductees.&rdquo;</b> There are two ways to read
+  that. One is a synthesised inductee: a voice made to sound like Einstein or Celia Cruz, saying
+  things they never said. We refused that, and we are not going to build it. The other is narration
+  <em>about</em> an inductee, in a voice that is plainly not theirs, saying only what the museum can
+  source. We built that: <b>we refused to fake their voices, and built narration you can check line
+  by line.</b></p>
 </section>
 
 <section>
-  <h2>Four reasons, in order of weight</h2>
+  <h2>Four reasons we will not impersonate an inductee, in order of weight</h2>
 
   <h3>1. Slide 3 forbids it</h3>
   <p>The same brief says, on the previous slide, <b>&ldquo;All content should be reliable and
   verifiable.&rdquo;</b> A generated sentence has no source. That is not a limitation to be engineered
   around &mdash; it is what generation <em>is</em>. You cannot hand a visitor a synthesised Einstein
   and also hand them the record it came from, because there isn&rsquo;t one. The two instructions in
-  this brief point in opposite directions, and we took the stricter one.</p>
+  this brief point in opposite directions, and we took the stricter one: every word our narration
+  speaks is a sentence already on the profile, with its source.</p>
 
   <h3>2. The field has already run this experiment, in public</h3>
   <p>In July 2023 Khan Academy shipped an AI Harriet Tubman inside its tutoring product.
@@ -83,23 +88,36 @@
   one is worth more than being the fourth team to demonstrate it.</p>
 
   <div class="callout">
-    <h2>What we would do instead, if IHH wants it</h2>
-    <p>The refusal is not a dead end. There is a version of slide 5 that works, and it needs three
-    things rather than a model: <b>written consent from the estate or the living subject</b>; a
-    <b>visible label on every synthesised second</b>, not a disclaimer in a footer; and a
-    <b>published policy</b> saying what IHH will and will not synthesise, so the answer is on the
-    record before the first request arrives. We will draft that policy. We will not ship the audio
-    without it.</p>
+    <h2>What we built instead: narration, not impersonation</h2>
+    <p>Every profile now has a <b>Listen and watch</b> section: a two-minute audio guide, a
+    sixty-second short, and a vertical video short with captions burned in. The voice is Piper
+    text-to-speech using a voice trained on LibriTTS, a corpus of audiobook recordings made by
+    LibriVox volunteers, published under CC&nbsp;BY&nbsp;4.0, in which each reader is identified
+    only by a number. It is not an inductee&rsquo;s voice and was not chosen to resemble one.</p>
+    <ul>
+      <li><b>Every sentence has a source.</b> Each narrated line is a sentence from that
+      inductee&rsquo;s profile, or a shortened version of one. A script refuses to build if a line uses
+      a word, number, date or name its source sentence does not, if a quotation is not word for word,
+      or if the narrator ever says &ldquo;I&rdquo; or &ldquo;we&rdquo; outside a quotation.</li>
+      <li><b>Every second is labelled.</b> Each player, every frame of every video and each WordPress
+      block says &ldquo;AI narration &middot; synthetic voice &middot; not the voice of&rdquo; the
+      inductee.</li>
+      <li><b>Every line can be checked.</b> Captions on every file, and a full transcript in which each
+      line links to the passage of the profile it comes from.</li>
+    </ul>
+    <p>Our original condition still stands for the other reading of slide 5. If IHH ever wants an
+    inductee&rsquo;s own voice synthesised, it needs <b>written consent from the estate or the living
+    subject</b>, a <b>visible label on every synthesised second</b>, and a <b>published policy</b>
+    saying what IHH will and will not synthesise. We have not built that.</p>
     <p class="muted">Slide 5&rsquo;s second item &mdash; &ldquo;images of artifacts with AI generated
-    annotation&rdquo; &mdash; is a different proposition and a reasonable one, because an annotation
-    can be checked against the object. The rule we applied throughout: a machine may draft, a human
-    verifies, and the page shows the visitor which source settled it. We built that one:
-    <a href="artifacts.html">Look closer</a>.</p>
+    annotation&rdquo; &mdash; follows the same rule, because an annotation can be checked against the
+    object. A machine may draft, a person verifies, and the page shows the visitor which source settled
+    it. We built that one too: <a href="artifacts.html">Look closer</a>.</p>
   </div>
 </section>
 
 <section class="band">
-  <h2>What we built instead, and the evidence for it</h2>
+  <h2>What we built for young visitors, and the evidence for it</h2>
   <div class="three">
     <div><h3>The mechanic</h3><p>Cesário &amp; Nisi (2022) ran design workshops with 155 teenagers
     aged 15&ndash;19 in 46 groups. <b>All 46 groups reached for game mechanics</b> &mdash; clues and
@@ -141,7 +159,7 @@
     rate-limited, start charging, or be switched off by a company we have no relationship with.</li>
     <li><b>No database.</b> The Verification Desk holds your findings in the browser tab and forgets
     them when you close it. There is no personal data to protect because none is collected.</li>
-    <li><b>584&nbsp;KB of HTML, CSS, scripts and text across twenty-two pages (portrait and archival image files are additional)</b>, against 2,869&nbsp;KB for the current IHH homepage alone.</li>
+    <li><b>658&nbsp;KB of HTML, CSS, scripts and text across twenty-two pages (portrait and archival images, audio and video are additional)</b>, against 2,869&nbsp;KB for the current IHH homepage alone.</li>
     <li><b>A new case file is a list of claims and a list of sources.</b> No code, no design work, no
     developer. That is the test: not whether it impresses once, but whether the people who own it can
     still add to it a year from now.</li>
@@ -206,8 +224,12 @@
         JavaScript, and ships as four static WordPress blocks. No museum editor has reviewed the notes yet.</td>
         <td class="st part">Built; editor review pending</td></tr>
       <tr><th scope="row">&ldquo;AI generated video and audio of or about inductees&rdquo;</th>
-        <td>Declined, with four reasons and an alternative path set out above.</td>
-        <td class="st no">Refused</td></tr>
+        <td><b>Listen and watch</b> on all ten profiles: a two-minute audio guide, a sixty-second short
+        and a captioned vertical video, in a labelled synthetic voice that is not the inductee&rsquo;s.
+        Every narrated sentence is traced to the profile by a script that refuses to build otherwise;
+        a full transcript links each line to its passage. An inductee&rsquo;s own voice was refused, for
+        the four reasons above. Nobody on the museum&rsquo;s side has listened to the recordings yet.</td>
+        <td class="st part">Narration built; review pending</td></tr>
     </tbody>
   </table>
 </section>
@@ -216,7 +238,8 @@
   <h2>What we have not done</h2>
   <p>No profile has a named person&rsquo;s editorial sign-off yet; each says so at the foot of the
   page. No screen-reader user has tested any of this, and no volunteer has run the WordPress
-  handoff on the museum&rsquo;s real site. No permission has been requested from any institution
+  handoff on the museum&rsquo;s real site, and nobody on the museum&rsquo;s side has listened to the
+  narration. No permission has been requested from any institution
   and no letter has been sent. The factual corrections in our research should be re-checked by a
   second person before IHH changes a page. And we still need to confirm with IHH what makes a
   profile &ldquo;successful&rdquo;, which decides the honorarium.</p>

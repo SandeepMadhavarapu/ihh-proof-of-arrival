@@ -1,0 +1,146 @@
+{
+  "slug": "strauss",
+  "name": "Levi Strauss",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "A Bavarian immigrant who sold cloth out of a San Francisco storefront put his name on a pair of work trousers reinforced with copper rivets.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "A Bavarian immigrant who sold cloth out of a San Francisco storefront put his name on a pair of work trousers reinforced with copper rivets."
+    },
+    {
+      "line": "Levi Strauss was born Löb Strauß on 26 February 1829 in Buttenheim, a village in the Kingdom of Bavaria, into a Jewish family.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "Levi Strauss was born Löb Strauß on 26 February 1829 in Buttenheim, a village in the Kingdom of Bavaria, into a Jewish family."
+    },
+    {
+      "line": "In 1847, with his mother and sisters, he emigrated to the United States, sailing from Bremerhaven.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "In 1847, with his mother and sisters, he emigrated to the United States, sailing from Bremerhaven."
+    },
+    {
+      "line": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods."
+    },
+    {
+      "line": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush."
+    },
+    {
+      "line": "He did not dig for gold; he sold to the people who did, and to everyone who came to feed and clothe them.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He did not dig for gold; he sold to the people who did, and to everyone who came to feed and clothe them."
+    },
+    {
+      "line": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "In the early 1870s a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets."
+    },
+    {
+      "line": "The idea worked, and his customers wanted more, but Davis could not afford the seventy-dollar fee to patent it.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "The idea worked, and his customers wanted more, but Davis could not afford the seventy-dollar fee to patent it."
+    },
+    {
+      "line": "Strauss agreed to finance it.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Strauss agreed to finance it."
+    },
+    {
+      "line": "On 20 May 1873 the United States granted Patent No. 139,121 to Jacob Davis, \"assignor to himself and Levi Strauss & Company.\"",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "On 20 May 1873 the United States granted Patent No. 139,121 to Jacob Davis, \"assignor to himself and Levi Strauss & Company.\""
+    },
+    {
+      "line": "The patent names Davis first, as the inventor. In his words:",
+      "kind": "intro",
+      "copy_md_line": 40,
+      "copy_md_sentence": "The blue jean was a joint invention: the rivet idea was Jacob Davis's, and the patent names Davis first, as the inventor, \"assignor to himself and Levi Strauss & Company\" — Strauss was the partner who financed and manufactured it, not the lone genius of popular legend."
+    },
+    {
+      "line": "My invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping.",
+      "kind": "quote",
+      "copy_md_line": 51,
+      "copy_md_sentence": "My invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping."
+    },
+    {
+      "line": "Strauss endowed scholarships at the University of California and supported orphanages and Jewish charities in the city.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "He endowed scholarships at the University of California and supported orphanages and Jewish charities in the city."
+    },
+    {
+      "line": "When people make something together, how should the credit be shared?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Levi Strauss was born Löb Strauß in Bavaria in 1829 and came to the United States as a teenager in 1847."
+    },
+    {
+      "line": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods."
+    },
+    {
+      "line": "He became a United States citizen in 1853.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush."
+    },
+    {
+      "line": "He built a dry-goods business in gold-rush San Francisco, and in 1873 he and the tailor Jacob Davis patented the riveted work trouser — the blue jean.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "He built a dry-goods business in gold-rush San Francisco, and in 1873 he and the tailor Jacob Davis patented the riveted work trouser — the blue jean."
+    },
+    {
+      "line": "The blue jean was a joint invention: the rivet idea was Jacob Davis's.",
+      "kind": "fact",
+      "copy_md_line": 40,
+      "copy_md_sentence": "The blue jean was a joint invention: the rivet idea was Jacob Davis's, and the patent names Davis first, as the inventor, \"assignor to himself and Levi Strauss & Company\" — Strauss was the partner who financed and manufactured it, not the lone genius of popular legend."
+    },
+    {
+      "line": "Strauss was the partner who financed and manufactured it, not the lone genius of popular legend.",
+      "kind": "fact",
+      "copy_md_line": 40,
+      "copy_md_sentence": "The blue jean was a joint invention: the rivet idea was Jacob Davis's, and the patent names Davis first, as the inventor, \"assignor to himself and Levi Strauss & Company\" — Strauss was the partner who financed and manufactured it, not the lone genius of popular legend."
+    },
+    {
+      "line": "An immigrant's name became a word spoken in every country on earth.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "An immigrant's name became a word spoken in every country on earth."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 278,
+    "short": 132
+  }
+}

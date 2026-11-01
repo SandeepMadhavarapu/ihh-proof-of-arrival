@@ -1,0 +1,1713 @@
+{
+ "files": {
+  "albright-guide": {
+   "audio": {
+    "bytes": 846994,
+    "file": "audio/albright-guide.mp3",
+    "sha256": "1c9d5a643b8a10ecbce758b71c5abfb8774bde827a4ff4cc19ae8146c7701c31"
+   },
+   "duration_s": 105.826,
+   "lines": [
+    {
+     "end": 5.153,
+     "start": 0.3
+    },
+    {
+     "end": 10.205,
+     "start": 5.503
+    },
+    {
+     "end": 11.426,
+     "start": 10.555
+    },
+    {
+     "end": 12.542,
+     "start": 11.776
+    },
+    {
+     "end": 19.644,
+     "start": 13.142
+    },
+    {
+     "end": 29.648,
+     "start": 20.244
+    },
+    {
+     "end": 31.368,
+     "start": 29.998
+    },
+    {
+     "end": 38.684,
+     "start": 31.718
+    },
+    {
+     "end": 41.472,
+     "start": 39.034
+    },
+    {
+     "end": 49.6,
+     "start": 41.822
+    },
+    {
+     "end": 58.426,
+     "start": 49.95
+    },
+    {
+     "end": 61.701,
+     "start": 58.776
+    },
+    {
+     "end": 74.323,
+     "start": 62.051
+    },
+    {
+     "end": 76.02,
+     "start": 74.673
+    },
+    {
+     "end": 83.922,
+     "start": 76.62
+    },
+    {
+     "end": 94.937,
+     "start": 84.522
+    },
+    {
+     "end": 99.571,
+     "start": 95.286
+    },
+    {
+     "end": 105.226,
+     "start": 99.921
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "ee955da4acf54c5d9c6c5ee54ac554640f3f4fa177a6193f73285e256c34d7c2",
+   "slug": "albright",
+   "spoken": [
+    "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin.",
+    "The family arrived in New York on 11 November 1948.",
+    "She was eleven.",
+    "She remembered:",
+    "We steamed into New York Harbor, past the Statue of Liberty, with tears in our eyes and hope in our hearts.",
+    "When Nazi Germany occupied Czechoslovakia in 1939, the family fled to London, where she spent the war years as a small child in a city under bombardment.",
+    "They went home after the war.",
+    "In February 1948 the Communists seized power, and the Korbels left again — this time for good.",
+    "The girl from Prague started calling herself Madeleine.",
+    "She became a United States citizen in 1957, and graduated from Wellesley College with honors in political science two years later.",
+    "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job.",
+    "Because she was born abroad, she could never be President.",
+    "On 10 November 1998 — fifty years, less one day, after she arrived — she and her sister renewed their oath of allegiance at a naturalization ceremony in Washington, D.C.",
+    "She told the new citizens:",
+    "Today marks a new beginning in your lives, and an ongoing chapter in the story of America which is, above all else, a story of immigrants.",
+    "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO.",
+    "The country she had fled as a child was now an ally of the country that had taken her in.",
+    "If you moved to a new country, what would help you feel that you belonged there, and did not just live there?"
+   ]
+  },
+  "albright-short": {
+   "audio": {
+    "bytes": 393299,
+    "file": "audio/albright-short.mp3",
+    "sha256": "0806274aff175297344fadcca12bf0fe7e06fe0c93919898c08d6f5147f3079c"
+   },
+   "duration_s": 49.118,
+   "lines": [
+    {
+     "end": 5.234,
+     "start": 0.3
+    },
+    {
+     "end": 6.397,
+     "start": 5.584
+    },
+    {
+     "end": 11.449,
+     "start": 6.747
+    },
+    {
+     "end": 15.537,
+     "start": 11.799
+    },
+    {
+     "end": 25.106,
+     "start": 15.887
+    },
+    {
+     "end": 28.091,
+     "start": 25.456
+    },
+    {
+     "end": 39.749,
+     "start": 28.441
+    },
+    {
+     "end": 44.836,
+     "start": 40.099
+    },
+    {
+     "end": 48.518,
+     "start": 45.186
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/albright-short-poster.jpg",
+    "sha256": "0fc8c81b2f68ef7e4dc3aa230bbbedce09c0b5a7bfbfd1b7a0d431ed7465cd0a"
+   },
+   "script_sha256": "8aa1533c78df33544febcdf247282aa3513b87e91dac270b0714f11b4940addd",
+   "slug": "albright",
+   "spoken": [
+    "The family arrived in New York on 11 November 1948.",
+    "She was eleven.",
+    "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin.",
+    "She became a United States citizen in 1957.",
+    "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job.",
+    "Because she was born abroad, she could never be President.",
+    "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO.",
+    "The country she had fled as a child was now an ally of the country that had taken her in.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1403385,
+    "duration_s": 52.118,
+    "file": "video/albright-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "National Archives and Records Administration, National Archives Identifier 445648831",
+      "file": "albright-2016-naturalization.jpg"
+     },
+     {
+      "credit": "Photograph by Ralph Alswang, White House Photograph Office. National Archives and Records Administration, National Archives Identifier 131493882",
+      "file": "albright-1997-swearing-in.jpg"
+     },
+     {
+      "credit": "National Museum of American Diplomacy, U.S. Department of State",
+      "file": "albright-1997-commission-duplicate.jpg"
+     },
+     {
+      "credit": "U.S. Department of State. National Archives and Records Administration, National Archives Identifier 505632157",
+      "file": "albright-1999-truman-library-1.jpg"
+     }
+    ],
+    "sha256": "20f14d75d33cbc90f31c64f499deef7cdb91e7e30616081b761f9ef8ae27bb88",
+    "width": 1080
+   }
+  },
+  "berlin-guide": {
+   "audio": {
+    "bytes": 864339,
+    "file": "audio/berlin-guide.mp3",
+    "sha256": "1838262119a8a6310174f70034b62b612f4ea88278cbe6400de7ffbd1fa8fc38"
+   },
+   "duration_s": 107.995,
+   "lines": [
+    {
+     "end": 8.891,
+     "start": 0.3
+    },
+    {
+     "end": 14.292,
+     "start": 9.241
+    },
+    {
+     "end": 20.609,
+     "start": 14.642
+    },
+    {
+     "end": 23.525,
+     "start": 20.959
+    },
+    {
+     "end": 31.363,
+     "start": 23.875
+    },
+    {
+     "end": 37.542,
+     "start": 31.713
+    },
+    {
+     "end": 42.269,
+     "start": 37.892
+    },
+    {
+     "end": 48.389,
+     "start": 42.619
+    },
+    {
+     "end": 56.076,
+     "start": 48.739
+    },
+    {
+     "end": 58.771,
+     "start": 56.426
+    },
+    {
+     "end": 65.286,
+     "start": 59.121
+    },
+    {
+     "end": 72.962,
+     "start": 65.636
+    },
+    {
+     "end": 84.144,
+     "start": 73.312
+    },
+    {
+     "end": 93.573,
+     "start": 84.494
+    },
+    {
+     "end": 96.733,
+     "start": 93.923
+    },
+    {
+     "end": 102.313,
+     "start": 97.333
+    },
+    {
+     "end": 107.395,
+     "start": 102.913
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "debf610362bbb53b72d3d4a84b1ed9ec5b4e9aec290878ac8ab26d103c2a6a3e",
+   "slug": "berlin",
+   "spoken": [
+    "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing.",
+    "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\"",
+    "Berlin was born Israel Baline on 11 May 1888 in the Russian Empire.",
+    "The exact town is genuinely uncertain.",
+    "His father died while Israel was still a boy, and he left school to help support the family, selling newspapers and singing for coins.",
+    "He became a singing waiter in the saloons of the Bowery, and there began putting his own words to the tunes of the day.",
+    "A printer set his name on the sheet music as \"I. Berlin,\" and he kept it.",
+    "In 1911 \"Alexander's Ragtime Band\" made him famous on both sides of the Atlantic.",
+    "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork.",
+    "Within months the new citizen was drafted.",
+    "It was around this time, too, that he first drafted a patriotic song he judged too solemn, and put it away in a drawer.",
+    "In 1938, with war returning to Europe, Berlin took that song back out and reworked it.",
+    "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts.",
+    "Four years later, in the film Holiday Inn, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award.",
+    "He said this the same year he brought out \"God Bless America\":",
+    "I'd like to write a great peace song, but it's hard to do, because you have trouble dramatizing peace.",
+    "Why might someone who arrived as a newcomer write the songs a whole country sings?"
+   ]
+  },
+  "berlin-short": {
+   "audio": {
+    "bytes": 384313,
+    "file": "audio/berlin-short.mp3",
+    "sha256": "eb4ee8ff59202ad00660e158b8bdc9b0a61d2b7c974f551714d245de3cb2f315"
+   },
+   "duration_s": 47.989,
+   "lines": [
+    {
+     "end": 8.16,
+     "start": 0.3
+    },
+    {
+     "end": 13.897,
+     "start": 8.51
+    },
+    {
+     "end": 21.596,
+     "start": 14.247
+    },
+    {
+     "end": 24.175,
+     "start": 21.946
+    },
+    {
+     "end": 34.545,
+     "start": 24.525
+    },
+    {
+     "end": 43.73,
+     "start": 34.895
+    },
+    {
+     "end": 47.389,
+     "start": 44.08
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/berlin-short-poster.jpg",
+    "sha256": "6ef2ccac32f1e23e8e048af492761a28b3dce281b1e2a5218282c2f1c580d357"
+   },
+   "script_sha256": "cfb0ab864fbf7e08d762ec821dc5486a85c7fb9707e4b1efed9cc93082c5d6c8",
+   "slug": "berlin",
+   "spoken": [
+    "Around 1893 a family of Russian Jews fleeing persecution landed in New York with almost nothing.",
+    "Their youngest son, a boy called Israel Baline, would grow up to write \"God Bless America.\"",
+    "Berlin took his oath as a United States citizen on 6 February 1918, after several years of paperwork.",
+    "Within months the new citizen was drafted.",
+    "The singer Kate Smith introduced \"God Bless America\" on the radio on 11 November 1938, and Berlin assigned its royalties to a fund for the Boy and Girl Scouts.",
+    "Four years later, in the film Holiday Inn, he introduced \"White Christmas,\" which became one of the best-selling songs ever recorded and won him an Academy Award.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1040056,
+    "duration_s": 50.989,
+    "file": "video/berlin-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Al Aumuller, New York World-Telegram. Via Wikimedia Commons.",
+      "file": "berlin-portrait-nywts.jpg"
+     }
+    ],
+    "sha256": "8fc91feb3dd73eb7bcf307e61346fe3e94428f7644b9e300bfd0dc73468c6523",
+    "width": 1080
+   }
+  },
+  "cruz-guide": {
+   "audio": {
+    "bytes": 810422,
+    "file": "audio/cruz-guide.mp3",
+    "sha256": "b4dc18968defa36210ad119c7f2a2a83217dca01c66aa9d6cde4fb8b85bc85f7"
+   },
+   "duration_s": 101.274,
+   "lines": [
+    {
+     "end": 5.733,
+     "start": 0.3
+    },
+    {
+     "end": 10.217,
+     "start": 6.083
+    },
+    {
+     "end": 16.464,
+     "start": 10.567
+    },
+    {
+     "end": 22.12,
+     "start": 16.814
+    },
+    {
+     "end": 24.815,
+     "start": 22.47
+    },
+    {
+     "end": 28.648,
+     "start": 25.165
+    },
+    {
+     "end": 36.603,
+     "start": 28.998
+    },
+    {
+     "end": 37.975,
+     "start": 36.953
+    },
+    {
+     "end": 45.499,
+     "start": 38.324
+    },
+    {
+     "end": 50.668,
+     "start": 45.849
+    },
+    {
+     "end": 56.509,
+     "start": 51.018
+    },
+    {
+     "end": 61.515,
+     "start": 56.859
+    },
+    {
+     "end": 69.62,
+     "start": 61.865
+    },
+    {
+     "end": 70.585,
+     "start": 69.97
+    },
+    {
+     "end": 77.768,
+     "start": 71.185
+    },
+    {
+     "end": 89.897,
+     "start": 78.368
+    },
+    {
+     "end": 96.574,
+     "start": 90.247
+    },
+    {
+     "end": 100.674,
+     "start": 96.924
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "8e957134e88a69a71b43b06599a0e10c741ef361420ed7089f64516485e3be72",
+   "slug": "cruz",
+   "spoken": [
+    "As a girl in Havana, Celia Cruz earned her first pair of shoes by singing for a tourist.",
+    "Fifty years later she gave her stage shoes to the Smithsonian.",
+    "She was born in Havana on 21 October 1925, into a poor family.",
+    "According to the Smithsonian, she was one of fourteen children, and her singing began at home.",
+    "That voice soon reached bigger audiences.",
+    "She went on to sing with the Cuban band La Sonora Matancera.",
+    "Soon after Fidel Castro took power in 1959, Cruz was touring in Mexico with La Sonora Matancera.",
+    "She did not go home.",
+    "Most accounts date her departure to 1960 and her move to the United States to 1961.",
+    "According to her biographers, Castro's government barred her from returning to Cuba.",
+    "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career.",
+    "She recorded and performed with musicians such as Tito Puente and Johnny Pacheco.",
+    "On 14 October 1994, on the South Lawn of the White House, President Clinton presented the National Medal of Arts.",
+    "He said:",
+    "Celia Cruz has used her powerful voice and style to transplant Afro-Cuban music to every corner of the globe.",
+    "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History.",
+    "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program.",
+    "If you could never go home again, which song or sound would you carry with you?"
+   ]
+  },
+  "cruz-short": {
+   "audio": {
+    "bytes": 414615,
+    "file": "audio/cruz-short.mp3",
+    "sha256": "89ed68efc58cb8587a0e1ead723ec466d8021849fc9577d08d5727ad65dd4244"
+   },
+   "duration_s": 51.787,
+   "lines": [
+    {
+     "end": 4.921,
+     "start": 0.3
+    },
+    {
+     "end": 12.434,
+     "start": 5.271
+    },
+    {
+     "end": 18.589,
+     "start": 12.784
+    },
+    {
+     "end": 23.339,
+     "start": 18.939
+    },
+    {
+     "end": 28.519,
+     "start": 23.689
+    },
+    {
+     "end": 41.373,
+     "start": 28.869
+    },
+    {
+     "end": 47.795,
+     "start": 41.723
+    },
+    {
+     "end": 51.187,
+     "start": 48.145
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/cruz-short-poster.jpg",
+    "sha256": "2eec9265ec368eb16533467584b4284d56494713f4835afd9e34e77f79e7614c"
+   },
+   "script_sha256": "c452a5e93fd714e898372b3cda5a94b720db7dcc2191c1c3062e260b963f7569",
+   "slug": "cruz",
+   "spoken": [
+    "Celia Cruz left Cuba on tour in 1960 and never went back.",
+    "In exile she became the Queen of Salsa, carried Afro-Cuban music around the world, and received the National Medal of Arts from the President.",
+    "She was born in Havana on 21 October 1925, into a poor family.",
+    "According to her biographers, Castro's government barred her from returning to Cuba.",
+    "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career.",
+    "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History.",
+    "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1271751,
+    "duration_s": 54.787,
+    "file": "video/cruz-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Collection of the Smithsonian National Museum of African American History and Culture, Gift of the Celia Cruz Knight Estate",
+      "file": "cruz-1970s-dress-arteaga-nmaahc.jpg"
+     }
+    ],
+    "sha256": "a199a30e12ba8cadb6aa3075fc1c7b01b481005712c91c101096d16a6ad35ca2",
+    "width": 1080
+   }
+  },
+  "einstein-guide": {
+   "audio": {
+    "bytes": 846158,
+    "file": "audio/einstein-guide.mp3",
+    "sha256": "ce11076fce313bb9874499faccd8fefb211721065c9b3cfe633b04e3bc12cab0"
+   },
+   "duration_s": 105.724,
+   "lines": [
+    {
+     "end": 10.668,
+     "start": 0.3
+    },
+    {
+     "end": 17.635,
+     "start": 11.018
+    },
+    {
+     "end": 24.917,
+     "start": 17.985
+    },
+    {
+     "end": 33.092,
+     "start": 25.266
+    },
+    {
+     "end": 40.477,
+     "start": 33.442
+    },
+    {
+     "end": 47.445,
+     "start": 40.827
+    },
+    {
+     "end": 52.613,
+     "start": 47.795
+    },
+    {
+     "end": 61.804,
+     "start": 53.213
+    },
+    {
+     "end": 67.908,
+     "start": 62.404
+    },
+    {
+     "end": 78.579,
+     "start": 68.258
+    },
+    {
+     "end": 90.771,
+     "start": 78.929
+    },
+    {
+     "end": 101.152,
+     "start": 91.121
+    },
+    {
+     "end": 105.124,
+     "start": 101.502
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "b4147e97d32625866d7ae9a0bdbf2302ff96983f69003733bfcf90cbf8931a59",
+   "slug": "einstein",
+   "spoken": [
+    "In January 1936, in a New Jersey courthouse, the most famous scientist in the world put his name to a government form declaring that he meant to become an American.",
+    "Einstein was born in Ulm, in the kingdom of Wurttemberg, in 1879, and grew up in Munich.",
+    "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics.",
+    "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics.",
+    "Einstein was abroad — lecturing in the United States — when Hitler became chancellor in January 1933.",
+    "He resigned from the Prussian Academy of Sciences, gave up his German citizenship, and resolved not to return.",
+    "In a public statement that March he set the condition under which he would live anywhere:",
+    "As long as I have any choice, I will only stay in a country where political liberty, toleration, and equality of all citizens before the law are the rule.",
+    "The Institute for Advanced Study, a new research centre in Princeton, had offered him a post.",
+    "On 15 January 1936, Einstein filed his Declaration of Intention — an immigrant's sworn \"first papers,\" the formal statement that he meant to become a citizen.",
+    "He took the oath of citizenship in 1940, keeping the Swiss citizenship he had held since young adulthood, so that he ended his life a citizen of two republics and no empire.",
+    "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create.",
+    "If you had to choose a country to live in, what would it need to promise you?"
+   ]
+  },
+  "einstein-short": {
+   "audio": {
+    "bytes": 420048,
+    "file": "audio/einstein-short.mp3",
+    "sha256": "4ae54da3503f309d4794f35a95b9e572a53e170ffd479e3acb10843c23776ebc"
+   },
+   "duration_s": 52.48,
+   "lines": [
+    {
+     "end": 6.616,
+     "start": 0.3
+    },
+    {
+     "end": 22.454,
+     "start": 6.966
+    },
+    {
+     "end": 29.746,
+     "start": 22.803
+    },
+    {
+     "end": 38.177,
+     "start": 30.096
+    },
+    {
+     "end": 48.813,
+     "start": 38.527
+    },
+    {
+     "end": 51.88,
+     "start": 49.163
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/einstein-short-poster.jpg",
+    "sha256": "fe04966582054455b176db76276b3658a0dab279c45507e0784ea35f23e75849"
+   },
+   "script_sha256": "f3ea08f94a188e9d683afedd28efba29ce3250e3ccd54b6289de753a23dc6181",
+   "slug": "einstein",
+   "spoken": [
+    "Albert Einstein left Germany in 1933 as the Nazis came to power, and never went back.",
+    "He settled at the Institute for Advanced Study in Princeton, filed his first citizenship papers in 1936, and took the oath as an American in 1940 — one of the few immigrants whose surname became a byword for genius.",
+    "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics.",
+    "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics.",
+    "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1128591,
+    "duration_s": 55.48,
+    "file": "video/einstein-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Oren Jack Turner. Portrait via Wikimedia Commons.",
+      "file": "einstein-portrait-turner.jpg"
+     }
+    ],
+    "sha256": "e22bfee217c7a34f2e2e04fc08dc313975f2cc36dcdbf1a4db3cf58024020af5",
+    "width": 1080
+   }
+  },
+  "hope-guide": {
+   "audio": {
+    "bytes": 869773,
+    "file": "audio/hope-guide.mp3",
+    "sha256": "2802972326c0246dd3cd78196ada0b6a90a493dc29169208d5aaba4c58b4c350"
+   },
+   "duration_s": 108.681,
+   "lines": [
+    {
+     "end": 5.397,
+     "start": 0.3
+    },
+    {
+     "end": 10.286,
+     "start": 5.747
+    },
+    {
+     "end": 17.207,
+     "start": 10.636
+    },
+    {
+     "end": 29.748,
+     "start": 17.557
+    },
+    {
+     "end": 43.949,
+     "start": 30.098
+    },
+    {
+     "end": 45.68,
+     "start": 44.299
+    },
+    {
+     "end": 60.403,
+     "start": 46.03
+    },
+    {
+     "end": 69.368,
+     "start": 60.753
+    },
+    {
+     "end": 72.086,
+     "start": 69.718
+    },
+    {
+     "end": 77.429,
+     "start": 72.436
+    },
+    {
+     "end": 79.648,
+     "start": 77.779
+    },
+    {
+     "end": 86.691,
+     "start": 80.248
+    },
+    {
+     "end": 88.359,
+     "start": 87.291
+    },
+    {
+     "end": 94.619,
+     "start": 88.709
+    },
+    {
+     "end": 98.823,
+     "start": 94.969
+    },
+    {
+     "end": 103.615,
+     "start": 99.423
+    },
+    {
+     "end": 108.081,
+     "start": 104.215
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "089c2d37f5a21eaf011013f654f32c9f9c98c87aac8ac98c2623aff014474299",
+   "slug": "hope",
+   "spoken": [
+    "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
+    "Among the seven sons was a four-year-old named Leslie Townes Hope.",
+    "His father's first job there was carving stone for the Church of the Covenant, and he later worked on Cleveland's Guardians of Traffic.",
+    "The boy went to the Fairmount schools and East High, sang in the Church of the Covenant choir, took dancing lessons, and boxed briefly under the name \"Packy East\" before losing in a novice championship and giving it up.",
+    "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\"",
+    "Hollywood made him a star.",
+    "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
+    "In 1997 the House of Representatives made him the first civilian ever named an honorary veteran of the United States armed forces.",
+    "Hope never took a citizenship oath of his own.",
+    "Under the law of the time, a child became a citizen automatically when a parent was naturalised.",
+    "As the record plainly states:",
+    "When his father was naturalized in December 1920, Hope became a United States citizen.",
+    "He was seventeen.",
+    "The boy who had crossed the Atlantic at four was made an American by an act in which he took no part.",
+    "This is the citation read out when he received his second Honorary Award:",
+    "To Bob Hope for unique and distinguished service to our industry and the Academy.",
+    "Is a citizen made by a ceremony, or by the life a person lives in a country?"
+   ]
+  },
+  "hope-short": {
+   "audio": {
+    "bytes": 412316,
+    "file": "audio/hope-short.mp3",
+    "sha256": "b5e4528324ebf4d5456c6f6d20d1aff69c0d1b1c25d4521284f8f468d5b2a231"
+   },
+   "duration_s": 51.506,
+   "lines": [
+    {
+     "end": 6.651,
+     "start": 0.3
+    },
+    {
+     "end": 11.076,
+     "start": 7.001
+    },
+    {
+     "end": 24.382,
+     "start": 11.426
+    },
+    {
+     "end": 39.651,
+     "start": 24.732
+    },
+    {
+     "end": 42.358,
+     "start": 40.001
+    },
+    {
+     "end": 47.665,
+     "start": 42.708
+    },
+    {
+     "end": 50.906,
+     "start": 48.015
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/hope-short-poster.jpg",
+    "sha256": "38d1cac49879a8aeb90a94b0642efb8137ff990565759b48320cd7472a3f9523"
+   },
+   "script_sha256": "d919c86fe7fb6eaf88575aa8bb5665e47a98272546f196bb00b6c80c3cbaf5d6",
+   "slug": "hope",
+   "spoken": [
+    "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
+    "Among the seven sons was a four-year-old named Leslie Townes Hope.",
+    "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\"",
+    "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
+    "Hope never took a citizenship oath of his own.",
+    "The boy who had crossed the Atlantic at four was made an American by an act in which he took no part.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1065679,
+    "duration_s": 54.506,
+    "file": "video/hope-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "NBC Television. Publicity photograph via Wikimedia Commons.",
+      "file": "hope-portrait-nbc.jpg"
+     }
+    ],
+    "sha256": "7363dd6209d1710b8c1964fed59db546ec63b950efaf4785e8964d903bc74c38",
+    "width": 1080
+   }
+  },
+  "lamarr-guide": {
+   "audio": {
+    "bytes": 881893,
+    "file": "audio/lamarr-guide.mp3",
+    "sha256": "4b4b881c92232b5ffd2f46fc55829227cfb5427860d8afb1b8744b175c9873d6"
+   },
+   "duration_s": 110.193,
+   "lines": [
+    {
+     "end": 4.898,
+     "start": 0.3
+    },
+    {
+     "end": 13.502,
+     "start": 5.248
+    },
+    {
+     "end": 15.977,
+     "start": 13.852
+    },
+    {
+     "end": 24.825,
+     "start": 16.327
+    },
+    {
+     "end": 30.051,
+     "start": 25.175
+    },
+    {
+     "end": 33.815,
+     "start": 30.401
+    },
+    {
+     "end": 40.771,
+     "start": 34.165
+    },
+    {
+     "end": 46.566,
+     "start": 41.121
+    },
+    {
+     "end": 50.736,
+     "start": 46.916
+    },
+    {
+     "end": 56.867,
+     "start": 51.086
+    },
+    {
+     "end": 60.039,
+     "start": 57.217
+    },
+    {
+     "end": 70.002,
+     "start": 60.388
+    },
+    {
+     "end": 73.707,
+     "start": 70.352
+    },
+    {
+     "end": 75.334,
+     "start": 74.057
+    },
+    {
+     "end": 80.973,
+     "start": 75.934
+    },
+    {
+     "end": 90.582,
+     "start": 81.573
+    },
+    {
+     "end": 100.928,
+     "start": 90.932
+    },
+    {
+     "end": 105.783,
+     "start": 101.278
+    },
+    {
+     "end": 109.593,
+     "start": 106.133
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "f345df222ce48772751e3cf1ba4186f9394ca70a06a1c5b4ebc4cc5d5c994067",
+   "slug": "lamarr",
+   "spoken": [
+    "Hedy Lamarr arrived in America in 1937 as a film star.",
+    "She was born Hedwig Eva Maria Keesler in Vienna on 9 November 1914, the only child of a wealthy Jewish family.",
+    "She became an actress as a teenager.",
+    "Her first major role, in the Czechoslovak film Ecstasy, in 1933, made her famous and scandalous across Europe.",
+    "That same year she married Fritz Mandl, a wealthy munitions manufacturer and arms dealer.",
+    "In 1937 she left Mandl, and Austria.",
+    "She reached America by way of London, where she met the Hollywood studio boss Louis B. Mayer, who was looking for European talent.",
+    "Mayer gave her a new name, Hedy Lamarr, after his favorite silent-film star, Barbara La Marr.",
+    "A few months after she left, Nazi Germany annexed Austria.",
+    "Lamarr and her friend George Ant-hile, an avant-garde composer, were fierce opponents of the Nazis.",
+    "The trick was to keep changing the radio frequency.",
+    "A transmitter on a ship and a receiver in the torpedo would hop from frequency to frequency at the same moment, guided by matching paper rolls like those in a player piano.",
+    "They filed the patent on 10 June 1941.",
+    "Their patent explains:",
+    "In a conventional player piano record there may be 88 rows of perforations.",
+    "It was granted on 11 August 1942 as U.S. Patent two, two nine two, three eight seven, \"Secret Communication System.\"",
+    "Hedy Lamarr became a United States citizen on 10 April 1953, sixteen years after she arrived, at a ceremony in federal court in Los Angeles.",
+    "In 2014 they were inducted into the National Inventors Hall of Fame.",
+    "What would you invent if you could work on any problem, with any partner?"
+   ]
+  },
+  "lamarr-short": {
+   "audio": {
+    "bytes": 405420,
+    "file": "audio/lamarr-short.mp3",
+    "sha256": "4d3106ec8bd54d02d74e3243385ae2780b1c7d5d3d197087269440d684fd50f2"
+   },
+   "duration_s": 50.649,
+   "lines": [
+    {
+     "end": 5.153,
+     "start": 0.3
+    },
+    {
+     "end": 11.9,
+     "start": 5.503
+    },
+    {
+     "end": 19.901,
+     "start": 12.25
+    },
+    {
+     "end": 23.014,
+     "start": 20.251
+    },
+    {
+     "end": 26.151,
+     "start": 23.364
+    },
+    {
+     "end": 36.299,
+     "start": 26.5
+    },
+    {
+     "end": 46.936,
+     "start": 36.649
+    },
+    {
+     "end": 50.049,
+     "start": 47.286
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/lamarr-short-poster.jpg",
+    "sha256": "979b42b67737285c5b6f54ce4a5526a0c8d755d0ae141a225ee1fcf78314f024"
+   },
+   "script_sha256": "a47a2465bca5acee4fd43f6454d1e56011aa5ed4164a79809bb2152fce4661b9",
+   "slug": "lamarr",
+   "spoken": [
+    "Hedy Lamarr arrived in America in 1937 as a film star.",
+    "She left behind a husband who sold arms, a homeland about to be swallowed by Nazi Germany, and her father's fortune.",
+    "In the summer of 1941, a Hollywood film star filed a patent for a way to keep the enemy from jamming a torpedo.",
+    "She signed it with her legal name: Hedy Keesler Markey.",
+    "The trick was to keep changing the radio frequency.",
+    "A transmitter on a ship and a receiver in the torpedo would hop from frequency to frequency at the same moment, guided by matching paper rolls like those in a player piano.",
+    "Hedy Lamarr became a United States citizen on 10 April 1953, sixteen years after she arrived, at a ceremony in federal court in Los Angeles.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1405228,
+    "duration_s": 53.649,
+    "file": "video/lamarr-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "U.S. Patent 2,292,387. United States Patent and Trademark Office",
+      "file": "lamarr-1942-patent-2292387-sheet1.jpg"
+     },
+     {
+      "credit": "U.S. Patent 2,292,387",
+      "file": "lamarr-1942-patent-2292387-text-p1.jpg"
+     },
+     {
+      "credit": "Los Angeles Times Photographic Collection, UCLA Library Special Collections (uclamss_1429_0005). CC BY 4.0",
+      "file": "lamarr-1939-portrait-lat.jpg"
+     },
+     {
+      "credit": "National Archives and Records Administration, National Archives Identifier 74395327",
+      "file": "lamarr-1945-property-claim-p1.jpg"
+     },
+     {
+      "credit": "National Archives and Records Administration, National Archives Identifier 74395327",
+      "file": "lamarr-1945-property-claim-p2.jpg"
+     }
+    ],
+    "sha256": "85ea6c3400f89fe1f54be2ef13a7045a10768db0a0b73570bda5fbf305e1ec07",
+    "width": 1080
+   }
+  },
+  "muir-guide": {
+   "audio": {
+    "bytes": 804780,
+    "file": "audio/muir-guide.mp3",
+    "sha256": "bbbe165d34dfef032795ba8858794e425627a621e5477c4fe0a83f96c01cadd9"
+   },
+   "duration_s": 100.571,
+   "lines": [
+    {
+     "end": 13.593,
+     "start": 0.3
+    },
+    {
+     "end": 21.722,
+     "start": 13.943
+    },
+    {
+     "end": 28.341,
+     "start": 22.072
+    },
+    {
+     "end": 36.644,
+     "start": 28.691
+    },
+    {
+     "end": 41.487,
+     "start": 36.994
+    },
+    {
+     "end": 46.795,
+     "start": 41.837
+    },
+    {
+     "end": 50.21,
+     "start": 47.145
+    },
+    {
+     "end": 59.534,
+     "start": 50.56
+    },
+    {
+     "end": 66.432,
+     "start": 59.884
+    },
+    {
+     "end": 72.367,
+     "start": 66.782
+    },
+    {
+     "end": 83.653,
+     "start": 72.717
+    },
+    {
+     "end": 84.839,
+     "start": 84.003
+    },
+    {
+     "end": 94.367,
+     "start": 85.439
+    },
+    {
+     "end": 99.971,
+     "start": 94.967
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "69776f6aac65e64ca53f1232b13ba00f53e11f742a79cf08cb900ad1cdf51388",
+   "slug": "muir",
+   "spoken": [
+    "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.",
+    "John Muir was born in Dunbar, Scotland, on 21 April 1838, and attended the local schools until he was eleven.",
+    "In 1849 his family emigrated to the United States and settled on Wisconsin farmland.",
+    "In 1867, working in a carriage shop in Indianapolis, a file slipped and blinded him in one eye.",
+    "When his sight came back he resolved to give up machinery and devote himself to the natural world.",
+    "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\"",
+    "Writing, for Muir, was a way of defending what he loved.",
+    "In 1890, after a campaign Muir fought alongside the editor Robert Underwood Johnson, an act of Congress created Yosemite National Park.",
+    "Two years later Muir and a circle of allies founded the Sierra Club \"to do something for wildness and make the mountains glad.\"",
+    "President Theodore Roosevelt came west in 1903 to see Yosemite with Muir himself.",
+    "The two slipped away from the official party into the back country for several days; Roosevelt went home and threw the weight of the presidency behind protecting the nation's forests, parks and monuments.",
+    "Muir wrote:",
+    "Thousands of tired, nerve-shaken, over-civilized people are beginning to find out that going to the mountains is going home; that wildness is a necessity.",
+    "Which wild place near you would you fight to protect, and how would you persuade other people to help?"
+   ]
+  },
+  "muir-short": {
+   "audio": {
+    "bytes": 378671,
+    "file": "audio/muir-short.mp3",
+    "sha256": "4ceb674ed9418c406bbe8bbd24dffa014ec3b0fc05ac432912d1a0303a209b3f"
+   },
+   "duration_s": 47.29,
+   "lines": [
+    {
+     "end": 10.819,
+     "start": 0.3
+    },
+    {
+     "end": 18.03,
+     "start": 11.169
+    },
+    {
+     "end": 33.229,
+     "start": 18.38
+    },
+    {
+     "end": 39.651,
+     "start": 33.579
+    },
+    {
+     "end": 43.229,
+     "start": 40.001
+    },
+    {
+     "end": 46.69,
+     "start": 43.579
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/muir-short-poster.jpg",
+    "sha256": "4b9d4a380cac20c08db1e4e6f58e069bfc1aae233d87a764000d03fe8e1fab50"
+   },
+   "script_sha256": "4dbea899792844adb23966bcc9624cdb9c06d0d8a43a5740edcb72c392037b86",
+   "slug": "muir",
+   "spoken": [
+    "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849 and grew into the most persuasive voice for keeping wild country wild.",
+    "He helped win Yosemite its national park, founded the Sierra Club, and took a president camping among the giant sequoias.",
+    "In March 1868 a twenty-nine-year-old Scot landed in San Francisco, asked a passer-by for the quickest way out of the city, and set off east on foot toward a wall of mountains he had never seen.",
+    "He walked out across the San Joaquin Valley and up into the Sierra Nevada, which he named \"the Range of Light.\"",
+    "Writing, for Muir, was a way of defending what he loved.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 964720,
+    "duration_s": 50.29,
+    "file": "video/muir-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Carlton E. Watkins. Portrait via Wikimedia Commons.",
+      "file": "muir-watkins-portrait-c1875.jpg"
+     }
+    ],
+    "sha256": "b1ae183589f52d7713a133b6dfde6eb5be719113534c3b2aa14a4a99aa3eb509",
+    "width": 1080
+   }
+  },
+  "naismith-guide": {
+   "audio": {
+    "bytes": 870817,
+    "file": "audio/naismith-guide.mp3",
+    "sha256": "938a4bb7c6be2fdfd7a725b1eed814271d38d691924c87e69e6279122e2663fd"
+   },
+   "duration_s": 108.806,
+   "lines": [
+    {
+     "end": 12.305,
+     "start": 0.3
+    },
+    {
+     "end": 16.022,
+     "start": 12.655
+    },
+    {
+     "end": 25.497,
+     "start": 16.372
+    },
+    {
+     "end": 34.752,
+     "start": 25.847
+    },
+    {
+     "end": 37.586,
+     "start": 35.102
+    },
+    {
+     "end": 40.142,
+     "start": 37.936
+    },
+    {
+     "end": 46.611,
+     "start": 40.492
+    },
+    {
+     "end": 52.336,
+     "start": 46.961
+    },
+    {
+     "end": 59.629,
+     "start": 52.686
+    },
+    {
+     "end": 61.326,
+     "start": 59.979
+    },
+    {
+     "end": 69.059,
+     "start": 61.676
+    },
+    {
+     "end": 76.184,
+     "start": 69.659
+    },
+    {
+     "end": 84.609,
+     "start": 76.784
+    },
+    {
+     "end": 90.277,
+     "start": 84.959
+    },
+    {
+     "end": 102.887,
+     "start": 90.627
+    },
+    {
+     "end": 108.206,
+     "start": 103.237
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "80e633a83a91cda65aef34c4265f7df276a23968b0b8907e6d69c877a6934e9b",
+   "slug": "naismith",
+   "spoken": [
+    "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game.",
+    "He had invented basketball — and he was not yet an American.",
+    "James Naismith was born on 6 November 1861 in Ramsay Township, in what was then Upper Canada, near the town of Almonte, Ontario.",
+    "By the early eighteen-nineties he was a physical instructor at the International Y.M.C.A. Training School in Springfield, Massachusetts.",
+    "Two instructors had already given up on the class.",
+    "Naismith was given two weeks to solve it.",
+    "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it.",
+    "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+    "The first game, in December 1891, was played with a soccer ball and the baskets, nine players a side.",
+    "It did not go smoothly.",
+    "In January 1939, in an interview on the radio, James Naismith said this about the very first game:",
+    "The boys began tackling, kicking and punching in the clinches. They ended up in a free-for-all in the middle of the gym floor.",
+    "But the game spread with astonishing speed through the Y.M.C.A. network, and the rules were published in 1892.",
+    "Basketball was played at the 1936 Berlin Games, and Naismith was there to see it.",
+    "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades.",
+    "What makes someone belong to a country: the work they do there, or a piece of paper?"
+   ]
+  },
+  "naismith-short": {
+   "audio": {
+    "bytes": 360071,
+    "file": "audio/naismith-short.mp3",
+    "sha256": "2d344d89dacf0d61a2ba47847e5f77cf91c2c23c58bbb7ead90b0e1f62f79a5d"
+   },
+   "duration_s": 44.98,
+   "lines": [
+    {
+     "end": 12.908,
+     "start": 0.3
+    },
+    {
+     "end": 16.625,
+     "start": 13.258
+    },
+    {
+     "end": 22.734,
+     "start": 16.975
+    },
+    {
+     "end": 34.833,
+     "start": 23.084
+    },
+    {
+     "end": 40.628,
+     "start": 35.183
+    },
+    {
+     "end": 44.38,
+     "start": 40.978
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/naismith-short-poster.jpg",
+    "sha256": "01087e33546ab2756bed6a6adb73701597a9406040d6e2c8ad546a84dea7628f"
+   },
+   "script_sha256": "32a69430b537ec8d7ec2745e29f1f1047a0c69f272d9843b8ca9ee5f69f596fb",
+   "slug": "naismith",
+   "spoken": [
+    "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game.",
+    "He had invented basketball — and he was not yet an American.",
+    "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+    "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades.",
+    "The man who gave America one of its signature games spent most of his American life as a foreign national.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1035678,
+    "duration_s": 47.98,
+    "file": "video/naismith-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Unknown author. Via Wikimedia Commons.",
+      "file": "naismith-portrait.jpg"
+     }
+    ],
+    "sha256": "9b7b50c15d8c847ed4365015a1660ccb4bcbbcd65915f93be08b3ad359457efd",
+    "width": 1080
+   }
+  },
+  "pei-guide": {
+   "audio": {
+    "bytes": 860160,
+    "file": "audio/pei-guide.mp3",
+    "sha256": "dd48a03fdb8f6772de96cad38e83f8556e105e39c07a05c9f727e84078a7f923"
+   },
+   "duration_s": 107.472,
+   "lines": [
+    {
+     "end": 11.805,
+     "start": 0.3
+    },
+    {
+     "end": 15.708,
+     "start": 12.155
+    },
+    {
+     "end": 23.779,
+     "start": 16.058
+    },
+    {
+     "end": 34.345,
+     "start": 24.129
+    },
+    {
+     "end": 40.733,
+     "start": 34.695
+    },
+    {
+     "end": 47.538,
+     "start": 41.083
+    },
+    {
+     "end": 54.424,
+     "start": 47.888
+    },
+    {
+     "end": 56.632,
+     "start": 54.774
+    },
+    {
+     "end": 61.37,
+     "start": 56.982
+    },
+    {
+     "end": 64.843,
+     "start": 61.72
+    },
+    {
+     "end": 67.701,
+     "start": 65.193
+    },
+    {
+     "end": 73.305,
+     "start": 68.301
+    },
+    {
+     "end": 80.685,
+     "start": 73.905
+    },
+    {
+     "end": 92.39,
+     "start": 81.035
+    },
+    {
+     "end": 96.246,
+     "start": 92.74
+    },
+    {
+     "end": 101.623,
+     "start": 96.596
+    },
+    {
+     "end": 106.872,
+     "start": 101.973
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "a97df1042f4887af19d28a169e811669ee386f4c04e845e7e5ff641743493d09",
+   "slug": "pei",
+   "spoken": [
+    "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Yoh-ming Pay.",
+    "His father, Tsoo-yee Pay, was a manager at the Bank of China.",
+    "He sailed on the steamship President Coolidge and arrived at San Francisco on 28 August 1935.",
+    "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned.",
+    "Because the consulate in Shanghai had spelled his name \"Pay,\" that is the name on his early American papers.",
+    "Pay started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology.",
+    "Then, in 1937, war broke out between China and Japan, followed by the Second World War.",
+    "Going home became more and more difficult.",
+    "By 1946 he was married to Eileen Loo and teaching at Harvard.",
+    "Harvard asked for him to stay one more year as a teaching fellow.",
+    "The immigration officers agreed, but noted:",
+    "It is understood that the subject expects to return to China to teach after this year's work at Harvard.",
+    "To change from a visiting student to a permanent resident, Pay and his wife had to leave the United States and apply from outside.",
+    "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later.",
+    "Twelve years after he arrived, he was finally allowed to stay.",
+    "His most famous design is the glass pyramid that forms the main entrance of the Louvre in Paris.",
+    "What would make you stay in a country that kept telling you your visit was only temporary?"
+   ]
+  },
+  "pei-short": {
+   "audio": {
+    "bytes": 366550,
+    "file": "audio/pei-short.mp3",
+    "sha256": "07e2eb076f44a3d4d9b8ab545269b8bc455760afdcadcd972b380cbd02dd74f2"
+   },
+   "duration_s": 45.784,
+   "lines": [
+    {
+     "end": 11.364,
+     "start": 0.3
+    },
+    {
+     "end": 15.174,
+     "start": 11.714
+    },
+    {
+     "end": 18.368,
+     "start": 15.524
+    },
+    {
+     "end": 25.162,
+     "start": 18.718
+    },
+    {
+     "end": 31.062,
+     "start": 25.512
+    },
+    {
+     "end": 37.739,
+     "start": 31.412
+    },
+    {
+     "end": 42.118,
+     "start": 38.089
+    },
+    {
+     "end": 45.184,
+     "start": 42.468
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/pei-short-poster.jpg",
+    "sha256": "8b74e5b173825150002c5b1b9e75e23691e1ac3326d8a27b1f8c9b138da2a1ef"
+   },
+   "script_sha256": "55ad2a07b3bdf41f23f3d573e817e32ea9f016f3d76b1bf28145098f1b8c44a6",
+   "slug": "pei",
+   "spoken": [
+    "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Yoh-ming Pay.",
+    "I. M. Pay came to America on a two-year student visa.",
+    "For twelve years the government expected him to go home.",
+    "He stayed, became one of the most celebrated architects in the world, and put a glass pyramid in front of the Louvre.",
+    "His immigration file, all 139 pages of it, survives at the National Archives.",
+    "To change from a visiting student to a permanent resident, Pay and his wife had to leave the United States and apply from outside.",
+    "Twelve years after he arrived, he was finally allowed to stay.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1224657,
+    "duration_s": 48.784,
+    "file": "video/pei-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 135 of 139)",
+      "file": "pei-1935-shanghai-consulate-precis.jpg"
+     },
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 137 of 139)",
+      "file": "pei-1935-penn-admission-radiogram.jpg"
+     },
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 136 of 139)",
+      "file": "pei-1935-san-francisco-arrival-statement.jpg"
+     },
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 12 of 139)",
+      "file": "pei-1946-change-of-status-p1.jpg"
+     },
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 8 of 139)",
+      "file": "pei-1947-harvard-dean-letter.jpg"
+     },
+     {
+      "credit": "National Archives at San Francisco, Records of the Immigration and Naturalization Service (RG 85), Immigration Arrival Investigation Case File 35527/15-16, National Archives Identifier 28882547 (page 1 of 139)",
+      "file": "pei-1947-permanent-residence-calais.jpg"
+     }
+    ],
+    "sha256": "2301cc2cfc3f47eac8b3db09685f2787385802bae6622f80df0d71296e8df059",
+    "width": 1080
+   }
+  },
+  "strauss-guide": {
+   "audio": {
+    "bytes": 850964,
+    "file": "audio/strauss-guide.mp3",
+    "sha256": "42ca99eb1b7ac8c370a3739e11b4eda3753809de5ff747203cf75f3e9ae6a116"
+   },
+   "duration_s": 106.33,
+   "lines": [
+    {
+     "end": 8.392,
+     "start": 0.3
+    },
+    {
+     "end": 18.39,
+     "start": 8.742
+    },
+    {
+     "end": 26.762,
+     "start": 18.74
+    },
+    {
+     "end": 34.914,
+     "start": 27.112
+    },
+    {
+     "end": 45.435,
+     "start": 35.264
+    },
+    {
+     "end": 50.998,
+     "start": 45.785
+    },
+    {
+     "end": 65.744,
+     "start": 51.348
+    },
+    {
+     "end": 71.678,
+     "start": 66.094
+    },
+    {
+     "end": 73.549,
+     "start": 72.028
+    },
+    {
+     "end": 84.708,
+     "start": 73.899
+    },
+    {
+     "end": 88.541,
+     "start": 85.058
+    },
+    {
+     "end": 94.447,
+     "start": 89.141
+    },
+    {
+     "end": 102.024,
+     "start": 95.047
+    },
+    {
+     "end": 105.73,
+     "start": 102.374
+    }
+   ],
+   "part": "guide",
+   "script_sha256": "89ea9e469959370b9bf2a1d58373edf664fe130cf5330f52bfc1ae83130da4a9",
+   "slug": "strauss",
+   "spoken": [
+    "A Bavarian immigrant who sold cloth out of a San Francisco storefront put his name on a pair of work trousers reinforced with copper rivets.",
+    "Levi Strauss was born Lerb Strauss on 26 February 1829 in Buttenheim, a village in the Kingdom of Bavaria, into a Jewish family.",
+    "In 1847, with his mother and sisters, he emigrated to the United States, sailing from Bremerhaven.",
+    "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+    "He became a United States citizen in 1853 and, like tens of thousands of others, turned his eyes west toward the California gold rush.",
+    "He did not dig for gold; he sold to the people who did, and to everyone who came to feed and clothe them.",
+    "In the early eighteen-seventies a tailor in Reno, Nevada, named Jacob Davis, one of Strauss's cloth customers, worked out a way to keep work trousers from tearing at the pocket corners and fly: he fastened the stress points with copper rivets.",
+    "The idea worked, and his customers wanted more, but Davis could not afford the seventy-dollar fee to patent it.",
+    "Strauss agreed to finance it.",
+    "On 20 May 1873 the United States granted Patent Number one three nine, one two one to Jacob Davis, \"assignor to himself and Levi Strauss and Company.\"",
+    "The patent names Davis first, as the inventor. In his words:",
+    "My invention relates to a fastening for pocket-openings, whereby the sewed seams are prevented from ripping.",
+    "Strauss endowed scholarships at the University of California and supported orphanages and Jewish charities in the city.",
+    "When people make something together, how should the credit be shared?"
+   ]
+  },
+  "strauss-short": {
+   "audio": {
+    "bytes": 408137,
+    "file": "audio/strauss-short.mp3",
+    "sha256": "d2d561d44f48ee650afa5c7db93723c87557c2bc20e02e093aed6c9b2dd9cc09"
+   },
+   "duration_s": 50.974,
+   "lines": [
+    {
+     "end": 9.855,
+     "start": 0.3
+    },
+    {
+     "end": 17.183,
+     "start": 10.205
+    },
+    {
+     "end": 21.294,
+     "start": 17.533
+    },
+    {
+     "end": 32.534,
+     "start": 21.644
+    },
+    {
+     "end": 37.296,
+     "start": 32.884
+    },
+    {
+     "end": 43.184,
+     "start": 37.646
+    },
+    {
+     "end": 47.121,
+     "start": 43.534
+    },
+    {
+     "end": 50.374,
+     "start": 47.471
+    }
+   ],
+   "part": "short",
+   "poster": {
+    "file": "video/strauss-short-poster.jpg",
+    "sha256": "670e9260580cb2cd56d216ca9cc421effe60d9cf595b1f6c42e4268ab0dcc9e0"
+   },
+   "script_sha256": "928c88cec58c447d27ce7530c4488b725486a01b0109eb86acd84c6615d48fce",
+   "slug": "strauss",
+   "spoken": [
+    "Levi Strauss was born Lerb Strauss in Bavaria in 1829 and came to the United States as a teenager in 1847.",
+    "In New York he joined the dry-goods business run by his older brothers and learned the trade of importing and selling cloth and household goods.",
+    "He became a United States citizen in 1853.",
+    "He built a dry-goods business in gold-rush San Francisco, and in 1873 he and the tailor Jacob Davis patented the riveted work trouser — the blue jean.",
+    "The blue jean was a joint invention: the rivet idea was Jacob Davis's.",
+    "Strauss was the partner who financed and manufactured it, not the lone genius of popular legend.",
+    "An immigrant's name became a word spoken in every country on earth.",
+    "Read the full story, with every source, on this page."
+   ],
+   "video": {
+    "bytes": 1021325,
+    "duration_s": 53.974,
+    "file": "video/strauss-short.mp4",
+    "height": 1920,
+    "images": [
+     {
+      "credit": "Unknown author. Via Wikimedia Commons.",
+      "file": "strauss-portrait.jpg"
+     }
+    ],
+    "sha256": "0d2c60caf175230650bd4e465c727c2c57c431e2f100de9b9dc9860a30817d30",
+    "width": 1080
+   }
+  }
+ },
+ "voice": "voice.json"
+}

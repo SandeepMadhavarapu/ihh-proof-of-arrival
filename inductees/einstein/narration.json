@@ -1,0 +1,128 @@
+{
+  "slug": "einstein",
+  "name": "Albert Einstein",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "In January 1936, in a New Jersey courthouse, the most famous scientist in the world put his name to a government form declaring that he meant to become an American.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "In January 1936, in a New Jersey courthouse, the most famous scientist in the world put his name to a government form declaring that he meant to become an American."
+    },
+    {
+      "line": "Einstein was born in Ulm, in the kingdom of Württemberg, in 1879, and grew up in Munich.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "Einstein was born in Ulm, in the kingdom of Württemberg, in 1879, and grew up in Munich."
+    },
+    {
+      "line": "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics."
+    },
+    {
+      "line": "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics."
+    },
+    {
+      "line": "Einstein was abroad — lecturing in the United States — when Hitler became chancellor in January 1933.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "Einstein was abroad — lecturing in the United States — when Hitler became chancellor in January 1933."
+    },
+    {
+      "line": "He resigned from the Prussian Academy of Sciences, gave up his German citizenship, and resolved not to return.",
+      "kind": "fact",
+      "copy_md_line": 26,
+      "copy_md_sentence": "He resigned from the Prussian Academy of Sciences, gave up his German citizenship, and resolved not to return."
+    },
+    {
+      "line": "In a public statement that March he set the condition under which he would live anywhere:",
+      "kind": "intro",
+      "copy_md_line": 26,
+      "copy_md_sentence": "In a public statement that March he set the condition under which he would live anywhere, the sentence quoted above this story."
+    },
+    {
+      "line": "As long as I have any choice, I will only stay in a country where political liberty, toleration, and equality of all citizens before the law are the rule.",
+      "kind": "quote",
+      "copy_md_line": 49,
+      "copy_md_sentence": "As long as I have any choice, I will only stay in a country where political liberty, toleration, and equality of all citizens before the law are the rule."
+    },
+    {
+      "line": "The Institute for Advanced Study, a new research centre in Princeton, had offered him a post.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "The Institute for Advanced Study, a new research centre in Princeton, had offered him a post."
+    },
+    {
+      "line": "On 15 January 1936, Einstein filed his Declaration of Intention — an immigrant's sworn \"first papers,\" the formal statement that he meant to become a citizen.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "On 15 January 1936, Einstein filed his Declaration of Intention — an immigrant's sworn \"first papers,\" the formal statement that he meant to become a citizen."
+    },
+    {
+      "line": "He took the oath of citizenship in 1940, keeping the Swiss citizenship he had held since young adulthood, so that he ended his life a citizen of two republics and no empire.",
+      "kind": "fact",
+      "copy_md_line": 32,
+      "copy_md_sentence": "He took the oath of citizenship in 1940, keeping the Swiss citizenship he had held since young adulthood, so that he ended his life a citizen of two republics and no empire."
+    },
+    {
+      "line": "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create."
+    },
+    {
+      "line": "If you had to choose a country to live in, what would it need to promise you?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "Albert Einstein left Germany in 1933 as the Nazis came to power, and never went back.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Albert Einstein left Germany in 1933 as the Nazis came to power, and never went back."
+    },
+    {
+      "line": "He settled at the Institute for Advanced Study in Princeton, filed his first citizenship papers in 1936, and took the oath as an American in 1940 — one of the few immigrants whose surname became a byword for genius.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "He settled at the Institute for Advanced Study in Princeton, filed his first citizenship papers in 1936, and took the oath as an American in 1940 — one of the few immigrants whose surname became a byword for genius."
+    },
+    {
+      "line": "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In 1905, working as a clerk in the Swiss patent office in Bern, he published the papers that remade physics."
+    },
+    {
+      "line": "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Einstein held professorships in Zurich, Prague and Berlin, and in 1921 he was awarded the Nobel Prize in Physics."
+    },
+    {
+      "line": "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "He used his fame as an American deliberately: for refugees fleeing the same Europe he had escaped, for civil rights, and against the misuse of the physics he had helped create."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 288,
+    "short": 135
+  }
+}

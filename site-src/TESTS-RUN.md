@@ -4,23 +4,24 @@ Everything below was executed in a real headless Chromium against the built site
 over HTTP. The scripts are in `qa/`. **The last section lists what still has not been
 tested, and by whom it needs to be.**
 
-## Latest full run — 30 October 2026 (branch `ws7-look-closer`, before merge)
+## Latest full run — 31 October 2026 (branch `ws8-listen`, before merge)
 
 Run locally on Linux with Chromium; GitHub Actions CI runs the same suite on every pull request.
 
 | Check | Result |
 |---|---|
-| `python -m unittest discover -s tests` | 190 tests, OK (15 new in `tests/test_artifacts.py`, including planted wrong dates, names, spans and rights) |
-| `python tools/artifacts.py` | 4 artifacts, 25 notes: every quoted span found word for word; every name, number and date in a note found in its spans |
-| `bash qa/rebuild.sh` | all generated files match their sources (now including Look closer pages, images and WordPress blocks) |
+| `python tools/narration.py` | 10 inductees, 236 narrated lines, every line traced to `copy.md`; all 20 audio files, 10 videos and 10 posters match their SHA-256 in the manifest |
+| `python tools/artifacts.py` | 4 artifacts, 25 notes, every span and number/date/name checked |
+| `python -m unittest discover -s tests` | 216 tests, OK (26 new in `tests/test_narration.py`, including planted wrong years, new names, a changed quotation, first person, a dated transition, a stale script and a tampered audio hash) |
+| `bash qa/rebuild.sh` | all generated files match their sources (now including caption files and the ten WordPress Listen blocks) |
 | `python qa/handover.py` | all ten handover packages pass |
 | `python qa/secrets.py` | pass |
 | `python living/eval/run_eval.py` | pass, 0 false accepts |
 | `node qa/integrity.mjs .` | 150 checks pass |
-| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro | all pass (0 axe violations on 22 pages; 712 text runs meet contrast; every target at least 24×24; 318 WordPress checks) |
-| Look closer zoom, at 375px and 1280px | zoom on and off, 0 axe violations while zoomed, keyboard Enter on a marker opens its note |
-| The four Look closer WordPress blocks, standalone at 375px and 1280px | 0 axe violations, no sideways scroll, no script, every image loads |
-| Smoke test: 22 pages (and the 23-page public demonstration build) at 375px and 1280px (console errors, broken links, anchors and images, sideways scroll; axe on the demonstration build) | 0 issues |
+| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro; profile-factory | all pass (0 axe violations on 22 pages; 712 text runs meet contrast; every target at least 24×24; 318 WordPress checks; 35 Profile Factory checks) |
+| Smoke test: 22 pages (and the 23-page public demonstration build) at 375px and 1280px | 0 console errors, broken links, anchors or images, no sideways scroll, 0 axe violations with every transcript open |
+| Listen media in the browser, all ten profiles | both MP3s load (duration read) and each caption track loads with its cues; the MP4s could not be played in this test browser, which is built without H.264 support: `ffprobe` confirms each is H.264 High + AAC LC with the index at the front of the file |
+| The ten WordPress Listen blocks, standalone at 375px and 1280px | 0 axe violations, no sideways scroll, no script |
 
 Still not tested: no screen-reader user, no teenage reader, no volunteer WordPress handoff on
 the museum's real site. Older sections below are kept as a dated record.
@@ -140,7 +141,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**584 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival image files additional)**, against **2,869 KB for the current IHH homepage
+**658 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival images, audio and video additional)**, against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---

@@ -1,0 +1,176 @@
+{
+  "slug": "albright",
+  "name": "Madeleine Albright",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin."
+    },
+    {
+      "line": "The family arrived in New York on 11 November 1948.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "The family arrived in New York on 11 November 1948."
+    },
+    {
+      "line": "She was eleven.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "She was eleven."
+    },
+    {
+      "line": "She remembered:",
+      "kind": "intro",
+      "copy_md_line": 22,
+      "copy_md_sentence": "\"We steamed into New York Harbor, past the Statue of Liberty, with tears in our eyes and hope in our hearts,\" she remembered."
+    },
+    {
+      "line": "We steamed into New York Harbor, past the Statue of Liberty, with tears in our eyes and hope in our hearts.",
+      "kind": "quote",
+      "copy_md_line": 22,
+      "copy_md_sentence": "We steamed into New York Harbor, past the Statue of Liberty, with tears in our eyes and hope in our hearts."
+    },
+    {
+      "line": "When Nazi Germany occupied Czechoslovakia in 1939, the family fled to London, where she spent the war years as a small child in a city under bombardment.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "When Nazi Germany occupied Czechoslovakia in 1939, the family fled to London, where she spent the war years as a small child in a city under bombardment."
+    },
+    {
+      "line": "They went home after the war.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "They went home after the war."
+    },
+    {
+      "line": "In February 1948 the Communists seized power, and the Korbels left again — this time for good.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "In February 1948 the Communists seized power, and the Korbels left again — this time for good."
+    },
+    {
+      "line": "The girl from Prague started calling herself Madeleine.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "The girl from Prague started calling herself Madeleine."
+    },
+    {
+      "line": "She became a United States citizen in 1957, and graduated from Wellesley College with honors in political science two years later.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "She became a United States citizen in 1957, and graduated from Wellesley College with honors in political science two years later."
+    },
+    {
+      "line": "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job."
+    },
+    {
+      "line": "Because she was born abroad, she could never be President.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Because she was born abroad, she could never be President."
+    },
+    {
+      "line": "On 10 November 1998 — fifty years, less one day, after she arrived — she and her sister renewed their oath of allegiance at a naturalization ceremony in Washington, D.C.",
+      "kind": "fact",
+      "copy_md_line": 42,
+      "copy_md_sentence": "On 10 November 1998 — fifty years, less one day, after she arrived — she and her sister renewed their oath of allegiance at a naturalization ceremony in Washington, D.C."
+    },
+    {
+      "line": "She told the new citizens:",
+      "kind": "intro",
+      "copy_md_line": 42,
+      "copy_md_sentence": "She told the new citizens about three of them by name: a scientist from Albania, a woman from Cuba who wanted to vote in a free election for the first time, and a refugee from Ethiopia working two jobs."
+    },
+    {
+      "line": "Today marks a new beginning in your lives, and an ongoing chapter in the story of America which is, above all else, a story of immigrants.",
+      "kind": "quote",
+      "copy_md_line": 60,
+      "copy_md_sentence": "Today marks a new beginning in your lives, and an ongoing chapter in the story of America which is, above all else, a story of immigrants."
+    },
+    {
+      "line": "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO."
+    },
+    {
+      "line": "The country she had fled as a child was now an ally of the country that had taken her in.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "The country she had fled as a child was now an ally of the country that had taken her in."
+    },
+    {
+      "line": "If you moved to a new country, what would help you feel that you belonged there, and did not just live there?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "The family arrived in New York on 11 November 1948.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "The family arrived in New York on 11 November 1948."
+    },
+    {
+      "line": "She was eleven.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "She was eleven."
+    },
+    {
+      "line": "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Madeleine Albright was a refugee twice before she was twelve — from Hitler, then from Stalin."
+    },
+    {
+      "line": "She became a United States citizen in 1957.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "She became a United States citizen in 1957, and graduated from Wellesley College with honors in political science two years later."
+    },
+    {
+      "line": "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job."
+    },
+    {
+      "line": "Because she was born abroad, she could never be President.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Because she was born abroad, she could never be President."
+    },
+    {
+      "line": "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "On 12 March 1999, at the Truman Library in Independence, Missouri, she received the documents that made the Czech Republic, Hungary and Poland members of NATO."
+    },
+    {
+      "line": "The country she had fled as a child was now an ally of the country that had taken her in.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "The country she had fled as a child was now an ally of the country that had taken her in."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 292,
+    "short": 125
+  }
+}

@@ -347,7 +347,7 @@ def main(site=SITE, voices=None):
   the right call.</p>
   <p>It is also the cheapest thing here to extend. A new case file is a list of claims and a
   list of sources in <code>cases.py</code> &mdash; no new code, no new design, no developer.</p>
-  <p class="cta"><a class="btn" href="method.html">How this was made, and what we refused to build</a></p>
+  <p class="cta"><a class="btn" href="method.html">How this was made, and what we refused to fake</a></p>
 </section>
 
 </main>'''

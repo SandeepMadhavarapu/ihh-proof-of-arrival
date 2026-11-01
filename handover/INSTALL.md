@@ -13,6 +13,7 @@ There is one folder per inductee: `albright/`, `berlin/`, `cruz/`, `einstein/`, 
 | `media/web/` | The images the page uses, already resized for the web. |
 | `media-manifest.csv` | Every source and image: where it came from, its rights wording, its credit line. |
 | `search-log.csv` | Research history. Present for all ten. For Berlin, Einstein, Hope and Muir the original 16 October 2026 search terms were not preserved; their logs record the 17 October reconciliation retrievals and declare that gap as an OPEN ITEM rather than inventing queries. |
+| `listen-<name>.html`, `media/listen/` | Optional: the narrated audio guide, short and captioned video, with transcripts (see "Add Listen" below). |
 | `ihh-content-reconciliation.md` | Private editorial inventory: IHH facts, achievements and honours, evidence, proposed corrections and unresolved checks. Never publish or link this note. |
 
 ---
@@ -70,6 +71,24 @@ Like the profile, it has no JavaScript: the numbers are links that jump to the n
 document is public domain or unrestricted, and the rights wording is printed under the image.
 The notes were drafted with AI and checked mechanically against their sources (names, numbers
 and dates); a person on the museum's side should still read them before publishing.
+
+## Optional — Add "Listen" (all ten profiles, ten minutes each)
+
+Each folder has `listen-<name>.html` and a `media/listen/` folder: a two-minute audio guide, a
+sixty-second short, a vertical video short, their caption files (`.vtt`) and the video's poster
+image. The narration is read by a synthetic voice, labelled on the player and on every frame of
+the video as "AI narration · synthetic voice · not the voice of" the inductee. Every sentence
+comes from the profile itself; the block's transcripts show each line and link it to its passage.
+
+1. Upload every file in `media/listen/` to the Media Library (WordPress accepts `.mp3`, `.mp4`
+   and `.jpg`; if it refuses `.vtt`, ask whoever manages the site to allow it, or leave the
+   captions out: the transcript in the block still carries every word).
+2. Below the profile, add one more **Custom HTML** block and paste the whole `listen-<name>.html`.
+3. Replace each `media/listen/…` path in the block with the URL WordPress gave that file. Preview,
+   and play each file once.
+
+No JavaScript. The players are the browser's own. Nobody on the museum's side has listened to the
+recordings yet; please do before publishing.
 
 ---
 

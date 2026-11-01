@@ -22,10 +22,10 @@ and [CONTRIBUTING.md](CONTRIBUTING.md).
 
 | Path | What it is |
 |---|---|
-| **`handover/`** | **The deliverable.** One folder per inductee (`copy.html` to paste, `preview.html`, `copy-full.md`, `media/web/`, `media-manifest.csv`, `search-log.csv`), plus `look-closer-<id>.html` (an annotated document, no JavaScript) for Einstein, Lamarr, Pei and Strauss, `INSTALL.md`, `OPEN-ITEMS.md` and a zip of the lot. Generated; do not edit by hand. |
+| **`handover/`** | **The deliverable.** One folder per inductee (`copy.html` to paste, `preview.html`, `copy-full.md`, `media/web/`, `media-manifest.csv`, `search-log.csv`), plus `look-closer-<id>.html` (an annotated document, no JavaScript) for Einstein, Lamarr, Pei and Strauss, `listen-<name>.html` with `media/listen/` (narration, no JavaScript), `INSTALL.md`, `OPEN-ITEMS.md` and a zip of the lot. Generated; do not edit by hand. |
 | `inductees/<name>/` | The sources of each profile: `copy.md` (the text), `media-manifest.csv` (every source and image, rights word for word), `search-log.csv`, full-resolution originals in `media/`, saved source documents in `sources/`. **Edit here.** |
 | `templates/` | For the next inductee: `copy-template.md`, `media-manifest.csv`, `search-log.csv`, `where-to-search.md`, `rights-guide.md`, `profile.css`. |
-| `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `artifacts.py` (Look closer: checks every annotation against its quoted source, then renders it), `package_handover.sh`, `open_items.py`. |
+| `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `artifacts.py` (Look closer: checks every annotation against its quoted source, then renders it), `narration.py` and `narration_audio.py` (Listen), `package_handover.sh`, `open_items.py`. |
 | `site/` | The optional demonstration site: the ten profiles in the site's design, the Verification Desk (a corrections log), Look closer (four annotated primary documents), New at the Museum, and Margin Notes (off until IHH connects WordPress). |
 | `living/` | The Living Museum: finder, five-gate verifier, human approval queue, publisher and watchdog. Nothing reaches the site without a person approving it in a pull request. |
 | `voices/` | Visitor Voices / Margin Notes: notes anchored to the passage that prompted them, moderated before they appear. |
@@ -54,6 +54,19 @@ the document itself, a related page of the same record, or the inductee's `copy.
 number or date in a note is missing from its spans. The notes were drafted with AI; that check
 catches invented details, not a wrong reading, so a person still reviews them. Where a document
 disagrees with a profile (Einstein's form records a 1935 entry via Bermuda), the note says so.
+
+## Listen
+
+Every profile has a "Listen and watch" section: a two-minute audio guide, a sixty-second short and
+a captioned vertical video. `inductees/<name>/narration.json` holds the scripts; every line is a
+sentence from that inductee's `copy.md` (or a shortened version of one) and records which line it
+came from. `tools/narration.py` refuses to build if a line uses a word, number, date or name its
+source sentence lacks, if a quotation is not word for word, if the narrator says "I" or "we"
+outside a quotation, or if any audio or video file differs from the SHA-256 recorded in
+`site-data/narration/manifest.json`. `tools/narration_audio.py` (run by hand) records the media
+with Piper text-to-speech and a LibriTTS voice (CC BY 4.0; exact wording in
+`site-data/narration/voice.json`). Every player and every video frame says "AI narration ·
+synthetic voice · not the voice of" the inductee. Nobody on the museum's side has listened yet.
 
 ## What a person still has to do
 

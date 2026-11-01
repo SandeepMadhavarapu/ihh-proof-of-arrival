@@ -1,0 +1,146 @@
+{
+  "slug": "naismith",
+  "name": "James Naismith",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game."
+    },
+    {
+      "line": "He had invented basketball — and he was not yet an American.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "He had invented basketball — and he was not yet an American."
+    },
+    {
+      "line": "James Naismith was born on 6 November 1861 in Ramsay Township, in what was then Upper Canada, near the town of Almonte, Ontario.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "James Naismith was born on 6 November 1861 in Ramsay Township, in what was then Upper Canada, near the town of Almonte, Ontario."
+    },
+    {
+      "line": "By the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "He trained in Canada before crossing into the United States, and by the early 1890s he was a physical instructor at the International YMCA Training School in Springfield, Massachusetts."
+    },
+    {
+      "line": "Two instructors had already given up on the class.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "Two instructors had already given up on the class."
+    },
+    {
+      "line": "Naismith was given two weeks to solve it.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "Naismith was given two weeks to solve it."
+    },
+    {
+      "line": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it."
+    },
+    {
+      "line": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead."
+    },
+    {
+      "line": "The first game, in December 1891, was played with a soccer ball and the baskets, nine players a side.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "The first game, in December 1891, was played with a soccer ball and the baskets, nine players a side."
+    },
+    {
+      "line": "It did not go smoothly.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "It did not go smoothly."
+    },
+    {
+      "line": "In January 1939, in an interview on the radio, James Naismith said this about the very first game:",
+      "kind": "intro",
+      "copy_md_line": 57,
+      "copy_md_sentence": "James Naismith, describing the very first game, in an interview on the radio programme *We the People* (WOR), January 1939 — the only known recording of his voice, held by the Library of Congress (item 5)."
+    },
+    {
+      "line": "The boys began tackling, kicking and punching in the clinches. They ended up in a free-for-all in the middle of the gym floor.",
+      "kind": "quote",
+      "copy_md_line": 54,
+      "copy_md_sentence": "The boys began tackling, kicking and punching in the clinches. They ended up in a free-for-all in the middle of the gym floor."
+    },
+    {
+      "line": "But the game spread with astonishing speed through the YMCA network, and the rules were published in 1892.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "But the game spread with astonishing speed through the YMCA network, and the rules were published in 1892."
+    },
+    {
+      "line": "Basketball was played at the 1936 Berlin Games, and Naismith was there to see it.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "He watched his invention grow from a gymnasium improvisation into a college sport, a professional one, and, shortly before his death, an Olympic one: basketball was played at the 1936 Berlin Games, and Naismith was there to see it."
+    },
+    {
+      "line": "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades."
+    },
+    {
+      "line": "What makes someone belong to a country: the work they do there, or a piece of paper?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "On a December afternoon in 1891, a young Canadian instructor nailed two peach baskets to the balcony rails of a Springfield gymnasium and handed his restless students a new game."
+    },
+    {
+      "line": "He had invented basketball — and he was not yet an American.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "He had invented basketball — and he was not yet an American."
+    },
+    {
+      "line": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He wrote out thirteen rules, asked a janitor for two boxes, and was handed two peach baskets instead."
+    },
+    {
+      "line": "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "He filed for American citizenship near the end of the First World War, and the grant came in 1925 — when he was sixty-three years old and had been teaching in the country for more than three decades."
+    },
+    {
+      "line": "The man who gave America one of its signature games spent most of his American life as a foreign national.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "The man who gave America one of its signature games spent most of his American life as a foreign national."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 298,
+    "short": 128
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "slug": "pei",
+  "name": "I. M. Pei",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Ieoh-ming Pe.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Ieoh-ming Pe."
+    },
+    {
+      "line": "His father, Tsuyee Pei, was a manager at the Bank of China.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "His father, Tsuyee Pei, was a manager at the Bank of China."
+    },
+    {
+      "line": "He sailed on the steamship President Coolidge and arrived at San Francisco on 28 August 1935.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He sailed on the steamship *President Coolidge* and arrived at San Francisco on 28 August 1935."
+    },
+    {
+      "line": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "He was admitted as a student under the Immigration Act of 1924, which allowed in Chinese students at a time when almost all other Chinese immigration to the United States was banned."
+    },
+    {
+      "line": "Because the consulate in Shanghai had spelled his name \"Pe,\" that is the name on his early American papers.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "Because the consulate in Shanghai had spelled his name \"Pe,\" that is the name on his early American papers."
+    },
+    {
+      "line": "Pei started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "Pei started at the University of Pennsylvania but soon moved to the Massachusetts Institute of Technology."
+    },
+    {
+      "line": "Then, in 1937, war broke out between China and Japan, followed by the Second World War.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "Then, in 1937, war broke out between China and Japan, followed by the Second World War."
+    },
+    {
+      "line": "Going home became more and more difficult.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "Going home became more and more difficult."
+    },
+    {
+      "line": "By 1946 he was married to Eileen Loo and teaching at Harvard.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "By 1946 he was married to Eileen Loo and teaching at Harvard."
+    },
+    {
+      "line": "Harvard asked for him to stay one more year as a teaching fellow.",
+      "kind": "fact",
+      "copy_md_line": 30,
+      "copy_md_sentence": "Harvard asked for him to stay one more year as a teaching fellow."
+    },
+    {
+      "line": "The immigration officers agreed, but noted:",
+      "kind": "intro",
+      "copy_md_line": 30,
+      "copy_md_sentence": "The immigration officers agreed, but noted that \"it is understood that the subject expects to return to China to teach after this year's work at Harvard.\""
+    },
+    {
+      "line": "It is understood that the subject expects to return to China to teach after this year's work at Harvard.",
+      "kind": "quote",
+      "copy_md_line": 30,
+      "copy_md_sentence": "It is understood that the subject expects to return to China to teach after this year's work at Harvard."
+    },
+    {
+      "line": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside."
+    },
+    {
+      "line": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "They went to Canada, received immigrant visas at Saint John, New Brunswick, on 23 September 1947, and crossed back into the United States at Calais, Maine, three days later."
+    },
+    {
+      "line": "Twelve years after he arrived, he was finally allowed to stay.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "Twelve years after he arrived, he was finally allowed to stay."
+    },
+    {
+      "line": "His most famous design is the glass pyramid that forms the main entrance of the Louvre in Paris.",
+      "kind": "fact",
+      "copy_md_line": 42,
+      "copy_md_sentence": "His most famous design is the glass pyramid that forms the main entrance of the Louvre in Paris."
+    },
+    {
+      "line": "What would make you stay in a country that kept telling you your visit was only temporary?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Ieoh-ming Pe.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "In July 1935 an American vice consul in Shanghai pinned a small photograph to a form, and an eighteen-year-old student signed his name across it: Ieoh-ming Pe."
+    },
+    {
+      "line": "I. M. Pei came to America on a two-year student visa.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "I. M. Pei came to America on a two-year student visa."
+    },
+    {
+      "line": "For twelve years the government expected him to go home.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "For twelve years the government expected him to go home."
+    },
+    {
+      "line": "He stayed, became one of the most celebrated architects in the world, and put a glass pyramid in front of the Louvre.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "He stayed, became one of the most celebrated architects in the world, and put a glass pyramid in front of the Louvre."
+    },
+    {
+      "line": "His immigration file, all 139 pages of it, survives at the National Archives.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "His immigration file, all 139 pages of it, survives at the National Archives."
+    },
+    {
+      "line": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "To change from a visiting student to a permanent resident, Pei and his wife had to leave the United States and apply from outside."
+    },
+    {
+      "line": "Twelve years after he arrived, he was finally allowed to stay.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "Twelve years after he arrived, he was finally allowed to stay."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 294,
+    "short": 128
+  }
+}

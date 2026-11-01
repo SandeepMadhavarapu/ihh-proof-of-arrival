@@ -1,0 +1,170 @@
+{
+  "slug": "cruz",
+  "name": "Celia Cruz",
+  "written_on": "2026-10-31",
+  "writer": "ChatGPT drafted, rewritten by Claude (AI), for team review",
+  "guide": [
+    {
+      "line": "As a girl in Havana, Celia Cruz earned her first pair of shoes by singing for a tourist.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "As a girl in Havana, Celia Cruz earned her first pair of shoes by singing for a tourist."
+    },
+    {
+      "line": "Fifty years later she gave her stage shoes to the Smithsonian.",
+      "kind": "fact",
+      "copy_md_line": 4,
+      "copy_md_sentence": "Fifty years later she gave her stage shoes to the Smithsonian."
+    },
+    {
+      "line": "She was born in Havana on 21 October 1925, into a poor family.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "She was born in Havana on 21 October 1925, into a poor family."
+    },
+    {
+      "line": "According to the Smithsonian, she was one of fourteen children, and her singing began at home.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "According to the Smithsonian, she was one of fourteen children, and her singing began at home."
+    },
+    {
+      "line": "That voice soon reached bigger audiences.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "That voice soon reached bigger audiences."
+    },
+    {
+      "line": "She went on to sing with the Cuban band La Sonora Matancera.",
+      "kind": "fact",
+      "copy_md_line": 18,
+      "copy_md_sentence": "She went on to sing with the Cuban band La Sonora Matancera."
+    },
+    {
+      "line": "Soon after Fidel Castro took power in 1959, Cruz was touring in Mexico with La Sonora Matancera.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Soon after Fidel Castro took power in 1959, Cruz was touring in Mexico with La Sonora Matancera."
+    },
+    {
+      "line": "She did not go home.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "She did not go home."
+    },
+    {
+      "line": "Most accounts date her departure to 1960 and her move to the United States to 1961.",
+      "kind": "fact",
+      "copy_md_line": 22,
+      "copy_md_sentence": "Most accounts date her departure to 1960 and her move to the United States to 1961."
+    },
+    {
+      "line": "According to her biographers, Castro's government barred her from returning to Cuba.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "According to her biographers, Castro's government barred her from returning to Cuba."
+    },
+    {
+      "line": "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career."
+    },
+    {
+      "line": "She recorded and performed with musicians such as Tito Puente and Johnny Pacheco.",
+      "kind": "fact",
+      "copy_md_line": 28,
+      "copy_md_sentence": "She recorded and performed with musicians such as Tito Puente and Johnny Pacheco."
+    },
+    {
+      "line": "On 14 October 1994, on the South Lawn of the White House, President Clinton presented the National Medal of Arts.",
+      "kind": "fact",
+      "copy_md_line": 36,
+      "copy_md_sentence": "On 14 October 1994, on the South Lawn of the White House, President Clinton presented the National Medal of Arts."
+    },
+    {
+      "line": "He said:",
+      "kind": "intro",
+      "copy_md_line": 36,
+      "copy_md_sentence": "\"Celia Cruz has used her powerful voice and style to transplant Afro-Cuban music to every corner of the globe,\" he said."
+    },
+    {
+      "line": "Celia Cruz has used her powerful voice and style to transplant Afro-Cuban music to every corner of the globe.",
+      "kind": "quote",
+      "copy_md_line": 36,
+      "copy_md_sentence": "Celia Cruz has used her powerful voice and style to transplant Afro-Cuban music to every corner of the globe."
+    },
+    {
+      "line": "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History."
+    },
+    {
+      "line": "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program.",
+      "kind": "fact",
+      "copy_md_line": 38,
+      "copy_md_sentence": "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program."
+    },
+    {
+      "line": "If you could never go home again, which song or sound would you carry with you?",
+      "kind": "question",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "short": [
+    {
+      "line": "Celia Cruz left Cuba on tour in 1960 and never went back.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "Celia Cruz left Cuba on tour in 1960 and never went back."
+    },
+    {
+      "line": "In exile she became the Queen of Salsa, carried Afro-Cuban music around the world, and received the National Medal of Arts from the President.",
+      "kind": "fact",
+      "copy_md_line": 10,
+      "copy_md_sentence": "In exile she became the Queen of Salsa, carried Afro-Cuban music around the world, and received the National Medal of Arts from the President."
+    },
+    {
+      "line": "She was born in Havana on 21 October 1925, into a poor family.",
+      "kind": "fact",
+      "copy_md_line": 16,
+      "copy_md_sentence": "She was born in Havana on 21 October 1925, into a poor family."
+    },
+    {
+      "line": "According to her biographers, Castro's government barred her from returning to Cuba.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "According to her biographers, Castro's government barred her from returning to Cuba."
+    },
+    {
+      "line": "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career.",
+      "kind": "fact",
+      "copy_md_line": 24,
+      "copy_md_sentence": "She made her life in New York and New Jersey, and sang about Cuba for the rest of her career."
+    },
+    {
+      "line": "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History.",
+      "kind": "fact",
+      "copy_md_line": 34,
+      "copy_md_sentence": "In 1997, at a ceremony marking fifty years of her musical career, she gave a stage costume, shoes and all, to the Smithsonian's National Museum of American History."
+    },
+    {
+      "line": "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program.",
+      "kind": "fact",
+      "copy_md_line": 38,
+      "copy_md_sentence": "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program."
+    },
+    {
+      "line": "Read the full story, with every source, on this page.",
+      "kind": "transition",
+      "copy_md_line": 0,
+      "copy_md_sentence": ""
+    }
+  ],
+  "word_counts": {
+    "guide": 263,
+    "short": 138
+  }
+}

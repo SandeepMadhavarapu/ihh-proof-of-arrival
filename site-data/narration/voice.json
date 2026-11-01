@@ -1,0 +1,36 @@
+{
+  "_note": "The voice used for every narration file. Checked by tools/narration_audio.py before recording (the model's SHA-256 must match). Rights wording is copied exactly from the pages named, on the date given.",
+  "label": "AI narration · synthetic voice",
+  "engine": {
+    "name": "Piper text-to-speech",
+    "package": "piper-tts 1.8.0 (PyPI)",
+    "source": "https://github.com/OHF-voice/piper1-gpl",
+    "license_as_published": "GPL-3.0-or-later"
+  },
+  "model": {
+    "name": "LibriTTS (high), U.S. English, multi-speaker",
+    "file": "en-us-libritts-high.onnx",
+    "sha256": "9127a559e11603f10b366d1a20ac7426826081dbc521de4c2420c57728d73f0f",
+    "config_sha256": "91e9f6f51ad1dc3e7ee57bbdfaaa549c0cb9e88a1c3aeed224e4469ddd745add",
+    "downloaded_from": "https://github.com/rhasspy/piper/releases/download/v0.0.2/voice-en-us-libritts-high.tar.gz",
+    "model_card_verbatim": "# Model card for LibriTTS (high)\n\n* Language: en-us (U.S. English)\n* Speakers: 904\n* Quality: high\n* Samplerate: 22,050Hz\n\n## Dataset\n\n* URL: http://www.openslr.org/60/\n* License: CC BY 4.0\n\n## Training\n\nTrained from scratch on train-clean-360.",
+    "voice_collection": "https://huggingface.co/rhasspy/piper-voices",
+    "voice_collection_license_span": "License: mit",
+    "voice_collection_model_card": "https://huggingface.co/rhasspy/piper-voices/blob/main/en/en_US/libritts/high/MODEL_CARD",
+    "checked": "2026-10-31"
+  },
+  "dataset": {
+    "name": "LibriTTS corpus (SLR60)",
+    "url": "https://www.openslr.org/60/",
+    "license_span": "License: CC BY 4.0",
+    "description_span": "It is derived from the original materials (mp3 audio files from LibriVox and text files from Project Gutenberg) of the LibriSpeech corpus.",
+    "citation": "Heiga Zen, Viet Dang, Rob Clark, Yu Zhang, Ron J. Weiss, Ye Jia, Zhifeng Chen and Yonghui Wu, \"LibriTTS: A Corpus Derived from LibriSpeech for Text-to-Speech\", arXiv, 2019.",
+    "checked": "2026-10-31"
+  },
+  "speaker": {
+    "piper_speaker_id": 0,
+    "dataset_speaker_id": "3922",
+    "note": "One of the 904 reader voices in the training data, identified there only by a number. Not an inductee, and not chosen to resemble anyone."
+  },
+  "credit": "Voice: Piper text-to-speech, LibriTTS voice, trained on the LibriTTS corpus of LibriVox audiobook recordings (Zen et al., 2019; CC BY 4.0)."
+}
