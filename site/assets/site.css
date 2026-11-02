@@ -1140,6 +1140,8 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 main.profile-page{max-width:none}
 .profile-page .ihh-profile figure.anchor img{max-height:min(80vh,46rem)}
 @media (min-width:1024px){
+  /* Give the breadcrumb a uniform paper ground above the textured profile frame. */
+  .profile-page .crumb a{background:var(--paper)}
   /* Listen and watch: the two audio players stacked beside the vertical video */
   .ls-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:1.2rem 1.6rem}
   .ls-grid .ls-item:not(.ls-video){grid-column:1}
