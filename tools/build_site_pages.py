@@ -61,6 +61,22 @@ def strip_dark_mode(css_html):
         i = k
 
 
+def with_image_sizes(frag, media_dir, name):
+    from PIL import Image
+
+    def add(m):
+        tag = m.group(0)
+        if re.search(r"\swidth=", tag) or re.search(r"\sheight=", tag):
+            return tag
+        path = os.path.join(media_dir, html.unescape(m.group(1)))
+        if not os.path.isfile(path):
+            return tag
+        with Image.open(path) as im:
+            w, h = im.size
+        return tag[:-1].rstrip("/ ") + f' width="{w}" height="{h}">'
+    return re.sub(r'<img\b[^>]*\bsrc="media/' + re.escape(name) + r'/([^"]+)"[^>]*>', add, frag)
+
+
 def published_slugs(root):
     path = os.path.join(root, "site-data", "published.json")
     with open(path, encoding="utf-8") as f:
@@ -179,6 +195,9 @@ def main(root=ROOT, site=None, voices=None, preview=None):
         for f in os.listdir(os.path.join(base, name, "media", "web")):
             shutil.copy2(os.path.join(base, name, "media", "web", f), os.path.join(media_out, f))
         frag = frag.replace('src="media/web/', f'src="media/{name}/')
+        # Site only: give every profile image its real size, so the page keeps the image's space
+        # while it loads instead of jumping. (The WordPress blocks are left exactly as built.)
+        frag = with_image_sizes(frag, media_out, name)
         # The demo site is light-only (site.css sets color-scheme:light), so drop the profile's
         # own dark-mode rules here. The WordPress package in handover/ keeps them.
         frag = strip_dark_mode(frag)
