@@ -16,6 +16,14 @@
       btn.setAttribute('aria-expanded', String(open));
       btn.textContent = open ? 'Close' : 'Menu';
     });
+    /* Escape closes the open menu and puts focus back on its button */
+    document.addEventListener('keydown', function(e){
+      if (e.key !== 'Escape' || !nav.classList.contains('open')) return;
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'Menu';
+      btn.focus();
+    });
   }
 
   /* ── inductee search + filters ────────────────────────────────────── */
@@ -316,26 +324,31 @@
 
   targets.forEach(function(el){ el.classList.add('rv'); });
   document.documentElement.classList.add('reveal-on');
+  /* Never leave a block hidden: printing, or any error below, shows them all */
+  function showAll(){ targets.forEach(function(el){ el.classList.add('is-in'); }); }
+  window.addEventListener('beforeprint', showAll);
+  try {
 
-  /* Reveal anything already in (or above) the viewport immediately, in this
-     same tick, so the first painted frame shows them fully — no flash. */
-  var vh = window.innerHeight || document.documentElement.clientHeight;
-  var pending = [];
-  targets.forEach(function(el){
-    var r = el.getBoundingClientRect();
-    if (r.top < vh * 0.92) el.classList.add('is-in');
-    else pending.push(el);
-  });
-
-  if (!pending.length) return;
-  var observer = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in');
-      observer.unobserve(entry.target);
+    /* Reveal anything already in (or above) the viewport immediately, in this
+       same tick, so the first painted frame shows them fully — no flash. */
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var pending = [];
+    targets.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.92) el.classList.add('is-in');
+      else pending.push(el);
     });
-  }, {rootMargin:'0px 0px -12% 0px', threshold:0});
-  pending.forEach(function(el){ observer.observe(el); });
+
+    if (!pending.length) return;
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        observer.unobserve(entry.target);
+      });
+    }, {rootMargin:'0px 0px -12% 0px', threshold:0});
+    pending.forEach(function(el){ observer.observe(el); });
+  } catch (err) { showAll(); return; }
 
   /* If the reader turns on reduced-motion mid-visit, drop the effect and
      make sure every block is shown. */
@@ -389,6 +402,25 @@
       } else {
         ['tabindex', 'role', 'aria-label'].forEach(function(a){ stage.removeAttribute(a); });
       }
+    });
+  });
+})();
+
+
+/* Listen and watch: mark the player that is playing, and pause the others so
+   two narrations never talk over each other. */
+(function(){
+  'use strict';
+  var players = [].slice.call(document.querySelectorAll('.listen audio, .listen video'));
+  if (!players.length) return;
+  players.forEach(function(p){
+    var item = p.closest('.ls-item');
+    p.addEventListener('play', function(){
+      players.forEach(function(o){ if (o !== p && !o.paused) o.pause(); });
+      if (item) item.classList.add('is-playing');
+    });
+    ['pause', 'ended'].forEach(function(ev){
+      p.addEventListener(ev, function(){ if (item) item.classList.remove('is-playing'); });
     });
   });
 })();

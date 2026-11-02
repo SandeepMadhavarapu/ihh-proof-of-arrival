@@ -4,9 +4,12 @@ Everything below was executed in a real headless Chromium against the built site
 over HTTP. The scripts are in `qa/`. **The last section lists what still has not been
 tested, and by whom it needs to be.**
 
-## Latest full run — 31 October 2026 (branch `ws8-listen`, before merge)
+## Latest full run — 2 November 2026 (branch `ws10-ui-polish`, before merge)
 
 Run locally on Linux with Chromium; GitHub Actions CI runs the same suite on every pull request.
+This run adds a UI audit of all 21 pages at 320, 375, 430, 768, 1024, 1280, 1440 and 1920px, with
+motion on and with prefers-reduced-motion (336 page views): no sideways scroll, no console errors,
+layout shift under 0.02 on the home page and two profiles, Escape closes the phone menu.
 
 | Check | Result |
 |---|---|
@@ -18,7 +21,7 @@ Run locally on Linux with Chromium; GitHub Actions CI runs the same suite on eve
 | `python qa/secrets.py` | pass |
 | `python living/eval/run_eval.py` | pass, 0 false accepts |
 | `node qa/integrity.mjs .` | 150 checks pass |
-| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro; profile-factory | all pass (0 axe violations on 22 pages; 712 text runs meet contrast; every target at least 24×24; 318 WordPress checks; 35 Profile Factory checks) |
+| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro; profile-factory | all pass (0 axe violations on 22 pages; 706 text runs meet contrast; every target at least 24×24; 318 WordPress checks; 35 Profile Factory checks) |
 | Smoke test: 22 pages (and the 23-page public demonstration build) at 375px and 1280px | 0 console errors, broken links, anchors or images, no sideways scroll, 0 axe violations with every transcript open |
 | Listen media in the browser, all ten profiles | both MP3s load (duration read) and each caption track loads with its cues; the MP4s could not be played in this test browser, which is built without H.264 support: `ffprobe` confirms each is H.264 High + AAC LC with the index at the front of the file |
 | The ten WordPress Listen blocks, standalone at 375px and 1280px | 0 axe violations, no sideways scroll, no script |
@@ -141,7 +144,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**658 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival images, audio and video additional)**, against **2,869 KB for the current IHH homepage
+**663 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival images, audio and video additional)**, against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---

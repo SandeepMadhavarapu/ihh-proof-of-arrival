@@ -952,8 +952,8 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
  .portrait-card:hover img{box-shadow:0 16px 26px rgba(55,35,15,.16)}
 }
 @media(prefers-reduced-motion:no-preference){
- @keyframes gallery-arrival{from{transform:translateY(18px)}to{transform:translateY(0)}}
- .exhibit-enter{animation:gallery-arrival .75s cubic-bezier(.2,.65,.25,1) both}
+ @keyframes gallery-arrival{from{transform:translateY(12px)}to{transform:translateY(0)}}
+ .exhibit-enter{animation:gallery-arrival .45s cubic-bezier(.2,.65,.25,1) both}
 }
 @media print{.exhibit-enter{animation:none!important;transform:none!important}}
 
@@ -965,9 +965,9 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    (portrait, opening line, standfirst) is left out so the first painted
    frame of the page is always complete. */
 @media (prefers-reduced-motion:no-preference){
-  html.reveal-on .ihh-profile .rv{opacity:0;transform:translateY(20px);will-change:opacity,transform}
+  html.reveal-on .ihh-profile .rv{opacity:0;transform:translateY(12px);will-change:opacity,transform}
   html.reveal-on .ihh-profile .rv.is-in{opacity:1;transform:none;
-    transition:opacity .7s cubic-bezier(.2,.65,.25,1),transform .7s cubic-bezier(.2,.65,.25,1)}
+    transition:opacity .4s cubic-bezier(.2,.65,.25,1),transform .4s cubic-bezier(.2,.65,.25,1)}
 }
 @media print{html.reveal-on .ihh-profile .rv{opacity:1!important;transform:none!important}}
 
@@ -1139,15 +1139,41 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    squeezing it. Below 36rem wide (every phone) nothing changes. */
 main.profile-page{max-width:none}
 .profile-page .ihh-profile figure.anchor img{max-height:min(80vh,46rem)}
-@media (min-width:1024px){
-  /* Give the breadcrumb a uniform paper ground above the textured profile frame. */
-  .profile-page .crumb a{background:var(--paper)}
+@media (min-width:640px){
   /* Listen and watch: the two audio players stacked beside the vertical video */
   .ls-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:1.2rem 1.6rem}
   .ls-grid .ls-item:not(.ls-video){grid-column:1}
   .ls-grid .ls-video{grid-column:2;grid-row:1 / span 2}
   .ls-grid .ls-video video{max-width:340px}
+}
+@media (min-width:1024px){
+  /* Give the breadcrumb a uniform paper ground above the textured profile frame. */
+  .profile-page .crumb a{background:var(--paper)}
   /* keep a whole document on one laptop screen; the notes sit in columns below */
   .look-closer .lc-stage{max-width:min(40rem,58vh)}
   .look-closer .lc-stage.lc-zoomed{max-width:62rem}
+}
+
+/* ── WS10 polish: alignment, motion and transitions ──────────────────────
+   Layout fixes apply everywhere; every movement sits behind
+   prefers-reduced-motion:no-preference, and nothing is hidden by it. */
+/* Look closer index: the "n notes" line sits on one baseline across a row */
+.lc-card{display:flex;flex-direction:column}
+.lc-card-n{margin-top:auto;padding-top:.2rem}
+/* Headings break into balanced lines instead of leaving one word behind */
+main h1,main h2,main h3{text-wrap:balance}
+/* Listen: the player that is playing is marked (colour, not movement) */
+.ls-item.is-playing{border-top-color:var(--ink);background:var(--paper)}
+.ls-item.is-playing .ls-h{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  /* Page to page: a short cross-fade, the header stays put */
+  @view-transition{navigation:auto}
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
+  .site-head{view-transition-name:site-head}
+  /* Controls answer the pointer at one consistent speed */
+  a,.menu-btn,.lc-zoom,.ls-tr summary,.lc-spot summary,.lc-tr summary{transition:color .14s,background-color .14s,border-color .14s,box-shadow .14s}
+  /* Look closer: the note you jump to pulses once, and so does its marker */
+  @keyframes lc-pulse{from{box-shadow:0 0 0 0 rgba(140,43,27,.45)}to{box-shadow:0 0 0 14px rgba(140,43,27,0)}}
+  .lc-note:target,.lc-hs:target{animation:lc-pulse .5s ease-out 1}
+  .ls-item{transition:background-color .2s,border-color .2s}
 }
