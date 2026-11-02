@@ -1131,3 +1131,21 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 .ls-imgs,.ls-credit{font-size:.85rem;color:var(--muted)}
 .ls-credit{max-width:44rem;margin:1rem 0 0}
 @media print{.ls-grid{display:none}.ls-tr{border:0}.ls-tr>*{display:block}}
+
+/* ── Profile pages on tablets, laptops and desktops ──────────────────────
+   main{max-width:var(--measure)} kept every profile in a 36rem strip. The
+   profile fragment already carries its own reading column (.w, 40rem) and
+   wide frame (.wide, 62rem), so the page wrapper only needs to stop
+   squeezing it. Below 36rem wide (every phone) nothing changes. */
+main.profile-page{max-width:none}
+.profile-page .ihh-profile figure.anchor img{max-height:min(80vh,46rem)}
+@media (min-width:1024px){
+  /* Listen and watch: the two audio players stacked beside the vertical video */
+  .ls-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:1.2rem 1.6rem}
+  .ls-grid .ls-item:not(.ls-video){grid-column:1}
+  .ls-grid .ls-video{grid-column:2;grid-row:1 / span 2}
+  .ls-grid .ls-video video{max-width:340px}
+  /* keep a whole document on one laptop screen; the notes sit in columns below */
+  .look-closer .lc-stage{max-width:min(40rem,58vh)}
+  .look-closer .lc-stage.lc-zoomed{max-width:62rem}
+}
