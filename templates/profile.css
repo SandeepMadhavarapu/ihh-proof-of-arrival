@@ -40,7 +40,7 @@
 .ihh-profile .standfirst{font-size:1.14rem;line-height:1.55;margin:2rem auto 0;max-width:40rem;
   padding:0 1.15rem}
 .ihh-profile .doc{background:var(--p2);border:1px solid var(--rule);padding:1.2rem 1.3rem;margin:1.6rem 0}
-.ihh-profile .doc .label{font:700 .68rem/1 system-ui,sans-serif;letter-spacing:.14em;
+.ihh-profile .doc .label{font:700 .75rem/1 system-ui,sans-serif;letter-spacing:.14em;
   text-transform:uppercase;color:var(--acc);margin:0 0 .7rem}
 .ihh-profile .doc .deviation{font:400 .85rem/1.55 system-ui,sans-serif;color:var(--mut);
   border-left:3px solid var(--acc);padding-left:.9rem;margin:1rem 0 0}
@@ -63,8 +63,8 @@
 .ihh-profile .th{width:100%;height:auto;display:block;background:var(--p2);border:1px solid var(--rule)}
 .ihh-profile .ph-th{aspect-ratio:3/2;border-style:dashed;border-color:var(--acc);
   display:flex;align-items:center;justify-content:center;text-align:center;padding:.9rem}
-.ihh-profile .ph-th span{font:400 .72rem/1.5 system-ui,sans-serif;color:var(--mut)}
-.ihh-profile .kindmark{font:700 .66rem/1 system-ui,sans-serif;letter-spacing:.14em;
+.ihh-profile .ph-th span{font:400 .75rem/1.5 system-ui,sans-serif;color:var(--mut)}
+.ihh-profile .kindmark{font:700 .75rem/1 system-ui,sans-serif;letter-spacing:.14em;
   text-transform:uppercase;color:var(--mut);border:1px solid var(--rule);display:inline-block;
   padding:.4rem .6rem;margin:0 0 .4rem}
 .ihh-profile .missing{font:400 .76rem/1.5 system-ui,sans-serif;color:var(--acc);

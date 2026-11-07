@@ -32,6 +32,7 @@ from voices import render as voices_render  # noqa: E402
 from tools import media_sources  # noqa: E402
 from tools import artifacts  # noqa: E402
 from tools import narration  # noqa: E402
+from tools import imagesize  # noqa: E402
 
 E = html.escape
 NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
@@ -62,18 +63,15 @@ def strip_dark_mode(css_html):
 
 
 def with_image_sizes(frag, media_dir, name):
-    from PIL import Image
-
     def add(m):
         tag = m.group(0)
         if re.search(r"\swidth=", tag) or re.search(r"\sheight=", tag):
             return tag
         path = os.path.join(media_dir, html.unescape(m.group(1)))
-        if not os.path.isfile(path):
+        dims = imagesize.size(path) if os.path.isfile(path) else None
+        if not dims:
             return tag
-        with Image.open(path) as im:
-            w, h = im.size
-        return tag[:-1].rstrip("/ ") + f' width="{w}" height="{h}">'
+        return tag[:-1].rstrip("/ ") + f' width="{dims[0]}" height="{dims[1]}">'
     return re.sub(r'<img\b[^>]*\bsrc="media/' + re.escape(name) + r'/([^"]+)"[^>]*>', add, frag)
 
 
@@ -142,6 +140,17 @@ person on our team before it was added to the inductee&rsquo;s page.</p>
     with open(os.path.join(site, "new.html"), "w", encoding="utf-8", newline="\n") as f:
         f.write(out)
     print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
+
+
+def crumb(name, scripts, manifest, arts):
+    """Back link, plus links straight to this profile's Listen and Look closer sections."""
+    jumps = []
+    if manifest is not None and any(d["slug"] == name for d in scripts):
+        jumps.append('<a href="#listen">Listen and watch</a>')
+    jumps += [f'<a href="#lc-{a["id"]}">Look closer</a>' for a in arts if a["slug"] == name][:1]
+    on_page = (f'<span class="crumb-jump"><span class="crumb-k">On this page:</span> {" ".join(jumps)}</span>'
+               if jumps else "")
+    return f'<p class="crumb"><a href="inductees.html">&larr; All inductees</a>{on_page}</p>\n'
 
 
 def build_artifacts_page(site, head, foot, arts, names):
@@ -218,7 +227,7 @@ def main(root=ROOT, site=None, voices=None, preview=None):
                                           bool(index) or on, on)
         attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
         out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
-               + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
+               + crumb(name, scripts, manifest, arts)
                + frag + narration.site_section(name, scripts, manifest, frag) + artifacts.site_section(name, arts)
                + media + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:
