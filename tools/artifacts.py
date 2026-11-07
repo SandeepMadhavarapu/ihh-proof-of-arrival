@@ -237,8 +237,8 @@ def index_main(artifacts, names):
     return f'''<main id="main" class="wide look-index">
 
 <h1>Look closer</h1>
-<p class="lede">Real documents from the inductees&rsquo; lives: patents, a visa form and a
-citizenship declaration. Each one has numbered notes that explain what you are looking at, and every
+<p class="lede">A real document from the life of every inductee: two patents, a visa form, a
+citizenship declaration, a commission, sheet music, a book, a magazine page, a law and a coin. Each one has numbered notes that explain what you are looking at, and every
 note shows the source it comes from. {E(LABEL)}</p>
 
 <ul class="lc-cards">

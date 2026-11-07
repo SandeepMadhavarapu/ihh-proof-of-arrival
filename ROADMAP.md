@@ -25,8 +25,8 @@ Reported by team lead from sponsor meeting: IHH is open to considering a new web
 
 ## Status update — 7 November 2026
 
-All ten profiles are written and published on the demonstration site, with Look closer (four
-annotated documents) and Listen (narration for all ten). None of this changes the conditions above:
+All ten profiles are written and published on the demonstration site, with Look closer (an
+annotated document for each of the ten) and Listen (narration for all ten). None of this changes the conditions above:
 every profile still awaits named editorial sign-off, the AI-assisted search logs still need a
 team member's spot-check, and the WordPress handoff has still not been run on a real WordPress
 site.

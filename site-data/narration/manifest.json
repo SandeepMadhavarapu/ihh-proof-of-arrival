@@ -686,83 +686,83 @@
   },
   "hope-guide": {
    "audio": {
-    "bytes": 869773,
+    "bytes": 850755,
     "file": "audio/hope-guide.mp3",
-    "sha256": "2802972326c0246dd3cd78196ada0b6a90a493dc29169208d5aaba4c58b4c350"
+    "sha256": "6831baff20dc80fb01d5ad85aaecc7c986f0540c424264db3f2373dc3f10f35b"
    },
-   "duration_s": 108.681,
+   "duration_s": 106.301,
    "lines": [
     {
-     "end": 5.397,
+     "end": 5.896,
      "start": 0.3
     },
     {
-     "end": 10.286,
-     "start": 5.747
+     "end": 10.878,
+     "start": 6.246
     },
     {
-     "end": 17.207,
-     "start": 10.636
+     "end": 17.637,
+     "start": 11.228
     },
     {
-     "end": 29.748,
-     "start": 17.557
+     "end": 30.363,
+     "start": 17.987
     },
     {
-     "end": 43.949,
-     "start": 30.098
+     "end": 43.972,
+     "start": 30.713
     },
     {
-     "end": 45.68,
-     "start": 44.299
+     "end": 45.657,
+     "start": 44.322
     },
     {
-     "end": 60.403,
-     "start": 46.03
+     "end": 59.591,
+     "start": 46.007
     },
     {
-     "end": 69.368,
-     "start": 60.753
+     "end": 67.185,
+     "start": 59.941
     },
     {
-     "end": 72.086,
-     "start": 69.718
+     "end": 69.904,
+     "start": 67.535
     },
     {
-     "end": 77.429,
-     "start": 72.436
+     "end": 75.501,
+     "start": 70.254
     },
     {
-     "end": 79.648,
-     "start": 77.779
+     "end": 77.593,
+     "start": 75.851
     },
     {
-     "end": 86.691,
-     "start": 80.248
+     "end": 84.067,
+     "start": 78.193
     },
     {
-     "end": 88.359,
-     "start": 87.291
+     "end": 85.782,
+     "start": 84.667
     },
     {
-     "end": 94.619,
-     "start": 88.709
+     "end": 90.857,
+     "start": 86.132
     },
     {
-     "end": 98.823,
-     "start": 94.969
+     "end": 95.317,
+     "start": 91.207
     },
     {
-     "end": 103.615,
-     "start": 99.423
+     "end": 100.608,
+     "start": 95.917
     },
     {
-     "end": 108.081,
-     "start": 104.215
+     "end": 105.701,
+     "start": 101.208
     }
    ],
    "part": "guide",
-   "script_sha256": "089c2d37f5a21eaf011013f654f32c9f9c98c87aac8ac98c2623aff014474299",
+   "script_sha256": "d3ae008d0f62946d9cb4e62eee55d57826e41665fa5677d2ebf1d9b928a64d3a",
    "slug": "hope",
    "spoken": [
     "In March 1908 the Hope family crossed the Atlantic from England to Cleveland, Ohio.",
@@ -772,7 +772,7 @@
     "Hope went into vaudeville in 1922, worked up through partner acts and Broadway revues, and in 1928 struck out as a solo comedian — changing his first name to \"Bob.\"",
     "Hollywood made him a star.",
     "He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.",
-    "In 1997 the House of Representatives made him the first civilian ever named an honorary veteran of the United States armed forces.",
+    "In 1997 Congress made him the first civilian ever named an honorary veteran of the United States armed forces.",
     "Hope never took a citizenship oath of his own.",
     "Under the law of the time, a child became a citizen automatically when a parent was naturalised.",
     "As the record plainly states:",
@@ -786,39 +786,39 @@
   },
   "hope-short": {
    "audio": {
-    "bytes": 412316,
+    "bytes": 402703,
     "file": "audio/hope-short.mp3",
-    "sha256": "b5e4528324ebf4d5456c6f6d20d1aff69c0d1b1c25d4521284f8f468d5b2a231"
+    "sha256": "bb9f50724a797404591af23a3babfa34641cc600fdaad4ef41ef545184d8e302"
    },
-   "duration_s": 51.506,
+   "duration_s": 50.287,
    "lines": [
     {
-     "end": 6.651,
+     "end": 6.093,
      "start": 0.3
     },
     {
-     "end": 11.076,
-     "start": 7.001
+     "end": 10.623,
+     "start": 6.443
     },
     {
-     "end": 24.382,
-     "start": 11.426
+     "end": 23.117,
+     "start": 10.973
     },
     {
-     "end": 39.651,
-     "start": 24.732
+     "end": 37.898,
+     "start": 23.467
     },
     {
-     "end": 42.358,
-     "start": 40.001
+     "end": 40.93,
+     "start": 38.248
     },
     {
-     "end": 47.665,
-     "start": 42.708
+     "end": 46.365,
+     "start": 41.28
     },
     {
-     "end": 50.906,
-     "start": 48.015
+     "end": 49.687,
+     "start": 46.715
     }
    ],
    "part": "short",
@@ -838,8 +838,8 @@
     "Read the full story, with every source, on this page."
    ],
    "video": {
-    "bytes": 1065679,
-    "duration_s": 54.506,
+    "bytes": 1041268,
+    "duration_s": 53.287,
     "file": "video/hope-short.mp4",
     "height": 1920,
     "images": [
@@ -848,7 +848,7 @@
       "file": "hope-portrait-nbc.jpg"
      }
     ],
-    "sha256": "7363dd6209d1710b8c1964fed59db546ec63b950efaf4785e8964d903bc74c38",
+    "sha256": "ad2904bb449eab8e8e4f818da204eae1539b9774a34ca255588d3aaa93a10ecb",
     "width": 1080
    }
   },
