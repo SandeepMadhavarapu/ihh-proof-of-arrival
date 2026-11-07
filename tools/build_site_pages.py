@@ -32,6 +32,7 @@ from voices import render as voices_render  # noqa: E402
 from tools import media_sources  # noqa: E402
 from tools import artifacts  # noqa: E402
 from tools import narration  # noqa: E402
+from tools import imagesize  # noqa: E402
 
 E = html.escape
 NOTES_CSS = '<link rel="stylesheet" href="assets/margin-notes.css">\n'
@@ -59,6 +60,19 @@ def strip_dark_mode(css_html):
             depth += {"{": 1, "}": -1}.get(css_html[k], 0)
             k += 1
         i = k
+
+
+def with_image_sizes(frag, media_dir, name):
+    def add(m):
+        tag = m.group(0)
+        if re.search(r"\swidth=", tag) or re.search(r"\sheight=", tag):
+            return tag
+        path = os.path.join(media_dir, html.unescape(m.group(1)))
+        dims = imagesize.size(path) if os.path.isfile(path) else None
+        if not dims:
+            return tag
+        return tag[:-1].rstrip("/ ") + f' width="{dims[0]}" height="{dims[1]}">'
+    return re.sub(r'<img\b[^>]*\bsrc="media/' + re.escape(name) + r'/([^"]+)"[^>]*>', add, frag)
 
 
 def published_slugs(root):
@@ -128,6 +142,17 @@ person on our team before it was added to the inductee&rsquo;s page.</p>
     print(f"site/new.html ({len(items)} entr{'y' if len(items) == 1 else 'ies'})")
 
 
+def crumb(name, scripts, manifest, arts):
+    """Back link, plus links straight to this profile's Listen and Look closer sections."""
+    jumps = []
+    if manifest is not None and any(d["slug"] == name for d in scripts):
+        jumps.append('<a href="#listen">Listen and watch</a>')
+    jumps += [f'<a href="#lc-{a["id"]}">Look closer</a>' for a in arts if a["slug"] == name][:1]
+    on_page = (f'<span class="crumb-jump"><span class="crumb-k">On this page:</span> {" ".join(jumps)}</span>'
+               if jumps else "")
+    return f'<p class="crumb"><a href="inductees.html">&larr; All inductees</a>{on_page}</p>\n'
+
+
 def build_artifacts_page(site, head, foot, arts, names):
     shown = [a for a in arts if a["slug"] in names]  # never link to a page that is not published
     title = "Look closer | Immigrant Hall of Honor"
@@ -179,6 +204,9 @@ def main(root=ROOT, site=None, voices=None, preview=None):
         for f in os.listdir(os.path.join(base, name, "media", "web")):
             shutil.copy2(os.path.join(base, name, "media", "web", f), os.path.join(media_out, f))
         frag = frag.replace('src="media/web/', f'src="media/{name}/')
+        # Site only: give every profile image its real size, so the page keeps the image's space
+        # while it loads instead of jumping. (The WordPress blocks are left exactly as built.)
+        frag = with_image_sizes(frag, media_out, name)
         # The demo site is light-only (site.css sets color-scheme:light), so drop the profile's
         # own dark-mode rules here. The WordPress package in handover/ keeps them.
         frag = strip_dark_mode(frag)
@@ -199,7 +227,7 @@ def main(root=ROOT, site=None, voices=None, preview=None):
                                           bool(index) or on, on)
         attrs = voices_render.page_attrs(cfg, name) if (on or index) else ""
         out = (page_head + f'<main id="main" class="profile-page"{attrs}>\n'
-               + '<p class="crumb"><a href="inductees.html">&larr; All inductees</a></p>\n'
+               + crumb(name, scripts, manifest, arts)
                + frag + narration.site_section(name, scripts, manifest, frag) + artifacts.site_section(name, arts)
                + media + index + "\n</main>" + page_foot)
         with open(os.path.join(site, f"{name}.html"), "w", encoding="utf-8", newline="\n") as f:

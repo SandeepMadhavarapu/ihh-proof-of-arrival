@@ -302,7 +302,7 @@ the institution that holds it and gives that institution&rsquo;s own rights word
 body{{margin:0;font-family:Verdana,sans-serif;font-size:14px;line-height:1.4;color:#333;background:#fff;text-align:center}}
 h1,h2,h3,h4{{font-family:Impact,sans-serif;text-transform:uppercase;letter-spacing:2px}}
 p{{margin:0 0 24px}} ol,ul{{padding-left:60px}} blockquote{{font-size:11px;color:#999}}
-.host-chrome{{background:#222;color:#fff;padding:12px;font:11px/1.4 Verdana,sans-serif}}
+.host-chrome{{background:#222;color:#fff;padding:12px;font:12px/1.4 Verdana,sans-serif}}
 </style></head><body>
 <div class="host-chrome">Simulated WordPress theme &mdash; below is the pasted Custom HTML block</div>
 {out}

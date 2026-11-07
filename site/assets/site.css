@@ -226,7 +226,7 @@ section.hero:not(.arrival-hero) .lede::first-letter{
 
 /* the rule-flanked standing head */
 .kicker{
-  font:400 .74rem/1.5 var(--label);letter-spacing:.24em;text-transform:uppercase;
+  font:400 .75rem/1.5 var(--label);letter-spacing:.24em;text-transform:uppercase;
   color:var(--accent);margin:0 0 1.15rem;display:flex;align-items:center;gap:.9rem}
 .kicker::after{content:"";height:0;flex:1;min-width:1.5rem;
   border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);
@@ -323,13 +323,13 @@ section.hero:not(.arrival-hero) .cta{justify-content:center}
 .filters fieldset{border:0;margin:1.15rem 0 0;padding:0;display:flex;flex-wrap:wrap;
   gap:.45rem 1.15rem;align-items:center}
 .filters legend{
-  font:400 .7rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;
+  font:400 .75rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;
   color:var(--accent);padding:0;margin-bottom:.6rem;float:left;width:100%}
 .filters label{font-size:.9rem;display:inline-flex;align-items:center;gap:.45rem;
   min-height:30px;cursor:pointer}
 .filters input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent)}
 .f-search{display:block;margin:0}
-.f-search span{display:block;font:400 .7rem/1 var(--label);letter-spacing:.2em;
+.f-search span{display:block;font:400 .75rem/1 var(--label);letter-spacing:.2em;
   text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
 .f-search input{
   width:100%;font:400 1.02rem/1.4 var(--text);padding:.7rem .85rem;
@@ -370,11 +370,11 @@ section.hero:not(.arrival-hero) .cta{justify-content:center}
 .card .from{font:italic 400 .85rem/1.45 var(--text);color:var(--muted);margin:0 0 .75rem}
 .card .line{font:400 .93rem/1.58 var(--text);margin:0 0 1rem}
 .card .tag{
-  display:inline-block;font:400 .7rem/1 var(--label);letter-spacing:.16em;
+  display:inline-block;font:400 .75rem/1 var(--label);letter-spacing:.16em;
   text-transform:uppercase;background:var(--paper-3);color:var(--muted-strong);
   padding:.44rem .64rem;border:1px solid var(--rule);border-radius:0}
 .card .status{
-  display:block;font:400 .7rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
+  display:block;font:400 .75rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
   color:var(--accent);margin-top:.95rem;padding-top:.7rem;border-top:1px solid var(--rule)}
 .card .status.soon-t{color:var(--muted)}
 .card[hidden]{display:none}
@@ -385,7 +385,7 @@ section.hero:not(.arrival-hero) .cta{justify-content:center}
   background:var(--paper-2);
   box-shadow:inset 0 0 0 1px var(--paper-2),inset 0 0 0 2px var(--rule)}
 .story legend{
-  font:400 .74rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;
+  font:400 .75rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;
   color:var(--accent);padding:0 .6rem;background:var(--paper);
   border:1px solid var(--rule-strong)}
 .story legend{padding:.35rem .7rem}
@@ -612,7 +612,7 @@ section.vd-hero .lede{text-align:left}
 /* case-file index */
 .jump-cases{margin:2.6rem 0 0;padding:1rem 0;border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.2rem}
-.jump-lab{margin:0;font:400 .7rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.jump-lab{margin:0;font:400 .75rem/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 .jump-cases ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
 .jump-cases a{font:400 .86rem/1 var(--text);padding:.45rem 0;display:inline-block;min-height:24px}
 
@@ -627,7 +627,7 @@ section.vd-hero .lede{text-align:left}
 
 /* a case file */
 .case{margin:0 0 4rem;scroll-margin-top:4.5rem}
-.case-kick{margin:0 0 .3rem;font:400 .7rem/1.5 var(--label);letter-spacing:.2em;
+.case-kick{margin:0 0 .3rem;font:400 .75rem/1.5 var(--label);letter-spacing:.2em;
   text-transform:uppercase;color:var(--accent)}
 .case h2{margin:0 0 .5rem;font-size:2rem}
 .case-note{margin:0 0 2rem;font:italic 400 1rem/1.6 var(--text);color:var(--muted);
@@ -640,10 +640,10 @@ section.vd-hero .lede{text-align:left}
   position:relative}
 .cl-head{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;justify-content:space-between;
   margin:0 0 1rem}
-.cl-tag{font:400 .64rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;
+.cl-tag{font:400 .75rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;
   padding:.42rem .62rem;border:1px solid var(--rule-strong);color:var(--muted);background:var(--paper)}
 .cl-tag.live{color:var(--accent);border-color:var(--accent)}
-.cl-n{font:400 .68rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cl-n{font:400 .75rem/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .cl-text{margin:0 0 .7rem;padding:0 0 0 1.1rem;border-left:4px double var(--accent);
   font:400 1.18rem/1.5 var(--text)}
 .cl-where{margin:0 0 1.3rem;font:italic 400 .84rem/1.5 var(--text);color:var(--muted)}
@@ -652,7 +652,7 @@ section.vd-hero .lede{text-align:left}
 .cl .ev,.cl .cur{border-top:1px solid var(--rule);margin:0}
 .cl .ev>summary,.cl .cur>summary{
   cursor:pointer;list-style:none;padding:.95rem 0 .9rem;
-  font:400 .74rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;color:var(--ink);
+  font:400 .75rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;color:var(--ink);
   display:flex;align-items:center;gap:.6rem;min-height:44px}
 .cl .ev>summary::-webkit-details-marker,.cl .cur>summary::-webkit-details-marker{display:none}
 .cl .ev>summary::before,.cl .cur>summary::before{
@@ -671,7 +671,7 @@ section.vd-hero .lede{text-align:left}
 
 /* the verdict stamps */
 .vd{border:0;border-top:1px solid var(--rule);margin:0;padding:1.1rem 0 .3rem}
-.vd legend{font:400 .74rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
+.vd legend{font:400 .75rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
   color:var(--accent);padding:0;margin-bottom:.85rem}
 .vd-opts{display:flex;flex-wrap:wrap;gap:.7rem}
 .vd-opts label{display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
@@ -719,7 +719,7 @@ section.vd-hero .lede{text-align:left}
 .sheet-list .sl-claim{font:400 .95rem/1.5 var(--text)}
 .sheet-list .sl-case{font:400 .78rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);grid-column:1/-1}
-.sheet-list .sl-v{font:400 .72rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;
+.sheet-list .sl-v{font:400 .75rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase;
   white-space:nowrap}
 .sheet-list .sl-v.match{color:#2f5d3a}
 .sheet-list .sl-v.differ{color:var(--accent)}
@@ -742,7 +742,7 @@ section.vd-hero .lede{text-align:left}
 .stat-rail .y{font-size:1.55rem}
 .cl-head{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;
   justify-content:space-between;margin:0 0 1rem}
-h3.cl-n{margin:0;font:400 .68rem/1 var(--label);letter-spacing:.16em;
+h3.cl-n{margin:0;font:400 .75rem/1 var(--label);letter-spacing:.16em;
   text-transform:uppercase;color:var(--muted)}
 
 /* ── WCAG 2.2 SC 2.5.8 Target Size (Minimum) ────────────────────────────
@@ -799,7 +799,7 @@ section.hero:not(.arrival-hero) .lede::first-letter{font-size:3.35em;line-height
 .cite{border:0;border-top:1px solid var(--rule);margin:1.1rem 0 0;padding:1.1rem 0 .3rem}
 .js .cite{display:none}
 .js .cl[data-answered] .cite{display:block}
-.cite legend{font:400 .74rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
+.cite legend{font:400 .75rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
   color:var(--muted);padding:0;margin-bottom:.85rem}
 .cite-opts{display:grid;gap:.5rem}
 .cite-opts label{display:grid;grid-template-columns:auto 1fr;gap:.65rem;align-items:start;
@@ -828,11 +828,11 @@ section.hero:not(.arrival-hero) .lede::first-letter{font-size:3.35em;line-height
   font:400 .92rem/1.6 var(--text);text-align:left}
 .brief-map th,.brief-map td{padding:.95rem 1rem .95rem 0;vertical-align:top;
   border-bottom:1px solid var(--rule)}
-.brief-map thead th{font:400 .7rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
+.brief-map thead th{font:400 .75rem/1 var(--label);letter-spacing:.17em;text-transform:uppercase;
   color:var(--muted);border-bottom:3px solid var(--ink);padding-bottom:.7rem}
 .brief-map tbody th{font-weight:400;font-style:italic;width:30%;color:var(--ink)}
 .brief-map td:last-child{padding-right:0;white-space:nowrap;width:1%}
-.st{font:400 .68rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase}
+.st{font:400 .75rem/1 var(--label);letter-spacing:.14em;text-transform:uppercase}
 .st.done{color:#2f5d3a}.st.part{color:var(--gild)}.st.todo{color:var(--accent)}
 .st.no{color:var(--muted)}
 
@@ -843,7 +843,7 @@ main.wide .brief-map{max-width:none}
   .brief-map tr{border-bottom:3px double var(--rule-strong);padding:.9rem 0}
   .brief-map th,.brief-map td{border:0;padding:.2rem 0}
   .brief-map tbody th{width:auto}
-  .brief-map td:last-child{width:auto;padding-top:.5rem}
+  .brief-map td:last-child{width:auto;padding-top:.5rem;white-space:normal;line-height:1.5}
 }
 
 /* the featured exhibit on the home page */
@@ -873,7 +873,7 @@ main.wide>section.frame-note>p{max-width:none;margin-left:0;margin-right:0}
    Every evidence item declares what KIND of thing it is, so a visitor can
    tell a quotation from our own inference from a source we never opened. */
 .ev-t{margin:0 0 .4rem!important;font:600 .98rem/1.4 var(--text)}
-.cl .ev-list .ev-t span{display:inline-block;font:400 .6rem/1 var(--label);
+.cl .ev-list .ev-t span{display:inline-block;font:400 .75rem/1 var(--label);
   letter-spacing:.14em;text-transform:uppercase;padding:.34rem .5rem;margin-right:.5rem;
   border:1px solid currentColor;vertical-align:.12em;white-space:nowrap}
 .tag-record{color:var(--muted)}
@@ -927,7 +927,7 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 .museum-home .feature{border-top:3px solid var(--accent);padding:2.5rem;background:var(--paper-2)}
 .museum-home .feature h2{font-size:2.7rem;margin:.5rem 0 1rem}.museum-home .feature .sub{max-width:48rem}
 @media(max-width:850px){.museum-home .arrival-hero{gap:2rem}.arrival-hero h1{font-size:3rem}.site-head .brand .wordmark{letter-spacing:.04em}.portrait-grid{gap:1rem}}
-@media(max-width:620px){main.museum-home{padding-top:2rem}.museum-home .arrival-hero{grid-template-columns:1fr;gap:2rem;padding-bottom:2rem}.arrival-hero h1{max-width:15ch;font-size:3.1rem}.arrival-hero .kicker{margin-bottom:1rem}.hero-note{margin-top:1.4rem}.portrait-pair img:nth-child(2){margin-top:2.5rem}.collection-line{margin-bottom:2.5rem;justify-content:flex-start}.collection-line span:first-child{flex-basis:100%}.section-heading{display:block}.section-heading h2{font-size:2rem}.portrait-grid{grid-template-columns:1fr}.portrait-card{display:grid;grid-template-columns:40% 1fr;gap:.3rem 1.1rem;align-content:center}.portrait-card img{grid-row:1/4;aspect-ratio:4/5.25;margin:0}.portrait-card h3{font-size:1.35rem}.portrait-card .portrait-category{align-self:end}.museum-home .feature{padding:1.5rem}.museum-home .feature h2{font-size:2rem}.site-head .brand .wordmark{max-width:16rem;line-height:1.25}.site-head .motto{font-size:.58rem}}
+@media(max-width:620px){main.museum-home{padding-top:2rem}.museum-home .arrival-hero{grid-template-columns:1fr;gap:2rem;padding-bottom:2rem}.arrival-hero h1{max-width:15ch;font-size:3.1rem}.arrival-hero .kicker{margin-bottom:1rem}.hero-note{margin-top:1.4rem}.portrait-pair img:nth-child(2){margin-top:2.5rem}.collection-line{margin-bottom:2.5rem;justify-content:flex-start}.collection-line span:first-child{flex-basis:100%}.section-heading{display:block}.section-heading h2{font-size:2rem}.portrait-grid{grid-template-columns:1fr}.portrait-card{display:grid;grid-template-columns:40% 1fr;gap:.3rem 1.1rem;align-content:center}.portrait-card img{grid-row:1/4;aspect-ratio:4/5.25;margin:0}.portrait-card h3{font-size:1.35rem}.portrait-card .portrait-category{align-self:end}.museum-home .feature{padding:1.5rem}.museum-home .feature h2{font-size:2rem}.site-head .brand .wordmark{max-width:16rem;line-height:1.25}.site-head .motto{font-size:.75rem}}
 .card>.soon{padding:1.4rem 1.3rem;background:var(--paper-2);border:1px solid var(--rule);position:relative}
 .inductee-portrait{width:calc(100% + 2.6rem);margin:-1.4rem -1.3rem 1.2rem}
 .inductee-portrait[src*="james-naismith"]{object-position:center top}
@@ -952,8 +952,8 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
  .portrait-card:hover img{box-shadow:0 16px 26px rgba(55,35,15,.16)}
 }
 @media(prefers-reduced-motion:no-preference){
- @keyframes gallery-arrival{from{transform:translateY(18px)}to{transform:translateY(0)}}
- .exhibit-enter{animation:gallery-arrival .75s cubic-bezier(.2,.65,.25,1) both}
+ @keyframes gallery-arrival{from{transform:translateY(12px)}to{transform:translateY(0)}}
+ .exhibit-enter{animation:gallery-arrival .45s cubic-bezier(.2,.65,.25,1) both}
 }
 @media print{.exhibit-enter{animation:none!important;transform:none!important}}
 
@@ -965,9 +965,9 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    (portrait, opening line, standfirst) is left out so the first painted
    frame of the page is always complete. */
 @media (prefers-reduced-motion:no-preference){
-  html.reveal-on .ihh-profile .rv{opacity:0;transform:translateY(20px);will-change:opacity,transform}
+  html.reveal-on .ihh-profile .rv{opacity:0;transform:translateY(12px);will-change:opacity,transform}
   html.reveal-on .ihh-profile .rv.is-in{opacity:1;transform:none;
-    transition:opacity .7s cubic-bezier(.2,.65,.25,1),transform .7s cubic-bezier(.2,.65,.25,1)}
+    transition:opacity .4s cubic-bezier(.2,.65,.25,1),transform .4s cubic-bezier(.2,.65,.25,1)}
 }
 @media print{html.reveal-on .ihh-profile .rv{opacity:1!important;transform:none!important}}
 
@@ -1013,7 +1013,7 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 .ms-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:1.4rem}
 .ms-item{background:var(--paper-2);border:1px solid var(--rule);border-top:3px solid var(--ink);padding:1.1rem 1.2rem}
 .ms-item.ms-placeholder{border-style:dashed;border-top-style:dashed}
-.ms-kind{margin:0 0 .4rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.ms-kind{margin:0 0 .4rem;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .ms-ph{display:inline-block;margin-left:.6rem;padding:.1rem .45rem;border:1px dashed var(--accent);
   letter-spacing:.06em;text-transform:none;color:var(--ink);background:var(--paper)}
 .ms-title{margin:0 0 .4rem;font-size:1.15rem;line-height:1.3}
@@ -1045,7 +1045,7 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    thing works with no script; site.js only adds the zoom toggle. */
 .look-closer{max-width:62rem;margin:3rem auto 0;padding:2rem 1.15rem 0;border-top:3px solid var(--ink)}
 .look-closer h2{margin:0 0 .5rem}
-.lc-kick,.lc-card-k{margin:0 0 .3rem;font:400 .72rem/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.lc-kick,.lc-card-k{margin:0 0 .3rem;font:400 .75rem/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 .lc-lede{max-width:44rem;color:var(--muted);margin:0 0 .8rem}
 .lc-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.2rem;margin:0 0 .8rem;font-size:.9rem}
 .lc-tools a{display:inline-block;min-height:24px;padding:3px 0}
@@ -1084,7 +1084,7 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
 .lc-back a,.lc-spot a,.lc-ev a{display:inline-block;min-height:24px}
 .lc-spot{margin:1.6rem 0 0;padding:1rem 1.2rem;border:2px solid var(--accent);background:var(--paper)}
 .lc-spot summary{font-weight:600}
-.lc-spot-k{display:inline-block;margin-right:.4rem;font:400 .72rem/1.3 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.lc-spot-k{display:inline-block;margin-right:.4rem;font:400 .75rem/1.3 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 .lc-spot p{margin:.7rem 0 0}
 .lc-tr{margin:1rem 0 0;padding:.8rem 1.2rem;border:1px solid var(--rule);background:var(--paper-2)}
 .lc-trn{font-size:.85rem;color:var(--muted)}
@@ -1110,7 +1110,7 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    Native <audio>/<video> controls, captions and a transcript; no script. */
 .listen{max-width:62rem;margin:3rem auto 0;padding:2rem 1.15rem 0;border-top:3px solid var(--ink)}
 .listen h2{margin:0 0 .5rem}
-.ls-kick{margin:0 0 .3rem;font:400 .72rem/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.ls-kick{margin:0 0 .3rem;font:400 .75rem/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
 .ls-label{display:inline-block;margin:.2rem 0 .8rem;padding:.3rem .7rem;background:var(--ink);color:var(--paper);
   font:600 .82rem/1.4 var(--label);letter-spacing:.04em}
 .ls-lede{max-width:44rem;color:var(--muted);margin:0 0 1rem}
@@ -1139,15 +1139,52 @@ main.museum-home{max-width:76rem;padding-top:3.5rem}
    squeezing it. Below 36rem wide (every phone) nothing changes. */
 main.profile-page{max-width:none}
 .profile-page .ihh-profile figure.anchor img{max-height:min(80vh,46rem)}
-@media (min-width:1024px){
-  /* Give the breadcrumb a uniform paper ground above the textured profile frame. */
-  .profile-page .crumb a{background:var(--paper)}
+@media (min-width:640px){
   /* Listen and watch: the two audio players stacked beside the vertical video */
   .ls-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:1.2rem 1.6rem}
   .ls-grid .ls-item:not(.ls-video){grid-column:1}
   .ls-grid .ls-video{grid-column:2;grid-row:1 / span 2}
   .ls-grid .ls-video video{max-width:340px}
+}
+@media (min-width:1024px){
+  /* Give the breadcrumb a uniform paper ground above the textured profile frame. */
+  .profile-page .crumb a{background:var(--paper)}
   /* keep a whole document on one laptop screen; the notes sit in columns below */
   .look-closer .lc-stage{max-width:min(40rem,58vh)}
   .look-closer .lc-stage.lc-zoomed{max-width:62rem}
 }
+
+/* ── WS10 polish: alignment, motion and transitions ──────────────────────
+   Layout fixes apply everywhere; every movement sits behind
+   prefers-reduced-motion:no-preference, and nothing is hidden by it. */
+/* Look closer index: the "n notes" line sits on one baseline across a row */
+.lc-card{display:flex;flex-direction:column}
+.lc-card-n{margin-top:auto;padding-top:.2rem}
+/* Headings break into balanced lines instead of leaving one word behind */
+main h1,main h2,main h3{text-wrap:balance}
+/* Listen: the player that is playing is marked (colour, not movement) */
+.ls-item.is-playing{border-top-color:var(--ink);background:var(--paper)}
+.ls-item.is-playing .ls-h{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  /* Page to page: a short cross-fade, the header stays put */
+  @view-transition{navigation:auto}
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
+  .site-head{view-transition-name:site-head}
+  /* Controls answer the pointer at one consistent speed */
+  a,.menu-btn,.lc-zoom,.ls-tr summary,.lc-spot summary,.lc-tr summary{transition:color .14s,background-color .14s,border-color .14s,box-shadow .14s}
+  /* Look closer: the note you jump to pulses once, and so does its marker */
+  @keyframes lc-pulse{from{box-shadow:0 0 0 0 rgba(140,43,27,.45)}to{box-shadow:0 0 0 14px rgba(140,43,27,0)}}
+  .lc-note:target,.lc-hs:target{animation:lc-pulse .5s ease-out 1}
+  .ls-item{transition:background-color .2s,border-color .2s}
+}
+/* Profile pages: jump straight to Listen and Look closer from the top */
+.profile-page .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem 1.4rem}
+.crumb-jump{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.2rem .9rem}
+.crumb-k{color:var(--muted)}
+/* Home: three ways in */
+.ways-in{margin-top:2.4rem}
+.ways-in .three h3{margin-top:0}
+.ways-in .three p+p{margin-top:.6rem}
+/* inline-flex drops the space before a trailing arrow; put it back */
+.text-link{gap:.35em}
+.profile-page .crumb .crumb-k{background:var(--paper)}
