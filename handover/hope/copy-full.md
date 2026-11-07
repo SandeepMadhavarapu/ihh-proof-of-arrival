@@ -27,7 +27,7 @@ Hollywood made him a star. After a 1934 short and *The Big Broadcast of 1938*, h
 
 In 1941 Hope entertained troops at an air base in California, joined the USO, and never really stopped. He took his radio show overseas in 1943, began his Christmas shows for the troops in 1948, and performed for American servicemen and women through the Korean War, Vietnam, and the Gulf War.
 
-The country noticed. The armed forces named him an honorary "Four Star Hero" in 1992 and awarded him the Distinguished Service Medal in 1995, and in 1997 the House of Representatives made him the first civilian ever named an honorary veteran of the United States armed forces.
+The country noticed. The armed forces named him an honorary "Four Star Hero" in 1992 and awarded him the Distinguished Service Medal in 1995, and in 1997 Congress made him the first civilian ever named an honorary veteran of the United States armed forces.
 
 ## American by his father's oath
 

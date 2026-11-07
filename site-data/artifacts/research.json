@@ -1,6 +1,6 @@
 {
  "_note": "Look closer: annotated artifacts. Every factual statement in a hotspot is backed by an exact span from (a) 'artifact' = this transcription of the artifact itself, (b) 'related' = the transcription of a related page of the same record, or (c) 'profile' = the inductee's verified copy.md. tools/artifacts.py checks every span and every name, number and date before building. Annotations were drafted with AI and checked against the sources listed.",
- "researched_on": "2026-10-30",
+ "researched_on": "2026-10-30; 2026-11-07 (six further artifacts)",
  "researcher": "Claude (AI), for team review",
  "artifacts": [
   {
@@ -750,6 +750,1043 @@
    },
    "conflicts": [],
    "not_retrieved": []
+  },
+  {
+   "id": "albright-commission-1997",
+   "slug": "albright",
+   "title": "Commission appointing Madeleine Korbel Albright Secretary of State, 23 January 1997",
+   "holder": "National Museum of American Diplomacy, U.S. Department of State (accession 2012.0022.05)",
+   "item_url": "https://diplomacy.state.gov/items/secretary-albrights-commission/",
+   "identifier": "Accession Number 2012.0022.05",
+   "download_url": "https://diplomacy.state.gov/wp-content/uploads/2022/10/2012.0022.05-2d-26-Albright-commission_Thumbnail-2.jpg",
+   "image": "albright-1997-commission.jpg",
+   "image_from": "The museum's downloadable image (already in inductees/albright/media/web, viewed 2026-10-15), resized to 1300 px",
+   "page_shown": "The single sheet (the museum describes it as a duplicate of the original commission)",
+   "credit": "Secretary Albright's Commission, 1997. National Museum of American Diplomacy, U.S. Department of State (accession 2012.0022.05).",
+   "rights": {
+    "source_url": "https://diplomacy.state.gov/items/secretary-albrights-commission/",
+    "exact_span": "This image is in the public domain and no permission is required to use it.",
+    "qualifier_span": "Please credit the National Museum of American Diplomacy as the original source",
+    "status": "public domain (holding museum's statement)",
+    "checked": "2026-10-15"
+   },
+   "alt": "1997 commission in calligraphy naming Madeleine Korbel Albright Secretary of State, signed by Bill Clinton.",
+   "transcription": "William Jefferson Clinton\nPresident of the United States of America,\nTo all who shall see these presents, Greeting:\nKnow ye, that reposing special trust and confidence in the Patriotism, Integrity and Abilities of Madeleine Korbel Albright, of the District of Columbia, I have nominated, and, by and with the advice and consent of the Senate, do appoint her Secretary of State, and do authorize and empower her to execute and fulfil the duties of that Office according to law, and to have and to hold the said Office, with all the powers, privileges and emoluments to the same of right appertaining, unto her the said Madeleine Korbel Albright, during the pleasure of the President of the United States, for the time being.\nIn testimony whereof, I have caused these Letters to be made Patent, and the Seal of the United States to be hereunto affixed.\nDone at the City of Washington this twenty third day of January, in the year of our Lord one thousand nine hundred and ninety seven, and of the Independence of the United States of America the two hundred and twenty-first.\nBy the President: [signature] Acting Secretary of State.\n[Signed at right:] William J Clinton\n[Embossed seal at lower left]",
+   "transcription_note": "Calligraphy transcribed as written, including the spelling 'fulfil'. The ruled lines that fill the spaces around the names and dates are left out. Signatures are marked where they appear.",
+   "related_title": "The museum's record for the item",
+   "related_text": "Secretary Albright’s Commission. Washington, D.C. 1997. Duplicate of the original appointment commission for Secretary of State Madeleine Albright, dated January 23, 1997 and signed by President Bill Clinton and Acting Secretary of State Peter Tarnoff. Source/Credit: Transfer from the Office of Presidential Appointments, Department of State. Accession Number: 2012.0022.05",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 17,
+      "y": 12,
+      "w": 66,
+      "h": 15
+     },
+     "region_note": "Calligraphic heading: William Jefferson Clinton, President",
+     "title": "Issued by the President",
+     "text": "The commission speaks in the name of William Jefferson Clinton, President of the United States of America, and is addressed to all who shall see these presents.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "William Jefferson Clinton\nPresident of the United States of America,"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "To all who shall see these presents, Greeting:"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 7,
+      "y": 35.5,
+      "w": 45,
+      "h": 3
+     },
+     "region_note": "Her name, first time: Madeleine Korbel Albright",
+     "title": "Her full name",
+     "text": "It names her Madeleine Korbel Albright, of the District of Columbia. Korbel was the family name she was born with: she was born Marie Jean Korbel in Prague.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Madeleine Korbel Albright, of the District of Columbia"
+      },
+      {
+       "source": "profile",
+       "exact_span": "She was born Marie Jean \"Madlenka\" Korbel in Prague"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 54,
+      "y": 38.6,
+      "w": 21,
+      "h": 3.2
+     },
+     "region_note": "Line naming the office: Secretary of State",
+     "title": "Nominated, confirmed, appointed",
+     "text": "The President nominated her, the Senate gave its advice and consent, and he appointed her Secretary of State.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "President of the United States of America"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "I have nominated, and, by and with the advice and consent of the Senate, do appoint her Secretary of State"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 21,
+      "y": 60.5,
+      "w": 72,
+      "h": 8.5
+     },
+     "region_note": "Dating clause: twenty third day of January",
+     "title": "The date",
+     "text": "The date is written out in words: the twenty third day of January, nineteen ninety seven. On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State, the first woman to hold the job.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "this twenty third day of January, in the year of our Lord one thousand nine hundred and ninety seven"
+      },
+      {
+       "source": "profile",
+       "exact_span": "On 23 January 1997 she was sworn in as the sixty-fourth Secretary of State — the first woman to hold the job."
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 30,
+      "y": 74,
+      "w": 58,
+      "h": 11.5
+     },
+     "region_note": "Signatures: Tarnoff at left, Clinton at right",
+     "title": "Two signatures",
+     "text": "President Bill Clinton signed at the right. At the left, under By the President, is the signature of the Acting Secretary of State, Peter Tarnoff. The museum describes this sheet as a duplicate of the original appointment commission.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "By the President: [signature] Acting Secretary of State."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "[Signed at right:] William J Clinton"
+      },
+      {
+       "source": "related",
+       "exact_span": "Duplicate of the original appointment commission for Secretary of State Madeleine Albright, dated January 23, 1997 and signed by President Bill Clinton and Acting Secretary of State Peter Tarnoff."
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 0,
+      "y": 64,
+      "w": 21,
+      "h": 21
+     },
+     "region_note": "Embossed seal at lower left",
+     "title": "The seal",
+     "text": "The raised white circle is an embossed seal. The text explains it: the President had these Letters made Patent, with the Seal of the United States fixed to them.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "President of the United States of America"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "I have caused these Letters to be made Patent, and the Seal of the United States to be hereunto affixed."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "[Embossed seal at lower left]"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "The commission counts years in two ways. Which year of American independence does it give?",
+    "answer": "The two hundred and twenty-first, written out at the end of the date.",
+    "hotspot": 4,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "of the Independence of the United States of America the two hundred and twenty-first"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": [
+    "The museum offers only a 1600 px image; the original commission (of which this is described as a duplicate) was not examined."
+   ]
+  },
+  {
+   "id": "berlin-alexanders-ragtime-band-1911",
+   "slug": "berlin",
+   "title": "Alexander's Ragtime Band, sheet music cover, 1911",
+   "holder": "Duke University Libraries and Library of Congress (scan on Wikimedia Commons)",
+   "item_url": "https://commons.wikimedia.org/wiki/File:Alexander%27s_Ragtime_Band_1.jpeg",
+   "identifier": "Library of Congress item 2023791388 (as cited by the file's source)",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Alexander%27s_Ragtime_Band_1.jpeg/1920px-Alexander%27s_Ragtime_Band_1.jpeg",
+   "image": "berlin-1911-alexanders-ragtime-band-cover.jpg",
+   "image_from": "Wikimedia Commons 1920 px rendering of the scan (page 1 of 5), viewed 2026-11-07, resized to 1150 px",
+   "page_shown": "Front cover (page 1 of 5)",
+   "credit": "Irving Berlin, Alexander's Ragtime Band (New York: Ted Snyder Co., 1911), cover. Scan from Duke University Libraries and the Library of Congress, via Wikimedia Commons.",
+   "rights": {
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alexander%27s_Ragtime_Band_1.jpeg",
+    "exact_span": "This work is in the public domain in the United States because it was published (or registered with the U.S. Copyright Office) before January 1, 1931.",
+    "status": "public domain in the United States",
+    "checked": "2026-11-07"
+   },
+   "alt": "1911 sheet music cover: Alexander's Ragtime Band by Irving Berlin, a band playing in a round bandstand.",
+   "transcription": "SUCCESSFULLY INTRUDUCED BY EMMA CARUS\n[Stamped in purple:] LEISTER\nALEXANDER'S RAGTIME BAND\nBY IRVING BERLIN\n[Drawing: a conductor leads a band in a round bandstand among trees]\n[Round photograph, captioned:] GERTRUDE FISKE\nTED SNYDER Co. MUSIC PUBLISHERS 112 WEST 38 St. NEW YORK.\n[Signed in the drawing, lower left:] Frew.\n[At the right edge:] 5",
+   "transcription_note": "Printed words transcribed as they appear, including the misspelling INTRUDUCED. LEISTER is a stamp added later, probably by an owner; we do not know who.",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 12,
+      "y": 7,
+      "w": 76,
+      "h": 23
+     },
+     "region_note": "Title lettering",
+     "title": "The song",
+     "text": "Alexander's Ragtime Band. In 1911 this song made Berlin famous on both sides of the Atlantic.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "ALEXANDER'S RAGTIME BAND"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "BY IRVING BERLIN"
+      },
+      {
+       "source": "profile",
+       "exact_span": "In 1911 \"Alexander's Ragtime Band\" made him famous on both sides of the Atlantic."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 22,
+      "y": 32.5,
+      "w": 50,
+      "h": 3.5
+     },
+     "region_note": "BY IRVING BERLIN",
+     "title": "The songwriter",
+     "text": "Irving Berlin was born Israel Baline in the Russian Empire in 1888 and came to America as a child refugee. He kept the name Berlin after a printer set it on his first sheet music as I. Berlin.",
+     "evidence": [
+      {
+       "source": "profile",
+       "exact_span": "Irving Berlin was born Israel Baline in the Russian Empire in 1888 and came to America as a child refugee"
+      },
+      {
+       "source": "profile",
+       "exact_span": "A printer set his name on the sheet music as \"I. Berlin,\" and he kept it."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 10,
+      "y": 1,
+      "w": 76,
+      "h": 5.5
+     },
+     "region_note": "SUCCESSFULLY INTRUDUCED BY EMMA CARUS",
+     "title": "Introduced by",
+     "text": "The cover credits Emma Carus with introducing the song, and the word is misspelt on the cover itself.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "SUCCESSFULLY INTRUDUCED BY EMMA CARUS"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 36,
+      "y": 37,
+      "w": 30,
+      "h": 28
+     },
+     "region_note": "Conductor and band in the bandstand",
+     "title": "The band",
+     "text": "The drawing shows a conductor leading his band in a round bandstand among trees.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "[Drawing: a conductor leads a band in a round bandstand among trees]"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 36,
+      "y": 71,
+      "w": 27,
+      "h": 22
+     },
+     "region_note": "Round photograph captioned GERTRUDE FISKE",
+     "title": "The photograph",
+     "text": "The round photograph is captioned Gertrude Fiske.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "[Round photograph, captioned:] GERTRUDE FISKE"
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 37,
+      "y": 93,
+      "w": 22,
+      "h": 5.5
+     },
+     "region_note": "Publisher's label",
+     "title": "The publisher",
+     "text": "The publisher was Ted Snyder Co., music publishers, at 112 West 38 St., New York.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "TED SNYDER Co. MUSIC PUBLISHERS 112 WEST 38 St. NEW YORK."
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "One word on this cover is spelt wrong. Can you find it?",
+    "answer": "INTRUDUCED, at the top left. It should say introduced.",
+    "hotspot": 3,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "SUCCESSFULLY INTRUDUCED BY"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": [
+    "The Library of Congress and Duke pages could not be opened from the research environment (automated access refused); rights wording is the Wikimedia Commons statement for this file.",
+    "The full-resolution original (3281 px) was refused by Wikimedia's rate limit; the 1920 px rendering was used."
+   ]
+  },
+  {
+   "id": "cruz-quarter-2024",
+   "slug": "cruz",
+   "title": "Celia Cruz quarter, American Women Quarters Program, 2024 (reverse)",
+   "holder": "United States Mint (image on Wikimedia Commons)",
+   "item_url": "https://commons.wikimedia.org/wiki/File:2024_Celia_Cruz_Womens_Quarter.jpg",
+   "identifier": "2024 American Women Quarters Program, Celia Cruz",
+   "download_url": "https://commons.wikimedia.org/wiki/File:2024_Celia_Cruz_Womens_Quarter.jpg",
+   "image": "cruz-2024-quarter-reverse.jpg",
+   "image_from": "The Mint image already in inductees/cruz/media/web (viewed 2026-10-15), resized to 1150 px",
+   "page_shown": "Reverse (tails) of the coin",
+   "credit": "Celia Cruz quarter (reverse), 2024. United States Mint; design by Phebe Hemphill.",
+   "rights": {
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024_Celia_Cruz_Womens_Quarter.jpg",
+    "exact_span": "As a work of the U.S. federal government, the image is in the public domain in the United States.",
+    "qualifier_span": "This image is a work of the United States Department of the Treasury",
+    "status": "U.S. government work",
+    "checked": "2026-11-07"
+   },
+   "alt": "2024 quarter showing Celia Cruz laughing with a microphone, beside the word AZÚCAR.",
+   "transcription": "UNITED STATES OF AMERICA\n¡AZÚCAR!\nE PLURIBUS UNUM\n25¢\nCELIA CRUZ\nPH\n[Design: Cruz, laughing, her hair piled high, holds a microphone in her raised right hand]",
+   "transcription_note": "Inscriptions on the coin's reverse, in the order they read. The bracketed line describes the design and is ours.",
+   "related_title": "The file's description on Wikimedia Commons (text from the United States Mint)",
+   "related_text": "The reverse (tails) features a dynamic depiction of Celia Cruz flashing her dazzling smile while performing in a rumba style dress. Her signature catchphrase “¡AZÚCAR!” is inscribed on the right. Date 20 July 2023 Source https://www.usmint.gov/coins/coin-medal-programs/american-women-quarters/celia-cruz Author Phebe Hemphill",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 42,
+      "y": 5,
+      "w": 38,
+      "h": 13
+     },
+     "region_note": "STATES OF AMERICA around the rim",
+     "title": "The country",
+     "text": "UNITED STATES OF AMERICA runs around the rim. Celia Cruz left Cuba on tour in 1960 and never went back.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "UNITED STATES OF AMERICA"
+      },
+      {
+       "source": "profile",
+       "exact_span": "Celia Cruz left Cuba on tour in 1960 and never went back."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 22,
+      "y": 8,
+      "w": 30,
+      "h": 37
+     },
+     "region_note": "Cruz's face and piled-up hair",
+     "title": "Performing",
+     "text": "The design shows Cruz flashing her smile while performing, in a rumba style dress.",
+     "evidence": [
+      {
+       "source": "related",
+       "exact_span": "a dynamic depiction of Celia Cruz flashing her dazzling smile while performing in a rumba style dress"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 51,
+      "y": 20,
+      "w": 22,
+      "h": 11
+     },
+     "region_note": "¡AZÚCAR! along the right",
+     "title": "Her cry",
+     "text": "¡Azúcar! means sugar. It was her signature catchphrase, and it is inscribed on the right of the coin.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "¡AZÚCAR!"
+      },
+      {
+       "source": "related",
+       "exact_span": "Her signature catchphrase “¡AZÚCAR!” is inscribed on the right."
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 5,
+      "y": 34,
+      "w": 17,
+      "h": 20
+     },
+     "region_note": "Raised hand holding a microphone",
+     "title": "The microphone",
+     "text": "She holds a microphone in her raised right hand, mid-song.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "holds a microphone in her raised right hand"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 52,
+      "y": 34,
+      "w": 26,
+      "h": 22
+     },
+     "region_note": "E PLURIBUS UNUM and 25¢",
+     "title": "An everyday coin",
+     "text": "25¢: this is a quarter for everyday use. In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "E PLURIBUS UNUM\n25¢"
+      },
+      {
+       "source": "profile",
+       "exact_span": "In 2024 the United States Mint put her on a quarter as part of its American Women Quarters program."
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 25,
+      "y": 76,
+      "w": 55,
+      "h": 20
+     },
+     "region_note": "CELIA CRUZ along the bottom",
+     "title": "Her name",
+     "text": "Her name runs along the bottom. NBC News reported that she was the first Afro-Latina to appear on a U.S. coin.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "CELIA CRUZ"
+      },
+      {
+       "source": "profile",
+       "exact_span": "NBC News reported that she was the first Afro-Latina to appear on a U.S. coin."
+      }
+     ]
+    },
+    {
+     "n": 7,
+     "region": {
+      "x": 87,
+      "y": 61,
+      "w": 7,
+      "h": 5
+     },
+     "region_note": "Designer's initials PH",
+     "title": "The designer",
+     "text": "PH are the initials of the designer, Phebe Hemphill.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "CELIA CRUZ\nPH"
+      },
+      {
+       "source": "related",
+       "exact_span": "Author Phebe Hemphill"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Coin designers often sign their work. Can you find the designer's initials?",
+    "answer": "PH, at the right edge just below the exclamation mark.",
+    "hotspot": 7,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "CELIA CRUZ\nPH"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": [
+    "usmint.gov refuses automated access, so the Mint's own page was not read; the design description and rights wording are from the Wikimedia Commons file page, which cites the Mint."
+   ]
+  },
+  {
+   "id": "hope-public-law-105-67",
+   "slug": "hope",
+   "title": "Public Law 105-67, making Bob Hope an honorary veteran, 30 October 1997",
+   "holder": "U.S. Government Publishing Office (govinfo)",
+   "item_url": "https://www.govinfo.gov/app/details/PLAW-105publ67",
+   "identifier": "Public Law 105-67; 111 Stat. 1452; H.J. Res. 75",
+   "download_url": "https://www.govinfo.gov/content/pkg/PLAW-105publ67/pdf/PLAW-105publ67.pdf",
+   "image": "hope-1997-public-law-105-67.jpg",
+   "image_from": "The official PDF, rendered at 200 dpi on 2026-11-07, margins trimmed, resized to 1600 px tall",
+   "page_shown": "The single page of the public law",
+   "credit": "Public Law 105-67, 111 Stat. 1452 (1997). U.S. Government Publishing Office.",
+   "rights": {
+    "source_url": "https://www.copyright.gov/title17/92chap1.html",
+    "exact_span": "Copyright protection under this title is not available for any work of the United States Government",
+    "status": "U.S. government work (17 U.S.C. 105)",
+    "checked": "2026-11-07"
+   },
+   "alt": "1997 public law conferring the status of honorary veteran of the U.S. Armed Forces on Bob Hope.",
+   "transcription": "[Seal printed on the PDF: AUTHENTICATED U.S. GOVERNMENT INFORMATION GPO]\n111 STAT. 1452\nPUBLIC LAW 105–67—OCT. 30, 1997\nPublic Law 105–67\n105th Congress\nJoint Resolution\nOct. 30, 1997\n[H.J. Res. 75]\nTo confer status as an honorary veteran of the United States Armed Forces on Leslie Townes (Bob) Hope.\nWhereas the United States has never before conferred status as an honorary veteran of the United States Armed Forces on an individual, and such status is and should remain an extraordinary honor not lightly conferred nor frequently granted;\nWhereas the lifetime of accomplishments and service of Leslie Townes (Bob) Hope on behalf of United States military servicemembers fully justifies the conferring of such status;\nWhereas Leslie Townes (Bob) Hope is himself not a veteran, having attempted to enlist in the Armed Forces to serve his country during World War II, but being informed that the greatest service he could provide the Nation was as a civilian entertainer for the troops;\nWhereas during, World War II, the Korean Conflict, the Vietnam War, and the Persian Gulf War and throughout the Cold War, Bob Hope traveled to visit and entertain millions of United States servicemembers in numerous countries, on ships at sea, and in combat zones ashore;\nWhereas Bob Hope has been awarded the Congressional Gold Medal, the Presidential Medal of Freedom, the Distinguished Service Medal of each of the branches of the Armed Forces, and more than 100 citations and awards from national veterans service organizations and civic and humanitarian organizations; and\nWhereas Bob Hope has given unselfishly of his time for over a half century to be with United States servicemembers on foreign shores, working tirelessly to bring a spirit of humor and cheer to millions of servicemembers during their loneliest moments, and thereby extending for the American people a touch of home away from home: Now, therefore, be it\nResolved by the Senate and House of Representatives of the United States of America in Congress assembled, That Congress—\n(1) extends its gratitude, on behalf of the American people, to Leslie Townes (Bob) Hope for his lifetime of accomplishments and service on behalf of United States military servicemembers; and\n(2) confers upon Leslie Townes (Bob) Hope the status of an honorary veteran of the United States Armed Forces.\nApproved October 30, 1997.\nLEGISLATIVE HISTORY—H.J. Res. 75:\nHOUSE REPORTS: No. 105–109 (Comm. on Veterans’ Affairs).\nCONGRESSIONAL RECORD, Vol. 143 (1997):\nJune 3, considered and passed House.\nSept. 9, considered and passed Senate.\nWEEKLY COMPILATION OF PRESIDENTIAL DOCUMENTS, Vol. 33 (1997):\nOct. 30, Presidential statement.",
+   "transcription_note": "Text from the official PDF's text layer, checked against the page image. Line breaks inside paragraphs are joined.",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 24,
+      "y": 17.5,
+      "w": 70,
+      "h": 9.5
+     },
+     "region_note": "Heading and title of the joint resolution",
+     "title": "A joint resolution",
+     "text": "Public Law 105–67 of the 105th Congress: a joint resolution to confer status as an honorary veteran of the United States Armed Forces on Leslie Townes (Bob) Hope.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Public Law 105–67 105th Congress Joint Resolution"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "To confer status as an honorary veteran of the United States Armed Forces on Leslie Townes (Bob) Hope."
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 24,
+      "y": 28,
+      "w": 72,
+      "h": 6
+     },
+     "region_note": "First Whereas clause: never before conferred",
+     "title": "The first",
+     "text": "The United States had never before given this status to anyone. Hope was the first.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Whereas the United States has never before conferred status as an honorary veteran of the United States Armed Forces on an individual"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "Leslie Townes (Bob) Hope"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 24,
+      "y": 38,
+      "w": 72,
+      "h": 7.5
+     },
+     "region_note": "Whereas clause: not a veteran himself",
+     "title": "Not a veteran",
+     "text": "Hope was not a veteran himself. He tried to enlist during World War II and was told he could serve the nation best as a civilian entertainer for the troops.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Whereas Leslie Townes (Bob) Hope is himself not a veteran, having attempted to enlist in the Armed Forces to serve his country during World War II, but being informed that the greatest service he could provide the Nation was as a civilian entertainer for the troops;"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 24,
+      "y": 45.5,
+      "w": 72,
+      "h": 7.5
+     },
+     "region_note": "Whereas clause: the wars and the travels",
+     "title": "Half a century of tours",
+     "text": "Through World War II, Korea, Vietnam, the Persian Gulf War and the Cold War he travelled to entertain millions of servicemembers. He had first crossed the Atlantic from England to Cleveland as a boy of four.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Whereas during, World War II, the Korean Conflict, the Vietnam War, and the Persian Gulf War and throughout the Cold War, Bob Hope traveled to visit and entertain millions of United States servicemembers"
+      },
+      {
+       "source": "profile",
+       "exact_span": "the Hope family crossed the Atlantic from England to Cleveland"
+      },
+      {
+       "source": "profile",
+       "exact_span": "came to Cleveland as a boy of four"
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 24,
+      "y": 52.5,
+      "w": 72,
+      "h": 8
+     },
+     "region_note": "Whereas clause: his awards",
+     "title": "His honours",
+     "text": "Congress listed his honours: the Congressional Gold Medal, the Presidential Medal of Freedom, the Distinguished Service Medal of each of the armed forces, and more than 100 other citations and awards.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "Whereas Bob Hope has been awarded the Congressional Gold Medal, the Presidential Medal of Freedom, the Distinguished Service Medal of each of the branches of the Armed Forces, and more than 100 citations and awards"
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 24,
+      "y": 82.5,
+      "w": 72,
+      "h": 13
+     },
+     "region_note": "Approval date and legislative history",
+     "title": "How it became law",
+     "text": "The House passed it on June 3, the Senate on Sept. 9, and it was approved on October 30, 1997.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "June 3, considered and passed House."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "Sept. 9, considered and passed Senate."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "Approved October 30, 1997."
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Both houses of Congress had to pass this. Find the line that says when the Senate passed it.",
+    "answer": "Sept. 9, considered and passed Senate, near the bottom.",
+    "hotspot": 6,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "Sept. 9, considered and passed Senate."
+     }
+    ]
+   },
+   "conflicts": [
+    "The profile said that in 1997 'the House of Representatives made him' an honorary veteran, as its secondary source (Encyclopedia of Cleveland History) says. This law shows a joint resolution passed by the House (June 3) and the Senate (Sept. 9) and approved on October 30, 1997. On 2026-11-07 the profile sentence and its narration were corrected to 'Congress', and the audio was re-recorded."
+   ],
+   "not_retrieved": []
+  },
+  {
+   "id": "muir-our-national-parks-1901",
+   "slug": "muir",
+   "title": "Our National Parks by John Muir, title page, 1901",
+   "holder": "Library of Congress copy, digitized by the Internet Archive",
+   "item_url": "https://archive.org/details/ournationalparks00mu",
+   "identifier": "Internet Archive ournationalparks00mu",
+   "download_url": "https://archive.org/download/ournationalparks00mu/page/n8.jpg",
+   "image": "muir-1901-our-national-parks-title-page.jpg",
+   "image_from": "Internet Archive page image n8 (2012 x 3560 px), viewed 2026-11-07, resized to 1600 px tall",
+   "page_shown": "Title page (the back of this leaf is the related record)",
+   "credit": "John Muir, Our National Parks (Boston and New York: Houghton, Mifflin and Company, 1901), title page. Library of Congress copy, digitized by the Internet Archive.",
+   "rights": {
+    "source_url": "https://commons.wikimedia.org/wiki/File:Our_national_parks_(IA_ournationalparks00mu).pdf",
+    "exact_span": "This work is in the public domain in the United States because it was published (or registered with the U.S. Copyright Office) before January 1, 1931.",
+    "qualifier_span": "possible-copyright-status: NOT_IN_COPYRIGHT (Internet Archive item metadata)",
+    "status": "public domain in the United States",
+    "checked": "2026-11-07"
+   },
+   "alt": "Title page of Our National Parks by John Muir, Houghton, Mifflin and Company, 1901, with a printer's emblem.",
+   "transcription": "OUR NATIONAL PARKS\nBY JOHN MUIR\n[Printer's emblem: a seated figure playing a pipe beneath a tree, with the motto] TOUT BIEN OU RIEN\nBOSTON AND NEW YORK\nHOUGHTON, MIFFLIN AND COMPANY\nThe Riverside Press, Cambridge\n1901\n[Pencilled at right, outside the border:] 130 / 1371\n[Holes perforated through the leaf at right, partly off the page:] THE LIB... OF CON...",
+   "transcription_note": "Printed text as it appears. The perforated letters are read from the back of the leaf, where more of them survive.",
+   "related_title": "The back of the title page (Internet Archive page image n9)",
+   "related_text": "[Rubber stamp, with handwritten entries:] THE LIBRARY OF CONGRESS, Two Copies Received NOV. 2 1901 COPYRIGHT ENTRY Oct 25-1901 CLASS a XXc. No. 19681 COPY B.\nCOPYRIGHT, 1901, BY JOHN MUIR\nALL RIGHTS RESERVED\nPublished November, 1901.\n[Holes perforated through the leaf, seen in reverse:] THE LIB... OF CON...",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 7,
+      "y": 8,
+      "w": 70,
+      "h": 11
+     },
+     "region_note": "Title: OUR NATIONAL PARKS",
+     "title": "The book",
+     "text": "Our National Parks caught the attention of President Theodore Roosevelt, who came west in 1903 to see Yosemite with Muir himself.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "OUR NATIONAL PARKS"
+      },
+      {
+       "source": "profile",
+       "exact_span": "caught the attention of President Theodore Roosevelt, who came west in 1903 to see Yosemite with Muir himself"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 20,
+      "y": 24,
+      "w": 43,
+      "h": 4.5
+     },
+     "region_note": "BY JOHN MUIR",
+     "title": "The author",
+     "text": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849. On the back of this page he holds the copyright himself: COPYRIGHT, 1901, BY JOHN MUIR.",
+     "evidence": [
+      {
+       "source": "profile",
+       "exact_span": "John Muir came to America from Scotland as an eleven-year-old farm boy in 1849"
+      },
+      {
+       "source": "related",
+       "exact_span": "COPYRIGHT, 1901, BY JOHN MUIR"
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 34,
+      "y": 36,
+      "w": 22,
+      "h": 23
+     },
+     "region_note": "Printer's emblem with motto",
+     "title": "The printer's emblem",
+     "text": "The printer's emblem shows a seated figure playing a pipe beneath a tree, with the motto TOUT BIEN OU RIEN: everything well, or nothing.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "[Printer's emblem: a seated figure playing a pipe beneath a tree, with the motto] TOUT BIEN OU RIEN"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 13,
+      "y": 68,
+      "w": 60,
+      "h": 11
+     },
+     "region_note": "Imprint: publisher, press and year",
+     "title": "The publisher",
+     "text": "Houghton, Mifflin and Company published it in Boston and New York, printed at The Riverside Press, Cambridge, in November 1901.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "BOSTON AND NEW YORK\nHOUGHTON, MIFFLIN AND COMPANY\nThe Riverside Press, Cambridge\n1901"
+      },
+      {
+       "source": "related",
+       "exact_span": "Published November, 1901."
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 60,
+      "y": 56,
+      "w": 39,
+      "h": 11
+     },
+     "region_note": "Perforated holes at right",
+     "title": "Holes in the paper",
+     "text": "These rows of tiny holes are letters punched through the paper: THE LIB... OF CON..., from THE LIBRARY OF CONGRESS. Its stamp on the back of this page says the Library received two copies on Nov. 2, 1901.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "THE LIB... OF CON..."
+      },
+      {
+       "source": "related",
+       "exact_span": "THE LIBRARY OF CONGRESS, Two Copies Received NOV. 2 1901"
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Look closely at the right-hand side. Which library punched its name through this page?",
+    "answer": "THE LIBRARY OF CONGRESS. On this side you can see only THE LIB... OF CON...",
+    "hotspot": 5,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "THE LIB... OF CON..."
+     },
+     {
+      "source": "related",
+      "exact_span": "THE LIBRARY OF CONGRESS"
+     }
+    ]
+   },
+   "conflicts": [],
+   "not_retrieved": [
+    "The pencilled numbers 130 / 1371 are transcribed but not explained: no source on file says what they record."
+   ]
+  },
+  {
+   "id": "naismith-basket-ball-1892",
+   "slug": "naismith",
+   "title": "Basket Ball: the thirteen rules as published in The Triangle, 15 January 1892",
+   "holder": "Scan on Wikimedia Commons (source cited there: YMCA Hall of Fame, Springfield College)",
+   "item_url": "https://commons.wikimedia.org/wiki/File:Dr._James_Naismith%27s_Original_13_Rules_of_Basket_Ball.jpg",
+   "identifier": "The Triangle, 15 January 1892",
+   "download_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Dr._James_Naismith%27s_Original_13_Rules_of_Basket_Ball.jpg/330px-Dr._James_Naismith%27s_Original_13_Rules_of_Basket_Ball.jpg",
+   "image": "naismith-1892-triangle-rules.jpg",
+   "image_from": "Wikimedia Commons 330 px rendering of the scan, viewed 2026-11-07. The scan is one long column; the part shown here (drawing to rule 13) is set in two columns, split after the sentence that leads into the rules, and enlarged two times.",
+   "page_shown": "The opening of the article, from the drawing to rule 13",
+   "credit": "Basket Ball, The Triangle (Springfield, Mass.), 15 January 1892. Scan via Wikimedia Commons.",
+   "rights": {
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dr._James_Naismith%27s_Original_13_Rules_of_Basket_Ball.jpg",
+    "exact_span": "This work is in the public domain in the United States because it was published (or registered with the U.S. Copyright Office) before January 1, 1931.",
+    "status": "public domain in the United States",
+    "checked": "2026-11-07"
+   },
+   "alt": "1892 magazine page: a drawing of an early basketball game above the article Basket Ball and its thirteen rules.",
+   "transcription": "[Drawing: players reaching for the ball under a basket fixed to the railing of a gymnasium gallery]\nBASKET BALL.\nWE present to our readers a new game of ball, which seems to have those elements in it which ought to make it popular among the Associations. It fills the same place in the gymnasium that foot ball does in the athletic field. Any number of men may play at it, and each one get plenty of exercise; at the same time it calls for physical judgment, and co-ordination of every muscle, and gives all-around development. It can be played by teams from different Associations. and combines skill with courage and agility so that the better team wins.\nThe ground is the gymnasium floor cleared of apparatus (it may be shoved behind the side lines), though it could be played in the open air, at a picnic, etc. When there is a running track around the gymnasium, the ground might be marked out just under the track, and the baskets hung up, one at each end on the railing. All outside of this line is then out of bounds. When there is no running track, the ends may be cleared of apparatus, and the goals fixed on the wall, then a line may be drawn along the sides of the gymnasium about six feet from the walls, or enough to clear the apparatus. Across these lines would be out of bounds.\nThe goals are a couple of baskets or boxes about fifteen inches in diameter across the opening, and about fifteen inches deep. These are to be suspended, one at each end of the grounds, about ten feet from the floor. The object of the game is to put the ball into your opponents’ goal. This may be done by throwing the ball from any part of the grounds, with one or both hands, under the following conditions and rules:—\nThe ball to be an ordinary Association foot ball.\n1. The ball may be thrown in any direction with one or both hands.\n2. The ball may be batted in any direction with one or both hands (never with the fist).\n3. A player cannot run with the ball. The player must throw it from the spot on which he catches it, allowance to be made for a man who catches the ball when running at a good speed if he tries to stop.\n4. The ball must be held in or between the hands, the arms or body must not be used for holding it.\n5. No shouldering, holding, pushing, tripping, or striking in any way the person of an opponent shall be allowed; the first infringement of this rule by any player shall count as a foul, the second shall disqualify him until the next goal is made, or, if there was evident intent to injure the person, for the whole of the game, no substitute allowed.\n6. A foul is striking at the ball with the fist, violation of rules 3, 4, and such as described in rule 5.\n7. If either side makes three consecutive fouls, it shall count a goal for the opponents (consecutive means without the opponents in the mean time making a foul).\n8. A goal shall be made when the ball is thrown or batted from the grounds into the basket and stays there, providing those defending the goal do not touch or disturb the goal. If the ball rests on the edges, and the opponent moves the basket, it shall count as a goal.\n9. When the ball goes out of bounds, it shall be thrown into the field of play by the person first touching it. In case of a dispute, the umpire shall throw it straight into the field. The thrower in is allowed five seconds, if he holds it longer, it shall go to the opponent. If any side persists in delaying the game, the umpire shall call a foul on that side.\n10. The umpire shall be judge of the men and shall note the fouls and notify the referee when three consecutive fouls have been made. He shall have power to disqualify men according to Rule 5.\n11. The referee shall be judge of the ball and shall decide when the ball is in play, in bounds, to which side it belongs, and shall keep the time. He shall decide when a goal has been made, and keep account of the goals with any other duties that are usually performed by a referee.\n12. The time shall be two fifteen minutes, halves, with five minutes’ rest between.\n13. The side making the most goals in that time shall be declared the winner. In case of a draw, the game may, by agreement of the captains, be continued until another goal is made.",
+   "transcription_note": "Read from a low-resolution scan (330 px wide); the full-resolution file was refused by Wikimedia's rate limit. A stray mark in rule 12 (time 'shall) is left out.",
+   "related_title": "The rest of the same article, below rule 13 (not shown in the image)",
+   "related_text": "This game is interesting to spectators as well as to the players, and may be made quite scientific by good judgment combined with good co-ordination. Several good points have been scored by two or three players working together. The number composing a team depends largely on the size of the floor space, but it may range from three on a side to forty. The fewer players down to three, the more scientific it may be made, but the more players the more fun, and the more exercise for quick judgment.\nThe men may be arranged according to the idea of the captain, but it has been found advantageous to have a goal keeper, two guards, three center men, two wings, and a home man stationed in the above order from the goal.\nIt shall be the duty of the goal keeper and the two guards to prevent the opponents from scoring. The duty of the wing man and the home man is to put the ball into the opponents’ goal, and the center men shall feed the ball forward to the man who has the best opportunity, thus nine men make the best number for a team.\nIt is well suited for boys. Director Finch has introduced it in his boys’ classes with apparent success. We wish that the physical directors would try the game, and report any points that might be amended.\nIt is intended that this game should be free from much of the reputed roughness of Rugby, and in the framing of rules this has been kept strictly in view. If some of the rules seem unnecessarily severe, it will be remembered that the time to stop roughness is before it begins.\nA gymnasium is bounded by hard walls, and has a pretty solid floor, and for that reason, any shoving that would injure a person must be stopped, e. g., when a man raises his arms to throw the ball, another might give him the shoulder, and disable him, but if this is stopped there will be an understanding that it is not allowed. It is for the benefit of a physical director that no man be hurt in his gymnasium. so that any director who tries it should make every man conform to the rules strictly at first, and then he would soon get accustomed to playing ball instead of trying to injure his neighbor, when it is nothing but a friendly tussle in which they are taking part.\nThe very men who are rough in playing will be the very first ones to oppose the game on this account, for there is that in man’s nature which will retaliate, and the rough player generally gets the worst of the roughness. If there is need for such a game, let it be played as any other game of science and skill, then men will value it. But there is neither science nor skill in taking a man unawares, and shoving him, or catching his arm and pulling him away, when he is about to catch the ball. A dog could do as much as that.\nThere seemed to be no way of compensating the opponents for a foul made. A free throw was thought of, but, after a little practice, a good thrower could convert it into a goal almost every time, because of the limits of the ordinary gymnasium. Then the idea was that three fouls would count as a goal, and would be a deterrent to the making of them. This is true, for when a team finds that another foul would count a goal against them, the extra foul is hardly ever made, showing that it is possible to play the game without making fouls.\nIf men will not be gentlemanly in their play, it is our place to encourage games that may be played by gentlemen in a manly way, and show them that science is superior to brute force with a disregard for the feelings of others. The umpire will thus be responsible for much of the roughness if he lets it go unchecked, but if he is firm and impartial in his ruling he will gain the respect even of those who suffer at the time.\nWe would advise the director to keep a good firm grasp on the ruling for a while at first.\nJAS. NAISMITH.",
+   "hotspots": [
+    {
+     "n": 1,
+     "region": {
+      "x": 3,
+      "y": 9,
+      "w": 46,
+      "h": 30
+     },
+     "region_note": "Drawing of the game",
+     "title": "The first picture",
+     "text": "The drawing shows players reaching for the ball under a basket fixed to the railing of a gymnasium gallery, just as the article describes: the baskets hung up, one at each end on the railing.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "[Drawing: players reaching for the ball under a basket fixed to the railing of a gymnasium gallery]"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "the baskets hung up, one at each end on the railing"
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "region": {
+      "x": 12,
+      "y": 46.5,
+      "w": 22,
+      "h": 3.5
+     },
+     "region_note": "Heading: BASKET BALL.",
+     "title": "The article",
+     "text": "The rules were published in 1892, in this article headed Basket Ball. It is signed, at its end, Jas. Naismith.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "BASKET BALL."
+      },
+      {
+       "source": "profile",
+       "exact_span": "the rules were published in 1892"
+      },
+      {
+       "source": "related",
+       "exact_span": "JAS. NAISMITH."
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "region": {
+      "x": 1,
+      "y": 86,
+      "w": 48,
+      "h": 8.5
+     },
+     "region_note": "Paragraph on the goals",
+     "title": "Baskets or boxes",
+     "text": "The goals: baskets or boxes about fifteen inches across, hung about ten feet from the floor. He asked a janitor for two boxes and was handed two peach baskets instead.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "The goals are a couple of baskets or boxes about fifteen inches in diameter across the opening"
+      },
+      {
+       "source": "artifact",
+       "exact_span": "about ten feet from the floor"
+      },
+      {
+       "source": "profile",
+       "exact_span": "asked a janitor for two boxes, and was handed two peach baskets instead"
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "region": {
+      "x": 50.5,
+      "y": 4,
+      "w": 48.5,
+      "h": 14
+     },
+     "region_note": "Rules 1 to 3",
+     "title": "No running with the ball",
+     "text": "In rule 1 the ball is thrown with one or both hands; in rule 3 a player cannot run with it. Naismith wanted a game of skill rather than brute force, one where you could not run with the ball or tackle the man who had it.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "1. The ball may be thrown in any direction with one or both hands."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "3. A player cannot run with the ball."
+      },
+      {
+       "source": "profile",
+       "exact_span": "Naismith wanted a game of skill rather than brute force — one where you could not run with the ball or tackle the man who had it."
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "region": {
+      "x": 50.5,
+      "y": 20.5,
+      "w": 48.5,
+      "h": 10
+     },
+     "region_note": "Rule 5",
+     "title": "No rough play",
+     "text": "No shouldering, holding, pushing, tripping or striking. A first offence counts as a foul; a second puts the player out until the next goal is made.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "No shouldering, holding, pushing, tripping, or striking in any way the person of an opponent shall be allowed; the first infringement of this rule by any player shall count as a foul, the second shall disqualify him until the next goal is made"
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "region": {
+      "x": 50.5,
+      "y": 78.5,
+      "w": 48.5,
+      "h": 10.5
+     },
+     "region_note": "Rules 12 and 13",
+     "title": "How long, and who wins",
+     "text": "Two halves of fifteen minutes with five minutes' rest between, and the side making the most goals wins.",
+     "evidence": [
+      {
+       "source": "artifact",
+       "exact_span": "The time shall be two fifteen minutes, halves, with five minutes' rest between."
+      },
+      {
+       "source": "artifact",
+       "exact_span": "The side making the most goals in that time shall be declared the winner."
+      }
+     ]
+    }
+   ],
+   "spot_it": {
+    "question": "Which of the thirteen rules says a player cannot run with the ball?",
+    "answer": "It is number 3, near the top of the right-hand column.",
+    "hotspot": 4,
+    "evidence": [
+     {
+      "source": "artifact",
+      "exact_span": "3. A player cannot run with the ball."
+     }
+    ]
+   },
+   "conflicts": [
+    "The profile describes Naismith's typed rules, pinned to the gym wall in December 1891. This is the printed version published in January 1892; the two are different documents."
+   ],
+   "not_retrieved": [
+    "Springfield College's own higher-resolution copy of the 1892 rules is offered for personal, non-commercial and educational use with a credit line, not as public domain, so it was not used.",
+    "The full-resolution Wikimedia file (392 px wide) was refused by Wikimedia's rate limit; the 330 px rendering was used."
+   ]
   }
  ]
 }

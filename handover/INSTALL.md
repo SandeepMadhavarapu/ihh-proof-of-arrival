@@ -55,11 +55,11 @@ with ordinary blocks (Image, Heading, Paragraph, Quote, List). **Use `copy-full.
 shorter file**: it carries every source, rights statement and credit line, and the page must
 not go up without them.
 
-## Optional — Add "Look closer" (four profiles, five minutes each)
+## Optional — Add "Look closer" (all ten profiles, five minutes each)
 
-Einstein, Lamarr, Pei and Strauss each have one annotated document: `look-closer-<name>.html`,
+Every inductee has one annotated document: `look-closer-<name>.html`,
 with its image in `media/artifacts/`. It is a scan of a real record (a patent, a visa form, a
-citizenship declaration) with numbered notes that explain each part, and each note shows the
+citizenship declaration, a commission, sheet music, a book, a magazine page, a law or a coin) with numbered notes that explain each part, and each note shows the
 exact words it comes from.
 
 1. Upload the image in `media/artifacts/` to the Media Library and copy its URL.

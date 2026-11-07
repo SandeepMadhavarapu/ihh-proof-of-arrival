@@ -26,7 +26,7 @@ and [CONTRIBUTING.md](CONTRIBUTING.md).
 | `inductees/<name>/` | The sources of each profile: `copy.md` (the text), `media-manifest.csv` (every source and image, rights word for word), `search-log.csv`, full-resolution originals in `media/`, saved source documents in `sources/`. **Edit here.** |
 | `templates/` | For the next inductee: `copy-template.md`, `media-manifest.csv`, `search-log.csv`, `where-to-search.md`, `rights-guide.md`, `profile.css`. |
 | `tools/` | `build_profile.py` (copy.md + manifest → WordPress block), `build_site_pages.py` (→ demo site pages), `artifacts.py` (Look closer: checks every annotation against its quoted source, then renders it), `narration.py` and `narration_audio.py` (Listen), `package_handover.sh`, `open_items.py`. |
-| `site/` | The optional demonstration site: the ten profiles in the site's design, the Verification Desk (a corrections log), Look closer (four annotated primary documents), New at the Museum, and Margin Notes (off until IHH connects WordPress). |
+| `site/` | The optional demonstration site: the ten profiles in the site's design, the Verification Desk (a corrections log), Look closer (an annotated primary document for every inductee), New at the Museum, and Margin Notes (off until IHH connects WordPress). |
 | `living/` | The Living Museum: finder, five-gate verifier, human approval queue, publisher and watchdog. Nothing reaches the site without a person approving it in a pull request. |
 | `voices/` | Visitor Voices / Margin Notes: notes anchored to the passage that prompted them, moderated before they appear. |
 | `ledger/`, `site-src/FINDINGS.md` | The earlier audit of the live IHH site. The detailed corrections for IHH's editors are generated locally into `private/` (git-ignored) by `python3 site-src/gen.py` and handed over directly. **Share privately and kindly.** |
@@ -46,18 +46,23 @@ checked it.
 
 ## Look closer
 
-`site-data/artifacts/research.json` holds four primary documents (Lamarr's and Davis/Strauss's
-patents, Pei's 1935 consulate précis, Einstein's 1936 Declaration of Intention): a transcription,
+`site-data/artifacts/research.json` holds ten primary documents, one per inductee (Lamarr's and
+Davis/Strauss's patents, Pei's 1935 consulate précis, Einstein's 1936 Declaration of Intention,
+Albright's 1997 commission, the 1911 cover of Berlin's "Alexander's Ragtime Band", Cruz's 2024
+quarter, Public Law 105-67 making Hope an honorary veteran, the 1901 title page of Muir's
+*Our National Parks*, and Naismith's rules as printed in *The Triangle* in January 1892): a transcription,
 the holder's rights wording, and 4 to 7 numbered notes, each with the exact words it rests on (from
 the document itself, a related page of the same record, or the inductee's `copy.md`).
 `tools/artifacts.py` refuses to build if a quoted span is not found word for word, or if a name,
 number or date in a note is missing from its spans. The notes were drafted with AI; that check
 catches invented details, not a wrong reading, so a person still reviews them. Where a document
-disagrees with a profile (Einstein's form records a 1935 entry via Bermuda), the note says so.
+disagrees with a profile (Einstein's form records a 1935 entry via Bermuda), the note says so; where a document corrected a
+profile (Hope's honorary-veteran status was conferred by Congress, not the House alone), the
+profile and its narration were corrected and the audio re-recorded.
 
 ## Listen
 
-Every profile has a "Listen and watch" section: a two-minute audio guide, a sixty-second short and
+Every profile has a "Listen and watch" section: a two-minute audio guide, a short of under a minute and
 a captioned vertical video. `inductees/<name>/narration.json` holds the scripts; every line is a
 sentence from that inductee's `copy.md` (or a shortened version of one) and records which line it
 came from. `tools/narration.py` refuses to build if a line uses a word, number, date or name its

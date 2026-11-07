@@ -4,31 +4,41 @@ Everything below was executed in a real headless Chromium against the built site
 over HTTP. The scripts are in `qa/`. **The last section lists what still has not been
 tested, and by whom it needs to be.**
 
-## Latest full run — 7 November 2026 (branch `ws10-ui-polish`, before merge)
+## Latest full run — 7 November 2026 (branch `ws11-complete-brief`, before merge)
 
 Run locally on Linux with Chromium, with Python 3.12 and no third-party Python packages (no
 Pillow, no PyYAML), as in GitHub Actions CI; CI runs the same suite on every pull request.
-This run follows a teammate's review. Changes: no text on any page is now smaller than 12px
-(it had been as small as 9.6px); the home page has a "Three ways into the collection" section
-linking Listen, Look closer and the Verification Desk; each profile has "On this page" links to
-Listen and watch and Look closer at the top; image sizes are read without Pillow.
+This run completes "Look closer" for every inductee: six more public-domain documents (Albright's
+1997 commission, the 1911 cover of "Alexander's Ragtime Band", Cruz's 2024 quarter, Public Law
+105-67 for Hope, the 1901 title page of Muir's *Our National Parks*, and Naismith's rules as
+printed in January 1892), ten in all with 61 notes. Reading Public Law 105-67 showed that Hope's
+honorary-veteran status came from Congress (House and Senate), not the House alone, so his
+profile sentence and narration were corrected and the audio re-recorded.
+Earlier the same day, after a teammate's review: no text on any page is smaller than 12px (it
+had been as small as 9.6px); the home page links Listen, Look closer and the Verification Desk;
+each profile has "On this page" links to them; image sizes are read without Pillow.
 UI sweep: all 22 pages at 320, 375, 430, 768, 1024, 1280, 1440 and 1920px, with motion on and
 with prefers-reduced-motion, plus the 23-page public build at 375 and 1280px (444 page views):
-no sideways scroll, no console errors or failed requests, no dead in-page links, no visible text
-under 12px, layout shift at most 0.05 on every view. `python -m pipeline.demo` passes (15 QA
-commands, report `passed: true`).
+no sideways scroll, no console errors or failed requests, no broken images, no dead in-page
+links, no visible text under 12px, layout shift at most 0.05 on every view. All ten WordPress
+Look closer blocks, standalone at 375 and 1280px: no script, no sideways scroll, no broken image,
+no content-level axe violation (only the page-level rules a pasted fragment cannot meet: title,
+lang, main landmark, h1). `python -m pipeline.demo` passes (15 QA commands, report `passed: true`).
+Not run: the blocks on a real WordPress and Kadence install. Starting WordPress Playground in
+the test environment was refused because it downloads and runs outside code, so the WordPress
+evidence remains the hostile-theme harness below.
 
 | Check | Result |
 |---|---|
 | `python tools/narration.py` | 10 inductees, 236 narrated lines, every line traced to `copy.md`; all 20 audio files, 10 videos and 10 posters match their SHA-256 in the manifest |
-| `python tools/artifacts.py` | 4 artifacts, 25 notes, every span and number/date/name checked |
+| `python tools/artifacts.py` | 10 artifacts, 61 notes, every span and number/date/name checked |
 | `python -m unittest discover -s tests` | 216 tests, OK, 1 skipped where PyYAML is absent (26 in `tests/test_narration.py`, including planted wrong years, new names, a changed quotation, first person, a dated transition, a stale script and a tampered audio hash) |
 | `bash qa/rebuild.sh` | all generated files match their sources (now including caption files and the ten WordPress Listen blocks) |
 | `python qa/handover.py` | all ten handover packages pass |
 | `python qa/secrets.py` | pass |
 | `python living/eval/run_eval.py` | pass, 0 false accepts |
 | `node qa/integrity.mjs .` | 150 checks pass |
-| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro; profile-factory | all pass (0 axe violations on 22 pages; 754 text runs meet contrast; every target at least 24×24; 318 WordPress checks; 35 Profile Factory checks) |
+| `qa/` browser harnesses: dark (axe), nojs, interact, pixels, states, targets, reflow, leak, incomplete, wp, repro; profile-factory | all pass (0 axe violations on 22 pages; 764 text runs meet contrast; every target at least 24×24; 318 WordPress checks; 35 Profile Factory checks) |
 | Smoke test: 22 pages (and the 23-page public demonstration build) at 375px and 1280px | 0 console errors, broken links, anchors or images, no sideways scroll, 0 axe violations with every transcript open |
 | Listen media in the browser, all ten profiles | both MP3s load (duration read) and each caption track loads with its cues; the MP4s could not be played in this test browser, which is built without H.264 support: `ffprobe` confirms each is H.264 High + AAC LC with the index at the front of the file |
 | The ten WordPress Listen blocks, standalone at 375px and 1280px | 0 axe violations, no sideways scroll, no script |
@@ -151,7 +161,7 @@ It found **18 element classes** being restyled by the theme — most visibly, th
 the desk's drawers to `.cl`, plus an explicit scope boundary in the exhibit. **Now zero.**
 
 ### Page weight — MEASURED
-**666 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival images, audio and video additional)**, against **2,869 KB for the current IHH homepage
+**727 KB of HTML, CSS, scripts and text across 22 pages (portrait and archival images, audio and video additional)**, against **2,869 KB for the current IHH homepage
 alone.** 3 requests per page. Zero third-party hosts.
 
 ---
