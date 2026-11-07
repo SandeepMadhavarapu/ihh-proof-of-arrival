@@ -1184,4 +1184,7 @@ main h1,main h2,main h3{text-wrap:balance}
 /* Home: three ways in */
 .ways-in{margin-top:2.4rem}
 .ways-in .three h3{margin-top:0}
+.ways-in .three p+p{margin-top:.6rem}
+/* inline-flex drops the space before a trailing arrow; put it back */
+.text-link{gap:.35em}
 .profile-page .crumb .crumb-k{background:var(--paper)}
